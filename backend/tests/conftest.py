@@ -5,7 +5,8 @@ from pathlib import Path
 import pytest
 
 _tmp = Path(tempfile.mkdtemp(prefix="devalay-test-"))
-os.environ.setdefault("DEVALAY_DATABASE_URL", f"sqlite:///{_tmp / 'test.db'}")
+if not os.environ.get("DEVALAY_DATABASE_URL"):  # CI sets it to Postgres, or empty for SQLite
+    os.environ["DEVALAY_DATABASE_URL"] = f"sqlite:///{_tmp / 'test.db'}"
 os.environ["DEVALAY_ENV"] = "test"
 os.environ["DEVALAY_MEDIA_DIR"] = str(_tmp / "media")
 os.environ["DEVALAY_ANTHROPIC_API_KEY"] = ""
