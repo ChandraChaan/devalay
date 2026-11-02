@@ -1,0 +1,57 @@
+name: Android app
+
+on:
+  push:
+    branches: [main]
+    paths: ["app/**", ".github/workflows/app.yml"]
+  pull_request:
+    paths: ["app/**", ".github/workflows/app.yml"]
+  workflow_dispatch:
+    inputs:
+      api_base_url:
+        description: "API base URL baked into the build"
+        default: "https://api.example.com"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: "3.44.5"
+          cache: true
+      - run: flutter pub get
+      - run: dart format --line-length 120 --output=none --set-exit-if-changed lib test
+      - run: flutter analyze
+      - run: flutter test
+      - name: Restore release keystore (optional)
+        env:
+          KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          KEY_PROPERTIES: ${{ secrets.ANDROID_KEY_PROPERTIES }}
+        if: env.KEYSTORE_BASE64 != ''
+        run: |
+          echo "$KEYSTORE_BASE64" | base64 -d > android/app/upload-keystore.jks
+          echo "$KEY_PROPERTIES" > android/key.properties
+      - name: Build release APK and App Bundle
+        run: |
+          API="${{ github.event.inputs.api_base_url || vars.API_BASE_URL || 'https://api.example.com' }}"
+          flutter build apk --release --dart-define=API_BASE_URL=$API
+          flutter build appbundle --release --dart-define=API_BASE_URL=$API
+      - uses: actions/upload-artifact@v4
+        with:
+          name: devalay-android
+          path: |
+            app/build/app/outputs/flutter-apk/app-release.apk
+            app/build/app/outputs/bundle/release/app-release.aab

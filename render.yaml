@@ -1,0 +1,44 @@
+# One-click Render Blueprint for the API + admin. Pair it with a free Neon (or
+# Render) PostgreSQL database and a Cloudflare R2 bucket. Secrets marked
+# `sync: false` are entered in the Render dashboard, never committed.
+services:
+  - type: web
+    name: devalay-api
+    runtime: docker
+    rootDir: backend
+    plan: starter
+    healthCheckPath: /api/v1/health
+    autoDeploy: true
+    envVars:
+      - key: DEVALAY_ENV
+        value: production
+      - key: DEVALAY_DATABASE_URL
+        sync: false
+      - key: DEVALAY_SECRET_KEY
+        generateValue: true
+      - key: DEVALAY_PUBLIC_BASE_URL
+        sync: false
+      - key: DEVALAY_CONTACT_EMAIL
+        sync: false
+      - key: DEVALAY_CORS_ORIGINS
+        value: '["https://devalay.example.com"]'
+      - key: DEVALAY_STORAGE_BACKEND
+        value: r2
+      - key: DEVALAY_R2_ACCOUNT_ID
+        sync: false
+      - key: DEVALAY_R2_ACCESS_KEY_ID
+        sync: false
+      - key: DEVALAY_R2_SECRET_ACCESS_KEY
+        sync: false
+      - key: DEVALAY_R2_BUCKET
+        sync: false
+      - key: DEVALAY_R2_PUBLIC_BASE_URL
+        sync: false
+      - key: DEVALAY_ANTHROPIC_API_KEY
+        sync: false
+      - key: DEVALAY_GOOGLE_PLAY_SERVICE_ACCOUNT_JSON
+        sync: false
+      - key: DEVALAY_SEED_ON_START
+        value: "1"
+      - key: WEB_CONCURRENCY
+        value: "2"
