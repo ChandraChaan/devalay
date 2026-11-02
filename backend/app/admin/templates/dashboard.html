@@ -1,0 +1,41 @@
+{% extends "sqladmin/layout.html" %}
+{% block content %}
+<div class="container-xl">
+  <div class="page-header mb-3"><h2 class="page-title">🛕 Devalay overview</h2></div>
+  <div class="row row-cards">
+    {% for label, key in [("Users", "users"), ("New this week", "new_users_7d"), ("Premium", "premium"),
+                          ("Tracks", "tracks"), ("Texts", "texts"), ("Books", "books"), ("Gita verses", "verses"),
+                          ("Wallpapers", "wallpapers"), ("Videos", "videos"), ("Favourites", "favorites"),
+                          ("AI requests today", "ai_today"), ("…served by Claude", "ai_claude_today")] %}
+    <div class="col-sm-6 col-lg-3">
+      <div class="card card-sm"><div class="card-body">
+        <div class="text-secondary">{{ label }}</div>
+        <div class="h1 mb-0">{{ stats[key] }}</div>
+      </div></div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="row row-cards mt-2">
+    <div class="col-lg-4"><div class="card"><div class="card-header"><h3 class="card-title">Most played</h3></div>
+      <table class="table card-table">{% for t, n in top_tracks %}<tr><td>{{ t }}</td><td class="text-end">{{ n }}</td></tr>{% endfor %}</table>
+    </div></div>
+    <div class="col-lg-4"><div class="card"><div class="card-header"><h3 class="card-title">Top wallpapers</h3></div>
+      <table class="table card-table">{% for t, n in top_walls %}<tr><td>{{ t }}</td><td class="text-end">{{ n }}</td></tr>{% endfor %}</table>
+    </div></div>
+    <div class="col-lg-4"><div class="card"><div class="card-header"><h3 class="card-title">AI usage, 14 days</h3></div>
+      <table class="table card-table">{% for d, n in ai_days %}<tr><td>{{ d }}</td><td class="text-end">{{ n }}</td></tr>{% else %}<tr><td class="text-secondary">No requests yet</td></tr>{% endfor %}</table>
+    </div></div>
+  </div>
+
+  <div class="card mt-3"><div class="card-header"><h3 class="card-title">Configuration</h3></div>
+    <div class="card-body">
+      <span class="badge bg-blue-lt me-2">env: {{ config.env }}</span>
+      <span class="badge bg-blue-lt me-2">storage: {{ config.storage }}</span>
+      <span class="badge {{ 'bg-green-lt' if config.ai else 'bg-yellow-lt' }} me-2">AI: {{ config.model if config.ai else 'offline generators' }}</span>
+      <span class="badge {{ 'bg-green-lt' if config.billing else 'bg-yellow-lt' }} me-2">Play billing: {{ 'configured' if config.billing else 'not configured' }}</span>
+      <span class="badge {{ 'bg-green-lt' if config.smtp else 'bg-yellow-lt' }} me-2">Email: {{ 'configured' if config.smtp else 'not configured' }}</span>
+    </div>
+  </div>
+</div>
+{% endblock %}

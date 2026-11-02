@@ -1,0 +1,26 @@
+# Python
+backend/.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+backend/devalay.db
+backend/data/*.bsp
+backend/media/*
+!backend/media/seed/
+
+# Secrets
+.env
+*.env.local
+*.jks
+*.keystore
+key.properties
+service-account*.json
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
+*.iml

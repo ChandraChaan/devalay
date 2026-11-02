@@ -1,0 +1,21 @@
+{% extends "sqladmin/layout.html" %}
+{% block content %}
+<div class="container-xl">
+  <div class="page-header mb-3"><h2 class="page-title">Upload media</h2></div>
+  <div class="card"><div class="card-body">
+    <p class="text-secondary">Upload only content you own or that is public domain / openly licensed. Record the
+      licence and attribution on the item that uses it.</p>
+    {% if error %}<div class="alert alert-danger">{{ error }}</div>{% endif %}
+    {% if message %}<div class="alert alert-success">{{ message }}<br><code>{{ url }}</code></div>{% endif %}
+    <form method="post" enctype="multipart/form-data">
+      <div class="mb-3"><label class="form-label">Folder</label>
+        <select name="folder" class="form-select">{% for f in folders %}<option>{{ f }}</option>{% endfor %}</select>
+      </div>
+      <div class="mb-3"><label class="form-label">File (audio, image, video or PDF, max 200 MB)</label>
+        <input type="file" name="file" class="form-control" required>
+      </div>
+      <button class="btn btn-primary" type="submit">Upload</button>
+    </form>
+  </div></div>
+</div>
+{% endblock %}

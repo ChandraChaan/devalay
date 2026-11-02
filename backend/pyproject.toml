@@ -1,0 +1,36 @@
+[project]
+name = "devalay-backend"
+version = "1.0.0"
+description = "Devalay devotional app backend: FastAPI, PostgreSQL, Panchang engine, admin dashboard"
+requires-python = ">=3.12"
+license = "MIT"
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+extend-exclude = ["alembic/versions"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "S", "SIM"]
+ignore = [
+  "B008",   # FastAPI Depends() in defaults
+  "S311",   # random is fine for non-crypto choices
+  "S101",   # asserts in tests
+  "S105",   # false positives on token_type="bearer"
+  "UP040",
+  "UP046",
+  "B905",   # zip() over equal-length sequences
+  "SIM108",
+  "SIM905",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S", "E501"]
+"scripts/*" = ["S603", "S607", "S108", "E501"]
+"app/seed/*" = ["E501"]
+"app/services/rashifal.py" = ["E501"]
+"app/services/festivals.py" = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning"]

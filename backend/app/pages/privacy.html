@@ -1,0 +1,49 @@
+{% extends "_base.html" %}
+{% block title %}Privacy policy · Devalay{% endblock %}
+{% block body %}
+<h1>Privacy policy</h1>
+<p class="muted">Applies to the Devalay Android app and its backend service.</p>
+
+<h2>The short version</h2>
+<ul>
+  <li>You can use Devalay fully without an account.</li>
+  <li>No ads, no advertising IDs, no third-party analytics or tracking SDKs.</li>
+  <li>We never sell or share your personal data.</li>
+  <li>You can delete your account and all its data from inside the app at any time.</li>
+</ul>
+
+<h2>What we collect</h2>
+<ul>
+  <li><strong>Account (optional):</strong> email, a hashed password, display name, language, chosen deity and rashi,
+    and your synced favourites.</li>
+  <li><strong>Device identifier for guests:</strong> a random ID created by the app, stored only as a keyed hash, used
+    to apply daily limits to AI features.</li>
+  <li><strong>Location (optional):</strong> if you allow it, the app sends coarse coordinates (rounded to about 10 km)
+    to compute sunrise and Panchang timings. They are not stored.</li>
+  <li><strong>Purchases:</strong> if you subscribe, Google Play handles payment. We store a hashed purchase token,
+    product and expiry to unlock Premium. We never see card or UPI details.</li>
+  <li><strong>Usage counters:</strong> anonymous play and download counts per item, not linked to you.</li>
+</ul>
+
+<h2>AI features</h2>
+<p>When AI is enabled, the text you enter for AI Status or a Gita question is sent to Anthropic (Claude) to generate
+a reply. Do not include personal information you do not want processed. Requests are not used to build a profile
+of you. When AI is not enabled, everything is generated on our server without third parties.</p>
+
+<h2>On your device</h2>
+<p>Favourites, downloads, settings, japa counts and Mandir preferences are stored locally. Downloads stay in the app's
+private storage and are removed if you uninstall the app.</p>
+
+<h2>Retention and deletion</h2>
+<p>Account data is kept until you delete your account (Profile → Delete account), which permanently removes it.
+Operational logs are kept for at most 30 days.</p>
+
+<h2>Security</h2>
+<p>All traffic uses HTTPS. Passwords are hashed with Argon2. Sessions use short-lived tokens with rotation.</p>
+
+<h2>Children</h2>
+<p>Devalay is suitable for all ages and does not knowingly collect personal data from children.</p>
+
+<h2>Contact</h2>
+<p>Questions or requests: <a href="mailto:{{ settings.contact_email }}">{{ settings.contact_email }}</a></p>
+{% endblock %}

@@ -1,0 +1,11 @@
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+devalay.db
+data/*.bsp
+media/*
+!media/seed
+tests
+.env

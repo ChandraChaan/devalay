@@ -1,0 +1,27 @@
+# Local stack: PostgreSQL + API (+ admin at http://localhost:8000/admin)
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: devalay
+      POSTGRES_PASSWORD: devalay
+      POSTGRES_DB: devalay
+    ports: ["5432:5432"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "devalay"]
+      interval: 5s
+      retries: 10
+  api:
+    build: ./backend
+    depends_on:
+      db: { condition: service_healthy }
+    environment:
+      DEVALAY_ENV: development
+      DEVALAY_DATABASE_URL: postgresql+psycopg://devalay:devalay@db:5432/devalay
+      DEVALAY_SECRET_KEY: local-dev-only-secret-change-me-in-production
+      DEVALAY_PUBLIC_BASE_URL: http://localhost:8000
+      DEVALAY_SEED_ON_START: "1"
+    ports: ["8000:8000"]
+volumes:
+  pgdata:
