@@ -18,6 +18,7 @@ import '../core/providers.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
 import '../widgets/common.dart';
+import 'status_maker.dart';
 
 class WallpapersScreen extends ConsumerStatefulWidget {
   const WallpapersScreen({super.key});
@@ -187,6 +188,74 @@ class _WallpaperDetailScreenState extends ConsumerState<WallpaperDetailScreen> {
     );
   }
 
+  /// Ready-made Telugu (and Hindi/English) lines to write on the picture, or the user's own.
+  static const _blessings = {
+    'te': [
+      'ఓం నమః శివాయ',
+      'ఓం నమో వేంకటేశాయ',
+      'శ్రీరామ జయం',
+      'జై హనుమాన్',
+      'శుభోదయం 🙏',
+      'శుభ సోమవారం 🙏',
+      'సర్వే జనాః సుఖినో భవంతు',
+    ],
+    'hi': ['ॐ नमः शिवाय', 'जय श्री राम', 'जय हनुमान', 'सुप्रभात 🙏', 'हर हर महादेव', 'सर्वे भवन्तु सुखिनः'],
+    'en': ['Om Namah Shivaya', 'Jai Shri Ram', 'Good morning 🙏', 'Have a blessed day', 'Sarve Bhavantu Sukhinah'],
+  };
+
+  void _addText() {
+    final lang = uiLang(ref);
+    final custom = TextEditingController();
+    void open(String text) {
+      Navigator.pop(context);
+      if (text.trim().isEmpty) return;
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (_) => StatusComposer(text: text.trim(), deity: 'general', image: widget.wallpaper.imageUrl),
+        ),
+      );
+    }
+
+    showModalBottomSheet(
+      context: context,
+      showDragHandle: true,
+      isScrollControlled: true,
+      builder: (ctx) => Padding(
+        padding: EdgeInsets.fromLTRB(16, 0, 16, 16 + MediaQuery.viewInsetsOf(ctx).bottom),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: [
+                for (final b in _blessings[lang] ?? _blessings['en']!)
+                  ActionChip(
+                    label: Text(b, style: const TextStyle(fontSize: 16)),
+                    onPressed: () => open(b),
+                  ),
+              ],
+            ),
+            const SizedBox(height: 12),
+            TextField(
+              controller: custom,
+              maxLength: 120,
+              decoration: InputDecoration(
+                hintText: t3(lang, 'Or write your own', 'या अपना लिखें', 'లేదా మీరే రాయండి'),
+                suffixIcon: IconButton(
+                  icon: const Icon(Icons.arrow_forward_rounded),
+                  onPressed: () => open(custom.text),
+                ),
+              ),
+              onSubmitted: open,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final w = widget.wallpaper;
@@ -228,6 +297,15 @@ class _WallpaperDetailScreenState extends ConsumerState<WallpaperDetailScreen> {
                   Attribution(w, light: true),
                   const SizedBox(height: 12),
                   if (_busy) const LinearProgressIndicator(),
+                  SizedBox(
+                    width: double.infinity,
+                    child: FilledButton.tonalIcon(
+                      onPressed: _busy ? null : _addText,
+                      icon: const Icon(Icons.text_fields_rounded),
+                      label: Text(l3(ref, 'Add a blessing', 'आशीर्वचन लिखें', 'తెలుగు శుభాకాంక్ష రాయండి')),
+                    ),
+                  ),
+                  const SizedBox(height: 8),
                   Row(
                     children: [
                       Expanded(

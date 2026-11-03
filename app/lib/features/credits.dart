@@ -15,6 +15,8 @@ class CreditsScreen extends StatelessWidget {
         'The Song Celestial, tr. Sir Edwin Arnold (1885); The Ramayan of Valmiki, tr. R. T. H. Griffith (1870-74); '
             'Maha-bharata, condensed by R. C. Dutt (1898); The Upanishads, tr. Swami Paramananda (1919). '
             'All public domain, from Project Gutenberg.',
+        'Telugu and Carnatic recordings by M.S. Subbulakshmi, Dr. M. Balamuralikrishna and P.B. Sreenivas, '
+            'published by Saregama under CC BY 3.0 (via Wikimedia Commons); audio extracted, otherwise unchanged.',
         'Hanuman Chalisa and Shri Ramchandra Kripalu by Goswami Tulsidas, traditional aartis, Vedic and Puranic mantras: '
             'public domain. Meanings are original summaries written for Devalay.',
       ],

@@ -213,9 +213,12 @@ class _StatusMakerScreenState extends ConsumerState<StatusMakerScreen> {
 
 /// Composes the status text over sacred art and exports it as a 1080x1920 image.
 class StatusComposer extends ConsumerStatefulWidget {
-  const StatusComposer({super.key, required this.text, required this.deity});
+  const StatusComposer({super.key, required this.text, required this.deity, this.image});
   final String text;
   final String deity;
+
+  /// A wallpaper to write on; it becomes the first background.
+  final String? image;
   @override
   ConsumerState<StatusComposer> createState() => _StatusComposerState();
 }
@@ -266,8 +269,48 @@ class _StatusComposerState extends ConsumerState<StatusComposer> {
     }
   }
 
+  void _setAsWallpaper() {
+    final lang = uiLang(ref);
+    showModalBottomSheet(
+      context: context,
+      showDragHandle: true,
+      builder: (ctx) => SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            for (final (target, label, icon) in [
+              (1, t3(lang, 'Home screen', 'होम स्क्रीन', 'హోమ్ స్క్రీన్'), Icons.home_rounded),
+              (2, t3(lang, 'Lock screen', 'लॉक स्क्रीन', 'లాక్ స్క్రీన్'), Icons.lock_rounded),
+              (3, t3(lang, 'Both', 'दोनों', 'రెండూ'), Icons.phone_android_rounded),
+            ])
+              ListTile(
+                leading: Icon(icon),
+                title: Text(label),
+                onTap: () async {
+                  Navigator.pop(ctx);
+                  setState(() => _busy = true);
+                  try {
+                    final f = await _render();
+                    await NativeBridge.setWallpaper(f.path, target);
+                    if (mounted) {
+                      toast(context, t3(lang, 'Wallpaper set 🙏', 'वॉलपेपर लग गया 🙏', 'వాల్‌పేపర్ పెట్టాం 🙏'));
+                    }
+                  } catch (e) {
+                    if (mounted) toast(context, 'Could not set: $e');
+                  } finally {
+                    if (mounted) setState(() => _busy = false);
+                  }
+                },
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    final lang = uiLang(ref);
     final walls =
         ref
             .watch(
@@ -276,12 +319,14 @@ class _StatusComposerState extends ConsumerState<StatusComposer> {
             .value ??
         const <Wallpaper>[];
     final backgrounds = [
+      if (widget.image != null) ('w', const <Color>[], widget.image!),
       for (final g in _gradients) ('g', g, ''),
-      for (final w in walls.take(6)) ('w', const <Color>[], w.imageUrl),
+      for (final w in walls.take(6))
+        if (w.imageUrl != widget.image) ('w', const <Color>[], w.imageUrl),
     ];
     final current = backgrounds[_bg.clamp(0, backgrounds.length - 1)];
     return Scaffold(
-      appBar: AppBar(title: const Text('Status')),
+      appBar: AppBar(title: Text(t3(lang, 'Status', 'स्टेटस', 'స్టేటస్'))),
       body: Column(
         children: [
           Expanded(
@@ -334,6 +379,7 @@ class _StatusComposerState extends ConsumerState<StatusComposer> {
                                     widget.text,
                                     textAlign: TextAlign.center,
                                     style: const TextStyle(
+                                      fontFamilyFallback: uiFontFallback,
                                       color: Colors.white,
                                       fontSize: 24,
                                       height: 1.45,
@@ -384,15 +430,23 @@ class _StatusComposerState extends ConsumerState<StatusComposer> {
                   child: OutlinedButton.icon(
                     onPressed: _busy ? null : _save,
                     icon: const Icon(Icons.download_rounded),
-                    label: const Text('Save'),
+                    label: Text(t3(lang, 'Save', 'सेव', 'సేవ్')),
                   ),
                 ),
-                const SizedBox(width: 12),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: OutlinedButton.icon(
+                    onPressed: _busy ? null : _setAsWallpaper,
+                    icon: const Icon(Icons.wallpaper_rounded),
+                    label: Text(t3(lang, 'Wallpaper', 'वॉलपेपर', 'వాల్‌పేపర్')),
+                  ),
+                ),
+                const SizedBox(width: 8),
                 Expanded(
                   child: FilledButton.icon(
                     onPressed: _busy ? null : _share,
                     icon: const Icon(Icons.share_rounded),
-                    label: const Text('Share'),
+                    label: Text(t3(lang, 'Share', 'शेयर', 'షేర్')),
                   ),
                 ),
               ],

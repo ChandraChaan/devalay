@@ -4,6 +4,7 @@ import 'package:timezone/data/latest_all.dart' as tzdata;
 import 'package:timezone/timezone.dart' as tz;
 
 import 'models.dart';
+import 'telugu.dart';
 
 /// On-device reminders: daily prayer and festival reminders are scheduled with the
 /// Android alarm manager and work offline. Push announcements from the Firebase
@@ -64,20 +65,68 @@ class Notifications {
     return t;
   }
 
+  /// One reminder per weekday at the chosen time, naming that day's deity
+  /// ("Monday: Shiva's songs"); Telugu homes keep Saturday for Venkateswara.
   static Future<void> scheduleDaily(int hour, int minute, {required String lang}) async {
-    await _plugin.cancel(id: _dailyId);
-    await _plugin.zonedSchedule(
-      id: _dailyId,
-      scheduledDate: _next(hour, minute),
-      notificationDetails: const NotificationDetails(android: _daily),
-      androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
-      title: lang == 'hi' ? '🪔 प्रार्थना का समय' : '🪔 Time for prayer',
-      body: lang == 'hi' ? 'दीप जलाएँ, आज का पंचांग और गीता श्लोक देखें।' : "Light a diya and read today's Gita verse.",
-      matchDateTimeComponents: DateTimeComponents.time,
-    );
+    await cancelDaily();
+    final now = tz.TZDateTime.now(tz.local);
+    for (var wd = 0; wd < 7; wd++) {
+      var when = _next(hour, minute);
+      while (when.weekday - 1 != wd) {
+        when = when.add(const Duration(days: 1));
+      }
+      if (!when.isAfter(now)) when = when.add(const Duration(days: 7));
+      final (title, body) = _weekdayMessage(wd, lang);
+      await _plugin.zonedSchedule(
+        id: _dailyId + wd,
+        scheduledDate: when,
+        notificationDetails: const NotificationDetails(android: _daily),
+        androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+        title: title,
+        body: body,
+        matchDateTimeComponents: DateTimeComponents.dayOfWeekAndTime,
+      );
+    }
   }
 
-  static Future<void> cancelDaily() => _plugin.cancel(id: _dailyId);
+  static (String, String) _weekdayMessage(int wd, String lang) {
+    switch (lang) {
+      case 'te':
+        const deity = [
+          'శివుని',
+          'ఆంజనేయ స్వామి',
+          'వినాయకుని',
+          'శ్రీ మహావిష్ణువు',
+          'లక్ష్మీదేవి',
+          'శ్రీ వేంకటేశ్వర స్వామి',
+          'సూర్యభగవానుని',
+        ];
+        return (
+          '🪔 ${teluguWeekdays[wd]} · ${deity[wd]} పాటలు',
+          'ఈ రోజు ${deity[wd]} భక్తి పాటలు వినండి, దీపం వెలిగించండి. నేటి పంచాంగం కూడా చూడండి.',
+        );
+      case 'hi':
+        const day = ['सोमवार', 'मंगलवार', 'बुधवार', 'गुरुवार', 'शुक्रवार', 'शनिवार', 'रविवार'];
+        const deity = ['शिव जी', 'हनुमान जी', 'गणेश जी', 'विष्णु जी', 'माँ लक्ष्मी', 'शनि देव', 'सूर्य देव'];
+        return (
+          '🪔 ${day[wd]} · ${deity[wd]} के भजन',
+          'आज ${deity[wd]} के भजन सुनें, दीप जलाएँ और आज का पंचांग देखें।',
+        );
+      default:
+        const day = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+        const deity = ['Shiva', 'Hanuman', 'Ganesha', 'Vishnu', 'Lakshmi', 'Shani Dev', 'Surya'];
+        return (
+          "🪔 ${day[wd]} · ${deity[wd]}'s songs",
+          "Listen to ${deity[wd]}'s bhajans, light a diya and see today's Panchang.",
+        );
+    }
+  }
+
+  static Future<void> cancelDaily() async {
+    for (var wd = 0; wd < 7; wd++) {
+      await _plugin.cancel(id: _dailyId + wd);
+    }
+  }
 
   static Future<void> scheduleFestivals(List<Festival> festivals, {required String lang}) async {
     await cancelFestivals();

@@ -8,6 +8,7 @@ import 'core/models.dart';
 import 'core/storage.dart';
 import 'core/theme.dart';
 import 'features/ask_gita.dart';
+import 'features/bhakti_videos.dart';
 import 'features/auth_screens.dart';
 import 'features/books.dart';
 import 'features/credits.dart';
@@ -104,6 +105,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/calendar', builder: (_, _) => const CalendarScreen()),
       GoRoute(path: '/japa', builder: (_, _) => const JapaScreen()),
       GoRoute(path: '/videos', builder: (_, _) => const VideosScreen()),
+      GoRoute(path: '/bhakti-videos', builder: (_, _) => const BhaktiVideosScreen()),
       GoRoute(
         path: '/video',
         builder: (_, s) => VideoPlayerScreen(video: s.extra! as Video),

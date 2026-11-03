@@ -258,7 +258,7 @@ class _QuickActions extends ConsumerWidget {
       ('🔔', 'ringtones', '/ringtones', false),
       ('📅', 'calendar', '/calendar', false),
       ('🙋', 'ask_gita', '/ask', false),
-      ('🎬', 'videos', '/videos', false),
+      ('🎬', 'videos', '/bhakti-videos', false),
       ('🗓️', 'panchang', '/panchang', false),
       ('🖼️', 'wallpapers', '/wallpapers', false),
       ('🎵', 'listen', '/listen', true),

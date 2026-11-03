@@ -55,10 +55,34 @@ Temple bell, ghanti, shankh, Om drone, tanpura, bansuri (raga Bhupali phrase), d
 
 CC BY-SA and Free Art License recordings may be redistributed (including commercially) with attribution, and adaptations must keep the same licence. Devalay streams them unmodified with credit.
 
+## Telugu and Carnatic recordings (CC BY 3.0)
+
+Saregama published these recordings on its "Saregama Carnatic Classical" YouTube channel under CC BY 3.0. They were imported to Wikimedia Commons, where the licence was reviewed. Devalay extracted the audio track (AAC, 80 kbps) and made no other changes. The files are hosted as assets of the `media-telugu-v1` GitHub release.
+
+| Title | Licence | Credit | Source |
+|---|---|---|---|
+| Brahma Kadigina Paadamu (Annamacharya) | CC BY 3.0 | M.S. Subbulakshmi · Saregama | [Commons](https://commons.wikimedia.org/wiki/File:Brahma_Kadigina_Paadamu_By_MS_Subbulakshmi_with_Lyrics_-_Annamacharya_Keerthis.webm) |
+| Jo Achyutananda (Annamacharya) | CC BY 3.0 | M.S. Subbulakshmi · Saregama | [Commons](https://commons.wikimedia.org/wiki/File:Jo_Achyutananda_With_Lyrics_By_M_S_Subbulakshmi_-_Sri_Annamacharya_Samkirtanas.webm) |
+| Shriman Narayana (Annamacharya) | CC BY 3.0 | M.S. Subbulakshmi · Saregama | [Commons](https://commons.wikimedia.org/wiki/File:Shriman_Narayana_with_Lyrics_by_MS_Subbalakshmi_-_Annamacharya_Keerthis.webm) |
+| Srinivasa Thiruvenkata | CC BY 3.0 | M.S. Subbulakshmi · Saregama | [Commons](https://commons.wikimedia.org/wiki/File:Srinivasa_Thiruvenkata_Carnatic_Song_with_Lyrics_M_S_Subbulakshmi_Carnatic_Vocal.webm) |
+| Nagumomu (Tyagaraja) | CC BY 3.0 | M.S. Subbulakshmi, Radha Vishwanathan · Saregama | [Commons](https://commons.wikimedia.org/wiki/File:Nagumomu_-_Lyrical_Video_-_Samarpanam_-_M.S._Subbulakshmi%2C_Radha_Vishwanathan_-_Tamil_Carnatic_Music.webm) |
+| Siva Panchakshara Stotram & Shiva stotras | CC BY 3.0 | M.S. Subbulakshmi · Saregama | [Commons](https://commons.wikimedia.org/wiki/File:Most_Powerful_Shivan_Song_-_M.S._Subbulakshmi_-_Siva_Panchakshara_Stotram_-_Carnatic_Classical_Music.webm) |
+| Ganesha Pancharatnam & Ganesha bhajans | CC BY 3.0 | M.S. Subbulakshmi · Saregama | [Commons](https://commons.wikimedia.org/wiki/File:Ganesh_Chaturthi_Special_Bhajan%2C_M.S._Subbulakshmi%2C_Ganesha_Pancharatnam%2C_Carnatic_Classical_Music.webm) |
+| Morning stotrams: Ganesha Pancharatnam, Lakshmi Ashtothram | CC BY 3.0 | M.S. Subbulakshmi · Saregama | [Commons](https://commons.wikimedia.org/wiki/File:Top_5_Morning_Stotram_-_M.S_Subbulakshmi_-_Ganesa_Pancharatnam_-_Lakshmi_Ashtothram_-_Carnatic_Music.webm) |
+| Bhadrachala Ramadasu keerthanas | CC BY 3.0 | Dr. M. Balamuralikrishna · Saregama | [Commons](https://commons.wikimedia.org/wiki/File:Popular_Shri_Ram_Bhajans_-_Dr._M._Balamuralikrishna_-_Sri_Bhadrachala_Ramadasu_-_Carnatic_Music.webm) |
+| Ramadasu keerthanas, part 2 | CC BY 3.0 | Dr. M. Balamuralikrishna · Saregama | [Commons](https://commons.wikimedia.org/wiki/File:Sri_Bhadrachala_Ramadas_Keerthanams_-_Dr._M._Balamuralikrishna_-_Devotional_Songs_-_Carnatic_Music.webm) |
+| Annamacharya keerthanas | CC BY 3.0 | M.S. Subbulakshmi · Saregama | [Commons](https://commons.wikimedia.org/wiki/File:Annamacharya%27s_Greatest_Hits_Collection_-_M.S._Subblakshmi_-_Namo_Narayanaya_-_Carnatic_Music.webm) |
+| Annamacharya samkirtanas | CC BY 3.0 | M.S. Subbulakshmi, Radha Vishwanathan · Saregama | [Commons](https://commons.wikimedia.org/wiki/File:Sri_Annamacharya_Samkirtanas_-_M.S._Subbulakshmi_-_Radha_Vishwanathan_-_Carnatic_Classical_Music.webm) |
+| Bhaja Govindam & Krishna bhajans | CC BY 3.0 | M.S. Subbulakshmi · Saregama | [Commons](https://commons.wikimedia.org/wiki/File:Popular_Shri_Krishna_Bhajan_-_M.S._Subbulakshmi_-_Bhaja_Govindam_-_Sikshashtakam_-_Carnatic_Music.webm) |
+| P.B. Sreenivas devotional songs (Hanuman Chalisa) | CC BY 3.0 | P.B. Sreenivas · Saregama | [Commons](https://commons.wikimedia.org/wiki/File:Best_of_P.B._Sreenivas_Devotional_Hits_-_Sri_Krishna_Ashtaga_-_Sri_Hanuman_Chalisa_-_Carnatic_Music.webm) |
+| Shiva keerthanas | CC BY 3.0 | M.S. Subbulakshmi · Saregama | [Commons](https://commons.wikimedia.org/wiki/File:Songs_of_Lord_Shiva_by_M_S_Subbulakshmi_-_Jaya_Jaya_Sankara_-_Nagendra_Harya_-_Carnatic_Music.webm) |
+| Vishnu keerthanas | CC BY 3.0 | M.S. Subbulakshmi, Radha Vishwanathan · Saregama | [Commons](https://commons.wikimedia.org/wiki/File:Sacred_Melodies_of_Lord_Vishnu_-_M.S._Subbulakshmi%2C_Radha_Viswanathan_-_Carnatic_Classical_Music.webm) |
+
 ## Images (wallpapers and deity portraits)
 
 | Title | Licence | Credit | Source |
 |---|---|---|---|
+| Venkateswara Swamy | CC0 | Bhavna1359 | [Commons](https://commons.wikimedia.org/wiki/File:Tirupati_Balaji_from_delhi_2023.jpg) |
 | Shankar | Public domain | ravi varma press | [Commons](https://commons.wikimedia.org/wiki/File:A_version_from_the_Ravi_Varma_press-_%22Shankar,%22_c.1910%27s.jpg) |
 | Shiva, Parvati and Nandi | Public domain | Raja Ravi Varma (1848-1906) | [Commons](https://commons.wikimedia.org/wiki/File:An_Oleograph_of_Shiva,_Parvati_and_Nandi_by_Raja_Ravi_Varma.jpg) |
 | Shiva Parvati | Public domain | anonymous, may be Raja Ravi Varma | [Commons](https://commons.wikimedia.org/wiki/File:Siva-parvati-by-raja-ravi-varma.jpg) |
@@ -108,9 +132,10 @@ CC BY-SA and Free Art License recordings may be redistributed (including commerc
 
 ## Fonts and data
 
-- Mukta (Ek Type) and Tiro Devanagari Sanskrit (Tiro Typeworks): SIL Open Font License 1.1 (`app/assets/fonts/OFL-*.txt`).
+- Mukta (Ek Type), Tiro Devanagari Sanskrit and Tiro Telugu (Tiro Typeworks), and Noto Sans Telugu (Google): SIL Open Font License 1.1 (`app/assets/fonts/OFL-*.txt`).
 - NASA JPL DE421 planetary ephemeris: public domain (US Government work). Skyfield: MIT.
 
 ## Trademarks
 
 Devalay is an independent, original app. It is not affiliated with or endorsed by any other devotional app, temple trust or publisher, and uses none of their names, logos, artwork, recordings or text.
+

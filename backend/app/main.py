@@ -79,6 +79,11 @@ def health():
     return {"status": "ok", "ai": ai.ai_enabled(), "version": app.version}
 
 
+VIDEO_CHANNELS = [
+    {"id": "UCS2Y83GD-fc7qqgNW5uj41g", "name": "SVBC TTD", "name_te": "ఎస్వీబీసీ (టీటీడీ)", "name_hi": "SVBC TTD"},
+]
+
+
 @app.get(f"{API}/config", tags=["meta"])
 def public_config():
     """Feature flags the app reads at start-up."""
@@ -88,6 +93,9 @@ def public_config():
         "min_supported_build": 1,
         "privacy_url": f"{settings.public_base_url}/privacy",
         "terms_url": f"{settings.public_base_url}/terms",
+        # Official devotional YouTube channels for the Bhakti videos feed (played in YouTube's own
+        # embedded player). Edit here to add channels; the app reads the list at start-up.
+        "video_channels": VIDEO_CHANNELS,
     }
 
 
