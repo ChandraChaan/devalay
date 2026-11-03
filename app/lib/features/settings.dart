@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -188,10 +189,20 @@ class SettingsScreen extends ConsumerWidget {
               if (context.mounted) toast(context, 'Cache cleared');
             },
           ),
-          const ListTile(
-            leading: Icon(Icons.info_outline_rounded),
-            title: Text('Devalay 1.0.0'),
-            subtitle: Text('No ads · No trackers · Open source'),
+          ListTile(
+            leading: const Icon(Icons.info_outline_rounded),
+            title: FutureBuilder(
+              future: PackageInfo.fromPlatform(),
+              builder: (_, s) => Text('Devalay ${s.data?.version ?? ''}'),
+            ),
+            subtitle: Text(
+              t3(
+                lang,
+                'No ads · No analytics · Open source',
+                'विज्ञापन नहीं · एनालिटिक्स नहीं · ओपन सोर्स',
+                'ప్రకటనలు లేవు · అనలిటిక్స్ లేవు · ఓపెన్ సోర్స్',
+              ),
+            ),
           ),
           const SizedBox(height: 24),
         ],

@@ -7,7 +7,7 @@
 <h2>The short version</h2>
 <ul>
   <li>You can use Devalay fully without an account.</li>
-  <li>No ads, no advertising IDs, no third-party analytics or tracking SDKs.</li>
+  <li>No ads, no advertising IDs and no analytics. Crash reports (Firebase Crashlytics) are used only to fix bugs.</li>
   <li>We never sell or share your personal data.</li>
   <li>You can delete your account and all its data from inside the app at any time.</li>
 </ul>
@@ -24,6 +24,38 @@
     product and expiry to unlock Premium. We never see card or UPI details.</li>
   <li><strong>Usage counters:</strong> anonymous play and download counts per item, not linked to you.</li>
 </ul>
+
+<h2>Crash reports, notifications and updates (Google Firebase)</h2>
+
+<p>The Android app uses three Google Firebase services, run by Google under the
+
+<a href="https://firebase.google.com/support/privacy">Firebase privacy terms</a>:</p>
+
+<ul>
+
+  <li><b>Crashlytics:</b> if the app crashes, it sends the error trace, device model, Android version, app version and
+
+    a random Firebase installation ID so we can fix the bug. No name, email, contacts or location are included.</li>
+
+  <li><b>Cloud Messaging:</b> a push token, used to deliver festival greetings and announcements. The app subscribes to an
+
+    "everyone" topic and one for your app language; we cannot see who you are.</li>
+
+  <li><b>Remote Config:</b> the app checks whether an important update is required. This uses the same installation ID.</li>
+
+</ul>
+
+<p>You can turn notifications off in Android settings at any time.</p>
+
+
+<h2>Videos</h2>
+
+<p>Bhakti videos play inside YouTube's own embedded player (privacy-enhanced mode, youtube-nocookie.com). YouTube may
+
+process data about your viewing under the <a href="https://policies.google.com/privacy">Google privacy policy</a>. Devalay
+
+does not receive or store your viewing history.</p>
+
 
 <h2>AI features</h2>
 <p>When AI is enabled, the text you enter for AI Status or a Gita question is sent to Anthropic (Claude) to generate

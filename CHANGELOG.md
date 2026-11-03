@@ -3,6 +3,37 @@
 Each milestone is a git tag and a [GitHub release](https://github.com/ChandraChaan/devalay/releases). Releases from
 v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the section below that matches the tag.
 
+## v1.1.0 — 2026-11-03
+
+Devalay in Telugu, for the whole family.
+
+- **Telugu everywhere:** Telugu is now the default language, alongside Hindi and English. Shlokas and the Gita appear
+  in Telugu script, and the bundled Noto Sans Telugu and Tiro Telugu fonts keep text clear.
+- **Telugu Panchangam:**
+  - Samvatsaram, masam, paksham, ayanam and ruthuvu.
+  - Good times: Abhijit, Amrit Kalam and Brahma muhurtham.
+  - Times to avoid: Rahu Kalam, Yamagandam, Durmuhurtham, Varjyam and Gulika.
+  - Checked against Drik Panchang for Hyderabad. Covers 19 more Andhra Pradesh and Telangana cities, 47 cities in
+    all.
+- **Telugu festivals:** Bhogi, Kanuma, Ratha Saptami, Varalakshmi Vratam, Engili Pula and Saddula Bathukamma, Atla
+  Taddi and Nagula Chavithi. Their 2025 dates match published calendars.
+- **Telugu and Carnatic songs:** 16 recordings, about 7.5 hours: Annamacharya and Ramadasu keerthanas, Tyagaraja
+  kritis and stotrams, by M.S. Subbulakshmi, Dr. M. Balamuralikrishna and P.B. Sreenivas. Saregama released them
+  under CC BY 3.0. Sri Venkateswara Swamy is added as a deity.
+- **A deity for each day:** the home screen shows that day's deity's songs (Telugu homes: Monday Shiva, Saturday
+  Venkateswara), and the morning reminder names the day's deity.
+- **Bhakti videos:** official TTD (SVBC) temple videos in a large swipe-up feed, easy for elders.
+- **Wallpapers with Telugu blessings:** write "ఓం నమః శివాయ" or your own words on sacred art, then set it as the
+  wallpaper or share it.
+- **Looks:** five app colours, warmer light and dark themes, and a side navigation rail on tablets.
+- **Firebase:** Crashlytics crash reports, push announcements (by language topic) and a Remote Config force update.
+- **Fixes:**
+  - The lock-screen and notification player now shows the song title and picture (it showed only
+    "Devalay is running").
+  - The app version in Settings is now correct.
+- **Play Store:** an App Bundle in every release, a Telugu and English listing, screenshots and a closed-testing
+  guide (`docs/PLAY_STORE.md`).
+
 ## v1.0.2 — 2026-11-03
 
 - Onboarding: the Moon-sign chips are now readable. They had rendered as light chips with white text, because the

@@ -14,6 +14,7 @@ import '../core/theme.dart';
 import '../widgets/mandala.dart';
 
 const _deities = [
+  ('venkateswara', 'Venkateswara', 'वेंकटेश्वर', '🙏'),
   ('shiva', 'Mahadev', 'महादेव', '🔱'),
   ('hanuman', 'Hanuman', 'हनुमान', '🚩'),
   ('rama', 'Shri Ram', 'श्री राम', '🏹'),
@@ -147,9 +148,9 @@ class _Welcome extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 24),
-        const Text(
-          'देवालय',
-          style: TextStyle(fontSize: 44, color: Colors.white, fontWeight: FontWeight.w700),
+        Text(
+          lang == 'te' ? 'దేవాలయం' : 'देवालय',
+          style: const TextStyle(fontSize: 44, color: Colors.white, fontWeight: FontWeight.w700),
         ).animate().fadeIn(delay: 300.ms).slideY(begin: 0.3),
         const Text('Devalay', style: TextStyle(fontSize: 18, color: Colors.white70, letterSpacing: 6)),
         const SizedBox(height: 20),

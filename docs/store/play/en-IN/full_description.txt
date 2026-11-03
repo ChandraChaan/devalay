@@ -1,0 +1,32 @@
+Devalay is a small temple for your family, on your phone. Free, no ads, no sign-up.
+
+🎵 Devotional songs that keep playing on the lock screen
+• Annamacharya keerthanas by M.S. Subbulakshmi: Brahma Kadigina Paadamu, Jo Achyutananda, Shriman Narayana
+• Bhadrachala Ramadasu keerthanas by Dr. M. Balamuralikrishna, and Tyagaraja kritis
+• Siva Panchakshara Stotram, Ganesha Pancharatnam, Bhaja Govindam, the Gayatri Mantra and aartis
+• A deity for each day: Monday Shiva, Tuesday Hanuman, Saturday Venkateswara Swamy. That day's songs are on the home screen.
+• Sleep timer, and downloads for offline listening
+
+🗓️ Telugu Panchangam for your city
+• Tithi, vaaram, nakshatram, yogam and karanam, with end times
+• Samvatsaram, masam, paksham, ayanam and ruthuvu
+• Good times: Abhijit muhurtham, Amrit Kalam and Brahma muhurtham
+• Times to avoid: Rahu Kalam, Yamagandam, Durmuhurtham, Varjyam and Gulika
+• 47 cities, including Hyderabad, Vijayawada, Visakhapatnam, Tirupati and Warangal
+• A festival calendar with reminders: Ugadi, Sankranti, Bhogi, Kanuma, Varalakshmi Vratam, Bathukamma, Atla Taddi, Naga Chaturthi, Diwali and more
+
+🎬 Bhakti videos
+• Official TTD (SVBC) temple videos in a simple swipe-up feed that elders find easy
+
+🪔 Virtual Mandir: light a diya, offer flowers, ring the bell, blow the shankh, do aarti
+
+📖 The Bhagavad Gita (all 701 verses) and stotras in Telugu script, plus "Ask the Gita"
+
+🖼️ Wallpapers and statuses: write Telugu blessings such as "Om Namah Shivaya" on sacred art, then set it as your wallpaper or share it on WhatsApp
+
+📿 Japa mala, ♈ Rashifal, 🔔 ringtones
+
+Available in Telugu, Hindi and English, with light and dark themes and five colour choices.
+
+All songs and images are public domain or under open (Creative Commons) licences, credited in the app.
+Open source: https://github.com/ChandraChaan/devalay

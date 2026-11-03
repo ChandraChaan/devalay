@@ -5,8 +5,8 @@
 <h1 align="center">🛕 Devalay · देवालय</h1>
 
 <p align="center">
-  <b>A free, open-source, ad-free Hindu devotional app for Android.</b><br>
-  Aarti and bhajans · the full Bhagavad Gita · an accurate Panchang · a virtual Mandir · japa mala · Rashifal
+  <b>A free, open-source, ad-free Hindu devotional app for Android, in Telugu, Hindi and English.</b><br>
+  Annamayya keerthanas · Telugu Panchangam · temple videos · the Bhagavad Gita · a virtual Mandir · japa mala
 </p>
 
 <p align="center">
@@ -23,25 +23,34 @@
   <a href="https://github.com/ChandraChaan/devalay/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/ChandraChaan/devalay?style=social"></a>
 </p>
 
-Devalay brings the temple to your phone: listen to aarti, mantras and bhajans with lock-screen controls, read all
-701 verses of the Gita in Sanskrit, IAST and English, check today's tithi, nakshatra and Rahu Kaal for your city,
-light a diya in the virtual Mandir, count japa, and make a devotional status to share. It is inspired by apps like
+Devalay brings the temple to your phone. Built for a Telugu family:
+
+- **For grandparents:** official TTD (SVBC) temple videos in a simple swipe-up feed with large Telugu titles.
+- **For the Panchang reader:** a Telugu Panchangam for 47 cities, with samvatsaram, masam, tithi and nakshatram end
+  times, Rahu Kalam, Yamagandam, Durmuhurtham, Varjyam and Amrit Kalam, checked against Drik Panchang. Telugu
+  festivals include Bhogi, Kanuma, Varalakshmi Vratam, Bathukamma, Atla Taddi and Nagula Chavithi.
+- **For the music lover:** Annamacharya and Ramadasu keerthanas by M.S. Subbulakshmi and Balamuralikrishna (CC BY
+  releases by Saregama). They keep playing on the lock screen, and each weekday puts its deity's songs first:
+  Monday Shiva, Saturday Venkateswara.
+
+It also has all 701 verses of the Gita (in Telugu script), Telugu blessings written on wallpapers, a virtual Mandir,
+japa, Rashifal, statuses, and light and dark themes in five colours. It is inspired by apps like
 Sanatan, but Devalay is an **original** app with its own name, design, code and legally sourced content.
 
-- **No ads, no trackers, no sign-up.** It works from the first launch.
+- **No ads, no analytics, no sign-up.** It works from the first launch. Only crash reports (Firebase Crashlytics) are collected, to fix bugs.
 - **No server bill.** The public APK reads a pre-rendered API on GitHub Pages that refreshes daily.
 - **Legal content only.** Every recording, painting and text is public domain or CC-licensed; see
   [CONTENT_LICENSES.md](CONTENT_LICENSES.md).
 
 ## Screenshots
 
-| Home | Mandir | Player | Gita |
+| Home in dark theme | Home with today's Panchang and songs | Telugu Panchangam | Good times and times to avoid |
 |:-:|:-:|:-:|:-:|
-| <img src="docs/screenshots/02-home.jpg" width="200"> | <img src="docs/screenshots/03-mandir.jpg" width="200"> | <img src="docs/screenshots/04-player.jpg" width="200"> | <img src="docs/screenshots/05-gita.jpg" width="200"> |
-| **Panchang** | **Calendar** | **Rashifal** | **Wallpapers** |
-| <img src="docs/screenshots/06-panchang.jpg" width="200"> | <img src="docs/screenshots/07-calendar.jpg" width="200"> | <img src="docs/screenshots/08-rashifal.jpg" width="200"> | <img src="docs/screenshots/09-wallpaper.jpg" width="200"> |
-| **Status maker** | **Ask the Gita** | **Japa mala** | **Welcome** |
-| <img src="docs/screenshots/10-status.jpg" width="200"> | <img src="docs/screenshots/11-ask-gita.jpg" width="200"> | <img src="docs/screenshots/12-japa.jpg" width="200"> | <img src="docs/screenshots/01-welcome.jpg" width="200"> |
+| <img src="docs/screenshots/01-home-dark.jpg" width="200"> | <img src="docs/screenshots/02-home.jpg" width="200"> | <img src="docs/screenshots/03-panchang.jpg" width="200"> | <img src="docs/screenshots/04-timings.jpg" width="200"> |
+| **Annamacharya keerthana playing** | **Temple videos** | **Festival calendar** | **Virtual Mandir** |
+| <img src="docs/screenshots/05-player.jpg" width="200"> | <img src="docs/screenshots/06-videos.jpg" width="200"> | <img src="docs/screenshots/07-calendar.jpg" width="200"> | <img src="docs/screenshots/08-mandir.jpg" width="200"> |
+| **Bhagavad Gita in Telugu script** | **Telugu blessing on a wallpaper** | **Rashifal** | **Colours and themes** |
+| <img src="docs/screenshots/09-gita.jpg" width="200"> | <img src="docs/screenshots/10-wallpaper.jpg" width="200"> | <img src="docs/screenshots/11-rashifal.jpg" width="200"> | <img src="docs/screenshots/12-settings.jpg" width="200"> |
 
 ## Install
 

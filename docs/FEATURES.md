@@ -28,6 +28,6 @@ re-implements the feature set with original code and design and only legally reu
 - Japa mala counter.
 - "Ask the Gita" Q&A grounded in verses.
 - Full scriptures library (four public-domain books, about 2.5 million characters).
-- Account deletion, data-minimal design, no ads or trackers, Hindi and English UI, dark mode.
+- Account deletion, data-minimal design, no ads or analytics (crash reports only), Telugu, Hindi and English UI, light, dark and five app colours.
 - A free public APK that needs no server: content comes from a daily-refreshed static API on GitHub Pages; search,
   Ask the Gita and the status maker run on device. Accounts, sync and Premium need the full server.

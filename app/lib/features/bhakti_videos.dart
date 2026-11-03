@@ -95,7 +95,7 @@ class _BhaktiVideosScreenState extends ConsumerState<BhaktiVideosScreen> {
       appBar: AppBar(
         backgroundColor: Colors.black,
         foregroundColor: Colors.white,
-        title: Text(tr(ref, 'videos')),
+        title: Text(tr(ref, 'videos'), style: const TextStyle(color: Colors.white)),
         actions: [
           TextButton.icon(
             onPressed: () => context.push('/videos'),
@@ -227,10 +227,15 @@ class _VideoPageState extends State<_VideoPage> {
     return Column(
       children: [
         Expanded(
-          child: Center(
-            child: _controller != null
-                ? YoutubePlayer(controller: _controller!, aspectRatio: 16 / 9, enableFullScreenOnVerticalDrag: false)
-                : AspectRatio(aspectRatio: 16 / 9, child: NetImage(thumb)),
+          // Fill the space: YouTube fits both upright Shorts and wide videos inside it.
+          child: LayoutBuilder(
+            builder: (_, c) => _controller != null
+                ? YoutubePlayer(
+                    controller: _controller!,
+                    aspectRatio: c.maxWidth / c.maxHeight,
+                    enableFullScreenOnVerticalDrag: false,
+                  )
+                : NetImage(thumb, fit: BoxFit.contain),
           ),
         ),
         Padding(
