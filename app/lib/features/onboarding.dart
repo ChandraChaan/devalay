@@ -277,8 +277,10 @@ class _CityRashiPage extends ConsumerWidget {
                 label: Text('$symbol ${hi ? hiName : en}'),
                 selected: prefs.rashi == slug,
                 showCheckmark: false,
-                backgroundColor: Colors.white.withValues(alpha: 0.08),
-                selectedColor: Palette.gold,
+                // `color` wins over the theme; backgroundColor alone rendered as a light chip here.
+                color: WidgetStatePropertyAll(
+                  prefs.rashi == slug ? Palette.gold : Colors.white.withValues(alpha: 0.08),
+                ),
                 side: BorderSide(color: prefs.rashi == slug ? Palette.gold : Colors.white24),
                 labelStyle: TextStyle(
                   color: prefs.rashi == slug ? Palette.maroon : Colors.white,

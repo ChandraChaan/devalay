@@ -3,6 +3,12 @@
 Each milestone is a git tag and a [GitHub release](https://github.com/ChandraChaan/devalay/releases). Releases from
 v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the section below that matches the tag.
 
+## v1.0.1 — 2026-11-03
+
+- Onboarding: the Moon-sign chips are now readable (they rendered light with white text).
+- The website now serves search, Ask the Gita and the status maker data at the paths the app requests. This fix
+  reached v1.0.0 installs as well, with no update needed.
+
 ## v1.0.0 — 2026-11-03
 
 The first public release: a free APK that works without any server.
