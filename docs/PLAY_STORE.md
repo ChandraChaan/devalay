@@ -40,11 +40,11 @@ The listing files are in `docs/store/play/`:
 
 | Play field | File |
 |---|---|
-| Short description (≤80 characters) | `te-IN/short_description.txt`, `en-IN/short_description.txt` |
-| Full description (≤4000 characters) | `te-IN/full_description.txt`, `en-IN/full_description.txt` |
+| Short description (≤80 characters; no price words such as "free") | `en-IN/short_description.txt` |
+| Full description (≤4000 characters) | `en-IN/full_description.txt` |
 | App icon 512×512 | `icon-512.png` |
 | Feature graphic 1024×500 | `feature-graphic.png` |
-| Phone screenshots (2–8) | `docs/screenshots/` (Telugu screens) |
+| Phone screenshots (2–8) | `docs/store/play/screenshots/` (English screens, 1080×2160) |
 
 Category: **Lifestyle**. Tags: Religion & spirituality.
 
