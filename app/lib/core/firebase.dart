@@ -88,7 +88,9 @@ final updateProvider = FutureProvider<UpdateInfo>((ref) async {
     // Offline: the last activated values (or defaults) still apply.
   }
   final info = await PackageInfo.fromPlatform();
-  final build = int.tryParse(info.buildNumber) ?? 0;
+  // Compare by version name: per-ABI APKs add 1000/2000/4000 to the build number, so it would
+  // overstate the version. 1.2.3 -> 10203, matching release.yml and min_version_code.
+  final build = versionCodeOf(info.version);
   final fromPlay = info.installerStore == 'com.android.vending';
   return UpdateInfo(
     required: build < rc.getInt('min_version_code'),
@@ -98,3 +100,11 @@ final updateProvider = FutureProvider<UpdateInfo>((ref) async {
     },
   );
 });
+
+int versionCodeOf(String version) {
+  final p = version.split('+').first.split('.').map((s) => int.tryParse(s) ?? 0).toList();
+  while (p.length < 3) {
+    p.add(0);
+  }
+  return p[0] * 10000 + p[1] * 100 + p[2];
+}

@@ -1,3 +1,4 @@
+import 'package:devalay/core/firebase.dart';
 import 'package:devalay/core/telugu.dart';
 import 'package:devalay/features/bhakti_videos.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -26,5 +27,11 @@ void main() {
     expect(v, hasLength(1));
     expect(v.first.id, 'abc123');
     expect(v.first.title, 'తిరుమల & తిరుపతి');
+  });
+
+  test('force update compares version names, not per-ABI build numbers', () {
+    expect(versionCodeOf('1.1.0'), 10100);
+    expect(versionCodeOf('1.2.3'), 10203);
+    expect(versionCodeOf('2.0'), 20000);
   });
 }

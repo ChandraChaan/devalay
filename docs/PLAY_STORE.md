@@ -90,7 +90,8 @@ Category: **Lifestyle**. Tags: Religion & spirituality.
 2. Upload the new `devalay-play.aab` to the production track.
 3. To make old versions update, raise `min_version_code` in Firebase **Remote Config** (or in
    `firebase/remoteconfig.template.json`, then run `firebase deploy --only remoteconfig`). The versionCode is
-   `major·10000 + minor·100 + patch`, so v1.1.0 is 10100. Phones below that number see a full-screen
+   `major·10000 + minor·100 + patch` of the version name, so v1.1.0 is 10100 (per-ABI APKs carry a larger Android
+   versionCode, but the app compares version names). Phones below that number see a full-screen
    "Please update" page, which opens the Play Store for Play installs and the GitHub APK for others.
 
 ## 7. Push announcements
