@@ -3,9 +3,14 @@
 Each milestone is a git tag and a [GitHub release](https://github.com/ChandraChaan/devalay/releases). Releases from
 v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the section below that matches the tag.
 
+## v1.0.2 — 2026-11-03
+
+- Onboarding: the Moon-sign chips are now readable. They had rendered as light chips with white text, because the
+  chip's light canvas showed through its translucent background.
+
 ## v1.0.1 — 2026-11-03
 
-- Onboarding: the Moon-sign chips are now readable (they rendered light with white text).
+- Onboarding: an attempted fix for the unreadable Moon-sign chips, which did not work; fixed in v1.0.2.
 - The website now serves search, Ask the Gita and the status maker data at the paths the app requests. This fix
   reached v1.0.0 installs as well, with no update needed.
 

@@ -268,27 +268,31 @@ class _CityRashiPage extends ConsumerWidget {
           style: const TextStyle(color: Colors.white70),
         ),
         const SizedBox(height: 8),
-        Wrap(
-          spacing: 8,
-          runSpacing: 8,
-          children: [
-            for (final (slug, en, hiName, symbol) in rashiList)
-              ChoiceChip(
-                label: Text('$symbol ${hi ? hiName : en}'),
-                selected: prefs.rashi == slug,
-                showCheckmark: false,
-                // `color` wins over the theme; backgroundColor alone rendered as a light chip here.
-                color: WidgetStatePropertyAll(
-                  prefs.rashi == slug ? Palette.gold : Colors.white.withValues(alpha: 0.08),
+        // Chips paint on a Material that defaults to the light canvas colour, which showed through
+        // the translucent chip background; a transparent canvas lets the dark page show instead.
+        Theme(
+          data: Theme.of(context).copyWith(canvasColor: Colors.transparent),
+          child: Wrap(
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              for (final (slug, en, hiName, symbol) in rashiList)
+                ChoiceChip(
+                  label: Text('$symbol ${hi ? hiName : en}'),
+                  selected: prefs.rashi == slug,
+                  showCheckmark: false,
+                  color: WidgetStatePropertyAll(
+                    prefs.rashi == slug ? Palette.gold : Colors.white.withValues(alpha: 0.08),
+                  ),
+                  side: BorderSide(color: prefs.rashi == slug ? Palette.gold : Colors.white24),
+                  labelStyle: TextStyle(
+                    color: prefs.rashi == slug ? Palette.maroon : Colors.white,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  onSelected: (_) => ref.read(prefsProvider.notifier).setRashi(slug),
                 ),
-                side: BorderSide(color: prefs.rashi == slug ? Palette.gold : Colors.white24),
-                labelStyle: TextStyle(
-                  color: prefs.rashi == slug ? Palette.maroon : Colors.white,
-                  fontWeight: FontWeight.w600,
-                ),
-                onSelected: (_) => ref.read(prefsProvider.notifier).setRashi(slug),
-              ),
-          ],
+            ],
+          ),
         ),
         const SizedBox(height: 16),
         SwitchListTile(
