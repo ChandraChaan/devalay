@@ -127,7 +127,7 @@ def main() -> None:
                 ex.get(f"/books/{b['slug']}/chapters/{ch['number']}")
 
         # Client-side search and offline AI read these two files.
-        ex.save("search/index.json", {
+        ex.save(static_file("/search/index"), {
             "tracks": all_tracks,
             "texts": [dict(s, body=f.get("body", "")) for s, f in zip(texts, full_texts, strict=True)],
             "books": books,
@@ -136,7 +136,7 @@ def main() -> None:
             "stopwords": sorted(gita_search.STOPWORDS),
             "synonyms": gita_search.SYNONYMS,
         })
-        ex.save("ai/status.json", {
+        ex.save(static_file("/ai/status"), {
             "deity_names": ai.DEITY_NAMES, "chants": ai.CHANTS, "templates": ai.TEMPLATES,
             "occasion_prefix": ai.OCCASION_PREFIX,
         })

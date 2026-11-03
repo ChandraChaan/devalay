@@ -26,7 +26,7 @@ There are two ways to run Devalay:
   - All 28 cities in `app/lib/core/location.dart`.
 - **How the app reads it.** Files are named by path plus sorted query (`panchang/city-delhi~day-2026-11-03.json`).
   `backend/scripts/export_static.py` and `app/lib/core/static_api.dart` must agree on the naming, which
-  `app/test/static_api_test.dart` checks.
+  `app/test/static_api_test.dart` checks. Save every file through `static_file()`, never a hand-written path.
 - **What runs on the phone instead.** Search, Ask the Gita and the status maker run on device. Accounts, sync and
   Premium are hidden.
 

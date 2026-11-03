@@ -6,6 +6,8 @@ void main() {
   test('static file names match backend/scripts/export_static.py', () {
     expect(StaticApi.file('/deities', null), 'deities/index.json');
     expect(StaticApi.file('/tracks/7', const {}), 'tracks/7/index.json');
+    expect(StaticApi.file('/search/index', null), 'search/index/index.json');
+    expect(StaticApi.file('/ai/status', null), 'ai/status/index.json');
     expect(
       StaticApi.file('/tracks', {'page_size': 100, 'kind': 'aarti,mantra', 'deity': null}),
       'tracks/kind-aarti_mantra~page_size-100.json',
