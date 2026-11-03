@@ -24,6 +24,7 @@ RASHIS = [
     ("kumbha", "Aquarius", "कुंभ", "♒"), ("meena", "Pisces", "मीन", "♓"),
 ]
 RASHI_INDEX = {slug: i for i, (slug, *_rest) in enumerate(RASHIS)}
+RASHI_TE = ["మేషం", "వృషభం", "మిథునం", "కర్కాటకం", "సింహం", "కన్య", "తుల", "వృశ్చికం", "ధనుస్సు", "మకరం", "కుంభం", "మీనం"]
 
 HOUSE_RATING = {1: 4, 2: 3, 3: 5, 4: 2, 5: 3, 6: 5, 7: 4, 8: 2, 9: 3, 10: 5, 11: 5, 12: 2}
 
@@ -80,6 +81,32 @@ OVERVIEW = {
         12: ["खर्च और थकान बढ़ सकती है। विश्राम, ध्यान और शुभ कार्यों में व्यय करें।",
              "जो वश में नहीं, उसे छोड़ दें। साधना से गहरी शांति मिलेगी।"],
     },
+    "te": {
+        1: ["చంద్రుడు మీ రాశిలోనే ఉండటం వల్ల మనసుకు స్పష్టత వస్తుంది. ఇష్టమైన పని మొదలుపెట్టడానికి మంచి రోజు.",
+            "ఈ రోజు మీరు ప్రశాంతంగా ఉంటారు; మీ చొరవను అందరూ ఆదరిస్తారు."],
+        2: ["కుటుంబం, ధనం మీద దృష్టి పెట్టండి. మృదువుగా మాట్లాడండి; ఈ రోజు మాటకు బలం ఎక్కువ.",
+            "ఖర్చులు పెరగవచ్చు. బడ్జెట్ గుర్తుంచుకోండి, ఉన్నదానికి కృతజ్ఞతతో ఉండండి."],
+        3: ["ధైర్యం, ఉత్సాహం నిండుగా ఉంటాయి. చిన్న ప్రయాణాలు, సాహస ప్రయత్నాలు ఫలిస్తాయి.",
+            "ఎదురుచూడటం కాదు, పని చేయాల్సిన రోజు. తోబుట్టువులు, మిత్రులు సహకరిస్తారు."],
+        4: ["మనసు కొంచెం అశాంతిగా ఉండవచ్చు. ఇంటికి దగ్గరగా ఉండండి, ప్రణాళికలు సరళంగా ఉంచండి.",
+            "ఇంట్లో లేదా మనసులో కొంత ఆందోళన ఉండవచ్చు; ప్రశాంతమైన సాయంత్రం, ప్రార్థన ఊరటనిస్తాయి."],
+        5: ["సృజనాత్మక ఆలోచనలు వస్తాయి, కానీ డబ్బు విషయాల్లో తొందరపడకండి.",
+            "పిల్లలు, చదువు, భక్తి ఆనందాన్నిస్తాయి; అంచనాలు వాస్తవికంగా ఉంచండి."],
+        6: ["అడ్డంకులను సులువుగా దాటుతారు. ఆరోగ్యం, ఆగిపోయిన పనులు సఫలమవుతాయి.",
+            "ప్రత్యర్థులు వెనక్కి తగ్గుతారు, సమస్యలు తగ్గుతాయి. సేవ చేస్తే లాభం కలుగుతుంది."],
+        7: ["భాగస్వామ్యాలు, బంధుత్వాలు ముఖ్యమవుతాయి. సహకారంతో మంచి ఫలితాలు వస్తాయి.",
+            "సమావేశాలకు, ప్రయాణాలకు, జీవిత భాగస్వామితో గడపడానికి ఆహ్లాదకరమైన రోజు."],
+        8: ["జాగ్రత్తగా ఉండండి, సాహసాలు వద్దు. ఆరోగ్యం చూసుకోండి, పెద్ద నిర్ణయాలు వాయిదా వేయండి.",
+            "అనుకోని ఆలస్యాలు రావచ్చు. ఓపిక, జపం మిమ్మల్ని స్థిరంగా ఉంచుతాయి."],
+        9: ["విశ్వాసం, పెద్దల మార్గదర్శనం సహాయపడతాయి. ఫలితాలు నెమ్మదిగా వస్తాయి.",
+            "తీర్థయాత్ర, పారాయణం, దానానికి మంచి రోజు; పెద్దలతో వాదనలు వద్దు."],
+        10: ["పనిలో, పేరుప్రతిష్ఠల్లో వెలుగు. మీ కృషి సరైన వారి దృష్టికి వస్తుంది.",
+             "బాధ్యతలు పెరుగుతాయి, గౌరవమూ పెరుగుతుంది. వినయంగా, ఏకాగ్రతతో ఉండండి."],
+        11: ["లాభాలు, శుభవార్తలు వచ్చే అవకాశం ఉంది. మిత్రుల ద్వారా కొత్త అవకాశాలు.",
+             "కోరికలు నెరవేరే దిశగా సాగుతాయి. ఆనందాన్ని పంచుకోండి, భగవంతునికి కృతజ్ఞతలు చెప్పండి."],
+        12: ["ఖర్చులు, అలసట పెరగవచ్చు. విశ్రాంతి, ధ్యానం చేయండి; మంచి పనులకు ఖర్చు చేయండి.",
+             "మన చేతుల్లో లేనిది వదిలేయండి. సాధన గాఢమైన శాంతినిస్తుంది."],
+    },
 }
 
 AREAS = {
@@ -105,30 +132,50 @@ AREAS = {
                    "mixed": "समय पर भोजन करें और पानी पीते रहें।",
                    "bad": "भरपूर विश्राम करें, आज अधिक श्रम से बचें।"},
     },
+    "te": {
+        "love": {"good": "బంధాల్లో ప్రేమ, అవగాహన పెరుగుతాయి.",
+                 "mixed": "ప్రియమైనవారి మాట ఎక్కువగా వినండి.",
+                 "bad": "అపార్థాలు రాకుండా చూసుకోండి; అహం కాదు, ఓపిక ఎంచుకోండి."},
+        "career": {"good": "పని ముందుకు సాగుతుంది; ముఖ్యమైన పనుల్లో నాయకత్వం వహించండి.",
+                   "mixed": "నిలకడైన కృషి ఫలిస్తుంది; వివరాలు మరోసారి సరిచూసుకోండి.",
+                   "bad": "ఆఫీసులో సంయమనంగా ఉండండి, పెండింగ్ పనులు పూర్తి చేయండి."},
+        "health": {"good": "శక్తి బాగుంటుంది; నడక లేదా యోగా మేలు చేస్తుంది.",
+                   "mixed": "సమయానికి భోజనం చేయండి, నీళ్లు తాగుతూ ఉండండి.",
+                   "bad": "బాగా విశ్రాంతి తీసుకోండి, ఈ రోజు ఎక్కువ శ్రమ వద్దు."},
+    },
 }
 
 # Weekday (Mon=0) -> deity of the day, remedy and colour.
 WEEKDAY = [
-    {"deity": "shiva", "color": ("White", "सफ़ेद"),
-     "remedy": ("Offer water to Shiva and chant Om Namah Shivaya 108 times.", "शिवलिंग पर जल अर्पित करें और 108 बार ॐ नमः शिवाय जपें।")},
-    {"deity": "hanuman", "color": ("Red", "लाल"),
-     "remedy": ("Recite the Hanuman Chalisa and offer sindoor or jaggery.", "हनुमान चालीसा का पाठ करें और गुड़ अर्पित करें।")},
-    {"deity": "ganesha", "color": ("Green", "हरा"),
-     "remedy": ("Offer durva grass to Ganesha and chant Om Gan Ganapataye Namah.", "गणेश जी को दूर्वा अर्पित करें और ॐ गं गणपतये नमः जपें।")},
-    {"deity": "vishnu", "color": ("Yellow", "पीला"),
-     "remedy": ("Light a ghee lamp for Vishnu and read a chapter of the Gita.", "विष्णु जी के लिए घी का दीप जलाएँ और गीता का एक अध्याय पढ़ें।")},
-    {"deity": "lakshmi", "color": ("Pink", "गुलाबी"),
-     "remedy": ("Offer white flowers to Maa Lakshmi and keep your home tidy.", "माँ लक्ष्मी को सफ़ेद फूल अर्पित करें और घर स्वच्छ रखें।")},
-    {"deity": "shani", "color": ("Blue", "नीला"),
-     "remedy": ("Light a mustard-oil lamp and help someone in need.", "सरसों के तेल का दीप जलाएँ और किसी ज़रूरतमंद की सहायता करें।")},
-    {"deity": "surya", "color": ("Orange", "नारंगी"),
-     "remedy": ("Offer water to the rising Sun and chant the Gayatri Mantra.", "उगते सूर्य को अर्घ्य दें और गायत्री मंत्र का जप करें।")},
+    {"deity": "shiva", "color": ("White", "सफ़ेद", "తెలుపు"),
+     "remedy": ("Offer water to Shiva and chant Om Namah Shivaya 108 times.", "शिवलिंग पर जल अर्पित करें और 108 बार ॐ नमः शिवाय जपें।",
+                "శివలింగానికి జలాభిషేకం చేసి, ఓం నమః శివాయ 108 సార్లు జపించండి.")},
+    {"deity": "hanuman", "color": ("Red", "लाल", "ఎరుపు"),
+     "remedy": ("Recite the Hanuman Chalisa and offer sindoor or jaggery.", "हनुमान चालीसा का पाठ करें और गुड़ अर्पित करें।",
+                "హనుమాన్ చాలీసా పఠించి, సింధూరం లేదా బెల్లం సమర్పించండి.")},
+    {"deity": "ganesha", "color": ("Green", "हरा", "ఆకుపచ్చ"),
+     "remedy": ("Offer durva grass to Ganesha and chant Om Gan Ganapataye Namah.", "गणेश जी को दूर्वा अर्पित करें और ॐ गं गणपतये नमः जपें।",
+                "వినాయకునికి గరిక సమర్పించి, ఓం గం గణపతయే నమః జపించండి.")},
+    {"deity": "vishnu", "color": ("Yellow", "पीला", "పసుపు"),
+     "remedy": ("Light a ghee lamp for Vishnu and read a chapter of the Gita.", "विष्णु जी के लिए घी का दीप जलाएँ और गीता का एक अध्याय पढ़ें।",
+                "విష్ణువుకు నేతి దీపం వెలిగించి, గీతలో ఒక అధ్యాయం చదవండి.")},
+    {"deity": "lakshmi", "color": ("Pink", "गुलाबी", "గులాబీ"),
+     "remedy": ("Offer white flowers to Maa Lakshmi and keep your home tidy.", "माँ लक्ष्मी को सफ़ेद फूल अर्पित करें और घर स्वच्छ रखें।",
+                "లక్ష్మీదేవికి తెల్లని పూలు సమర్పించి, ఇంటిని శుభ్రంగా ఉంచండి.")},
+    {"deity": "shani", "color": ("Blue", "नीला", "నీలం"),
+     "remedy": ("Light a mustard-oil lamp and help someone in need.", "सरसों के तेल का दीप जलाएँ और किसी ज़रूरतमंद की सहायता करें।",
+                "నువ్వుల నూనె దీపం వెలిగించి, అవసరంలో ఉన్నవారికి సహాయం చేయండి.")},
+    {"deity": "surya", "color": ("Orange", "नारंगी", "నారింజ"),
+     "remedy": ("Offer water to the rising Sun and chant the Gayatri Mantra.", "उगते सूर्य को अर्घ्य दें और गायत्री मंत्र का जप करें।",
+                "ఉదయించే సూర్యునికి అర్ఘ్యం ఇచ్చి, గాయత్రీ మంత్రం జపించండి.")},
 ]
 
 DISCLAIMER = {
     "en": "Based on today's Moon transit. For reflection and inspiration only.",
     "hi": "आज के चंद्र गोचर पर आधारित। केवल चिंतन और प्रेरणा हेतु।",
+    "te": "ఈ రోజు చంద్ర గోచారం ఆధారంగా. ఆలోచనకు, ప్రేరణకు మాత్రమే.",
 }
+LANG_INDEX = {"en": 0, "hi": 1, "te": 2}
 
 
 def _tier(rating: int) -> str:
@@ -146,15 +193,16 @@ def reading(rashi: str, day: date, language: str = "en", moon_index: int | None 
     house = (moon - idx) % 12 + 1
     rating = HOUSE_RATING[house]
     tier = _tier(rating)
-    lang = "hi" if language == "hi" else "en"
+    lang = language if language in LANG_INDEX else "en"
     overview, h = _pick(OVERVIEW[lang][house], f"{day.isoformat()}:{rashi}")
     wd = WEEKDAY[day.weekday()]
     slug, name_en, name_hi, symbol = RASHIS[idx]
     return {
         "rashi": slug,
-        "name": name_hi if lang == "hi" else name_en,
+        "name": {"hi": name_hi, "te": RASHI_TE[idx]}.get(lang, name_en),
         "name_en": name_en,
         "name_hi": name_hi,
+        "name_te": RASHI_TE[idx],
         "symbol": symbol,
         "date": day.isoformat(),
         "language": lang,
@@ -165,8 +213,8 @@ def reading(rashi: str, day: date, language: str = "en", moon_index: int | None 
         "love": AREAS[lang]["love"][tier],
         "career": AREAS[lang]["career"][tier],
         "health": AREAS[lang]["health"][tier],
-        "remedy": wd["remedy"][1 if lang == "hi" else 0],
-        "lucky_color": wd["color"][1 if lang == "hi" else 0],
+        "remedy": wd["remedy"][LANG_INDEX[lang]],
+        "lucky_color": wd["color"][LANG_INDEX[lang]],
         "lucky_number": (h % 9) + 1,
         "deity_of_day": wd["deity"],
         "disclaimer": DISCLAIMER[lang],

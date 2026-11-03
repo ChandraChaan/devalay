@@ -149,7 +149,7 @@ def _rashifal_day(db, day: date, language: str) -> list[dict]:
 
 @router.get("/rashifal")
 def rashifal_all(db: DB, response: Response, day: date | None = None,
-                 lang: Annotated[str, Query(pattern="^(hi|en)$")] = "hi"):
+                 lang: Annotated[str, Query(pattern="^(hi|en|te)$")] = "hi"):
     day = day or today_in(get_settings().default_tz)
     _check_day(day)
     response.headers["Cache-Control"] = "public, max-age=1800"
@@ -158,7 +158,7 @@ def rashifal_all(db: DB, response: Response, day: date | None = None,
 
 @router.get("/rashifal/{rashi}")
 def rashifal_one(rashi: str, db: DB, day: date | None = None,
-                 lang: Annotated[str, Query(pattern="^(hi|en)$")] = "hi"):
+                 lang: Annotated[str, Query(pattern="^(hi|en|te)$")] = "hi"):
     if rashi not in RASHIS:
         raise HTTPException(404, "Unknown rashi")
     day = day or today_in(get_settings().default_tz)

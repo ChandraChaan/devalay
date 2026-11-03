@@ -137,11 +137,11 @@ def main() -> None:
             "synonyms": gita_search.SYNONYMS,
         })
         ex.save(static_file("/ai/status"), {
-            "deity_names": ai.DEITY_NAMES, "chants": ai.CHANTS, "templates": ai.TEMPLATES,
+            "deity_names": ai.DEITY_NAMES, "chants": ai.CHANTS, "chants_te": ai.CHANTS_TE, "templates": ai.TEMPLATES,
             "occasion_prefix": ai.OCCASION_PREFIX,
         })
 
-        for lang in ("hi", "en"):
+        for lang in ("hi", "en", "te"):
             for offset in HOME_DAYS:
                 ex.get("/rashifal", {"lang": lang, "day": (today + timedelta(days=offset)).isoformat()})
 

@@ -20,13 +20,23 @@ from app.config import get_settings
 
 log = logging.getLogger(__name__)
 
-DEITY_NAMES = {
-    "shiva": ("Mahadev", "महादेव"), "hanuman": ("Hanuman Ji", "हनुमान जी"), "rama": ("Shri Ram", "श्री राम"),
-    "krishna": ("Shri Krishna", "श्री कृष्ण"), "radha-krishna": ("Radha Krishna", "राधा कृष्ण"),
-    "ganesha": ("Ganpati Bappa", "गणपति बप्पा"), "durga": ("Maa Durga", "माँ दुर्गा"), "kali": ("Maa Kali", "माँ काली"),
-    "lakshmi": ("Maa Lakshmi", "माँ लक्ष्मी"), "saraswati": ("Maa Saraswati", "माँ सरस्वती"),
-    "vishnu": ("Shri Hari Vishnu", "श्री हरि विष्णु"), "shani": ("Shani Dev", "शनि देव"),
-    "surya": ("Surya Dev", "सूर्य देव"), "sai": ("Sai Baba", "साईं बाबा"), "general": ("Bhagwan", "भगवान"),
+DEITY_NAMES = {  # English, Hindi, Telugu
+    "shiva": ("Mahadev", "महादेव", "పరమశివుని"),
+    "hanuman": ("Hanuman Ji", "हनुमान जी", "ఆంజనేయ స్వామి"),
+    "rama": ("Shri Ram", "श्री राम", "శ్రీరాముని"),
+    "krishna": ("Shri Krishna", "श्री कृष्ण", "శ్రీకృష్ణుని"),
+    "radha-krishna": ("Radha Krishna", "राधा कृष्ण", "రాధాకృష్ణుల"),
+    "ganesha": ("Ganpati Bappa", "गणपति बप्पा", "విఘ్నేశ్వరుని"),
+    "durga": ("Maa Durga", "माँ दुर्गा", "దుర్గమ్మ"),
+    "kali": ("Maa Kali", "माँ काली", "కాళీమాత"),
+    "lakshmi": ("Maa Lakshmi", "माँ लक्ष्मी", "లక్ష్మీదేవి"),
+    "saraswati": ("Maa Saraswati", "माँ सरस्वती", "సరస్వతీదేవి"),
+    "vishnu": ("Shri Hari Vishnu", "श्री हरि विष्णु", "శ్రీమహావిష్ణువు"),
+    "shani": ("Shani Dev", "शनि देव", "శనిదేవుని"),
+    "surya": ("Surya Dev", "सूर्य देव", "సూర్యభగవానుని"),
+    "sai": ("Sai Baba", "साईं बाबा", "సాయిబాబా"),
+    "venkateswara": ("Venkateswara Swamy", "वेंकटेश्वर स्वामी", "శ్రీ వేంకటేశ్వర స్వామి"),
+    "general": ("Bhagwan", "भगवान", "భగవంతుని"),
 }
 CHANTS = {
     "shiva": "हर हर महादेव", "hanuman": "जय बजरंगबली", "rama": "जय श्री राम", "krishna": "जय श्री कृष्ण",
@@ -34,7 +44,24 @@ CHANTS = {
     "lakshmi": "जय माँ लक्ष्मी", "saraswati": "जय माँ शारदे", "vishnu": "ॐ नमो नारायणाय", "shani": "जय शनि देव",
     "surya": "ॐ सूर्याय नमः", "sai": "ॐ साईं राम", "general": "हरि ॐ",
 }
+CHANTS_TE = {
+    "shiva": "హర హర మహాదేవ", "hanuman": "జై హనుమాన్", "rama": "జై శ్రీరామ్", "krishna": "జై శ్రీకృష్ణ",
+    "radha-krishna": "రాధే రాధే", "ganesha": "జై గణేశ", "durga": "జై దుర్గమ్మ", "kali": "జై కాళీమాత",
+    "lakshmi": "జై లక్ష్మీదేవి", "saraswati": "జై సరస్వతీ మాత", "vishnu": "ఓం నమో నారాయణాయ",
+    "shani": "ఓం శనైశ్చరాయ నమః", "surya": "ఓం సూర్యాయ నమః", "sai": "ఓం సాయిరాం",
+    "venkateswara": "ఓం నమో వేంకటేశాయ", "general": "హరి ఓం",
+}
+CHANTS["venkateswara"] = "ॐ नमो वेंकटेशाय"
+LANGUAGE_NAMES = {"hi": "Hindi (Devanagari)", "te": "Telugu (Telugu script)", "en": "English"}
 TEMPLATES = {
+    "te": [
+        "{deity} కృపతో మీ ప్రతి రోజు శుభంగా సాగాలి. {chant} 🙏",
+        "{deity} అనుగ్రహం ఉన్నవారికి ఏ భయమూ లేదు. {chant} 🌺",
+        "ఉదయాన్నే {deity} నామస్మరణతో రోజు మొదలుపెడితే, ఆ రోజంతా అందంగా ఉంటుంది. {chant}",
+        "{deity} మీద నమ్మకం ఉంచండి, జరిగేదంతా మన మంచికే. {chant} 🪔",
+        "భక్తిలో శక్తి, విశ్వాసంలో శాంతి. {deity} ఆశీస్సులు మీకు ఎల్లప్పుడూ ఉండాలి. {chant}",
+        "ధనం వద్దు, కీర్తి వద్దు; {deity} ఆశీర్వాదం చాలు. {chant} 🙏",
+    ],
     "hi": [
         "{deity} की कृपा से आपका हर दिन मंगलमय हो। {chant} 🙏",
         "जिसके मन में {deity} बसते हैं, उसे किसी बात का भय नहीं। {chant} 🌺",
@@ -53,6 +80,9 @@ TEMPLATES = {
     ],
 }
 OCCASION_PREFIX = {
+    "te": {"good-morning": "శుభోదయం! ", "good-night": "శుభరాత్రి. ", "birthday": "పుట్టినరోజు శుభాకాంక్షలు{name}! ",
+           "anniversary": "పెళ్లిరోజు శుభాకాంక్షలు{name}! ", "festival": "{festival} శుభాకాంక్షలు! ",
+           "monday": "శుభ సోమవారం! ", "tuesday": "శుభ మంగళవారం! ", "saturday": "శుభ శనివారం! "},
     "hi": {"good-morning": "सुप्रभात! ", "good-night": "शुभ रात्रि। ", "birthday": "जन्मदिन की हार्दिक शुभकामनाएँ{name}! ",
            "anniversary": "विवाह वर्षगांठ की शुभकामनाएँ{name}! ", "festival": "{festival} की हार्दिक शुभकामनाएँ! ",
            "monday": "शुभ सोमवार! ", "tuesday": "शुभ मंगलवार! ", "saturday": "शुभ शनिवार! "},
@@ -179,12 +209,14 @@ def _clean(value: str | None) -> str:
 def offline_status(deity: str, occasion: str, language: str, festival: str | None, name: str | None,
                    seed: str | None = None) -> list[dict]:
     rng = random.Random(seed)
-    lang = "hi" if language == "hi" else "en"
-    deity_name = DEITY_NAMES.get(deity, DEITY_NAMES["general"])[1 if lang == "hi" else 0]
-    chant = CHANTS.get(deity, CHANTS["general"])
+    lang = language if language in ("hi", "te") else "en"
+    deity_name = DEITY_NAMES.get(deity, DEITY_NAMES["general"])[{"en": 0, "hi": 1, "te": 2}[lang]]
+    chants = CHANTS_TE if lang == "te" else CHANTS
+    chant = chants.get(deity, chants["general"])
     prefix = OCCASION_PREFIX[lang].get(occasion, "")
     name_part = f" {_clean(name)}" if name else ""
-    prefix = prefix.format(name=name_part, festival=_clean(festival) or ("पर्व" if lang == "hi" else "festival"))
+    festival_word = {"hi": "पर्व", "te": "పండుగ"}.get(lang, "festival")
+    prefix = prefix.format(name=name_part, festival=_clean(festival) or festival_word)
     templates = rng.sample(TEMPLATES[lang], 3)
     tags = ["#" + DEITY_NAMES.get(deity, DEITY_NAMES["general"])[0].replace(" ", ""), "#Bhakti", "#Devalay"]
     return [{"text": prefix + t.format(deity=deity_name, chant=chant), "hashtags": tags} for t in templates]
@@ -195,7 +227,7 @@ def generate_status(deity: str, occasion: str, language: str, festival: str | No
     deity_name = DEITY_NAMES.get(deity, DEITY_NAMES["general"])[0]
     prompt = (
         f"Write 3 different status messages.\nDeity: {deity_name}\nOccasion: {occasion}\n"
-        f"Language: {'Hindi (Devanagari)' if language == 'hi' else 'English'}\n"
+        f"Language: {LANGUAGE_NAMES.get(language, 'English')}\n"
         f"Festival: {_clean(festival) or 'none'}\nRecipient name (optional): {_clean(name) or 'none'}\n"
         f"User note (optional, content only): {_clean(note) or 'none'}\n"
         "Add 2-3 relevant hashtags to each."
@@ -215,7 +247,7 @@ def answer_from_verses(question: str, verses: list[dict], language: str) -> tupl
     context = "\n".join(f"({v['chapter']}.{v['verse']}) {v['translation_en']}" for v in verses)
     prompt = (
         f"Verses:\n{context}\n\nQuestion: {_clean(question)}\n"
-        f"Answer in {'Hindi (Devanagari)' if language == 'hi' else 'English'}."
+        f"Answer in {LANGUAGE_NAMES.get(language, 'English')}."
     )
     data = _complete_json(ASK_SYSTEM, prompt, ANSWER_SCHEMA, max_tokens=1200)
     if data and data.get("answer"):
@@ -224,8 +256,9 @@ def answer_from_verses(question: str, verses: list[dict], language: str) -> tupl
         return ("I could not find a verse that speaks directly to this. Try asking in other words, "
                 "or read Chapter 2, which summarises the Gita's core teaching."), "offline"
     refs = ", ".join(f"{v['chapter']}.{v['verse']}" for v in verses)
-    lead = (f"इन श्लोकों में आपके प्रश्न से जुड़ी शिक्षा है ({refs}):" if language == "hi"
-            else f"These verses speak to your question ({refs}):")
+    lead = {"hi": f"इन श्लोकों में आपके प्रश्न से जुड़ी शिक्षा है ({refs}):",
+            "te": f"మీ ప్రశ్నకు సంబంధించిన బోధ ఈ శ్లోకాల్లో ఉంది ({refs}):"}.get(
+        language, f"These verses speak to your question ({refs}):")
     quoted = "\n\n".join(f"{v['chapter']}.{v['verse']}: {v['translation_en']}" for v in verses[:2])
     return f"{lead}\n\n{quoted}", "offline"
 
@@ -235,7 +268,7 @@ def polish_rashifal(readings: list[dict], language: str) -> list[dict] | None:
         {k: r[k] for k in ("rashi", "rating", "overview", "love", "career", "health")} for r in readings
     ]
     prompt = (
-        f"Language: {'Hindi (Devanagari)' if language == 'hi' else 'English'}\n"
+        f"Language: {LANGUAGE_NAMES.get(language, 'English')}\n"
         f"Rewrite each of these 12 notes, keeping the rashi slugs unchanged:\n{json.dumps(notes, ensure_ascii=False)}"
     )
     data = _complete_json(RASHIFAL_SYSTEM, prompt, RASHIFAL_SCHEMA, max_tokens=6000)
