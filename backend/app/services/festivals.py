@@ -28,7 +28,9 @@ class FestivalRule:
     tithi: int | None = None  # 0..29, 14 = Purnima, 29 = Amavasya
     observe: str = "sunrise"  # sunrise | madhyahna | aparahna | pradosh | nishita | sunset
     sankranti: int | None = None  # sidereal sign the Sun enters
-    after: str | None = None  # observed the day after another festival
+    after: str | None = None  # observed relative to another festival (see offset / weekday_before)
+    offset: int = 1  # days after `after` (negative: before)
+    weekday_before: int | None = None  # instead: the last such weekday (Mon=0) strictly before `after`
     major: bool = True
     description: str = ""
 
@@ -43,6 +45,12 @@ def _t(paksha: int, n: int) -> int:
 FESTIVALS: list[FestivalRule] = [
     FestivalRule("makar-sankranti", "Makar Sankranti", "मकर संक्रांति", "surya", sankranti=9,
                  description="The Sun enters Makara; a harvest festival of holy dips, til-gud and kites."),
+    FestivalRule("bhogi", "Bhogi", "भोगी", "indra", after="makar-sankranti", offset=-1,
+                 description="The first day of Sankranti in Andhra Pradesh and Telangana: Bhogi bonfire and Bhogi pallu."),
+    FestivalRule("kanuma", "Kanuma", "कनुमा", "krishna", after="makar-sankranti",
+                 description="The cattle festival on the day after Sankranti, honouring cows and farm life."),
+    FestivalRule("ratha-saptami", "Ratha Saptami", "रथ सप्तमी", "surya", 10, _t(S, 7),
+                 description="Surya Jayanti: the Sun god's chariot turns north; holy bath with arka leaves."),
     FestivalRule("vasant-panchami", "Vasant Panchami", "वसंत पंचमी", "saraswati", 10, _t(S, 5), "madhyahna",
                  description="Worship of Maa Saraswati, goddess of learning, at the start of spring."),
     FestivalRule("maha-shivratri", "Maha Shivratri", "महाशिवरात्रि", "shiva", 10, _t(K, 14), "nishita",
@@ -75,6 +83,8 @@ FESTIVALS: list[FestivalRule] = [
                  description="Worship of the serpent deities."),
     FestivalRule("raksha-bandhan", "Raksha Bandhan", "रक्षा बंधन", "krishna", 4, _t(S, 15),
                  description="Sisters tie rakhi; a festival of love and protection."),
+    FestivalRule("varalakshmi-vratam", "Varalakshmi Vratam", "वरलक्ष्मी व्रत", "lakshmi", after="raksha-bandhan",
+                 weekday_before=4, description="Married women worship Varalakshmi on the Friday before Shravana Purnima."),
     FestivalRule("janmashtami", "Krishna Janmashtami", "कृष्ण जन्माष्टमी", "krishna", 4, _t(K, 8),
                  description="The birth of Shri Krishna, celebrated with midnight puja and bhajans."),
     FestivalRule("hartalika-teej", "Hartalika Teej", "हरतालिका तीज", "parvati", 5, _t(S, 3), major=False,
@@ -85,16 +95,22 @@ FESTIVALS: list[FestivalRule] = [
                  description="Ganesh Visarjan and worship of Anant (Vishnu)."),
     FestivalRule("pitru-paksha", "Pitru Paksha begins", "पितृ पक्ष आरंभ", "pitru", 5, _t(K, 1), major=False,
                  description="A fortnight of remembrance and offerings for ancestors."),
+    FestivalRule("engili-pula-bathukamma", "Engili Pula Bathukamma", "बतुकम्मा आरंभ", "gauri", 5, _t(K, 15),
+                 description="Mahalaya Amavasya: Telangana's nine-day flower festival of Bathukamma begins."),
     FestivalRule("sharad-navratri", "Sharad Navratri begins", "शारदीय नवरात्रि आरंभ", "durga", 6, _t(S, 1),
                  description="Nine nights of Maa Durga's worship begin with Ghatasthapana."),
     FestivalRule("durga-ashtami", "Durga Ashtami", "दुर्गा अष्टमी", "durga", 6, _t(S, 8),
                  description="Maha Ashtami, with Kanya Puja and Sandhi Puja."),
+    FestivalRule("saddula-bathukamma", "Saddula Bathukamma", "सद्दुला बतुकम्मा", "gauri", 6, _t(S, 8),
+                 description="The grand final day of Bathukamma, on Durgashtami."),
     FestivalRule("dussehra", "Dussehra / Vijayadashami", "दशहरा / विजयादशमी", "rama", 6, _t(S, 10), "aparahna",
                  description="Victory of Shri Ram over Ravan and of Maa Durga over Mahishasur."),
     FestivalRule("sharad-purnima", "Sharad Purnima", "शरद पूर्णिमा", "lakshmi", 6, _t(S, 15), "pradosh", major=False,
                  description="The full moon of autumn; kheer is kept under moonlight."),
     FestivalRule("karwa-chauth", "Karwa Chauth", "करवा चौथ", "parvati", 6, _t(K, 4),
                  description="Married women fast from sunrise to moonrise for their husbands."),
+    FestivalRule("atla-taddi", "Atla Taddi", "अटला तद्दी", "gauri", 6, _t(K, 3),
+                 description="Women fast for Gauri's blessings, swing on uyyala and offer dosas (atlu) at moonrise."),
     FestivalRule("dhanteras", "Dhanteras", "धनतेरस", "lakshmi", 6, _t(K, 13), "pradosh",
                  description="The first day of Diwali; worship of Dhanvantari and Kuber."),
     FestivalRule("narak-chaturdashi", "Narak Chaturdashi", "नरक चतुर्दशी", "krishna", 6, _t(K, 14), major=False,
@@ -107,6 +123,8 @@ FESTIVALS: list[FestivalRule] = [
                  description="Sisters pray for their brothers' long life."),
     FestivalRule("chhath-puja", "Chhath Puja", "छठ पूजा", "surya", 7, _t(S, 6), "sunset",
                  description="Evening arghya to the setting Sun and Chhathi Maiya."),
+    FestivalRule("naga-chaturthi", "Naga Chaturthi", "नाग चतुर्थी", "shiva", 7, _t(S, 4),
+                 description="Milk is offered at snake mounds (putta) for the family's wellbeing."),
     FestivalRule("dev-uthani-ekadashi", "Dev Uthani Ekadashi", "देवउठनी एकादशी", "vishnu", 7, _t(S, 11),
                  description="Lord Vishnu awakens; Tulsi Vivah and the wedding season begin."),
     FestivalRule("kartik-purnima", "Kartik Purnima / Dev Deepawali", "कार्तिक पूर्णिमा / देव दीपावली", "shiva", 7,
@@ -202,7 +220,11 @@ def compute_festivals(year: int, loc: Location) -> list[dict]:
             results[rule.slug] = _match_days(grid[rule.observe], rule.month, rule.tithi)
     for rule in FESTIVALS:
         if rule.after:
-            results[rule.slug] = [d + timedelta(days=1) for d in results.get(rule.after, [])]
+            base = results.get(rule.after, [])
+            if rule.weekday_before is not None:
+                results[rule.slug] = [d - timedelta(days=(d.weekday() - rule.weekday_before - 1) % 7 + 1) for d in base]
+            else:
+                results[rule.slug] = [d + timedelta(days=rule.offset) for d in base]
 
     out = []
     for rule in FESTIVALS:

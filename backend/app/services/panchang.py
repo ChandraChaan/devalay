@@ -58,6 +58,26 @@ MONTH_NAMES = [
 VARA_NAMES = ["Somavara", "Mangalavara", "Budhavara", "Guruvara", "Shukravara", "Shanivara", "Ravivara"]
 # 1-based eighth of daytime for each weekday (Python weekday: Mon=0 ... Sun=6).
 RAHU_KAAL_PART = [2, 7, 5, 6, 4, 3, 8]
+
+# Varjyam (tyajyam) and Amrit Kalam start this many ghatis (1/60 of the nakshatra) into each
+# nakshatra, Ashwini first, and last 4 ghatis. Moola has two Varjyams. These are the classical
+# Muhurta tables, as also used by Jagannatha Hora (PyJHora const.amrita_gadiya_varjyam_star_map).
+VARJYAM_GHATI = [(50,), (24,), (30,), (40,), (14,), (21,), (30,), (20,), (32,), (30,), (20,), (18,), (21,), (20,),
+                 (14,), (14,), (10,), (14,), (20, 56), (24,), (20,), (10,), (10,), (18,), (16,), (24,), (30,)]
+AMRIT_GHATI = [42, 48, 54, 52, 38, 35, 54, 44, 56, 54, 44, 42, 45, 44, 38, 38, 34, 38, 44, 48, 44, 34, 34, 42, 40, 48,
+               54]
+# Durmuhurtham: which of the day's 15 muhurtas (from sunrise, 1-based), Monday first; Tuesday's
+# second one is the 7th muhurta of the night (Karanam Ramakumar, "Panchangam Calculations").
+DURMUHURTA_DAY = [(9, 12), (4,), (8,), (6, 12), (4, 9), (3,), (14,)]
+SAMVATSARA_NAMES = [
+    "Prabhava", "Vibhava", "Shukla", "Pramoduta", "Prajotpatti", "Angirasa", "Shrimukha", "Bhava", "Yuva", "Dhatri",
+    "Ishvara", "Bahudhanya", "Pramathi", "Vikrama", "Vrisha", "Chitrabhanu", "Svabhanu", "Tarana", "Parthiva", "Vyaya",
+    "Sarvajit", "Sarvadhari", "Virodhi", "Vikriti", "Khara", "Nandana", "Vijaya", "Jaya", "Manmatha", "Durmukhi",
+    "Hevilambi", "Vilambi", "Vikari", "Sharvari", "Plava", "Shubhakrit", "Shobhakrit", "Krodhi", "Vishvavasu",
+    "Parabhava", "Plavanga", "Kilaka", "Saumya", "Sadharana", "Virodhikrit", "Paridhavi", "Pramadicha", "Ananda",
+    "Rakshasa", "Nala", "Pingala", "Kalayukti", "Siddharthi", "Raudri", "Durmati", "Dundubhi", "Rudhirodgari",
+    "Raktakshi", "Krodhana", "Akshaya",
+]
 YAMAGANDA_PART = [4, 3, 2, 1, 7, 6, 5]
 GULIKA_PART = [6, 5, 4, 3, 2, 1, 7]
 
@@ -262,6 +282,27 @@ def daily_panchang(loc: Location, day: date) -> dict:
     def span(pair):
         return {"starts": pair[0].isoformat(), "ends": pair[1].isoformat()}
 
+    # Varjyam and Amrit Kalam come from whole nakshatras, which can begin a day before sunrise.
+    stars = [s for s in _limb_timeline(ts.from_datetime(sunrise - timedelta(days=1.5)),
+                                       ts.from_datetime(next_sunrise + timedelta(days=0.5)), "nakshatra", tz)
+             if s[1] and s[2]]
+
+    def star_windows(table):
+        out = []
+        for value, begin, end in stars:
+            ghati = (end - begin) / 60
+            for g in table[value]:
+                w = (begin + ghati * g, begin + ghati * (g + 4))
+                if w[1] > sunrise and w[0] < next_sunrise:
+                    out.append(span(w))
+        return out
+
+    night_muhurta = (next_sunrise - sunset) / 15
+    durmuhurtham = [span((sunrise + muhurta * (n - 1), sunrise + muhurta * n)) for n in DURMUHURTA_DAY[wd]]
+    if wd == 1:  # Tuesday
+        durmuhurtham.append(span((sunset + night_muhurta * 6, sunset + night_muhurta * 7)))
+    samvat = vikram_samvat(day, month["index"])
+
     return {
         "date": day.isoformat(),
         "location": {"lat": loc.lat, "lon": loc.lon, "tz": loc.tz},
@@ -275,12 +316,17 @@ def daily_panchang(loc: Location, day: date) -> dict:
         "sun_rashi": RASHI_NAMES[int(sun_sid // 30)],
         "moon_rashi": RASHI_NAMES[int(moon_sid // 30)],
         "lunar_month": month,
-        "vikram_samvat": vikram_samvat(day, month["index"]),
+        "vikram_samvat": samvat,
+        "shaka_samvat": samvat - 135,
+        "samvatsara": {"index": (samvat - 135 + 11) % 60, "name": SAMVATSARA_NAMES[(samvat - 135 + 11) % 60]},
         "rahu_kaal": span(rahu),
         "yamaganda": span(yama),
         "gulika_kaal": span(gulika),
         "abhijit_muhurta": span(abhijit),
         "brahma_muhurta": span(brahma),
+        "durmuhurtham": durmuhurtham,
+        "varjyam": star_windows([v for v in VARJYAM_GHATI]),
+        "amrit_kalam": star_windows([(a,) for a in AMRIT_GHATI]),
     }
 
 
