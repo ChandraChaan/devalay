@@ -1,0 +1,62 @@
+name: Website and static API
+
+# Publishes https://chandrachaan.github.io/devalay: the download page plus the
+# pre-rendered API the public APK reads. Runs daily so the Panchang, home feed
+# and Rashifal windows always cover today.
+on:
+  push:
+    branches: [main]
+    paths: ["site/**", "backend/**", "docs/screenshots/**", "docs/store/**", "app/lib/core/location.dart",
+            ".github/workflows/pages.yml"]
+  schedule:
+    - cron: "40 18 * * *" # 00:10 IST
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: backend/requirements.txt
+      - name: Cache ephemeris
+        uses: actions/cache@v4
+        with:
+          path: backend/data/de421.bsp
+          key: de421
+      - run: pip install -r backend/requirements.txt
+      - name: Export static API
+        working-directory: backend
+        run: python scripts/export_static.py ../_site https://chandrachaan.github.io/devalay
+      - name: Add website
+        run: |
+          cp -r site/. _site/
+          cp -r docs/screenshots _site/screenshots
+          cp docs/store/banner.png _site/banner.png
+          cp docs/store/icon-512.png _site/icon.png
+          touch _site/.nojekyll
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

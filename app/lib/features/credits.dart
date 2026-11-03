@@ -11,7 +11,7 @@ class CreditsScreen extends StatelessWidget {
       'Scriptures',
       [
         'Bhagavad Gita Sanskrit text (public domain) via the open gita/gita dataset (Unlicense).',
-        'English Gita translation by Shri Purohit Swami (1935), public domain in India and life+70 countries.',
+        'English Gita translation by Annie Besant (4th edition, 1922), public domain worldwide, via Wikisource.',
         'The Song Celestial, tr. Sir Edwin Arnold (1885); The Ramayan of Valmiki, tr. R. T. H. Griffith (1870-74); '
             'Maha-bharata, condensed by R. C. Dutt (1898); The Upanishads, tr. Swami Paramananda (1919). '
             'All public domain, from Project Gutenberg.',

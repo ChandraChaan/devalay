@@ -56,7 +56,7 @@ def test_gita(client):
     assert len(ch2["verses"]) == 72
     v = client.get("/api/v1/gita/2/47").json()
     assert "कर्मण्येवाधिकारस्ते" in v["sanskrit"]
-    assert v["translation_author"] == "Shri Purohit Swami"
+    assert v["translation_author"] == "Annie Besant"
     a = client.get("/api/v1/gita/verse-of-the-day", params={"day": "2026-01-01"}).json()
     b = client.get("/api/v1/gita/verse-of-the-day", params={"day": "2026-01-01"}).json()
     c = client.get("/api/v1/gita/verse-of-the-day", params={"day": "2026-01-02"}).json()

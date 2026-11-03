@@ -2,13 +2,13 @@
 
 Uses only public-domain material:
   * the Sanskrit text of the Bhagavad Gita;
-  * an IAST transliteration generated here from that text;
-  * the English translation by Shri Purohit Swami (1935; the author died in 1941, so the
-    work is public domain in India and in life+70 countries such as the UK and EU).
-The dataset's other translations, word meanings and commentaries are by modern authors
-and are deliberately not used. Chapter summaries below were written for Devalay.
+  * an IAST transliteration generated here from that text.
+The dataset's translations, word meanings and commentaries are not used: none of them is
+public domain in every country. The English comes from Annie Besant's 1922 translation via
+scripts/besant_gita.py, run after this script. Chapter summaries below were written for Devalay.
 
-Usage: python scripts/build_gita.py <dir with verse.json, chapters.json, translation.json>
+Usage: python scripts/build_gita.py <dir with verse.json, chapters.json>
+       python scripts/besant_gita.py
 """
 
 import json
@@ -19,7 +19,6 @@ from pathlib import Path
 from indic_transliteration import sanscript
 
 OUT = Path(__file__).resolve().parent.parent / "app" / "seed" / "data" / "gita.json"
-TRANSLATOR = "Shri Purohit Swami"
 
 CHAPTERS = {
     1: ("Arjuna's Despondency", "On the field of Kurukshetra, Arjuna sees teachers, cousins and friends in both armies. Overcome by grief and doubt, he lays down his bow and refuses to fight."),
@@ -53,11 +52,6 @@ def main(src: str) -> None:
     root = Path(src)
     verses = json.loads((root / "verse.json").read_text())
     chapters = json.loads((root / "chapters.json").read_text())
-    translations = {
-        t["verse_id"]: t["description"].strip()
-        for t in json.loads((root / "translation.json").read_text())
-        if t["authorName"] == TRANSLATOR
-    }
     out_chapters = []
     for c in sorted(chapters, key=lambda c: c["chapter_number"]):
         n = c["chapter_number"]
@@ -78,8 +72,8 @@ def main(src: str) -> None:
             "sanskrit": sanskrit,
             "transliteration": sanscript.transliterate(sanskrit.replace("॥", "").replace("।", ""),
                                                        sanscript.DEVANAGARI, sanscript.IAST).strip(),
-            "translation_en": translations.get(v["id"], ""),
-            "translation_author": TRANSLATOR if v["id"] in translations else "",
+            "translation_en": "",  # filled by scripts/besant_gita.py
+            "translation_author": "",
         })
     for ch in out_chapters:
         ch["verse_count"] = sum(1 for v in out_verses if v["chapter"] == ch["number"])

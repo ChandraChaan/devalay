@@ -1,7 +1,67 @@
 # Deployment
 
-Nothing is deployed yet; every step below needs your own accounts. Estimated cost at launch: about $0–7 a month
-(Neon free tier, Render Starter or Fly.io shared CPU, R2 free tier of 10 GB with zero egress fees).
+There are two ways to run Devalay:
+
+- **The public build is live today at no cost.** GitHub Pages hosts a pre-rendered, read-only copy of the API, and
+  the APK on the Releases page reads it. Sections 0 and 0.1 cover it.
+- **The full server adds accounts, sync, Premium and Claude-written AI.** Sections 1 to 6 cover it. Every step there
+  needs your own accounts. Expect about $0–7 a month at launch: Neon free tier, Render Starter or a Fly.io shared
+  CPU, and the R2 free tier of 10 GB with zero egress fees.
+
+## 0. Public build: GitHub Pages ("static mode")
+
+`.github/workflows/pages.yml` runs `backend/scripts/export_static.py`.
+
+- **What it does.**
+  - Seeds a throwaway SQLite database.
+  - Calls every read-only endpoint through FastAPI's test client.
+  - Writes about 2,800 JSON files (about 23 MB) to `api/v1/...`, alongside the landing page in `site/`, the seed
+    media, and the privacy and terms pages.
+- **When it runs.** On each push that touches the backend or site, and daily at 00:10 IST.
+- **What it covers.** Date-dependent data covers a rolling window:
+  - Panchang: −7 to +45 days.
+  - Home feed and Rashifal: −2 to +10 days.
+  - Month calendars: −1 to +3 months.
+  - Festivals: this year and next.
+  - All 28 cities in `app/lib/core/location.dart`.
+- **How the app reads it.** Files are named by path plus sorted query (`panchang/city-delhi~day-2026-11-03.json`).
+  `backend/scripts/export_static.py` and `app/lib/core/static_api.dart` must agree on the naming, which
+  `app/test/static_api_test.dart` checks.
+- **What runs on the phone instead.** Search, Ask the Gita and the status maker run on device. Accounts, sync and
+  Premium are hidden.
+
+Build it locally:
+
+```bash
+cd backend && .venv/bin/python scripts/export_static.py ../_site https://chandrachaan.github.io/devalay
+cd ../app && flutter build apk --release --dart-define=STATIC_API=true \
+  --dart-define=API_BASE_URL=https://chandrachaan.github.io/devalay
+```
+
+GitHub turns off scheduled workflows after 60 days without repository activity. If the Panchang shows "only
+available for dates near today", re-enable **Website and static API** in the Actions tab, or push any commit.
+
+## 0.1 Cutting a release
+
+1. Add a `## vX.Y.Z — date` section at the top of `CHANGELOG.md` and bump `version:` in `app/pubspec.yaml`.
+2. Commit, then run `git tag -a vX.Y.Z -m "Devalay vX.Y.Z" && git push origin main --tags`.
+3. `.github/workflows/release.yml` then:
+   - Runs the tests.
+   - Builds the static-mode APKs: `devalay.apk` (universal) and the per-ABI APKs, with versionCode
+     `major·10000 + minor·100 + patch`.
+   - Checks they are signed with the Devalay key.
+   - Publishes the release with that changelog section and `SHA256SUMS`.
+4. To rebuild an existing tag, run the workflow from the Actions tab with the tag as input.
+
+The release key lives outside git:
+
+- `app/android/app/upload-keystore.jks` and `app/android/key.properties` locally (both git-ignored).
+- A backup in `~/.devalay-keys/`.
+- The `ANDROID_KEYSTORE_BASE64` and `ANDROID_KEY_PROPERTIES` repository secrets.
+
+`key.properties` has `storeFile=upload-keystore.jks`. **Keep an offline backup of the keystore and its password.**
+Android only installs an update when it is signed with the same key, so losing the key means users have to
+uninstall the app to update it.
 
 ## 1. Database: Neon (or any PostgreSQL 14+)
 

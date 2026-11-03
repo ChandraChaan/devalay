@@ -1,12 +1,59 @@
-# 🛕 Devalay · देवालय
+<p align="center">
+  <img src="docs/store/banner.png" alt="Devalay: aarti, Gita, Panchang and a virtual Mandir for Android" width="100%">
+</p>
 
-A calm, privacy-first Hindu devotional app for Android: aarti, bhajans and mantras, the full Bhagavad Gita,
-scriptures, an astronomically computed Panchang and festival calendar, a virtual Mandir, japa mala, Rashifal,
-wallpapers, ringtones, an AI status maker and "Ask the Gita".
+<h1 align="center">🛕 Devalay · देवालय</h1>
 
-Inspired by apps like Sanatan, Devalay is an **original** app with its own name, design, code and legally
-sourced content. Core devotion is free forever; an optional Premium tier is billed transparently through Google
-Play with no AutoPay mandates.
+<p align="center">
+  <b>A free, open-source, ad-free Hindu devotional app for Android.</b><br>
+  Aarti and bhajans · the full Bhagavad Gita · an accurate Panchang · a virtual Mandir · japa mala · Rashifal
+</p>
+
+<p align="center">
+  <a href="https://github.com/ChandraChaan/devalay/releases/latest/download/devalay.apk"><img alt="Download APK" src="https://img.shields.io/badge/Download-APK-ff7a00?style=for-the-badge&logo=android&logoColor=white"></a>
+  <a href="https://chandrachaan.github.io/devalay"><img alt="Website" src="https://img.shields.io/badge/Website-devalay-6b2fbf?style=for-the-badge"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/ChandraChaan/devalay/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/ChandraChaan/devalay?label=release"></a>
+  <a href="https://github.com/ChandraChaan/devalay/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/ChandraChaan/devalay/total"></a>
+  <a href="https://github.com/ChandraChaan/devalay/actions/workflows/app.yml"><img alt="App CI" src="https://github.com/ChandraChaan/devalay/actions/workflows/app.yml/badge.svg"></a>
+  <a href="https://github.com/ChandraChaan/devalay/actions/workflows/backend.yml"><img alt="Backend CI" src="https://github.com/ChandraChaan/devalay/actions/workflows/backend.yml/badge.svg"></a>
+  <a href="LICENSE"><img alt="MIT licence" src="https://img.shields.io/badge/licence-MIT-green"></a>
+  <a href="https://github.com/ChandraChaan/devalay/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/ChandraChaan/devalay?style=social"></a>
+</p>
+
+Devalay brings the temple to your phone: listen to aarti, mantras and bhajans with lock-screen controls, read all
+701 verses of the Gita in Sanskrit, IAST and English, check today's tithi, nakshatra and Rahu Kaal for your city,
+light a diya in the virtual Mandir, count japa, and make a devotional status to share. It is inspired by apps like
+Sanatan, but Devalay is an **original** app with its own name, design, code and legally sourced content.
+
+- **No ads, no trackers, no sign-up.** It works from the first launch.
+- **No server bill.** The public APK reads a pre-rendered API on GitHub Pages that refreshes daily.
+- **Legal content only.** Every recording, painting and text is public domain or CC-licensed; see
+  [CONTENT_LICENSES.md](CONTENT_LICENSES.md).
+
+## Screenshots
+
+| Home | Mandir | Player | Gita |
+|:-:|:-:|:-:|:-:|
+| <img src="docs/screenshots/02-home.jpg" width="200"> | <img src="docs/screenshots/03-mandir.jpg" width="200"> | <img src="docs/screenshots/04-player.jpg" width="200"> | <img src="docs/screenshots/05-gita.jpg" width="200"> |
+| **Panchang** | **Calendar** | **Rashifal** | **Wallpapers** |
+| <img src="docs/screenshots/06-panchang.jpg" width="200"> | <img src="docs/screenshots/07-calendar.jpg" width="200"> | <img src="docs/screenshots/08-rashifal.jpg" width="200"> | <img src="docs/screenshots/09-wallpaper.jpg" width="200"> |
+| **Status maker** | **Ask the Gita** | **Japa mala** | **Welcome** |
+| <img src="docs/screenshots/10-status.jpg" width="200"> | <img src="docs/screenshots/11-ask-gita.jpg" width="200"> | <img src="docs/screenshots/12-japa.jpg" width="200"> | <img src="docs/screenshots/01-welcome.jpg" width="200"> |
+
+## Install
+
+1. Open **[devalay.apk](https://github.com/ChandraChaan/devalay/releases/latest/download/devalay.apk)** on your
+   Android phone (Android 7.0 or newer).
+2. Allow your browser to install apps when Android asks, then tap **Install**.
+3. Updates: download the newer APK from [Releases](https://github.com/ChandraChaan/devalay/releases). It installs
+   over the old one and keeps your favourites and japa counts.
+
+Each release lists SHA-256 checksums. `devalay-arm64-v8a.apk` is a smaller download for most phones made since 2017.
+
+## Built with
 
 | | |
 |---|---|
@@ -44,13 +91,17 @@ Play with no AutoPay mandates.
 See [docs/FEATURES.md](docs/FEATURES.md) for the full parity matrix against the reference app, including what is
 intentionally not built.
 
+In the public APK, sign-in, sync and Premium are hidden because they need the full server; everything else works.
+Run your own backend (below) to enable them.
+
 ## Repository layout
 
 ```
 backend/   FastAPI API, admin dashboard, Panchang engine, seed content, tests, Dockerfile
 app/       Flutter Android app (lib/core, lib/features, lib/widgets, test/)
 docs/      Architecture, deployment, feature matrix, store assets
-.github/   CI: backend (Postgres + SQLite tests, Docker smoke test) and app (analyze, test, release build)
+site/      Landing page published to GitHub Pages with the static API
+.github/   CI: backend tests, app analyze/test/build, daily Pages export, tag-triggered APK releases
 ```
 
 ## Quick start (local)
@@ -103,10 +154,31 @@ All backend settings are environment variables prefixed `DEVALAY_`; see
 works fully: AI uses offline generators, Play billing reports "not configured", and email reset codes are logged in
 development.
 
-## Deployment
+## Deployment and releases
 
-See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md): Render (blueprint included) or any Docker host, Neon PostgreSQL,
-Cloudflare R2 for media, and Play Console steps.
+See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md):
+
+- the serverless public build (GitHub Pages);
+- cutting a release (`git tag v1.1.0 && git push --tags`);
+- Render (blueprint included) or any Docker host, with Neon PostgreSQL and Cloudflare R2 for media;
+- the Play Console steps.
+
+Release history: [CHANGELOG.md](CHANGELOG.md).
+
+## Contributing
+
+Contributions are welcome. You could:
+
+- add public-domain chalisas, aartis and stotras;
+- translate the UI into more Indian languages;
+- add cities to the Panchang;
+- pick up an item from the [milestones](https://github.com/ChandraChaan/devalay/milestones).
+
+Please open an issue first for larger changes. Any new content must be public domain or under an open licence, with
+its source recorded in [CONTENT_LICENSES.md](CONTENT_LICENSES.md).
+
+If Devalay brings you a moment of peace, **please ⭐ star the repo** and share the APK with family. Both help others
+find it.
 
 ## Licences
 

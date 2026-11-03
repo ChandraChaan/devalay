@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Devalay · देवालय – Free Hindu devotional app</title>
+<meta name="description" content="Free, open-source Hindu devotional app for Android: aarti, bhajans, mantras, the full Bhagavad Gita, accurate Panchang and festival calendar, virtual Mandir, japa mala, Rashifal, wallpapers and ringtones. No ads, no tracking.">
+<meta name="keywords" content="hindu app, aarti, bhajan, bhagavad gita, panchang, hindu calendar, festival calendar, virtual mandir, hanuman chalisa, rashifal, japa mala, devotional app, open source">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Devalay · देवालय – Free Hindu devotional app">
+<meta property="og:description" content="Aarti, bhajans, Bhagavad Gita, Panchang, virtual Mandir and more. Free, open source, no ads.">
+<meta property="og:image" content="https://chandrachaan.github.io/devalay/banner.png">
+<meta property="og:url" content="https://chandrachaan.github.io/devalay/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#E65100">
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;700&family=Tiro+Devanagari+Sanskrit&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FFF8EE; --surface: #FFFFFF; --ink: #2B1A10; --muted: #7A5B45; --line: #F1DFC8;
+  --saffron: #E65100; --gold: #FFB300; --deep: #8E2400; --chip: #FFF1DC;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #160D08; --surface: #22150E; --ink: #FBEFE2; --muted: #C9A98F; --line: #3A2618; --chip: #2E1C11;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #160D08; --surface: #22150E; --ink: #FBEFE2; --muted: #C9A98F; --line: #3A2618; --chip: #2E1C11;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 Mukta, system-ui, sans-serif; }
+a { color: var(--saffron); }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+.deva { font-family: "Tiro Devanagari Sanskrit", serif; }
+
+.hero { background: linear-gradient(160deg, #FF8F00, #E65100 55%, #8E2400); color: #fff; overflow: hidden; }
+.hero .wrap { display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: center; padding-top: 56px; padding-bottom: 56px; }
+.brand { display: flex; align-items: center; gap: 14px; font-weight: 700; font-size: 20px; }
+.brand img { width: 52px; height: 52px; border-radius: 14px; box-shadow: 0 6px 18px rgba(0,0,0,.25); }
+h1 { font-size: clamp(40px, 6vw, 68px); line-height: 1.05; margin: 22px 0 6px; }
+h1 .deva { display: block; color: #FFECB3; font-weight: 400; font-size: .8em; margin-top: 8px; }
+.lead { font-size: 20px; opacity: .95; max-width: 34em; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 999px; font-weight: 700; text-decoration: none; }
+.btn.primary { background: #fff; color: var(--deep); box-shadow: 0 8px 24px rgba(0,0,0,.2); }
+.btn.ghost { color: #fff; border: 2px solid rgba(255,255,255,.7); }
+.btn:hover { transform: translateY(-1px); }
+.small { font-size: 14px; opacity: .85; margin-top: 12px; }
+.phones { position: relative; height: 520px; }
+.phones img { position: absolute; width: 230px; border-radius: 28px; border: 8px solid #1a0f09; box-shadow: 0 20px 50px rgba(60,10,0,.45); }
+.phones img:nth-child(1) { left: 0; top: 50px; transform: rotate(-6deg); }
+.phones img:nth-child(2) { left: 150px; top: 0; z-index: 2; }
+.phones img:nth-child(3) { left: 300px; top: 50px; transform: rotate(6deg); }
+
+section { padding: 56px 0; }
+h2 { font-size: 32px; margin: 0 0 8px; }
+.sub { color: var(--muted); margin: 0 0 28px; }
+
+.today { background: var(--surface); border: 1px solid var(--line); border-radius: 22px; padding: 22px; display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+.today .k { color: var(--muted); font-size: 14px; }
+.today .v { font-weight: 700; font-size: 19px; }
+.today-head { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+select { font: inherit; padding: 8px 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); }
+.fest { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.fest span { background: var(--chip); padding: 6px 12px; border-radius: 999px; font-size: 15px; }
+
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 20px; }
+.card .ico { font-size: 30px; }
+.card h3 { margin: 8px 0 4px; font-size: 19px; }
+.card p { margin: 0; color: var(--muted); font-size: 15.5px; }
+
+.shots { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; }
+.shots img { width: 216px; flex: none; border-radius: 22px; border: 1px solid var(--line); scroll-snap-align: start; }
+
+.steps { counter-reset: s; list-style: none; padding: 0; display: grid; gap: 12px; }
+.steps li { counter-increment: s; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px 14px 58px; position: relative; }
+.steps li::before { content: counter(s); position: absolute; left: 16px; top: 12px; width: 30px; height: 30px; border-radius: 50%; background: var(--saffron); color: #fff; display: grid; place-items: center; font-weight: 700; }
+
+footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: 15px; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; }
+
+@media (max-width: 860px) {
+  .hero .wrap { grid-template-columns: 1fr; }
+  .phones { height: 400px; max-width: 360px; margin: 0 auto; width: 100%; }
+  .phones img { width: 160px; border-width: 6px; border-radius: 22px; }
+  .phones img:nth-child(2) { left: 100px; }
+  .phones img:nth-child(3) { left: 200px; }
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="brand"><img src="icon.png" alt="">Devalay</div>
+      <h1>Your temple, in your pocket.<span class="deva">देवालय</span></h1>
+      <p class="lead">Aarti, bhajans and mantras, the full Bhagavad Gita, an accurate Panchang and festival calendar, a virtual Mandir, japa mala and more. Free, open source, with no ads and no tracking.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://github.com/ChandraChaan/devalay/releases/latest/download/devalay.apk">⬇ Download for Android</a>
+        <a class="btn ghost" href="https://github.com/ChandraChaan/devalay">★ Star on GitHub</a>
+      </div>
+      <p class="small">Android 7.0+ · free, no ads · <a style="color:#fff" href="https://github.com/ChandraChaan/devalay/releases">all releases</a></p>
+    </div>
+    <div class="phones" aria-hidden="true">
+      <img src="screenshots/02-home.jpg" alt="">
+      <img src="screenshots/03-mandir.jpg" alt="">
+      <img src="screenshots/05-gita.jpg" alt="">
+    </div>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <div class="today-head">
+        <div>
+          <h2>Today's Panchang</h2>
+          <p class="sub" style="margin:0">Computed from NASA JPL ephemeris data, the same data the app uses.</p>
+        </div>
+        <select id="city" aria-label="City"></select>
+      </div>
+      <div class="today" id="today"><div class="k">Loading…</div></div>
+      <div class="fest" id="fest"></div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <h2>Everything for daily devotion</h2>
+      <p class="sub">Hindi and English, light and dark, and most of it works offline.</p>
+      <div class="grid">
+        <div class="card"><div class="ico">🪔</div><h3>Virtual Mandir</h3><p>Light the diya, offer flowers, ring the bells, blow the shankh and perform aarti. Keep a daily darshan streak.</p></div>
+        <div class="card"><div class="ico">🎧</div><h3>Aarti, bhajans and mantras</h3><p>Background playback with lock-screen controls, a sleep timer and offline downloads.</p></div>
+        <div class="card"><div class="ico">📖</div><h3>Bhagavad Gita and scriptures</h3><p>All 701 verses in Sanskrit, transliteration and English, plus Hanuman Chalisa, aartis, the Ramayan, Mahabharata and Upanishads.</p></div>
+        <div class="card"><div class="ico">📅</div><h3>Panchang and festivals</h3><p>Tithi, nakshatra, yoga, Rahu Kaal and muhurtas for 28 cities, with 37 festivals and Ekadashi reminders.</p></div>
+        <div class="card"><div class="ico">🔮</div><h3>Daily Rashifal</h3><p>Readings for all 12 rashis based on the Moon's actual position each day.</p></div>
+        <div class="card"><div class="ico">📿</div><h3>Japa mala</h3><p>A 108-bead counter with haptics, rounds and lifetime totals.</p></div>
+        <div class="card"><div class="ico">✨</div><h3>Status maker</h3><p>Devotional good-morning, festival and birthday wishes over sacred art, ready for WhatsApp.</p></div>
+        <div class="card"><div class="ico">🙋</div><h3>Ask the Gita</h3><p>Ask about anger, work or fear, and get answers from the verses that speak to it.</p></div>
+        <div class="card"><div class="ico">🖼️</div><h3>Wallpapers and ringtones</h3><p>Raja Ravi Varma paintings and temple-bell tones, set in one tap.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <h2>Screenshots</h2>
+      <p class="sub">Swipe to see more.</p>
+      <div class="shots">
+        <img src="screenshots/01-welcome.jpg" alt="Welcome screen" loading="lazy">
+        <img src="screenshots/02-home.jpg" alt="Home with today's Panchang" loading="lazy">
+        <img src="screenshots/03-mandir.jpg" alt="Virtual Mandir" loading="lazy">
+        <img src="screenshots/04-player.jpg" alt="Music player" loading="lazy">
+        <img src="screenshots/05-gita.jpg" alt="Bhagavad Gita reader" loading="lazy">
+        <img src="screenshots/06-panchang.jpg" alt="Panchang" loading="lazy">
+        <img src="screenshots/07-calendar.jpg" alt="Festival calendar" loading="lazy">
+        <img src="screenshots/08-rashifal.jpg" alt="Rashifal" loading="lazy">
+        <img src="screenshots/09-wallpaper.jpg" alt="Wallpaper" loading="lazy">
+        <img src="screenshots/10-status.jpg" alt="Status maker" loading="lazy">
+        <img src="screenshots/11-ask-gita.jpg" alt="Ask the Gita" loading="lazy">
+        <img src="screenshots/12-japa.jpg" alt="Japa mala" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <h2>Install in a minute</h2>
+      <ol class="steps">
+        <li>Tap <a href="https://github.com/ChandraChaan/devalay/releases/latest/download/devalay.apk">Download for Android</a> on your phone.</li>
+        <li>Open the downloaded file. If Android asks, allow your browser to install apps.</li>
+        <li>Choose your ishta devta and city. That's it: no sign-up needed.</li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Made with 🙏 · Code under the MIT licence · Content is public domain or Creative Commons</span>
+    <span><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="https://github.com/ChandraChaan/devalay">Source</a></span>
+  </div>
+</footer>
+
+<script>
+const API = "api/v1";
+const CITIES = [["delhi","New Delhi"],["mumbai","Mumbai"],["kolkata","Kolkata"],["chennai","Chennai"],["bengaluru","Bengaluru"],["hyderabad","Hyderabad"],["ahmedabad","Ahmedabad"],["pune","Pune"],["jaipur","Jaipur"],["lucknow","Lucknow"],["varanasi","Varanasi"],["ayodhya","Ayodhya"],["ujjain","Ujjain"],["haridwar","Haridwar"],["kathmandu","Kathmandu"],["dubai","Dubai"],["singapore","Singapore"],["london","London"],["new-york","New York"],["toronto","Toronto"],["san-francisco","San Francisco"],["sydney","Sydney"]];
+const sel = document.getElementById("city");
+let saved = "delhi";
+try { saved = localStorage.getItem("city") || saved; } catch (e) {}
+for (const [id, name] of CITIES) sel.add(new Option(name, id, false, id === saved));
+
+const iso = d => d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+const hm = s => s ? s.slice(11, 16) : "–";
+const range = r => r ? hm(r.starts) + " – " + hm(r.ends) : "–";
+
+async function load() {
+  const city = sel.value;
+  try { localStorage.setItem("city", city); } catch (e) {}
+  const box = document.getElementById("today"), fest = document.getElementById("fest");
+  let data = null;
+  for (const offset of [0, -1]) {
+    const d = new Date(); d.setDate(d.getDate() + offset);
+    const r = await fetch(`${API}/home/city-${city}~day-${iso(d)}.json`);
+    if (r.ok) { data = await r.json(); break; }
+  }
+  if (!data) { box.innerHTML = '<div class="k">Panchang is updating. Please check back soon.</div>'; return; }
+  const p = data.panchang;
+  const cell = (k, v) => `<div><div class="k">${k}</div><div class="v">${v}</div></div>`;
+  box.innerHTML = [
+    cell("Date", new Date(data.date + "T12:00").toLocaleDateString([], {weekday: "long", day: "numeric", month: "long"})),
+    cell("Tithi", `${p.tithi.paksha} ${p.tithi.name}`),
+    cell("Nakshatra", p.nakshatra.name),
+    cell("Yoga", p.yoga.name),
+    cell("Month", `${p.lunar_month?.name ?? ""} · VS ${p.vikram_samvat ?? ""}`),
+    cell("Sunrise / Sunset", `${hm(p.sunrise)} / ${hm(p.sunset)}`),
+    cell("Rahu Kaal", range(p.rahu_kaal)),
+    cell("Abhijit Muhurta", range(p.abhijit_muhurta)),
+  ].join("");
+  fest.innerHTML = (data.upcoming_festivals || []).map(f =>
+    `<span>🪔 ${f.name} · ${new Date(f.date + "T12:00").toLocaleDateString([], {day: "numeric", month: "short"})}</span>`).join("");
+}
+sel.addEventListener("change", load);
+load().catch(() => { document.getElementById("today").innerHTML = '<div class="k">Could not load today\'s Panchang.</div>'; });
+</script>
+</body>
+</html>

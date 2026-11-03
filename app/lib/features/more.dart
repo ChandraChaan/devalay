@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../core/auth.dart';
+import '../core/config.dart';
 import '../core/i18n.dart';
 import '../core/theme.dart';
 import '../widgets/common.dart';
@@ -33,52 +34,55 @@ class MoreScreen extends ConsumerWidget {
       body: ListView(
         padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
         children: [
-          Card(
-            child: ListTile(
-              contentPadding: const EdgeInsets.all(14),
-              leading: const CircleAvatar(radius: 26, child: Text('🙏', style: TextStyle(fontSize: 24))),
-              title: Text(
-                auth.signedIn
-                    ? (auth.user!.displayName.isNotEmpty ? auth.user!.displayName : auth.user!.email)
-                    : pick(ref, 'Sign in to sync favourites', 'पसंदीदा सिंक करने के लिए साइन इन करें'),
-                style: const TextStyle(fontWeight: FontWeight.w700),
+          // Static (serverless) builds have no accounts or billing.
+          if (!AppConfig.staticApi) ...[
+            Card(
+              child: ListTile(
+                contentPadding: const EdgeInsets.all(14),
+                leading: const CircleAvatar(radius: 26, child: Text('🙏', style: TextStyle(fontSize: 24))),
+                title: Text(
+                  auth.signedIn
+                      ? (auth.user!.displayName.isNotEmpty ? auth.user!.displayName : auth.user!.email)
+                      : pick(ref, 'Sign in to sync favourites', 'पसंदीदा सिंक करने के लिए साइन इन करें'),
+                  style: const TextStyle(fontWeight: FontWeight.w700),
+                ),
+                subtitle: Text(
+                  auth.signedIn
+                      ? (auth.isPremium ? 'Premium 👑' : 'Free plan')
+                      : pick(
+                          ref,
+                          'Optional. Everything works without an account.',
+                          'वैकल्पिक। बिना खाते के भी सब चलता है।',
+                        ),
+                ),
+                trailing: const Icon(Icons.chevron_right_rounded),
+                onTap: () => context.push(auth.signedIn ? '/settings' : '/login'),
               ),
-              subtitle: Text(
-                auth.signedIn
-                    ? (auth.isPremium ? 'Premium 👑' : 'Free plan')
-                    : pick(
-                        ref,
-                        'Optional. Everything works without an account.',
-                        'वैकल्पिक। बिना खाते के भी सब चलता है।',
-                      ),
-              ),
-              trailing: const Icon(Icons.chevron_right_rounded),
-              onTap: () => context.push(auth.signedIn ? '/settings' : '/login'),
             ),
-          ),
-          const SizedBox(height: 12),
-          if (!auth.isPremium)
-            GradientCard(
-              colors: const [Color(0xFFFFB300), Color(0xFFE65100)],
-              padding: 16,
-              onTap: () => context.push('/premium'),
-              child: Row(
-                children: [
-                  const Text('👑', style: TextStyle(fontSize: 30)),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: Text(
-                      pick(
-                        ref,
-                        'Premium: unlimited downloads, more AI. Core devotion stays free.',
-                        'प्रीमियम: असीमित डाउनलोड, अधिक AI। मूल भक्ति हमेशा निःशुल्क।',
+            const SizedBox(height: 12),
+            if (!auth.isPremium)
+              GradientCard(
+                colors: const [Color(0xFFFFB300), Color(0xFFE65100)],
+                padding: 16,
+                onTap: () => context.push('/premium'),
+                child: Row(
+                  children: [
+                    const Text('👑', style: TextStyle(fontSize: 30)),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Text(
+                        pick(
+                          ref,
+                          'Premium: unlimited downloads, more AI. Core devotion stays free.',
+                          'प्रीमियम: असीमित डाउनलोड, अधिक AI। मूल भक्ति हमेशा निःशुल्क।',
+                        ),
+                        style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
                       ),
-                      style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
+          ],
           const SizedBox(height: 16),
           GridView.count(
             padding: EdgeInsets.zero,

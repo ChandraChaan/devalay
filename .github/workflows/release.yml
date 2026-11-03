@@ -1,0 +1,87 @@
+name: Release
+
+# Pushing a tag such as v1.2.0 builds the public APK (static mode: it reads the
+# pre-rendered API on GitHub Pages, so no server is needed) and attaches it to a
+# GitHub release whose notes come from that version's section in CHANGELOG.md.
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Existing tag to (re)build, e.g. v1.0.0"
+        required: true
+
+permissions:
+  contents: write
+
+env:
+  TAG: ${{ github.event.inputs.tag || github.ref_name }}
+  PAGES_URL: https://chandrachaan.github.io/devalay
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.TAG }}
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: "3.44.5"
+          cache: true
+      - run: flutter pub get
+      - run: flutter test
+      - name: Restore release keystore
+        env:
+          KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          KEY_PROPERTIES: ${{ secrets.ANDROID_KEY_PROPERTIES }}
+        run: |
+          if [ -z "$KEYSTORE_BASE64" ] || [ -z "$KEY_PROPERTIES" ]; then
+            echo "::error::ANDROID_KEYSTORE_BASE64 and ANDROID_KEY_PROPERTIES secrets are required for releases"
+            exit 1
+          fi
+          echo "$KEYSTORE_BASE64" | base64 -d > android/app/upload-keystore.jks
+          echo "$KEY_PROPERTIES" > android/key.properties
+      - name: Build APKs
+        run: |
+          VERSION="${TAG#v}"
+          IFS=. read -r MAJOR MINOR PATCH <<< "${VERSION%%-*}"
+          BUILD=$(( MAJOR * 10000 + MINOR * 100 + PATCH ))
+          ARGS="--release --build-name=$VERSION --build-number=$BUILD --dart-define=STATIC_API=true --dart-define=API_BASE_URL=$PAGES_URL"
+          mkdir -p dist
+          flutter build apk $ARGS
+          cp build/app/outputs/flutter-apk/app-release.apk dist/devalay.apk
+          flutter build apk $ARGS --split-per-abi
+          for abi in arm64-v8a armeabi-v7a x86_64; do
+            cp build/app/outputs/flutter-apk/app-$abi-release.apk dist/devalay-$abi.apk
+          done
+          (cd dist && sha256sum *.apk > SHA256SUMS)
+      - name: Check the release key signed it
+        run: keytool -printcert -jarfile dist/devalay.apk | grep -q "CN=Devalay"
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          awk -v v="${TAG#v}" '$0 ~ "^## v?" v "( |$)" {f=1; next} /^## /{f=0} f' ../CHANGELOG.md > notes.md
+          cat >> notes.md <<EOF
+
+          ### Download
+
+          **[devalay.apk](https://github.com/${{ github.repository }}/releases/download/$TAG/devalay.apk)** works on every Android 7+ phone.
+          The smaller \`devalay-arm64-v8a.apk\` suits most phones from 2017 on. Check downloads against \`SHA256SUMS\`.
+          EOF
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" dist/* --clobber
+            gh release edit "$TAG" --notes-file notes.md
+          else
+            gh release create "$TAG" dist/* --title "Devalay $TAG" --notes-file notes.md --verify-tag
+          fi

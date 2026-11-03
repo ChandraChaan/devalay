@@ -16,7 +16,8 @@ STOPWORDS = frozenset(
     "a an the and or of to in on for with is are was were be been it its this that these those i me my "
     "we our you your he him his she her they them their what which who whom how why when where do does "
     "did not no so as at by from but if then than there here into out up down over under can could "
-    "should would will shall may might must about all any some such only own same too very just also".split()
+    "should would will shall may might must about all any some such only own same too very just also "
+    "thou thee thy thine hath doth art ye unto verily said".split()  # Besant's 1922 English
 )
 # Common question words mapped to vocabulary used in the translations.
 SYNONYMS = {
@@ -25,7 +26,8 @@ SYNONYMS = {
     "sad": ["grief", "sorrow"], "sadness": ["grief", "sorrow"], "death": ["death", "die", "born", "eternal"],
     "work": ["action", "work", "duty", "deeds"], "job": ["action", "duty", "work"], "duty": ["duty", "action"],
     "peace": ["peace", "tranquil", "calm"], "happiness": ["happiness", "joy", "bliss"], "god": ["lord", "god", "me"],
-    "meditation": ["meditation", "meditate", "yoga", "concentration"], "mind": ["mind", "senses", "control"],
+    "meditation": ["meditation", "meditate", "yoga", "concentration"],
+    "meditate": ["meditation", "meditate", "meditating", "yoga"], "mind": ["mind", "senses", "control"],
     "desire": ["desire", "craving", "attachment"], "success": ["success", "failure", "equal"],
     "failure": ["failure", "success", "equal"], "soul": ["soul", "self", "spirit"],
     "love": ["love", "devotion", "dear"],

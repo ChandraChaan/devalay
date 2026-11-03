@@ -61,7 +61,7 @@ void main() {
           'sanskrit': 'कर्मण्येवाधिकारस्ते',
           'transliteration': 't',
           'translation_en': 'e',
-          'translation_author': 'Shri Purohit Swami',
+          'translation_author': 'Annie Besant',
         },
       ],
     });

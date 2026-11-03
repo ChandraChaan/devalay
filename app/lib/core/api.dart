@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 import 'config.dart';
+import 'static_api.dart';
 import 'storage.dart';
 
 class ApiException implements Exception {
@@ -101,6 +102,13 @@ class Api {
   /// GET with an offline fallback: successful responses are cached on device and
   /// served when the network is unavailable.
   Future<dynamic> get(String path, {Map<String, dynamic>? query, bool cache = true}) async {
+    if (AppConfig.staticApi) {
+      if (path == '/search') {
+        return StaticApi.search(await get('/search/index') as Map, '${query?['q']}', query?['limit'] as int? ?? 10);
+      }
+      path = '/${StaticApi.file(path, query)}';
+      query = null;
+    }
     final key = '$path?${jsonEncode(query ?? const {})}';
     try {
       final r = await dio.get(path, queryParameters: query);
@@ -113,12 +121,27 @@ class Api {
     }
   }
 
-  Future<dynamic> post(String path, {Object? data}) => _send(() => dio.post(path, data: data));
+  Future<dynamic> post(String path, {Object? data}) async {
+    if (AppConfig.staticApi) {
+      final body = (data as Map?) ?? const {};
+      if (path == '/ai/status') return StaticApi.status(await get('/ai/status') as Map, body);
+      if (path == '/ai/ask') {
+        return StaticApi.ask(await get('/search/index') as Map, '${body['question']}', '${body['language']}');
+      }
+      if (path.endsWith('/play') || path.endsWith('/download')) return null; // no counters without a server
+      throw _serverOnly;
+    }
+    return _send(() => dio.post(path, data: data));
+  }
+
   Future<dynamic> put(String path, {Object? data}) => _send(() => dio.put(path, data: data));
   Future<dynamic> patch(String path, {Object? data}) => _send(() => dio.patch(path, data: data));
   Future<dynamic> delete(String path, {Object? data}) => _send(() => dio.delete(path, data: data));
 
+  static final _serverOnly = ApiException('Accounts and sync are not available in this build.', status: 501);
+
   Future<dynamic> _send(Future<Response> Function() call) async {
+    if (AppConfig.staticApi) throw _serverOnly;
     try {
       return (await call()).data;
     } on DioException catch (e) {
@@ -133,6 +156,8 @@ class Api {
     if (data is Map && data['detail'] != null) {
       final d = data['detail'];
       message = d is List && d.isNotEmpty ? '${(d.first as Map)['msg']}' : '$d';
+    } else if (status == 404 && AppConfig.staticApi) {
+      message = 'This is only available for dates near today in the offline build.';
     } else if (status != null) {
       message = 'Something went wrong ($status). Please try again.';
     }

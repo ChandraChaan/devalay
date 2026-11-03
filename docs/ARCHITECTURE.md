@@ -39,6 +39,20 @@ non-enumerating password reset with attempt limits; rate limits on auth and AI; 
 escaping on all inputs; upload type allow-list and path containment; no secrets in the repo; production refuses
 to start with the default secret; API docs disabled in production; HSTS, nosniff, frame-deny, no-referrer.
 
+### Static mode (public APK)
+
+The public build has no server. Built with `--dart-define=STATIC_API=true`, it works like this:
+
+- **Reading content.** `Api.get` maps each request to a JSON file on GitHub Pages, so `/panchang?lat=…&day=…`
+  becomes `panchang/city-delhi~day-….json`. `backend/scripts/export_static.py` pre-renders those files daily from
+  the same FastAPI routes, so both modes share one code path for content.
+- **Running on device.** `core/static_api.dart` does three things on the phone:
+  - Search, over an exported index.
+  - Ask the Gita, with the same BM25 ranking and offline answer as `services/gita_search.py`.
+  - The status maker, from the exported templates.
+- **Not available.** Writes such as auth, sync and Premium throw a friendly "not available in this build" error,
+  and the UI hides them. Play and download counters are skipped.
+
 ### Cost profile
 
 One small container (about 150 MB RAM) plus serverless Postgres free tier plus R2 (zero egress fees). Panchang and

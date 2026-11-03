@@ -26,40 +26,42 @@ class SettingsScreen extends ConsumerWidget {
       appBar: AppBar(title: Text(tr(ref, 'settings'))),
       body: ListView(
         children: [
-          _Header(hi ? 'खाता' : 'Account'),
-          if (auth.signedIn) ...[
-            ListTile(
-              leading: const Icon(Icons.person_rounded),
-              title: Text(auth.user!.email),
-              subtitle: Text(
-                auth.isPremium
-                    ? 'Premium until ${auth.user!.premiumUntil?.toLocal().toString().substring(0, 10)}'
-                    : 'Free plan',
+          if (!AppConfig.staticApi) ...[
+            _Header(hi ? 'खाता' : 'Account'),
+            if (auth.signedIn) ...[
+              ListTile(
+                leading: const Icon(Icons.person_rounded),
+                title: Text(auth.user!.email),
+                subtitle: Text(
+                  auth.isPremium
+                      ? 'Premium until ${auth.user!.premiumUntil?.toLocal().toString().substring(0, 10)}'
+                      : 'Free plan',
+                ),
               ),
-            ),
+              ListTile(
+                leading: const Icon(Icons.logout_rounded),
+                title: Text(hi ? 'साइन आउट' : 'Sign out'),
+                onTap: () => ref.read(authProvider.notifier).logout(),
+              ),
+              ListTile(
+                leading: const Icon(Icons.delete_forever_rounded, color: Colors.red),
+                title: Text(hi ? 'खाता हटाएँ' : 'Delete account', style: const TextStyle(color: Colors.red)),
+                subtitle: const Text('Permanently removes your account and synced data'),
+                onTap: () => _deleteAccount(context, ref),
+              ),
+            ] else
+              ListTile(
+                leading: const Icon(Icons.login_rounded),
+                title: Text(hi ? 'साइन इन / खाता बनाएँ' : 'Sign in / create account'),
+                subtitle: const Text('Optional: sync favourites and Premium across devices'),
+                onTap: () => context.push('/login'),
+              ),
             ListTile(
-              leading: const Icon(Icons.logout_rounded),
-              title: Text(hi ? 'साइन आउट' : 'Sign out'),
-              onTap: () => ref.read(authProvider.notifier).logout(),
+              leading: const Icon(Icons.workspace_premium_rounded),
+              title: Text(tr(ref, 'premium')),
+              onTap: () => context.push('/premium'),
             ),
-            ListTile(
-              leading: const Icon(Icons.delete_forever_rounded, color: Colors.red),
-              title: Text(hi ? 'खाता हटाएँ' : 'Delete account', style: const TextStyle(color: Colors.red)),
-              subtitle: const Text('Permanently removes your account and synced data'),
-              onTap: () => _deleteAccount(context, ref),
-            ),
-          ] else
-            ListTile(
-              leading: const Icon(Icons.login_rounded),
-              title: Text(hi ? 'साइन इन / खाता बनाएँ' : 'Sign in / create account'),
-              subtitle: const Text('Optional: sync favourites and Premium across devices'),
-              onTap: () => context.push('/login'),
-            ),
-          ListTile(
-            leading: const Icon(Icons.workspace_premium_rounded),
-            title: Text(tr(ref, 'premium')),
-            onTap: () => context.push('/premium'),
-          ),
+          ],
           _Header(hi ? 'पसंद' : 'Preferences'),
           ListTile(
             leading: const Icon(Icons.language_rounded),
@@ -133,7 +135,7 @@ class SettingsScreen extends ConsumerWidget {
           ListTile(
             leading: const Icon(Icons.privacy_tip_rounded),
             title: Text(hi ? 'गोपनीयता नीति' : 'Privacy policy'),
-            onTap: () => launchUrl(Uri.parse('${AppConfig.apiBaseUrl}/privacy'), mode: LaunchMode.externalApplication),
+            onTap: () => launchUrl(Uri.parse(AppConfig.privacyUrl), mode: LaunchMode.externalApplication),
           ),
           ListTile(
             leading: const Icon(Icons.cleaning_services_rounded),
