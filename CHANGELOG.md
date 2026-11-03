@@ -3,6 +3,11 @@
 Each milestone is a git tag and a [GitHub release](https://github.com/ChandraChaan/devalay/releases). Releases from
 v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the section below that matches the tag.
 
+## v1.1.1 — 2026-11-03
+
+- Force update now compares version names (such as 1.1.1). The per-phone APKs add 1000 to 4000 to Android's build
+  number, so a phone with one of them could have skipped a required update.
+
 ## v1.1.0 — 2026-11-03
 
 Devalay in Telugu, for the whole family.
