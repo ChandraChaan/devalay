@@ -1,32 +1,32 @@
-Devalay is a small temple for your family, on your phone. Free, no ads, no sign-up.
+Devalay is a small temple on your phone for the whole family. It's free, and you don't need to sign up.
 
 🎵 Devotional songs that keep playing on the lock screen
-• Annamacharya keerthanas by M.S. Subbulakshmi: Brahma Kadigina Paadamu, Jo Achyutananda, Shriman Narayana
-• Bhadrachala Ramadasu keerthanas by Dr. M. Balamuralikrishna, and Tyagaraja kritis
-• Siva Panchakshara Stotram, Ganesha Pancharatnam, Bhaja Govindam, the Gayatri Mantra and aartis
-• A deity for each day: Monday Shiva, Tuesday Hanuman, Saturday Venkateswara Swamy. That day's songs are on the home screen.
+• Aartis, mantras and bhajans: Om Jai Jagdish Hare, the Gayatri Mantra, the Mahamrityunjaya Mantra and more
+• Annamacharya keerthanas by M.S. Subbulakshmi, Ramadasu keerthanas by Dr. M. Balamuralikrishna, Bhaja Govindam and Siva Panchakshara Stotram
+• A deity for every day: Monday is Shiva, Tuesday Hanuman, Saturday Shani Dev or Venkateswara, and the home screen shows that day's songs
 • Sleep timer, and downloads for offline listening
 
-🗓️ Telugu Panchangam for your city
-• Tithi, vaaram, nakshatram, yogam and karanam, with end times
-• Samvatsaram, masam, paksham, ayanam and ruthuvu
-• Good times: Abhijit muhurtham, Amrit Kalam and Brahma muhurtham
-• Times to avoid: Rahu Kalam, Yamagandam, Durmuhurtham, Varjyam and Gulika
-• 47 cities, including Hyderabad, Vijayawada, Visakhapatnam, Tirupati and Warangal
-• A festival calendar with reminders: Ugadi, Sankranti, Bhogi, Kanuma, Varalakshmi Vratam, Bathukamma, Atla Taddi, Naga Chaturthi, Diwali and more
+🗓️ An accurate Panchang for your city
+• Tithi, nakshatra, yoga and karana, each with its end time
+• Good times: Abhijit muhurta, Amrit Kalam and Brahma muhurta
+• Times to avoid: Rahu Kaal, Yamaganda, Durmuhurtham, Varjyam and Gulika
+• 47 cities across India and abroad, including Delhi, Mumbai, Kolkata, Chennai, Bengaluru, Hyderabad, Varanasi and Tirupati
+• A festival calendar with reminders: Diwali, Holi, Navratri, Ganesh Chaturthi, Janmashtami, Maha Shivratri, Ugadi, Sankranti, Bathukamma, Varalakshmi Vratam and more
 
 🎬 Bhakti videos
-• Official TTD (SVBC) temple videos in a simple swipe-up feed that elders find easy
+• Official temple videos from TTD (SVBC) in a simple swipe-up feed that elders find easy to use
 
-🪔 Virtual Mandir: light a diya, offer flowers, ring the bell, blow the shankh, do aarti
+🪔 Virtual Mandir: light a diya, offer flowers, ring the bell, blow the shankh and do aarti
 
-📖 The Bhagavad Gita (all 701 verses) and stotras in Telugu script, plus "Ask the Gita"
+📖 Read: all 701 verses of the Bhagavad Gita (Sanskrit with English), the Hanuman Chalisa, stotras and mantras, the Ramayan and the Mahabharata, plus "Ask the Gita"
 
-🖼️ Wallpapers and statuses: write Telugu blessings such as "Om Namah Shivaya" on sacred art, then set it as your wallpaper or share it on WhatsApp
+🖼️ Wallpapers and statuses: write a blessing such as "Om Namah Shivaya" on sacred art, then set it as your wallpaper or share it on WhatsApp
 
-📿 Japa mala, ♈ Rashifal, 🔔 ringtones
+📿 Japa mala, ♈ daily Rashifal, 🔔 devotional ringtones
 
-Available in Telugu, Hindi and English, with light and dark themes and five colour choices.
+Use the app in English, Hindi or Telugu, with light and dark themes in five colours.
 
-All songs and images are public domain or under open (Creative Commons) licences, credited in the app.
-Open source: https://github.com/ChandraChaan/devalay
+Devalay shows no ads of its own. The temple videos play in YouTube's player, so YouTube may show its ads there.
+
+All songs and images are public domain or under open (Creative Commons) licences, and each one is credited in the app.
+Devalay is open source: https://github.com/ChandraChaan/devalay

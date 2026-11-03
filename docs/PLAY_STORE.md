@@ -15,8 +15,8 @@ Play Console → **Create app**:
 
 | Field | Value |
 |---|---|
-| App name | `దేవాలయం: భక్తి పాటలు, పంచాంగం` (Telugu) or `Devalay: Bhakti & Panchang` |
-| Default language | Telugu – te-IN (add English – en-IN as a translation) |
+| App name | `Devalay: Bhakti & Panchang` |
+| Default language | English – en-IN (add Telugu – te-IN as a translation) |
 | App or game | App |
 | Free or paid | Free |
 

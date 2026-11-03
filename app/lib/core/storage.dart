@@ -63,12 +63,12 @@ class Prefs {
   final Accent accent;
 
   static Prefs load(Box box) => Prefs(
-    language: box.get('language', defaultValue: 'te') as String,
+    language: box.get('language', defaultValue: 'en') as String,
     themeMode: ThemeMode.values[box.get('theme', defaultValue: 0) as int],
     onboarded: box.get('onboarded', defaultValue: false) as bool,
     ishtaDevta: box.get('ishta') as String?,
     rashi: box.get('rashi') as String?,
-    cityId: box.get('city', defaultValue: 'hyderabad') as String,
+    cityId: box.get('city', defaultValue: 'delhi') as String,
     dailyReminder: box.get('daily_reminder', defaultValue: false) as bool,
     reminderHour: box.get('reminder_hour', defaultValue: 6) as int,
     reminderMinute: box.get('reminder_minute', defaultValue: 30) as int,

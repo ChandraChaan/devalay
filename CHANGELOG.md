@@ -3,6 +3,12 @@
 Each milestone is a git tag and a [GitHub release](https://github.com/ChandraChaan/devalay/releases). Releases from
 v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the section below that matches the tag.
 
+## v1.2.0 — 2026-11-04
+
+- English is now the default language and New Delhi the default city, because Devalay is for all of India. Hindi
+  and Telugu are still one tap away on the first screen and in Settings. Existing users keep their choice.
+- Play Store: the listing is English-first, with a Telugu translation.
+
 ## v1.1.1 — 2026-11-03
 
 - Force update now compares version names (such as 1.1.1). The per-phone APKs add 1000 to 4000 to Android's build

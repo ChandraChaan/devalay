@@ -75,9 +75,9 @@ class SettingsScreen extends ConsumerWidget {
             title: Text(t3(lang, 'Language', 'भाषा', 'భాష')),
             trailing: SegmentedButton<String>(
               segments: const [
-                ButtonSegment(value: 'te', label: Text('తెలుగు')),
-                ButtonSegment(value: 'hi', label: Text('हिन्दी')),
                 ButtonSegment(value: 'en', label: Text('EN')),
+                ButtonSegment(value: 'hi', label: Text('हिन्दी')),
+                ButtonSegment(value: 'te', label: Text('తెలుగు')),
               ],
               selected: {prefs.language},
               onSelectionChanged: (s) => n.setLanguage(s.first),

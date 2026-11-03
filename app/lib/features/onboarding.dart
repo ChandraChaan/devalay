@@ -195,9 +195,9 @@ class _LanguagePage extends ConsumerWidget {
     return _Page(
       title: t3(lang, 'Choose your language', 'भाषा चुनें', 'మీ భాషను ఎంచుకోండి'),
       children: [
-        option('te', 'తెలుగు', 'పాటలు, పంచాంగం, శ్లోకాలు తెలుగులో'),
-        option('hi', 'हिन्दी', 'मंत्र, आरती और पाठ हिन्दी में'),
         option('en', 'English', 'Interface in English, scriptures in the original'),
+        option('hi', 'हिन्दी', 'मंत्र, आरती और पाठ हिन्दी में'),
+        option('te', 'తెలుగు', 'పాటలు, పంచాంగం, శ్లోకాలు తెలుగులో'),
       ],
     );
   }

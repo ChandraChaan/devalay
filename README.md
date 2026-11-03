@@ -23,7 +23,7 @@
   <a href="https://github.com/ChandraChaan/devalay/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/ChandraChaan/devalay?style=social"></a>
 </p>
 
-Devalay brings the temple to your phone. Built for a Telugu family:
+Devalay brings the temple to your phone, in English, Hindi or Telugu, for every member of the family:
 
 - **For grandparents:** official TTD (SVBC) temple videos in a simple swipe-up feed with large Telugu titles.
 - **For the Panchang reader:** a Telugu Panchangam for 47 cities, with samvatsaram, masam, tithi and nakshatram end
