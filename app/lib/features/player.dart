@@ -96,7 +96,7 @@ class PlayerScreen extends ConsumerWidget {
                   child: Column(
                     children: [
                       Text(
-                        pick(ref, track.title, track.titleHi),
+                        track.label(uiLang(ref)),
                         textAlign: TextAlign.center,
                         style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.w700),
                       ),

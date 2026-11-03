@@ -43,7 +43,12 @@ class MoreScreen extends ConsumerWidget {
                 title: Text(
                   auth.signedIn
                       ? (auth.user!.displayName.isNotEmpty ? auth.user!.displayName : auth.user!.email)
-                      : pick(ref, 'Sign in to sync favourites', 'पसंदीदा सिंक करने के लिए साइन इन करें'),
+                      : l3(
+                          ref,
+                          'Sign in to sync favourites',
+                          'पसंदीदा सिंक करने के लिए साइन इन करें',
+                          'ఇష్టమైనవి సింక్ చేయడానికి సైన్ ఇన్ చేయండి',
+                        ),
                   style: const TextStyle(fontWeight: FontWeight.w700),
                 ),
                 subtitle: Text(

@@ -7,6 +7,7 @@ import 'package:share_plus/share_plus.dart';
 
 import '../core/favorites.dart';
 import '../core/i18n.dart';
+import '../core/telugu.dart';
 import '../core/models.dart';
 import '../core/providers.dart';
 import '../core/storage.dart';
@@ -68,7 +69,7 @@ class GitaScreen extends ConsumerWidget {
                       context.push('/gita/${parts[0]}?verse=${parts[1]}');
                     },
                     icon: const Icon(Icons.bookmark_rounded),
-                    label: Text(pick(ref, 'Continue reading $last', 'पढ़ना जारी रखें $last')),
+                    label: Text(l3(ref, 'Continue reading $last', 'पढ़ना जारी रखें $last', 'చదవడం కొనసాగించండి $last')),
                   ),
                 ),
               ),
@@ -151,7 +152,7 @@ class _GitaChapterScreenState extends ConsumerState<GitaChapterScreen> {
     final prefs = ref.watch(prefsProvider);
     return Scaffold(
       appBar: AppBar(
-        title: Text('${pick(ref, 'Chapter', 'अध्याय')} ${widget.chapter}'),
+        title: Text('${l3(ref, 'Chapter', 'अध्याय', 'అధ్యాయం')} ${widget.chapter}'),
         actions: [
           IconButton(
             tooltip: 'Transliteration',
@@ -258,7 +259,7 @@ class _VersePage extends ConsumerWidget {
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Text(
-                '${pick(ref, 'Verse', 'श्लोक')} ${verse.ref}',
+                '${l3(ref, 'Verse', 'श्लोक', 'శ్లోకం')} ${verse.ref}',
                 style: const TextStyle(fontWeight: FontWeight.w700),
               ),
             ),
@@ -292,7 +293,7 @@ class _VersePage extends ConsumerWidget {
             ),
           ),
           child: Text(
-            verse.sanskrit,
+            uiLang(ref) == 'te' ? toTeluguScript(verse.sanskrit) : verse.sanskrit,
             textAlign: TextAlign.center,
             style: scriptureStyle(context, size: 21 * prefs.textScale),
           ),

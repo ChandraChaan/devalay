@@ -8,6 +8,7 @@ import 'package:wakelock_plus/wakelock_plus.dart';
 import '../core/audio.dart';
 import '../core/favorites.dart';
 import '../core/i18n.dart';
+import '../core/telugu.dart';
 import '../core/models.dart';
 import '../core/providers.dart';
 import '../core/storage.dart';
@@ -117,7 +118,7 @@ class _TextReaderScreenState extends ConsumerState<TextReaderScreen> {
                       border: Border.all(color: Palette.marigold.withValues(alpha: 0.3)),
                     ),
                     child: SelectableText(
-                      t.body,
+                      uiLang(ref) == 'te' ? toTeluguScript(t.body) : t.body,
                       textAlign: TextAlign.center,
                       style: scriptureStyle(context, size: 20 * prefs.textScale),
                     ),
@@ -133,7 +134,7 @@ class _TextReaderScreenState extends ConsumerState<TextReaderScreen> {
                   ],
                   if (prefs.showMeaning && t.meaning.isNotEmpty) ...[
                     const SizedBox(height: 24),
-                    Text(pick(ref, 'Meaning', 'भावार्थ'), style: Theme.of(context).textTheme.titleMedium),
+                    Text(l3(ref, 'Meaning', 'भावार्थ', 'భావం'), style: Theme.of(context).textTheme.titleMedium),
                     const SizedBox(height: 8),
                     Text(t.meaning, style: TextStyle(fontSize: 16 * prefs.textScale, height: 1.6)),
                   ],
@@ -227,7 +228,7 @@ class _AudioForText extends ConsumerWidget {
           context.push('/player');
         },
         icon: const Icon(Icons.play_circle_fill_rounded),
-        label: Text(pick(ref, 'Listen along', 'साथ में सुनें')),
+        label: Text(l3(ref, 'Listen along', 'साथ में सुनें', 'వింటూ చదవండి')),
       ),
     );
   }

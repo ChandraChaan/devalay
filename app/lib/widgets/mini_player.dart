@@ -43,7 +43,7 @@ class MiniPlayer extends ConsumerWidget {
                       const SizedBox(width: 12),
                       Expanded(
                         child: Text(
-                          pick(ref, track.title, track.titleHi),
+                          track.label(uiLang(ref)),
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),

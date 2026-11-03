@@ -129,8 +129,8 @@ class DevalayApp extends ConsumerWidget {
     return MaterialApp.router(
       title: 'Devalay',
       debugShowCheckedModeBanner: false,
-      theme: buildTheme(Brightness.light),
-      darkTheme: buildTheme(Brightness.dark),
+      theme: buildTheme(Brightness.light, prefs.accent),
+      darkTheme: buildTheme(Brightness.dark, prefs.accent),
       themeMode: prefs.themeMode,
       routerConfig: ref.watch(routerProvider),
       builder: (context, child) => MediaQuery(

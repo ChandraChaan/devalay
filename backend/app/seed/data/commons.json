@@ -443,6 +443,18 @@
    "license": "CC BY 4.0",
    "attribution": "Unknown · CC BY 4.0 · Wikimedia Commons (https://creativecommons.org/licenses/by/4.0)",
    "source_url": "https://commons.wikimedia.org/wiki/File:Surya_the_sun_deity_driving_in_his_chariot._Gouache_drawing._Wellcome_V0045217.jpg"
+  },
+  {
+   "deity": "venkateswara",
+   "title": "Venkateswara Swamy",
+   "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Tirupati_Balaji_from_delhi_2023.jpg/1280px-Tirupati_Balaji_from_delhi_2023.jpg",
+   "thumb_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Tirupati_Balaji_from_delhi_2023.jpg/500px-Tirupati_Balaji_from_delhi_2023.jpg",
+   "original_url": "https://upload.wikimedia.org/wikipedia/commons/7/72/Tirupati_Balaji_from_delhi_2023.jpg",
+   "width": 1280,
+   "height": 1707,
+   "license": "CC0",
+   "attribution": "Bhavna1359 · CC0 · Wikimedia Commons",
+   "source_url": "https://commons.wikimedia.org/wiki/File:Tirupati_Balaji_from_delhi_2023.jpg"
   }
  ],
  "portraits": {
@@ -458,7 +470,8 @@
   "saraswati": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Raja_Ravi_Varma%2C_Goddess_Saraswati.jpg/500px-Raja_Ravi_Varma%2C_Goddess_Saraswati.jpg",
   "vishnu": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Raja_Ravi_Varma%2C_Seshanarayana_%28Oleographic_print%29.jpg",
   "shani": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/45/Shani_Deva.jpg/500px-Shani_Deva.jpg",
-  "surya": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Surya_Narayana.jpg/500px-Surya_Narayana.jpg"
+  "surya": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Surya_Narayana.jpg/500px-Surya_Narayana.jpg",
+  "venkateswara": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Tirupati_Balaji_from_delhi_2023.jpg/500px-Tirupati_Balaji_from_delhi_2023.jpg"
  },
  "tracks": [
   {

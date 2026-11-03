@@ -50,7 +50,7 @@ class TrackTile extends ConsumerWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      pick(ref, track.title, track.titleHi),
+                      track.label(uiLang(ref)),
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(

@@ -31,7 +31,7 @@ def home(db: DB, response: Response, lat: Lat = None, lon: Lon = None, tz: Tz = 
         "panchang": {
             "vara": p["vara"], "sunrise": p["sunrise"], "sunset": p["sunset"],
             "tithi": p["tithi"][0], "nakshatra": p["nakshatra"][0], "yoga": p["yoga"][0],
-            "lunar_month": p["lunar_month"], "vikram_samvat": p["vikram_samvat"],
+            "lunar_month": p["lunar_month"], "vikram_samvat": p["vikram_samvat"], "samvatsara": p["samvatsara"],
             "rahu_kaal": p["rahu_kaal"], "abhijit_muhurta": p["abhijit_muhurta"],
             "moon_rashi": p["moon_rashi"],
         },

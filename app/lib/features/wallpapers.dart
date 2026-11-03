@@ -32,7 +32,7 @@ class _WallpapersScreenState extends ConsumerState<WallpapersScreen> {
   Widget build(BuildContext context) {
     final walls = ref.watch(wallpapersProvider(_deity));
     final deities = (ref.watch(deitiesProvider).value ?? const <Deity>[]).where((d) => d.slug != 'general').toList();
-    final hi = ref.watch(prefsProvider).language == 'hi';
+    final lang = ref.watch(prefsProvider).language;
     return Scaffold(
       appBar: AppBar(
         title: Text(tr(ref, 'wallpapers')),
@@ -56,7 +56,7 @@ class _WallpapersScreenState extends ConsumerState<WallpapersScreen> {
                   Padding(
                     padding: const EdgeInsets.only(right: 8),
                     child: ChoiceChip(
-                      label: Text(hi ? d.nameHi : d.name),
+                      label: Text(d.label(lang)),
                       selected: _deity == d.slug,
                       onSelected: (_) => setState(() => _deity = d.slug),
                     ),

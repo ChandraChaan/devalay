@@ -94,6 +94,18 @@ flutter:
           weight: 600
         - asset: assets/fonts/Mukta-Bold.ttf
           weight: 700
+    - family: NotoSansTelugu
+      fonts:
+        - asset: assets/fonts/NotoSansTelugu-Regular.ttf
+        - asset: assets/fonts/NotoSansTelugu-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/NotoSansTelugu-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/NotoSansTelugu-Bold.ttf
+          weight: 700
+    - family: TiroTelugu
+      fonts:
+        - asset: assets/fonts/TiroTelugu-Regular.ttf
     - family: TiroDevanagari
       fonts:
         - asset: assets/fonts/TiroDevanagariSanskrit-Regular.ttf

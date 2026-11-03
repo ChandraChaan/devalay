@@ -11,6 +11,7 @@ DEITIES = [
     ("hanuman", "Hanuman", "हनुमान", "#E64A19", 1, "Bajrangbali, devoted servant of Shri Ram, giver of strength, courage and wisdom."),
     ("ganesha", "Ganesha", "गणेश", "#F57C00", 2, "Ganpati, remover of obstacles, worshipped first before every undertaking."),
     ("vishnu", "Vishnu", "विष्णु", "#1E88E5", 3, "Narayan, the preserver, who descends as avatars to protect dharma."),
+    ("venkateswara", "Venkateswara", "वेंकटेश्वर", "#B8860B", None, "Srinivasa of Tirumala, the Lord of the Seven Hills, who answers every sincere prayer."),
     ("lakshmi", "Lakshmi", "लक्ष्मी", "#D81B60", 4, "Goddess of prosperity, beauty and good fortune, consort of Vishnu."),
     ("shani", "Shani Dev", "शनि देव", "#37474F", 5, "Lord of Saturday and karma, who rewards patience and honest effort."),
     ("surya", "Surya", "सूर्य", "#FFA000", 6, "The Sun, the visible god, source of light, health and the Gayatri Mantra."),

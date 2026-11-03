@@ -119,7 +119,7 @@ class _MandirScreenState extends ConsumerState<MandirScreen> with TickerProvider
   @override
   Widget build(BuildContext context) {
     final deities = ref.watch(deitiesProvider);
-    final hi = ref.watch(prefsProvider).language == 'hi';
+    final lang = ref.watch(prefsProvider).language;
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light,
       child: Scaffold(
@@ -147,14 +147,14 @@ class _MandirScreenState extends ConsumerState<MandirScreen> with TickerProvider
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    hi ? 'मेरा मंदिर' : 'My Mandir',
+                                    t3(lang, 'My Mandir', 'मेरा मंदिर', 'నా మందిరం'),
                                     style: const TextStyle(
                                       color: Palette.gold,
                                       fontSize: 26,
                                       fontWeight: FontWeight.w700,
                                     ),
                                   ),
-                                  Text(hi ? deity.nameHi : deity.name, style: const TextStyle(color: Colors.white70)),
+                                  Text(deity.label(lang), style: const TextStyle(color: Colors.white70)),
                                 ],
                               ),
                             ),
@@ -162,7 +162,7 @@ class _MandirScreenState extends ConsumerState<MandirScreen> with TickerProvider
                               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                               decoration: BoxDecoration(color: Colors.white10, borderRadius: BorderRadius.circular(20)),
                               child: Text(
-                                '🔥 $_streak ${hi ? 'दिन' : 'day streak'}',
+                                '🔥 $_streak ${t3(lang, 'day streak', 'दिन', 'రోజుల వరుస')}',
                                 style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
                               ),
                             ),

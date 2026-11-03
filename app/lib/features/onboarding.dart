@@ -4,10 +4,12 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../core/i18n.dart';
 import '../core/location.dart';
 import '../core/models.dart';
 import '../core/notifications.dart';
 import '../core/storage.dart';
+import '../core/telugu.dart';
 import '../core/theme.dart';
 import '../widgets/mandala.dart';
 
@@ -52,7 +54,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     final prefs = ref.watch(prefsProvider);
-    final hi = prefs.language == 'hi';
+    final lang = prefs.language;
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light,
       child: Scaffold(
@@ -73,10 +75,10 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                     physics: const NeverScrollableScrollPhysics(),
                     onPageChanged: (i) => setState(() => _index = i),
                     children: [
-                      _Welcome(hi: hi),
-                      _LanguagePage(hi: hi),
-                      _DeityPage(hi: hi),
-                      _CityRashiPage(hi: hi),
+                      _Welcome(lang: lang),
+                      _LanguagePage(lang: lang),
+                      _DeityPage(lang: lang),
+                      _CityRashiPage(lang: lang),
                     ],
                   ),
                 ),
@@ -99,13 +101,20 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                       if (_index > 0)
                         TextButton(
                           onPressed: _finish,
-                          child: Text(hi ? 'छोड़ें' : 'Skip', style: const TextStyle(color: Colors.white70)),
+                          child: Text(
+                            t3(lang, 'Skip', 'छोड़ें', 'దాటవేయండి'),
+                            style: const TextStyle(color: Colors.white70),
+                          ),
                         ),
                       const SizedBox(width: 8),
                       FilledButton(
                         style: FilledButton.styleFrom(backgroundColor: Palette.gold, foregroundColor: Palette.maroon),
                         onPressed: _next,
-                        child: Text(_index == 3 ? (hi ? 'आरंभ करें 🙏' : 'Begin 🙏') : (hi ? 'आगे' : 'Next')),
+                        child: Text(
+                          _index == 3
+                              ? (t3(lang, 'Begin 🙏', 'आरंभ करें 🙏', 'ప్రారంభించండి 🙏'))
+                              : (t3(lang, 'Next', 'आगे', 'తర్వాత')),
+                        ),
                       ),
                     ],
                   ),
@@ -120,8 +129,8 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
 }
 
 class _Welcome extends StatelessWidget {
-  const _Welcome({required this.hi});
-  final bool hi;
+  const _Welcome({required this.lang});
+  final String lang;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -147,9 +156,12 @@ class _Welcome extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 36),
           child: Text(
-            hi
-                ? 'आरती, भजन, मंत्र, गीता, पंचांग और आपका अपना मंदिर। निःशुल्क, विज्ञापन-रहित और निजी।'
-                : 'Aarti, bhajans, mantras, the Gita, Panchang and your own Mandir. Free, ad-free and private.',
+            t3(
+              lang,
+              'Aarti, bhajans, mantras, the Gita, Panchang and your own Mandir. Free, ad-free and private.',
+              'आरती, भजन, मंत्र, गीता, पंचांग और आपका अपना मंदिर। निःशुल्क, विज्ञापन-रहित और निजी।',
+              'హారతులు, భజనలు, మంత్రాలు, భగవద్గీత, పంచాంగం, మీ సొంత మందిరం. ఉచితం, ప్రకటనలు లేవు, మీ సమాచారం మీ దగ్గరే.',
+            ),
             textAlign: TextAlign.center,
             style: const TextStyle(color: Colors.white70, fontSize: 16, height: 1.5),
           ),
@@ -160,8 +172,8 @@ class _Welcome extends StatelessWidget {
 }
 
 class _LanguagePage extends ConsumerWidget {
-  const _LanguagePage({required this.hi});
-  final bool hi;
+  const _LanguagePage({required this.lang});
+  final String lang;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final lang = ref.watch(prefsProvider).language;
@@ -180,8 +192,9 @@ class _LanguagePage extends ConsumerWidget {
       ),
     );
     return _Page(
-      title: hi ? 'भाषा चुनें' : 'Choose your language',
+      title: t3(lang, 'Choose your language', 'भाषा चुनें', 'మీ భాషను ఎంచుకోండి'),
       children: [
+        option('te', 'తెలుగు', 'పాటలు, పంచాంగం, శ్లోకాలు తెలుగులో'),
         option('hi', 'हिन्दी', 'मंत्र, आरती और पाठ हिन्दी में'),
         option('en', 'English', 'Interface in English, scriptures in the original'),
       ],
@@ -190,16 +203,19 @@ class _LanguagePage extends ConsumerWidget {
 }
 
 class _DeityPage extends ConsumerWidget {
-  const _DeityPage({required this.hi});
-  final bool hi;
+  const _DeityPage({required this.lang});
+  final String lang;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final ishta = ref.watch(prefsProvider).ishtaDevta;
     return _Page(
-      title: hi ? 'आपके इष्ट देव' : 'Your Ishta Devta',
-      subtitle: hi
-          ? 'आपका मंदिर और होम स्क्रीन इन्हीं से सजेगा'
-          : 'Your Mandir and home screen will be dedicated to them',
+      title: t3(lang, 'Your Ishta Devta', 'आपके इष्ट देव', 'మీ ఇష్ట దైవం'),
+      subtitle: t3(
+        lang,
+        'Your Mandir and home screen will be dedicated to them',
+        'आपका मंदिर और होम स्क्रीन इन्हीं से सजेगा',
+        'మీ మందిరం, హోమ్ స్క్రీన్ ఈ దైవానికి అంకితం',
+      ),
       children: [
         GridView.count(
           padding: EdgeInsets.zero,
@@ -219,7 +235,7 @@ class _DeityPage extends ConsumerWidget {
                     Text(emoji, style: const TextStyle(fontSize: 30)),
                     const SizedBox(height: 4),
                     Text(
-                      hi ? hiName : en,
+                      pickLang(lang, en, hiName, te: teluguDeities[slug]),
                       textAlign: TextAlign.center,
                       style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
                     ),
@@ -234,17 +250,20 @@ class _DeityPage extends ConsumerWidget {
 }
 
 class _CityRashiPage extends ConsumerWidget {
-  const _CityRashiPage({required this.hi});
-  final bool hi;
+  const _CityRashiPage({required this.lang});
+  final String lang;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final prefs = ref.watch(prefsProvider);
     final dropdownStyle = const TextStyle(color: Colors.white, fontSize: 16, fontFamily: 'Mukta');
     return _Page(
-      title: hi ? 'पंचांग और राशि' : 'Panchang & Rashi',
-      subtitle: hi
-          ? 'सूर्योदय और मुहूर्त आपके शहर के अनुसार। GPS की आवश्यकता नहीं।'
-          : 'Sunrise and muhurta timings for your city. No GPS needed.',
+      title: t3(lang, 'Panchang & Rashi', 'पंचांग और राशि', 'పంచాంగం & రాశి'),
+      subtitle: t3(
+        lang,
+        'Sunrise and muhurta timings for your city. No GPS needed.',
+        'सूर्योदय और मुहूर्त आपके शहर के अनुसार। GPS की आवश्यकता नहीं।',
+        'మీ నగరానికి సూర్యోదయం, ముహూర్త సమయాలు. GPS అవసరం లేదు.',
+      ),
       children: [
         _Choice(
           selected: true,
@@ -257,14 +276,14 @@ class _CityRashiPage extends ConsumerWidget {
               style: dropdownStyle,
               iconEnabledColor: Colors.white,
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              items: [for (final c in cities) DropdownMenuItem(value: c.id, child: Text(hi ? c.nameHi : c.name))],
+              items: [for (final c in cities) DropdownMenuItem(value: c.id, child: Text(c.label(lang)))],
               onChanged: (v) => ref.read(prefsProvider.notifier).setCity(v!),
             ),
           ),
         ),
         const SizedBox(height: 16),
         Text(
-          hi ? 'आपकी चंद्र राशि (वैकल्पिक)' : 'Your Moon sign (optional)',
+          t3(lang, 'Your Moon sign (optional)', 'आपकी चंद्र राशि (वैकल्पिक)', 'మీ చంద్ర రాశి (ఐచ్ఛికం)'),
           style: const TextStyle(color: Colors.white70),
         ),
         const SizedBox(height: 8),
@@ -278,7 +297,7 @@ class _CityRashiPage extends ConsumerWidget {
             children: [
               for (final (slug, en, hiName, symbol) in rashiList)
                 ChoiceChip(
-                  label: Text('$symbol ${hi ? hiName : en}'),
+                  label: Text('$symbol ${pickLang(lang, en, hiName, te: teluguRashiBySlug[slug])}'),
                   selected: prefs.rashi == slug,
                   showCheckmark: false,
                   color: WidgetStatePropertyAll(
@@ -299,7 +318,12 @@ class _CityRashiPage extends ConsumerWidget {
           value: prefs.dailyReminder,
           activeThumbColor: Palette.gold,
           title: Text(
-            hi ? 'सुबह प्रार्थना याद दिलाएँ (6:30)' : 'Morning prayer reminder (6:30 AM)',
+            t3(
+              lang,
+              'Morning prayer reminder (6:30 AM)',
+              'सुबह प्रार्थना याद दिलाएँ (6:30)',
+              'ఉదయం పూజ రిమైండర్ (6:30)',
+            ),
             style: const TextStyle(color: Colors.white),
           ),
           onChanged: (v) async {

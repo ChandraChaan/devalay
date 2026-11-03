@@ -86,7 +86,7 @@ class ReadScreen extends ConsumerWidget {
               ],
             ),
           ).animate().fadeIn(delay: 80.ms),
-          SectionHeader(pick(ref, 'Prayers & Paath', 'प्रार्थना और पाठ')),
+          SectionHeader(l3(ref, 'Prayers & Paath', 'प्रार्थना और पाठ', 'ప్రార్థనలు & పారాయణం')),
           GridView.count(
             padding: EdgeInsets.zero,
             crossAxisCount: 2,
