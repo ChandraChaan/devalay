@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_ce_flutter/hive_ce_flutter.dart';
 import 'package:uuid/uuid.dart';
 
+import 'firebase.dart';
+
 /// Local, on-device storage. Nothing here leaves the phone unless the user signs in
 /// and syncs favourites.
 class Boxes {
@@ -87,7 +89,11 @@ class PrefsNotifier extends Notifier<Prefs> {
     state = Prefs.load(Boxes.prefs);
   }
 
-  Future<void> setLanguage(String v) => set('language', v);
+  Future<void> setLanguage(String v) async {
+    await set('language', v);
+    await FirebaseServices.subscribe(v);
+  }
+
   Future<void> setTheme(ThemeMode m) => set('theme', m.index);
   Future<void> setIshta(String? v) => set('ishta', v);
   Future<void> setRashi(String? v) => set('rashi', v);

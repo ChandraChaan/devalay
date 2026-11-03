@@ -24,3 +24,6 @@ service-account*.json
 .idea/
 .vscode/
 *.iml
+
+# Firebase client config: written by CI from the GOOGLE_SERVICES_JSON secret
+google-services.json

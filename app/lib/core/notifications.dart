@@ -5,8 +5,9 @@ import 'package:timezone/timezone.dart' as tz;
 
 import 'models.dart';
 
-/// Local, on-device reminders. No push server or Firebase is involved: daily
-/// prayer and festival reminders are scheduled with the Android alarm manager.
+/// On-device reminders: daily prayer and festival reminders are scheduled with the
+/// Android alarm manager and work offline. Push announcements from the Firebase
+/// console arrive through [FirebaseServices] and are shown here in the foreground.
 class Notifications {
   static final _plugin = FlutterLocalNotificationsPlugin();
   static const _dailyId = 1;
@@ -17,6 +18,12 @@ class Notifications {
     'Daily prayer reminder',
     channelDescription: 'A gentle reminder for your daily prayer',
     importance: Importance.defaultImportance,
+  );
+  static const _announcement = AndroidNotificationDetails(
+    'announcements',
+    'Announcements',
+    channelDescription: 'Festival greetings and news from Devalay',
+    importance: Importance.high,
   );
   static const _festival = AndroidNotificationDetails(
     'festivals',
@@ -36,6 +43,13 @@ class Notifications {
       settings: const InitializationSettings(android: AndroidInitializationSettings('@drawable/ic_notification')),
     );
   }
+
+  static Future<void> announce(String title, String body) => _plugin.show(
+    id: DateTime.now().millisecondsSinceEpoch ~/ 1000 % 100000 + 2000,
+    title: title,
+    body: body,
+    notificationDetails: const NotificationDetails(android: _announcement),
+  );
 
   static Future<bool> requestPermission() async {
     final android = _plugin.resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>();

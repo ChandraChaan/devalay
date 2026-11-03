@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:url_launcher/url_launcher.dart';
 
+import 'core/firebase.dart';
 import 'core/models.dart';
 import 'core/storage.dart';
 import 'core/theme.dart';
@@ -135,7 +137,7 @@ class DevalayApp extends ConsumerWidget {
         data: MediaQuery.of(
           context,
         ).copyWith(textScaler: MediaQuery.of(context).textScaler.clamp(minScaleFactor: 0.9, maxScaleFactor: 1.4)),
-        child: child!,
+        child: _UpdateGate(child: child!),
       ),
     );
   }
@@ -147,4 +149,62 @@ void openDeepLink(BuildContext context, String link) {
   final path = '/${link.substring('devalay://'.length)}';
   const tabs = {'/home', '/listen', '/mandir', '/read', '/more'};
   tabs.contains(path) ? context.go(path) : context.push(path);
+}
+
+/// Blocks the app when Remote Config says this build is too old (see core/firebase.dart).
+class _UpdateGate extends ConsumerWidget {
+  const _UpdateGate({required this.child});
+  final Widget child;
+
+  static const _title = {
+    'te': 'కొత్త వెర్షన్ అందుబాటులో ఉంది',
+    'hi': 'नया संस्करण उपलब्ध है',
+    'en': 'Please update Devalay',
+  };
+  static const _body = {
+    'te': 'దేవాలయం కొనసాగించడానికి దయచేసి తాజా వెర్షన్‌కు అప్‌డేట్ చేయండి.',
+    'hi': 'देवालय का उपयोग जारी रखने के लिए कृपया नया संस्करण इंस्टॉल करें।',
+    'en': 'This version is no longer supported. Please install the latest version to continue.',
+  };
+  static const _button = {'te': 'ఇప్పుడే అప్‌డేట్ చేయండి', 'hi': 'अभी अपडेट करें', 'en': 'Update now'};
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final update = ref.watch(updateProvider).value;
+    if (update == null || !update.required) return child;
+    final lang = ref.watch(prefsProvider.select((p) => p.language));
+    final message = update.message[lang] ?? '';
+    return Material(
+      color: Palette.maroon,
+      child: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(32),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('🛕', style: TextStyle(fontSize: 64)),
+              const SizedBox(height: 24),
+              Text(
+                _title[lang] ?? _title['en']!,
+                textAlign: TextAlign.center,
+                style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.w700),
+              ),
+              const SizedBox(height: 12),
+              Text(
+                message.isNotEmpty ? message : (_body[lang] ?? _body['en']!),
+                textAlign: TextAlign.center,
+                style: const TextStyle(color: Colors.white70, fontSize: 16, height: 1.5),
+              ),
+              const SizedBox(height: 32),
+              FilledButton(
+                style: FilledButton.styleFrom(backgroundColor: Palette.gold, foregroundColor: Palette.maroon),
+                onPressed: () => launchUrl(Uri.parse(update.url), mode: LaunchMode.externalApplication),
+                child: Text(_button[lang] ?? _button['en']!),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
