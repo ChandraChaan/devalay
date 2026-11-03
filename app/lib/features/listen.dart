@@ -24,7 +24,7 @@ class _ListenScreenState extends ConsumerState<ListenScreen> {
   @override
   Widget build(BuildContext context) {
     final deities = ref.watch(deitiesProvider).value ?? const <Deity>[];
-    final hi = ref.watch(prefsProvider).language == 'hi';
+    final lang = ref.watch(prefsProvider).language;
     return DefaultTabController(
       length: _kinds.length,
       child: Scaffold(
@@ -67,7 +67,7 @@ class _ListenScreenState extends ConsumerState<ListenScreen> {
                             avatar: CircleAvatar(
                               backgroundImage: d.imageUrl.isEmpty ? null : NetworkImageProvider(d.imageUrl),
                             ),
-                            label: Text(hi ? d.nameHi : d.name),
+                            label: Text(d.label(lang)),
                             selected: _deity == d.slug,
                             onSelected: (_) => setState(() => _deity = _deity == d.slug ? null : d.slug),
                           ),

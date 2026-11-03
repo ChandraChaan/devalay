@@ -1,0 +1,24 @@
+{
+  "parameters": {
+    "min_version_code": {
+      "defaultValue": { "value": "0" },
+      "description": "Builds with a lower versionCode must update before use (force update). v1.1.0 = 10100.",
+      "valueType": "NUMBER"
+    },
+    "update_message_te": {
+      "defaultValue": { "value": "" },
+      "description": "Optional Telugu text for the update screen",
+      "valueType": "STRING"
+    },
+    "update_message_hi": {
+      "defaultValue": { "value": "" },
+      "description": "Optional Hindi text for the update screen",
+      "valueType": "STRING"
+    },
+    "update_message_en": {
+      "defaultValue": { "value": "" },
+      "description": "Optional English text for the update screen",
+      "valueType": "STRING"
+    }
+  }
+}

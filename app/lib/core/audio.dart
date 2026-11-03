@@ -8,6 +8,7 @@ import 'package:just_audio_background/just_audio_background.dart';
 import 'api.dart';
 import 'downloads.dart';
 import 'models.dart';
+import 'storage.dart';
 
 /// One shared player with a queue, lock-screen controls (via just_audio_background),
 /// offline playback of downloaded tracks and a sleep timer.
@@ -23,13 +24,18 @@ class AudioController {
 
   Stream<Track?> get currentTrack => player.sequenceStateStream.map((s) {
     final tag = s.currentSource?.tag;
-    return tag is MediaItem ? tag.extras!['track'] as Track : null;
+    return tag is MediaItem ? _track(tag) : null;
   });
 
   Track? get current {
     final tag = player.sequenceState.currentSource?.tag;
-    return tag is MediaItem ? tag.extras!['track'] as Track : null;
+    return tag is MediaItem ? _track(tag) : null;
   }
+
+  // The MediaItem crosses the platform channel to the Android media session, so it carries only
+  // plain values; the Track itself is looked up here. (A Track object in `extras` made the
+  // session update fail, leaving the lock screen with no title.)
+  Track? _track(MediaItem item) => queue.where((t) => '${t.id}' == item.id).firstOrNull;
 
   AudioSource _source(Track t) {
     final local = _downloads.localPath(t.id);
@@ -38,11 +44,10 @@ class AudioController {
       uri,
       tag: MediaItem(
         id: '${t.id}',
-        title: t.titleHi.isNotEmpty ? '${t.title} · ${t.titleHi}' : t.title,
+        title: t.label(Prefs.load(Boxes.prefs).language),
         artist: t.artist.isEmpty ? 'Devalay' : t.artist,
         album: 'Devalay',
         artUri: t.artworkUrl.isEmpty ? null : Uri.parse(t.artworkUrl),
-        extras: {'track': t},
       ),
     );
   }

@@ -108,10 +108,10 @@ class RashifalScreen extends ConsumerWidget {
             Text('${r['overview']}', style: const TextStyle(fontSize: 18, height: 1.5)),
             const SizedBox(height: 16),
             for (final (icon, key, title) in [
-              ('❤️', 'love', pick(ref, 'Relationships', 'संबंध')),
-              ('💼', 'career', pick(ref, 'Work', 'कार्य')),
-              ('🌿', 'health', pick(ref, 'Health', 'स्वास्थ्य')),
-              ('🪔', 'remedy', pick(ref, 'Upay', 'उपाय')),
+              ('❤️', 'love', l3(ref, 'Relationships', 'संबंध', 'బంధాలు')),
+              ('💼', 'career', l3(ref, 'Work', 'कार्य', 'పని')),
+              ('🌿', 'health', l3(ref, 'Health', 'स्वास्थ्य', 'ఆరోగ్యం')),
+              ('🪔', 'remedy', l3(ref, 'Upay', 'उपाय', 'పరిహారం')),
             ])
               Card(
                 margin: const EdgeInsets.only(bottom: 10),
@@ -124,11 +124,14 @@ class RashifalScreen extends ConsumerWidget {
             Row(
               children: [
                 Expanded(
-                  child: _Lucky(label: pick(ref, 'Lucky colour', 'शुभ रंग'), value: '${r['lucky_color']}'),
+                  child: _Lucky(label: l3(ref, 'Lucky colour', 'शुभ रंग', 'అదృష్ట రంగు'), value: '${r['lucky_color']}'),
                 ),
                 const SizedBox(width: 10),
                 Expanded(
-                  child: _Lucky(label: pick(ref, 'Lucky number', 'शुभ अंक'), value: '${r['lucky_number']}'),
+                  child: _Lucky(
+                    label: l3(ref, 'Lucky number', 'शुभ अंक', 'అదృష్ట సంఖ్య'),
+                    value: '${r['lucky_number']}',
+                  ),
                 ),
               ],
             ),
@@ -140,7 +143,7 @@ class RashifalScreen extends ConsumerWidget {
                   ref.read(prefsProvider.notifier).setRashi('${r['rashi']}');
                   Navigator.pop(ctx);
                 },
-                child: Text(pick(ref, 'Make this my rashi', 'इसे मेरी राशि बनाएँ')),
+                child: Text(l3(ref, 'Make this my rashi', 'इसे मेरी राशि बनाएँ', 'ఇది నా రాశి')),
               ),
           ],
         ),

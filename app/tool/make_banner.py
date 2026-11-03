@@ -22,15 +22,15 @@ bg.paste(icon, (70, 60), mask)
 
 d = ImageDraw.Draw(bg)
 d.text((70, 170), "Devalay", font=ImageFont.truetype(FONTS + "Mukta-Bold.ttf", 84), fill="white")
-d.text((70, 310), "देवालय", font=ImageFont.truetype(FONTS + "TiroDevanagariSanskrit-Regular.ttf", 84), fill=(255, 236, 179))
+d.text((70, 300), "దేవాలయం", font=ImageFont.truetype(FONTS + "TiroTelugu-Regular.ttf", 72), fill=(255, 236, 179))
 med = ImageFont.truetype(FONTS + "Mukta-Medium.ttf", 27)
-for i, line in enumerate(["Aarti · Bhajans · Bhagavad Gita · Panchang", "Virtual Mandir · Japa · Rashifal · Wallpapers"]):
+for i, line in enumerate(["Annamayya songs · Telugu Panchangam · Gita", "Temple videos · Mandir · Telugu wallpapers"]):
     d.text((72, 425 + i * 42), line, font=med, fill="white")
 d.rounded_rectangle((70, 540, 470, 590), 25, fill="white")
 d.text((95, 548), "Free · Open source · No ads", font=ImageFont.truetype(FONTS + "Mukta-SemiBold.ttf", 24),
        fill=(142, 36, 0))
 
-for k, name in enumerate(["02-home", "03-mandir", "05-gita"]):
+for k, name in enumerate(["02-home", "03-panchang", "05-player"]):
     shot = Image.open(f"docs/screenshots/{name}.jpg").convert("RGB").resize((216, 480), Image.LANCZOS)
     x, y = 610 + k * 205, (70 if k == 1 else 110)
     shadow = Image.new("L", (W, H), 0)

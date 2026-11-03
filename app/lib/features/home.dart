@@ -11,6 +11,7 @@ import '../core/location.dart';
 import '../core/models.dart';
 import '../core/providers.dart';
 import '../core/storage.dart';
+import '../core/telugu.dart';
 import '../core/theme.dart';
 import '../widgets/common.dart';
 import '../widgets/mandala.dart';
@@ -57,6 +58,7 @@ class _HomeBody extends ConsumerWidget {
           child: _Hero(deity: deity, panchang: data['panchang'] as Map),
         ),
         SliverToBoxAdapter(child: _QuickActions()),
+        SliverToBoxAdapter(child: _TodaysSongs(serverDeity: deity)),
         if (banners.isNotEmpty) SliverToBoxAdapter(child: _Banners(banners: banners)),
         SliverToBoxAdapter(child: _PanchangCard(p: data['panchang'] as Map)),
         if (festivals.isNotEmpty) ...[
@@ -150,7 +152,7 @@ class _Hero extends ConsumerWidget {
     final top = MediaQuery.paddingOf(context).top;
     final tithi = panchang['tithi'] as Map;
     final month = panchang['lunar_month'] as Map;
-    final hi = ref.watch(prefsProvider).language == 'hi';
+    final lang = ref.watch(prefsProvider).language;
     return Container(
       padding: EdgeInsets.fromLTRB(20, top + 12, 20, 24),
       decoration: const BoxDecoration(
@@ -183,8 +185,12 @@ class _Hero extends ConsumerWidget {
                 ],
               ),
               Text(
-                '${panchang['vara']} · ${tithi['paksha']} ${tithi['name']} · ${month['name']}${month['adhika'] == true ? ' (Adhik)' : ''} · '
-                'VS ${panchang['vikram_samvat']}',
+                lang == 'te'
+                    ? '${teluguVara['${panchang['vara']}'] ?? ''} · ${teluguPaksha[tithi['paksha']] ?? ''} '
+                          '${teluguTithi[tithi['name']] ?? ''} · ${teluguMonths[month['index'] as int]} మాసం'
+                          '${panchang['samvatsara'] is Map ? ' · ${teluguSamvatsara[(panchang['samvatsara'] as Map)['index'] as int]} నామ సంవత్సరం' : ''}'
+                    : '${panchang['vara']} · ${tithi['paksha']} ${tithi['name']} · ${month['name']}'
+                          '${month['adhika'] == true ? ' (Adhik)' : ''} · VS ${panchang['vikram_samvat']}',
                 style: const TextStyle(color: Colors.white70),
               ),
               const SizedBox(height: 18),
@@ -212,11 +218,11 @@ class _Hero extends ConsumerWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              hi ? 'आज के देवता' : 'Deity of the day',
+                              t3(lang, 'Deity of the day', 'आज के देवता', 'నేటి దైవం'),
                               style: const TextStyle(color: Colors.white70, fontSize: 13),
                             ),
                             Text(
-                              hi ? deity!.nameHi : deity!.name,
+                              deity!.label(lang),
                               style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.w700),
                             ),
                             Text(
@@ -252,12 +258,16 @@ class _QuickActions extends ConsumerWidget {
       ('🔔', 'ringtones', '/ringtones', false),
       ('📅', 'calendar', '/calendar', false),
       ('🙋', 'ask_gita', '/ask', false),
+      ('🎬', 'videos', '/bhakti-videos', false),
+      ('🗓️', 'panchang', '/panchang', false),
+      ('🖼️', 'wallpapers', '/wallpapers', false),
+      ('🎵', 'listen', '/listen', true),
     ];
     return Padding(
       padding: const EdgeInsets.fromLTRB(12, 16, 12, 0),
       child: GridView.count(
         padding: EdgeInsets.zero,
-        crossAxisCount: 4,
+        crossAxisCount: (MediaQuery.sizeOf(context).width / 96).floor().clamp(4, 8),
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         childAspectRatio: 0.92,
@@ -350,7 +360,7 @@ class _PanchangCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final city = ref.watch(cityProvider);
-    final hi = ref.watch(prefsProvider).language == 'hi';
+    final lang = ref.watch(prefsProvider).language;
     Widget cell(String label, String value, IconData icon) => Expanded(
       child: Row(
         children: [
@@ -394,14 +404,22 @@ class _PanchangCard extends ConsumerWidget {
                     ),
                     const Spacer(),
                     Icon(Icons.place_outlined, size: 16, color: Theme.of(context).colorScheme.outline),
-                    Text(hi ? city.nameHi : city.name, style: Theme.of(context).textTheme.bodySmall),
+                    Text(city.label(lang), style: Theme.of(context).textTheme.bodySmall),
                   ],
                 ),
                 const SizedBox(height: 14),
                 Row(
                   children: [
-                    cell(tr(ref, 'tithi'), '${tithi['name']}', Icons.brightness_3_rounded),
-                    cell(tr(ref, 'nakshatra'), '${nak['name']}', Icons.auto_awesome_rounded),
+                    cell(
+                      tr(ref, 'tithi'),
+                      lang == 'te' ? (teluguTithi['${tithi['name']}'] ?? '${tithi['name']}') : '${tithi['name']}',
+                      Icons.brightness_3_rounded,
+                    ),
+                    cell(
+                      tr(ref, 'nakshatra'),
+                      lang == 'te' ? teluguNakshatra[nak['index'] as int] : '${nak['name']}',
+                      Icons.auto_awesome_rounded,
+                    ),
                   ],
                 ),
                 const SizedBox(height: 12),
@@ -471,7 +489,7 @@ class _FestivalStrip extends ConsumerWidget {
                   ),
                   const Spacer(),
                   Text(
-                    pick(ref, f.name, f.nameHi),
+                    f.label(uiLang(ref)),
                     maxLines: 2,
                     style: const TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.w700, height: 1.2),
                   ),
@@ -519,7 +537,10 @@ class _VerseCard extends ConsumerWidget {
                   ],
                 ),
                 const SizedBox(height: 12),
-                Text(verse.sanskrit, style: scriptureStyle(context, size: 18)),
+                Text(
+                  uiLang(ref) == 'te' ? toTeluguScript(verse.sanskrit) : verse.sanskrit,
+                  style: scriptureStyle(context, size: 18),
+                ),
                 const SizedBox(height: 10),
                 Text(verse.translation, style: Theme.of(context).textTheme.bodyLarge?.copyWith(height: 1.5)),
               ],
@@ -568,7 +589,7 @@ class _TrackStrip extends ConsumerWidget {
                   ),
                   const SizedBox(height: 6),
                   Text(
-                    pick(ref, t.title, t.titleHi),
+                    t.label(uiLang(ref)),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(fontWeight: FontWeight.w600, height: 1.2),
@@ -599,4 +620,43 @@ class _HomeSkeleton extends StatelessWidget {
       SkeletonBox(height: 120),
     ],
   );
+}
+
+/// "Monday: Shiva's songs". Each weekday belongs to a deity; Telugu homes keep Saturday for
+/// Venkateswara, so Telugu users get that map and everyone else gets the server's deity of the day.
+class _TodaysSongs extends ConsumerWidget {
+  const _TodaysSongs({required this.serverDeity});
+  final Deity? serverDeity;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final lang = ref.watch(prefsProvider).language;
+    final weekday = DateTime.now().weekday - 1;
+    final slug = lang == 'te' ? teluguWeekdayDeity[weekday] : (serverDeity?.slug ?? 'general');
+    final deities = ref.watch(deitiesProvider).value ?? const <Deity>[];
+    final deity = deities.where((d) => d.slug == slug).firstOrNull ?? serverDeity;
+    final tracks = ref.watch(tracksProvider((kind: null, deity: slug))).value ?? const <Track>[];
+    if (tracks.isEmpty || deity == null) return const SizedBox.shrink();
+    final day = switch (lang) {
+      'te' => teluguWeekdays[weekday],
+      'hi' => const ['सोमवार', 'मंगलवार', 'बुधवार', 'गुरुवार', 'शुक्रवार', 'शनिवार', 'रविवार'][weekday],
+      _ => const ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'][weekday],
+    };
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SectionHeader(
+          t3(
+            lang,
+            '$day · ${deity.label(lang)} songs',
+            '$day · ${deity.label(lang)} के भजन',
+            '$day · ${deity.label(lang)} పాటలు',
+          ),
+          action: t3(lang, 'Play all', 'सब चलाएँ', 'అన్నీ ప్లే'),
+          onAction: () => ref.read(audioProvider).playQueue(tracks, index: 0),
+        ),
+        _TrackStrip(tracks: tracks),
+      ],
+    );
+  }
 }

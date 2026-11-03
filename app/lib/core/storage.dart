@@ -3,6 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_ce_flutter/hive_ce_flutter.dart';
 import 'package:uuid/uuid.dart';
 
+import 'firebase.dart';
+import 'theme.dart';
+
 /// Local, on-device storage. Nothing here leaves the phone unless the user signs in
 /// and syncs favourites.
 class Boxes {
@@ -41,6 +44,7 @@ class Prefs {
     required this.textScale,
     required this.showTransliteration,
     required this.showMeaning,
+    required this.accent,
   });
 
   final String language;
@@ -56,14 +60,15 @@ class Prefs {
   final double textScale;
   final bool showTransliteration;
   final bool showMeaning;
+  final Accent accent;
 
   static Prefs load(Box box) => Prefs(
-    language: box.get('language', defaultValue: 'hi') as String,
+    language: box.get('language', defaultValue: 'te') as String,
     themeMode: ThemeMode.values[box.get('theme', defaultValue: 0) as int],
     onboarded: box.get('onboarded', defaultValue: false) as bool,
     ishtaDevta: box.get('ishta') as String?,
     rashi: box.get('rashi') as String?,
-    cityId: box.get('city', defaultValue: 'delhi') as String,
+    cityId: box.get('city', defaultValue: 'hyderabad') as String,
     dailyReminder: box.get('daily_reminder', defaultValue: false) as bool,
     reminderHour: box.get('reminder_hour', defaultValue: 6) as int,
     reminderMinute: box.get('reminder_minute', defaultValue: 30) as int,
@@ -71,6 +76,7 @@ class Prefs {
     textScale: (box.get('text_scale', defaultValue: 1.0) as num).toDouble(),
     showTransliteration: box.get('show_translit', defaultValue: false) as bool,
     showMeaning: box.get('show_meaning', defaultValue: true) as bool,
+    accent: Accent.byName(box.get('accent') as String?),
   );
 }
 
@@ -87,8 +93,13 @@ class PrefsNotifier extends Notifier<Prefs> {
     state = Prefs.load(Boxes.prefs);
   }
 
-  Future<void> setLanguage(String v) => set('language', v);
+  Future<void> setLanguage(String v) async {
+    await set('language', v);
+    await FirebaseServices.subscribe(v);
+  }
+
   Future<void> setTheme(ThemeMode m) => set('theme', m.index);
+  Future<void> setAccent(Accent a) => set('accent', a.name);
   Future<void> setIshta(String? v) => set('ishta', v);
   Future<void> setRashi(String? v) => set('rashi', v);
   Future<void> setCity(String v) => set('city', v);

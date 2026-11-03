@@ -6,6 +6,13 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
 }
 
+// Firebase (push, Crashlytics, Remote Config) is optional: app/google-services.json is
+// git-ignored and written by CI from a secret. Without it the app builds and runs, minus Firebase.
+if (file("google-services.json").exists()) {
+    apply(plugin = "com.google.gms.google-services")
+    apply(plugin = "com.google.firebase.crashlytics")
+}
+
 // Release signing reads android/key.properties (never committed). Without it the
 // release build falls back to the debug key so CI and local builds still work.
 val keystoreProperties = Properties().apply {

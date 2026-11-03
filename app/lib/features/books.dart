@@ -78,7 +78,14 @@ class _BookScreenState extends ConsumerState<BookScreen> {
                       FilledButton.tonalIcon(
                         onPressed: () => context.push('/books/${b.slug}/$last'),
                         icon: const Icon(Icons.bookmark_rounded),
-                        label: Text(pick(ref, 'Continue from chapter $last', 'अध्याय $last से जारी रखें')),
+                        label: Text(
+                          l3(
+                            ref,
+                            'Continue from chapter $last',
+                            'अध्याय $last से जारी रखें',
+                            '$last వ అధ్యాయం నుంచి కొనసాగించండి',
+                          ),
+                        ),
                       ),
                     if (b.chapters.length > 20)
                       Padding(

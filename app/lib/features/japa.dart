@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/i18n.dart';
+import '../core/telugu.dart';
 import '../core/sfx.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
@@ -81,7 +82,7 @@ class _JapaScreenState extends ConsumerState<JapaScreen> with SingleTickerProvid
 
   @override
   Widget build(BuildContext context) {
-    final hi = ref.watch(prefsProvider).language == 'hi';
+    final lang = ref.watch(prefsProvider).language;
     final (mantraHi, mantraEn) = _mantras[_mantra];
     return Scaffold(
       backgroundColor: const Color(0xFF1B0D06),
@@ -111,7 +112,7 @@ class _JapaScreenState extends ConsumerState<JapaScreen> with SingleTickerProvid
                 itemCount: _mantras.length,
                 separatorBuilder: (_, _) => const SizedBox(width: 8),
                 itemBuilder: (_, i) => ChoiceChip(
-                  label: Text(hi ? _mantras[i].$1 : _mantras[i].$2),
+                  label: Text(t3(lang, _mantras[i].$2, _mantras[i].$1, toTeluguScript(_mantras[i].$1))),
                   selected: _mantra == i,
                   onSelected: (_) {
                     setState(() => _mantra = i);
@@ -150,7 +151,7 @@ class _JapaScreenState extends ConsumerState<JapaScreen> with SingleTickerProvid
                           Text('/ 108', style: const TextStyle(color: Colors.white54)),
                           const SizedBox(height: 4),
                           Text(
-                            hi ? 'माला: $_rounds' : 'Rounds: $_rounds',
+                            t3(lang, 'Rounds: $_rounds', 'माला: $_rounds', 'మాలలు: $_rounds'),
                             style: const TextStyle(color: Colors.white70),
                           ),
                         ],
@@ -163,7 +164,12 @@ class _JapaScreenState extends ConsumerState<JapaScreen> with SingleTickerProvid
             Padding(
               padding: const EdgeInsets.fromLTRB(24, 0, 24, 8),
               child: Text(
-                hi ? 'जाप करते हुए स्क्रीन पर कहीं भी टैप करें' : 'Tap anywhere for each chant of "$mantraEn"',
+                t3(
+                  lang,
+                  'Tap anywhere for each chant of "$mantraEn"',
+                  'जाप करते हुए स्क्रीन पर कहीं भी टैप करें',
+                  'ప్రతి జపానికి స్క్రీన్‌పై ఎక్కడైనా తాకండి',
+                ),
                 textAlign: TextAlign.center,
                 style: const TextStyle(color: Colors.white54),
               ),
@@ -172,9 +178,9 @@ class _JapaScreenState extends ConsumerState<JapaScreen> with SingleTickerProvid
               padding: const EdgeInsets.all(16),
               child: Row(
                 children: [
-                  _Stat(label: hi ? 'आज' : 'Today', value: '$_today'),
-                  _Stat(label: hi ? 'कुल' : 'Lifetime', value: '$_lifetime'),
-                  _Stat(label: hi ? 'माला' : 'Rounds', value: '$_rounds'),
+                  _Stat(label: t3(lang, 'Today', 'आज', 'ఈ రోజు'), value: '$_today'),
+                  _Stat(label: t3(lang, 'Lifetime', 'कुल', 'మొత్తం'), value: '$_lifetime'),
+                  _Stat(label: t3(lang, 'Rounds', 'माला', 'మాలలు'), value: '$_rounds'),
                 ],
               ),
             ),

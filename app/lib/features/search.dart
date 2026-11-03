@@ -97,7 +97,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                 for (final (i, t) in tracks.indexed)
                   ListTile(
                     leading: SizedBox(width: 48, height: 48, child: NetImage(t.artworkUrl, radius: 10)),
-                    title: Text(pick(ref, t.title, t.titleHi)),
+                    title: Text(t.label(uiLang(ref))),
                     subtitle: Text(tr(ref, t.kind)),
                     trailing: const Icon(Icons.play_arrow_rounded),
                     onTap: () => ref.read(audioProvider).playQueue(tracks, index: i),
@@ -106,7 +106,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                 for (final t in texts)
                   ListTile(
                     leading: const Text('📜', style: TextStyle(fontSize: 26)),
-                    title: Text(pick(ref, t.title, t.titleHi)),
+                    title: Text(t.label(uiLang(ref))),
                     subtitle: Text(tr(ref, t.kind)),
                     onTap: () => context.push('/text/${t.slug}'),
                   ),

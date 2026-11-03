@@ -9,7 +9,7 @@ RASHIS = (
     "mesha", "vrishabha", "mithuna", "karka", "simha", "kanya",
     "tula", "vrishchika", "dhanu", "makara", "kumbha", "meena",
 )
-Language = Literal["hi", "en"]
+Language = Literal["hi", "en", "te"]
 
 
 class ORM(BaseModel):

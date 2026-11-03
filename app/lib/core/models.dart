@@ -1,5 +1,7 @@
 // Plain models parsed from the API. Kept dependency-free (no code generation).
 
+import 'telugu.dart';
+
 String _s(Object? v) => v?.toString() ?? '';
 int _i(Object? v) => v is int ? v : int.tryParse('$v') ?? 0;
 List<String> _ls(Object? v) => v is List ? v.map((e) => '$e').toList() : const [];
@@ -17,7 +19,16 @@ class Deity {
   final int id;
   final String slug, name, nameHi, description, imageUrl, color;
   final int? weekday;
+
+  String label(String lang) => _label(lang, name, nameHi, teluguDeities[slug]);
 }
+
+String _label(String lang, String en, String hi, String? te) => switch (lang) {
+  'hi' when hi.isNotEmpty => hi,
+  'te' when te != null => te,
+  'te' when hi.isNotEmpty => toTeluguScript(hi),
+  _ => en,
+};
 
 mixin Licensed {
   String get attribution;
@@ -45,6 +56,8 @@ class Track with Licensed {
       raw = Map<String, dynamic>.from(j);
   final int id;
   final String slug, title, titleHi, kind, audioUrl, artworkUrl, artist;
+
+  String label(String lang) => _label(lang, title, titleHi, teluguTrackTitles[slug]);
   @override
   final String attribution, license, sourceUrl;
   final int? deityId;
@@ -64,6 +77,8 @@ class TextSummary {
       deityId = j['deity_id'] as int?;
   final int id;
   final String slug, title, titleHi, kind;
+
+  String label(String lang) => _label(lang, title, titleHi, null);
   final int? deityId;
 }
 
@@ -190,6 +205,8 @@ class Festival {
   final String slug, kind, name, nameHi, deity, description;
   final DateTime date;
   final bool major;
+
+  String label(String lang) => _label(lang, name, nameHi, teluguFestivals[slug] ?? teluguFestivals[kind]);
 
   int daysFrom(DateTime today) =>
       DateTime(date.year, date.month, date.day).difference(DateTime(today.year, today.month, today.day)).inDays;

@@ -39,6 +39,8 @@ jobs:
       - run: pip install -r backend/requirements.txt
       - name: Export static API
         working-directory: backend
+        env:
+          DEVALAY_CONTACT_EMAIL: ${{ vars.CONTACT_EMAIL }}  # shown in the privacy policy
         run: python scripts/export_static.py ../_site https://chandrachaan.github.io/devalay
       - name: Add website
         run: |

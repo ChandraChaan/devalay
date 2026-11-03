@@ -114,7 +114,7 @@ class DownloadsScreen extends ConsumerWidget {
                 for (final (i, t) in tracks.indexed)
                   ListTile(
                     leading: SizedBox(width: 48, height: 48, child: NetImage(t.artworkUrl, radius: 10)),
-                    title: Text(pick(ref, t.title, t.titleHi)),
+                    title: Text(t.label(uiLang(ref))),
                     onTap: () => ref.read(audioProvider).playQueue(tracks, index: i),
                     trailing: IconButton(
                       onPressed: () => store.remove(t.id),

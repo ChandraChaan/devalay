@@ -36,18 +36,18 @@ const _deityOptions = [
   'general',
 ];
 const _occasions = {
-  'daily': ('Daily', 'दैनिक'),
-  'good-morning': ('Good morning', 'सुप्रभात'),
-  'good-night': ('Good night', 'शुभ रात्रि'),
-  'monday': ('Monday', 'सोमवार'),
-  'tuesday': ('Tuesday', 'मंगलवार'),
-  'saturday': ('Saturday', 'शनिवार'),
-  'festival': ('Festival', 'त्योहार'),
-  'birthday': ('Birthday', 'जन्मदिन'),
-  'anniversary': ('Anniversary', 'वर्षगांठ'),
-  'gratitude': ('Gratitude', 'आभार'),
-  'strength': ('Strength', 'शक्ति'),
-  'peace': ('Peace', 'शांति'),
+  'daily': ('Daily', 'दैनिक', 'రోజువారీ'),
+  'good-morning': ('Good morning', 'सुप्रभात', 'శుభోదయం'),
+  'good-night': ('Good night', 'शुभ रात्रि', 'శుభ రాత్రి'),
+  'monday': ('Monday', 'सोमवार', 'సోమవారం'),
+  'tuesday': ('Tuesday', 'मंगलवार', 'మంగళవారం'),
+  'saturday': ('Saturday', 'शनिवार', 'శనివారం'),
+  'festival': ('Festival', 'त्योहार', 'పండుగ'),
+  'birthday': ('Birthday', 'जन्मदिन', 'పుట్టినరోజు'),
+  'anniversary': ('Anniversary', 'वर्षगांठ', 'పెళ్లిరోజు'),
+  'gratitude': ('Gratitude', 'आभार', 'కృతజ్ఞత'),
+  'strength': ('Strength', 'शक्ति', 'శక్తి'),
+  'peace': ('Peace', 'शांति', 'శాంతి'),
 };
 
 class StatusMakerScreen extends ConsumerStatefulWidget {
@@ -99,12 +99,12 @@ class _StatusMakerScreenState extends ConsumerState<StatusMakerScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final hi = ref.watch(prefsProvider).language == 'hi';
+    final lang = ref.watch(prefsProvider).language;
     final deities = ref.watch(deitiesProvider).value ?? const <Deity>[];
     String deityName(String slug) {
       final d = deities.where((d) => d.slug == slug).firstOrNull;
-      if (slug == 'radha-krishna') return hi ? 'राधा कृष्ण' : 'Radha Krishna';
-      return d == null ? slug : (hi ? d.nameHi : d.name);
+      if (slug == 'radha-krishna') return t3(lang, 'Radha Krishna', 'राधा कृष्ण', 'రాధాకృష్ణులు');
+      return d == null ? slug : (d.label(lang));
     }
 
     return Scaffold(
@@ -112,7 +112,7 @@ class _StatusMakerScreenState extends ConsumerState<StatusMakerScreen> {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          Text(hi ? 'देवता' : 'Deity', style: Theme.of(context).textTheme.titleMedium),
+          Text(t3(lang, 'Deity', 'देवता', 'దైవం'), style: Theme.of(context).textTheme.titleMedium),
           const SizedBox(height: 8),
           Wrap(
             spacing: 8,
@@ -127,7 +127,7 @@ class _StatusMakerScreenState extends ConsumerState<StatusMakerScreen> {
             ],
           ),
           const SizedBox(height: 16),
-          Text(hi ? 'अवसर' : 'Occasion', style: Theme.of(context).textTheme.titleMedium),
+          Text(t3(lang, 'Occasion', 'अवसर', 'సందర్భం'), style: Theme.of(context).textTheme.titleMedium),
           const SizedBox(height: 8),
           Wrap(
             spacing: 8,
@@ -135,7 +135,7 @@ class _StatusMakerScreenState extends ConsumerState<StatusMakerScreen> {
             children: [
               for (final e in _occasions.entries)
                 ChoiceChip(
-                  label: Text(hi ? e.value.$2 : e.value.$1),
+                  label: Text(t3(lang, e.value.$1, e.value.$2, e.value.$3)),
                   selected: _occasion == e.key,
                   onSelected: (_) => setState(() => _occasion = e.key),
                 ),
@@ -146,17 +146,27 @@ class _StatusMakerScreenState extends ConsumerState<StatusMakerScreen> {
             TextField(
               controller: _festival,
               maxLength: 60,
-              decoration: InputDecoration(hintText: hi ? 'त्योहार का नाम, जैसे दीपावली' : 'Festival name, e.g. Diwali'),
+              decoration: InputDecoration(
+                hintText: t3(
+                  lang,
+                  'Festival name, e.g. Diwali',
+                  'त्योहार का नाम, जैसे दीपावली',
+                  'పండుగ పేరు, ఉదా. దీపావళి',
+                ),
+              ),
             ),
           ],
           const SizedBox(height: 12),
           TextField(
             controller: _name,
             maxLength: 40,
-            decoration: InputDecoration(hintText: hi ? 'किसके लिए? (वैकल्पिक)' : 'For whom? (optional)'),
+            decoration: InputDecoration(
+              hintText: t3(lang, 'For whom? (optional)', 'किसके लिए? (वैकल्पिक)', 'ఎవరి కోసం? (ఐచ్ఛికం)'),
+            ),
           ),
           SegmentedButton<String>(
             segments: const [
+              ButtonSegment(value: 'te', label: Text('తెలుగు')),
               ButtonSegment(value: 'hi', label: Text('हिन्दी')),
               ButtonSegment(value: 'en', label: Text('English')),
             ],
@@ -169,13 +179,13 @@ class _StatusMakerScreenState extends ConsumerState<StatusMakerScreen> {
             icon: _loading
                 ? const SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2))
                 : const Icon(Icons.auto_awesome_rounded),
-            label: Text(hi ? 'स्टेटस बनाएँ' : 'Create status'),
+            label: Text(t3(lang, 'Create status', 'स्टेटस बनाएँ', 'స్టేటస్ తయారు చేయండి')),
           ),
           if (_remaining != null)
             Padding(
               padding: const EdgeInsets.only(top: 8),
               child: Text(
-                '${_provider == 'claude' ? 'AI' : (hi ? 'ऑफ़लाइन' : 'Offline')} · ${hi ? 'आज शेष' : 'left today'}: $_remaining',
+                '${_provider == 'claude' ? 'AI' : (t3(lang, 'Offline', 'ऑफ़लाइन', 'ఆఫ్‌లైన్'))} · ${t3(lang, 'left today', 'आज शेष', 'ఈ రోజు మిగిలినవి')}: $_remaining',
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.bodySmall,
               ),
@@ -203,9 +213,12 @@ class _StatusMakerScreenState extends ConsumerState<StatusMakerScreen> {
 
 /// Composes the status text over sacred art and exports it as a 1080x1920 image.
 class StatusComposer extends ConsumerStatefulWidget {
-  const StatusComposer({super.key, required this.text, required this.deity});
+  const StatusComposer({super.key, required this.text, required this.deity, this.image});
   final String text;
   final String deity;
+
+  /// A wallpaper to write on; it becomes the first background.
+  final String? image;
   @override
   ConsumerState<StatusComposer> createState() => _StatusComposerState();
 }
@@ -256,8 +269,48 @@ class _StatusComposerState extends ConsumerState<StatusComposer> {
     }
   }
 
+  void _setAsWallpaper() {
+    final lang = uiLang(ref);
+    showModalBottomSheet(
+      context: context,
+      showDragHandle: true,
+      builder: (ctx) => SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            for (final (target, label, icon) in [
+              (1, t3(lang, 'Home screen', 'होम स्क्रीन', 'హోమ్ స్క్రీన్'), Icons.home_rounded),
+              (2, t3(lang, 'Lock screen', 'लॉक स्क्रीन', 'లాక్ స్క్రీన్'), Icons.lock_rounded),
+              (3, t3(lang, 'Both', 'दोनों', 'రెండూ'), Icons.phone_android_rounded),
+            ])
+              ListTile(
+                leading: Icon(icon),
+                title: Text(label),
+                onTap: () async {
+                  Navigator.pop(ctx);
+                  setState(() => _busy = true);
+                  try {
+                    final f = await _render();
+                    await NativeBridge.setWallpaper(f.path, target);
+                    if (mounted) {
+                      toast(context, t3(lang, 'Wallpaper set 🙏', 'वॉलपेपर लग गया 🙏', 'వాల్‌పేపర్ పెట్టాం 🙏'));
+                    }
+                  } catch (e) {
+                    if (mounted) toast(context, 'Could not set: $e');
+                  } finally {
+                    if (mounted) setState(() => _busy = false);
+                  }
+                },
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    final lang = uiLang(ref);
     final walls =
         ref
             .watch(
@@ -266,12 +319,14 @@ class _StatusComposerState extends ConsumerState<StatusComposer> {
             .value ??
         const <Wallpaper>[];
     final backgrounds = [
+      if (widget.image != null) ('w', const <Color>[], widget.image!),
       for (final g in _gradients) ('g', g, ''),
-      for (final w in walls.take(6)) ('w', const <Color>[], w.imageUrl),
+      for (final w in walls.take(6))
+        if (w.imageUrl != widget.image) ('w', const <Color>[], w.imageUrl),
     ];
     final current = backgrounds[_bg.clamp(0, backgrounds.length - 1)];
     return Scaffold(
-      appBar: AppBar(title: const Text('Status')),
+      appBar: AppBar(title: Text(t3(lang, 'Status', 'स्टेटस', 'స్టేటస్'))),
       body: Column(
         children: [
           Expanded(
@@ -324,6 +379,7 @@ class _StatusComposerState extends ConsumerState<StatusComposer> {
                                     widget.text,
                                     textAlign: TextAlign.center,
                                     style: const TextStyle(
+                                      fontFamilyFallback: uiFontFallback,
                                       color: Colors.white,
                                       fontSize: 24,
                                       height: 1.45,
@@ -374,15 +430,23 @@ class _StatusComposerState extends ConsumerState<StatusComposer> {
                   child: OutlinedButton.icon(
                     onPressed: _busy ? null : _save,
                     icon: const Icon(Icons.download_rounded),
-                    label: const Text('Save'),
+                    label: Text(t3(lang, 'Save', 'सेव', 'సేవ్')),
                   ),
                 ),
-                const SizedBox(width: 12),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: OutlinedButton.icon(
+                    onPressed: _busy ? null : _setAsWallpaper,
+                    icon: const Icon(Icons.wallpaper_rounded),
+                    label: Text(t3(lang, 'Wallpaper', 'वॉलपेपर', 'వాల్‌పేపర్')),
+                  ),
+                ),
+                const SizedBox(width: 8),
                 Expanded(
                   child: FilledButton.icon(
                     onPressed: _busy ? null : _share,
                     icon: const Icon(Icons.share_rounded),
-                    label: const Text('Share'),
+                    label: Text(t3(lang, 'Share', 'शेयर', 'షేర్')),
                   ),
                 ),
               ],

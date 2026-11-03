@@ -70,14 +70,17 @@ class RingtonesScreen extends ConsumerWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                pick(ref, t.title, t.titleHi),
+                                t.label(uiLang(ref)),
                                 style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
                               ),
                               Text('${t.durationSec}s · ${t.license}', style: Theme.of(context).textTheme.bodySmall),
                             ],
                           ),
                         ),
-                        FilledButton(onPressed: () => _set(context, ref, t), child: Text(pick(ref, 'Set', 'लगाएँ'))),
+                        FilledButton(
+                          onPressed: () => _set(context, ref, t),
+                          child: Text(l3(ref, 'Set', 'लगाएँ', 'పెట్టండి')),
+                        ),
                       ],
                     ),
                   ),

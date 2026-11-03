@@ -51,6 +51,15 @@ jobs:
           fi
           echo "$KEYSTORE_BASE64" | base64 -d > android/app/upload-keystore.jks
           echo "$KEY_PROPERTIES" > android/key.properties
+      - name: Restore Firebase config
+        env:
+          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
+        run: |
+          if [ -z "$GOOGLE_SERVICES_JSON" ]; then
+            echo "::error::GOOGLE_SERVICES_JSON secret is required so releases ship Crashlytics, push and force update"
+            exit 1
+          fi
+          echo "$GOOGLE_SERVICES_JSON" > android/app/google-services.json
       - name: Build APKs
         run: |
           VERSION="${TAG#v}"
@@ -64,7 +73,10 @@ jobs:
           for abi in arm64-v8a armeabi-v7a x86_64; do
             cp build/app/outputs/flutter-apk/app-$abi-release.apk dist/devalay-$abi.apk
           done
-          (cd dist && sha256sum *.apk > SHA256SUMS)
+          # The App Bundle is what Google Play takes; Play re-signs it with the Play app signing key.
+          flutter build appbundle $ARGS
+          cp build/app/outputs/bundle/release/app-release.aab dist/devalay-play.aab
+          (cd dist && sha256sum *.apk *.aab > SHA256SUMS)
       - name: Check the release key signed it
         # keytool only reads v1 (JAR) signatures; minSdk 24 builds are signed with v2 only
         run: |

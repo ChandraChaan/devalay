@@ -71,5 +71,5 @@ lowest-cost option.
 
 ### Privacy by design
 
-No analytics SDKs, ads or advertising IDs; no location permission (city picker); tokens in Android Keystore-backed
+No analytics SDKs, ads or advertising IDs (Firebase is used only for crash reports, push and force update); no location permission (city picker); tokens in Android Keystore-backed
 secure storage; favourites, downloads, japa and Mandir data stay on device unless the user signs in.
