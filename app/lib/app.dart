@@ -20,6 +20,7 @@ import 'features/listen.dart';
 import 'features/mandir.dart';
 import 'features/more.dart';
 import 'features/onboarding.dart';
+import 'features/calendar.dart';
 import 'features/panchang.dart';
 import 'features/player.dart';
 import 'features/premium.dart';
@@ -81,6 +82,7 @@ final routerProvider = Provider<GoRouter>((ref) {
         builder: (_, s) => GitaChapterScreen(
           chapter: int.parse(s.pathParameters['chapter']!),
           initialVerse: int.tryParse(s.uri.queryParameters['verse'] ?? ''),
+          autoPlay: s.uri.queryParameters['play'] == '1',
         ),
       ),
       GoRoute(path: '/books', builder: (_, _) => const BooksScreen()),
@@ -103,6 +105,11 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/rashifal', builder: (_, _) => const RashifalScreen()),
       GoRoute(path: '/panchang', builder: (_, _) => const PanchangScreen()),
       GoRoute(path: '/calendar', builder: (_, _) => const CalendarScreen()),
+      GoRoute(
+        path: '/calendar/day/:date',
+        builder: (_, s) =>
+            CalendarDayScreen(date: DateTime.tryParse(s.pathParameters['date']!) ?? DateUtils.dateOnly(DateTime.now())),
+      ),
       GoRoute(path: '/japa', builder: (_, _) => const JapaScreen()),
       GoRoute(path: '/videos', builder: (_, _) => const VideosScreen()),
       GoRoute(path: '/bhakti-videos', builder: (_, _) => const BhaktiVideosScreen()),

@@ -5,8 +5,6 @@ import 'package:intl/intl.dart';
 
 import '../core/i18n.dart';
 import '../core/location.dart';
-import '../core/models.dart';
-import '../core/notifications.dart';
 import '../core/providers.dart';
 import '../core/storage.dart';
 import '../core/telugu.dart';
@@ -74,10 +72,24 @@ class _PanchangScreenState extends ConsumerState<PanchangScreen> {
             ),
           ),
           Expanded(
-            child: p.when(
-              loading: () => const LoadingList(),
-              error: (e, _) => ErrorRetry(error: e, onRetry: () => ref.invalidate(panchangProvider(_day))),
-              data: (d) => _PanchangDetail(data: d),
+            // Swipe left/right to move between days.
+            child: GestureDetector(
+              onHorizontalDragEnd: (d) {
+                final v = d.primaryVelocity ?? 0;
+                if (v.abs() < 250) return;
+                setState(() => _day = _day.add(Duration(days: v < 0 ? 1 : -1)));
+              },
+              child: AnimatedSwitcher(
+                duration: const Duration(milliseconds: 200),
+                child: KeyedSubtree(
+                  key: ValueKey(_day),
+                  child: p.when(
+                    loading: () => const LoadingList(),
+                    error: (e, _) => ErrorRetry(error: e, onRetry: () => ref.invalidate(panchangProvider(_day))),
+                    data: (d) => PanchangDetail(data: d),
+                  ),
+                ),
+              ),
             ),
           ),
         ],
@@ -86,9 +98,13 @@ class _PanchangScreenState extends ConsumerState<PanchangScreen> {
   }
 }
 
-class _PanchangDetail extends ConsumerWidget {
-  const _PanchangDetail({required this.data});
+class PanchangDetail extends ConsumerWidget {
+  const PanchangDetail({super.key, required this.data, this.leading = const [], this.padding});
   final Map data;
+
+  /// Widgets shown above the panchang (used by the calendar's day page).
+  final List<Widget> leading;
+  final EdgeInsets? padding;
 
   static const _uttarayana = {'Makara', 'Kumbha', 'Meena', 'Mesha', 'Vrishabha', 'Mithuna'};
 
@@ -215,8 +231,9 @@ class _PanchangDetail extends ConsumerWidget {
     };
 
     return ListView(
-      padding: const EdgeInsets.fromLTRB(16, 4, 16, 24),
+      padding: padding ?? const EdgeInsets.fromLTRB(16, 4, 16, 24),
       children: [
+        ...leading,
         GradientCard(
           colors: Palette.sunrise,
           child: Row(
@@ -324,224 +341,4 @@ class _PanchangDetail extends ConsumerWidget {
   }
 
   String _nextDay(Map data, String iso) => iso.substring(0, 10) != '${data['date']}' ? ' (+1)' : '';
-}
-
-class CalendarScreen extends ConsumerStatefulWidget {
-  const CalendarScreen({super.key});
-  @override
-  ConsumerState<CalendarScreen> createState() => _CalendarScreenState();
-}
-
-class _CalendarScreenState extends ConsumerState<CalendarScreen> {
-  DateTime _month = DateTime(DateTime.now().year, DateTime.now().month);
-  DateTime? _selected = DateUtils.dateOnly(DateTime.now());
-
-  @override
-  Widget build(BuildContext context) {
-    final days = ref.watch(monthProvider((year: _month.year, month: _month.month)));
-    final festivals = ref.watch(festivalsProvider(_month.year));
-    final prefs = ref.watch(prefsProvider);
-    final lang = prefs.language;
-    final byDay = <DateTime, List<Festival>>{};
-    for (final f in festivals.value ?? const <Festival>[]) {
-      byDay.putIfAbsent(f.date, () => []).add(f);
-    }
-    final selectedFestivals = _selected == null ? const <Festival>[] : (byDay[_selected] ?? const []);
-    final monthFestivals = (festivals.value ?? const <Festival>[])
-        .where((f) => f.date.month == _month.month && f.major)
-        .toList();
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(tr(ref, 'calendar')),
-        actions: [
-          IconButton(
-            tooltip: t3(lang, 'Festival reminders', 'त्योहार रिमाइंडर', 'పండుగ రిమైండర్లు'),
-            icon: Icon(prefs.festivalReminders ? Icons.notifications_active_rounded : Icons.notifications_none_rounded),
-            onPressed: () async {
-              final on = !prefs.festivalReminders;
-              if (on && !await Notifications.requestPermission()) return;
-              await ref.read(prefsProvider.notifier).set('festival_reminders', on);
-              if (on) {
-                final now = DateTime.now();
-                final all = [
-                  ...await ref.read(festivalsProvider(now.year).future),
-                  if (now.month == 12) ...await ref.read(festivalsProvider(now.year + 1).future),
-                ];
-                await Notifications.scheduleFestivals(all, lang: prefs.language);
-              } else {
-                await Notifications.cancelFestivals();
-              }
-              if (!context.mounted) return;
-              toast(
-                context,
-                on
-                    ? t3(
-                        lang,
-                        'Festival reminders on (7 AM)',
-                        'त्योहार रिमाइंडर चालू (सुबह 7 बजे)',
-                        'పండుగ రిమైండర్లు ఆన్ (ఉదయం 7)',
-                      )
-                    : t3(lang, 'Festival reminders off', 'त्योहार रिमाइंडर बंद', 'పండుగ రిమైండర్లు ఆఫ్'),
-              );
-            },
-          ),
-        ],
-      ),
-      body: ListView(
-        padding: const EdgeInsets.all(16),
-        children: [
-          Row(
-            children: [
-              IconButton(
-                onPressed: () => setState(() => _month = DateTime(_month.year, _month.month - 1)),
-                icon: const Icon(Icons.chevron_left_rounded),
-              ),
-              Expanded(
-                child: Text(
-                  lang == 'te'
-                      ? '${teluguGregorianMonths[_month.month - 1]} ${_month.year}'
-                      : DateFormat('MMMM y').format(_month),
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.titleLarge,
-                ),
-              ),
-              IconButton(
-                onPressed: () => setState(() => _month = DateTime(_month.year, _month.month + 1)),
-                icon: const Icon(Icons.chevron_right_rounded),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              for (final d
-                  in lang == 'te' ? teluguWeekdayShort : const ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'])
-                Expanded(
-                  child: Center(child: Text(d, style: Theme.of(context).textTheme.bodySmall)),
-                ),
-            ],
-          ),
-          const SizedBox(height: 6),
-          days.when(
-            loading: () => const SkeletonBox(height: 320),
-            error: (e, _) => ErrorRetry(
-              error: e,
-              onRetry: () => ref.invalidate(monthProvider((year: _month.year, month: _month.month))),
-            ),
-            data: (list) {
-              final lead = DateTime(_month.year, _month.month, 1).weekday - 1;
-              return GridView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 7,
-                  childAspectRatio: 0.72,
-                ),
-                itemCount: lead + list.length,
-                itemBuilder: (_, i) {
-                  if (i < lead) return const SizedBox.shrink();
-                  final d = list[i - lead];
-                  final date = DateTime.parse('${d['date']}');
-                  final isToday = DateUtils.isSameDay(date, DateTime.now());
-                  final isSel = _selected != null && DateUtils.isSameDay(date, _selected);
-                  final fest = byDay[date] ?? const [];
-                  final major = fest.any((f) => f.major);
-                  final tithi = d['tithi_index'] as int;
-                  final special = tithi == 15
-                      ? '🌕'
-                      : tithi == 30
-                      ? '🌑'
-                      : (tithi == 11 || tithi == 26)
-                      ? '🙏'
-                      : '';
-                  return GestureDetector(
-                    onTap: () => setState(() => _selected = date),
-                    child: Container(
-                      margin: const EdgeInsets.all(2),
-                      decoration: BoxDecoration(
-                        color: isSel
-                            ? Theme.of(context).colorScheme.primary
-                            : (major ? Palette.marigold.withValues(alpha: 0.2) : null),
-                        borderRadius: BorderRadius.circular(12),
-                        border: isToday ? Border.all(color: Theme.of(context).colorScheme.primary, width: 2) : null,
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            '${date.day}',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 16,
-                              color: isSel ? Colors.white : null,
-                            ),
-                          ),
-                          FittedBox(
-                            child: Text(
-                              lang == 'te'
-                                  ? (teluguTithi['${d['tithi']}'] ?? '${d['tithi']}')
-                                  : '${d['tithi']}'.substring(0, 3),
-                              style: TextStyle(
-                                fontSize: 10,
-                                color: isSel ? Colors.white70 : Theme.of(context).colorScheme.outline,
-                              ),
-                            ),
-                          ),
-                          Text(major ? '🪔' : special, style: const TextStyle(fontSize: 11)),
-                        ],
-                      ),
-                    ),
-                  );
-                },
-              );
-            },
-          ),
-          const SizedBox(height: 12),
-          if (_selected != null)
-            for (final f in selectedFestivals)
-              Card(
-                margin: const EdgeInsets.only(bottom: 8),
-                child: ListTile(
-                  leading: Text(f.major ? '🪔' : '🙏', style: const TextStyle(fontSize: 24)),
-                  title: Text(f.label(lang), style: const TextStyle(fontWeight: FontWeight.w700)),
-                  subtitle: f.description.isEmpty ? null : Text(f.description),
-                ),
-              ),
-          SectionHeader(t3(lang, 'Festivals this month', 'इस माह के त्योहार', 'ఈ నెల పండుగలు')),
-          if (monthFestivals.isEmpty)
-            Padding(
-              padding: const EdgeInsets.all(12),
-              child: Text(
-                t3(
-                  lang,
-                  'No major festivals this month.',
-                  'इस माह कोई बड़ा त्योहार नहीं।',
-                  'ఈ నెల పెద్ద పండుగలు లేవు.',
-                ),
-              ),
-            ),
-          for (final f in monthFestivals)
-            Card(
-              margin: const EdgeInsets.only(bottom: 8),
-              child: ListTile(
-                leading: CircleAvatar(child: Text('${f.date.day}')),
-                title: Text(f.label(lang), style: const TextStyle(fontWeight: FontWeight.w700)),
-                subtitle: Text(f.description, maxLines: 2, overflow: TextOverflow.ellipsis),
-                onTap: () => setState(() => _selected = f.date),
-              ),
-            ),
-          const SizedBox(height: 8),
-          Text(
-            t3(
-              lang,
-              'Dates are computed from the lunar calendar for your city. Local traditions may observe some festivals a day apart.',
-              'तिथियाँ आपके शहर के चंद्र पंचांग से गणना की गई हैं। स्थानीय परंपरा में कुछ पर्व एक दिन आगे-पीछे हो सकते हैं।',
-              'తేదీలు మీ నగరపు చాంద్రమాన పంచాంగం ప్రకారం లెక్కించినవి. కొన్ని పండుగలు స్థానిక ఆచారంలో ఒక రోజు తేడాతో ఉండవచ్చు.',
-            ),
-            style: Theme.of(context).textTheme.bodySmall,
-            textAlign: TextAlign.center,
-          ),
-        ],
-      ),
-    );
-  }
 }

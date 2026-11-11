@@ -534,6 +534,13 @@ class _VerseCard extends ConsumerWidget {
                       '${verse.chapter}.${verse.verse}',
                       style: TextStyle(color: Theme.of(context).colorScheme.primary, fontWeight: FontWeight.w700),
                     ),
+                    const SizedBox(width: 4),
+                    IconButton.filledTonal(
+                      visualDensity: VisualDensity.compact,
+                      tooltip: l3(ref, 'Listen', 'सुनें', 'వినండి'),
+                      onPressed: () => context.push('/gita/${verse.chapter}?verse=${verse.verse}&play=1'),
+                      icon: const Icon(Icons.play_arrow_rounded),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 12),
