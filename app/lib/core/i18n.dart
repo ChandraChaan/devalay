@@ -75,6 +75,8 @@ const _strings = <String, Map<String, String>>{
   'videos': {'en': 'Bhakti videos', 'hi': 'भक्ति वीडियो', 'te': 'భక్తి వీడియోలు'},
   'panchang': {'en': 'Panchang', 'hi': 'पंचांग', 'te': 'పంచాంగం'},
   'tomorrow': {'en': 'Tomorrow', 'hi': 'कल', 'te': 'రేపు'},
+  'temple_booking': {'en': 'Temple booking', 'hi': 'मंदिर बुकिंग', 'te': 'ఆలయ బుకింగ్'},
+  'booking': {'en': 'Booking', 'hi': 'बुकिंग', 'te': 'బుకింగ్'},
 };
 
 String tr(WidgetRef ref, String key) {

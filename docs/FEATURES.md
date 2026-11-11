@@ -28,6 +28,14 @@ re-implements the feature set with original code and design and only legally reu
 - Japa mala counter.
 - "Ask the Gita" Q&A grounded in verses.
 - Full scriptures library (four public-domain books, about 2.5 million characters).
+- Temple booking guide: all TTD online services (darshan tickets, sevas, e-Dip, rooms, e-Hundi) and 17 other temples,
+  with usual quota opening dates, monthly reminders and a button that opens the official booking site in an in-app
+  browser tab. Devalay does not book or take payment: temples offer no booking API and TTD authorises no agents.
+  The catalogue is `app/assets/data/temples.json`, also published as `/api/v1/temples/index.json` so it can be
+  corrected without an app release (raise `version` when you edit it). The TTD page also shows TTD's public
+  "Latest Updates" announcements: the daily static export reads that one public feed
+  (`backend/app/services/temple_updates.py`) and republishes it as `/api/v1/temples/ttd/updates/index.json`, so
+  phones never call TTD's servers. Only announcements are read; TTD's booking, login and payment APIs are not used.
 - Account deletion, data-minimal design, no ads or analytics (crash reports only), Telugu, Hindi and English UI, light, dark and five app colours.
 - A free public APK that needs no server: content comes from a daily-refreshed static API on GitHub Pages; search,
   Ask the Gita and the status maker run on device. Accounts, sync and Premium need the full server.

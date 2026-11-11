@@ -33,6 +33,13 @@ class Notifications {
     importance: Importance.high,
   );
 
+  static const _quota = AndroidNotificationDetails(
+    'temple_booking',
+    'Temple booking reminders',
+    channelDescription: 'Reminders before a temple usually opens its online booking',
+    importance: Importance.high,
+  );
+
   static Future<void> init() async {
     tzdata.initializeTimeZones();
     try {
@@ -154,4 +161,86 @@ class Notifications {
       await _plugin.cancel(id: _festivalBase + i);
     }
   }
+
+  /// Two notification ids per reminder key, stable across app starts and clear of the other ranges.
+  static int _quotaId(String key) {
+    var h = 0;
+    for (final c in key.codeUnits) {
+      h = (h * 31 + c) & 0x7fffffff;
+    }
+    return 200000 + h % 4000 * 2;
+  }
+
+  /// Monthly reminders for a temple booking quota that usually opens on [day] at [hour]:[minute]
+  /// India time: one the evening before and one 90 minutes ahead. Android may deliver an inexact
+  /// alarm up to an hour late, so 90 minutes keeps the second one ahead of the opening.
+  static Future<void> scheduleQuota(
+    String key, {
+    required int day,
+    required int hour,
+    required int minute,
+    required String temple,
+    required String service,
+    required String lang,
+  }) async {
+    await cancelQuota(key);
+    final india = tz.getLocation('Asia/Kolkata');
+    final now = tz.TZDateTime.now(india);
+    tz.TZDateTime upcoming(tz.TZDateTime Function(int month) at) {
+      final t = at(now.month);
+      return t.isAfter(now) ? t : at(now.month + 1);
+    }
+
+    final time = clock12(hour, minute);
+    final messages = [
+      (
+        upcoming((m) => tz.TZDateTime(india, now.year, m, day - 1, 19)),
+        switch (lang) {
+          'te' => (
+            '🎟️ రేపు $time · $service',
+            '$temple: ఆన్‌లైన్ బుకింగ్ సాధారణంగా రేపు మొదలవుతుంది. గుర్తింపు కార్డు వివరాలు సిద్ధంగా ఉంచుకోండి.',
+          ),
+          'hi' => (
+            '🎟️ कल $time · $service',
+            '$temple: ऑनलाइन बुकिंग आमतौर पर कल खुलती है। पहचान पत्र की जानकारी तैयार रखें।',
+          ),
+          _ => (
+            '🎟️ Tomorrow $time · $service',
+            '$temple: online booking usually opens tomorrow. Keep your ID details ready.',
+          ),
+        },
+      ),
+      (
+        upcoming((m) => tz.TZDateTime(india, now.year, m, day, hour, minute).subtract(const Duration(minutes: 90))),
+        switch (lang) {
+          'te' => (
+            '🎟️ $time కు $service',
+            '$temple: కోటా సాధారణంగా ఈ రోజు విడుదలవుతుంది. దేవాలయం యాప్‌లో బుకింగ్ తెరవండి.',
+          ),
+          'hi' => ('🎟️ $time बजे $service', '$temple: कोटा आमतौर पर आज खुलता है। देवालय में बुकिंग खोलें।'),
+          _ => ('🎟️ $service opens at $time', '$temple: the quota usually opens today. Open Booking in Devalay.'),
+        },
+      ),
+    ];
+    for (final (i, (at, (title, body))) in messages.indexed) {
+      await _plugin.zonedSchedule(
+        id: _quotaId(key) + i,
+        scheduledDate: at,
+        notificationDetails: const NotificationDetails(android: _quota),
+        androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+        title: title,
+        body: body,
+        matchDateTimeComponents: DateTimeComponents.dayOfMonthAndTime,
+      );
+    }
+  }
+
+  static Future<void> cancelQuota(String key) async {
+    await _plugin.cancel(id: _quotaId(key));
+    await _plugin.cancel(id: _quotaId(key) + 1);
+  }
 }
+
+/// "10:00 AM" for a 24-hour time.
+String clock12(int hour, int minute) =>
+    '${hour % 12 == 0 ? 12 : hour % 12}:${minute.toString().padLeft(2, '0')} ${hour >= 12 ? 'PM' : 'AM'}';

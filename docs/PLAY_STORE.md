@@ -69,6 +69,14 @@ Category: **Lifestyle**. Tags: Religion & spirituality.
 
   Data is encrypted in transit. No account is created, so there is nothing to request deletion of. No location,
   contacts, photos or personal info are collected.
+- **Temple booking (government information):** the Booking pages describe services of TTD and state temple
+  departments and open their official sites. Play's Misleading Claims policy asks apps that show government
+  information to name the source and say they are not a government body. The app says this on every booking page.
+  Before releasing a version with Booking, add this to the full description as well:
+
+  > Temple booking: Devalay is not affiliated with Tirumala Tirupati Devasthanams (TTD) or any temple, trust or
+  > government body. Booking details come from the temples' official sites (TTD: https://ttdevasthanams.ap.gov.in),
+  > and every booking and payment is made there, not in Devalay.
 - **Foreground service (media playback):** Devalay plays devotional audio in the background with lock-screen
   controls. Play may ask for a short screen recording that shows a song continuing after the screen is locked.
 - **Permissions:** `WRITE_SETTINGS` is used only when the user chooses "Set as ringtone"; Android shows its own

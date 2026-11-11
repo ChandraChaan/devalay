@@ -85,6 +85,7 @@ flutter:
   assets:
     - assets/sounds/
     - assets/images/
+    - assets/data/
   fonts:
     - family: Mukta
       fonts:

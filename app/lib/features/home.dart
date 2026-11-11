@@ -15,6 +15,7 @@ import '../core/telugu.dart';
 import '../core/theme.dart';
 import '../widgets/common.dart';
 import '../widgets/mandala.dart';
+import 'temples.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -58,6 +59,7 @@ class _HomeBody extends ConsumerWidget {
           child: _Hero(deity: deity, panchang: data['panchang'] as Map),
         ),
         SliverToBoxAdapter(child: _QuickActions()),
+        const SliverToBoxAdapter(child: BookingPromoCard()),
         SliverToBoxAdapter(child: _TodaysSongs(serverDeity: deity)),
         if (banners.isNotEmpty) SliverToBoxAdapter(child: _Banners(banners: banners)),
         SliverToBoxAdapter(child: _PanchangCard(p: data['panchang'] as Map)),
@@ -251,6 +253,7 @@ class _QuickActions extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final actions = [
       ('🪔', 'mandir', '/mandir', true),
+      ('🎟️', 'booking', '/temples', false),
       ('📿', 'japa', '/japa', false),
       ('🔮', 'rashifal', '/rashifal', false),
       ('📖', 'gita', '/gita', false),
@@ -261,7 +264,6 @@ class _QuickActions extends ConsumerWidget {
       ('🎬', 'videos', '/bhakti-videos', false),
       ('🗓️', 'panchang', '/panchang', false),
       ('🖼️', 'wallpapers', '/wallpapers', false),
-      ('🎵', 'listen', '/listen', true),
     ];
     return Padding(
       padding: const EdgeInsets.fromLTRB(12, 16, 12, 0),

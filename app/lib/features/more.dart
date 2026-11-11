@@ -89,6 +89,39 @@ class MoreScreen extends ConsumerWidget {
               ),
           ],
           const SizedBox(height: 16),
+          GradientCard(
+            colors: const [Color(0xFFFF8F00), Color(0xFFE65100), Color(0xFF8E1B1B)],
+            padding: 16,
+            onTap: () => context.push('/temples'),
+            child: Row(
+              children: [
+                const Text('🎟️', style: TextStyle(fontSize: 30)),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        tr(ref, 'temple_booking'),
+                        style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w700),
+                      ),
+                      Text(
+                        l3(
+                          ref,
+                          'TTD darshan tickets, sevas, rooms and more temples',
+                          'टीटीडी दर्शन टिकट, सेवा, कमरे और अन्य मंदिर',
+                          'టీటీడీ దర్శన టికెట్లు, సేవలు, గదులు, మరిన్ని ఆలయాలు',
+                        ),
+                        style: const TextStyle(color: Colors.white70, height: 1.25),
+                      ),
+                    ],
+                  ),
+                ),
+                const Icon(Icons.chevron_right_rounded, color: Colors.white),
+              ],
+            ),
+          ),
+          const SizedBox(height: 12),
           GridView.count(
             padding: EdgeInsets.zero,
             crossAxisCount: 3,

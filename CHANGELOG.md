@@ -3,6 +3,21 @@
 Each milestone is a git tag and a [GitHub release](https://github.com/ChandraChaan/devalay/releases). Releases from
 v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the section below that matches the tag.
 
+## Unreleased
+
+- Temple booking: every online service of Tirumala Tirupati Devasthanams in one place. Special Entry Darshan
+  (₹300), senior citizen and SRIVANI darshan, Angapradakshinam, Arjitha Sevas and the Seva e-Dip, rooms, e-Hundi,
+  donations and more, each explained in English, Hindi and Telugu, with the steps to book and what to carry.
+- The Book button opens the temple's official site inside Devalay. You book and pay there; Devalay takes no booking
+  and no money.
+- Latest from the temple: TTD's own announcements (which quota opens on which date and time), refreshed every day
+  from its official site and shown on the TTD page.
+- Usual monthly opening dates for each TTD quota, with a reminder the evening before and again before it opens.
+- 17 more temples and temple boards with their official booking sites: Shirdi, Sabarimala, Vaishno Devi, Kashi
+  Vishwanath, Ayodhya, Mahakaleshwar, Char Dham, Srisailam, Andhra Pradesh, Tamil Nadu and Karnataka temples and
+  others. Search by temple, city or state.
+- On Home (Booking, and a card under the shortcuts) and in More.
+
 ## v1.3.0 — 2026-11-11
 
 - Bhagavad Gita: a Listen button. Devalay reads each verse aloud (Sanskrit, then the English meaning) with the
