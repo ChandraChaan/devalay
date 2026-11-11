@@ -31,6 +31,7 @@ import 'features/search.dart';
 import 'features/settings.dart';
 import 'features/shell.dart';
 import 'features/status_maker.dart';
+import 'features/temples.dart';
 import 'features/text_reader.dart';
 import 'features/videos.dart';
 import 'features/wallpapers.dart';
@@ -109,6 +110,11 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: '/calendar/day/:date',
         builder: (_, s) =>
             CalendarDayScreen(date: DateTime.tryParse(s.pathParameters['date']!) ?? DateUtils.dateOnly(DateTime.now())),
+      ),
+      GoRoute(path: '/temples', builder: (_, _) => const TemplesScreen()),
+      GoRoute(
+        path: '/temples/:id',
+        builder: (_, s) => TempleScreen(id: s.pathParameters['id']!),
       ),
       GoRoute(path: '/japa', builder: (_, _) => const JapaScreen()),
       GoRoute(path: '/videos', builder: (_, _) => const VideosScreen()),

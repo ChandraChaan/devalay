@@ -42,8 +42,9 @@ from app.db import Base, SessionLocal, engine  # noqa: E402
 from app.main import app  # noqa: E402
 from app.routers import astro  # noqa: E402
 from app.seed.loader import load_all  # noqa: E402
-from app.services import ai, gita_search  # noqa: E402
+from app.services import ai, gita_search, temple_updates  # noqa: E402
 
+TEMPLES = ROOT.parent / "app" / "assets" / "data" / "temples.json"
 CITY = re.compile(r"City\('([\w-]+)', '[^']*', '[^']*', (-?[\d.]+), (-?[\d.]+), '([^']+)'\)")
 TRACK_KINDS = [None, "ringtone", "aarti", "mantra", "bhajan", "dhun", "ambient", "aarti,mantra,bhajan,chalisa,dhun,ambient"]
 HOME_DAYS = range(-2, 11)
@@ -168,6 +169,15 @@ def main() -> None:
 
         for page, name in (("/privacy", "privacy.html"), ("/terms", "terms.html")):
             (OUT / name).write_text(client.get(page).text)
+
+    # Temple booking catalogue: the app bundles this file and prefers the published copy when its
+    # "version" is higher, so links and dates can be corrected without an app release.
+    ex.save(static_file("/temples"), json.loads(TEMPLES.read_text()))
+    # TTD's public announcements, read once here so phones do not call the temple's servers.
+    ttd_updates = static_file("/temples/ttd/updates")
+    updates = temple_updates.fetch_ttd_updates(previous_url=f"{BASE_URL}/api/v1/{ttd_updates}")
+    if updates:
+        ex.save(ttd_updates, updates)
 
     shutil.copytree(ROOT / "media" / "seed", OUT / "media" / "seed", dirs_exist_ok=True)
     ex.save("meta/index.json", {"generated": today.isoformat(), "files": ex.count + 1,
