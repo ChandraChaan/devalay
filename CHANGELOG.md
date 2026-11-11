@@ -3,7 +3,7 @@
 Each milestone is a git tag and a [GitHub release](https://github.com/ChandraChaan/devalay/releases). Releases from
 v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the section below that matches the tag.
 
-## Unreleased
+## v1.3.0 — 2026-11-11
 
 - Bhagavad Gita: a Listen button. Devalay reads each verse aloud (Sanskrit, then the English meaning) with the
   phone's own voices, turns the page by itself and goes on to the next chapter. Choose Sanskrit only, meaning only or
