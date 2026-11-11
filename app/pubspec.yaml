@@ -63,6 +63,7 @@ dependencies:
   firebase_remote_config: ^7.0.1
   package_info_plus: ^10.2.2
   youtube_player_iframe: ^6.0.2
+  flutter_tts: ^4.2.5
 
 dev_dependencies:
   flutter_test:

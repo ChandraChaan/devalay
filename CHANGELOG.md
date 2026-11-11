@@ -3,6 +3,18 @@
 Each milestone is a git tag and a [GitHub release](https://github.com/ChandraChaan/devalay/releases). Releases from
 v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the section below that matches the tag.
 
+## Unreleased
+
+- Bhagavad Gita: a Listen button. Devalay reads each verse aloud (Sanskrit, then the English meaning) with the
+  phone's own voices, turns the page by itself and goes on to the next chapter. Choose Sanskrit only, meaning only or
+  both, and 0.75× to 1.5× speed. The verse being read is highlighted. Also on each chapter and on Home's verse of the day.
+- Calendar: swipe between months, a Sunday-first layout, Today and month/year jump, a legend, and a card for the
+  selected day with tithi, nakshatra, sunrise and festivals.
+- Calendar full screen: a big month grid with festival names written in each day.
+- Day page: tap a day twice (or long-press) for a full-screen page with festival details and the full panchang. Swipe
+  to the next or previous day, or share the day.
+- Panchang: swipe left or right to change the day.
+
 ## v1.2.0 — 2026-11-04
 
 - English is now the default language and New Delhi the default city, because Devalay is for all of India. Hindi
