@@ -35,6 +35,7 @@ import 'features/temples.dart';
 import 'features/text_reader.dart';
 import 'features/videos.dart';
 import 'features/wallpapers.dart';
+import 'features/wishes.dart';
 
 final _rootKey = GlobalKey<NavigatorState>();
 
@@ -115,6 +116,11 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/temples/:id',
         builder: (_, s) => TempleScreen(id: s.pathParameters['id']!),
+      ),
+      GoRoute(path: '/wishes', builder: (_, _) => const WishesScreen()),
+      GoRoute(
+        path: '/wishes/:id',
+        builder: (_, s) => WishEditorScreen(id: s.pathParameters['id']!, themeId: s.uri.queryParameters['theme']),
       ),
       GoRoute(path: '/japa', builder: (_, _) => const JapaScreen()),
       GoRoute(path: '/videos', builder: (_, _) => const VideosScreen()),

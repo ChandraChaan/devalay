@@ -36,6 +36,15 @@ re-implements the feature set with original code and design and only legally reu
   "Latest Updates" announcements: the daily static export reads that one public feed
   (`backend/app/services/temple_updates.py`) and republishes it as `/api/v1/temples/ttd/updates/index.json`, so
   phones never call TTD's servers. Only announcements are read; TTD's booking, login and payment APIs are not used.
+- Festival wishes: personalised greeting cards with the user's own photo and name, for WhatsApp status and other
+  apps. Six layouts drawn in Flutter (diyas, toran, rangoli, kolam, lotus, kites, bells and more are painted in code;
+  deity art is the public-domain wallpaper set), 19 sets and 41 themes with captions and ready-made wishes in
+  English, Hindi and Telugu, a daily Good morning / Good night card with the deity of the weekday, and photo zoom and
+  position. Export is 1080×1920 through the same renderer as the status maker. The photo comes from the Android
+  photo picker (no storage permission), stays in app-private storage and is never uploaded. The catalogue is
+  `app/assets/data/wishes.json`, also published as `/api/v1/wishes/index.json`; add a festival or theme there and
+  raise `version` to reach installed apps without a release. Layouts and decorations are named in the catalogue;
+  a name an older app does not know falls back to a default layout or is not drawn.
 - Account deletion, data-minimal design, no ads or analytics (crash reports only), Telugu, Hindi and English UI, light, dark and five app colours.
 - A free public APK that needs no server: content comes from a daily-refreshed static API on GitHub Pages; search,
   Ask the Gita and the status maker run on device. Accounts, sync and Premium need the full server.

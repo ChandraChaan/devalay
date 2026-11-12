@@ -16,6 +16,7 @@ import '../core/theme.dart';
 import '../widgets/common.dart';
 import '../widgets/mandala.dart';
 import 'temples.dart';
+import 'wishes.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -60,6 +61,7 @@ class _HomeBody extends ConsumerWidget {
         ),
         SliverToBoxAdapter(child: _QuickActions()),
         const SliverToBoxAdapter(child: BookingPromoCard()),
+        const SliverToBoxAdapter(child: WishesPromoCard()),
         SliverToBoxAdapter(child: _TodaysSongs(serverDeity: deity)),
         if (banners.isNotEmpty) SliverToBoxAdapter(child: _Banners(banners: banners)),
         SliverToBoxAdapter(child: _PanchangCard(p: data['panchang'] as Map)),

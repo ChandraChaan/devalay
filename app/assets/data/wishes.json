@@ -1,0 +1,1112 @@
+{
+  "schema": 1,
+  "version": 1,
+  "updated": "2026-11-12",
+  "festivals": [
+    {
+      "id": "daily",
+      "kind": "daily",
+      "emoji": "🌅",
+      "name": {"en": "Daily blessing", "hi": "दैनिक आशीर्वाद", "te": "రోజువారీ ఆశీస్సులు"},
+      "deity_by_weekday": ["shiva", "hanuman", "ganesha", "vishnu", "lakshmi", "venkateswara", "surya"],
+      "symbol": "ॐ",
+      "captions": [
+        {"text": {"en": "Good morning", "hi": "सुप्रभात", "te": "శుభోదయం"}, "hours": [4, 11]},
+        {"text": {"en": "Good afternoon", "hi": "शुभ दोपहर", "te": "శుభ మధ్యాహ్నం"}, "hours": [11, 16]},
+        {"text": {"en": "Good evening", "hi": "शुभ संध्या", "te": "శుభ సాయంత్రం"}, "hours": [16, 20]},
+        {"text": {"en": "Good night", "hi": "शुभ रात्रि", "te": "శుభ రాత్రి"}, "hours": [20, 4]},
+        {"text": {"en": "Om Namah Shivaya", "hi": "ॐ नमः शिवाय", "te": "ఓం నమః శివాయ"}, "weekday": 1},
+        {"text": {"en": "Jai Hanuman", "hi": "जय हनुमान", "te": "జై హనుమాన్"}, "weekday": 2},
+        {"text": {"en": "Om Gam Ganapataye Namah", "hi": "ॐ गं गणपतये नमः", "te": "ఓం గం గణపతయే నమః"}, "weekday": 3},
+        {"text": {"en": "Om Namo Narayanaya", "hi": "ॐ नमो नारायणाय", "te": "ఓం నమో నారాయణాయ"}, "weekday": 4},
+        {"text": {"en": "Om Shri Mahalakshmyai Namah", "hi": "ॐ श्री महालक्ष्म्यै नमः", "te": "ఓం శ్రీ మహాలక్ష్మ్యై నమః"}, "weekday": 5},
+        {"text": {"en": "Om Namo Venkatesaya", "hi": "ॐ नमो वेंकटेशाय", "te": "ఓం నమో వేంకటేశాయ"}, "weekday": 6},
+        {"text": {"en": "Om Suryaya Namah", "hi": "ॐ सूर्याय नमः", "te": "ఓం సూర్యాయ నమః"}, "weekday": 7},
+        {"en": "Have a blessed day", "hi": "आपका दिन मंगलमय हो", "te": "మీ రోజు శుభప్రదం కావాలి"}
+      ],
+      "wishes": [
+        {
+          "text": {
+            "en": "May this morning bring you peace, good health and a reason to smile.",
+            "hi": "यह सुबह आपके जीवन में शांति, स्वास्थ्य और मुस्कान लेकर आए।",
+            "te": "ఈ ఉదయం మీకు శాంతి, ఆరోగ్యం, చిరునవ్వు తీసుకురావాలి."
+          },
+          "hours": [4, 11]
+        },
+        {
+          "text": {
+            "en": "Leave today's worries at God's feet and sleep in peace.",
+            "hi": "आज की चिंताएँ प्रभु के चरणों में रखकर चैन से सोइए।",
+            "te": "ఈ రోజు చింతలన్నీ భగవంతుని పాదాల చెంత ఉంచి ప్రశాంతంగా నిద్రించండి."
+          },
+          "hours": [20, 4]
+        },
+        {
+          "text": {
+            "en": "May Lord Shiva bless your week with strength and calm.",
+            "hi": "भगवान शिव आपके सप्ताह को शक्ति और शांति से भर दें।",
+            "te": "పరమశివుడు మీ వారాన్ని శక్తితో, శాంతితో నింపాలి."
+          },
+          "weekday": 1
+        },
+        {
+          "text": {
+            "en": "May Hanuman give you courage for every task today.",
+            "hi": "हनुमान जी आज हर कार्य में आपको साहस दें।",
+            "te": "ఆంజనేయుడు ఈ రోజు ప్రతి పనిలో మీకు ధైర్యాన్ని ఇవ్వాలి."
+          },
+          "weekday": 2
+        },
+        {
+          "text": {
+            "en": "May Lord Ganesha remove every obstacle from your path.",
+            "hi": "श्री गणेश आपके मार्ग की हर बाधा दूर करें।",
+            "te": "విఘ్నేశ్వరుడు మీ దారిలోని ప్రతి అడ్డంకినీ తొలగించాలి."
+          },
+          "weekday": 3
+        },
+        {
+          "text": {
+            "en": "May Lord Vishnu protect you and your family.",
+            "hi": "भगवान विष्णु आपकी और आपके परिवार की रक्षा करें।",
+            "te": "శ్రీమహావిష్ణువు మిమ్మల్ని, మీ కుటుంబాన్ని కాపాడాలి."
+          },
+          "weekday": 4
+        },
+        {
+          "text": {
+            "en": "May Goddess Lakshmi fill your home with prosperity.",
+            "hi": "माँ लक्ष्मी आपके घर को सुख-समृद्धि से भर दें।",
+            "te": "లక్ష్మీదేవి మీ ఇంటిని సిరిసంపదలతో నింపాలి."
+          },
+          "weekday": 5
+        },
+        {
+          "text": {
+            "en": "May Lord Venkateswara grant all that is good for you.",
+            "hi": "भगवान वेंकटेश्वर आपका हर शुभ मनोरथ पूर्ण करें।",
+            "te": "శ్రీ వేంకటేశ్వరుడు మీకు సకల శుభాలు ప్రసాదించాలి."
+          },
+          "weekday": 6
+        },
+        {
+          "text": {
+            "en": "May the Sun God bless you with health and energy.",
+            "hi": "सूर्य देव आपको स्वास्थ्य और ऊर्जा प्रदान करें।",
+            "te": "సూర్యభగవానుడు మీకు ఆరోగ్యాన్ని, ఉత్సాహాన్ని ప్రసాదించాలి."
+          },
+          "weekday": 7
+        },
+        {
+          "en": "May God's grace be with you and your family, today and always.",
+          "hi": "ईश्वर की कृपा आप और आपके परिवार पर सदा बनी रहे।",
+          "te": "భగవంతుని కృప మీపై, మీ కుటుంబంపై ఎల్లప్పుడూ ఉండాలి."
+        },
+        {
+          "en": "Begin with a prayer, continue with faith, end with gratitude.",
+          "hi": "प्रार्थना से शुरुआत, विश्वास से आगे, कृतज्ञता से समापन।",
+          "te": "ప్రార్థనతో ప్రారంభించండి, విశ్వాసంతో సాగండి, కృతజ్ఞతతో ముగించండి."
+        }
+      ],
+      "themes": [
+        {
+          "id": "daily-sunrise",
+          "name": {"en": "Sunrise", "hi": "सूर्योदय", "te": "సూర్యోదయం"},
+          "colors": ["#FFE9B8", "#FFB74D", "#F57C00"],
+          "accent": "#7A1F0E",
+          "ink": "#3E1D0A",
+          "top": "sun",
+          "bottom": "lotus",
+          "backdrop": "rays",
+          "layout": "darshan"
+        },
+        {
+          "id": "daily-lamp",
+          "name": {"en": "Evening lamp", "hi": "संध्या दीप", "te": "సంధ్యా దీపం"},
+          "colors": ["#2A0F3D", "#6A1B4D", "#C2410C"],
+          "accent": "#FFC857",
+          "ink": "#FFFFFF",
+          "top": "bells",
+          "bottom": "diyas",
+          "backdrop": "bokeh",
+          "layout": "banner"
+        },
+        {
+          "id": "daily-night",
+          "name": {"en": "Night sky", "hi": "रात्रि आकाश", "te": "రాత్రి ఆకాశం"},
+          "colors": ["#050B24", "#0D1B4C", "#1E3A8A"],
+          "accent": "#FDE68A",
+          "ink": "#FFFFFF",
+          "top": "crescent",
+          "bottom": "lotus",
+          "backdrop": "stars",
+          "layout": "text"
+        },
+        {
+          "id": "daily-tulsi",
+          "name": {"en": "Tulsi", "hi": "तुलसी", "te": "తులసి"},
+          "colors": ["#F1F8E9", "#C5E1A5", "#7CB342"],
+          "accent": "#1B5E20",
+          "ink": "#1B3A12",
+          "top": "toran",
+          "bottom": "kolam",
+          "backdrop": "mandala",
+          "layout": "portrait"
+        }
+      ]
+    },
+    {
+      "id": "diwali",
+      "emoji": "🪔",
+      "name": {"en": "Diwali", "hi": "दीपावली", "te": "దీపావళి"},
+      "match": ["diwali"],
+      "deity": "lakshmi",
+      "symbol": "श्री",
+      "captions": [
+        {"en": "Happy Diwali", "hi": "दीपावली की शुभकामनाएँ", "te": "దీపావళి శుభాకాంక్షలు"},
+        {"en": "Shubh Deepavali", "hi": "शुभ दीपावली", "te": "శుభ దీపావళి"}
+      ],
+      "wishes": [
+        {
+          "en": "May the light of the diyas fill your home with joy, health and prosperity.",
+          "hi": "दीपों का यह प्रकाश आपके घर को सुख, स्वास्थ्य और समृद्धि से भर दे।",
+          "te": "దీపాల వెలుగు మీ ఇంటిని ఆనందం, ఆరోగ్యం, ఐశ్వర్యాలతో నింపాలి."
+        },
+        {
+          "en": "May Goddess Lakshmi bless you and your family this Diwali.",
+          "hi": "इस दीपावली माँ लक्ष्मी की कृपा आप और आपके परिवार पर बनी रहे।",
+          "te": "ఈ దీపావళి నాడు లక్ష్మీదేవి అనుగ్రహం మీపై, మీ కుటుంబంపై ఉండాలి."
+        },
+        {
+          "en": "Let light win over darkness, in our homes and in our hearts.",
+          "hi": "अंधकार पर प्रकाश की जीत हो, हमारे घरों में भी और हमारे मन में भी।",
+          "te": "చీకటిపై వెలుగు గెలవాలి, మన ఇళ్లలోనూ మన మనసుల్లోనూ."
+        },
+        {
+          "en": "Wishing you a safe, bright and happy Diwali.",
+          "hi": "आपको सुरक्षित, उज्ज्वल और मंगलमय दीपावली की शुभकामनाएँ।",
+          "te": "మీకు సురక్షితమైన, వెలుగులు నిండిన దీపావళి శుభాకాంక్షలు."
+        }
+      ],
+      "themes": [
+        {
+          "id": "diwali-night",
+          "name": {"en": "Night of lamps", "hi": "दीपों की रात", "te": "దీపాల రాత్రి"},
+          "colors": ["#14062B", "#4A148C", "#8E1B1B"],
+          "accent": "#FFC857",
+          "ink": "#FFFFFF",
+          "top": "sparkles",
+          "bottom": "diyas",
+          "backdrop": "bokeh",
+          "layout": "darshan"
+        },
+        {
+          "id": "diwali-gold",
+          "name": {"en": "Golden Lakshmi", "hi": "स्वर्ण लक्ष्मी", "te": "స్వర్ణ లక్ష్మి"},
+          "colors": ["#FFF6DC", "#FFD98A", "#F5A623"],
+          "accent": "#8E1B1B",
+          "ink": "#4A1A08",
+          "top": "toran",
+          "bottom": "lotus",
+          "backdrop": "mandala",
+          "layout": "banner"
+        },
+        {
+          "id": "diwali-rangoli",
+          "name": {"en": "Rangoli", "hi": "रंगोली", "te": "రంగవల్లి"},
+          "colors": ["#6A0F3A", "#B0175A", "#F0592B"],
+          "accent": "#FFC857",
+          "ink": "#FFFFFF",
+          "top": "toran",
+          "bottom": "rangoli",
+          "backdrop": "mandala",
+          "layout": "text"
+        }
+      ]
+    },
+    {
+      "id": "navratri",
+      "emoji": "🔱",
+      "name": {"en": "Navratri", "hi": "नवरात्रि", "te": "నవరాత్రులు"},
+      "match": ["sharad-navratri"],
+      "days": 9,
+      "deity": "durga",
+      "symbol": "ॐ",
+      "captions": [
+        {"en": "Happy Navratri", "hi": "नवरात्रि की शुभकामनाएँ", "te": "శరన్నవరాత్రి శుభాకాంక్షలు"},
+        {"en": "Jai Mata Di", "hi": "जय माता दी", "te": "జై మాతా దీ"}
+      ],
+      "wishes": [
+        {
+          "en": "May Maa Durga give you strength, courage and success.",
+          "hi": "माँ दुर्गा आपको शक्ति, साहस और सफलता प्रदान करें।",
+          "te": "దుర్గామాత మీకు శక్తి, ధైర్యం, విజయాన్ని ప్రసాదించాలి."
+        },
+        {
+          "en": "Nine nights of devotion, nine forms of the Mother. May she bless your home.",
+          "hi": "भक्ति की नौ रातें, माँ के नौ रूप। माँ आपके घर पर कृपा करें।",
+          "te": "భక్తితో తొమ్మిది రాత్రులు, అమ్మవారి తొమ్మిది రూపాలు. అమ్మ మీ ఇంటిని దీవించాలి."
+        },
+        {
+          "en": "May the Mother remove every sorrow and fill your life with joy.",
+          "hi": "माँ आपके सभी दुख दूर करें और जीवन को खुशियों से भर दें।",
+          "te": "అమ్మవారు మీ కష్టాలన్నీ తొలగించి, జీవితాన్ని ఆనందంతో నింపాలి."
+        }
+      ],
+      "themes": [
+        {
+          "id": "navratri-shakti",
+          "name": {"en": "Shakti red", "hi": "शक्ति लाल", "te": "శక్తి ఎరుపు"},
+          "colors": ["#4A0404", "#B71C1C", "#E65100"],
+          "accent": "#FFC857",
+          "ink": "#FFFFFF",
+          "top": "bells",
+          "bottom": "garland",
+          "backdrop": "mandala",
+          "layout": "darshan"
+        },
+        {
+          "id": "navratri-garba",
+          "name": {"en": "Garba night", "hi": "गरबा रात", "te": "గర్బా రాత్రి"},
+          "colors": ["#1A0B3B", "#5E1675", "#D81B60"],
+          "accent": "#FFD166",
+          "ink": "#FFFFFF",
+          "top": "sparkles",
+          "bottom": "rangoli",
+          "backdrop": "bokeh",
+          "layout": "badge"
+        }
+      ]
+    },
+    {
+      "id": "dussehra",
+      "emoji": "🏹",
+      "name": {"en": "Dussehra", "hi": "दशहरा", "te": "దసరా"},
+      "match": ["dussehra"],
+      "deity": "durga",
+      "symbol": "ॐ",
+      "captions": [
+        {"en": "Happy Dussehra", "hi": "दशहरा की शुभकामनाएँ", "te": "దసరా శుభాకాంక్షలు"},
+        {"en": "Happy Vijayadashami", "hi": "विजयादशमी की शुभकामनाएँ", "te": "విజయదశమి శుభాకాంక్షలు"}
+      ],
+      "wishes": [
+        {
+          "en": "May good always win over evil, in the world and within us.",
+          "hi": "बुराई पर अच्छाई की सदा जीत हो, संसार में भी और हमारे भीतर भी।",
+          "te": "చెడుపై మంచి ఎల్లప్పుడూ గెలవాలి, లోకంలోనూ మనలోనూ."
+        },
+        {
+          "en": "May this Vijayadashami bring victory to all your efforts.",
+          "hi": "यह विजयादशमी आपके हर प्रयास को सफलता दे।",
+          "te": "ఈ విజయదశమి మీ ప్రతి ప్రయత్నానికీ విజయాన్ని అందించాలి."
+        },
+        {
+          "en": "May the Mother's blessings stay with your family always.",
+          "hi": "माँ का आशीर्वाद आपके परिवार पर सदा बना रहे।",
+          "te": "అమ్మవారి ఆశీస్సులు మీ కుటుంబంపై ఎల్లప్పుడూ ఉండాలి."
+        }
+      ],
+      "themes": [
+        {
+          "id": "dussehra-shakti",
+          "name": {"en": "Mother's victory", "hi": "माँ की विजय", "te": "అమ్మవారి విజయం"},
+          "colors": ["#3B0A0A", "#8E1B1B", "#D84315"],
+          "accent": "#FFC857",
+          "ink": "#FFFFFF",
+          "top": "toran",
+          "bottom": "diyas",
+          "backdrop": "mandala",
+          "layout": "darshan"
+        },
+        {
+          "id": "dussehra-vijaya",
+          "name": {"en": "Rama's victory", "hi": "राम की विजय", "te": "రామ విజయం"},
+          "colors": ["#FFF3E0", "#FFCC80", "#EF6C00"],
+          "accent": "#8E1B1B",
+          "ink": "#4A1A08",
+          "top": "flags",
+          "bottom": "garland",
+          "backdrop": "rays",
+          "layout": "split",
+          "deity": "rama"
+        }
+      ]
+    },
+    {
+      "id": "ganesh-chaturthi",
+      "emoji": "🐘",
+      "name": {"en": "Ganesh Chaturthi", "hi": "गणेश चतुर्थी", "te": "వినాయక చవితి"},
+      "match": ["ganesh-chaturthi"],
+      "days": 10,
+      "deity": "ganesha",
+      "symbol": "ॐ",
+      "captions": [
+        {"en": "Happy Ganesh Chaturthi", "hi": "गणेश चतुर्थी की शुभकामनाएँ", "te": "వినాయక చవితి శుభాకాంక్షలు"},
+        {"en": "Ganpati Bappa Morya", "hi": "गणपति बप्पा मोरया", "te": "గణపతి బప్పా మోరియా"}
+      ],
+      "wishes": [
+        {
+          "en": "May Lord Ganesha remove every obstacle and bless you with wisdom.",
+          "hi": "श्री गणेश आपके सभी विघ्न हरें और बुद्धि का आशीर्वाद दें।",
+          "te": "విఘ్నేశ్వరుడు మీ విఘ్నాలన్నీ తొలగించి, జ్ఞానాన్ని ప్రసాదించాలి."
+        },
+        {
+          "en": "May Bappa bring happiness and good beginnings to your home.",
+          "hi": "बप्पा आपके घर में खुशियाँ और शुभ आरंभ लेकर आएँ।",
+          "te": "గణపయ్య మీ ఇంటికి ఆనందాన్ని, శుభారంభాలను తీసుకురావాలి."
+        },
+        {
+          "en": "May every new work you begin end in success.",
+          "hi": "आपका हर नया कार्य सफल हो।",
+          "te": "మీరు ప్రారంభించే ప్రతి కొత్త పని విజయవంతం కావాలి."
+        }
+      ],
+      "themes": [
+        {
+          "id": "ganesh-modak",
+          "name": {"en": "Modak morning", "hi": "मोदक प्रभात", "te": "మోదక ప్రభాతం"},
+          "colors": ["#FFF8E1", "#FFE082", "#FFB300"],
+          "accent": "#B71C1C",
+          "ink": "#4E2A04",
+          "top": "toran",
+          "bottom": "lotus",
+          "backdrop": "mandala",
+          "layout": "darshan"
+        },
+        {
+          "id": "ganesh-red",
+          "name": {"en": "Ganpati red", "hi": "गणपति लाल", "te": "గణపతి ఎరుపు"},
+          "colors": ["#5A0E0E", "#C62828", "#F57C00"],
+          "accent": "#FFC857",
+          "ink": "#FFFFFF",
+          "top": "bells",
+          "bottom": "garland",
+          "backdrop": "bokeh",
+          "layout": "banner"
+        }
+      ]
+    },
+    {
+      "id": "sankranti",
+      "emoji": "🪁",
+      "name": {"en": "Sankranti · Pongal", "hi": "संक्रांति · पोंगल", "te": "సంక్రాంతి"},
+      "match": ["bhogi", "makar-sankranti"],
+      "days": 3,
+      "deity": "surya",
+      "symbol": "ॐ",
+      "captions": [
+        {"en": "Happy Makar Sankranti", "hi": "मकर संक्रांति की शुभकामनाएँ", "te": "సంక్రాంతి శుభాకాంక్షలు"},
+        {"en": "Happy Pongal", "hi": "पोंगल की शुभकामनाएँ", "te": "పొంగల్ శుభాకాంక్షలు"},
+        {"en": "Happy Bhogi", "hi": "भोगी की शुभकामनाएँ", "te": "భోగి శుభాకాంక్షలు"}
+      ],
+      "wishes": [
+        {
+          "en": "May the Sun's new journey bring light and a good harvest to your life.",
+          "hi": "सूर्य देव की नई यात्रा आपके जीवन में उजाला और समृद्धि लाए।",
+          "te": "సూర్యుని కొత్త ప్రయాణం మీ జీవితంలో వెలుగును, సిరులను తీసుకురావాలి."
+        },
+        {
+          "en": "Sweet as jaggery, high as the kites. Happy Sankranti to your family.",
+          "hi": "गुड़ जैसी मिठास, पतंग जैसी ऊँचाई। आपके परिवार को संक्रांति की बधाई।",
+          "te": "బెల్లంలా తీయగా, గాలిపటంలా ఎత్తుగా. మీ కుటుంబానికి సంక్రాంతి శుభాకాంక్షలు."
+        },
+        {
+          "en": "May your home overflow with joy like the Pongal pot.",
+          "hi": "पोंगल के बर्तन की तरह आपका घर खुशियों से भर जाए।",
+          "te": "పొంగలి కుండలా మీ ఇల్లు ఆనందంతో పొంగిపొర్లాలి."
+        }
+      ],
+      "themes": [
+        {
+          "id": "sankranti-kites",
+          "name": {"en": "Kites in the sky", "hi": "आसमान में पतंगें", "te": "ఆకాశంలో గాలిపటాలు"},
+          "colors": ["#D6F1FF", "#7FD0FF", "#1E88E5"],
+          "accent": "#0D2B5C",
+          "ink": "#0B2545",
+          "top": "kites",
+          "bottom": "kolam",
+          "layout": "text",
+          "font": "sans"
+        },
+        {
+          "id": "sankranti-harvest",
+          "name": {"en": "Harvest sun", "hi": "फसल का सूरज", "te": "పంట సూర్యుడు"},
+          "colors": ["#FFF3C4", "#FFD54F", "#F57F17"],
+          "accent": "#6D2C00",
+          "ink": "#4A2500",
+          "top": "sun",
+          "bottom": "pot",
+          "backdrop": "rays",
+          "layout": "darshan"
+        }
+      ]
+    },
+    {
+      "id": "ugadi",
+      "emoji": "🌿",
+      "name": {"en": "Ugadi · Gudi Padwa", "hi": "उगादी · गुड़ी पड़वा", "te": "ఉగాది"},
+      "match": ["ugadi"],
+      "deity": "vishnu",
+      "symbol": "ॐ",
+      "captions": [
+        {"en": "Happy Ugadi", "hi": "उगादी की शुभकामनाएँ", "te": "ఉగాది శుభాకాంక్షలు"},
+        {"en": "Happy Gudi Padwa", "hi": "गुड़ी पड़वा की शुभकामनाएँ", "te": "గుడి పడ్వా శుభాకాంక్షలు"},
+        {"en": "Happy New Year", "hi": "नव वर्ष की शुभकामनाएँ", "te": "నూతన సంవత్సర శుభాకాంక్షలు"}
+      ],
+      "wishes": [
+        {
+          "en": "May the new year bring health, happiness and prosperity to your family.",
+          "hi": "नया वर्ष आपके परिवार के लिए स्वास्थ्य, सुख और समृद्धि लाए।",
+          "te": "ఈ నూతన సంవత్సరం మీ కుటుంబానికి ఆరోగ్యం, ఆనందం, ఐశ్వర్యం తీసుకురావాలి."
+        },
+        {
+          "en": "Like Ugadi pachadi, may you accept every taste of life with a smile.",
+          "hi": "उगादी पचड़ी की तरह जीवन के हर स्वाद को मुस्कान के साथ अपनाएँ।",
+          "te": "ఉగాది పచ్చడిలా జీవితంలోని ప్రతి రుచినీ చిరునవ్వుతో స్వీకరించండి."
+        },
+        {"en": "A new year, new hopes, new beginnings.", "hi": "नया वर्ष, नई आशाएँ, नई शुरुआत।", "te": "కొత్త సంవత్సరం, కొత్త ఆశలు, కొత్త ఆరంభాలు."}
+      ],
+      "themes": [
+        {
+          "id": "ugadi-leaves",
+          "name": {"en": "Mango leaves", "hi": "आम के पत्ते", "te": "మామిడి తోరణం"},
+          "colors": ["#F9FBE7", "#DCE775", "#9E9D24"],
+          "accent": "#33691E",
+          "ink": "#263E0F",
+          "top": "toran",
+          "bottom": "kolam",
+          "backdrop": "mandala",
+          "layout": "text"
+        },
+        {
+          "id": "ugadi-dawn",
+          "name": {"en": "New dawn", "hi": "नई सुबह", "te": "నవోదయం"},
+          "colors": ["#3E1F47", "#C2185B", "#FF8A65"],
+          "accent": "#FFC857",
+          "ink": "#FFFFFF",
+          "top": "sun",
+          "bottom": "pot",
+          "backdrop": "rays",
+          "layout": "darshan"
+        }
+      ]
+    },
+    {
+      "id": "maha-shivratri",
+      "emoji": "🔱",
+      "name": {"en": "Maha Shivaratri", "hi": "महाशिवरात्रि", "te": "మహా శివరాత్రి"},
+      "match": ["maha-shivratri"],
+      "deity": "shiva",
+      "symbol": "ॐ",
+      "captions": [
+        {"en": "Happy Maha Shivaratri", "hi": "महाशिवरात्रि की शुभकामनाएँ", "te": "మహా శివరాత్రి శుభాకాంక్షలు"},
+        {"en": "Om Namah Shivaya", "hi": "ॐ नमः शिवाय", "te": "ఓం నమః శివాయ"},
+        {"en": "Har Har Mahadev", "hi": "हर हर महादेव", "te": "హర హర మహాదేవ"}
+      ],
+      "wishes": [
+        {
+          "en": "May Lord Shiva bless you with peace, strength and good health.",
+          "hi": "भगवान शिव आपको शांति, शक्ति और उत्तम स्वास्थ्य प्रदान करें।",
+          "te": "పరమశివుడు మీకు శాంతి, శక్తి, ఆరోగ్యాన్ని ప్రసాదించాలి."
+        },
+        {
+          "en": "On this holy night, may Mahadev remove every fear from your heart.",
+          "hi": "इस पावन रात्रि में महादेव आपके मन का हर भय दूर करें।",
+          "te": "ఈ పవిత్ర రాత్రి మహాదేవుడు మీ మనసులోని ప్రతి భయాన్నీ తొలగించాలి."
+        },
+        {
+          "en": "May the blessings of Shiva and Parvati stay with your family.",
+          "hi": "शिव-पार्वती का आशीर्वाद आपके परिवार पर बना रहे।",
+          "te": "శివపార్వతుల ఆశీస్సులు మీ కుటుంబంపై ఉండాలి."
+        }
+      ],
+      "themes": [
+        {
+          "id": "shivratri-kailash",
+          "name": {"en": "Kailash night", "hi": "कैलाश की रात", "te": "కైలాస రాత్రి"},
+          "colors": ["#030A1F", "#0D2552", "#27548A"],
+          "accent": "#CFE8FF",
+          "ink": "#FFFFFF",
+          "top": "crescent",
+          "bottom": "diyas",
+          "backdrop": "stars",
+          "layout": "darshan"
+        },
+        {
+          "id": "shivratri-bhasma",
+          "name": {"en": "Sacred ash", "hi": "भस्म", "te": "విభూతి"},
+          "colors": ["#ECEFF1", "#B0BEC5", "#78909C"],
+          "accent": "#BF360C",
+          "ink": "#1C2A33",
+          "top": "bells",
+          "bottom": "lotus",
+          "backdrop": "mandala",
+          "layout": "portrait"
+        }
+      ]
+    },
+    {
+      "id": "holi",
+      "emoji": "🎨",
+      "name": {"en": "Holi", "hi": "होली", "te": "హోళీ"},
+      "match": ["holi"],
+      "deity": "radha-krishna",
+      "symbol": "ॐ",
+      "captions": [{"en": "Happy Holi", "hi": "होली की शुभकामनाएँ", "te": "హోళీ శుభాకాంక్షలు"}, {"en": "Holi Hai!", "hi": "होली है!", "te": "హోళీ హై!"}],
+      "wishes": [
+        {
+          "en": "May your life be filled with the colours of joy, love and friendship.",
+          "hi": "आपका जीवन खुशी, प्रेम और मित्रता के रंगों से भर जाए।",
+          "te": "మీ జీవితం ఆనందం, ప్రేమ, స్నేహం అనే రంగులతో నిండాలి."
+        },
+        {
+          "en": "Forget old quarrels, share sweets and colours. Happy Holi!",
+          "hi": "पुराने गिले-शिकवे भूलकर मिठाई और रंग बाँटें। होली मुबारक!",
+          "te": "పాత మనస్పర్థలు మరచి, మిఠాయిలు, రంగులు పంచుకుందాం. హోళీ శుభాకాంక్షలు!"
+        },
+        {"en": "Play safe, play with love.", "hi": "सुरक्षित खेलें, प्रेम से खेलें।", "te": "జాగ్రత్తగా ఆడండి, ప్రేమతో ఆడండి."}
+      ],
+      "themes": [
+        {
+          "id": "holi-gulal",
+          "name": {"en": "Gulal", "hi": "गुलाल", "te": "గులాల్"},
+          "colors": ["#FFFDE7", "#FFE0F0", "#E1F5FE"],
+          "accent": "#C2185B",
+          "ink": "#4A148C",
+          "backdrop": "colors",
+          "layout": "text",
+          "font": "sans"
+        },
+        {
+          "id": "holi-braj",
+          "name": {"en": "Braj Holi", "hi": "ब्रज की होली", "te": "బ్రజ్ హోళీ"},
+          "colors": ["#311B92", "#8E24AA", "#EC407A"],
+          "accent": "#FFEB3B",
+          "ink": "#FFFFFF",
+          "top": "feather",
+          "bottom": "rangoli",
+          "backdrop": "colors",
+          "layout": "badge"
+        }
+      ]
+    },
+    {
+      "id": "ram-navami",
+      "emoji": "🏹",
+      "name": {"en": "Rama Navami", "hi": "राम नवमी", "te": "శ్రీరామ నవమి"},
+      "match": ["ram-navami"],
+      "deity": "rama",
+      "symbol": "राम",
+      "captions": [
+        {"en": "Happy Rama Navami", "hi": "राम नवमी की शुभकामनाएँ", "te": "శ్రీరామ నవమి శుభాకాంక్షలు"},
+        {"en": "Jai Shri Ram", "hi": "जय श्री राम", "te": "జై శ్రీరామ్"}
+      ],
+      "wishes": [
+        {
+          "en": "May Lord Rama bless your home with peace, dharma and happiness.",
+          "hi": "प्रभु श्री राम आपके घर को शांति, धर्म और सुख से भर दें।",
+          "te": "శ్రీరామచంద్రుడు మీ ఇంటిని శాంతి, ధర్మం, సుఖంతో నింపాలి."
+        },
+        {
+          "en": "May the name of Rama be your strength every day.",
+          "hi": "राम नाम हर दिन आपकी शक्ति बने।",
+          "te": "రామనామం ప్రతిరోజూ మీకు బలంగా నిలవాలి."
+        },
+        {
+          "en": "May Sita and Rama bless your family with love and togetherness.",
+          "hi": "सीता-राम आपके परिवार को प्रेम और एकता का आशीर्वाद दें।",
+          "te": "సీతారాములు మీ కుటుంబానికి ప్రేమ, ఐకమత్యాన్ని అనుగ్రహించాలి."
+        }
+      ],
+      "themes": [
+        {
+          "id": "ramnavami-saffron",
+          "name": {"en": "Ayodhya saffron", "hi": "अयोध्या केसरिया", "te": "అయోధ్య కాషాయం"},
+          "colors": ["#FF9800", "#EF6C00", "#BF360C"],
+          "accent": "#FFF3C4",
+          "ink": "#FFFFFF",
+          "top": "flags",
+          "bottom": "diyas",
+          "backdrop": "rays",
+          "layout": "darshan"
+        },
+        {
+          "id": "ramnavami-lotus",
+          "name": {"en": "Lotus dawn", "hi": "कमल प्रभात", "te": "కమల ప్రభాతం"},
+          "colors": ["#FFF8F0", "#FFDCC8", "#F8A07E"],
+          "accent": "#9C2A12",
+          "ink": "#4A1A08",
+          "top": "toran",
+          "bottom": "lotus",
+          "backdrop": "mandala",
+          "layout": "banner"
+        }
+      ]
+    },
+    {
+      "id": "hanuman-jayanti",
+      "emoji": "🚩",
+      "name": {"en": "Hanuman Jayanti", "hi": "हनुमान जयंती", "te": "హనుమాన్ జయంతి"},
+      "match": ["hanuman-jayanti"],
+      "deity": "hanuman",
+      "symbol": "ॐ",
+      "captions": [
+        {"en": "Happy Hanuman Jayanti", "hi": "हनुमान जयंती की शुभकामनाएँ", "te": "హనుమాన్ జయంతి శుభాకాంక్షలు"},
+        {"en": "Jai Bajrangbali", "hi": "जय बजरंगबली", "te": "జై హనుమాన్"}
+      ],
+      "wishes": [
+        {
+          "en": "May Hanuman give you strength, courage and devotion.",
+          "hi": "हनुमान जी आपको बल, साहस और भक्ति प्रदान करें।",
+          "te": "ఆంజనేయస్వామి మీకు బలం, ధైర్యం, భక్తిని ప్రసాదించాలి."
+        },
+        {
+          "en": "May Sankat Mochan remove every trouble from your life.",
+          "hi": "संकट मोचन आपके जीवन के सभी संकट हर लें।",
+          "te": "సంకటమోచనుడు మీ జీవితంలోని కష్టాలన్నీ తొలగించాలి."
+        },
+        {
+          "en": "Where there is Rama's name, there is Hanuman's protection.",
+          "hi": "जहाँ राम का नाम है, वहाँ हनुमान की रक्षा है।",
+          "te": "రామనామం ఉన్నచోట హనుమంతుని రక్ష ఉంటుంది."
+        }
+      ],
+      "themes": [
+        {
+          "id": "hanuman-sindoor",
+          "name": {"en": "Sindoor", "hi": "सिंदूर", "te": "సిందూరం"},
+          "colors": ["#BF360C", "#E64A19", "#FF8F00"],
+          "accent": "#FFF3C4",
+          "ink": "#FFFFFF",
+          "top": "flags",
+          "bottom": "garland",
+          "backdrop": "rays",
+          "layout": "darshan"
+        },
+        {
+          "id": "hanuman-sanjeevani",
+          "name": {"en": "Sanjeevani", "hi": "संजीवनी", "te": "సంజీవని"},
+          "colors": ["#0B3D1E", "#1B5E20", "#558B2F"],
+          "accent": "#FFC857",
+          "ink": "#FFFFFF",
+          "top": "bells",
+          "bottom": "lotus",
+          "backdrop": "mandala",
+          "layout": "badge"
+        }
+      ]
+    },
+    {
+      "id": "raksha-bandhan",
+      "emoji": "🎀",
+      "name": {"en": "Raksha Bandhan", "hi": "रक्षा बंधन", "te": "రాఖీ పౌర్ణమి"},
+      "match": ["raksha-bandhan"],
+      "deity": "krishna",
+      "symbol": "ॐ",
+      "captions": [
+        {"en": "Happy Raksha Bandhan", "hi": "रक्षा बंधन की शुभकामनाएँ", "te": "రాఖీ పండుగ శుభాకాంక్షలు"},
+        {"en": "Happy Rakhi", "hi": "राखी की बधाई", "te": "రాఖీ శుభాకాంక్షలు"}
+      ],
+      "wishes": [
+        {
+          "en": "A thread of love that protects for a lifetime.",
+          "hi": "प्रेम का यह धागा जीवन भर रक्षा करे।",
+          "te": "ప్రేమతో కట్టిన ఈ దారం జీవితాంతం రక్షగా నిలవాలి."
+        },
+        {
+          "en": "To my brother: may God keep you safe and happy always.",
+          "hi": "मेरे भाई के लिए: ईश्वर तुम्हें सदा सुरक्षित और खुश रखे।",
+          "te": "నా సోదరునికి: భగవంతుడు నిన్ను ఎల్లప్పుడూ క్షేమంగా, సంతోషంగా ఉంచాలి."
+        },
+        {
+          "en": "To my sister: I am always with you, today and every day.",
+          "hi": "मेरी बहन के लिए: मैं हमेशा तुम्हारे साथ हूँ, आज भी और हर दिन।",
+          "te": "నా సోదరికి: నేను ఎప్పుడూ నీకు తోడుగా ఉంటాను, ఈ రోజూ, ప్రతి రోజూ."
+        },
+        {"en": "Distance cannot loosen this knot.", "hi": "दूरी इस बंधन को ढीला नहीं कर सकती।", "te": "దూరం ఈ బంధాన్ని సడలించలేదు."}
+      ],
+      "themes": [
+        {
+          "id": "rakhi-thread",
+          "name": {"en": "Rakhi thread", "hi": "राखी का धागा", "te": "రాఖీ దారం"},
+          "colors": ["#FFF0F3", "#FFC1CF", "#F06292"],
+          "accent": "#AD1457",
+          "ink": "#4A0E2A",
+          "top": "toran",
+          "bottom": "rakhi",
+          "backdrop": "mandala",
+          "layout": "portrait"
+        },
+        {
+          "id": "rakhi-festive",
+          "name": {"en": "Festive gold", "hi": "उत्सव स्वर्ण", "te": "పండుగ బంగారం"},
+          "colors": ["#4A0E2A", "#AD1457", "#FF8F00"],
+          "accent": "#FFC857",
+          "ink": "#FFFFFF",
+          "top": "sparkles",
+          "bottom": "rakhi",
+          "backdrop": "bokeh",
+          "layout": "text"
+        }
+      ]
+    },
+    {
+      "id": "varalakshmi-vratam",
+      "emoji": "🪷",
+      "name": {"en": "Varalakshmi Vratam", "hi": "वरलक्ष्मी व्रत", "te": "వరలక్ష్మీ వ్రతం"},
+      "match": ["varalakshmi-vratam"],
+      "deity": "lakshmi",
+      "symbol": "श्री",
+      "captions": [{"en": "Happy Varalakshmi Vratam", "hi": "वरलक्ष्मी व्रत की शुभकामनाएँ", "te": "వరలక్ష్మీ వ్రత శుభాకాంక్షలు"}],
+      "wishes": [
+        {
+          "en": "May Goddess Varalakshmi bless your home with health, wealth and harmony.",
+          "hi": "माँ वरलक्ष्मी आपके घर को स्वास्थ्य, धन और सौहार्द का आशीर्वाद दें।",
+          "te": "వరలక్ష్మీ దేవి మీ ఇంటికి ఆరోగ్యం, ఐశ్వర్యం, సౌభాగ్యాన్ని ప్రసాదించాలి."
+        },
+        {
+          "en": "May the Mother grant every good wish of your family.",
+          "hi": "माँ आपके परिवार की हर शुभ कामना पूरी करें।",
+          "te": "అమ్మవారు మీ కుటుంబం కోరిన శుభ వరాలన్నీ ప్రసాదించాలి."
+        },
+        {
+          "en": "May the eight blessings of Ashta Lakshmi be with you and yours.",
+          "hi": "अष्ट लक्ष्मी के आठों आशीर्वाद आपको प्राप्त हों।",
+          "te": "అష్టలక్ష్ముల అనుగ్రహం మీకు, మీ వారికి కలగాలి."
+        }
+      ],
+      "themes": [
+        {
+          "id": "varalakshmi-kumkum",
+          "name": {"en": "Kumkum", "hi": "कुमकुम", "te": "కుంకుమ"},
+          "colors": ["#5B0A1F", "#B3261E", "#E65100"],
+          "accent": "#FFC857",
+          "ink": "#FFFFFF",
+          "top": "toran",
+          "bottom": "lotus",
+          "backdrop": "mandala",
+          "layout": "darshan"
+        },
+        {
+          "id": "varalakshmi-lotus",
+          "name": {"en": "Lotus gold", "hi": "स्वर्ण कमल", "te": "స్వర్ణ కమలం"},
+          "colors": ["#FFF7E0", "#FFE0B2", "#F8BBD0"],
+          "accent": "#AD1457",
+          "ink": "#4A0E2A",
+          "top": "bells",
+          "bottom": "lotus",
+          "backdrop": "rays",
+          "layout": "banner"
+        }
+      ]
+    },
+    {
+      "id": "janmashtami",
+      "emoji": "🦚",
+      "name": {"en": "Krishna Janmashtami", "hi": "कृष्ण जन्माष्टमी", "te": "శ్రీకృష్ణ జన్మాష్టమి"},
+      "match": ["janmashtami"],
+      "deity": "krishna",
+      "symbol": "ॐ",
+      "captions": [
+        {"en": "Happy Janmashtami", "hi": "जन्माष्टमी की शुभकामनाएँ", "te": "శ్రీకృష్ణ జన్మాష్టమి శుభాకాంక్షలు"},
+        {"en": "Jai Shri Krishna", "hi": "जय श्री कृष्ण", "te": "జై శ్రీకృష్ణ"}
+      ],
+      "wishes": [
+        {
+          "en": "May little Krishna fill your home with laughter and love.",
+          "hi": "नन्हे कान्हा आपके घर को हँसी और प्रेम से भर दें।",
+          "te": "చిన్ని కృష్ణుడు మీ ఇంటిని నవ్వులతో, ప్రేమతో నింపాలి."
+        },
+        {
+          "en": "May the flute of Krishna bring sweetness and peace to your life.",
+          "hi": "कृष्ण की बाँसुरी आपके जीवन में मधुरता और शांति लाए।",
+          "te": "కృష్ణుని మురళి మీ జీవితంలో మాధుర్యాన్ని, శాంతిని తీసుకురావాలి."
+        },
+        {
+          "en": "Do your duty and leave the rest to Him.",
+          "hi": "अपना कर्म कीजिए, बाकी उन पर छोड़ दीजिए।",
+          "te": "మీ కర్తవ్యం మీరు చేయండి, మిగతాది ఆయనకు వదిలేయండి."
+        }
+      ],
+      "themes": [
+        {
+          "id": "janmashtami-peacock",
+          "name": {"en": "Peacock blue", "hi": "मोरपंखी नीला", "te": "నెమలి నీలం"},
+          "colors": ["#04193A", "#0D47A1", "#00838F"],
+          "accent": "#FFC857",
+          "ink": "#FFFFFF",
+          "top": "feather",
+          "bottom": "lotus",
+          "backdrop": "stars",
+          "layout": "darshan"
+        },
+        {
+          "id": "janmashtami-makhan",
+          "name": {"en": "Butter and flute", "hi": "माखन और मुरली", "te": "వెన్న, మురళి"},
+          "colors": ["#FFFBEA", "#FFECB3", "#FFD54F"],
+          "accent": "#0D47A1",
+          "ink": "#0B2545",
+          "top": "feather",
+          "bottom": "pot",
+          "backdrop": "mandala",
+          "layout": "split"
+        }
+      ]
+    },
+    {
+      "id": "kartik-purnima",
+      "emoji": "🌕",
+      "name": {"en": "Kartik Purnima", "hi": "कार्तिक पूर्णिमा", "te": "కార్తీక పౌర్ణమి"},
+      "match": ["kartik-purnima"],
+      "deity": "shiva",
+      "symbol": "ॐ",
+      "captions": [
+        {"en": "Happy Kartik Purnima", "hi": "कार्तिक पूर्णिमा की शुभकामनाएँ", "te": "కార్తీక పౌర్ణమి శుభాకాంక్షలు"},
+        {"en": "Happy Dev Deepawali", "hi": "देव दीपावली की शुभकामनाएँ", "te": "కార్తీక దీపోత్సవ శుభాకాంక్షలు"}
+      ],
+      "wishes": [
+        {
+          "en": "May the lamps of Kartika light up your home and your heart.",
+          "hi": "कार्तिक के दीप आपके घर और मन को प्रकाशित करें।",
+          "te": "కార్తీక దీపాలు మీ ఇంటినీ, మనసునూ వెలిగించాలి."
+        },
+        {
+          "en": "On this full moon, may Shiva and Vishnu bless your family.",
+          "hi": "इस पूर्णिमा पर शिव और विष्णु आपके परिवार पर कृपा करें।",
+          "te": "ఈ పౌర్ణమి నాడు శివకేశవుల అనుగ్రహం మీ కుటుంబంపై ఉండాలి."
+        },
+        {
+          "en": "One lamp lit with devotion drives away much darkness.",
+          "hi": "श्रद्धा से जलाया एक दीप बहुत अंधकार मिटा देता है।",
+          "te": "భక్తితో వెలిగించిన ఒక్క దీపం ఎంతో చీకటిని పారద్రోలుతుంది."
+        }
+      ],
+      "themes": [
+        {
+          "id": "kartik-deepotsav",
+          "name": {"en": "Festival of lamps", "hi": "दीपोत्सव", "te": "దీపోత్సవం"},
+          "colors": ["#061A2B", "#0B3954", "#1B6B7A"],
+          "accent": "#FFC857",
+          "ink": "#FFFFFF",
+          "top": "moon",
+          "bottom": "diyas",
+          "backdrop": "stars",
+          "layout": "text"
+        },
+        {
+          "id": "kartik-ghat",
+          "name": {"en": "River at dusk", "hi": "संध्या का घाट", "te": "సంధ్యా తీరం"},
+          "colors": ["#2B0B3F", "#7B1FA2", "#FF7043"],
+          "accent": "#FFC857",
+          "ink": "#FFFFFF",
+          "top": "moon",
+          "bottom": "diyas",
+          "backdrop": "bokeh",
+          "layout": "badge"
+        }
+      ]
+    },
+    {
+      "id": "gita-jayanti",
+      "emoji": "📖",
+      "name": {"en": "Gita Jayanti", "hi": "गीता जयंती", "te": "గీతా జయంతి"},
+      "match": ["gita-jayanti"],
+      "deity": "krishna",
+      "symbol": "ॐ",
+      "captions": [{"en": "Happy Gita Jayanti", "hi": "गीता जयंती की शुभकामनाएँ", "te": "గీతా జయంతి శుభాకాంక్షలు"}],
+      "wishes": [
+        {
+          "en": "You have a right to your work, never to its fruits. (Gita 2.47)",
+          "hi": "कर्म करने में ही तुम्हारा अधिकार है, फल में कभी नहीं। (गीता 2.47)",
+          "te": "కర్మ చేయడంలోనే నీకు అధికారం ఉంది, ఫలితంపై ఎన్నడూ కాదు. (గీత 2.47)"
+        },
+        {
+          "en": "May the wisdom of the Gita guide every step you take.",
+          "hi": "गीता का ज्ञान आपके हर कदम का मार्गदर्शन करे।",
+          "te": "గీతా జ్ఞానం మీ ప్రతి అడుగుకూ దారి చూపాలి."
+        },
+        {
+          "en": "Read one verse today. Let it stay with you all day.",
+          "hi": "आज एक श्लोक पढ़िए। उसे दिन भर अपने साथ रखिए।",
+          "te": "ఈ రోజు ఒక శ్లోకం చదవండి. దాన్ని రోజంతా మీతో ఉంచుకోండి."
+        }
+      ],
+      "themes": [
+        {
+          "id": "gita-dawn",
+          "name": {"en": "Kurukshetra dawn", "hi": "कुरुक्षेत्र का प्रभात", "te": "కురుక్షేత్ర ప్రభాతం"},
+          "colors": ["#FFF4D6", "#FFCC80", "#F4511E"],
+          "accent": "#6A1B0A",
+          "ink": "#3E1D0A",
+          "top": "sun",
+          "bottom": "lotus",
+          "backdrop": "rays",
+          "layout": "text"
+        },
+        {
+          "id": "gita-peacock",
+          "name": {"en": "Peacock feather", "hi": "मोरपंख", "te": "నెమలి పింఛం"},
+          "colors": ["#0B1F4B", "#1A3A8F", "#00796B"],
+          "accent": "#FFC857",
+          "ink": "#FFFFFF",
+          "top": "feather",
+          "bottom": "lotus",
+          "backdrop": "mandala",
+          "layout": "darshan"
+        }
+      ]
+    },
+    {
+      "id": "new-year",
+      "emoji": "🎉",
+      "name": {"en": "New Year", "hi": "नव वर्ष", "te": "నూతన సంవత్సరం"},
+      "on": "01-01",
+      "deity": "ganesha",
+      "symbol": "ॐ",
+      "captions": [
+        {"en": "Happy New Year {year}", "hi": "नव वर्ष {year} की शुभकामनाएँ", "te": "నూతన సంవత్సర శుభాకాంక్షలు {year}"},
+        {"en": "Happy New Year", "hi": "नव वर्ष की शुभकामनाएँ", "te": "నూతన సంవత్సర శుభాకాంక్షలు"}
+      ],
+      "wishes": [
+        {
+          "en": "May the new year bring you health, peace and many reasons to be grateful.",
+          "hi": "नया साल आपके लिए स्वास्थ्य, शांति और कृतज्ञता के अनेक कारण लेकर आए।",
+          "te": "కొత్త సంవత్సరం మీకు ఆరోగ్యం, శాంతి, ఎన్నో సంతోషాలను తీసుకురావాలి."
+        },
+        {
+          "en": "New year, same blessings: may God walk with you every day.",
+          "hi": "नया साल, वही आशीर्वाद: ईश्वर हर दिन आपके साथ चलें।",
+          "te": "కొత్త సంవత్సరం, అవే ఆశీస్సులు: భగవంతుడు ప్రతిరోజూ మీ వెంట నడవాలి."
+        },
+        {"en": "Begin the year with a prayer.", "hi": "वर्ष का आरंभ प्रार्थना से करें।", "te": "సంవత్సరాన్ని ప్రార్థనతో ప్రారంభించండి."}
+      ],
+      "themes": [
+        {
+          "id": "newyear-fresh",
+          "name": {"en": "Fresh start", "hi": "नई शुरुआत", "te": "కొత్త ఆరంభం"},
+          "colors": ["#FFF8E1", "#FFE0B2", "#FFAB91"],
+          "accent": "#BF360C",
+          "ink": "#4A1A08",
+          "top": "sun",
+          "bottom": "lotus",
+          "backdrop": "rays",
+          "layout": "text"
+        },
+        {
+          "id": "newyear-midnight",
+          "name": {"en": "Midnight sparkle", "hi": "आधी रात की चमक", "te": "అర్ధరాత్రి మెరుపులు"},
+          "colors": ["#0A0A2A", "#1A237E", "#6A1B9A"],
+          "accent": "#FFC857",
+          "ink": "#FFFFFF",
+          "top": "sparkles",
+          "bottom": "diyas",
+          "backdrop": "bokeh",
+          "layout": "darshan"
+        }
+      ]
+    },
+    {
+      "id": "birthday",
+      "kind": "occasion",
+      "emoji": "🎂",
+      "name": {"en": "Birthday", "hi": "जन्मदिन", "te": "పుట్టినరోజు"},
+      "deity": "ganesha",
+      "symbol": "ॐ",
+      "captions": [
+        {"en": "Happy Birthday", "hi": "जन्मदिन की शुभकामनाएँ", "te": "పుట్టినరోజు శుభాకాంక్షలు"},
+        {"en": "Blessings on your birthday", "hi": "जन्मदिन पर आशीर्वाद", "te": "జన్మదిన శుభాశీస్సులు"}
+      ],
+      "wishes": [
+        {
+          "en": "May God bless you with a long, healthy and happy life.",
+          "hi": "ईश्वर आपको दीर्घ, स्वस्थ और सुखी जीवन प्रदान करें।",
+          "te": "భగవంతుడు మీకు ఆయురారోగ్యాలు, సుఖసంతోషాలు ప్రసాదించాలి."
+        },
+        {
+          "en": "Shatamanam bhavati: may you live a hundred years.",
+          "hi": "शतमानं भवति: आप सौ वर्ष जिएँ।",
+          "te": "శతమానం భవతి: నూరేళ్లు చల్లగా ఉండండి."
+        },
+        {
+          "en": "May every wish of your heart come true this year.",
+          "hi": "इस वर्ष आपके मन की हर इच्छा पूरी हो।",
+          "te": "ఈ ఏడాది మీ మనసులోని ప్రతి కోరికా నెరవేరాలి."
+        }
+      ],
+      "themes": [
+        {
+          "id": "birthday-blessings",
+          "name": {"en": "Blessings", "hi": "आशीर्वाद", "te": "ఆశీస్సులు"},
+          "colors": ["#FFF3E0", "#FFE0B2", "#FFB74D"],
+          "accent": "#AD1457",
+          "ink": "#4A1A08",
+          "top": "toran",
+          "bottom": "lotus",
+          "backdrop": "mandala",
+          "layout": "portrait"
+        },
+        {
+          "id": "birthday-celebration",
+          "name": {"en": "Celebration", "hi": "उत्सव", "te": "వేడుక"},
+          "colors": ["#4A148C", "#AD1457", "#FF6F00"],
+          "accent": "#FFC857",
+          "ink": "#FFFFFF",
+          "top": "sparkles",
+          "bottom": "garland",
+          "backdrop": "bokeh",
+          "layout": "text"
+        }
+      ]
+    },
+    {
+      "id": "anniversary",
+      "kind": "occasion",
+      "emoji": "💐",
+      "name": {"en": "Wedding anniversary", "hi": "विवाह वर्षगाँठ", "te": "పెళ్లిరోజు"},
+      "deity": "vishnu",
+      "symbol": "ॐ",
+      "captions": [{"en": "Happy Anniversary", "hi": "विवाह वर्षगाँठ की शुभकामनाएँ", "te": "పెళ్లిరోజు శుభాకాంక్షలు"}],
+      "wishes": [
+        {
+          "en": "May your bond grow stronger with every passing year.",
+          "hi": "हर बीतते वर्ष के साथ आपका बंधन और मज़बूत हो।",
+          "te": "గడిచే ప్రతి ఏడాదితో మీ బంధం మరింత బలపడాలి."
+        },
+        {
+          "en": "May Lakshmi and Narayana bless your home with love and harmony.",
+          "hi": "लक्ष्मी-नारायण आपके घर को प्रेम और सौहार्द से भर दें।",
+          "te": "లక్ష్మీనారాయణులు మీ ఇంటిని ప్రేమానురాగాలతో నింపాలి."
+        },
+        {
+          "en": "Together for many more years, in health and happiness.",
+          "hi": "स्वास्थ्य और सुख के साथ आप सदा साथ रहें।",
+          "te": "ఆరోగ్యంతో, ఆనందంతో కలకాలం కలిసి ఉండండి."
+        }
+      ],
+      "themes": [
+        {
+          "id": "anniversary-together",
+          "name": {"en": "Together", "hi": "साथ-साथ", "te": "కలిసి"},
+          "colors": ["#FFF0F3", "#F8BBD0", "#F48FB1"],
+          "accent": "#880E4F",
+          "ink": "#4A0E2A",
+          "top": "toran",
+          "bottom": "lotus",
+          "backdrop": "mandala",
+          "layout": "portrait"
+        },
+        {
+          "id": "anniversary-mangalya",
+          "name": {"en": "Auspicious red", "hi": "मंगल लाल", "te": "మంగళ ఎరుపు"},
+          "colors": ["#4A0404", "#8E1B1B", "#C2185B"],
+          "accent": "#FFC857",
+          "ink": "#FFFFFF",
+          "top": "bells",
+          "bottom": "garland",
+          "backdrop": "bokeh",
+          "layout": "banner"
+        }
+      ]
+    }
+  ]
+}
