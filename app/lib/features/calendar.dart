@@ -16,6 +16,7 @@ import '../core/providers.dart';
 import '../core/storage.dart';
 import '../core/telugu.dart';
 import '../core/theme.dart';
+import '../core/wishes.dart';
 import '../widgets/common.dart';
 import 'panchang.dart';
 
@@ -1036,6 +1037,7 @@ class _DayPage extends ConsumerWidget {
     final panchang = ref.watch(panchangProvider(day));
     final major = festivals.any((f) => f.major);
     final away = day.difference(DateUtils.dateOnly(DateTime.now())).inDays;
+    final wishes = ref.watch(wishCatalogProvider).value;
 
     final hero = Container(
       margin: const EdgeInsets.only(bottom: 12),
@@ -1111,6 +1113,16 @@ class _DayPage extends ConsumerWidget {
                         const SizedBox(height: 6),
                         Text(f.description, style: const TextStyle(height: 1.5)),
                       ],
+                      if (wishes?.forFestival(f) case final w?)
+                        Padding(
+                          padding: const EdgeInsets.only(top: 6),
+                          child: TextButton.icon(
+                            style: TextButton.styleFrom(padding: EdgeInsets.zero),
+                            onPressed: () => context.push('/wishes/${w.id}'),
+                            icon: const Icon(Icons.card_giftcard_rounded),
+                            label: Text(t3(lang, 'Send wishes', 'शुभकामनाएँ भेजें', 'శుభాకాంక్షలు పంపండి')),
+                          ),
+                        ),
                     ],
                   ),
                 ),

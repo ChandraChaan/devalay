@@ -69,6 +69,10 @@ Category: **Lifestyle**. Tags: Religion & spirituality.
 
   Data is encrypted in transit. No account is created, so there is nothing to request deletion of. No location,
   contacts, photos or personal info are collected.
+  Festival wishes let the user add their own photo to a card. The photo is chosen in the Android photo picker, copied
+  into the app's private storage and drawn on the card on the phone; it is never uploaded, so under Play's definition
+  it is not "collected". Only the finished card leaves the phone, when the user shares it to an app they choose.
+  The picker needs no storage or media permission.
 - **Temple booking (government information):** the Booking pages describe services of TTD and state temple
   departments and open their official sites. Play's Misleading Claims policy asks apps that show government
   information to name the source and say they are not a government body. The app says this on every booking page.

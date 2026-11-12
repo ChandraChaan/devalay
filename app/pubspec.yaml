@@ -64,6 +64,7 @@ dependencies:
   package_info_plus: ^10.2.2
   youtube_player_iframe: ^6.0.2
   flutter_tts: ^4.2.5
+  image_picker: ^1.2.4
 
 dev_dependencies:
   flutter_test:

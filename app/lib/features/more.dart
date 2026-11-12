@@ -122,6 +122,39 @@ class MoreScreen extends ConsumerWidget {
             ),
           ),
           const SizedBox(height: 12),
+          GradientCard(
+            colors: const [Color(0xFF880E4F), Color(0xFFC2185B), Color(0xFFFF8F00)],
+            padding: 16,
+            onTap: () => context.push('/wishes'),
+            child: Row(
+              children: [
+                const Text('💌', style: TextStyle(fontSize: 30)),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        tr(ref, 'wishes'),
+                        style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w700),
+                      ),
+                      Text(
+                        l3(
+                          ref,
+                          'Cards with your photo and name for every festival and every morning',
+                          'हर त्योहार और हर सुबह के लिए आपकी फ़ोटो और नाम वाले कार्ड',
+                          'ప్రతి పండుగకు, ప్రతి ఉదయానికి మీ ఫోటో, పేరుతో కార్డులు',
+                        ),
+                        style: const TextStyle(color: Colors.white70, height: 1.25),
+                      ),
+                    ],
+                  ),
+                ),
+                const Icon(Icons.chevron_right_rounded, color: Colors.white),
+              ],
+            ),
+          ),
+          const SizedBox(height: 12),
           GridView.count(
             padding: EdgeInsets.zero,
             crossAxisCount: 3,

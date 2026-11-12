@@ -17,6 +17,18 @@ v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the 
   Vishwanath, Ayodhya, Mahakaleshwar, Char Dham, Srisailam, Andhra Pradesh, Tamil Nadu and Karnataka temples and
   others. Search by temple, city or state.
 - On Home (Booking, and a card under the shortcuts) and in More.
+- Festival wishes: make a greeting card with your own photo and name and share it, for example to your WhatsApp
+  status. Pick a festival, a theme and one of six layouts (your photo beside the deity, a name banner, a full
+  painting with a photo badge, a split card, a portrait card, or words only), then edit the caption, your name, a
+  second line and the message. Drag or pinch the photo to fit its frame. Save to the gallery or share at 1080×1920.
+- Themes for Diwali, Navratri, Dussehra, Ganesh Chaturthi, Sankranti, Ugadi, Maha Shivaratri, Holi, Rama Navami,
+  Hanuman Jayanti, Raksha Bandhan, Varalakshmi Vratam, Janmashtami, Kartik Purnima, Gita Jayanti and New Year, plus
+  birthday and anniversary cards: 41 themes, at least two for each, with captions and ready-made wishes in English,
+  Hindi and Telugu. The next festival is shown first.
+- A daily blessing card that says Good morning, Good evening or Good night by the hour, with the deity of the day.
+- Your name and last photo are remembered on the phone for the next card. The photo is never uploaded.
+- New festivals and themes can be published without an app update. Wishes are on Home, in More, and on festival
+  days in the calendar.
 
 ## v1.3.0 — 2026-11-11
 

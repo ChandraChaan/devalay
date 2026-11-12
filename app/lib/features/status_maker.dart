@@ -211,6 +211,20 @@ class _StatusMakerScreenState extends ConsumerState<StatusMakerScreen> {
   }
 }
 
+/// Renders the 9:16 picture under [boundary] at 1080 pixels wide (1080×1920) into a temporary PNG.
+/// Shared by the status composer and festival wishes.
+Future<File> renderStatusImage(GlobalKey boundary, {String prefix = 'devalay-status'}) async {
+  final box = boundary.currentContext!.findRenderObject()! as RenderRepaintBoundary;
+  final image = await box.toImage(pixelRatio: 1080 / box.size.width);
+  final bytes = (await image.toByteData(format: ui.ImageByteFormat.png))!.buffer.asUint8List();
+  image.dispose();
+  final file = File('${(await getTemporaryDirectory()).path}/$prefix-${DateTime.now().millisecondsSinceEpoch}.png');
+  return file.writeAsBytes(bytes);
+}
+
+/// Copies a rendered image into Pictures/Devalay.
+Future<void> saveToGallery(File file) => NativeBridge.saveImage(file.path, file.uri.pathSegments.last);
+
 /// Composes the status text over sacred art and exports it as a 1080x1920 image.
 class StatusComposer extends ConsumerStatefulWidget {
   const StatusComposer({super.key, required this.text, required this.deity, this.image});
@@ -235,15 +249,7 @@ class _StatusComposerState extends ConsumerState<StatusComposer> {
     [Color(0xFF212121), Color(0xFF5D4037)],
   ];
 
-  Future<File> _render() async {
-    final boundary = _boundary.currentContext!.findRenderObject()! as RenderRepaintBoundary;
-    final image = await boundary.toImage(pixelRatio: 1080 / boundary.size.width);
-    final bytes = (await image.toByteData(format: ui.ImageByteFormat.png))!.buffer.asUint8List();
-    final file = File(
-      '${(await getTemporaryDirectory()).path}/devalay-status-${DateTime.now().millisecondsSinceEpoch}.png',
-    );
-    return file.writeAsBytes(bytes);
-  }
+  Future<File> _render() => renderStatusImage(_boundary);
 
   Future<void> _share() async {
     setState(() => _busy = true);
@@ -258,8 +264,7 @@ class _StatusComposerState extends ConsumerState<StatusComposer> {
   Future<void> _save() async {
     setState(() => _busy = true);
     try {
-      final f = await _render();
-      await NativeBridge.saveImage(f.path, f.uri.pathSegments.last);
+      await saveToGallery(await _render());
       HapticFeedback.mediumImpact();
       if (mounted) toast(context, 'Saved to Pictures/Devalay');
     } catch (e) {
