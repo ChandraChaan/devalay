@@ -17,6 +17,7 @@ import '../core/theme.dart';
 import '../widgets/common.dart';
 import '../widgets/mandala.dart';
 import 'temples.dart';
+import 'thought.dart';
 import 'wishes.dart';
 
 class HomeScreen extends ConsumerWidget {
@@ -76,6 +77,7 @@ class _HomeBody extends ConsumerWidget {
           ),
           SliverToBoxAdapter(child: _FestivalStrip(festivals: festivals)),
         ],
+        const SliverToBoxAdapter(child: ThoughtOfDayCard()),
         if (verse != null) SliverToBoxAdapter(child: _VerseCard(verse: verse)),
         SliverToBoxAdapter(
           child: SectionHeader(tr(ref, 'featured'), action: tr(ref, 'see_all'), onAction: () => context.go('/listen')),

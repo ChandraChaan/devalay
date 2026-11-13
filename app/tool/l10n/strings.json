@@ -960,6 +960,12 @@
   "where": "i18n"
  },
  {
+  "en": "Pooja guides",
+  "hi": "पूजा विधि",
+  "te": "పూజా విధానాలు",
+  "where": "i18n"
+ },
+ {
   "en": "Premium",
   "hi": "प्रीमियम",
   "te": "ప్రీమియం",
@@ -1626,6 +1632,54 @@
   "where": "lib/core/notifications.dart"
  },
  {
+  "en": "Festival: {0}",
+  "hi": "त्योहार: {0}",
+  "te": "పండుగ: {0}",
+  "where": "lib/core/panchang_voice.dart"
+ },
+ {
+  "en": "Your events: {0}",
+  "hi": "आपके दिन: {0}",
+  "te": "మీ రోజులు: {0}",
+  "where": "lib/core/panchang_voice.dart"
+ },
+ {
+  "en": "from {0} to {1}",
+  "hi": "{0} से {1} तक",
+  "te": "{0} నుండి {1} వరకు",
+  "where": "lib/core/panchang_voice.dart"
+ },
+ {
+  "en": "until {0}",
+  "hi": "{0} तक",
+  "te": "{0} వరకు",
+  "where": "lib/core/panchang_voice.dart"
+ },
+ {
+  "en": "{0} at night",
+  "hi": "रात {0}",
+  "te": "రాత్రి {0}",
+  "where": "lib/core/panchang_voice.dart"
+ },
+ {
+  "en": "{0} in the afternoon",
+  "hi": "दोपहर {0}",
+  "te": "మధ్యాహ్నం {0}",
+  "where": "lib/core/panchang_voice.dart"
+ },
+ {
+  "en": "{0} in the evening",
+  "hi": "शाम {0}",
+  "te": "సాయంత్రం {0}",
+  "where": "lib/core/panchang_voice.dart"
+ },
+ {
+  "en": "{0} in the morning",
+  "hi": "सुबह {0}",
+  "te": "ఉదయం {0}",
+  "where": "lib/core/panchang_voice.dart"
+ },
+ {
   "en": "Ask the Gita…",
   "hi": "गीता से पूछें…",
   "te": "గీతను అడగండి…",
@@ -1749,6 +1803,12 @@
   "en": "Full screen",
   "hi": "पूर्ण स्क्रीन",
   "te": "పూర్తి స్క్రీన్",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "How to do the puja",
+  "hi": "पूजा विधि देखें",
+  "te": "పూజా విధానం చూడండి",
   "where": "lib/features/calendar.dart"
  },
  {
@@ -3342,6 +3402,60 @@
   "where": "lib/features/player.dart"
  },
  {
+  "en": "Clear",
+  "hi": "साफ़ करें",
+  "te": "తీసివేయండి",
+  "where": "lib/features/pooja.dart"
+ },
+ {
+  "en": "Customs differ between families and regions. Where your elders or priest do it differently, follow them.",
+  "hi": "परिवारों और क्षेत्रों में रीतियाँ अलग होती हैं। जहाँ आपके बड़े या पुरोहित अलग तरह से करते हों, उन्हीं का पालन करें।",
+  "te": "కుటుంబాలు, ప్రాంతాలను బట్టి ఆచారాలు మారుతాయి. మీ పెద్దలు లేదా పురోహితులు వేరేలా చేస్తే, వారినే అనుసరించండి.",
+  "where": "lib/features/pooja.dart"
+ },
+ {
+  "en": "Everything is ready 🙏",
+  "hi": "सब तैयार है 🙏",
+  "te": "అంతా సిద్ధం 🙏",
+  "where": "lib/features/pooja.dart"
+ },
+ {
+  "en": "Guide not found",
+  "hi": "विधि नहीं मिली",
+  "te": "విధానం దొరకలేదు",
+  "where": "lib/features/pooja.dart"
+ },
+ {
+  "en": "Samagri (items)",
+  "hi": "पूजा सामग्री",
+  "te": "పూజా సామగ్రి",
+  "where": "lib/features/pooja.dart"
+ },
+ {
+  "en": "Simple step-by-step guides with the items to keep ready and the mantras to chant.",
+  "hi": "तैयार रखने वाली सामग्री और जपने वाले मंत्रों के साथ सरल चरण-दर-चरण विधि।",
+  "te": "సిద్ధం చేసుకోవాల్సిన సామగ్రి, జపించాల్సిన మంత్రాలతో సులభమైన దశలవారీ విధానం.",
+  "where": "lib/features/pooja.dart"
+ },
+ {
+  "en": "Steps",
+  "hi": "विधि",
+  "te": "విధానం",
+  "where": "lib/features/pooja.dart"
+ },
+ {
+  "en": "When",
+  "hi": "कब",
+  "te": "ఎప్పుడు",
+  "where": "lib/features/pooja.dart"
+ },
+ {
+  "en": "{0} of {1} ready",
+  "hi": "{0} में से {1} तैयार",
+  "te": "{0}లో {1} సిద్ధం",
+  "where": "lib/features/pooja.dart"
+ },
+ {
   "en": "Health",
   "hi": "स्वास्थ्य",
   "te": "ఆరోగ్యం",
@@ -3942,6 +4056,36 @@
   "where": "lib/features/text_reader.dart"
  },
  {
+  "en": "Meaning in English",
+  "hi": "अंग्रेज़ी में अर्थ",
+  "te": "ఇంగ్లీషులో అర్థం",
+  "where": "lib/features/thought.dart"
+ },
+ {
+  "en": "Meaning in my language",
+  "hi": "हिन्दी में अर्थ",
+  "te": "తెలుగులో అర్థం",
+  "where": "lib/features/thought.dart"
+ },
+ {
+  "en": "Share as image",
+  "hi": "चित्र के रूप में शेयर करें",
+  "te": "చిత్రంగా షేర్ చేయండి",
+  "where": "lib/features/thought.dart"
+ },
+ {
+  "en": "Source",
+  "hi": "स्रोत",
+  "te": "మూలం",
+  "where": "lib/features/thought.dart"
+ },
+ {
+  "en": "Thought of the day",
+  "hi": "आज का विचार",
+  "te": "నేటి సూక్తి",
+  "where": "lib/features/thought.dart"
+ },
+ {
   "en": "Add a blessing",
   "hi": "आशीर्वचन लिखें",
   "te": "తెలుగు శుభాకాంక్ష రాయండి",
@@ -4204,6 +4348,60 @@
   "hi": "पूरा ऐप, पंचांग और त्योहारों के नाम आपकी भाषा में।",
   "te": "యాప్ మొత్తం, పంచాంగం, పండుగల పేర్లు మీ భాషలో.",
   "where": "lib/widgets/language_picker.dart"
+ },
+ {
+  "en": "Could not read aloud on this phone.",
+  "hi": "इस फ़ोन पर पढ़कर नहीं सुनाया जा सका।",
+  "te": "ఈ ఫోన్‌లో చదివి వినిపించలేకపోయాం.",
+  "where": "lib/widgets/read_aloud_button.dart"
+ },
+ {
+  "en": "No voice for {0} yet",
+  "hi": "{0} की आवाज़ अभी नहीं है",
+  "te": "{0} వాయిస్ ఇంకా లేదు",
+  "where": "lib/widgets/read_aloud_button.dart"
+ },
+ {
+  "en": "OK",
+  "hi": "ठीक है",
+  "te": "సరే",
+  "where": "lib/widgets/read_aloud_button.dart"
+ },
+ {
+  "en": "Open Settings › Accessibility › Spoken Content › Voices, choose {0} and download a voice.",
+  "hi": "सेटिंग्स › एक्सेसिबिलिटी › स्पोकन कंटेंट › वॉइस खोलें, {0} चुनें और एक आवाज़ डाउनलोड करें।",
+  "te": "సెట్టింగ్స్ › యాక్సెసిబిలిటీ › స్పోకెన్ కంటెంట్ › వాయిసెస్ తెరిచి, {0} ఎంచుకుని ఒక వాయిస్ డౌన్‌లోడ్ చేయండి.",
+  "where": "lib/widgets/read_aloud_button.dart"
+ },
+ {
+  "en": "Open Settings › System › Languages › Text-to-speech output, tap the gear next to Speech Services by Google, choose Install voice data, then download {0}.",
+  "hi": "सेटिंग्स › सिस्टम › भाषाएँ › टेक्स्ट-टू-स्पीच आउटपुट खोलें, Speech Services by Google के पास गियर दबाएँ, Install voice data चुनें और {0} डाउनलोड करें।",
+  "te": "సెట్టింగ్స్ › సిస్టమ్ › భాషలు › టెక్స్ట్-టు-స్పీచ్ అవుట్‌పుట్ తెరిచి, Speech Services by Google పక్కన గేర్ నొక్కి, Install voice data ఎంచుకుని {0} డౌన్‌లోడ్ చేయండి.",
+  "where": "lib/widgets/read_aloud_button.dart"
+ },
+ {
+  "en": "Read aloud",
+  "hi": "पढ़कर सुनाएँ",
+  "te": "చదివి వినిపించండి",
+  "where": "lib/widgets/read_aloud_button.dart"
+ },
+ {
+  "en": "Read in English: this phone has no {0} voice.",
+  "hi": "अंग्रेज़ी में पढ़ा: इस फ़ोन में {0} आवाज़ नहीं है।",
+  "te": "ఇంగ్లీషులో చదివాం: ఈ ఫోన్‌లో {0} వాయిస్ లేదు.",
+  "where": "lib/widgets/read_aloud_button.dart"
+ },
+ {
+  "en": "Stop reading",
+  "hi": "पढ़ना रोकें",
+  "te": "చదవడం ఆపండి",
+  "where": "lib/widgets/read_aloud_button.dart"
+ },
+ {
+  "en": "Your phone has no text-to-speech voice for {0}, so we read the day in English. To hear it in {1}:",
+  "hi": "आपके फ़ोन में {0} की टेक्स्ट-टू-स्पीच आवाज़ नहीं है, इसलिए हमने अंग्रेज़ी में पढ़ा। {1} में सुनने के लिए:",
+  "te": "మీ ఫోన్‌లో {0} టెక్స్ట్-టు-స్పీచ్ వాయిస్ లేదు, అందుకే ఇంగ్లీషులో చదివాం. {1}లో వినడానికి:",
+  "where": "lib/widgets/read_aloud_button.dart"
  },
  {
   "en": "Ashadha",

@@ -30,6 +30,7 @@ import 'features/onboarding.dart';
 import 'features/calendar.dart';
 import 'features/panchang.dart';
 import 'features/player.dart';
+import 'features/pooja.dart';
 import 'features/premium.dart';
 import 'features/rashifal.dart';
 import 'features/read.dart';
@@ -121,6 +122,11 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/calendar/important', builder: (_, _) => const ImportantDaysScreen()),
       GoRoute(path: '/calendar/events', builder: (_, _) => const MyEventsScreen()),
       GoRoute(path: '/matching', builder: (_, _) => const MatchingScreen()),
+      GoRoute(path: '/pooja', builder: (_, _) => const PoojaGuidesScreen()),
+      GoRoute(
+        path: '/pooja/:id',
+        builder: (_, s) => PoojaGuideScreen(id: s.pathParameters['id']!),
+      ),
       GoRoute(
         path: '/calendar/day/:date',
         builder: (_, s) =>

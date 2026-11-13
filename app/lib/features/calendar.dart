@@ -16,12 +16,15 @@ import '../core/models.dart';
 import '../core/muhurta.dart';
 import '../core/names.dart';
 import '../core/notifications.dart';
+import '../core/panchang_voice.dart';
+import '../core/pooja.dart';
 import '../core/providers.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
 import '../core/wishes.dart';
 import '../widgets/city_picker.dart';
 import '../widgets/common.dart';
+import '../widgets/read_aloud_button.dart';
 import 'my_events.dart';
 import 'panchang.dart';
 
@@ -1101,9 +1104,17 @@ class _CalendarDayScreenState extends ConsumerState<CalendarDayScreen> {
   late final _pages = PageController(initialPage: _dayIndex(widget.date));
   late DateTime _day = DateUtils.dateOnly(widget.date);
   final _total = _dayIndex(_lastDay) + 1;
+  late final PanchangVoice _voice;
+
+  @override
+  void initState() {
+    super.initState();
+    _voice = ref.read(panchangVoiceProvider.notifier);
+  }
 
   @override
   void dispose() {
+    _voice.stop();
     _pages.dispose();
     super.dispose();
   }
@@ -1137,6 +1148,7 @@ class _CalendarDayScreenState extends ConsumerState<CalendarDayScreen> {
             },
             icon: const Icon(Icons.edit_calendar_rounded),
           ),
+          ReadAloudButton(day: _day),
           IconButton(
             tooltip: t3(appLang, 'Share', 'शेयर करें', 'షేర్ చేయండి'),
             onPressed: _share,
@@ -1227,6 +1239,7 @@ class _DayPage extends ConsumerWidget {
     final major = festivals.any((f) => f.major);
     final away = day.difference(DateUtils.dateOnly(DateTime.now())).inDays;
     final wishes = ref.watch(wishCatalogProvider).value;
+    final guides = ref.watch(poojaGuidesProvider).value;
     final events = ref.watch(eventsByDayProvider(day.year))[day] ?? const <UserEvent>[];
     final summary = (ref.watch(monthProvider((year: day.year, month: day.month))).value ?? const <Map>[])
         .where((d) => d['date'] == _iso(day))
@@ -1317,6 +1330,13 @@ class _DayPage extends ConsumerWidget {
                             icon: const Icon(Icons.card_giftcard_rounded),
                             label: Text(t3(lang, 'Send wishes', 'शुभकामनाएँ भेजें', 'శుభాకాంక్షలు పంపండి')),
                           ),
+                        ),
+                      if (guides?.forFestival(f) case final g?)
+                        TextButton.icon(
+                          style: TextButton.styleFrom(padding: EdgeInsets.zero),
+                          onPressed: () => context.push('/pooja/${g.id}'),
+                          icon: const Icon(Icons.menu_book_rounded),
+                          label: Text(t3(lang, 'How to do the puja', 'पूजा विधि देखें', 'పూజా విధానం చూడండి')),
                         ),
                     ],
                   ),

@@ -16,36 +16,45 @@ import 'hi_desc.dart';
 import 'gu_desc.dart';
 import 'bn_desc.dart';
 import 'bn_content.dart';
+import 'bn_pooja.dart';
 import 'gu.dart';
 import 'gu_content.dart';
+import 'gu_pooja.dart';
 import 'hi.dart';
 import 'kn.dart';
 import 'kn_content.dart';
+import 'kn_pooja.dart';
 import 'ml.dart';
 import 'ml_content.dart';
+import 'ml_pooja.dart';
 import 'mr.dart';
 import 'mr_content.dart';
+import 'mr_pooja.dart';
 import 'or.dart';
 import 'or_content.dart';
+import 'or_pooja.dart';
 import 'pa.dart';
 import 'pa_content.dart';
+import 'pa_pooja.dart';
 import 'ta.dart';
 import 'ta_content.dart';
+import 'ta_pooja.dart';
 
 /// UI strings and Panchang names (<code>.dart), festival wishes and the temple guide
-/// (<code>_content.dart), and festival and deity descriptions (<code>_desc.dart), per language.
+/// (<code>_content.dart), festival and deity descriptions (<code>_desc.dart), and the pooja guides with
+/// the thought-of-the-day and read-aloud screens (<code>_pooja.dart), per language.
 /// Telugu and Hindi UI copy lives at the t3 call sites, so their tables hold names and descriptions.
 const _tables = <String, Map<String, String>>{
   'hi': {...stringsHi, ...descHi},
   'te': descTe,
-  'bn': {...stringsBn, ...contentBn, ...descBn},
-  'mr': {...stringsMr, ...contentMr, ...descMr},
-  'ta': {...stringsTa, ...contentTa, ...descTa},
-  'gu': {...stringsGu, ...contentGu, ...descGu},
-  'kn': {...stringsKn, ...contentKn, ...descKn},
-  'ml': {...stringsMl, ...contentMl, ...descMl},
-  'or': {...stringsOr, ...contentOr, ...descOr},
-  'pa': {...stringsPa, ...contentPa, ...descPa},
+  'bn': {...stringsBn, ...contentBn, ...descBn, ...poojaBn},
+  'mr': {...stringsMr, ...contentMr, ...descMr, ...poojaMr},
+  'ta': {...stringsTa, ...contentTa, ...descTa, ...poojaTa},
+  'gu': {...stringsGu, ...contentGu, ...descGu, ...poojaGu},
+  'kn': {...stringsKn, ...contentKn, ...descKn, ...poojaKn},
+  'ml': {...stringsMl, ...contentMl, ...descMl, ...poojaMl},
+  'or': {...stringsOr, ...contentOr, ...descOr, ...poojaOr},
+  'pa': {...stringsPa, ...contentPa, ...descPa, ...poojaPa},
 };
 
 /// The table for [lang], or null (English, or a language without one).

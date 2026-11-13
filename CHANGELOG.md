@@ -12,6 +12,19 @@ v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the 
     Telugu fallback fonts keep only Telugu letters. An italic Sanskrit font that nothing used is gone.
   - Release builds keep the Dart debug symbols out of the app. They are attached to each release as
     `devalay-symbols.zip` and, when the `FIREBASE_SERVICE_ACCOUNT` secret is set, uploaded to Crashlytics.
+- Thought of the day: a short verse on Home from your own language's classics, with its meaning in your language
+  and in English, and a link to its source. Vemana and Sumathi Satakam (Telugu), Thirukkural (Tamil), Sarvajna
+  (Kannada), Tukaram (Marathi), Kabir (Hindi), Narsinh Mehta (Gujarati), Tagore (Bengali), Jagannath Das (Odia),
+  Baba Farid and Bulleh Shah (Punjabi), Poonthanam and Sree Narayana Guru (Malayalam), and Sanskrit subhashitas
+  for English. About 60 per language, one a day. Every verse was copied from a public-domain edition and checked
+  against it (`tool/thoughts/verify.py`). Share any verse as a status image.
+- Read the Panchang aloud: a speaker button on the Panchang and on each calendar day reads the weekday, tithi,
+  nakshatra, sunrise and sunset, Rahu Kalam, festivals and your own events in the app language, with the
+  phone's own voice. If the phone has no voice for your language it reads in English and explains how to add one.
+- Pooja guides: step-by-step vidhanam for daily puja, Satyanarayana Vratam, Varalakshmi Vratam, Vinayaka Chavithi,
+  Diwali Lakshmi Puja, Maha Shivaratri, and the Ekadashi and Pradosham vratas. Each has a samagri checklist that
+  remembers what you have ready, the steps in order, and the mantras in your own script. Find them in More, or
+  from the festival on its calendar day. All 11 languages.
 
 ## v1.4.0 — 2026-11-13
 

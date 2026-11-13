@@ -227,9 +227,12 @@ Future<void> saveToGallery(File file) => NativeBridge.saveImage(file.path, file.
 
 /// Composes the status text over sacred art and exports it as a 1080x1920 image.
 class StatusComposer extends ConsumerStatefulWidget {
-  const StatusComposer({super.key, required this.text, required this.deity, this.image});
+  const StatusComposer({super.key, required this.text, required this.deity, this.image, this.footnote});
   final String text;
   final String deity;
+
+  /// Smaller text under [text], such as a verse's meaning.
+  final String? footnote;
 
   /// A wallpaper to write on; it becomes the first background.
   final String? image;
@@ -255,7 +258,9 @@ class _StatusComposerState extends ConsumerState<StatusComposer> {
     setState(() => _busy = true);
     try {
       final f = await _render();
-      await SharePlus.instance.share(ShareParams(files: [XFile(f.path)], text: widget.text));
+      await SharePlus.instance.share(
+        ShareParams(files: [XFile(f.path)], text: [widget.text, ?widget.footnote].join('\n\n')),
+      );
     } finally {
       if (mounted) setState(() => _busy = false);
     }
@@ -387,20 +392,51 @@ class _StatusComposerState extends ConsumerState<StatusComposer> {
                                 style: TextStyle(fontFamily: scriptureFont, fontSize: 40, color: Palette.gold),
                               ),
                               const Spacer(),
-                              Text(
-                                    widget.text,
-                                    textAlign: TextAlign.center,
-                                    style: const TextStyle(
-                                      fontFamilyFallback: uiFontFallback,
-                                      color: Colors.white,
-                                      fontSize: 24,
-                                      height: 1.45,
-                                      fontWeight: FontWeight.w700,
-                                      shadows: [Shadow(blurRadius: 12, color: Colors.black)],
+                              // Long verses shrink to fit the 9:16 card instead of overflowing.
+                              Flexible(
+                                flex: 6,
+                                child: LayoutBuilder(
+                                  builder: (context, c) => FittedBox(
+                                    fit: BoxFit.scaleDown,
+                                    child: ConstrainedBox(
+                                      constraints: BoxConstraints(maxWidth: c.maxWidth),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Text(
+                                                widget.text,
+                                                textAlign: TextAlign.center,
+                                                style: const TextStyle(
+                                                  fontFamilyFallback: uiFontFallback,
+                                                  color: Colors.white,
+                                                  fontSize: 24,
+                                                  height: 1.45,
+                                                  fontWeight: FontWeight.w700,
+                                                  shadows: [Shadow(blurRadius: 12, color: Colors.black)],
+                                                ),
+                                              )
+                                              .animate(onPlay: (c) => c.repeat(reverse: true))
+                                              .shimmer(duration: 2400.ms, color: Palette.gold.withValues(alpha: 0.6)),
+                                          if (widget.footnote case final note?) ...[
+                                            const SizedBox(height: 16),
+                                            Text(
+                                              note,
+                                              textAlign: TextAlign.center,
+                                              style: const TextStyle(
+                                                fontFamilyFallback: uiFontFallback,
+                                                color: Colors.white,
+                                                fontSize: 16,
+                                                height: 1.4,
+                                                shadows: [Shadow(blurRadius: 10, color: Colors.black)],
+                                              ),
+                                            ),
+                                          ],
+                                        ],
+                                      ),
                                     ),
-                                  )
-                                  .animate(onPlay: (c) => c.repeat(reverse: true))
-                                  .shimmer(duration: 2400.ms, color: Palette.gold.withValues(alpha: 0.6)),
+                                  ),
+                                ),
+                              ),
                               const SizedBox(height: 24),
                               const Text('🪔 Devalay', style: TextStyle(color: Colors.white70, fontSize: 13)),
                             ],
