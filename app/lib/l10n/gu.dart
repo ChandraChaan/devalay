@@ -930,4 +930,177 @@ const stringsGu = <String, String>{
   'Set as': 'આ રીતે સેટ કરો',
   'Could not share: {0}': 'શેર ન થઈ શક્યું: {0}',
   'Favourite': 'મનપસંદ',
+  // Shubha Muhurtham, Grahanam, Jatakam and weekly, monthly and yearly Rashi phalalu.
+  'Jatakam': 'જન્મકુંડળી',
+  'A demanding month. Avoid big risks, look after health and keep faith.':
+      'કઠિન મહિનો. મોટાં જોખમ ટાળો, તબિયત સાચવો અને શ્રદ્ધા રાખો.',
+  'A favourable month. Efforts bear fruit and support comes easily.':
+      'અનુકૂળ મહિનો. પ્રયત્નો ફળશે અને સહકાર સહેલાઈથી મળશે.',
+  'A favourable week. Begin important work on the good days.': 'અનુકૂળ અઠવાડિયું. મહત્વનાં કામ શુભ દિવસોએ શરૂ કરો.',
+  'A favourable year. Jupiter and Saturn support growth; plan big steps.':
+      'અનુકૂળ વર્ષ. ગુરુ અને શનિ પ્રગતિમાં સાથ આપે છે; મોટાં પગલાંનું આયોજન કરો.',
+  'A hard stretch with obstacles and worries about health and money. Prayer and patience help.':
+      'અવરોધો અને તબિયત તથા પૈસાની ચિંતાવાળો કઠિન સમય. પ્રાર્થના અને ધીરજ મદદ કરશે.',
+  'A mixed month. Steady work and patience bring results.': 'મિશ્ર મહિનો. સતત મહેનત અને ધીરજથી પરિણામ મળશે.',
+  'A mixed week. Keep important work for the good days.': 'મિશ્ર અઠવાડિયું. મહત્વનાં કામ શુભ દિવસો માટે રાખો.',
+  'A mixed year. Gains come with effort; choose your moments.': 'મિશ્ર વર્ષ. મહેનતથી જ લાભ મળશે; યોગ્ય સમય પસંદ કરો.',
+  'A week to go slowly. Keep to routine, pray, and start new things on the good days.':
+      'ધીમે ચાલવાનું અઠવાડિયું. દિનચર્યા જાળવો, પ્રાર્થના કરો અને નવાં કામ શુભ દિવસોએ શરૂ કરો.',
+  'A year of tests. Slow, honest work and devotion carry you through.':
+      'કસોટીનું વર્ષ. ધીમી, પ્રામાણિક મહેનત અને ભક્તિ તમને પાર ઉતારશે.',
+  'Ardhashtama Shani: worries at home and health need care. Avoid hasty moves.':
+      'અર્ધાષ્ટમ શનિ: ઘરની ચિંતાઓ અને તબિયત પર ધ્યાન આપો. ઉતાવળાં પગલાં ટાળો.',
+  'Ashtama Shani: a demanding time. Avoid risks and look after your health.':
+      'અષ્ટમ શનિ: કઠિન સમય. જોખમ ટાળો અને તબિયત સાચવો.',
+  'Chandrashtamam (Moon in the 8th), go gently: {0}': 'ચંદ્રાષ્ટમ (આઠમા સ્થાને ચંદ્ર), સંભાળીને ચાલો: {0}',
+  'Children, learning and devotion flourish. Wise counsel and good decisions.':
+      'સંતાન, વિદ્યા અને ભક્તિ ખીલશે. સારી સલાહ અને સારા નિર્ણયો.',
+  'Comforts and peace at home need care, and relatives may trouble you.':
+      'ઘરનાં સુખ-શાંતિ પર ધ્યાન આપો; સગાંસંબંધી હેરાન કરી શકે.',
+  'Courage and success: efforts, short trips and dealings with officials go well.':
+      'સાહસ અને સફળતા: પ્રયત્નો, ટૂંકી મુસાફરી અને અધિકારીઓ સાથેનાં કામ સારી રીતે પાર પડશે.',
+  'Efforts bring less than hoped and changes come at work. Keep steady.':
+      'પ્રયત્નોનું ફળ અપેક્ષા કરતાં ઓછું અને કામમાં ફેરફાર. સ્થિર રહો.',
+  'Elders and superiors may be displeased. Keep faith and avoid long journeys.':
+      'વડીલો અને ઉપરીઓ નારાજ થઈ શકે. શ્રદ્ધા રાખો અને લાંબી મુસાફરી ટાળો.',
+  'Expenses and travel rise. Sleep well and spend on good causes.':
+      'ખર્ચ અને મુસાફરી વધશે. પૂરતી ઊંઘ લો અને સારાં કાર્યોમાં ખર્ચ કરો.',
+  'Fortune and faith rise: pilgrimage, elders\' blessings and progress.':
+      'ભાગ્ય અને શ્રદ્ધા વધશે: તીર્થયાત્રા, વડીલોના આશીર્વાદ અને પ્રગતિ.',
+  'From {0} it moves into {1}: {2}': '{0} થી {1} રાશિમાં: {2}',
+  'Gains from many sides. Wishes are fulfilled and friends help.':
+      'અનેક બાજુથી લાભ. મનોકામનાઓ પૂરી થશે અને મિત્રો મદદ કરશે.',
+  'Gains, honour and good news. Wishes come true.': 'લાભ, માન અને શુભ સમાચાર. મનોકામનાઓ પૂરી થશે.',
+  'Good days: {0}': 'શુભ દિવસો: {0}',
+  'Health and money need caution. Avoid risks and quarrels.': 'તબિયત અને પૈસામાં સાવચેતી રાખો. જોખમ અને ઝઘડા ટાળો.',
+  'Jupiter (Guru)': 'ગુરુ (બૃહસ્પતિ)',
+  'Jupiter over your Moon sign: a testing stretch with changes of place and some worry. Stay patient.':
+      'ચંદ્ર રાશિ પર ગુરુ: સ્થાનફેર અને થોડી ચિંતા સાથે કસોટીનો સમય. ધીરજ રાખો.',
+  'Luck moves slowly and elders may be displeased. Keep faith.':
+      'ભાગ્ય ધીમે સાથ આપશે અને વડીલો નારાજ થઈ શકે. શ્રદ્ધા રાખો.',
+  'Marriage, partnership and travel are blessed. A good time for alliances.':
+      'લગ્ન, ભાગીદારી અને મુસાફરી માટે શુભ. સંબંધ જોડવા માટે સારો સમય.',
+  'Money goes out faster and family talks need patience. Avoid lending.':
+      'પૈસા ઝડપથી ખર્ચાશે અને પરિવારની વાતચીતમાં ધીરજ રાખો. ઉધાર આપવાનું ટાળો.',
+  'Opponents and health need watching. Avoid loans and disputes.':
+      'વિરોધીઓ અને તબિયત પર નજર રાખો. દેવું અને વિવાદ ટાળો.',
+  'Opponents and illness retreat. You win disputes and finish pending work.':
+      'વિરોધીઓ અને રોગ પીછેહઠ કરશે. વિવાદમાં જીત મળશે અને અટકેલાં કામ પૂરાં થશે.',
+  'Partnerships and your spouse need patience; travel is tiring.':
+      'ભાગીદારી અને જીવનસાથી સાથે ધીરજ રાખો; મુસાફરી થકવનારી રહેશે.',
+  'Peace at home may be disturbed. Look after your health and your mother.':
+      'ઘરની શાંતિ ડહોળાઈ શકે. તમારી અને માતાની તબિયત સાચવો.',
+  'Pressure or changes at work. Hold your place through careful effort.':
+      'કામમાં દબાણ કે ફેરફાર. સાવચેત પ્રયત્નોથી તમારું સ્થાન ટકાવી રાખો.',
+  'Retrograde for part of this time: results come slowly; revisit old plans.':
+      'આ સમયમાં થોડા દિવસ વક્રી: પરિણામ ધીમે મળશે; જૂની યોજનાઓ પર ફરી વિચાર કરો.',
+  'Saturn (Shani)': 'શનિ',
+  'Saturn in the eleventh: steady income and gains.': 'અગિયારમા સ્થાને શનિ: સ્થિર આવક અને લાભ.',
+  'Saturn in the sixth: victory over opponents, better health and debts reduce.':
+      'છઠ્ઠા સ્થાને શનિ: વિરોધીઓ પર વિજય, તબિયતમાં સુધારો અને દેવું ઘટશે.',
+  'Saturn in the third: courage, success and steady gains.': 'ત્રીજા સ્થાને શનિ: સાહસ, સફળતા અને સ્થિર લાભ.',
+  'Saturn over your Moon sign, the peak of Sade Sati: heavy duties and fatigue. Slow, honest work pays.':
+      'ચંદ્ર રાશિ પર શનિ, સાડાસાતીનો મધ્ય અને સૌથી ભારે તબક્કો: ભારે જવાબદારીઓ અને થાક. ધીમી, પ્રામાણિક મહેનત ફળશે.',
+  'Spending and travel rise, much of it on good causes. Guard your savings.':
+      'ખર્ચ અને મુસાફરી વધશે, મોટા ભાગે સારાં કાર્યો પાછળ. તમારી બચત સાચવો.',
+  'The Sun over your Moon sign brings fatigue and a short temper. Rest well and keep your words soft.':
+      'ચંદ્ર રાશિ પરનો સૂર્ય થાક અને ચીડિયાપણું લાવે છે. પૂરતો આરામ કરો અને વાણી મીઠી રાખો.',
+  'The last phase of Sade Sati: family and money need care. Speak gently and save.':
+      'સાડાસાતીનો અંતિમ તબક્કો: પરિવાર અને પૈસા પર ધ્યાન આપો. નમ્રતાથી બોલો અને બચત કરો.',
+  'The mind and children need attention. Avoid speculation.': 'મન અને સંતાન પર ધ્યાન આપો. સટ્ટો ટાળો.',
+  'The mind is unsettled and plans slip. Take care with children and speculation.':
+      'મન અસ્થિર રહેશે અને યોજનાઓ ખોરવાઈ શકે. સંતાન અને સટ્ટામાં સાવચેતી રાખો.',
+  'The start of Sade Sati: expenses and travel rise. Spend wisely.':
+      'સાડાસાતીની શરૂઆત: ખર્ચ અને મુસાફરી વધશે. સમજીવિચારીને ખર્ચ કરો.',
+  'Travel tires you and partners may disagree. Give relationships extra care.':
+      'મુસાફરી થકવશે અને સાથીઓ સાથે મતભેદ થઈ શકે. સંબંધોની વધુ કાળજી રાખો.',
+  'Wealth and family grow, your words carry weight and savings rise.':
+      'ધન અને પરિવારમાં વૃદ્ધિ, તમારી વાણીનું વજન પડશે અને બચત વધશે.',
+  'Work goes well: a good time for recognition and important tasks.':
+      'કામ સારું ચાલશે: માન-સન્માન અને મહત્વનાં કામ માટે સારો સમય.',
+  'Work is heavy and delayed, but persistence brings results.': 'કામ ભારે અને વિલંબિત રહેશે, પણ ખંતથી પરિણામ મળશે.',
+  'Annular solar eclipse': 'કંકણાકૃતિ સૂર્યગ્રહણ',
+  'House warming (Griha Pravesham)': 'ગૃહપ્રવેશ',
+  'Marriage (Vivaham)': 'લગ્ન (વિવાહ)',
+  'Not visible here. No Sutak.': 'અહીં દેખાશે નહીં. સૂતક નથી.',
+  'Partial lunar eclipse': 'ખંડગ્રાસ ચંદ્રગ્રહણ',
+  'Partial solar eclipse': 'ખંડગ્રાસ સૂર્યગ્રહણ',
+  'Penumbral lunar eclipse': 'ઉપછાયા ચંદ્રગ્રહણ',
+  'Total lunar eclipse': 'ખગ્રાસ ચંદ્રગ્રહણ',
+  'Total solar eclipse': 'ખગ્રાસ સૂર્યગ્રહણ',
+  'Vehicle purchase': 'વાહન ખરીદી',
+  'Visible here {0}. Penumbral only: no Sutak.': 'અહીં {0} દેખાશે. માત્ર ઉપછાયા: સૂતક નથી.',
+  'Visible here {0}. Sutak from {1}.': 'અહીં {0} દેખાશે. સૂતક {1} થી.',
+  'Begins': 'સ્પર્શ',
+  'During Sutak, temples close and cooking and eating are avoided. Children, the elderly, the sick and pregnant women may keep a shorter Sutak. Bathe and offer prayers after the eclipse ends.':
+      'સૂતક દરમિયાન મંદિરો બંધ રહે છે અને રસોઈ તથા ભોજન ટાળવામાં આવે છે. બાળકો, વૃદ્ધો, બીમાર અને સગર્ભા સ્ત્રીઓ ટૂંકું સૂતક પાળી શકે. ગ્રહણ પૂરું થયા પછી સ્નાન કરીને પ્રાર્થના કરો.',
+  'Ends': 'મોક્ષ',
+  'Magnitude': 'ગ્રાસ',
+  'Maximum': 'મધ્ય',
+  'Seen here': 'અહીં દેખાશે',
+  'Shubha Muhurtham': 'શુભ મુહૂર્ત',
+  'Sutak': 'સૂતક',
+  'Totality begins': 'ખગ્રાસ આરંભ',
+  'Totality ends': 'ખગ્રાસ સમાપ્તિ',
+  'Eclipses': 'ગ્રહણ',
+  'Add a name to save this birth.': 'આ જન્મ વિગતો સાચવવા માટે નામ ઉમેરો.',
+  'Another place (enter latitude and longitude)': 'અન્ય સ્થળ (અક્ષાંશ અને રેખાંશ લખો)',
+  'Asc': 'લ',
+  'Close to a boundary': 'સીમા પાસે',
+  'Enter the date, time and place of birth. Everything is worked out on your phone and stays on it.':
+      'જન્મ તારીખ, સમય અને સ્થળ લખો. બધી ગણતરી તમારા ફોનમાં જ થાય છે અને તેમાં જ રહે છે.',
+  'Fill in the date, time and place of birth.': 'જન્મ તારીખ, સમય અને સ્થળ લખો.',
+  'House': 'ભાવ',
+  'Jatakam (birth chart)': 'જન્મકુંડળી',
+  'Ju': 'ગુ',
+  'Ke': 'કે',
+  'Ketu': 'કેતુ',
+  'Lagna': 'લગ્ન',
+  'Latitude (N +)': 'અક્ષાંશ (ઉત્તર +)',
+  'Longitude (E +)': 'રેખાંશ (પૂર્વ +)',
+  'Ma': 'મં',
+  'Make the Jatakam': 'કુંડળી બનાવો',
+  'Mars (Mangal)': 'મંગળ',
+  'Me': 'બુ',
+  'Mercury (Budh)': 'બુધ',
+  'Mo': 'ચં',
+  'Moon (Chandra)': 'ચંદ્ર',
+  'Name (optional)': 'નામ (મરજિયાત)',
+  'North Indian': 'ઉત્તર ભારતીય',
+  'Place of birth': 'જન્મ સ્થળ',
+  'Positions are sidereal (Lahiri ayanamsa); Rahu is the mean node. The Sun, Moon and lagna are accurate to a fraction of a minute of arc, the slow planets to about a fifth of a degree.':
+      'ગ્રહસ્થિતિ નિરયન (લાહિરી અયનાંશ) છે; મધ્યમ રાહુ લીધો છે. સૂર્ય, ચંદ્ર અને લગ્ન એક કળાથી પણ ઓછા ફેરે ચોક્કસ છે, જ્યારે ધીમા ગ્રહો આશરે 0.2 અંશ સુધી.',
+  'Ra': 'રા',
+  'Rahu': 'રાહુ',
+  'Rashi': 'રાશિ',
+  'Sa': 'શ',
+  'Save for marriage matching': 'લગ્ન મેળાપક માટે સાચવો',
+  'South Indian': 'દક્ષિણ ભારતીય',
+  'Su': 'સૂ',
+  'Sun (Surya)': 'સૂર્ય',
+  'The Moon is at the edge of a nakshatra pada or rashi; a few minutes of birth time decide it.':
+      'ચંદ્ર નક્ષત્ર ચરણ કે રાશિની સીમા પર છે; જન્મ સમયની થોડી મિનિટો તે નક્કી કરે છે.',
+  'The lagna changes sign if the birth time is off by about {0} minutes. Check the time of birth.':
+      'જન્મ સમય આશરે {0} મિનિટ આગળ-પાછળ હોય તો લગ્નની રાશિ બદલાય છે. જન્મ સમય ચકાસી લો.',
+  'Time': 'સમય',
+  'UTC offset': 'UTC તફાવત',
+  'Use as my birth star and rashi': 'આને મારું જન્મ નક્ષત્ર અને રાશિ બનાવો',
+  'Ve': 'શુ',
+  'Venus (Shukra)': 'શુક્ર',
+  'pada': 'ચરણ',
+  'From a saved Jatakam': 'સાચવેલી કુંડળીમાંથી',
+  'Counted from the Moon sign (Chandra rashi) with the real positions of the Moon, Sun, Jupiter and Saturn. For reflection and inspiration, not prediction.':
+      'ચંદ્ર, સૂર્ય, ગુરુ અને શનિની વાસ્તવિક સ્થિતિ પરથી, ચંદ્ર રાશિથી ગણેલું. ચિંતન અને પ્રેરણા માટે, ભવિષ્યવાણી નહીં.',
+  'Monthly': 'માસિક',
+  'Weekly': 'સાપ્તાહિક',
+  'Best lagna': 'શ્રેષ્ઠ લગ્ન',
+  'Magha, Phalguna, Vaishakha, Jyeshtha (or Kartika, Margashirsha); fixed and gentle nakshatras; good tithi and weekday; Guru and Shukra not combust. Rahu Kalam is left out.':
+      'મહા, ફાગણ, વૈશાખ, જેઠ (અથવા કારતક, માગશર); સ્થિર અને મૃદુ નક્ષત્રો; શુભ તિથિ અને વાર; ગુરુ-શુક્ર અસ્ત નહીં. રાહુ કાળ બાકાત રાખ્યો છે.',
+  'Movable, gentle and light nakshatras; good tithi and weekday; not in Pitru Paksha or Adhika masa. Rahu Kalam is left out.':
+      'ચર, મૃદુ અને લઘુ નક્ષત્રો; શુભ તિથિ અને વાર; પિતૃ પક્ષ કે અધિક માસ નહીં. રાહુ કાળ બાકાત રાખ્યો છે.',
+  'No dates in this period': 'આ સમયગાળામાં કોઈ તારીખ નથી',
+  'Sun in a marriage month, outside Chaturmas and Adhika masa, Guru and Shukra not combust; one of the 11 marriage nakshatras without a bad yoga or karana. Rahu Kalam is left out.':
+      'સૂર્ય લગ્ન માટેના માસમાં, ચાતુર્માસ અને અધિક માસની બહાર, ગુરુ-શુક્ર અસ્ત નહીં; 11 લગ્ન નક્ષત્રોમાંથી એક, અશુભ યોગ કે કરણ વિના. રાહુ કાળ બાકાત રાખ્યો છે.',
+  'These dates pass Panchang Shuddhi. Ask your family priest to match them with the horoscopes (Tarabalam, Chandrabalam) and fix the exact lagna.':
+      'આ તારીખો પંચાંગ શુદ્ધિમાં ખરી ઊતરે છે. કુંડળી સાથે મેળવવા (તારાબળ, ચંદ્રબળ) અને ચોક્કસ લગ્ન નક્કી કરવા તમારા કુળ પુરોહિતને પૂછો.',
 };
