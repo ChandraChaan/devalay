@@ -65,6 +65,6 @@ def test_api_endpoints(client):
     assert set(g["planets"]) == {"sun", "jupiter", "saturn"}
     assert len(g["moon"]) == (date.fromisoformat(g["to"]) - date.fromisoformat(g["from"])).days + 1
     m = client.get("/api/v1/muhurtham", params={"lat": 17.39, "lon": 78.49, "tz": "Asia/Kolkata"}).json()
-    assert set(m["kinds"]) == {"vivaha", "griha_pravesha", "vehicle"}
+    assert set(m["kinds"]) == {"vivaha", "griha_pravesha", "vehicle", "namakarana"}
     day = m["kinds"]["vivaha"][0]
     assert day["d"] >= m["from"] and day["w"] and day["n"]

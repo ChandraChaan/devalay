@@ -10,17 +10,19 @@ import 'names.dart';
 /// (backend/app/services/muhurtham.py and eclipses.py).
 
 /// Ceremonies with published dates, in display order.
-const muhurthamKinds = ['vivaha', 'griha_pravesha', 'vehicle'];
+const muhurthamKinds = ['vivaha', 'griha_pravesha', 'vehicle', 'namakarana'];
 
 String muhurthamLabel(String lang, String kind) => switch (kind) {
   'vivaha' => t3(lang, 'Marriage (Vivaham)', 'विवाह', 'వివాహం'),
   'griha_pravesha' => t3(lang, 'House warming (Griha Pravesham)', 'गृह प्रवेश', 'గృహ ప్రవేశం'),
+  'namakarana' => t3(lang, 'Naming ceremony (Namakaranam)', 'नामकरण संस्कार', 'నామకరణం'),
   _ => t3(lang, 'Vehicle purchase', 'वाहन ख़रीद', 'వాహన కొనుగోలు'),
 };
 
 String muhurthamEmoji(String kind) => switch (kind) {
   'vivaha' => '💍',
   'griha_pravesha' => '🏠',
+  'namakarana' => '👶',
   _ => '🚗',
 };
 

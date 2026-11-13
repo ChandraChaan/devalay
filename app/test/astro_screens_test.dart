@@ -112,6 +112,9 @@ void main() {
     // The fixture is for early 2027; past dates are hidden, so this is either the list or the empty state.
     expect(find.textContaining('House warming'), findsWidgets);
     expect(find.textContaining('Rahu Kalam is left out'), findsOneWidget);
+    await tester.tap(find.textContaining('Naming ceremony'));
+    await tester.pumpAndSettle();
+    expect(find.textContaining('at least four hours'), findsOneWidget);
   });
 
   testWidgets('Rashifal has weekly, monthly and yearly tabs', (tester) async {

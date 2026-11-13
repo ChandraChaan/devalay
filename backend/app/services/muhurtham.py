@@ -24,6 +24,11 @@ Per-ceremony tables follow Drik Panchang's Panchang Shuddhi pages, which summari
 - Vehicle purchase: /shubh-dates/vehicle-buying-auspicious-dates-with-muhurat.html (movable, gentle
   and short nakshatras; no Pitru Paksha; windows starting after 9 pm are dropped; movable and dual
   lagnas suit driving).
+- Namakarana (naming ceremony): Muhurta Chintamani, Samskara Prakarana, as AstroSage applies it in its
+  yearly lists (https://panchang.astrosage.com/muhurat/naming-ceremony-muhurat): the gentle, fixed, swift
+  and movable nakshatras without Punarvasu and Dhanishta; no Rikta tithi or Amavasya; Sunday, Monday,
+  Wednesday, Thursday or Friday; no Adhika month. Combustion and Chaturmas do not apply. A stretch must
+  last four hours, and one that starts after sunset counts only when the day rose on a good tithi.
 
 The windows are a starting point, not a substitute for a priest who knows the family's horoscopes.
 """
@@ -83,6 +88,8 @@ class Rule:
     pitru_paksha: bool = False
     latest_start: time | None = None  # windows starting later than this local time are dropped
     min_minutes: int = 5
+    min_span: int = 0  # minutes a stretch must last, measured before Rahu Kalam is cut out
+    udaya_night: bool = False  # a stretch starting after sunset needs a good tithi at sunrise
     lagnas: frozenset[int] = field(default_factory=frozenset)
 
 
@@ -121,10 +128,25 @@ VEHICLE = Rule(
     latest_start=time(22, 0),
     lagnas=frozenset(MOVABLE_SIGNS | DUAL_SIGNS),
 )
-# Only kinds that could be checked against Drik Panchang's yearly lists for Hyderabad and New Delhi
-# (tests/test_muhurtham.py). Namakaranam, Aksharabhyasam and business openings are left out until
-# they can be validated the same way.
-RULES = {r.key: r for r in (VIVAHA, GRIHA_PRAVESHA, VEHICLE)}
+NAMAKARANA = Rule(
+    "namakarana",
+    # The gentle, fixed, swift and movable nakshatras, without Punarvasu and Dhanishta as in AstroSage's lists.
+    nakshatras=frozenset({ASHWINI, ROHINI, MRIGASHIRA, PUSHYA, U_PHALGUNI, HASTA, CHITRA, SWATI, ANURADHA, U_ASHADHA,
+                          SHRAVANA, SHATABHISHA, U_BHADRA, REVATI}),
+    # Every tithi but the Rikta ones (Chaturthi, Navami, Chaturdashi) and Amavasya.
+    tithis=frozenset(range(30)) - _tithis((4, 9, 14), (4, 9, 14, 15)),
+    weekdays=frozenset({SUN, MON, WED, THU, FRI}),
+    asta=False,
+    # The ceremony needs a good stretch of at least four hours (ten ghatikas), and a night with a good
+    # tithi counts only when the day itself rose on a good tithi.
+    min_span=240,
+    udaya_night=True,
+)
+# Only kinds that could be checked against an independently published yearly list for Hyderabad and
+# New Delhi (tests/test_muhurtham.py): Drik Panchang for the first three, AstroSage for Namakarana.
+# Aksharabhyasam and business openings are left out: no list computed from the Panchang could be found
+# to check them against.
+RULES = {r.key: r for r in (VIVAHA, GRIHA_PRAVESHA, VEHICLE, NAMAKARANA)}
 
 JUPITER_ORB, VENUS_ORB, VENUS_RETRO_ORB = 11.0, 10.0, 8.0
 BALA_VRIDDHA_DAYS = 3
@@ -360,15 +382,26 @@ def day_windows(rule: Rule, loc: Location, day: date, sunrise: datetime, next_su
     points = sorted(c for c in cuts if a <= c <= b)
     if not all(_calendar_ok(rule, sk, special, (s + e) / 2) for s, e in zip(points, points[1:]) if e - s > 1e-6):
         return []
-    good: list[list[float]] = []
-    for s, e in zip(points, points[1:]):
-        if e - s < 1e-6 or (cut_rahu and r0 <= s and e <= r1):
-            continue
-        if _limbs_ok(rule, sk, (s + e) / 2, day.weekday()):
-            if good and abs(good[-1][1] - s) < 1e-6:
-                good[-1][1] = e
-            else:
-                good.append([s, e])
+    def stretches(cut: bool) -> list[list[float]]:
+        good: list[list[float]] = []
+        for s, e in zip(points, points[1:]):
+            if e - s < 1e-6 or (cut and r0 <= s and e <= r1):
+                continue
+            if _limbs_ok(rule, sk, (s + e) / 2, day.weekday()):
+                if good and abs(good[-1][1] - s) < 1e-6:
+                    good[-1][1] = e
+                else:
+                    good.append([s, e])
+        return good
+
+    good = stretches(cut_rahu)
+    if rule.min_span or rule.udaya_night:
+        # Judged on whole stretches, before Rahu Kalam is cut out of them.
+        dusk = _jd(sunset)
+        udaya = rule.tithis is None or sk.tithi.at(a + 1e-7) in rule.tithis
+        keep = [(s, e) for s, e in (stretches(False) if cut_rahu else good)
+                if (e - s) * 1440 >= rule.min_span and (udaya or not rule.udaya_night or s < dusk)]
+        good = [g for g in good if any(s - 1e-6 <= g[0] and g[1] <= e + 1e-6 for s, e in keep)]
     out = [(s, e) for s, e in good if (e - s) * 1440 >= rule.min_minutes]
     if rule.latest_start is not None:
         limit = _jd(datetime.combine(day, rule.latest_start, tzinfo=tz))

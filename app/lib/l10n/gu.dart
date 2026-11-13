@@ -1091,6 +1091,7 @@ const stringsGu = <String, String>{
   'Total lunar eclipse': 'ખગ્રાસ ચંદ્રગ્રહણ',
   'Total solar eclipse': 'ખગ્રાસ સૂર્યગ્રહણ',
   'Vehicle purchase': 'વાહન ખરીદી',
+  'Naming ceremony (Namakaranam)': 'નામકરણ સંસ્કાર',
   'Visible here {0}. Penumbral only: no Sutak.': 'અહીં {0} દેખાશે. માત્ર ઉપછાયા: સૂતક નથી.',
   'Visible here {0}. Sutak from {1}.': 'અહીં {0} દેખાશે. સૂતક {1} થી.',
   'Begins': 'સ્પર્શ',
@@ -1160,6 +1161,8 @@ const stringsGu = <String, String>{
       'મહા, ફાગણ, વૈશાખ, જેઠ (અથવા કારતક, માગશર); સ્થિર અને મૃદુ નક્ષત્રો; શુભ તિથિ અને વાર; ગુરુ-શુક્ર અસ્ત નહીં. રાહુ કાળ બાકાત રાખ્યો છે.',
   'Movable, gentle and light nakshatras; good tithi and weekday; not in Pitru Paksha or Adhika masa. Rahu Kalam is left out.':
       'ચર, મૃદુ અને લઘુ નક્ષત્રો; શુભ તિથિ અને વાર; પિતૃ પક્ષ કે અધિક માસ નહીં. રાહુ કાળ બાકાત રાખ્યો છે.',
+  'Gentle, fixed, swift and movable nakshatras; no Rikta tithi or Amavasya; Sunday, Monday, Wednesday, Thursday or Friday; not in Adhika masa; a good stretch of at least four hours. Rahu Kalam is left out.':
+      'મૃદુ, ધ્રુવ, ક્ષિપ્ર અને ચર નક્ષત્રો; રિક્તા તિથિ કે અમાસ નહીં; રવિ, સોમ, બુધ, ગુરુ કે શુક્રવાર; અધિક માસ નહીં; ઓછામાં ઓછો ચાર કલાકનો શુભ સમય. રાહુ કાળ બાકાત રાખ્યો છે.',
   'No dates in this period': 'આ સમયગાળામાં કોઈ તારીખ નથી',
   'Sun in a marriage month, outside Chaturmas and Adhika masa, Guru and Shukra not combust; one of the 11 marriage nakshatras without a bad yoga or karana. Rahu Kalam is left out.':
       'સૂર્ય લગ્ન માટેના માસમાં, ચાતુર્માસ અને અધિક માસની બહાર, ગુરુ-શુક્ર અસ્ત નહીં; 11 લગ્ન નક્ષત્રોમાંથી એક, અશુભ યોગ કે કરણ વિના. રાહુ કાળ બાકાત રાખ્યો છે.',

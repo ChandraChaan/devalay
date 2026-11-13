@@ -3408,6 +3408,12 @@
   "where": "lib/core/jyotish.dart"
  },
  {
+  "en": "Naming ceremony (Namakaranam)",
+  "hi": "नामकरण संस्कार",
+  "te": "నామకరణం",
+  "where": "lib/core/jyotish.dart"
+ },
+ {
   "en": "Not visible here. No Sutak.",
   "hi": "यहाँ दिखाई नहीं देगा। सूतक नहीं।",
   "te": "ఇక్కడ కనిపించదు. సూతకం లేదు.",
@@ -6915,6 +6921,12 @@
   "en": "Best lagna",
   "hi": "श्रेष्ठ लग्न",
   "te": "శ్రేష్ఠ లగ్నం",
+  "where": "lib/features/shubha_muhurtham.dart"
+ },
+ {
+  "en": "Gentle, fixed, swift and movable nakshatras; no Rikta tithi or Amavasya; Sunday, Monday, Wednesday, Thursday or Friday; not in Adhika masa; a good stretch of at least four hours. Rahu Kalam is left out.",
+  "hi": "मृदु, ध्रुव, क्षिप्र और चर नक्षत्र; रिक्ता तिथि और अमावस्या नहीं; रवि, सोम, बुध, गुरु या शुक्रवार; अधिक मास नहीं; कम से कम चार घंटे का शुभ समय। राहु काल छोड़ा गया है।",
+  "te": "మృదు, స్థిర, క్షిప్ర, చర నక్షత్రాలు; రిక్త తిథి, అమావాస్య కాకుండా; ఆది, సోమ, బుధ, గురు లేదా శుక్రవారం; అధిక మాసం కాకుండా; కనీసం నాలుగు గంటల మంచి సమయం. రాహుకాలం తీసివేశాం.",
   "where": "lib/features/shubha_muhurtham.dart"
  },
  {
