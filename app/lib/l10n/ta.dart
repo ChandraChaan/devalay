@@ -1177,4 +1177,12 @@ const stringsTa = <String, String>{
       'திருமணத்துக்கு உகந்த சூரிய மாதம், சாதுர்மாஸ்யம், அதிக மாதம் அல்லாத காலம், குரு, சுக்கிர அஸ்தமனம் இல்லாதது; தீய யோகம் அல்லது கரணம் இல்லாத 11 திருமண நட்சத்திரங்களில் ஒன்று. ராகு காலம் நீக்கப்பட்டுள்ளது.',
   'These dates pass Panchang Shuddhi. Ask your family priest to match them with the horoscopes (Tarabalam, Chandrabalam) and fix the exact lagna.':
       'இந்தத் தேதிகள் பஞ்சாங்க சுத்தி பெற்றவை. ஜாதகங்களுடன் பொருத்திப் பார்க்கவும் (தாரா பலம், சந்திர பலம்), சரியான லக்னத்தை நிர்ணயிக்கவும் உங்கள் குடும்ப புரோகிதரை அணுகவும்.',
+  // More, ringtones and films intro lines.
+  'Optional. Everything works without an account.': 'விருப்பத்தேர்வு. கணக்கு இல்லாமலும் எல்லாம் இயங்கும்.',
+  'Premium: unlimited downloads, more AI. Core devotion stays free.':
+      'பிரீமியம்: வரம்பற்ற பதிவிறக்கங்கள், கூடுதல் AI. அடிப்படை பக்தி எப்போதும் இலவசம்.',
+  'Ab ring mein honge Bhagwan. Original temple bells, shankh and bansuri, free to use.':
+      'இனி உங்கள் ரிங்டோனில் இறைவன். அசல் கோயில் மணிகள், சங்கு, புல்லாங்குழல், இலவசமாக.',
+  'Public-domain mythological films by Dadasaheb Phalke, the father of Indian cinema.':
+      'இந்திய சினிமாவின் தந்தை தாதாசாகேப் பால்கேயின் பொதுக் கள புராணத் திரைப்படங்கள்.',
 };

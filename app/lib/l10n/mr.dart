@@ -1246,4 +1246,12 @@ const stringsMr = <String, String>{
       'सूर्य विवाहयोग्य मासात, चातुर्मास आणि अधिक मासाबाहेर, गुरू-शुक्र अस्त नाहीत; 11 विवाह नक्षत्रांपैकी एक, अशुभ योग किंवा करण नाही. राहुकाळ वगळला आहे.',
   'These dates pass Panchang Shuddhi. Ask your family priest to match them with the horoscopes (Tarabalam, Chandrabalam) and fix the exact lagna.':
       'या तारखा पंचांगशुद्धीत उतरतात. पत्रिकांशी जुळवणी (ताराबल, चंद्रबल) आणि नेमके लग्न ठरवण्यासाठी आपल्या कुलपुरोहितांना विचारा.',
+  // More, ringtones and films intro lines.
+  'Optional. Everything works without an account.': 'ऐच्छिक. खात्याशिवायही सर्व चालते.',
+  'Premium: unlimited downloads, more AI. Core devotion stays free.':
+      'प्रीमियम: अमर्याद डाउनलोड, अधिक AI. मूळ भक्ती नेहमी मोफत.',
+  'Ab ring mein honge Bhagwan. Original temple bells, shankh and bansuri, free to use.':
+      'आता रिंगमध्ये भगवंत. मूळ मंदिरातील घंटा, शंख आणि बासरी, मोफत.',
+  'Public-domain mythological films by Dadasaheb Phalke, the father of Indian cinema.':
+      'भारतीय चित्रपटसृष्टीचे जनक दादासाहेब फाळके यांचे सार्वजनिक-डोमेन पौराणिक चित्रपट.',
 };

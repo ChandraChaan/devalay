@@ -1168,4 +1168,12 @@ const stringsPa = <String, String>{
       'ਸੂਰਜ ਵਿਆਹ ਵਾਲੇ ਮਹੀਨੇ ਵਿੱਚ, ਚਤੁਰਮਾਸ ਅਤੇ ਅਧਿਕ ਮਾਸ ਤੋਂ ਬਾਹਰ, ਗੁਰੂ-ਸ਼ੁੱਕਰ ਅਸਤ ਨਹੀਂ; 11 ਵਿਆਹ ਨਕਸ਼ੱਤਰਾਂ ਵਿੱਚੋਂ ਇੱਕ, ਅਸ਼ੁਭ ਯੋਗ ਜਾਂ ਕਰਣ ਨਹੀਂ। ਰਾਹੂ ਕਾਲ ਛੱਡ ਦਿੱਤਾ ਗਿਆ ਹੈ।',
   'These dates pass Panchang Shuddhi. Ask your family priest to match them with the horoscopes (Tarabalam, Chandrabalam) and fix the exact lagna.':
       'ਇਹ ਤਰੀਕਾਂ ਪੰਚਾਂਗ ਸ਼ੁੱਧੀ \'ਤੇ ਖਰੀਆਂ ਉਤਰਦੀਆਂ ਹਨ। ਕੁੰਡਲੀਆਂ ਨਾਲ ਮਿਲਾਨ (ਤਾਰਾ ਬਲ, ਚੰਦਰ ਬਲ) ਅਤੇ ਸਹੀ ਲਗਨ ਲਈ ਆਪਣੇ ਕੁਲ ਪੁਰੋਹਿਤ ਤੋਂ ਪੁੱਛੋ।',
+  // More, ringtones and films intro lines.
+  'Optional. Everything works without an account.': 'ਵਿਕਲਪਿਕ। ਖਾਤੇ ਤੋਂ ਬਿਨਾਂ ਵੀ ਸਭ ਚੱਲਦਾ ਹੈ।',
+  'Premium: unlimited downloads, more AI. Core devotion stays free.':
+      'ਪ੍ਰੀਮੀਅਮ: ਅਸੀਮਤ ਡਾਊਨਲੋਡ, ਹੋਰ AI। ਮੂਲ ਭਗਤੀ ਹਮੇਸ਼ਾ ਮੁਫ਼ਤ।',
+  'Ab ring mein honge Bhagwan. Original temple bells, shankh and bansuri, free to use.':
+      'ਹੁਣ ਰਿੰਗ ਵਿੱਚ ਭਗਵਾਨ। ਅਸਲ ਮੰਦਰ ਦੀਆਂ ਘੰਟੀਆਂ, ਸ਼ੰਖ ਤੇ ਬੰਸਰੀ, ਮੁਫ਼ਤ।',
+  'Public-domain mythological films by Dadasaheb Phalke, the father of Indian cinema.':
+      'ਭਾਰਤੀ ਸਿਨੇਮਾ ਦੇ ਪਿਤਾਮਾ ਦਾਦਾਸਾਹਿਬ ਫਾਲਕੇ ਦੀਆਂ ਪਬਲਿਕ-ਡੋਮੇਨ ਪੌਰਾਣਿਕ ਫ਼ਿਲਮਾਂ।',
 };

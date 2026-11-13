@@ -1169,4 +1169,12 @@ const stringsKn = <String, String>{
       'ಸೂರ್ಯ ವಿವಾಹ ಮಾಸದಲ್ಲಿ, ಚಾತುರ್ಮಾಸ ಮತ್ತು ಅಧಿಕ ಮಾಸದ ಹೊರಗೆ, ಗುರು-ಶುಕ್ರ ಮೌಢ್ಯವಿಲ್ಲ; 11 ವಿವಾಹ ನಕ್ಷತ್ರಗಳಲ್ಲಿ ಒಂದು, ಅಶುಭ ಯೋಗ ಅಥವಾ ಕರಣವಿಲ್ಲ. ರಾಹುಕಾಲವನ್ನು ಬಿಡಲಾಗಿದೆ.',
   'These dates pass Panchang Shuddhi. Ask your family priest to match them with the horoscopes (Tarabalam, Chandrabalam) and fix the exact lagna.':
       'ಈ ದಿನಾಂಕಗಳು ಪಂಚಾಂಗ ಶುದ್ಧಿಯಲ್ಲಿ ಉತ್ತೀರ್ಣವಾಗಿವೆ. ಜಾತಕಗಳೊಂದಿಗೆ (ತಾರಾಬಲ, ಚಂದ್ರಬಲ) ಹೊಂದಿಸಲು ಮತ್ತು ನಿಖರ ಲಗ್ನ ನಿಗದಿಪಡಿಸಲು ನಿಮ್ಮ ಕುಟುಂಬದ ಪುರೋಹಿತರನ್ನು ಕೇಳಿ.',
+  // More, ringtones and films intro lines.
+  'Optional. Everything works without an account.': 'ಐಚ್ಛಿಕ. ಖಾತೆ ಇಲ್ಲದೆಯೂ ಎಲ್ಲವೂ ಕೆಲಸ ಮಾಡುತ್ತದೆ.',
+  'Premium: unlimited downloads, more AI. Core devotion stays free.':
+      'ಪ್ರೀಮಿಯಂ: ಅನಿಯಮಿತ ಡೌನ್\u200cಲೋಡ್\u200cಗಳು, ಹೆಚ್ಚು AI. ಮೂಲ ಭಕ್ತಿ ಯಾವಾಗಲೂ ಉಚಿತ.',
+  'Ab ring mein honge Bhagwan. Original temple bells, shankh and bansuri, free to use.':
+      'ಇನ್ನು ನಿಮ್ಮ ರಿಂಗ್\u200cಟೋನ್\u200cನಲ್ಲಿ ಭಗವಂತ. ಮೂಲ ದೇವಾಲಯದ ಗಂಟೆಗಳು, ಶಂಖ ಮತ್ತು ಕೊಳಲು, ಉಚಿತವಾಗಿ.',
+  'Public-domain mythological films by Dadasaheb Phalke, the father of Indian cinema.':
+      'ಭಾರತೀಯ ಸಿನಿಮಾದ ಪಿತಾಮಹ ದಾದಾಸಾಹೇಬ್ ಫಾಲ್ಕೆ ಅವರ ಸಾರ್ವಜನಿಕ-ಡೊಮೇನ್ ಪೌರಾಣಿಕ ಚಲನಚಿತ್ರಗಳು.',
 };

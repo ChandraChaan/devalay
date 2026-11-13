@@ -1165,4 +1165,12 @@ const stringsBn = <String, String>{
       'বিবাহের উপযুক্ত সৌর মাস, চাতুর্মাস্য ও অধিক মাসের বাইরে, গুরু-শুক্র অস্ত নয়; 11টি বিবাহ-নক্ষত্রের একটি, অশুভ যোগ বা করণ ছাড়া। রাহুকাল বাদ দেওয়া হয়েছে।',
   'These dates pass Panchang Shuddhi. Ask your family priest to match them with the horoscopes (Tarabalam, Chandrabalam) and fix the exact lagna.':
       'এই তারিখগুলি পঞ্জিকা শুদ্ধিতে উত্তীর্ণ। কোষ্ঠীর সঙ্গে মিলিয়ে (তারাবল, চন্দ্রবল) সঠিক লগ্ন স্থির করতে কুলপুরোহিতের পরামর্শ নিন।',
+  // More, ringtones and films intro lines.
+  'Optional. Everything works without an account.': 'ঐচ্ছিক। অ্যাকাউন্ট ছাড়াও সবকিছু চলে।',
+  'Premium: unlimited downloads, more AI. Core devotion stays free.':
+      'প্রিমিয়াম: সীমাহীন ডাউনলোড, আরও AI। মূল ভক্তি সবসময় বিনামূল্যে।',
+  'Ab ring mein honge Bhagwan. Original temple bells, shankh and bansuri, free to use.':
+      'এবার রিংটোনে ভগবান। আসল মন্দিরের ঘণ্টা, শঙ্খ আর বাঁশি, বিনামূল্যে।',
+  'Public-domain mythological films by Dadasaheb Phalke, the father of Indian cinema.':
+      'ভারতীয় সিনেমার জনক দাদাসাহেব ফালকের পাবলিক-ডোমেইন পৌরাণিক ছবি।',
 };

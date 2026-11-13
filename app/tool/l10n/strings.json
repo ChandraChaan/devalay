@@ -5796,6 +5796,18 @@
   "where": "lib/features/more.dart"
  },
  {
+  "en": "Optional. Everything works without an account.",
+  "hi": "वैकल्पिक। बिना खाते के भी सब चलता है।",
+  "te": "ఐచ్ఛికం. ఖాతా లేకపోయినా అన్నీ పనిచేస్తాయి.",
+  "where": "lib/features/more.dart"
+ },
+ {
+  "en": "Premium: unlimited downloads, more AI. Core devotion stays free.",
+  "hi": "प्रीमियम: असीमित डाउनलोड, अधिक AI। मूल भक्ति हमेशा निःशुल्क।",
+  "te": "ప్రీమియం: అపరిమిత డౌన్‌లోడ్‌లు, మరింత AI. ప్రధాన భక్తి ఎప్పుడూ ఉచితమే.",
+  "where": "lib/features/more.dart"
+ },
+ {
   "en": "Rate on Play",
   "hi": "Play पर रेट करें",
   "te": "Playలో రేట్ చేయండి",
@@ -6456,6 +6468,12 @@
   "where": "lib/features/read.dart"
  },
  {
+  "en": "Ab ring mein honge Bhagwan. Original temple bells, shankh and bansuri, free to use.",
+  "hi": "अब रिंग में होंगे भगवान। मूल मंदिर घंटियाँ, शंख और बाँसुरी, निःशुल्क।",
+  "te": "ఇక మీ రింగ్‌టోన్‌లో భగవంతుడు. అసలైన ఆలయ గంటలు, శంఖం, వేణువు, ఉచితంగా.",
+  "where": "lib/features/ringtones.dart"
+ },
+ {
   "en": "Could not set ringtone: {0}",
   "hi": "रिंगटोन सेट नहीं हो सका: {0}",
   "te": "రింగ్‌టోన్ సెట్ కాలేదు: {0}",
@@ -7072,6 +7090,12 @@
   "hi": "आज का विचार",
   "te": "నేటి సూక్తి",
   "where": "lib/features/thought.dart"
+ },
+ {
+  "en": "Public-domain mythological films by Dadasaheb Phalke, the father of Indian cinema.",
+  "hi": "भारतीय सिनेमा के जनक दादासाहेब फाल्के की सार्वजनिक-डोमेन पौराणिक फ़िल्में।",
+  "te": "భారతీయ సినిమా పితామహుడు దాదాసాహెబ్ ఫాల్కే తీసిన పబ్లిక్-డొమైన్ పౌరాణిక చిత్రాలు.",
+  "where": "lib/features/videos.dart"
  },
  {
   "en": "Add a blessing",

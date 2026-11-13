@@ -24,10 +24,11 @@ class VideosScreen extends ConsumerWidget {
           padding: const EdgeInsets.all(16),
           children: [
             Text(
-              pick(
+              l3(
                 ref,
                 'Public-domain mythological films by Dadasaheb Phalke, the father of Indian cinema.',
                 'भारतीय सिनेमा के जनक दादासाहेब फाल्के की सार्वजनिक-डोमेन पौराणिक फ़िल्में।',
+                'భారతీయ సినిమా పితామహుడు దాదాసాహెబ్ ఫాల్కే తీసిన పబ్లిక్-డొమైన్ పౌరాణిక చిత్రాలు.',
               ),
             ),
             const SizedBox(height: 12),

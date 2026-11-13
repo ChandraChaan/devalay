@@ -62,10 +62,11 @@ class MoreScreen extends ConsumerWidget {
                 subtitle: Text(
                   auth.signedIn
                       ? (auth.isPremium ? 'Premium 👑' : 'Free plan')
-                      : pick(
+                      : l3(
                           ref,
                           'Optional. Everything works without an account.',
                           'वैकल्पिक। बिना खाते के भी सब चलता है।',
+                          'ఐచ్ఛికం. ఖాతా లేకపోయినా అన్నీ పనిచేస్తాయి.',
                         ),
                 ),
                 trailing: const Icon(Icons.chevron_right_rounded),
@@ -84,10 +85,11 @@ class MoreScreen extends ConsumerWidget {
                     const SizedBox(width: 12),
                     Expanded(
                       child: Text(
-                        pick(
+                        l3(
                           ref,
                           'Premium: unlimited downloads, more AI. Core devotion stays free.',
                           'प्रीमियम: असीमित डाउनलोड, अधिक AI। मूल भक्ति हमेशा निःशुल्क।',
+                          'ప్రీమియం: అపరిమిత డౌన్‌లోడ్‌లు, మరింత AI. ప్రధాన భక్తి ఎప్పుడూ ఉచితమే.',
                         ),
                         style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
                       ),

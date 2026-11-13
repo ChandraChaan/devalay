@@ -1167,4 +1167,12 @@ const stringsOr = <String, String>{
       'ବିବାହ ଯୋଗ୍ୟ ସୌର ମାସ, ଚାତୁର୍ମାସ୍ୟ ଓ ଅଧିକ ମାସ ବାହାରେ, ଗୁରୁ-ଶୁକ୍ର ଅସ୍ତ ନୁହନ୍ତି; 11ଟି ବିବାହ ନକ୍ଷତ୍ର ମଧ୍ୟରୁ ଗୋଟିଏ, ଅଶୁଭ ଯୋଗ ବା କରଣ ବିନା। ରାହୁକାଳ ବାଦ ଦିଆଯାଇଛି।',
   'These dates pass Panchang Shuddhi. Ask your family priest to match them with the horoscopes (Tarabalam, Chandrabalam) and fix the exact lagna.':
       'ଏହି ତାରିଖଗୁଡ଼ିକ ପଞ୍ଜିକା ଶୁଦ୍ଧିରେ ଉତ୍ତୀର୍ଣ୍ଣ। ଜାତକ ସହ ମେଳ (ତାରାବଳ, ଚନ୍ଦ୍ରବଳ) କରି ସଠିକ୍ ଲଗ୍ନ ସ୍ଥିର କରିବାକୁ ଆପଣଙ୍କ କୁଳ ପୁରୋହିତଙ୍କୁ ପଚାରନ୍ତୁ।',
+  // More, ringtones and films intro lines.
+  'Optional. Everything works without an account.': 'ବୈକଳ୍ପିକ। ଆକାଉଣ୍ଟ ବିନା ମଧ୍ୟ ସବୁ ଚାଲେ।',
+  'Premium: unlimited downloads, more AI. Core devotion stays free.':
+      'ପ୍ରିମିୟମ: ଅସୀମିତ ଡାଉନଲୋଡ, ଅଧିକ AI। ମୂଳ ଭକ୍ତି ସବୁବେଳେ ମାଗଣା।',
+  'Ab ring mein honge Bhagwan. Original temple bells, shankh and bansuri, free to use.':
+      'ଏବେ ରିଙ୍ଗରେ ଭଗବାନ। ମୂଳ ମନ୍ଦିର ଘଣ୍ଟି, ଶଙ୍ଖ ଓ ବଂଶୀ, ମାଗଣାରେ।',
+  'Public-domain mythological films by Dadasaheb Phalke, the father of Indian cinema.':
+      'ଭାରତୀୟ ସିନେମାର ଜନକ ଦାଦାସାହେବ ଫାଲକେଙ୍କ ପବ୍ଲିକ-ଡୋମେନ ପୌରାଣିକ ଚଳଚ୍ଚିତ୍ର।',
 };

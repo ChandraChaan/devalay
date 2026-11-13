@@ -38,10 +38,11 @@ class RingtonesScreen extends ConsumerWidget {
                   const SizedBox(width: 12),
                   Expanded(
                     child: Text(
-                      pick(
+                      l3(
                         ref,
                         'Ab ring mein honge Bhagwan. Original temple bells, shankh and bansuri, free to use.',
                         'अब रिंग में होंगे भगवान। मूल मंदिर घंटियाँ, शंख और बाँसुरी, निःशुल्क।',
+                        'ఇక మీ రింగ్‌టోన్‌లో భగవంతుడు. అసలైన ఆలయ గంటలు, శంఖం, వేణువు, ఉచితంగా.',
                       ),
                       style: const TextStyle(color: Colors.white, fontSize: 15),
                     ),
