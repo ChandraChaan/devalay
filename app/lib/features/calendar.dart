@@ -10,6 +10,7 @@ import 'package:share_plus/share_plus.dart';
 
 import '../core/calendar_reminders.dart';
 import '../core/events.dart';
+import '../core/holidays.dart';
 import '../core/i18n.dart';
 import '../core/jyotish.dart';
 import '../core/location.dart';
@@ -17,12 +18,18 @@ import '../core/models.dart';
 import '../core/muhurta.dart';
 import '../core/names.dart';
 import '../core/notifications.dart';
+import '../core/panchang_voice.dart';
+import '../core/pooja.dart';
 import '../core/providers.dart';
+import '../core/regional.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
 import '../core/wishes.dart';
 import '../widgets/city_picker.dart';
 import '../widgets/common.dart';
+import '../widgets/read_aloud_button.dart';
+import 'backup.dart';
+import 'calendar_settings.dart';
 import 'grahanam.dart';
 import 'my_events.dart';
 import 'panchang.dart';
@@ -89,7 +96,18 @@ Future<void> shareDay(WidgetRef ref, DateTime day) async {
   final fest = _festivalsByDay(ref.read(festivalsProvider(day.year)).value)[day] ?? const <Festival>[];
   final tithi = p == null ? null : (p['tithi'] as List).first as Map;
   final star = p == null ? null : (p['nakshatra'] as List).first as Map;
-  final month = p?['lunar_month'] is Map ? (p!['lunar_month'] as Map)['index'] as int? : s?['lunar_month'] as int?;
+  final system = monthSystemFor(lang);
+  final month = p?['lunar_month'] is Map
+      ? shownMonth(
+          system,
+          (p!['lunar_month'] as Map)['index'] as int,
+          krishna: tithi?['paksha'] == 'Krishna',
+          adhika: (p['lunar_month'] as Map)['adhika'] == true,
+        )
+      : (s == null ? null : shownMonthOf(system, s));
+  final solarCal = solarCalendarFor(lang);
+  final solar = solarCal == null || s == null ? null : SolarDate.of(solarCal, s);
+  final state = ref.read(stateHolidaysProvider(day.year))[day];
   final rahu = p?['rahu_kaal'] is Map
       ? '${hhmm('${(p!['rahu_kaal'] as Map)['starts']}')} – ${hhmm('${(p['rahu_kaal'] as Map)['ends']}')}'
       : (s?['sunset'] == null
@@ -108,7 +126,9 @@ Future<void> shareDay(WidgetRef ref, DateTime day) async {
           '${tithi['ends'] == null ? '' : ' (${t3(lang, 'till', 'तक', 'వరకు')} ${hhmm('${tithi['ends']}')})'}'
     else if (s != null)
       '${tr(ref, 'tithi')}: ${tithiName(lang, s['tithi_index'] as int)}',
-    if (month != null) '${t3(lang, 'Month', 'मास', 'మాసం')}: ${lunarMonthLabel(lang, month)}',
+    if (state != null && nationalHoliday(day) == null) '${state.public ? '🏛️' : '🏦'} ${state.label(lang)}',
+    if (solar != null) '📅 ${solar.label(lang)}${solar.era(lang) == null ? '' : ', ${solar.era(lang)}'}',
+    if (month != null) '${t3(lang, 'Month', 'मास', 'మాసం')}: ${shownMonthLabel(lang, month)}',
     if (star != null)
       '${tr(ref, 'nakshatra')}: ${nakshatraLabel(lang, (star['index'] as int) - 1)}'
           '${star['ends'] == null ? '' : ' (${t3(lang, 'till', 'तक', 'వరకు')} ${hhmm('${star['ends']}')})'}'
@@ -349,6 +369,7 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
               'events' => context.push('/calendar/events'),
               'festivals' => _toggleReminders(),
               'panchang' => _togglePanchangDaily(),
+              'settings' => showCalendarSettings(context),
               _ => null,
             },
             itemBuilder: (_) => [
@@ -370,6 +391,15 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
                 value: 'festivals',
                 checked: prefs.festivalReminders,
                 child: Text(t3(lang, 'Festival reminders', 'त्योहार रिमाइंडर', 'పండుగ రిమైండర్లు')),
+              ),
+              PopupMenuItem(
+                value: 'settings',
+                child: ListTile(
+                  leading: const Icon(Icons.tune_rounded),
+                  title: Text(
+                    t3(lang, 'Months, solar calendar, holidays', 'मास, सौर पंचांग, अवकाश', 'మాసాలు, సౌరమానం, సెలవులు'),
+                  ),
+                ),
               ),
             ],
           ),
@@ -462,10 +492,22 @@ class _MonthHeader extends ConsumerWidget {
     final major = inMonth.where((f) => f.major).length;
     final city = ref.watch(cityProvider);
     final days = ref.watch(monthProvider((year: month.year, month: month.month))).value ?? const <Map>[];
-    final lunar = <int>{
+    final system = ref.watch(monthSystemProvider);
+    final lunar = <String>{
       for (final d in days)
-        if (d['lunar_month'] case final int m) m,
-    }.map((m) => lunarMonthLabel(lang, m)).join(' – ');
+        if (shownMonthOf(system, d) case final m?) shownMonthLabel(lang, m),
+    }.join(' – ');
+    final solarCal = ref.watch(solarCalendarProvider);
+    final solarDays = [
+      if (solarCal != null)
+        for (final d in days) ?SolarDate.of(solarCal, d),
+    ];
+    final solar = solarDays.isEmpty
+        ? ''
+        : [
+            {for (final s in solarDays) solarMonthName(s.calendar, lang, s.month)}.join(' – '),
+            ?solarDays.last.era(lang),
+          ].join(', ');
     return Padding(
       padding: const EdgeInsets.fromLTRB(4, 4, 4, 6),
       child: Row(
@@ -485,9 +527,15 @@ class _MonthHeader extends ConsumerWidget {
                         key: ValueKey(month),
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Text(
-                            _monthTitle(lang, month),
-                            style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w700),
+                          // Long month names (Tamil, Malayalam) shrink rather than overflow on small phones.
+                          Flexible(
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                _monthTitle(lang, month),
+                                style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w700),
+                              ),
+                            ),
                           ),
                           const Icon(Icons.arrow_drop_down_rounded),
                         ],
@@ -526,6 +574,7 @@ class _MonthHeader extends ConsumerWidget {
                         Text(
                           [
                             if (lunar.isNotEmpty) lunar,
+                            if (solar.isNotEmpty) solar,
                             if (major > 0) t3(lang, '$major festivals', '$major त्योहार', '$major పండుగలు'),
                           ].map((t) => ' · $t').join(),
                           style: Theme.of(context).textTheme.bodySmall,
@@ -586,6 +635,8 @@ class _MonthGrid extends ConsumerWidget {
     final events = ref.watch(eventsByDayProvider(month.year));
     final eclipses = ref.watch(eclipsesByDayProvider);
     final lang = ref.watch(prefsProvider.select((p) => p.language));
+    final holidays = ref.watch(stateHolidaysProvider(month.year));
+    final solarCal = ref.watch(solarCalendarProvider);
     final lead = DateTime(month.year, month.month, 1).weekday % 7;
     final count = DateUtils.getDaysInMonth(month.year, month.month);
     final rows = _rowsFor(month);
@@ -623,6 +674,10 @@ class _MonthGrid extends ConsumerWidget {
                                 festivals: byDay[date] ?? const [],
                                 events: events[date] ?? const [],
                                 eclipse: eclipses[date]?.first,
+                                stateHoliday: holidays[date],
+                                solar: solarCal == null || summary[n] == null
+                                    ? null
+                                    : SolarDate.of(solarCal, summary[n]!),
                                 selected: DateUtils.isSameDay(date, selected),
                                 full: full,
                                 lang: lang,
@@ -653,12 +708,16 @@ class _DayCell extends StatelessWidget {
     required this.full,
     required this.lang,
     required this.onTap,
+    this.stateHoliday,
+    this.solar,
   });
   final DateTime date;
   final Map? info;
   final List<Festival> festivals;
   final List<UserEvent> events;
   final Eclipse? eclipse;
+  final StateHoliday? stateHoliday;
+  final SolarDate? solar;
   final bool selected, full;
   final String lang;
   final VoidCallback onTap;
@@ -669,7 +728,7 @@ class _DayCell extends StatelessWidget {
     final today = DateUtils.isSameDay(date, DateTime.now());
     final major = festivals.any((f) => f.major);
     final holiday = nationalHoliday(date);
-    final red = date.weekday == DateTime.sunday || major || holiday != null;
+    final red = date.weekday == DateTime.sunday || major || holiday != null || (stateHoliday?.public ?? false);
     final fg = selected ? Colors.white : (red ? Palette.vermilion : scheme.onSurface);
     final sub = selected ? Colors.white70 : scheme.outline;
     final mark = info == null ? '' : _moonMark(info!);
@@ -719,31 +778,63 @@ class _DayCell extends StatelessWidget {
     if (festivals.isNotEmpty) festivals.any((f) => f.major) ? '🪔' : '•',
     if (eclipse != null) eclipse!.emoji,
     if (events.isNotEmpty) events.first.emoji,
-    if (holiday != null) '🇮🇳',
+    if (holiday != null) '🇮🇳' else if (stateHoliday != null) stateHoliday!.public ? '🏛️' : '🏦',
     if (moon.isNotEmpty) moon,
     if (yoga != null) '✨',
   ].take(2).join();
 
-  Widget _compactBody(Color fg, Color sub, String marks) => Column(
-    mainAxisAlignment: MainAxisAlignment.center,
+  /// The solar date in a corner: the month's name on its first day, else the day number.
+  String? get _solarMark => solar == null
+      ? null
+      : solar!.day == 1
+      ? solarMonthName(solar!.calendar, lang, solar!.month)
+      : '${solar!.day}';
+
+  Widget _compactBody(Color fg, Color sub, String marks) => Stack(
     children: [
-      Text(
-        '${date.day}',
-        style: TextStyle(fontWeight: FontWeight.w700, fontSize: 17, color: fg, height: 1.1),
+      Positioned.fill(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              '${date.day}',
+              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 17, color: fg, height: 1.1),
+            ),
+            if (info != null)
+              FittedBox(
+                child: Text(
+                  lang == 'en' ? _tithiLabel(lang, info!).substring(0, 3) : _tithiLabel(lang, info!),
+                  style: TextStyle(fontSize: 10, color: sub),
+                ),
+              ),
+            SizedBox(
+              height: 14,
+              child: FittedBox(
+                child: Text(marks, style: TextStyle(fontSize: 10, color: fg)),
+              ),
+            ),
+          ],
+        ),
       ),
-      if (info != null)
-        FittedBox(
-          child: Text(
-            lang == 'en' ? _tithiLabel(lang, info!).substring(0, 3) : _tithiLabel(lang, info!),
-            style: TextStyle(fontSize: 10, color: sub),
+      // The solar date sits in the corner so it never pushes the cell taller.
+      if (_solarMark case final s?)
+        Positioned(
+          top: 0,
+          right: 0,
+          left: 0,
+          child: Align(
+            alignment: Alignment.topRight,
+            child: SizedBox(
+              height: 10,
+              child: FittedBox(
+                child: Text(
+                  s,
+                  style: TextStyle(fontSize: 9, height: 1, color: sub, fontWeight: FontWeight.w600),
+                ),
+              ),
+            ),
           ),
         ),
-      SizedBox(
-        height: 14,
-        child: FittedBox(
-          child: Text(marks, style: TextStyle(fontSize: 10, color: fg)),
-        ),
-      ),
     ],
   );
 
@@ -770,6 +861,16 @@ class _DayCell extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.w800, fontSize: 18, color: fg, height: 1.1),
             ),
             const Spacer(),
+            if (_solarMark case final s?)
+              Flexible(
+                child: Text(
+                  s,
+                  maxLines: 1,
+                  overflow: TextOverflow.fade,
+                  softWrap: false,
+                  style: TextStyle(fontSize: 9, color: sub, fontWeight: FontWeight.w600),
+                ),
+              ),
             if (mark.isNotEmpty) Text(mark, style: const TextStyle(fontSize: 11)),
             if (yoga != null) const Text('✨', style: TextStyle(fontSize: 10)),
           ],
@@ -790,6 +891,12 @@ class _DayCell extends StatelessWidget {
               children: [
                 if (holiday != null) line(holidayLabel(lang, holiday), color: Palette.vermilion, bold: true),
                 if (eclipse != null) line('${eclipse!.emoji} ${eclipse!.title(lang)}', bold: true),
+                if (holiday == null && stateHoliday != null)
+                  line(
+                    stateHoliday!.label(lang),
+                    color: stateHoliday!.public ? Palette.vermilion : null,
+                    bold: stateHoliday!.public,
+                  ),
                 for (final e in events) line('${e.emoji} ${e.title}', color: const Color(0xFF1565C0), bold: true),
                 for (final f in festivals)
                   line(
@@ -833,6 +940,10 @@ class _Legend extends ConsumerWidget {
           item('🌑', t3(lang, 'Amavasya', 'अमावस्या', 'అమావాస్య')),
           item('🙏', t3(lang, 'Ekadashi', 'एकादशी', 'ఏకాదశి')),
           item('✨', t3(lang, 'Auspicious', 'शुभ योग', 'శుభ యోగం')),
+          if (ref.watch(holidayStateProvider) != null) ...[
+            item('🏛️', t3(lang, 'State holiday', 'राज्य अवकाश', 'రాష్ట్ర సెలవు')),
+            item('🏦', t3(lang, 'Bank holiday', 'बैंक अवकाश', 'బ్యాంకు సెలవు')),
+          ],
           item('🔔', t3(lang, 'My events', 'मेरे दिन', 'నా రోజులు')),
         ],
       ),
@@ -855,12 +966,17 @@ class _SelectedDayCard extends ConsumerWidget {
     final major = festivals.any((f) => f.major);
     final away = date.difference(DateUtils.dateOnly(DateTime.now())).inDays;
     final holiday = nationalHoliday(date);
+    final state = ref.watch(stateHolidaysProvider(date.year))[date];
+    final solarCal = ref.watch(solarCalendarProvider);
+    final solar = solarCal == null || info == null ? null : SolarDate.of(solarCal, info);
+    final shown = info == null ? null : shownMonthOf(ref.watch(monthSystemProvider), info);
     final yoga = info == null ? null : shubhYoga(date, '${info['nakshatra']}');
     final rahu = info?['sunset'] == null
         ? null
         : rahuKalam(date, wallClock('${info!['sunrise']}'), wallClock('${info['sunset']}'));
     final chips = [
       if (holiday != null) ('🇮🇳 ${holidayLabel(lang, holiday)}', true),
+      if (holiday == null && state != null) ('${state.public ? '🏛️' : '🏦'} ${state.label(lang)}', state.public),
       for (final e in events) ('${e.emoji} ${e.title}', true),
       for (final f in festivals) ('${f.major ? '🪔 ' : ''}${f.label(lang)}', f.major),
       if (yoga != null) ('✨ ${shubhYogaLabel(lang, yoga)}', false),
@@ -919,9 +1035,18 @@ class _SelectedDayCard extends ConsumerWidget {
                       if (info != null) ...[
                         const SizedBox(height: 4),
                         Text(
-                          '${_pakshaLabel(lang, info)} · ${_tithiLabel(lang, info)} ${_moonMark(info)}',
+                          [
+                            ?(shown == null ? null : shownMonthLabel(lang, shown)),
+                            _pakshaLabel(lang, info),
+                            '${_tithiLabel(lang, info)} ${_moonMark(info)}',
+                          ].join(' · '),
                           style: const TextStyle(color: Colors.white),
                         ),
+                        if (solar != null)
+                          Text(
+                            '${solar.label(lang)}${solar.era(lang) == null ? '' : ', ${solar.era(lang)}'}',
+                            style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+                          ),
                         Text(
                           '${tr(ref, 'nakshatra')}: ${_nakshatraLabel(lang, info)} · ☀ ${hhmm('${info['sunrise']}')}',
                           style: const TextStyle(color: Colors.white70),
@@ -1109,9 +1234,17 @@ class _CalendarDayScreenState extends ConsumerState<CalendarDayScreen> {
   late final _pages = PageController(initialPage: _dayIndex(widget.date));
   late DateTime _day = DateUtils.dateOnly(widget.date);
   final _total = _dayIndex(_lastDay) + 1;
+  late final PanchangVoice _voice;
+
+  @override
+  void initState() {
+    super.initState();
+    _voice = ref.read(panchangVoiceProvider.notifier);
+  }
 
   @override
   void dispose() {
+    _voice.stop();
     _pages.dispose();
     super.dispose();
   }
@@ -1145,6 +1278,7 @@ class _CalendarDayScreenState extends ConsumerState<CalendarDayScreen> {
             },
             icon: const Icon(Icons.edit_calendar_rounded),
           ),
+          ReadAloudButton(day: _day),
           IconButton(
             tooltip: t3(appLang, 'Share', 'शेयर करें', 'షేర్ చేయండి'),
             onPressed: _share,
@@ -1235,11 +1369,16 @@ class _DayPage extends ConsumerWidget {
     final major = festivals.any((f) => f.major);
     final away = day.difference(DateUtils.dateOnly(DateTime.now())).inDays;
     final wishes = ref.watch(wishCatalogProvider).value;
+    final guides = ref.watch(poojaGuidesProvider).value;
     final events = ref.watch(eventsByDayProvider(day.year))[day] ?? const <UserEvent>[];
     final summary = (ref.watch(monthProvider((year: day.year, month: day.month))).value ?? const <Map>[])
         .where((d) => d['date'] == _iso(day))
         .firstOrNull;
     final holiday = nationalHoliday(day);
+    final state = ref.watch(stateHolidaysProvider(day.year))[day];
+    final stateCode = ref.watch(holidayStateProvider);
+    final solarCal = ref.watch(solarCalendarProvider);
+    final solar = solarCal == null || summary == null ? null : SolarDate.of(solarCal, summary);
     final yoga = summary == null ? null : shubhYoga(day, '${summary['nakshatra']}');
 
     final hero = Container(
@@ -1269,6 +1408,11 @@ class _DayPage extends ConsumerWidget {
                   style: const TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w700),
                 ),
                 Text(_monthTitle(lang, day), style: const TextStyle(color: Colors.white70, fontSize: 16)),
+                if (solar != null)
+                  Text(
+                    '${solar.label(lang)}${solar.era(lang) == null ? '' : ', ${solar.era(lang)}'}',
+                    style: const TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.w600),
+                  ),
                 const SizedBox(height: 6),
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
@@ -1326,6 +1470,19 @@ class _DayPage extends ConsumerWidget {
                             label: Text(t3(lang, 'Send wishes', 'शुभकामनाएँ भेजें', 'శుభాకాంక్షలు పంపండి')),
                           ),
                         ),
+                      if (guides?.forFestival(f) case final g?)
+                        TextButton.icon(
+                          style: TextButton.styleFrom(padding: EdgeInsets.zero),
+                          onPressed: () => context.push('/pooja/${g.id}'),
+                          icon: const Icon(Icons.menu_book_rounded),
+                          label: Text(t3(lang, 'How to do the puja', 'पूजा विधि देखें', 'పూజా విధానం చూడండి')),
+                        ),
+                      TextButton.icon(
+                        style: TextButton.styleFrom(padding: EdgeInsets.zero),
+                        onPressed: () => addFestivalToCalendar(context, lang, f),
+                        icon: const Icon(Icons.event_available_rounded),
+                        label: Text(t3(lang, 'Add to calendar', 'कैलेंडर में जोड़ें', 'క్యాలెండర్‌లో జోడించు')),
+                      ),
                     ],
                   ),
                 ),
@@ -1354,6 +1511,13 @@ class _DayPage extends ConsumerWidget {
           holidayLabel(lang, holiday),
           t3(lang, 'National holiday', 'राष्ट्रीय अवकाश', 'జాతీయ సెలవు దినం'),
           color: Palette.vermilion,
+        ),
+      if (holiday == null && state != null)
+        note(
+          state.public ? '🏛️' : '🏦',
+          state.label(lang),
+          [state.kindLabel(lang), if (stateCode != null) stateName(lang, stateCode)].join(' · '),
+          color: state.public ? Palette.vermilion : null,
         ),
       for (final e in events)
         note(
@@ -1465,6 +1629,8 @@ class _MonthSummary extends ConsumerWidget {
         child: Column(
           children: [
             row(tr(ref, 'tithi'), '${_tithiLabel(lang, info)} ${_moonMark(info)}'),
+            if (shownMonthOf(ref.watch(monthSystemProvider), info) case final m?)
+              row(t3(lang, 'Month', 'मास', 'మాసం'), shownMonthLabel(lang, m)),
             row(t3(lang, 'Paksha', 'पक्ष', 'పక్షం'), _pakshaLabel(lang, info)),
             row(tr(ref, 'nakshatra'), _nakshatraLabel(lang, info)),
             row(t3(lang, 'Sunrise', 'सूर्योदय', 'సూర్యోదయం'), hhmm('${info['sunrise']}')),

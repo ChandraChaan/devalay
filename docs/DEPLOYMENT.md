@@ -34,7 +34,7 @@ Build it locally:
 
 ```bash
 cd backend && .venv/bin/python scripts/export_static.py ../_site https://chandrachaan.github.io/devalay
-cd ../app && flutter build apk --release --dart-define=STATIC_API=true \
+cd ../app && flutter build apk --release --split-debug-info=build/symbols --dart-define=STATIC_API=true \
   --dart-define=API_BASE_URL=https://chandrachaan.github.io/devalay
 ```
 
@@ -50,7 +50,8 @@ available for dates near today", re-enable **Website and static API** in the Act
    - Builds the static-mode APKs: `devalay.apk` (universal) and the per-ABI APKs, with versionCode
      `major·10000 + minor·100 + patch`.
    - Checks they are signed with the Devalay key.
-   - Publishes the release with that changelog section and `SHA256SUMS`.
+   - Uploads the Dart symbols to Crashlytics when the optional `FIREBASE_SERVICE_ACCOUNT` secret is set.
+   - Publishes the release with that changelog section, `SHA256SUMS` and `devalay-symbols.zip`.
 4. To rebuild an existing tag, run the workflow from the Actions tab with the tag as input.
 
 The release key lives outside git:
@@ -62,6 +63,42 @@ The release key lives outside git:
 `key.properties` has `storeFile=upload-keystore.jks`. **Keep an offline backup of the keystore and its password.**
 Android only installs an update when it is signed with the same key, so losing the key means users have to
 uninstall the app to update it.
+
+## 0.2 Keeping the download small
+
+Google Play sends each phone only its own slice of the App Bundle: one CPU type (ABI), one screen density and its
+languages. The `.aab` file is about 70 MB, but most of that is upload-only metadata (the R8 mapping and native
+debug symbols) that Play keeps and never sends to phones. To see the real per-phone download size:
+
+```bash
+bundletool build-apks --bundle=build/app/outputs/bundle/release/app-release.aab --output=/tmp/devalay.apks
+bundletool get-size total --apks=/tmp/devalay.apks --dimensions=ABI
+```
+
+| Play download | v1.4.0 | Now |
+|---|---|---|
+| arm64-v8a (most phones) | 16.05 MB | 14.15 MB |
+| armeabi-v7a (older phones) | 15.90 MB | 13.89 MB |
+
+What keeps it down:
+
+- **Dart symbols stay out of the app.** Release builds pass `--split-debug-info=build/symbols`. That saves about
+  0.9 MB per phone. The symbols are attached to each GitHub release as `devalay-symbols.zip`. If Crashlytics
+  shows a Dart trace as addresses, run `flutter symbolize -i trace.txt -d app.android-arm64.symbols`. We don't
+  use `--obfuscate`: the code is public, so obfuscation would only make crash traces harder to read.
+- **Slim fonts.** `app/tool/slim_fonts.sh` strips TrueType hinting (Flutter on Android never uses it) and glyph
+  names. It also cuts the two Telugu fallback fonts down to the Telugu block. Run it on any font you add (needs
+  `pip install fonttools`). Fonts went from 2.06 MB to 0.99 MB compressed. Bundle only fonts the app draws:
+  scripts other than Latin, Devanagari and Telugu use the phone's own Noto fonts.
+- **R8 and resource shrinking** are on for release (`isMinifyEnabled`, `isShrinkResources` in
+  `app/android/app/build.gradle.kts`). Keep rules live in `proguard-rules.pro`.
+- **Material and Cupertino icon fonts** are tree-shaken to the icons the code uses. Don't pass
+  `--no-tree-shake-icons`.
+- **Check new dependencies.** `flutter build appbundle --analyze-size --target-platform android-arm64` breaks
+  `libapp.so` down by package. Flutter itself is about 4 MB of the 12 MB Dart code, and the app is about 1.1 MB.
+  `timezone` stays on the full database (`latest_all`): it adds about 80 KB, and the smaller variants drop IDs
+  that Android still reports, such as `Asia/Calcutta` and `Asia/Kuala_Lumpur`.
+- **Sounds** are AAC (`.m4a`). Keep new ones short and AAC, not WAV.
 
 ## 1. Database: Neon (or any PostgreSQL 14+)
 

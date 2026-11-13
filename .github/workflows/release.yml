@@ -65,7 +65,9 @@ jobs:
           VERSION="${TAG#v}"
           IFS=. read -r MAJOR MINOR PATCH <<< "${VERSION%%-*}"
           BUILD=$(( MAJOR * 10000 + MINOR * 100 + PATCH ))
-          ARGS="--release --build-name=$VERSION --build-number=$BUILD --dart-define=STATIC_API=true --dart-define=API_BASE_URL=$PAGES_URL"
+          # --split-debug-info keeps the Dart symbols out of the app (about 0.9 MB less to download) and writes
+          # them to build/symbols. The AOT build is deterministic, so all three builds below share one set.
+          ARGS="--release --build-name=$VERSION --build-number=$BUILD --split-debug-info=build/symbols --dart-define=STATIC_API=true --dart-define=API_BASE_URL=$PAGES_URL"
           mkdir -p dist
           flutter build apk $ARGS
           cp build/app/outputs/flutter-apk/app-release.apk dist/devalay.apk
@@ -76,7 +78,26 @@ jobs:
           # The App Bundle is what Google Play takes; Play re-signs it with the Play app signing key.
           flutter build appbundle $ARGS
           cp build/app/outputs/bundle/release/app-release.aab dist/devalay-play.aab
+          # Dart symbols for this release; turn a crash trace back into file and line with `flutter symbolize`.
+          (cd build/symbols && zip -q ../../dist/devalay-symbols.zip *.symbols)
           (cd dist && sha256sum *.apk *.aab > SHA256SUMS)
+      - name: Upload Dart symbols to Crashlytics
+        # Optional: needs a FIREBASE_SERVICE_ACCOUNT secret (JSON key of a service account with the Firebase
+        # Crashlytics Admin role). Without it, Crashlytics shows Dart traces as addresses; symbolize them locally
+        # from devalay-symbols.zip.
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          if [ -z "$FIREBASE_SERVICE_ACCOUNT" ]; then
+            echo "::warning::FIREBASE_SERVICE_ACCOUNT is not set; Dart symbols are only attached to the release"
+            exit 0
+          fi
+          echo "$FIREBASE_SERVICE_ACCOUNT" > "$RUNNER_TEMP/firebase-sa.json"
+          APP_ID=$(jq -r '.client[] | select(.client_info.android_client_info.package_name == "com.chandrachaan.devalay")
+            | .client_info.mobilesdk_app_id' android/app/google-services.json)
+          GOOGLE_APPLICATION_CREDENTIALS="$RUNNER_TEMP/firebase-sa.json" \
+            npx --yes firebase-tools crashlytics:symbols:upload --app="$APP_ID" build/symbols
+          rm "$RUNNER_TEMP/firebase-sa.json"
       - name: Check the release key signed it
         # keytool only reads v1 (JAR) signatures; minSdk 24 builds are signed with v2 only
         run: |

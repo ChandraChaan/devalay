@@ -10,13 +10,16 @@ import '../core/i18n.dart';
 import '../core/names.dart';
 import '../core/location.dart';
 import '../core/models.dart';
+import '../core/muhurta.dart' show lunarMonthNames;
 import '../core/providers.dart';
+import '../core/regional.dart';
 import '../core/storage.dart';
 import '../core/telugu.dart';
 import '../core/theme.dart';
 import '../widgets/common.dart';
 import '../widgets/mandala.dart';
 import 'temples.dart';
+import 'thought.dart';
 import 'wishes.dart';
 
 class HomeScreen extends ConsumerWidget {
@@ -76,6 +79,7 @@ class _HomeBody extends ConsumerWidget {
           ),
           SliverToBoxAdapter(child: _FestivalStrip(festivals: festivals)),
         ],
+        const SliverToBoxAdapter(child: ThoughtOfDayCard()),
         if (verse != null) SliverToBoxAdapter(child: _VerseCard(verse: verse)),
         SliverToBoxAdapter(
           child: SectionHeader(tr(ref, 'featured'), action: tr(ref, 'see_all'), onAction: () => context.go('/listen')),
@@ -156,8 +160,14 @@ class _Hero extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final top = MediaQuery.paddingOf(context).top;
     final tithi = panchang['tithi'] as Map;
-    final month = panchang['lunar_month'] as Map;
     final lang = ref.watch(prefsProvider).language;
+    final amanta = panchang['lunar_month'] as Map;
+    final month = shownMonth(
+      ref.watch(monthSystemProvider),
+      amanta['index'] as int,
+      krishna: tithi['paksha'] == 'Krishna',
+      adhika: amanta['adhika'] == true,
+    );
     return Container(
       padding: EdgeInsets.fromLTRB(20, top + 12, 20, 24),
       decoration: const BoxDecoration(
@@ -192,13 +202,13 @@ class _Hero extends ConsumerWidget {
               Text(
                 lang == 'te'
                     ? '${teluguVara['${panchang['vara']}'] ?? ''} · ${teluguPaksha[tithi['paksha']] ?? ''} '
-                          '${teluguTithi[tithi['name']] ?? ''} · ${teluguMonths[month['index'] as int]} మాసం'
+                          '${teluguTithi[tithi['name']] ?? ''} · ${month.adhika ? 'అధిక ' : ''}${teluguMonths[month.index]} మాసం'
                           '${panchang['samvatsara'] is Map ? ' · ${teluguSamvatsara[(panchang['samvatsara'] as Map)['index'] as int]} నామ సంవత్సరం' : ''}'
                     : lang == 'en'
-                    ? '${panchang['vara']} · ${tithi['paksha']} ${tithi['name']} · ${month['name']}'
-                          '${month['adhika'] == true ? ' (Adhik)' : ''} · VS ${panchang['vikram_samvat']}'
+                    ? '${panchang['vara']} · ${tithi['paksha']} ${tithi['name']} · ${lunarMonthNames[month.index]}'
+                          '${month.adhika ? ' (Adhik)' : ''} · VS ${panchang['vikram_samvat']}'
                     : '${varaIn(lang, '${panchang['vara']}')} · ${pakshaIn(lang, '${tithi['paksha']}')} '
-                          '${tithiIn(lang, '${tithi['name']}')} · ${monthIn(lang, month['index'] as int)}'
+                          '${tithiIn(lang, '${tithi['name']}')} · ${shownMonthLabel(lang, month)}'
                           '${panchang['samvatsara'] is Map ? ' · ${samvatsaraIn(lang, (panchang['samvatsara'] as Map)['index'] as int, '${(panchang['samvatsara'] as Map)['name']}')}' : ''}',
                 style: const TextStyle(color: Colors.white70),
               ),

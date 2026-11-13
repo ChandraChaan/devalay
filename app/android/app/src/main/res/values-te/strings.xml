@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Home-screen widget names in the widget gallery, which follows the phone language. -->
+<resources>
+    <string name="panchang_widget_description">నేటి తిథి, నక్షత్రం, రాహు కాలం, పండుగ</string>
+    <string name="tithi_widget_label">తిథి</string>
+    <string name="tithi_widget_description">నేటి తేదీ, తిథి; పండుగ రోజుల్లో గుర్తుతో</string>
+    <string name="countdown_widget_label">పండుగ కౌంట్‌డౌన్</string>
+    <string name="countdown_widget_description">తదుపరి పెద్ద పండుగకు మిగిలిన రోజులు</string>
+    <string name="now_widget_label">చౌఘడియ, రాహు కాలం</string>
+    <string name="now_widget_description">ఇప్పటి చౌఘడియ, లేదా రాహు కాలం జరుగుతున్నప్పుడు</string>
+</resources>

@@ -92,6 +92,7 @@ flutter:
     - assets/sounds/
     - assets/images/
     - assets/data/
+  # Fonts are slimmed by tool/slim_fonts.sh (no hinting, Telugu-only fallbacks). Run it on any font you add.
   fonts:
     - family: Mukta
       fonts:
@@ -117,5 +118,3 @@ flutter:
     - family: TiroDevanagari
       fonts:
         - asset: assets/fonts/TiroDevanagariSanskrit-Regular.ttf
-        - asset: assets/fonts/TiroDevanagariSanskrit-Italic.ttf
-          style: italic

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Home-screen widget names in the widget gallery, which follows the phone language. -->
+<resources>
+    <string name="panchang_widget_description">ഇന്നത്തെ തിഥി, നക്ഷത്രം, രാഹുകാലം, ഉത്സവം</string>
+    <string name="tithi_widget_label">തിഥി</string>
+    <string name="tithi_widget_description">ഇന്നത്തെ തീയതിയും തിഥിയും, ഉത്സവ ദിവസങ്ങളിൽ അടയാളത്തോടെ</string>
+    <string name="countdown_widget_label">ഉത്സവ കൗണ്ട്ഡൗൺ</string>
+    <string name="countdown_widget_description">അടുത്ത വലിയ ഉത്സവത്തിലേക്ക് ബാക്കിയുള്ള ദിവസങ്ങൾ</string>
+    <string name="now_widget_label">ചൗഘഡിയയും രാഹുകാലവും</string>
+    <string name="now_widget_description">ഇപ്പോഴത്തെ ചൗഘഡിയ, അല്ലെങ്കിൽ നടക്കുമ്പോൾ രാഹുകാലം</string>
+</resources>

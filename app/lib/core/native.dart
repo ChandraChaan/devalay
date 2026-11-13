@@ -21,4 +21,12 @@ class NativeBridge {
       _ch.invokeMethod('setRingtone', {'path': path, 'title': title, 'type': type});
 
   static Future<int> sdkInt() async => await _ch.invokeMethod<int>('sdkInt') ?? 0;
+
+  /// The phone's approximate position for "Use my location", asking for coarse location permission
+  /// first. Throws a [PlatformException] with code DENIED, OFF or UNAVAILABLE.
+  static Future<({double lat, double lon})?> approxLocation() async {
+    final m = await _ch.invokeMapMethod<String, double>('approxLocation');
+    if (m == null || m['lat'] == null || m['lon'] == null) return null;
+    return (lat: m['lat']!, lon: m['lon']!);
+  }
 }

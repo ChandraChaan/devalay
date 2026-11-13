@@ -14,6 +14,7 @@ Usage: python scripts/export_static.py OUT_DIR BASE_URL
 
 import json
 import logging
+import multiprocessing
 import os
 import re
 import shutil
@@ -42,11 +43,12 @@ from app.db import Base, SessionLocal, engine  # noqa: E402
 from app.main import app  # noqa: E402
 from app.routers import astro  # noqa: E402
 from app.seed.loader import load_all  # noqa: E402
-from app.services import ai, gita_search, temple_updates  # noqa: E402
+from app.services import ai, eclipses, gita_search, muhurtham, temple_updates  # noqa: E402
 
 TEMPLES = ROOT.parent / "app" / "assets" / "data" / "temples.json"
 WISHES = ROOT.parent / "app" / "assets" / "data" / "wishes.json"
-CITY = re.compile(r"City\('([\w-]+)', '[^']*', '[^']*', (-?[\d.]+), (-?[\d.]+), '([^']+)'\)")
+HOLIDAYS = ROOT.parent / "app" / "assets" / "data" / "holidays.json"
+CITY = re.compile(r"City\('([\w-]+)', '[^']*', '[^']*', (-?[\d.]+), (-?[\d.]+), '([^']+)'(?:, '[A-Z]*')?\)")
 TRACK_KINDS = [None, "ringtone", "aarti", "mantra", "bhajan", "dhun", "ambient", "aarti,mantra,bhajan,chalisa,dhun,ambient"]
 HOME_DAYS = range(-2, 11)
 PANCHANG_DAYS = range(-7, 46)
@@ -86,6 +88,41 @@ def cities() -> list[tuple[str, dict]]:
     return [(cid, {"lat": lat, "lon": lon, "tz": tz}) for cid, lat, lon, tz in CITY.findall(src)]
 
 
+def export_city(job: tuple[str, dict, date, list[tuple[int, int]]]) -> int:
+    """Home, Panchang, month and festival files for one city. Runs in a worker process: a city takes
+    about 20 s and 0.6 MB, and there are hundreds of cities, so the export spreads them over the CPUs."""
+    cid, loc, today, months = job
+    real_today_in = astro.today_in
+    with TestClient(app) as client:
+        ex = Exporter(client)
+        key = {"city": cid}
+        for offset in HOME_DAYS:
+            day = today + timedelta(days=offset)
+            astro.today_in = lambda _tz, d=day: d
+            try:
+                ex.get("/home", loc, {**key, "day": day.isoformat()})
+            finally:
+                astro.today_in = real_today_in
+        for offset in PANCHANG_DAYS:
+            day = (today + timedelta(days=offset)).isoformat()
+            ex.get("/panchang", {**loc, "day": day}, {**key, "day": day})
+        for y, m in months:
+            ex.get("/panchang/month", {**loc, "year": str(y), "month": str(m)},
+                   {**key, "year": str(y), "month": str(m)})
+        for y in (today.year, today.year + 1):
+            q = {"year": str(y), "include_recurring": "true"}
+            ex.get("/festivals", {**loc, **q}, {**key, **q})
+        # Shubha Muhurtham from today to the end of next year, and this year's and next year's eclipses.
+        ex.get("/muhurtham", loc, key)
+        ex.get("/eclipses", loc, key)
+    return ex.count
+
+
+def _worker_init() -> None:
+    engine.dispose(close=False)  # never share the parent's SQLite connections across fork
+    logging.disable(logging.INFO)
+
+
 def main() -> None:
     if OUT.exists():
         shutil.rmtree(OUT / "api", ignore_errors=True)
@@ -94,7 +131,6 @@ def main() -> None:
     with SessionLocal() as db:
         load_all(db, include_books=True)
     today = date.today()
-    real_today_in = astro.today_in
 
     with TestClient(app) as client:
         ex = Exporter(client)
@@ -154,30 +190,24 @@ def main() -> None:
         # reminders work offline for both years, plus the trailing month in early January.
         months = sorted({((today.month - 1 + m) // 12 + today.year, (today.month - 1 + m) % 12 + 1)
                          for m in MONTHS_AHEAD} | {(y, m) for y in (today.year, today.year + 1) for m in range(1, 13)})
-        for cid, loc in cities():
-            key = {"city": cid}
-            for offset in HOME_DAYS:
-                day = today + timedelta(days=offset)
-                astro.today_in = lambda _tz, d=day: d
-                try:
-                    ex.get("/home", loc, {**key, "day": day.isoformat()})
-                finally:
-                    astro.today_in = real_today_in
-            for offset in PANCHANG_DAYS:
-                day = (today + timedelta(days=offset)).isoformat()
-                ex.get("/panchang", {**loc, "day": day}, {**key, "day": day})
-            for y, m in months:
-                ex.get("/panchang/month", {**loc, "year": str(y), "month": str(m)},
-                       {**key, "year": str(y), "month": str(m)})
-            for y in (today.year, today.year + 1):
-                q = {"year": str(y), "include_recurring": "true"}
-                ex.get("/festivals", {**loc, **q}, {**key, **q})
-            # Shubha Muhurtham from today to the end of next year, and this year's and next year's eclipses.
-            ex.get("/muhurtham", loc, key)
-            ex.get("/eclipses", loc, key)
 
         for page, name in (("/privacy", "privacy.html"), ("/terms", "terms.html")):
             (OUT / name).write_text(client.get(page).text)
+
+    # Per-city files, outside the client above so no event-loop thread is alive when the workers fork.
+    # The sky behind the muhurtham and eclipse lists is the same for every city: work it out once here so
+    # the forked workers inherit it instead of each recomputing it.
+    muhurtham.sky(today, date(today.year + 1, 12, 31))
+    muhurtham._special_periods(today, date(today.year + 1, 12, 31))
+    eclipses._lunar_events(date(today.year, 1, 1), date(today.year + 1, 12, 31))
+    eclipses._new_moons_near_node(date(today.year, 1, 1), date(today.year + 1, 12, 31))
+    jobs = [(cid, loc, today, months) for cid, loc in cities()]
+    workers = int(os.environ.get("DEVALAY_EXPORT_WORKERS", os.cpu_count() or 1))
+    if workers > 1:
+        with multiprocessing.get_context("fork").Pool(workers, initializer=_worker_init) as pool:
+            ex.count += sum(pool.imap_unordered(export_city, jobs))
+    else:
+        ex.count += sum(map(export_city, jobs))
 
     # Temple booking catalogue: the app bundles this file and prefers the published copy when its
     # "version" is higher, so links and dates can be corrected without an app release.
@@ -185,6 +215,8 @@ def main() -> None:
     # Festival wishes: themes, captions and ready-made wishes. Same rule: raise "version" to publish a
     # new festival or theme to installed apps.
     ex.save(static_file("/wishes"), json.loads(WISHES.read_text()))
+    # State public and RBI bank holidays, each list with its official source. Same rule: raise "version".
+    ex.save(static_file("/holidays"), json.loads(HOLIDAYS.read_text()))
     # TTD's public announcements, read once here so phones do not call the temple's servers.
     ttd_updates = static_file("/temples/ttd/updates")
     updates = temple_updates.fetch_ttd_updates(previous_url=f"{BASE_URL}/api/v1/{ttd_updates}")

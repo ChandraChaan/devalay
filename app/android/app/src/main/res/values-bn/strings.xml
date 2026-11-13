@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Home-screen widget names in the widget gallery, which follows the phone language. -->
+<resources>
+    <string name="panchang_widget_description">আজকের তিথি, নক্ষত্র, রাহু কাল ও উৎসব</string>
+    <string name="tithi_widget_label">তিথি</string>
+    <string name="tithi_widget_description">আজকের তারিখ ও তিথি, উৎসবের দিনে চিহ্নসহ</string>
+    <string name="countdown_widget_label">উৎসবের কাউন্টডাউন</string>
+    <string name="countdown_widget_description">পরের বড় উৎসব পর্যন্ত বাকি দিন</string>
+    <string name="now_widget_label">চৌঘড়িয়া ও রাহু কাল</string>
+    <string name="now_widget_description">এখনকার চৌঘড়িয়া, বা চলাকালীন রাহু কাল</string>
+</resources>

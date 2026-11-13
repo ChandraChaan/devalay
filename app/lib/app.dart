@@ -12,6 +12,7 @@ import 'core/models.dart';
 import 'core/storage.dart';
 import 'core/theme.dart';
 import 'features/ask_gita.dart';
+import 'features/backup.dart';
 import 'features/bhakti_videos.dart';
 import 'features/auth_screens.dart';
 import 'features/books.dart';
@@ -30,6 +31,7 @@ import 'features/onboarding.dart';
 import 'features/calendar.dart';
 import 'features/panchang.dart';
 import 'features/player.dart';
+import 'features/pooja.dart';
 import 'features/premium.dart';
 import 'features/jatakam.dart';
 import 'features/rashifal.dart';
@@ -128,6 +130,11 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: '/muhurtham',
         builder: (_, s) => ShubhaMuhurthamScreen(kind: s.uri.queryParameters['kind']),
       ),
+      GoRoute(path: '/pooja', builder: (_, _) => const PoojaGuidesScreen()),
+      GoRoute(
+        path: '/pooja/:id',
+        builder: (_, s) => PoojaGuideScreen(id: s.pathParameters['id']!),
+      ),
       GoRoute(
         path: '/calendar/day/:date',
         builder: (_, s) =>
@@ -155,6 +162,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/favorites', builder: (_, _) => const FavoritesScreen()),
       GoRoute(path: '/downloads', builder: (_, _) => const DownloadsScreen()),
       GoRoute(path: '/settings', builder: (_, _) => const SettingsScreen()),
+      GoRoute(path: '/backup', builder: (_, _) => const BackupScreen()),
       GoRoute(path: '/login', builder: (_, _) => const LoginScreen()),
       GoRoute(path: '/premium', builder: (_, _) => const PremiumScreen()),
       GoRoute(path: '/credits', builder: (_, _) => const CreditsScreen()),

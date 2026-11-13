@@ -1,6 +1,16 @@
 package com.chandrachaan.devalay
 
+import android.Manifest
+import android.annotation.SuppressLint
 import android.app.WallpaperManager
+import android.content.Context
+import android.content.pm.PackageManager
+import android.location.Location
+import android.location.LocationListener
+import android.location.LocationManager
+import android.os.CancellationSignal
+import android.os.Handler
+import android.os.Looper
 import android.content.ContentValues
 import android.content.Intent
 import android.graphics.BitmapFactory
@@ -15,6 +25,7 @@ import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
 import java.io.File
 import java.util.concurrent.Executors
+import java.util.concurrent.atomic.AtomicBoolean
 
 /**
  * Hosts Flutter (via AudioServiceActivity for background playback) and exposes
@@ -25,6 +36,7 @@ class MainActivity : AudioServiceActivity() {
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
+        flutterEngine.plugins.add(PortabilityPlugin())
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "devalay/system").setMethodCallHandler { call, result ->
             when (call.method) {
                 "sdkInt" -> result.success(Build.VERSION.SDK_INT)
@@ -45,8 +57,87 @@ class MainActivity : AudioServiceActivity() {
                         call.argument<String>("type") ?: "ringtone")
                     null
                 }
+                "approxLocation" -> approxLocation(result)
                 else -> result.notImplemented()
             }
+        }
+    }
+
+    // "Use my location": coarse, foreground-only, asked for when the user taps it. The position is
+    // handed to Flutter to pick the nearest city and is never stored or sent anywhere.
+    private var pendingLocation: MethodChannel.Result? = null
+
+    private fun approxLocation(result: MethodChannel.Result) {
+        if (checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            readLocation(result)
+            return
+        }
+        pendingLocation?.error("CANCELLED", "Superseded", null)
+        pendingLocation = result
+        requestPermissions(arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION), LOCATION_REQUEST)
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode != LOCATION_REQUEST) return
+        val result = pendingLocation ?: return
+        pendingLocation = null
+        if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            readLocation(result)
+        } else {
+            result.error("DENIED", "Location permission denied", null)
+        }
+    }
+
+    @SuppressLint("MissingPermission")
+    private fun readLocation(result: MethodChannel.Result) {
+        val manager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        val providers = listOf(LocationManager.NETWORK_PROVIDER, LocationManager.GPS_PROVIDER)
+            .filter { runCatching { manager.isProviderEnabled(it) }.getOrDefault(false) }
+        if (providers.isEmpty()) {
+            result.error("OFF", "Location is turned off", null)
+            return
+        }
+        val answered = AtomicBoolean(false)
+        fun answer(location: Location?) {
+            if (!answered.compareAndSet(false, true)) return
+            if (location == null) {
+                result.error("UNAVAILABLE", "No location fix", null)
+            } else {
+                result.success(mapOf("lat" to location.latitude, "lon" to location.longitude))
+            }
+        }
+        val recent = (providers + LocationManager.PASSIVE_PROVIDER)
+            .mapNotNull { runCatching { manager.getLastKnownLocation(it) }.getOrNull() }
+            .maxByOrNull { it.time }
+        // A fix from the last few minutes is still where the user is; an older one may be the city they
+        // travelled from, so ask for a fresh fix and keep the old one only as the fallback.
+        if (recent != null && System.currentTimeMillis() - recent.time < 15 * 60 * 1000L) {
+            answer(recent)
+            return
+        }
+        val fused = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S &&
+            runCatching { manager.isProviderEnabled(LocationManager.FUSED_PROVIDER) }.getOrDefault(false)
+        val provider = if (fused) LocationManager.FUSED_PROVIDER else providers.first()
+        val main = Handler(Looper.getMainLooper())
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            val cancel = CancellationSignal()
+            main.postDelayed({ cancel.cancel(); answer(recent) }, 20_000)
+            manager.getCurrentLocation(provider, cancel, mainExecutor) { answer(it ?: recent) }
+        } else {
+            val listener = object : LocationListener {
+                override fun onLocationChanged(location: Location) {
+                    manager.removeUpdates(this)
+                    answer(location)
+                }
+
+                @Deprecated("Deprecated in Java")
+                override fun onStatusChanged(provider: String?, status: Int, extras: android.os.Bundle?) {}
+                override fun onProviderEnabled(provider: String) {}
+                override fun onProviderDisabled(provider: String) {}
+            }
+            main.postDelayed({ manager.removeUpdates(listener); answer(recent) }, 20_000)
+            manager.requestLocationUpdates(provider, 0L, 0f, listener, Looper.getMainLooper())
         }
     }
 
@@ -135,5 +226,9 @@ class MainActivity : AudioServiceActivity() {
                 ?: throw IllegalStateException("Could not add sound")
         }
         RingtoneManager.setActualDefaultRingtoneUri(this, ringType, uri)
+    }
+
+    private companion object {
+        const val LOCATION_REQUEST = 4107
     }
 }

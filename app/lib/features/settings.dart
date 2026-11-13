@@ -18,6 +18,7 @@ import '../core/theme.dart';
 import '../widgets/city_picker.dart';
 import '../widgets/language_picker.dart';
 import '../widgets/common.dart';
+import 'calendar_settings.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -136,6 +137,12 @@ class SettingsScreen extends ConsumerWidget {
             subtitle: Text(city.label(lang)),
             onTap: () => showCityPicker(context, ref),
           ),
+          ListTile(
+            leading: const Icon(Icons.calendar_month_rounded),
+            title: Text(tr(ref, 'calendar')),
+            subtitle: Text(calendarSettingsSummary(ref)),
+            onTap: () => showCalendarSettings(context),
+          ),
           _Header(t3(lang, 'Reminders', 'सूचनाएँ', 'రిమైండర్లు')),
           SwitchListTile(
             secondary: const Icon(Icons.alarm_rounded),
@@ -195,6 +202,19 @@ class SettingsScreen extends ConsumerWidget {
               await n.set('panchang_minute', t.minute);
               await refreshPanchangNotifications(ref);
             },
+          ),
+          ListTile(
+            leading: const Icon(Icons.settings_backup_restore_rounded),
+            title: Text(t3(lang, 'Backup & export', 'बैकअप और एक्सपोर्ट', 'బ్యాకప్ & ఎక్స్‌పోర్ట్')),
+            subtitle: Text(
+              t3(
+                lang,
+                'Backup file, calendar export, birthdays from contacts',
+                'बैकअप फ़ाइल, कैलेंडर एक्सपोर्ट, संपर्कों से जन्मदिन',
+                'బ్యాకప్ ఫైల్, క్యాలెండర్ ఎక్స్‌పోర్ట్, కాంటాక్ట్‌ల నుండి పుట్టినరోజులు',
+              ),
+            ),
+            onTap: () => context.push('/backup'),
           ),
           _Header(t3(lang, 'About', 'जानकारी', 'గురించి')),
           ListTile(

@@ -10,6 +10,7 @@ import 'muhurta.dart';
 import 'names.dart';
 import 'notifications.dart';
 import 'providers.dart';
+import 'regional.dart';
 import 'storage.dart';
 
 /// Lays out the calendar's on-device alarms: the morning Panchang message for the coming
@@ -89,12 +90,12 @@ Future<void> refreshPanchangNotifications(WidgetRef ref) async {
       ? '🪔 ${major.map((f) => f.label(lang)).join(' · ')} · $weekday'
       : '🌅 ${t3(lang, "Today's Panchang", 'आज का पंचांग', 'నేటి పంచాంగం')} · $weekday, $date';
 
-  final month = s['lunar_month'] as int?;
+  final month = shownMonthOf(monthSystemFor(lang), s);
   final tithi = s['tithi_index'] as int?;
   final nakshatra = '${s['nakshatra']}';
   final starIndex = nakshatraNames.indexOf(nakshatra);
   final lines = <String>[
-    [if (month != null) lunarMonthLabel(lang, month), if (tithi != null) tithiName(lang, tithi)].join(' '),
+    [if (month != null) shownMonthLabel(lang, month), if (tithi != null) tithiName(lang, tithi)].join(' '),
     '${t3(lang, 'Nakshatra', 'नक्षत्र', 'నక్షత్రం')}: ${nakshatraIn(lang, nakshatra)}',
   ];
   if (s['sunset'] != null) {

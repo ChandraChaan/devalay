@@ -5,6 +5,56 @@ v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the 
 
 ## Unreleased
 
+- Smaller download: Google Play now sends about 14.2 MB to most phones (arm64) instead of 16.1 MB, and 13.9 MB
+  instead of 15.9 MB to older 32-bit phones. Nothing is removed: every language, the Mandir sounds and the
+  offline Panchang stay the same.
+  - The bundled fonts are about half the size. They no longer carry hinting, which Android doesn't use, and the
+    Telugu fallback fonts keep only Telugu letters. An italic Sanskrit font that nothing used is gone.
+  - Release builds keep the Dart debug symbols out of the app. They are attached to each release as
+    `devalay-symbols.zip` and, when the `FIREBASE_SERVICE_ACCOUNT` secret is set, uploaded to Crashlytics.
+- Thought of the day: a short verse on Home from your own language's classics, with its meaning in your language
+  and in English, and a link to its source. Vemana and Sumathi Satakam (Telugu), Thirukkural (Tamil), Sarvajna
+  (Kannada), Tukaram (Marathi), Kabir (Hindi), Narsinh Mehta (Gujarati), Tagore (Bengali), Jagannath Das (Odia),
+  Baba Farid and Bulleh Shah (Punjabi), Poonthanam and Sree Narayana Guru (Malayalam), and Sanskrit subhashitas
+  for English. About 60 per language, one a day. Every verse was copied from a public-domain edition and checked
+  against it (`tool/thoughts/verify.py`). Share any verse as a status image.
+- Read the Panchang aloud: a speaker button on the Panchang and on each calendar day reads the weekday, tithi,
+  nakshatra, sunrise and sunset, Rahu Kalam, festivals and your own events in the app language, with the
+  phone's own voice. If the phone has no voice for your language it reads in English and explains how to add one.
+- Pooja guides: step-by-step vidhanam for daily puja, Satyanarayana Vratam, Varalakshmi Vratam, Vinayaka Chavithi,
+  Diwali Lakshmi Puja, Maha Shivaratri, and the Ekadashi and Pradosham vratas. Each has a samagri checklist that
+  remembers what you have ready, the steps in order, and the mantras in your own script. Find them in More, or
+  from the festival on its calendar day. All 11 languages.
+- Home-screen widgets: a small 2×1 Tithi widget (date, tithi and a mark on festival and family days), a Festival
+  countdown (days left to the next major festival, with the two after it), and Choghadiya & Rahu Kalam (the
+  running Choghadiya, or Rahu Kalam while it is on, redrawn at each change without waking the phone). All are
+  resizable, show previews in the widget gallery, stay in your language and open the matching screen when tapped.
+- Backup & export (Settings, or the menu in My events): save or share a backup file of your days, birth star,
+  rashi, city, language and reminder settings, and restore it on a new phone. Days are merged by id, so nothing
+  already on the phone is lost. No account and no server; the app suggests a backup after a few changes.
+- Export to calendar: an .ics file of a year's festivals and your days for Google Calendar or any calendar app.
+  Date-based days repeat yearly; tithi days are listed for this year and next. "Add to calendar" on a festival or
+  one of your days opens the phone's calendar app with it filled in.
+- Import birthdays from contacts: after a clear explanation and Android's Contacts permission, pick which
+  birthdays and anniversaries to add to My events. Only those dates and names are read, and nothing leaves the
+  phone.
+- Solar calendars: the Tamil (Aippasi 27, with the year's name), Malayalam (Kollam era), Bengali (Bangabda) and
+  Odia solar dates in the calendar cells, the month header, the selected day and the day page. They show by
+  themselves in Tamil, Malayalam, Bengali and Odia; anyone can turn one on in Settings › Calendar. Each region's
+  rule for the first day of a month is followed (Tamil: sunset, Malayalam: three-fifths of the day, Bengali:
+  midnight, Odia: Hindu midnight), checked against Drik Panchang for every month of 2026.
+- Amanta or Purnimanta: North Indian month names, where the dark fortnight takes the next month's name, for the
+  month header, day page, home screen, morning notification, widget and tithi events. Purnimanta is the default
+  in Hindi and Punjabi, Amanta elsewhere; change it in Settings › Calendar. Festivals stay on the same days.
+- State holidays: public holidays from each state government's order and bank holidays from RBI for 2026 (and
+  2027 where already published), marked on the calendar and listed in Important days with their sources. The
+  state follows your city, or pick one in Settings › Calendar. The lists are published with the website, so a
+  corrected date reaches the app without an update.
+- Use my location: one tap in the city picker finds the nearest city from your approximate location. It asks only
+  when you tap it, uses the location once on the phone and never tracks you.
+- 263 more cities: every district headquarters in Andhra Pradesh, Telangana, Karnataka, Tamil Nadu, Kerala and
+  Maharashtra, the main cities of the other states, and Indian communities abroad (the Gulf, Malaysia, Africa,
+  Mauritius, Fiji, the Caribbean, Europe, North America, Australia and New Zealand).
 - Shubha Muhurtham: good days from today to the end of next year for marriage (Vivaham), house warming (Griha
   Pravesham) and buying a vehicle, for your city, with the good time window of each day (Rahu Kalam left out)
   and the best lagna in it. Dates follow Muhurta Chintamani as Drik Panchang summarises it: solar and lunar

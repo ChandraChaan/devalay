@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="panchang_widget_description">Today\'s tithi, nakshatra, Rahu Kalam and festival</string>
+    <string name="tithi_widget_label">Tithi</string>
+    <string name="tithi_widget_description">Today\'s date and tithi, with a mark on festival days</string>
+    <string name="countdown_widget_label">Festival countdown</string>
+    <string name="countdown_widget_description">Days left to the next major festival</string>
+    <string name="now_widget_label">Choghadiya and Rahu Kalam</string>
+    <string name="now_widget_description">The running Choghadiya, or Rahu Kalam while it is on</string>
 </resources>

@@ -275,6 +275,15 @@ def main():
         json.dumps(sorted(content.values(), key=lambda e: (e["where"], e["en"])), ensure_ascii=False, indent=1))
     print(f"{len(content)} content strings -> tool/l10n/strings_content.json")
 
+    # Pooja guides (lib/l10n/<code>_pooja.dart), kept apart from the wishes and temples.
+    seen = content
+    content = {}
+    walk(json.loads((APP / "assets/data/pooja_guides.json").read_text()), "pooja_guides.json")
+    content = {k: v for k, v in content.items() if k not in seen}
+    (OUT.parent / "strings_pooja.json").write_text(
+        json.dumps(sorted(content.values(), key=lambda e: e["en"]), ensure_ascii=False, indent=1))
+    print(f"{len(content)} pooja guide strings -> tool/l10n/strings_pooja.json")
+
     out = sorted(entries.values(), key=lambda e: (e["where"], e["en"]))
     OUT.write_text(json.dumps(out, ensure_ascii=False, indent=1))
     print(f"{len(out)} strings -> {OUT.relative_to(APP)}")

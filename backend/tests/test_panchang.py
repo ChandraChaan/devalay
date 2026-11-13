@@ -143,3 +143,44 @@ def test_moonrise_and_moonset_hyderabad():
 
     assert p["moonset"].startswith("2026-11-03") and abs(hm(p["moonset"]) - hm("2026-11-03T13:43")) <= 6
     assert p["moonrise"].startswith("2026-11-04") and abs(hm(p["moonrise"]) - hm("2026-11-04T01:50")) <= 6
+
+
+# Day 1 of each solar month in 2026, Makara (Jan) to Dhanu (Dec), from Drik Panchang's regional month
+# calendars for the city each calendar is read in (research notes in the PR).
+DRIK_SOLAR_2026 = {
+    "ta": (Location(13.08, 80.27), [
+        "01-14", "02-13", "03-15", "04-14", "05-15", "06-15", "07-17", "08-17", "09-17", "10-18", "11-17", "12-16"]),
+    "ml": (Location(9.93, 76.27), [
+        "01-15", "02-13", "03-15", "04-14", "05-15", "06-15", "07-17", "08-17", "09-17", "10-18", "11-17", "12-16"]),
+    "bn": (Location(22.57, 88.36), [
+        "01-15", "02-14", "03-16", "04-15", "05-16", "06-16", "07-17", "08-18", "09-18", "10-18", "11-17", "12-17"]),
+    "or": (Location(20.26, 85.84), [
+        "01-14", "02-13", "03-15", "04-14", "05-15", "06-15", "07-17", "08-17", "09-17", "10-17", "11-16", "12-16"]),
+}
+
+
+@pytest.mark.parametrize("calendar", sorted(DRIK_SOLAR_2026))
+def test_solar_months_match_drik_2026(calendar):
+    loc, starts = DRIK_SOLAR_2026[calendar]
+    days = panchang.solar_dates(loc, date(2026, 1, 1), 365)
+    jan1 = date(2026, 1, 1).toordinal()
+    got = [date.fromordinal(jan1 + i).strftime("%m-%d") for i, d in enumerate(days) if d[calendar][1] == 1]
+    assert got == starts
+    # Month 0 is Mesha: Makara (9) begins the year and Dhanu (8) ends it.
+    signs = [d[calendar][0] for d in days if d[calendar][1] == 1]
+    assert signs == [9, 10, 11, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+
+
+def test_solar_dates_in_month_summary():
+    # 13 Nov 2026 in Chennai is Aippasi 27 (Tamil month 6 = Tula).
+    day = panchang.month_sunrise_tithis(Location(13.08, 80.27), date(2026, 11, 13), 1)[0]
+    assert day["solar"]["ta"] == [6, 27]
+    assert set(day["solar"]) == {"ta", "ml", "bn", "or"}
+
+
+def test_odia_rule_keeps_late_evening_sankranti_on_same_day():
+    # Vrishchika 2026 enters at about 19:48 IST on 16 Nov: Odia Margashira 1 that day, Tamil the next.
+    loc = Location(20.26, 85.84)
+    d = panchang.solar_dates(loc, date(2026, 11, 16), 2)
+    assert d[0]["or"] == [7, 1]
+    assert d[0]["ta"][0] == 6 and d[1]["ta"] == [7, 1]
