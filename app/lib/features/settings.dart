@@ -196,6 +196,19 @@ class SettingsScreen extends ConsumerWidget {
               await refreshPanchangNotifications(ref);
             },
           ),
+          ListTile(
+            leading: const Icon(Icons.settings_backup_restore_rounded),
+            title: Text(t3(lang, 'Backup & export', 'बैकअप और एक्सपोर्ट', 'బ్యాకప్ & ఎక్స్‌పోర్ట్')),
+            subtitle: Text(
+              t3(
+                lang,
+                'Backup file, calendar export, birthdays from contacts',
+                'बैकअप फ़ाइल, कैलेंडर एक्सपोर्ट, संपर्कों से जन्मदिन',
+                'బ్యాకప్ ఫైల్, క్యాలెండర్ ఎక్స్‌పోర్ట్, కాంటాక్ట్‌ల నుండి పుట్టినరోజులు',
+              ),
+            ),
+            onTap: () => context.push('/backup'),
+          ),
           _Header(t3(lang, 'About', 'जानकारी', 'గురించి')),
           ListTile(
             leading: const Icon(Icons.star_rate_rounded),

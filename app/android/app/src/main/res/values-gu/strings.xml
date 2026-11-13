@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Home-screen widget names in the widget gallery, which follows the phone language. -->
+<resources>
+    <string name="panchang_widget_description">આજની તિથિ, નક્ષત્ર, રાહુ કાળ અને તહેવાર</string>
+    <string name="tithi_widget_label">તિથિ</string>
+    <string name="tithi_widget_description">આજની તારીખ અને તિથિ, તહેવારના દિવસે નિશાની સાથે</string>
+    <string name="countdown_widget_label">તહેવાર કાઉન્ટડાઉન</string>
+    <string name="countdown_widget_description">આગામી મોટા તહેવારને બાકી દિવસો</string>
+    <string name="now_widget_label">ચોઘડિયા અને રાહુ કાળ</string>
+    <string name="now_widget_description">હાલનું ચોઘડિયું, અથવા ચાલુ હોય ત્યારે રાહુ કાળ</string>
+</resources>

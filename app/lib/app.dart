@@ -12,6 +12,7 @@ import 'core/models.dart';
 import 'core/storage.dart';
 import 'core/theme.dart';
 import 'features/ask_gita.dart';
+import 'features/backup.dart';
 import 'features/bhakti_videos.dart';
 import 'features/auth_screens.dart';
 import 'features/books.dart';
@@ -154,6 +155,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/favorites', builder: (_, _) => const FavoritesScreen()),
       GoRoute(path: '/downloads', builder: (_, _) => const DownloadsScreen()),
       GoRoute(path: '/settings', builder: (_, _) => const SettingsScreen()),
+      GoRoute(path: '/backup', builder: (_, _) => const BackupScreen()),
       GoRoute(path: '/login', builder: (_, _) => const LoginScreen()),
       GoRoute(path: '/premium', builder: (_, _) => const PremiumScreen()),
       GoRoute(path: '/credits', builder: (_, _) => const CreditsScreen()),

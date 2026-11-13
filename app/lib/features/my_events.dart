@@ -11,10 +11,12 @@ import '../core/i18n.dart';
 import '../core/muhurta.dart';
 import '../core/names.dart';
 import '../core/notifications.dart';
+import '../core/portability.dart';
 import '../core/providers.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
 import '../widgets/common.dart';
+import 'backup.dart';
 
 String _fmtDate(String lang, DateTime d) => fmtDate(lang, 'EEE, d MMM y', d);
 
@@ -174,6 +176,7 @@ class _EventEditorState extends ConsumerState<_EventEditor> {
       lunarMonth: _repeat == EventRepeat.tithi ? _month : null,
       remind: _remind,
     );
+    await noteEventChange();
     await ref.read(eventsProvider.notifier).save(e);
     final now = DateTime.now();
     final tithi = e.repeat == EventRepeat.tithi;
@@ -186,6 +189,7 @@ class _EventEditorState extends ConsumerState<_EventEditor> {
     if (!mounted) return;
     final next = nextOccurrence(e, now, thisYear, nextYear);
     Navigator.of(context).pop();
+    if (suggestBackupIfDue(context, lang)) return;
     toast(
       context,
       next == null
@@ -209,6 +213,7 @@ class _EventEditorState extends ConsumerState<_EventEditor> {
     );
     if (ok != true) return;
     await Notifications.cancelEvent(widget.existing!.id);
+    await noteEventChange();
     await ref.read(eventsProvider.notifier).remove(widget.existing!.id);
     if (mounted) Navigator.of(context).pop();
   }
@@ -249,6 +254,12 @@ class _EventEditorState extends ConsumerState<_EventEditor> {
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w700),
                   ),
                 ),
+                if (widget.existing case final e?)
+                  IconButton(
+                    tooltip: t3(lang, 'Add to calendar', 'कैलेंडर में जोड़ें', 'క్యాలెండర్‌లో జోడించు'),
+                    onPressed: () => addEventToCalendar(context, lang, e, next: next),
+                    icon: const Icon(Icons.event_available_rounded),
+                  ),
               ],
             ),
             const SizedBox(height: 16),
@@ -497,7 +508,38 @@ class MyEventsScreen extends ConsumerWidget {
     );
 
     return Scaffold(
-      appBar: AppBar(title: Text(t3(lang, 'My events', 'मेरे दिन', 'నా రోజులు'))),
+      appBar: AppBar(
+        title: Text(t3(lang, 'My events', 'मेरे दिन', 'నా రోజులు')),
+        actions: [
+          PopupMenuButton<String>(
+            onSelected: (v) async {
+              if (v == 'backup') {
+                context.push('/backup');
+              } else if (await showContactsDisclosure(context, lang) && context.mounted) {
+                Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => const ContactImportScreen()));
+              }
+            },
+            itemBuilder: (_) => [
+              PopupMenuItem(
+                value: 'contacts',
+                child: ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  leading: const Icon(Icons.cake_rounded),
+                  title: Text(t3(lang, 'Import from contacts', 'संपर्कों से लाएँ', 'కాంటాక్ట్‌ల నుండి తీసుకురండి')),
+                ),
+              ),
+              PopupMenuItem(
+                value: 'backup',
+                child: ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  leading: const Icon(Icons.settings_backup_restore_rounded),
+                  title: Text(t3(lang, 'Backup & export', 'बैकअप और एक्सपोर्ट', 'బ్యాకప్ & ఎక్స్‌పోర్ట్')),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
       floatingActionButton: rows.isEmpty
           ? null
           : FloatingActionButton.extended(
@@ -511,6 +553,25 @@ class MyEventsScreen extends ConsumerWidget {
           if (rows.isEmpty) intro,
           if (rows.isNotEmpty && rows.first.$2 != null)
             _NextUp(event: rows.first.$1, on: rows.first.$2!, today: today, lang: lang),
+          if (rows.isNotEmpty && unsavedEventChanges >= 3)
+            Card(
+              margin: const EdgeInsets.only(top: 12),
+              child: ListTile(
+                leading: const Icon(Icons.cloud_off_rounded),
+                title: Text(
+                  t3(
+                    lang,
+                    'Changes since last backup: $unsavedEventChanges',
+                    'पिछले बैकअप के बाद बदलाव: $unsavedEventChanges',
+                    'చివరి బ్యాకప్ తర్వాత మార్పులు: $unsavedEventChanges',
+                  ),
+                ),
+                trailing: TextButton(
+                  onPressed: () => context.push('/backup'),
+                  child: Text(t3(lang, 'Back up', 'बैकअप लें', 'బ్యాకప్')),
+                ),
+              ),
+            ),
           if (rows.isNotEmpty) SectionHeader(t3(lang, 'All my days', 'मेरे सभी दिन', 'నా అన్ని రోజులు')),
           for (final (i, (e, next)) in rows.indexed)
             Card(

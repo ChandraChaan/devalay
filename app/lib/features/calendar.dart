@@ -25,6 +25,7 @@ import '../core/wishes.dart';
 import '../widgets/city_picker.dart';
 import '../widgets/common.dart';
 import '../widgets/read_aloud_button.dart';
+import 'backup.dart';
 import 'my_events.dart';
 import 'panchang.dart';
 
@@ -1338,6 +1339,12 @@ class _DayPage extends ConsumerWidget {
                           icon: const Icon(Icons.menu_book_rounded),
                           label: Text(t3(lang, 'How to do the puja', 'पूजा विधि देखें', 'పూజా విధానం చూడండి')),
                         ),
+                      TextButton.icon(
+                        style: TextButton.styleFrom(padding: EdgeInsets.zero),
+                        onPressed: () => addFestivalToCalendar(context, lang, f),
+                        icon: const Icon(Icons.event_available_rounded),
+                        label: Text(t3(lang, 'Add to calendar', 'कैलेंडर में जोड़ें', 'క్యాలెండర్‌లో జోడించు')),
+                      ),
                     ],
                   ),
                 ),
