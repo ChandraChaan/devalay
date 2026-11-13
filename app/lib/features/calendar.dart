@@ -22,6 +22,7 @@ import '../core/theme.dart';
 import '../core/wishes.dart';
 import '../widgets/city_picker.dart';
 import '../widgets/common.dart';
+import 'backup.dart';
 import 'my_events.dart';
 import 'panchang.dart';
 
@@ -1318,6 +1319,12 @@ class _DayPage extends ConsumerWidget {
                             label: Text(t3(lang, 'Send wishes', 'शुभकामनाएँ भेजें', 'శుభాకాంక్షలు పంపండి')),
                           ),
                         ),
+                      TextButton.icon(
+                        style: TextButton.styleFrom(padding: EdgeInsets.zero),
+                        onPressed: () => addFestivalToCalendar(context, lang, f),
+                        icon: const Icon(Icons.event_available_rounded),
+                        label: Text(t3(lang, 'Add to calendar', 'कैलेंडर में जोड़ें', 'క్యాలెండర్‌లో జోడించు')),
+                      ),
                     ],
                   ),
                 ),

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Home-screen widget names in the widget gallery, which follows the phone language. -->
+<resources>
+    <string name="panchang_widget_description">ਅੱਜ ਦੀ ਤਿਥੀ, ਨਕਸ਼ੱਤਰ, ਰਾਹੂ ਕਾਲ ਅਤੇ ਤਿਉਹਾਰ</string>
+    <string name="tithi_widget_label">ਤਿਥੀ</string>
+    <string name="tithi_widget_description">ਅੱਜ ਦੀ ਤਾਰੀਖ ਅਤੇ ਤਿਥੀ, ਤਿਉਹਾਰ ਦੇ ਦਿਨ ਨਿਸ਼ਾਨ ਨਾਲ</string>
+    <string name="countdown_widget_label">ਤਿਉਹਾਰ ਕਾਊਂਟਡਾਊਨ</string>
+    <string name="countdown_widget_description">ਅਗਲੇ ਵੱਡੇ ਤਿਉਹਾਰ ਤੱਕ ਬਾਕੀ ਦਿਨ</string>
+    <string name="now_widget_label">ਚੌਘੜੀਆ ਅਤੇ ਰਾਹੂ ਕਾਲ</string>
+    <string name="now_widget_description">ਹੁਣ ਦਾ ਚੌਘੜੀਆ, ਜਾਂ ਚੱਲਦੇ ਸਮੇਂ ਰਾਹੂ ਕਾਲ</string>
+</resources>

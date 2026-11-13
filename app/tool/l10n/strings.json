@@ -834,12 +834,6 @@
   "where": "i18n"
  },
  {
-  "en": "Calendar",
-  "hi": "कैलेंडर",
-  "te": "క్యాలెండర్",
-  "where": "i18n"
- },
- {
   "en": "Chalisa",
   "hi": "चालीसा",
   "te": "చాలీసా",
@@ -1272,9 +1266,45 @@
   "where": "lib/core/glossary.dart"
  },
  {
+  "en": "Choghadiya now",
+  "hi": "अभी का चौघड़िया",
+  "te": "ఇప్పటి చౌఘడియ",
+  "where": "lib/core/home_widget_sync.dart"
+ },
+ {
+  "en": "In {0} days",
+  "hi": "{0} दिन बाकी",
+  "te": "{0} రోజుల్లో",
+  "where": "lib/core/home_widget_sync.dart"
+ },
+ {
+  "en": "Next festival",
+  "hi": "अगला त्योहार",
+  "te": "తదుపరి పండుగ",
+  "where": "lib/core/home_widget_sync.dart"
+ },
+ {
   "en": "Open Devalay to load today's Panchang",
   "hi": "आज का पंचांग देखने के लिए देवालय खोलें",
   "te": "నేటి పంచాంగం కోసం దేవాలయం తెరవండి",
+  "where": "lib/core/home_widget_sync.dart"
+ },
+ {
+  "en": "Rahu Kalam is over for today",
+  "hi": "आज का राहु काल बीत गया",
+  "te": "నేటి రాహు కాలం ముగిసింది",
+  "where": "lib/core/home_widget_sync.dart"
+ },
+ {
+  "en": "Rahu Kalam now",
+  "hi": "अभी राहु काल",
+  "te": "ఇప్పుడు రాహు కాలం",
+  "where": "lib/core/home_widget_sync.dart"
+ },
+ {
+  "en": "until {0}",
+  "hi": "{0} तक",
+  "te": "{0} వరకు",
   "where": "lib/core/home_widget_sync.dart"
  },
  {
@@ -1626,10 +1656,322 @@
   "where": "lib/core/notifications.dart"
  },
  {
+  "en": "Festival",
+  "hi": "त्योहार",
+  "te": "పండుగ",
+  "where": "lib/core/portability.dart"
+ },
+ {
   "en": "Ask the Gita…",
   "hi": "गीता से पूछें…",
   "te": "గీతను అడగండి…",
   "where": "lib/features/ask_gita.dart"
+ },
+ {
+  "en": "Added {0} days",
+  "hi": "{0} दिन जोड़े गए",
+  "te": "{0} రోజులు చేర్చాం",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Adds your saved days and settings back",
+  "hi": "सहेजे गए दिन और सेटिंग वापस जोड़ता है",
+  "te": "దాచిన రోజులు, సెట్టింగ్‌లను మళ్ళీ చేర్చుతుంది",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Already added",
+  "hi": "पहले से जोड़ा",
+  "te": "ఇప్పటికే చేర్చారు",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Back up",
+  "hi": "बैकअप लें",
+  "te": "బ్యాకప్",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Back up your days so a new phone keeps them.",
+  "hi": "अपने दिनों का बैकअप लें ताकि नया फ़ोन उन्हें रखे।",
+  "te": "కొత్త ఫోన్‌లోనూ ఉండేలా మీ రోజులను బ్యాకప్ చేయండి.",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Backup",
+  "hi": "बैकअप",
+  "te": "బ్యాకప్",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Backup & export",
+  "hi": "बैकअप और एक्सपोर्ट",
+  "te": "బ్యాకప్ & ఎక్స్‌పోర్ట్",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Backup saved",
+  "hi": "बैकअप सहेजा गया",
+  "te": "బ్యాకప్ సేవ్ అయింది",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Birthdays and anniversaries saved in your contacts",
+  "hi": "आपके संपर्कों में सहेजे जन्मदिन और सालगिरह",
+  "te": "మీ కాంటాక్ట్‌లలో ఉన్న పుట్టినరోజులు, వివాహ వార్షికోత్సవాలు",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Calendar",
+  "hi": "कैलेंडर",
+  "te": "క్యాలెండర్",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Calendar file saved",
+  "hi": "कैलेंडर फ़ाइल सहेजी गई",
+  "te": "క్యాలెండర్ ఫైల్ సేవ్ అయింది",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Cancel",
+  "hi": "रद्द करें",
+  "te": "రద్దు",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Changes since last backup: {0}",
+  "hi": "पिछले बैकअप के बाद बदलाव: {0}",
+  "te": "చివరి బ్యాకప్ తర్వాత మార్పులు: {0}",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Contacts",
+  "hi": "संपर्क",
+  "te": "కాంటాక్ట్‌లు",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Contacts access",
+  "hi": "संपर्कों तक पहुँच",
+  "te": "కాంటాక్ట్‌ల యాక్సెస్",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Contacts permission was not given. Nothing was read.",
+  "hi": "संपर्क अनुमति नहीं मिली। कुछ भी नहीं पढ़ा गया।",
+  "te": "కాంటాక్ట్‌ల అనుమతి ఇవ్వలేదు. ఏదీ చదవలేదు.",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Continue",
+  "hi": "जारी रखें",
+  "te": "కొనసాగించు",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Date-based days repeat every year; tithi days are listed for this year and next.",
+  "hi": "तारीख वाले दिन हर साल दोहराए जाते हैं; तिथि वाले दिन इस और अगले साल के लिए।",
+  "te": "తేదీ రోజులు ప్రతి సంవత్సరం వస్తాయి; తిథి రోజులు ఈ ఏడాది, వచ్చే ఏడాదికి.",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Days already on this phone are kept.",
+  "hi": "इस फ़ोन पर पहले से मौजूद दिन बने रहेंगे।",
+  "te": "ఈ ఫోన్‌లో ఇప్పటికే ఉన్న రోజులు అలాగే ఉంటాయి.",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Devalay will read the birthdays and anniversaries saved in your phone contacts, with each contact's name, so you can choose which to add to My events.\n\nThis stays on your phone: nothing is uploaded or shared, and only the days you choose are kept. Android will now ask for Contacts permission. You can turn it off any time in the phone's settings.",
+  "hi": "देवालय आपके फ़ोन संपर्कों में सहेजे जन्मदिन और सालगिरह, संपर्क के नाम के साथ, पढ़ेगा ताकि आप चुन सकें कि मेरे दिन में क्या जोड़ना है।\n\nयह आपके फ़ोन पर ही रहता है: कुछ भी अपलोड या शेयर नहीं होता, केवल आपके चुने दिन रखे जाते हैं। अब Android संपर्क अनुमति माँगेगा। आप इसे कभी भी फ़ोन की सेटिंग में बंद कर सकते हैं।",
+  "te": "మీరు నా రోజులులో ఏవి చేర్చాలో ఎంచుకునేందుకు, దేవాలయం మీ ఫోన్ కాంటాక్ట్‌లలో ఉన్న పుట్టినరోజులు, వివాహ వార్షికోత్సవాలను పేర్లతో సహా చదువుతుంది.\n\nఇది మీ ఫోన్‌లోనే ఉంటుంది: ఏదీ అప్‌లోడ్ లేదా షేర్ కాదు, మీరు ఎంచుకున్న రోజులు మాత్రమే ఉంచుతాం. ఇప్పుడు Android కాంటాక్ట్‌ల అనుమతి అడుగుతుంది. ఫోన్ సెట్టింగ్‌లలో ఎప్పుడైనా ఆపేయవచ్చు.",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Export to calendar (.ics)",
+  "hi": "कैलेंडर में एक्सपोर्ट (.ics)",
+  "te": "క్యాలెండర్‌కు ఎక్స్‌పోర్ట్ (.ics)",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Festivals and your days, for Google Calendar or any calendar app",
+  "hi": "त्योहार और आपके दिन, Google Calendar या किसी भी कैलेंडर ऐप के लिए",
+  "te": "పండుగలు, మీ రోజులు: Google Calendar లేదా ఏ క్యాలెండర్ యాప్‌కైనా",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Import ({0})",
+  "hi": "जोड़ें ({0})",
+  "te": "చేర్చండి ({0})",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Import birthdays from contacts",
+  "hi": "संपर्कों से जन्मदिन लाएँ",
+  "te": "కాంటాక్ట్‌ల నుండి పుట్టినరోజులు తీసుకురండి",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Import from contacts",
+  "hi": "संपर्कों से लाएँ",
+  "te": "కాంటాక్ట్‌ల నుండి తీసుకురండి",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Include my days",
+  "hi": "मेरे दिन भी जोड़ें",
+  "te": "నా రోజులు కూడా చేర్చండి",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Language, city, birth star and reminder settings are replaced by the backup.",
+  "hi": "भाषा, शहर, जन्म नक्षत्र और रिमाइंडर सेटिंग बैकअप से बदल दी जाएँगी।",
+  "te": "భాష, నగరం, జన్మ నక్షత్రం, రిమైండర్ సెట్టింగ్‌లు బ్యాకప్‌లోనివిగా మారతాయి.",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Last backup",
+  "hi": "पिछला बैकअप",
+  "te": "చివరి బ్యాకప్",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Major festivals only",
+  "hi": "केवल बड़े त्योहार",
+  "te": "పెద్ద పండుగలు మాత్రమే",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "New days: {0}",
+  "hi": "नए दिन: {0}",
+  "te": "కొత్త రోజులు: {0}",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "No birthdays or anniversaries found in your contacts",
+  "hi": "आपके संपर्कों में कोई जन्मदिन या सालगिरह नहीं मिली",
+  "te": "మీ కాంటాక్ట్‌లలో పుట్టినరోజులు లేదా వార్షికోత్సవాలు లేవు",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "No calendar app found",
+  "hi": "कोई कैलेंडर ऐप नहीं मिला",
+  "te": "క్యాలెండర్ యాప్ కనబడలేదు",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Not backed up yet",
+  "hi": "अभी तक बैकअप नहीं",
+  "te": "ఇంకా బ్యాకప్ చేయలేదు",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Not now",
+  "hi": "अभी नहीं",
+  "te": "ఇప్పుడు కాదు",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Open the file in your calendar app. In Google Calendar on the web, use Settings → Import & export.",
+  "hi": "फ़ाइल को अपने कैलेंडर ऐप में खोलें। वेब पर Google Calendar में Settings → Import & export चुनें।",
+  "te": "ఫైల్‌ను మీ క్యాలెండర్ యాప్‌లో తెరవండి. వెబ్‌లో Google Calendarలో Settings → Import & export వాడండి.",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Pick a folder, Google Drive or SD card",
+  "hi": "कोई फ़ोल्डर, Google Drive या SD कार्ड चुनें",
+  "te": "ఫోల్డర్, Google Drive లేదా SD కార్డ్ ఎంచుకోండి",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Remind me the evening before",
+  "hi": "एक शाम पहले याद दिलाएँ",
+  "te": "ముందు రోజు సాయంత్రం గుర్తు చేయండి",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Restore",
+  "hi": "वापस लाएँ",
+  "te": "పునరుద్ధరించు",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Restore from a backup file",
+  "hi": "बैकअप फ़ाइल से वापस लाएँ",
+  "te": "బ్యాకప్ ఫైల్ నుండి పునరుద్ధరించండి",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Restore this backup?",
+  "hi": "यह बैकअप वापस लाएँ?",
+  "te": "ఈ బ్యాకప్‌ను పునరుద్ధరించాలా?",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Restored",
+  "hi": "वापस आ गया",
+  "te": "పునరుద్ధరించబడింది",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Save",
+  "hi": "सहेजें",
+  "te": "సేవ్",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Save backup file",
+  "hi": "बैकअप फ़ाइल सहेजें",
+  "te": "బ్యాకప్ ఫైల్ సేవ్ చేయండి",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Select all",
+  "hi": "सभी चुनें",
+  "te": "అన్నీ ఎంచుకోండి",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Send it to yourself by email or chat",
+  "hi": "ईमेल या चैट से खुद को भेजें",
+  "te": "ఈమెయిల్ లేదా చాట్‌లో మీకే పంపుకోండి",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Share",
+  "hi": "शेयर करें",
+  "te": "షేర్ చేయండి",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Share backup file",
+  "hi": "बैकअप फ़ाइल शेयर करें",
+  "te": "బ్యాకప్ ఫైల్ షేర్ చేయండి",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Something went wrong",
+  "hi": "कुछ गड़बड़ हुई",
+  "te": "ఏదో పొరపాటు జరిగింది",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "This file is not a Devalay backup",
+  "hi": "यह देवालय बैकअप फ़ाइल नहीं है",
+  "te": "ఇది దేవాలయం బ్యాకప్ ఫైల్ కాదు",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Updated days: {0}",
+  "hi": "बदले गए दिन: {0}",
+  "te": "మారిన రోజులు: {0}",
+  "where": "lib/features/backup.dart"
+ },
+ {
+  "en": "Your days and settings live only on this phone. Keep a backup file to move them to a new phone. No account, nothing uploaded.",
+  "hi": "आपके दिन और सेटिंग केवल इसी फ़ोन पर हैं। नए फ़ोन में ले जाने के लिए बैकअप फ़ाइल रखें। कोई खाता नहीं, कुछ भी अपलोड नहीं।",
+  "te": "మీ రోజులు, సెట్టింగ్‌లు ఈ ఫోన్‌లోనే ఉంటాయి. కొత్త ఫోన్‌కు తీసుకెళ్లడానికి బ్యాకప్ ఫైల్ ఉంచుకోండి. ఖాతా అవసరం లేదు, ఏదీ అప్‌లోడ్ కాదు.",
+  "where": "lib/features/backup.dart"
  },
  {
   "en": "No videos right now.",
@@ -1680,6 +2022,12 @@
   "where": "lib/features/calendar.dart"
  },
  {
+  "en": "Add to calendar",
+  "hi": "कैलेंडर में जोड़ें",
+  "te": "క్యాలెండర్‌లో జోడించు",
+  "where": "lib/features/calendar.dart"
+ },
+ {
   "en": "Amavasya",
   "hi": "अमावस्या",
   "te": "అమావాస్య",
@@ -1707,12 +2055,6 @@
   "en": "Exit full screen",
   "hi": "पूर्ण स्क्रीन बंद",
   "te": "పూర్తి స్క్రీన్ మూసివేయి",
-  "where": "lib/features/calendar.dart"
- },
- {
-  "en": "Festival",
-  "hi": "त्योहार",
-  "te": "పండుగ",
   "where": "lib/features/calendar.dart"
  },
  {
@@ -1821,12 +2163,6 @@
   "en": "Send wishes",
   "hi": "शुभकामनाएँ भेजें",
   "te": "శుభాకాంక్షలు పంపండి",
-  "where": "lib/features/calendar.dart"
- },
- {
-  "en": "Share",
-  "hi": "शेयर करें",
-  "te": "షేర్ చేయండి",
   "where": "lib/features/calendar.dart"
  },
  {
@@ -2898,12 +3234,6 @@
   "where": "lib/features/my_events.dart"
  },
  {
-  "en": "Cancel",
-  "hi": "रद्द करें",
-  "te": "రద్దు",
-  "where": "lib/features/my_events.dart"
- },
- {
   "en": "Change",
   "hi": "बदलें",
   "te": "మార్చు",
@@ -3003,12 +3333,6 @@
   "en": "Repeats every year on the same lunar month and tithi, the way families keep birthdays and remembrance days.",
   "hi": "हर साल उसी चंद्र मास और तिथि पर आता है, जैसे परिवार जन्मदिन और श्राद्ध मनाते हैं।",
   "te": "ప్రతి సంవత్సరం అదే మాసం, తిథి నాడు వస్తుంది, కుటుంబాల్లో పుట్టినరోజు, తద్దినం పాటించినట్లే.",
-  "where": "lib/features/my_events.dart"
- },
- {
-  "en": "Save",
-  "hi": "सहेजें",
-  "te": "సేవ్",
   "where": "lib/features/my_events.dart"
  },
  {
@@ -3453,6 +3777,12 @@
   "en": "App colour",
   "hi": "ऐप का रंग",
   "te": "యాప్ రంగు",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Backup file, calendar export, birthdays from contacts",
+  "hi": "बैकअप फ़ाइल, कैलेंडर एक्सपोर्ट, संपर्कों से जन्मदिन",
+  "te": "బ్యాకప్ ఫైల్, క్యాలెండర్ ఎక్స్‌పోర్ట్, కాంటాక్ట్‌ల నుండి పుట్టినరోజులు",
   "where": "lib/features/settings.dart"
  },
  {

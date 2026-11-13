@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Home-screen widget names in the widget gallery, which follows the phone language. -->
+<resources>
+    <string name="panchang_widget_description">இன்றைய திதி, நட்சத்திரம், ராகு காலம், பண்டிகை</string>
+    <string name="tithi_widget_label">திதி</string>
+    <string name="tithi_widget_description">இன்றைய தேதியும் திதியும், பண்டிகை நாட்களில் குறியுடன்</string>
+    <string name="countdown_widget_label">பண்டிகை கவுண்ட்டவுன்</string>
+    <string name="countdown_widget_description">அடுத்த பெரிய பண்டிகைக்கு மீதமுள்ள நாட்கள்</string>
+    <string name="now_widget_label">சௌகடியா மற்றும் ராகு காலம்</string>
+    <string name="now_widget_description">இப்போதைய சௌகடியா, அல்லது நடக்கும்போது ராகு காலம்</string>
+</resources>

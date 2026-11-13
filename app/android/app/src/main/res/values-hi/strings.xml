@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Home-screen widget names in the widget gallery, which follows the phone language. -->
+<resources>
+    <string name="panchang_widget_description">आज की तिथि, नक्षत्र, राहु काल और त्योहार</string>
+    <string name="tithi_widget_label">तिथि</string>
+    <string name="tithi_widget_description">आज की तारीख और तिथि, त्योहार के दिन निशान के साथ</string>
+    <string name="countdown_widget_label">त्योहार उलटी गिनती</string>
+    <string name="countdown_widget_description">अगले बड़े त्योहार में बचे दिन</string>
+    <string name="now_widget_label">चौघड़िया और राहु काल</string>
+    <string name="now_widget_description">अभी का चौघड़िया, या राहु काल चलते समय</string>
+</resources>

@@ -32,7 +32,7 @@ class _AppShellState extends ConsumerState<AppShell> {
       // A quiet moment after the first screen settles; Play decides whether to show the card.
       Future.delayed(const Duration(seconds: 20), maybeAskForReview);
     });
-    // Tapping the home-screen Panchang widget opens the calendar.
+    // Tapping a home-screen widget opens its screen (devalay://calendar, devalay://calendar/day/2026-11-13, ...).
     HomeWidget.initiallyLaunchedFromHomeWidget().then((uri) {
       // On a cold start the first route is still settling; open the calendar after the next frame.
       WidgetsBinding.instance.addPostFrameCallback((_) => _openFromWidget(uri));
@@ -43,8 +43,9 @@ class _AppShellState extends ConsumerState<AppShell> {
   StreamSubscription<Uri?>? _widgetTaps;
 
   void _openFromWidget(Uri? uri) {
-    if (!mounted || uri?.host != 'calendar') return;
-    context.push('/calendar');
+    final path = widgetRoute(uri);
+    if (!mounted || path == null) return;
+    context.push(path);
   }
 
   @override
@@ -126,4 +127,12 @@ class _AppShellState extends ConsumerState<AppShell> {
       ),
     );
   }
+}
+
+/// The screen a home-screen widget link opens, or null for links the widgets never send.
+String? widgetRoute(Uri? uri) {
+  if (uri == null || uri.scheme != 'devalay') return null;
+  final path = '/${uri.host}${uri.path}'.replaceFirst(RegExp(r'(?<=.)/+$'), '');
+  final ok = path == '/calendar' || path == '/panchang' || RegExp(r'^/calendar/day/\d{4}-\d{2}-\d{2}$').hasMatch(path);
+  return ok ? path : null;
 }

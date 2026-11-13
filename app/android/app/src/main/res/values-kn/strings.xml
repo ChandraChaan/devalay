@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Home-screen widget names in the widget gallery, which follows the phone language. -->
+<resources>
+    <string name="panchang_widget_description">ಇಂದಿನ ತಿಥಿ, ನಕ್ಷತ್ರ, ರಾಹು ಕಾಲ ಮತ್ತು ಹಬ್ಬ</string>
+    <string name="tithi_widget_label">ತಿಥಿ</string>
+    <string name="tithi_widget_description">ಇಂದಿನ ದಿನಾಂಕ ಮತ್ತು ತಿಥಿ, ಹಬ್ಬದ ದಿನಗಳಲ್ಲಿ ಗುರುತಿನೊಂದಿಗೆ</string>
+    <string name="countdown_widget_label">ಹಬ್ಬದ ಕ್ಷಣಗಣನೆ</string>
+    <string name="countdown_widget_description">ಮುಂದಿನ ದೊಡ್ಡ ಹಬ್ಬಕ್ಕೆ ಉಳಿದ ದಿನಗಳು</string>
+    <string name="now_widget_label">ಚೌಘಡಿಯಾ ಮತ್ತು ರಾಹು ಕಾಲ</string>
+    <string name="now_widget_description">ಈಗಿನ ಚೌಘಡಿಯಾ, ಅಥವಾ ನಡೆಯುತ್ತಿರುವಾಗ ರಾಹು ಕಾಲ</string>
+</resources>

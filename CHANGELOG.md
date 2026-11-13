@@ -3,6 +3,22 @@
 Each milestone is a git tag and a [GitHub release](https://github.com/ChandraChaan/devalay/releases). Releases from
 v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the section below that matches the tag.
 
+## Unreleased
+
+- Home-screen widgets: a small 2×1 Tithi widget (date, tithi and a mark on festival and family days), a Festival
+  countdown (days left to the next major festival, with the two after it), and Choghadiya & Rahu Kalam (the
+  running Choghadiya, or Rahu Kalam while it is on, redrawn at each change without waking the phone). All are
+  resizable, show previews in the widget gallery, stay in your language and open the matching screen when tapped.
+- Backup & export (Settings, or the menu in My events): save or share a backup file of your days, birth star,
+  rashi, city, language and reminder settings, and restore it on a new phone. Days are merged by id, so nothing
+  already on the phone is lost. No account and no server; the app suggests a backup after a few changes.
+- Export to calendar: an .ics file of a year's festivals and your days for Google Calendar or any calendar app.
+  Date-based days repeat yearly; tithi days are listed for this year and next. "Add to calendar" on a festival or
+  one of your days opens the phone's calendar app with it filled in.
+- Import birthdays from contacts: after a clear explanation and Android's Contacts permission, pick which
+  birthdays and anniversaries to add to My events. Only those dates and names are read, and nothing leaves the
+  phone.
+
 ## v1.4.0 — 2026-11-13
 
 - Devalay now speaks 11 languages: English, हिन्दी, বাংলা, मराठी, తెలుగు, தமிழ், ગુજરાતી, ಕನ್ನಡ, മലയാളം, ଓଡ଼ିଆ
