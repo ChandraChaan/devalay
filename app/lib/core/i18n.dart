@@ -36,6 +36,8 @@ const _strings = <String, Map<String, String>>{
   'ai_status': {'en': 'AI Status', 'hi': 'AI स्टेटस', 'te': 'భక్తి స్టేటస్'},
   'ringtones': {'en': 'Ringtones', 'hi': 'रिंगटोन', 'te': 'రింగ్‌టోన్లు'},
   'calendar': {'en': 'Calendar', 'hi': 'कैलेंडर', 'te': 'క్యాలెండర్'},
+  'important_days': {'en': 'Important days', 'hi': 'महत्वपूर्ण दिन', 'te': 'ముఖ్యమైన రోజులు'},
+  'my_events': {'en': 'My events', 'hi': 'मेरे दिन', 'te': 'నా రోజులు'},
   'gita': {'en': 'Bhagavad Gita', 'hi': 'भगवद गीता', 'te': 'భగవద్గీత'},
   'ask_gita': {'en': 'Ask the Gita', 'hi': 'गीता से पूछें', 'te': 'గీతను అడగండి'},
   'movies': {'en': 'Classic films', 'hi': 'क्लासिक फ़िल्में', 'te': 'పాత భక్తి చిత్రాలు'},
@@ -78,6 +80,7 @@ const _strings = <String, Map<String, String>>{
   'temple_booking': {'en': 'Temple booking', 'hi': 'मंदिर बुकिंग', 'te': 'ఆలయ బుకింగ్'},
   'booking': {'en': 'Booking', 'hi': 'बुकिंग', 'te': 'బుకింగ్'},
   'wishes': {'en': 'Festival wishes', 'hi': 'त्योहार शुभकामनाएँ', 'te': 'పండుగ శుభాకాంక్షలు'},
+  'matching': {'en': 'Marriage matching', 'hi': 'विवाह मिलान', 'te': 'వివాహ పొంతన'},
 };
 
 String tr(WidgetRef ref, String key) {

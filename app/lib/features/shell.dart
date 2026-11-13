@@ -1,17 +1,60 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:home_widget/home_widget.dart';
 
+import '../core/calendar_reminders.dart';
 import '../core/i18n.dart';
+import '../core/storage.dart';
 import '../core/theme.dart';
 import '../widgets/mini_player.dart';
 
-class AppShell extends ConsumerWidget {
+class AppShell extends ConsumerStatefulWidget {
   const AppShell({super.key, required this.shell});
   final StatefulNavigationShell shell;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<AppShell> createState() => _AppShellState();
+}
+
+class _AppShellState extends ConsumerState<AppShell> {
+  @override
+  void initState() {
+    super.initState();
+    // Calendar alarms are laid a few weeks ahead from cached data; top them up on every start.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) refreshCalendarReminders(ref);
+    });
+    // Tapping the home-screen Panchang widget opens the calendar.
+    HomeWidget.initiallyLaunchedFromHomeWidget().then((uri) {
+      // On a cold start the first route is still settling; open the calendar after the next frame.
+      WidgetsBinding.instance.addPostFrameCallback((_) => _openFromWidget(uri));
+    }, onError: (_) {});
+    _widgetTaps = HomeWidget.widgetClicked.listen(_openFromWidget, onError: (_) {});
+  }
+
+  StreamSubscription<Uri?>? _widgetTaps;
+
+  void _openFromWidget(Uri? uri) {
+    if (!mounted || uri?.host != 'calendar') return;
+    context.push('/calendar');
+  }
+
+  @override
+  void dispose() {
+    _widgetTaps?.cancel();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final shell = widget.shell;
+    // City, language or birth star changes rewrite the morning messages and the widget text.
+    ref.listen(prefsProvider.select((p) => (p.cityId, p.language, p.birthStar)), (_, _) {
+      refreshCalendarReminders(ref);
+    });
     final items = [
       (Icons.home_outlined, Icons.home_rounded, 'home'),
       (Icons.headphones_outlined, Icons.headphones_rounded, 'listen'),

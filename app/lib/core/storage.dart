@@ -14,6 +14,7 @@ class Boxes {
   static late Box favorites;
   static late Box downloads;
   static late Box stats;
+  static late Box events;
 
   static Future<void> init() async {
     await Hive.initFlutter('devalay');
@@ -22,6 +23,7 @@ class Boxes {
     favorites = await Hive.openBox('favorites');
     downloads = await Hive.openBox('downloads');
     stats = await Hive.openBox('stats');
+    events = await Hive.openBox('events');
     if (prefs.get('device_id') == null) {
       await prefs.put('device_id', const Uuid().v4());
     }
@@ -36,11 +38,15 @@ class Prefs {
     required this.onboarded,
     required this.ishtaDevta,
     required this.rashi,
+    required this.birthStar,
     required this.cityId,
     required this.dailyReminder,
     required this.reminderHour,
     required this.reminderMinute,
     required this.festivalReminders,
+    required this.panchangDaily,
+    required this.panchangHour,
+    required this.panchangMinute,
     required this.textScale,
     required this.showTransliteration,
     required this.showMeaning,
@@ -52,11 +58,19 @@ class Prefs {
   final bool onboarded;
   final String? ishtaDevta;
   final String? rashi;
+
+  /// Birth nakshatra, 0 (Ashwini) to 26 (Revati), for Tarabalam.
+  final int? birthStar;
   final String cityId;
   final bool dailyReminder;
   final int reminderHour;
   final int reminderMinute;
   final bool festivalReminders;
+
+  /// Morning notification with the day's tithi, nakshatra, Rahu Kalam and festivals.
+  final bool panchangDaily;
+  final int panchangHour;
+  final int panchangMinute;
   final double textScale;
   final bool showTransliteration;
   final bool showMeaning;
@@ -68,11 +82,15 @@ class Prefs {
     onboarded: box.get('onboarded', defaultValue: false) as bool,
     ishtaDevta: box.get('ishta') as String?,
     rashi: box.get('rashi') as String?,
+    birthStar: box.get('birth_star') as int?,
     cityId: box.get('city', defaultValue: 'delhi') as String,
     dailyReminder: box.get('daily_reminder', defaultValue: false) as bool,
     reminderHour: box.get('reminder_hour', defaultValue: 6) as int,
     reminderMinute: box.get('reminder_minute', defaultValue: 30) as int,
     festivalReminders: box.get('festival_reminders', defaultValue: false) as bool,
+    panchangDaily: box.get('panchang_daily', defaultValue: false) as bool,
+    panchangHour: box.get('panchang_hour', defaultValue: 6) as int,
+    panchangMinute: box.get('panchang_minute', defaultValue: 0) as int,
     textScale: (box.get('text_scale', defaultValue: 1.0) as num).toDouble(),
     showTransliteration: box.get('show_translit', defaultValue: false) as bool,
     showMeaning: box.get('show_meaning', defaultValue: true) as bool,

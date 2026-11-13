@@ -14,11 +14,14 @@ import 'features/books.dart';
 import 'features/credits.dart';
 import 'features/gita.dart';
 import 'features/home.dart';
+import 'features/important_days.dart';
 import 'features/japa.dart';
 import 'features/library.dart';
 import 'features/listen.dart';
 import 'features/mandir.dart';
+import 'features/matching.dart';
 import 'features/more.dart';
+import 'features/my_events.dart';
 import 'features/onboarding.dart';
 import 'features/calendar.dart';
 import 'features/panchang.dart';
@@ -43,6 +46,10 @@ final routerProvider = Provider<GoRouter>((ref) {
   return GoRouter(
     navigatorKey: _rootKey,
     initialLocation: Boxes.prefs.get('onboarded', defaultValue: false) == true ? '/home' : '/onboarding',
+    // Safety net: a devalay://calendar link that reaches the router maps to /calendar.
+    redirect: (_, state) => state.uri.scheme == 'devalay'
+        ? '/${state.uri.host}${state.uri.path}'.replaceFirst(RegExp(r'(?<=.)/+$'), '')
+        : null,
     routes: [
       GoRoute(path: '/onboarding', builder: (_, _) => const OnboardingScreen()),
       StatefulShellRoute.indexedStack(
@@ -107,6 +114,9 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/rashifal', builder: (_, _) => const RashifalScreen()),
       GoRoute(path: '/panchang', builder: (_, _) => const PanchangScreen()),
       GoRoute(path: '/calendar', builder: (_, _) => const CalendarScreen()),
+      GoRoute(path: '/calendar/important', builder: (_, _) => const ImportantDaysScreen()),
+      GoRoute(path: '/calendar/events', builder: (_, _) => const MyEventsScreen()),
+      GoRoute(path: '/matching', builder: (_, _) => const MatchingScreen()),
       GoRoute(
         path: '/calendar/day/:date',
         builder: (_, s) =>

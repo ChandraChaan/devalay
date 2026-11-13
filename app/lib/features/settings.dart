@@ -7,11 +7,13 @@ import 'package:url_launcher/url_launcher.dart';
 import '../core/api.dart';
 import '../core/auth.dart';
 import '../core/config.dart';
+import '../core/calendar_reminders.dart';
 import '../core/i18n.dart';
 import '../core/location.dart';
 import '../core/notifications.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
+import '../widgets/city_picker.dart';
 import '../widgets/common.dart';
 
 class SettingsScreen extends ConsumerWidget {
@@ -135,7 +137,7 @@ class SettingsScreen extends ConsumerWidget {
             leading: const Icon(Icons.place_rounded),
             title: Text(t3(lang, 'Panchang city', 'पंचांग शहर', 'పంచాంగం నగరం')),
             subtitle: Text(city.label(lang)),
-            onTap: () => _pickCity(context, ref),
+            onTap: () => showCityPicker(context, ref),
           ),
           _Header(t3(lang, 'Reminders', 'सूचनाएँ', 'రిమైండర్లు')),
           SwitchListTile(
@@ -166,6 +168,35 @@ class SettingsScreen extends ConsumerWidget {
               await n.set('reminder_hour', t.hour);
               await n.set('reminder_minute', t.minute);
               await Notifications.scheduleDaily(t.hour, t.minute, lang: prefs.language);
+            },
+          ),
+          SwitchListTile(
+            secondary: const Icon(Icons.wb_twilight_rounded),
+            title: Text(t3(lang, 'Morning Panchang', 'सुबह का पंचांग', 'ఉదయపు పంచాంగం')),
+            subtitle: Text(
+              '${t3(lang, 'Tithi, nakshatra, Rahu Kalam and festivals at', 'तिथि, नक्षत्र, राहु काल व त्योहार,', 'తిథి, నక్షత్రం, రాహు కాలం, పండుగలు')} '
+              '${clock12(prefs.panchangHour, prefs.panchangMinute)}',
+            ),
+            value: prefs.panchangDaily,
+            onChanged: (v) async {
+              if (v && !await Notifications.requestPermission()) return;
+              await n.set('panchang_daily', v);
+              await refreshPanchangNotifications(ref);
+            },
+          ),
+          ListTile(
+            leading: const SizedBox(width: 24),
+            title: Text(t3(lang, 'Change time', 'समय बदलें', 'సమయం మార్చండి')),
+            enabled: prefs.panchangDaily,
+            onTap: () async {
+              final t = await showTimePicker(
+                context: context,
+                initialTime: TimeOfDay(hour: prefs.panchangHour, minute: prefs.panchangMinute),
+              );
+              if (t == null) return;
+              await n.set('panchang_hour', t.hour);
+              await n.set('panchang_minute', t.minute);
+              await refreshPanchangNotifications(ref);
             },
           ),
           _Header(t3(lang, 'About', 'जानकारी', 'గురించి')),
@@ -206,34 +237,6 @@ class SettingsScreen extends ConsumerWidget {
           ),
           const SizedBox(height: 24),
         ],
-      ),
-    );
-  }
-
-  void _pickCity(BuildContext context, WidgetRef ref) {
-    final lang = ref.read(prefsProvider).language;
-    showModalBottomSheet(
-      context: context,
-      showDragHandle: true,
-      isScrollControlled: true,
-      builder: (ctx) => DraggableScrollableSheet(
-        expand: false,
-        initialChildSize: 0.7,
-        builder: (_, scroll) => ListView(
-          controller: scroll,
-          children: [
-            for (final c in cities)
-              ListTile(
-                title: Text(c.label(lang)),
-                subtitle: Text(c.tz),
-                trailing: ref.read(prefsProvider).cityId == c.id ? const Icon(Icons.check_rounded) : null,
-                onTap: () {
-                  ref.read(prefsProvider.notifier).setCity(c.id);
-                  Navigator.pop(ctx);
-                },
-              ),
-          ],
-        ),
       ),
     );
   }

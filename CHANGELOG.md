@@ -5,6 +5,37 @@ v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the 
 
 ## Unreleased
 
+- Calendar: Choghadiya, Hora and Gowri Panchangam (Nalla Neram) for every day, by day and by night, with the
+  running period marked "Now". Each hora says what it suits: puja, study, travel, business or government work.
+- Calendar: Rahu Kalam on the selected day, the lunar months of each month in the header (Kartika – Margashirsha),
+  national holidays, and auspicious days (Amrita Siddhi, Guru Pushya, Ravi Pushya) marked with ✨.
+- Important days: one list for the year of festivals, Ekadashi, Purnima, Amavasya, Pradosham, Sankashti, Masa
+  Shivaratri, auspicious days, holidays and your own days, for this year and next.
+- My events: keep birthdays, wedding anniversaries and remembrance days (taddinam) in the calendar. Repeat them
+  every year by date, or by tithi and lunar month the way families do, with a reminder the evening before and that
+  morning.
+- Morning Panchang: an optional notification each morning with the day's tithi, nakshatra, Rahu Kalam, festivals
+  and your events. Turn it on from the calendar menu or Settings and pick the time.
+- The offline calendar now covers every month of this year and next.
+- Home-screen widget: today's date, tithi, nakshatra, Rahu Kalam and festival (or your own event) on a saffron
+  card, in your language. It holds the next 30 days, so it turns over at midnight even offline. Tap it to open
+  the calendar.
+- "For you": add your birth star and rashi once, and every day's Panchang shows your Tarabalam and Chandrabalam
+  with a plain verdict (good day, mixed, or better to postpone). The morning notification includes it too.
+- Moonrise and moonset on every day's Panchang.
+- Tap ⓘ next to tithi, nakshatra, yoga, karana, Rahu Kalam, Varjyam, Choghadiya, Hora and more for a short
+  explanation in English, Hindi or Telugu.
+- Share any day's Panchang to WhatsApp from the calendar card, with tithi and nakshatra end times and the city.
+- The city is shown and can be changed right from the calendar header; the city list can be searched.
+- Search festivals in Important days, and from the app's main search ("ugadi", "ఏకాదశి").
+- Adding a birthday or remembrance day opens the date picker on the year list instead of paging back month by month.
+- Marriage matching: pick the bride's and groom's birth nakshatra and rashi (and the pada, if known) to see the
+  Ashtakoota Guna Milan score out of 36. Varna, Vashya, Tara, Yoni, Graha Maitri, Gana, Bhakoot and Nadi each show
+  their points, what they stand for and both partners' values, with Nadi and Bhakoot dosha called out.
+- The South Indian 10 Porutham view (Dina, Gana, Mahendra, Stree Deergha, Yoni, Rasi, Rasyadhipati, Vasya, Rajju
+  and Vedha) shows each as a match or not, with Rajju and Vedha marked as the essential two.
+- Worked out on the phone, with tables checked against Drik Panchang and other published sources. A note asks you
+  to consult your family priest before deciding. In More, in English, Hindi and Telugu.
 - Temple booking: every online service of Tirumala Tirupati Devasthanams in one place. Special Entry Darshan
   (₹300), senior citizen and SRIVANI darshan, Angapradakshinam, Arjitha Sevas and the Seva e-Dip, rooms, e-Hundi,
   donations and more, each explained in English, Hindi and Telugu, with the steps to book and what to carry.

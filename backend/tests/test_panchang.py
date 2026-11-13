@@ -109,6 +109,11 @@ def test_month_calendar_has_every_day():
     days = panchang.month_sunrise_tithis(DELHI, date(2026, 2, 1), 28)
     assert len(days) == 28
     assert all(1 <= d["tithi_index"] <= 30 for d in days)
+    # 1 Feb 2026 is Magha Purnima; Phalguna (amanta) begins after the 17 Feb new moon.
+    assert days[0]["lunar_month"] == 10 and days[0]["tithi_index"] == 15
+    assert days[-1]["lunar_month"] == 11
+    assert not any(d["adhika"] for d in days)
+    assert all(d["sunset"] > d["sunrise"] for d in days)
 
 
 def test_telugu_timings_match_drik_panchang_hyderabad():
@@ -127,3 +132,14 @@ def test_telugu_timings_match_drik_panchang_hyderabad():
     assert near(p["durmuhurtham"][0], "2026-11-03T08:33", "2026-11-03T09:19")
     assert len(p["durmuhurtham"]) == 2  # Tuesday also has a night Durmuhurtham
     assert p["samvatsara"]["name"] == "Parabhava" and p["shaka_samvat"] == 1948
+
+
+def test_moonrise_and_moonset_hyderabad():
+    # Drik Panchang, Hyderabad, 3 Nov 2026: moonset 13:43, moonrise 01:50 on 4 Nov (the day runs to next sunrise).
+    p = panchang.daily_panchang(Location(17.385, 78.4867, "Asia/Kolkata"), date(2026, 11, 3))
+
+    def hm(iso: str) -> int:
+        return int(iso[11:13]) * 60 + int(iso[14:16])
+
+    assert p["moonset"].startswith("2026-11-03") and abs(hm(p["moonset"]) - hm("2026-11-03T13:43")) <= 6
+    assert p["moonrise"].startswith("2026-11-04") and abs(hm(p["moonrise"]) - hm("2026-11-04T01:50")) <= 6

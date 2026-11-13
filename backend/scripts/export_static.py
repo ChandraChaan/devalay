@@ -147,8 +147,10 @@ def main() -> None:
             for offset in HOME_DAYS:
                 ex.get("/rashifal", {"lang": lang, "day": (today + timedelta(days=offset)).isoformat()})
 
+        # Every month of this year and next, so the calendar, important-days list and tithi
+        # reminders work offline for both years, plus the trailing month in early January.
         months = sorted({((today.month - 1 + m) // 12 + today.year, (today.month - 1 + m) % 12 + 1)
-                         for m in MONTHS_AHEAD})
+                         for m in MONTHS_AHEAD} | {(y, m) for y in (today.year, today.year + 1) for m in range(1, 13)})
         for cid, loc in cities():
             key = {"city": cid}
             for offset in HOME_DAYS:

@@ -4,12 +4,15 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
 import '../core/i18n.dart';
+import '../core/glossary.dart';
 import '../core/location.dart';
 import '../core/providers.dart';
 import '../core/storage.dart';
 import '../core/telugu.dart';
 import '../core/theme.dart';
 import '../widgets/common.dart';
+import 'muhurta_view.dart';
+import 'personal_day.dart';
 
 class PanchangScreen extends ConsumerStatefulWidget {
   const PanchangScreen({super.key});
@@ -131,12 +134,17 @@ class PanchangDetail extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              tr(ref, key),
-              style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                color: Theme.of(context).colorScheme.primary,
-                fontWeight: FontWeight.w700,
-              ),
+            Row(
+              children: [
+                Text(
+                  tr(ref, key),
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                    color: Theme.of(context).colorScheme.primary,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                MeaningButton(key, lang: lang),
+              ],
             ),
             const SizedBox(height: 6),
             for (final m in items.cast<Map>())
@@ -159,36 +167,41 @@ class PanchangDetail extends ConsumerWidget {
       ),
     );
 
-    Widget timing(String label, List<Map> spans, Color color, IconData icon) => Container(
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: context.isDark ? 0.22 : 0.10),
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: color.withValues(alpha: 0.35)),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Icon(icon, size: 16, color: color),
-              const SizedBox(width: 6),
-              Expanded(
-                child: Text(
-                  label,
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600),
+    Widget timing(String label, List<Map> spans, Color color, IconData icon, [String? term]) => InkWell(
+      borderRadius: BorderRadius.circular(16),
+      onTap: term == null ? null : () => showMeaning(context, lang, term),
+      child: Container(
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          color: color.withValues(alpha: context.isDark ? 0.22 : 0.10),
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: color.withValues(alpha: 0.35)),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(icon, size: 16, color: color),
+                const SizedBox(width: 6),
+                Expanded(
+                  child: Text(
+                    label,
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600),
+                  ),
                 ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 4),
-          if (spans.isEmpty) Text('—', style: Theme.of(context).textTheme.bodySmall),
-          for (final s in spans)
-            Text(
-              '${hhmm('${s['starts']}')} – ${hhmm('${s['ends']}')}${_nextDay(data, '${s['ends']}')}',
-              style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
+                if (term != null) Icon(Icons.info_outline_rounded, size: 14, color: color.withValues(alpha: 0.7)),
+              ],
             ),
-        ],
+            const SizedBox(height: 4),
+            if (spans.isEmpty) Text('—', style: Theme.of(context).textTheme.bodySmall),
+            for (final s in spans)
+              Text(
+                '${hhmm('${s['starts']}')} – ${hhmm('${s['ends']}')}${_nextDay(data, '${s['ends']}')}',
+                style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
+              ),
+          ],
+        ),
       ),
     );
 
@@ -269,11 +282,29 @@ class PanchangDetail extends ConsumerWidget {
                   const SizedBox(height: 6),
                   const Icon(Icons.nights_stay_rounded, color: Colors.white70),
                   Text(hhmm('${data['sunset']}'), style: const TextStyle(color: Colors.white)),
+                  if (data['moonrise'] != null || data['moonset'] != null) ...[
+                    const SizedBox(height: 6),
+                    Text(
+                      t3(lang, 'Moon', 'चंद्र', 'చంద్రుడు'),
+                      style: const TextStyle(color: Colors.white70, fontSize: 11),
+                    ),
+                    if (data['moonrise'] != null)
+                      Text(
+                        '↑ ${hhmm('${data['moonrise']}')}${_nextDay(data, '${data['moonrise']}')}',
+                        style: const TextStyle(color: Colors.white, fontSize: 12),
+                      ),
+                    if (data['moonset'] != null)
+                      Text(
+                        '↓ ${hhmm('${data['moonset']}')}${_nextDay(data, '${data['moonset']}')}',
+                        style: const TextStyle(color: Colors.white, fontSize: 12),
+                      ),
+                  ],
                 ],
               ),
             ],
           ),
         ).animate().fadeIn(),
+        PersonalBalam(data: data),
         const SizedBox(height: 12),
         limb('tithi', tithis, tithiName),
         limb('nakshatra', data['nakshatra'] as List, (m) => indexed(teluguNakshatra, m)),
@@ -282,49 +313,56 @@ class PanchangDetail extends ConsumerWidget {
         const SizedBox(height: 4),
         SectionHeader(t3(lang, 'Good times', 'शुभ समय', 'శుభ సమయాలు')),
         grid([
-          timing(tr(ref, 'abhijit'), spansOf('abhijit_muhurta'), Colors.green, Icons.wb_twilight_rounded),
+          timing(tr(ref, 'abhijit'), spansOf('abhijit_muhurta'), Colors.green, Icons.wb_twilight_rounded, 'abhijit'),
           timing(
             t3(lang, 'Amrit Kalam', 'अमृत काल', 'అమృత కాలం'),
             spansOf('amrit_kalam'),
             Colors.teal,
             Icons.local_florist_rounded,
+            'amrit',
           ),
           timing(
             t3(lang, 'Brahma Muhurta', 'ब्रह्म मुहूर्त', 'బ్రహ్మ ముహూర్తం'),
             spansOf('brahma_muhurta'),
             Colors.indigo,
             Icons.self_improvement_rounded,
+            'brahma',
           ),
         ]),
         const SizedBox(height: 12),
         SectionHeader(t3(lang, 'Times to avoid', 'अशुभ समय', 'అశుభ సమయాలు')),
         grid([
-          timing(tr(ref, 'rahu_kaal'), spansOf('rahu_kaal'), Colors.red, Icons.block_rounded),
+          timing(tr(ref, 'rahu_kaal'), spansOf('rahu_kaal'), Colors.red, Icons.block_rounded, 'rahu'),
           timing(
             t3(lang, 'Yamaganda', 'यमगंड', 'యమగండం'),
             spansOf('yamaganda'),
             Colors.deepOrange,
             Icons.do_not_disturb_on_rounded,
+            'yama',
           ),
           timing(
             t3(lang, 'Durmuhurtham', 'दुर्मुहूर्त', 'దుర్ముహూర్తం'),
             spansOf('durmuhurtham'),
             Colors.pink,
             Icons.timer_off_rounded,
+            'durmuhurtham',
           ),
           timing(
             t3(lang, 'Varjyam', 'वर्ज्यम्', 'వర్జ్యం'),
             spansOf('varjyam'),
             Colors.purple,
             Icons.remove_circle_rounded,
+            'varjyam',
           ),
           timing(
             t3(lang, 'Gulika Kaal', 'गुलिक काल', 'గుళిక కాలం'),
             spansOf('gulika_kaal'),
             Colors.brown,
             Icons.hourglass_bottom_rounded,
+            'gulika',
           ),
         ]),
+        MuhurtaTimings(data: data),
         const SizedBox(height: 16),
         Text(
           t3(

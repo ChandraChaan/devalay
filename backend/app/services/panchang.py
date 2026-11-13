@@ -242,6 +242,23 @@ def _limb_timeline(t0, t1, kind: str, tz: ZoneInfo):
     return segments
 
 
+def moon_events(loc: Location, t0, t1) -> dict:
+    """First moonrise and moonset between two instants (a Panchang day runs sunrise to sunrise).
+    Either may be missing: the Moon skips one rise or set about once a month."""
+    _, eph = _ephemeris()
+    tz = ZoneInfo(loc.tz)
+    observer = eph["earth"] + wgs84.latlon(loc.lat, loc.lon)
+    out: dict[str, str | None] = {"moonrise": None, "moonset": None}
+    rises, rflags = almanac.find_risings(observer, eph["moon"], t0, t1)
+    sets, sflags = almanac.find_settings(observer, eph["moon"], t0, t1)
+    for key, times, flags in (("moonrise", rises, rflags), ("moonset", sets, sflags)):
+        for t, ok in zip(times, flags):
+            if ok:
+                out[key] = _to_local(t, tz).isoformat()
+                break
+    return out
+
+
 def daily_panchang(loc: Location, day: date) -> dict:
     """Full Panchang for a local civil day, measured from sunrise to next sunrise."""
     tz = ZoneInfo(loc.tz)
@@ -309,6 +326,7 @@ def daily_panchang(loc: Location, day: date) -> dict:
         "vara": VARA_NAMES[wd],
         "sunrise": sunrise.isoformat(),
         "sunset": sunset.isoformat(),
+        **moon_events(loc, t_rise, t_next),
         "tithi": describe("tithi"),
         "nakshatra": describe("nakshatra"),
         "yoga": describe("yoga"),
@@ -372,19 +390,24 @@ def lunar_month_at(moment: datetime) -> dict:
 
 
 def month_sunrise_tithis(loc: Location, start: date, days: int) -> list[dict]:
-    """Compact per-day summary (sunrise tithi, nakshatra) used by calendars."""
+    """Compact per-day summary (sunrise tithi, nakshatra, lunar month, sunset) used by calendars."""
     ts = _ts()
     ev = sun_events(loc, start, days)
     rises = [ev[start + timedelta(days=i)]["sunrise"] for i in range(days)]
+    months = lunar_months(start.year)
     t = ts.from_datetimes(rises)
     tithi = (_elongation(t) // 12.0).astype(int)
     nak = (_sidereal(t)[1] // (360.0 / 27)).astype(int)
     out = []
     for i, d in enumerate(rises):
         paksha, name = tithi_label(int(tithi[i]))
+        month = next((m for m in months if m["start"] <= d < m["end"]), None)
         out.append({
             "date": (start + timedelta(days=i)).isoformat(),
             "sunrise": d.isoformat(),
+            "sunset": ev[start + timedelta(days=i)]["sunset"].isoformat(),
+            "lunar_month": month["index"] if month else None,
+            "adhika": bool(month and month["adhika"]),
             "tithi_index": int(tithi[i]) + 1,
             "tithi": name,
             "paksha": paksha,
