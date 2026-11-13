@@ -1094,6 +1094,7 @@ const stringsPa = <String, String>{
   'Total lunar eclipse': 'ਪੂਰਨ ਚੰਦਰ ਗ੍ਰਹਿਣ',
   'Total solar eclipse': 'ਪੂਰਨ ਸੂਰਜ ਗ੍ਰਹਿਣ',
   'Vehicle purchase': 'ਵਾਹਨ ਖ਼ਰੀਦ',
+  'Naming ceremony (Namakaranam)': 'ਨਾਮਕਰਨ ਸੰਸਕਾਰ',
   'Visible here {0}. Penumbral only: no Sutak.': 'ਇੱਥੇ {0} ਦਿਸੇਗਾ। ਸਿਰਫ਼ ਉਪਛਾਇਆ: ਸੂਤਕ ਨਹੀਂ।',
   'Visible here {0}. Sutak from {1}.': 'ਇੱਥੇ {0} ਦਿਸੇਗਾ। ਸੂਤਕ {1} ਤੋਂ।',
   'Begins': 'ਸ਼ੁਰੂ (ਸਪਰਸ਼)',
@@ -1163,6 +1164,8 @@ const stringsPa = <String, String>{
       'ਮਾਘ, ਫੱਗਣ, ਵਿਸਾਖ, ਜੇਠ (ਜਾਂ ਕੱਤਕ, ਮੱਘਰ); ਸਥਿਰ ਅਤੇ ਮ੍ਰਿਦੁ ਨਕਸ਼ੱਤਰ; ਸ਼ੁਭ ਤਿਥੀ ਅਤੇ ਵਾਰ; ਗੁਰੂ-ਸ਼ੁੱਕਰ ਅਸਤ ਨਹੀਂ। ਰਾਹੂ ਕਾਲ ਛੱਡ ਦਿੱਤਾ ਗਿਆ ਹੈ।',
   'Movable, gentle and light nakshatras; good tithi and weekday; not in Pitru Paksha or Adhika masa. Rahu Kalam is left out.':
       'ਚਰ, ਮ੍ਰਿਦੁ ਅਤੇ ਲਘੂ ਨਕਸ਼ੱਤਰ; ਸ਼ੁਭ ਤਿਥੀ ਅਤੇ ਵਾਰ; ਸਰਾਧ (ਪਿਤਰ ਪੱਖ) ਜਾਂ ਅਧਿਕ ਮਾਸ ਨਹੀਂ। ਰਾਹੂ ਕਾਲ ਛੱਡ ਦਿੱਤਾ ਗਿਆ ਹੈ।',
+  'Gentle, fixed, swift and movable nakshatras; no Rikta tithi or Amavasya; Sunday, Monday, Wednesday, Thursday or Friday; not in Adhika masa; a good stretch of at least four hours. Rahu Kalam is left out.':
+      'ਮ੍ਰਿਦੁ, ਧ੍ਰੁਵ, ਕਸ਼ਿਪ੍ਰ ਅਤੇ ਚਰ ਨਕਸ਼ੱਤਰ; ਰਿਕਤਾ ਤਿਥੀ ਜਾਂ ਮੱਸਿਆ ਨਹੀਂ; ਐਤਵਾਰ, ਸੋਮਵਾਰ, ਬੁੱਧਵਾਰ, ਵੀਰਵਾਰ ਜਾਂ ਸ਼ੁੱਕਰਵਾਰ; ਅਧਿਕ ਮਾਸ ਨਹੀਂ; ਘੱਟੋ-ਘੱਟ ਚਾਰ ਘੰਟੇ ਦਾ ਸ਼ੁਭ ਸਮਾਂ। ਰਾਹੂ ਕਾਲ ਛੱਡ ਦਿੱਤਾ ਗਿਆ ਹੈ।',
   'No dates in this period': 'ਇਸ ਸਮੇਂ ਵਿੱਚ ਕੋਈ ਤਰੀਕ ਨਹੀਂ',
   'Sun in a marriage month, outside Chaturmas and Adhika masa, Guru and Shukra not combust; one of the 11 marriage nakshatras without a bad yoga or karana. Rahu Kalam is left out.':
       'ਸੂਰਜ ਵਿਆਹ ਵਾਲੇ ਮਹੀਨੇ ਵਿੱਚ, ਚਤੁਰਮਾਸ ਅਤੇ ਅਧਿਕ ਮਾਸ ਤੋਂ ਬਾਹਰ, ਗੁਰੂ-ਸ਼ੁੱਕਰ ਅਸਤ ਨਹੀਂ; 11 ਵਿਆਹ ਨਕਸ਼ੱਤਰਾਂ ਵਿੱਚੋਂ ਇੱਕ, ਅਸ਼ੁਭ ਯੋਗ ਜਾਂ ਕਰਣ ਨਹੀਂ। ਰਾਹੂ ਕਾਲ ਛੱਡ ਦਿੱਤਾ ਗਿਆ ਹੈ।',

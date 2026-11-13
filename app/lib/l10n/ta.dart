@@ -1103,6 +1103,7 @@ const stringsTa = <String, String>{
   'Total lunar eclipse': 'முழு சந்திர கிரகணம்',
   'Total solar eclipse': 'முழு சூரிய கிரகணம்',
   'Vehicle purchase': 'வாகனம் வாங்குதல்',
+  'Naming ceremony (Namakaranam)': 'பெயர் சூட்டு விழா (நாமகரணம்)',
   'Visible here {0}. Penumbral only: no Sutak.': 'இங்கே {0} தெரியும். புறநிழல் மட்டுமே: சூதகம் இல்லை.',
   'Visible here {0}. Sutak from {1}.': 'இங்கே {0} தெரியும். சூதகம் {1} முதல்.',
   'Begins': 'தொடக்கம் (ஸ்பரிசம்)',
@@ -1172,6 +1173,8 @@ const stringsTa = <String, String>{
       'மாகம், பால்குனம், வைசாகம், ஜ்யேஷ்டம் (அல்லது கார்த்திகம், மார்கசீர்ஷம்) மாதங்கள்; ஸ்திர, மிருது நட்சத்திரங்கள்; நல்ல திதி, கிழமை; குரு, சுக்கிர அஸ்தமனம் இல்லாத காலம். ராகு காலம் நீக்கப்பட்டுள்ளது.',
   'Movable, gentle and light nakshatras; good tithi and weekday; not in Pitru Paksha or Adhika masa. Rahu Kalam is left out.':
       'சர, மிருது, லகு நட்சத்திரங்கள்; நல்ல திதி, கிழமை; மகாளய பட்சம், அதிக மாதம் அல்லாத காலம். ராகு காலம் நீக்கப்பட்டுள்ளது.',
+  'Gentle, fixed, swift and movable nakshatras; no Rikta tithi or Amavasya; Sunday, Monday, Wednesday, Thursday or Friday; not in Adhika masa; a good stretch of at least four hours. Rahu Kalam is left out.':
+      'மிருது, ஸ்திர, க்ஷிப்ர, சர நட்சத்திரங்கள்; ரிக்தை திதி, அமாவாசை அல்லாத நாள்; ஞாயிறு, திங்கள், புதன், வியாழன் அல்லது வெள்ளி; அதிக மாதம் அல்லாத காலம்; குறைந்தது நான்கு மணி நேர நல்ல நேரம். ராகு காலம் நீக்கப்பட்டுள்ளது.',
   'No dates in this period': 'இந்தக் காலத்தில் தேதிகள் இல்லை',
   'Sun in a marriage month, outside Chaturmas and Adhika masa, Guru and Shukra not combust; one of the 11 marriage nakshatras without a bad yoga or karana. Rahu Kalam is left out.':
       'திருமணத்துக்கு உகந்த சூரிய மாதம், சாதுர்மாஸ்யம், அதிக மாதம் அல்லாத காலம், குரு, சுக்கிர அஸ்தமனம் இல்லாதது; தீய யோகம் அல்லது கரணம் இல்லாத 11 திருமண நட்சத்திரங்களில் ஒன்று. ராகு காலம் நீக்கப்பட்டுள்ளது.',

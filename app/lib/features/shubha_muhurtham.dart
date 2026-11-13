@@ -11,8 +11,8 @@ import '../widgets/common.dart';
 import 'grahanam.dart';
 import 'matching.dart' show nakshatraName;
 
-/// Shubha Muhurtham dates for marriage, house warming and buying a vehicle, from today to the end of
-/// next year, with the good time window of each day for the chosen city.
+/// Shubha Muhurtham dates for marriage, house warming, buying a vehicle and the naming ceremony, from
+/// today to the end of next year, with the good time window of each day for the chosen city.
 class ShubhaMuhurthamScreen extends ConsumerStatefulWidget {
   const ShubhaMuhurthamScreen({super.key, this.kind});
   final String? kind;
@@ -95,6 +95,15 @@ class _ShubhaMuhurthamScreenState extends ConsumerState<ShubhaMuhurthamScreen> {
           'अस्त नहीं। राहु काल छोड़ा गया है।',
       'మాఘం, ఫాల్గుణం, వైశాఖం, జ్యేష్ఠం (లేదా కార్తీకం, మార్గశిరం); స్థిర, మృదు నక్షత్రాలు; మంచి తిథి, వారం; '
           'గురు-శుక్ర మౌఢ్యమి లేకుండా. రాహుకాలం తీసివేశాం.',
+    ),
+    'namakarana' => t3(
+      lang,
+      'Gentle, fixed, swift and movable nakshatras; no Rikta tithi or Amavasya; Sunday, Monday, Wednesday, Thursday '
+          'or Friday; not in Adhika masa; a good stretch of at least four hours. Rahu Kalam is left out.',
+      'मृदु, ध्रुव, क्षिप्र और चर नक्षत्र; रिक्ता तिथि और अमावस्या नहीं; रवि, सोम, बुध, गुरु या शुक्रवार; अधिक मास '
+          'नहीं; कम से कम चार घंटे का शुभ समय। राहु काल छोड़ा गया है।',
+      'మృదు, స్థిర, క్షిప్ర, చర నక్షత్రాలు; రిక్త తిథి, అమావాస్య కాకుండా; ఆది, సోమ, బుధ, గురు లేదా శుక్రవారం; '
+          'అధిక మాసం కాకుండా; కనీసం నాలుగు గంటల మంచి సమయం. రాహుకాలం తీసివేశాం.',
     ),
     _ => t3(
       lang,

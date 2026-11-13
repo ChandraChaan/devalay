@@ -1107,6 +1107,7 @@ const stringsMl = <String, String>{
   'Total lunar eclipse': 'പൂർണ്ണ ചന്ദ്രഗ്രഹണം',
   'Total solar eclipse': 'പൂർണ്ണ സൂര്യഗ്രഹണം',
   'Vehicle purchase': 'വാഹനം വാങ്ങൽ',
+  'Naming ceremony (Namakaranam)': 'നാമകരണം (പേരിടൽ)',
   'Visible here {0}. Penumbral only: no Sutak.': 'ഇവിടെ {0} ദൃശ്യമാകും. ഉപച്ഛായ മാത്രം: സൂതകമില്ല.',
   'Visible here {0}. Sutak from {1}.': 'ഇവിടെ {0} ദൃശ്യമാകും. സൂതകം {1} മുതൽ.',
   'Begins': 'ആരംഭം (സ്പർശം)',
@@ -1176,6 +1177,8 @@ const stringsMl = <String, String>{
       'മാഘം, ഫാൽഗുനം, വൈശാഖം, ജ്യേഷ്ഠം (അല്ലെങ്കിൽ കാർത്തികം, മാർഗ്ഗശീർഷം) മാസങ്ങൾ; സ്ഥിര, മൃദു നക്ഷത്രങ്ങൾ; നല്ല തിഥിയും വാരവും; ഗുരുമൗഢ്യവും ശുക്രമൗഢ്യവും ഇല്ലാത്ത കാലം. രാഹുകാലം ഒഴിവാക്കിയിരിക്കുന്നു.',
   'Movable, gentle and light nakshatras; good tithi and weekday; not in Pitru Paksha or Adhika masa. Rahu Kalam is left out.':
       'ചര, മൃദു, ലഘു നക്ഷത്രങ്ങൾ; നല്ല തിഥിയും വാരവും; പിതൃപക്ഷമോ അധികമാസമോ അല്ലാത്ത കാലം. രാഹുകാലം ഒഴിവാക്കിയിരിക്കുന്നു.',
+  'Gentle, fixed, swift and movable nakshatras; no Rikta tithi or Amavasya; Sunday, Monday, Wednesday, Thursday or Friday; not in Adhika masa; a good stretch of at least four hours. Rahu Kalam is left out.':
+      'മൃദു, സ്ഥിര, ക്ഷിപ്ര, ചര നക്ഷത്രങ്ങൾ; രിക്താ തിഥിയോ അമാവാസിയോ അല്ലാത്ത ദിവസം; ഞായർ, തിങ്കൾ, ബുധൻ, വ്യാഴം അല്ലെങ്കിൽ വെള്ളി; അധികമാസമല്ലാത്ത കാലം; കുറഞ്ഞത് നാലു മണിക്കൂർ നല്ല സമയം. രാഹുകാലം ഒഴിവാക്കിയിരിക്കുന്നു.',
   'No dates in this period': 'ഈ കാലയളവിൽ തീയതികളില്ല',
   'Sun in a marriage month, outside Chaturmas and Adhika masa, Guru and Shukra not combust; one of the 11 marriage nakshatras without a bad yoga or karana. Rahu Kalam is left out.':
       'വിവാഹത്തിന് അനുയോജ്യമായ സൗരമാസം, ചാതുർമാസ്യവും അധികമാസവും അല്ലാത്ത കാലം, ഗുരുമൗഢ്യവും ശുക്രമൗഢ്യവും ഇല്ലാതെ; ദുഷ്ട യോഗമോ കരണമോ ഇല്ലാത്ത 11 വിവാഹനക്ഷത്രങ്ങളിൽ ഒന്ന്. രാഹുകാലം ഒഴിവാക്കിയിരിക്കുന്നു.',

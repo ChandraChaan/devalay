@@ -42,6 +42,37 @@ def test_dates_agree_with_drik(ours, kind, city):
     assert len(close) >= 0.93 * len(found)
 
 
+ASTROSAGE = json.loads((Path(__file__).parent / "data" / "astrosage_muhurat.json").read_text())
+
+
+@pytest.mark.parametrize("year", [2026, 2027])
+@pytest.mark.parametrize("city", ["hyderabad", "delhi"])
+def test_namakarana_agrees_with_astrosage(city, year):
+    # Drik Panchang's naming lists sit behind a reCAPTCHA, so Namakarana is checked against AstroSage's.
+    # 2026 matches day for day; in 2027 five evenings that rose on a Rikta tithi or Amavasya are missed.
+    c = ASTROSAGE["meta"]["cities"][city]
+    loc = Location(c["lat"], c["lon"], "Asia/Kolkata")
+    days = muhurtham.muhurtham_dates("namakarana", loc, date(year, 1, 1), date(year, 12, 31), cut_rahu=False)
+    mine = {d["d"]: d for d in days}
+    theirs = {d: w for d, w in ASTROSAGE["namakarana"][city].items() if d.startswith(str(year))}
+    found = set(theirs) & set(mine)
+    assert len(found) >= 0.96 * len(theirs), sorted(set(theirs) - set(mine))
+    assert not set(mine) - set(theirs), sorted(set(mine) - set(theirs))
+    close = [d for d in found if abs(mine[d]["w"][0][0] - theirs[d][0][0]) <= 5
+             and abs(mine[d]["w"][-1][1] - theirs[d][-1][1]) <= 5]
+    assert len(close) >= 0.97 * len(found)
+
+
+def test_namakarana_window_survives_rahu_kalam():
+    # The four-hour minimum is judged before Rahu Kalam is cut, so the pieces either side of it stay.
+    loc = Location(17.384, 78.456, "Asia/Kolkata")
+    day = date(2026, 1, 5)  # Monday, a good stretch from sunrise to 13:26 across Rahu Kalam (07:30-08:55)
+    plain = muhurtham.muhurtham_dates("namakarana", loc, day, day, cut_rahu=False)[0]
+    cut = muhurtham.muhurtham_dates("namakarana", loc, day, day)[0]
+    assert len(plain["w"]) == 1 and len(cut["w"]) == 2
+    assert cut["w"][0][0] == plain["w"][0][0] and cut["w"][-1][1] == plain["w"][-1][1]
+
+
 def test_rahu_kalam_is_cut_and_lagna_is_recommended():
     loc = Location(17.384, 78.456, "Asia/Kolkata")
     day = date(2027, 1, 19)  # a vivaha window across the whole day

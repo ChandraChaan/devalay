@@ -1091,6 +1091,7 @@ const stringsBn = <String, String>{
   'Total lunar eclipse': 'পূর্ণগ্রাস চন্দ্রগ্রহণ',
   'Total solar eclipse': 'পূর্ণগ্রাস সূর্যগ্রহণ',
   'Vehicle purchase': 'যানবাহন ক্রয়',
+  'Naming ceremony (Namakaranam)': 'নামকরণ অনুষ্ঠান',
   'Visible here {0}. Penumbral only: no Sutak.': 'এখানে {0} দেখা যাবে। কেবল উপচ্ছায়া: সূতক নেই।',
   'Visible here {0}. Sutak from {1}.': 'এখানে {0} দেখা যাবে। সূতক {1} থেকে।',
   'Begins': 'স্পর্শ',
@@ -1160,6 +1161,8 @@ const stringsBn = <String, String>{
       'মাঘ, ফাল্গুন, বৈশাখ, জ্যৈষ্ঠ (বা কার্তিক, অগ্রহায়ণ); স্থির ও মৃদু নক্ষত্র; শুভ তিথি ও বার; গুরু-শুক্র অস্ত নয়। রাহুকাল বাদ দেওয়া হয়েছে।',
   'Movable, gentle and light nakshatras; good tithi and weekday; not in Pitru Paksha or Adhika masa. Rahu Kalam is left out.':
       'চর, মৃদু ও লঘু নক্ষত্র; শুভ তিথি ও বার; পিতৃপক্ষ বা অধিক মাস নয়। রাহুকাল বাদ দেওয়া হয়েছে।',
+  'Gentle, fixed, swift and movable nakshatras; no Rikta tithi or Amavasya; Sunday, Monday, Wednesday, Thursday or Friday; not in Adhika masa; a good stretch of at least four hours. Rahu Kalam is left out.':
+      'মৃদু, ধ্রুব, ক্ষিপ্র ও চর নক্ষত্র; রিক্তা তিথি বা অমাবস্যা নয়; রবি, সোম, বুধ, বৃহস্পতি বা শুক্রবার; অধিক মাস নয়; অন্তত চার ঘণ্টার শুভ সময়। রাহুকাল বাদ দেওয়া হয়েছে।',
   'No dates in this period': 'এই সময়ে কোনো তারিখ নেই',
   'Sun in a marriage month, outside Chaturmas and Adhika masa, Guru and Shukra not combust; one of the 11 marriage nakshatras without a bad yoga or karana. Rahu Kalam is left out.':
       'বিবাহের উপযুক্ত সৌর মাস, চাতুর্মাস্য ও অধিক মাসের বাইরে, গুরু-শুক্র অস্ত নয়; 11টি বিবাহ-নক্ষত্রের একটি, অশুভ যোগ বা করণ ছাড়া। রাহুকাল বাদ দেওয়া হয়েছে।',

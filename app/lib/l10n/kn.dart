@@ -1095,6 +1095,7 @@ const stringsKn = <String, String>{
   'Total lunar eclipse': 'ಖಗ್ರಾಸ ಚಂದ್ರಗ್ರಹಣ',
   'Total solar eclipse': 'ಖಗ್ರಾಸ ಸೂರ್ಯಗ್ರಹಣ',
   'Vehicle purchase': 'ವಾಹನ ಖರೀದಿ',
+  'Naming ceremony (Namakaranam)': 'ನಾಮಕರಣ',
   'Visible here {0}. Penumbral only: no Sutak.': 'ಇಲ್ಲಿ {0} ಕಾಣಿಸುತ್ತದೆ. ಉಪಚ್ಛಾಯೆ ಮಾತ್ರ: ಸೂತಕವಿಲ್ಲ.',
   'Visible here {0}. Sutak from {1}.': 'ಇಲ್ಲಿ {0} ಕಾಣಿಸುತ್ತದೆ. ಸೂತಕ {1} ರಿಂದ.',
   'Begins': 'ಆರಂಭ (ಸ್ಪರ್ಶ)',
@@ -1164,6 +1165,8 @@ const stringsKn = <String, String>{
       'ಮಾಘ, ಫಾಲ್ಗುಣ, ವೈಶಾಖ, ಜ್ಯೇಷ್ಠ (ಅಥವಾ ಕಾರ್ತಿಕ, ಮಾರ್ಗಶಿರ) ಮಾಸಗಳು; ಸ್ಥಿರ ಮತ್ತು ಮೃದು ನಕ್ಷತ್ರಗಳು; ಶುಭ ತಿಥಿ ಮತ್ತು ವಾರ; ಗುರು-ಶುಕ್ರ ಮೌಢ್ಯವಿಲ್ಲ. ರಾಹುಕಾಲವನ್ನು ಬಿಡಲಾಗಿದೆ.',
   'Movable, gentle and light nakshatras; good tithi and weekday; not in Pitru Paksha or Adhika masa. Rahu Kalam is left out.':
       'ಚರ, ಮೃದು ಮತ್ತು ಲಘು ನಕ್ಷತ್ರಗಳು; ಶುಭ ತಿಥಿ ಮತ್ತು ವಾರ; ಪಿತೃಪಕ್ಷ ಅಥವಾ ಅಧಿಕ ಮಾಸವಲ್ಲ. ರಾಹುಕಾಲವನ್ನು ಬಿಡಲಾಗಿದೆ.',
+  'Gentle, fixed, swift and movable nakshatras; no Rikta tithi or Amavasya; Sunday, Monday, Wednesday, Thursday or Friday; not in Adhika masa; a good stretch of at least four hours. Rahu Kalam is left out.':
+      'ಮೃದು, ಸ್ಥಿರ, ಕ್ಷಿಪ್ರ ಮತ್ತು ಚರ ನಕ್ಷತ್ರಗಳು; ರಿಕ್ತಾ ತಿಥಿ ಅಥವಾ ಅಮಾವಾಸ್ಯೆಯಲ್ಲ; ಭಾನು, ಸೋಮ, ಬುಧ, ಗುರು ಅಥವಾ ಶುಕ್ರವಾರ; ಅಧಿಕ ಮಾಸವಲ್ಲ; ಕನಿಷ್ಠ ನಾಲ್ಕು ಗಂಟೆಗಳ ಶುಭ ಸಮಯ. ರಾಹುಕಾಲವನ್ನು ಬಿಡಲಾಗಿದೆ.',
   'No dates in this period': 'ಈ ಅವಧಿಯಲ್ಲಿ ಯಾವುದೇ ದಿನಾಂಕಗಳಿಲ್ಲ',
   'Sun in a marriage month, outside Chaturmas and Adhika masa, Guru and Shukra not combust; one of the 11 marriage nakshatras without a bad yoga or karana. Rahu Kalam is left out.':
       'ಸೂರ್ಯ ವಿವಾಹ ಮಾಸದಲ್ಲಿ, ಚಾತುರ್ಮಾಸ ಮತ್ತು ಅಧಿಕ ಮಾಸದ ಹೊರಗೆ, ಗುರು-ಶುಕ್ರ ಮೌಢ್ಯವಿಲ್ಲ; 11 ವಿವಾಹ ನಕ್ಷತ್ರಗಳಲ್ಲಿ ಒಂದು, ಅಶುಭ ಯೋಗ ಅಥವಾ ಕರಣವಿಲ್ಲ. ರಾಹುಕಾಲವನ್ನು ಬಿಡಲಾಗಿದೆ.',
