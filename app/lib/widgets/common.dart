@@ -276,3 +276,33 @@ String hhmm(String iso) {
   final h12 = h % 12 == 0 ? 12 : h % 12;
   return '$h12:$m $suffix';
 }
+
+/// A label's font size, a little smaller when one word is long enough to break mid-word in a
+/// narrow tile (Tamil, Malayalam and Kannada compound words).
+double labelSize(String label, double base) {
+  final longest = label.split(RegExp(r'\s+')).fold<int>(0, (m, w) => w.runes.length > m ? w.runes.length : m);
+  if (longest > 12) return base - 3;
+  if (longest > 9) return base - 2;
+  return base;
+}
+
+/// A tile caption: one long word shrinks to fit instead of breaking mid-word; longer captions
+/// wrap to two lines.
+class TileLabel extends StatelessWidget {
+  const TileLabel(this.text, {super.key, required this.style});
+  final String text;
+  final TextStyle style;
+
+  @override
+  Widget build(BuildContext context) {
+    if (!text.trim().contains(' ')) {
+      // Full size unless the word is wider than the tile.
+      return FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Text(text, maxLines: 1, textAlign: TextAlign.center, style: style),
+      );
+    }
+    final sized = style.copyWith(fontSize: labelSize(text, style.fontSize ?? 14));
+    return Text(text, maxLines: 2, overflow: TextOverflow.ellipsis, textAlign: TextAlign.center, style: sized);
+  }
+}

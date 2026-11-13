@@ -279,7 +279,8 @@ class _QuickActions extends ConsumerWidget {
         crossAxisCount: (MediaQuery.sizeOf(context).width / 96).floor().clamp(4, 8),
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
-        childAspectRatio: 0.92,
+        // Room for two-line labels: Tamil, Malayalam and Kannada words run long.
+        childAspectRatio: 0.8,
         children: [
           for (final (i, (emoji, key, route, tab)) in actions.indexed)
             InkWell(
@@ -299,12 +300,9 @@ class _QuickActions extends ConsumerWidget {
                     child: Text(emoji, style: const TextStyle(fontSize: 26)),
                   ),
                   const SizedBox(height: 6),
-                  Text(
+                  TileLabel(
                     tr(ref, key),
-                    textAlign: TextAlign.center,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(fontSize: 12.5, fontWeight: FontWeight.w600),
+                    style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w600, height: 1.15),
                   ),
                 ],
               ),

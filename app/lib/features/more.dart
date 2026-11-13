@@ -179,11 +179,14 @@ class MoreScreen extends ConsumerWidget {
                     children: [
                       Text(emoji, style: const TextStyle(fontSize: 30)),
                       const SizedBox(height: 6),
-                      Text(
+                      TileLabel(
                         tr(ref, key),
-                        textAlign: TextAlign.center,
-                        maxLines: 2,
-                        style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700, height: 1.1),
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w700,
+                          height: 1.1,
+                          fontSize: 14,
+                        ),
                       ),
                     ],
                   ),

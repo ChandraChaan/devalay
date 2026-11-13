@@ -5,8 +5,9 @@
 <h1 align="center">🛕 Devalay · देवालय</h1>
 
 <p align="center">
-  <b>A free, open-source, ad-free Hindu devotional app for Android, in Telugu, Hindi and English.</b><br>
-  Annamayya keerthanas · Telugu Panchangam · temple videos · the Bhagavad Gita · a virtual Mandir · japa mala
+  <b>A free, open-source, ad-free Hindu devotional app for Android, in 11 Indian languages.</b><br>
+  English · हिन्दी · বাংলা · मराठी · తెలుగు · தமிழ் · ગુજરાતી · ಕನ್ನಡ · മലയാളം · ଓଡ଼ିଆ · ਪੰਜਾਬੀ<br>
+  Panchang & calendar · Annamayya keerthanas · temple videos · the Bhagavad Gita · a virtual Mandir · japa mala
 </p>
 
 <p align="center">
@@ -44,6 +45,15 @@ Sanatan, but Devalay is an **original** app with its own name, design, code and 
 
 ## Screenshots
 
+New in 1.4: a calendar with Choghadiya, Hora and Gowri timings, a home-screen widget, important days, marriage
+matching, and the whole app in 11 languages.
+
+| Home | Calendar with festivals and auspicious days | Choghadiya, Hora and Gowri, with the running period | Important days |
+|:-:|:-:|:-:|:-:|
+| <img src="docs/screenshots/13-home.jpg" width="200"> | <img src="docs/screenshots/14-calendar.jpg" width="200"> | <img src="docs/screenshots/15-timings.jpg" width="200"> | <img src="docs/screenshots/16-important-days.jpg" width="200"> |
+| **Home-screen widget** | **11 Indian languages** | **The whole app in Tamil** | **Marriage matching (Guna Milan)** |
+| <img src="docs/screenshots/17-widget.jpg" width="200"> | <img src="docs/screenshots/18-languages.jpg" width="200"> | <img src="docs/screenshots/19-tamil-home.jpg" width="200"> | <img src="docs/screenshots/20-matching.jpg" width="200"> |
+
 | Home in dark theme | Home with today's Panchang and songs | Telugu Panchangam | Good times and times to avoid |
 |:-:|:-:|:-:|:-:|
 | <img src="docs/screenshots/01-home-dark.jpg" width="200"> | <img src="docs/screenshots/02-home.jpg" width="200"> | <img src="docs/screenshots/03-panchang.jpg" width="200"> | <img src="docs/screenshots/04-timings.jpg" width="200"> |
@@ -76,6 +86,14 @@ Each release lists SHA-256 checksums. `devalay-arm64-v8a.apk` is a smaller downl
 
 ## Features
 
+- **11 languages**: English, Hindi, Bengali, Marathi, Telugu, Tamil, Gujarati, Kannada, Malayalam, Odia and Punjabi,
+  for every screen, Panchang name, festival, city and greeting card. Aartis, mantras and the Gita appear in your own
+  script, and dates and pickers follow your language.
+- **Calendar**: month grid with tithi, festivals, Ekadashi, Purnima, Amavasya, national holidays and auspicious
+  days (Amrita Siddhi, Guru Pushya); Choghadiya, Hora and Gowri Panchangam; Rahu Kalam; moonrise and moonset;
+  Tarabalam and Chandrabalam for your birth star; important days for the year; birthdays, anniversaries and
+  remembrance days that repeat by tithi; a morning Panchang notification; and a home-screen widget.
+- **Marriage matching**: Ashtakoota Guna Milan (36) and the 10 Porutham from the birth stars.
 - **Home**: greeting, deity of the day, today's Panchang, festival countdown, Gita verse of the day, bhakti picks.
 - **Listen**: aarti, mantra, bhajan, dhun and meditation tracks; deity filters; lock-screen controls; queue,
   repeat, sleep timer; offline downloads; lyrics link.
