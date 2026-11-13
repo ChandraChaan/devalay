@@ -39,7 +39,8 @@ def main() -> None:
         lat, lon = round(rng.uniform(-40, 55), 2), round(rng.uniform(-125, 150), 2)
         earth = eph["earth"].at(t)
         aya = float(panchang.ayanamsa(t))
-        case = {"utc": "%04d-%02d-%02dT%02d:%02d:00Z" % parts, "lat": lat, "lon": lon, "ayanamsa": round(aya, 6)}
+        y, mo, d, h, mi = parts
+        case = {"utc": f"{y:04d}-{mo:02d}-{d:02d}T{h:02d}:{mi:02d}:00Z", "lat": lat, "lon": lon, "ayanamsa": round(aya, 6)}
         for key, body in BODIES.items():
             _, lam, _ = earth.observe(eph[body]).apparent().frame_latlon(ecliptic_frame)
             case[key] = round((lam.degrees - aya) % 360.0, 5)
