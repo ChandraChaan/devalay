@@ -163,15 +163,10 @@ PeriodReading periodReading(String lang, Transits tx, int rashi, Period period, 
     final parts = [text(lang, houseFrom(rashi, tx.signOn(key, at)))];
     for (final (moved, sign) in tx.changes(key, start, end)) {
       parts.add(
-        t3(
-          lang,
-          'From {0} it moves into {1}: {2}',
-          '{0} से {1} में: {2}',
-          '{0} నుండి {1}లో: {2}',
-        ).replaceAll('{0}', fmtDate(lang, 'd MMM', moved)).replaceAll('{1}', signName(lang, sign)).replaceAll(
-          '{2}',
-          text(lang, houseFrom(rashi, sign)),
-        ),
+        t3(lang, 'From {0} it moves into {1}: {2}', '{0} से {1} में: {2}', '{0} నుండి {1}లో: {2}')
+            .replaceAll('{0}', fmtDate(lang, 'd MMM', moved))
+            .replaceAll('{1}', signName(lang, sign))
+            .replaceAll('{2}', text(lang, houseFrom(rashi, sign))),
       );
     }
     if (key != 'sun' && tx.retroIn(key, start, end).isNotEmpty) {

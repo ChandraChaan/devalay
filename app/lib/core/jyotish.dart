@@ -31,7 +31,9 @@ class MuhurthamDay {
       windows = [for (final w in m['w'] as List) ((w as List)[0] as int, w[1] as int)],
       nakshatras = (m['n'] as List).cast<int>(),
       tithis = (m['t'] as List).cast<int>(),
-      lagna = m['l'] == null ? null : ((m['l'] as List)[0] as int, (m['l'] as List)[1] as int, (m['l'] as List)[2] as int);
+      lagna = m['l'] == null
+          ? null
+          : ((m['l'] as List)[0] as int, (m['l'] as List)[1] as int, (m['l'] as List)[2] as int);
 
   final String kind;
   final DateTime date;
@@ -52,8 +54,7 @@ final muhurthamProvider = FutureProvider<Map<String, List<MuhurthamDay>>>((ref) 
   final data = await ref.read(apiProvider).get('/muhurtham', query: city.query) as Map;
   final kinds = data['kinds'] as Map;
   return {
-    for (final k in muhurthamKinds)
-      k: [for (final d in (kinds[k] as List? ?? const [])) MuhurthamDay(k, d as Map)],
+    for (final k in muhurthamKinds) k: [for (final d in (kinds[k] as List? ?? const [])) MuhurthamDay(k, d as Map)],
   };
 });
 
@@ -112,7 +113,12 @@ class Eclipse {
   /// One line: where it is seen and Sutak.
   String note(String lang) {
     if (!visible) {
-      return t3(lang, 'Not visible here. No Sutak.', 'यहाँ दिखाई नहीं देगा। सूतक नहीं।', 'ఇక్కడ కనిపించదు. సూతకం లేదు.');
+      return t3(
+        lang,
+        'Not visible here. No Sutak.',
+        'यहाँ दिखाई नहीं देगा। सूतक नहीं।',
+        'ఇక్కడ కనిపించదు. సూతకం లేదు.',
+      );
     }
     final span = '${hourMinute(lang, visibleFrom!)} – ${hourMinute(lang, visibleTo!)}';
     if (sutakStart == null) {

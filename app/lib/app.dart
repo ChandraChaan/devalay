@@ -31,7 +31,9 @@ import 'features/calendar.dart';
 import 'features/panchang.dart';
 import 'features/player.dart';
 import 'features/premium.dart';
+import 'features/jatakam.dart';
 import 'features/rashifal.dart';
+import 'features/shubha_muhurtham.dart';
 import 'features/read.dart';
 import 'features/ringtones.dart';
 import 'features/search.dart';
@@ -121,6 +123,11 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/calendar/important', builder: (_, _) => const ImportantDaysScreen()),
       GoRoute(path: '/calendar/events', builder: (_, _) => const MyEventsScreen()),
       GoRoute(path: '/matching', builder: (_, _) => const MatchingScreen()),
+      GoRoute(path: '/jatakam', builder: (_, _) => const JatakamScreen()),
+      GoRoute(
+        path: '/muhurtham',
+        builder: (_, s) => ShubhaMuhurthamScreen(kind: s.uri.queryParameters['kind']),
+      ),
       GoRoute(
         path: '/calendar/day/:date',
         builder: (_, s) =>

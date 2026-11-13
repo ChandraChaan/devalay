@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../core/i18n.dart';
 import '../core/matching.dart';
 import '../core/models.dart';
+import '../core/profiles.dart';
 import '../core/telugu.dart';
 import '../core/theme.dart';
 import '../widgets/common.dart';
@@ -49,6 +50,7 @@ class _MatchingScreenState extends ConsumerState<MatchingScreen> {
   Widget build(BuildContext context) {
     final lang = uiLang(ref);
     final bride = _bride.star, groom = _groom.star;
+    final saved = ref.watch(profilesProvider);
     return Scaffold(
       appBar: AppBar(title: Text(tr(ref, 'matching'))),
       body: ListView(
@@ -69,6 +71,7 @@ class _MatchingScreenState extends ConsumerState<MatchingScreen> {
             title: t3(lang, 'Bride', 'वधू', 'వధువు'),
             emoji: '👰',
             entry: _bride,
+            saved: saved,
             onChanged: (e) => setState(() => _bride = e),
           ),
           const SizedBox(height: 10),
@@ -77,6 +80,7 @@ class _MatchingScreenState extends ConsumerState<MatchingScreen> {
             title: t3(lang, 'Groom', 'वर', 'వరుడు'),
             emoji: '🤵',
             entry: _groom,
+            saved: saved,
             onChanged: (e) => setState(() => _groom = e),
           ),
           const SizedBox(height: 16),
@@ -123,10 +127,14 @@ class _PersonCard extends StatelessWidget {
     required this.title,
     required this.emoji,
     required this.entry,
+    this.saved = const [],
     required this.onChanged,
   });
   final String lang, title, emoji;
   final _Entry entry;
+
+  /// Births saved from the Jatakam screen, to fill the stars from.
+  final List<BirthProfile> saved;
   final ValueChanged<_Entry> onChanged;
 
   @override
@@ -139,7 +147,23 @@ class _PersonCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('$emoji  $title', style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w700)),
+            Row(
+              children: [
+                Expanded(
+                  child: Text('$emoji  $title', style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w700)),
+                ),
+                if (saved.isNotEmpty)
+                  PopupMenuButton<BirthProfile>(
+                    tooltip: t3(lang, 'From a saved Jatakam', 'सहेजी कुंडली से', 'దాచిన జాతకం నుండి'),
+                    icon: const Icon(Icons.person_search_rounded),
+                    itemBuilder: (_) => [for (final p in saved) PopupMenuItem(value: p, child: Text(p.name))],
+                    onSelected: (p) {
+                      final j = p.chart;
+                      onChanged(_Entry(nakshatra: j.nakshatra, pada: j.pada, rashi: j.moonRashi));
+                    },
+                  ),
+              ],
+            ),
             const SizedBox(height: 10),
             _Picker<int>(
               label: t3(lang, 'Nakshatra (birth star)', 'नक्षत्र (जन्म तारा)', 'నక్షత్రం (జన్మ తార)'),

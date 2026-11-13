@@ -19,9 +19,11 @@ class EclipseCard extends StatelessWidget {
     final rows = <(String, String)>[
       if (e.visible) ...[
         (t3(lang, 'Begins', 'आरंभ (स्पर्श)', 'ప్రారంభం (స్పర్శ)'), at(e.begins)),
-        if (e.contacts['total_begin'] case final t?) (t3(lang, 'Totality begins', 'पूर्णता आरंभ', 'సంపూర్ణ దశ ప్రారంభం'), at(t)),
+        if (e.contacts['total_begin'] case final t?)
+          (t3(lang, 'Totality begins', 'पूर्णता आरंभ', 'సంపూర్ణ దశ ప్రారంభం'), at(t)),
         (t3(lang, 'Maximum', 'मध्य', 'మధ్యకాలం'), at(e.max)),
-        if (e.contacts['total_end'] case final t?) (t3(lang, 'Totality ends', 'पूर्णता समाप्त', 'సంపూర్ణ దశ ముగింపు'), at(t)),
+        if (e.contacts['total_end'] case final t?)
+          (t3(lang, 'Totality ends', 'पूर्णता समाप्त', 'సంపూర్ణ దశ ముగింపు'), at(t)),
         (t3(lang, 'Ends', 'समाप्त (मोक्ष)', 'ముగింపు (మోక్షం)'), at(e.ends)),
         if (e.visibleFrom != e.begins || e.visibleTo != e.ends)
           (
@@ -29,11 +31,7 @@ class EclipseCard extends StatelessWidget {
             '${hourMinute(lang, e.visibleFrom!)} – ${hourMinute(lang, e.visibleTo!)}',
           ),
         if (e.magnitude != null) (t3(lang, 'Magnitude', 'ग्रास', 'గ్రాసం'), e.magnitude!.toStringAsFixed(2)),
-        if (e.sutakStart != null)
-          (
-            t3(lang, 'Sutak', 'सूतक', 'సూతకం'),
-            '${at(e.sutakStart)} – ${at(e.sutakEnd)}',
-          ),
+        if (e.sutakStart != null) (t3(lang, 'Sutak', 'सूतक', 'సూతకం'), '${at(e.sutakStart)} – ${at(e.sutakEnd)}'),
       ],
     ];
     return Card(
@@ -63,7 +61,9 @@ class EclipseCard extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 2),
                 child: Row(
                   children: [
-                    Expanded(child: Text(label, style: TextStyle(color: Theme.of(context).colorScheme.outline))),
+                    Expanded(
+                      child: Text(label, style: TextStyle(color: Theme.of(context).colorScheme.outline)),
+                    ),
                     Text(value, style: const TextStyle(fontWeight: FontWeight.w600)),
                   ],
                 ),
@@ -100,9 +100,7 @@ class DayMuhurthamNotes extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final all = ref.watch(muhurthamProvider).value;
     if (all == null) return const SizedBox.shrink();
-    final hits = [
-      for (final k in muhurthamKinds) ?all[k]!.where((d) => DateUtils.isSameDay(d.date, day)).firstOrNull,
-    ];
+    final hits = [for (final k in muhurthamKinds) ?all[k]!.where((d) => DateUtils.isSameDay(d.date, day)).firstOrNull];
     if (hits.isEmpty) return const SizedBox.shrink();
     return Column(
       children: [
@@ -142,6 +140,9 @@ class Pill extends StatelessWidget {
       color: (color ?? Palette.saffron).withValues(alpha: 0.14),
       borderRadius: BorderRadius.circular(12),
     ),
-    child: Text(text, style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: color ?? Palette.saffron)),
+    child: Text(
+      text,
+      style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: color ?? Palette.saffron),
+    ),
   );
 }

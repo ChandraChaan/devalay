@@ -84,6 +84,8 @@ const _strings = <String, Map<String, String>>{
   'booking': {'en': 'Booking', 'hi': 'बुकिंग', 'te': 'బుకింగ్'},
   'wishes': {'en': 'Festival wishes', 'hi': 'त्योहार शुभकामनाएँ', 'te': 'పండుగ శుభాకాంక్షలు'},
   'matching': {'en': 'Marriage matching', 'hi': 'विवाह मिलान', 'te': 'వివాహ పొంతన'},
+  'muhurtham': {'en': 'Shubha Muhurtham', 'hi': 'शुभ मुहूर्त', 'te': 'శుభ ముహూర్తాలు'},
+  'jatakam': {'en': 'Jatakam', 'hi': 'जन्म कुंडली', 'te': 'జాతకం'},
 };
 
 String tr(WidgetRef ref, String key) {
