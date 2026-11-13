@@ -24,18 +24,23 @@
   <a href="https://github.com/ChandraChaan/devalay/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/ChandraChaan/devalay?style=social"></a>
 </p>
 
-Devalay brings the temple to your phone, in English, Hindi or Telugu, for every member of the family:
+Devalay brings the temple to your phone for every member of the family, in the language they read best:
+English, हिन्दी, বাংলা, मराठी, తెలుగు, தமிழ், ગુજરાતી, ಕನ್ನಡ, മലയാളം, ଓଡ଼ିଆ or ਪੰਜਾਬੀ.
 
-- **For grandparents:** official TTD (SVBC) temple videos in a simple swipe-up feed with large Telugu titles.
-- **For the Panchang reader:** a Telugu Panchangam for 47 cities, with samvatsaram, masam, tithi and nakshatram end
-  times, Rahu Kalam, Yamagandam, Durmuhurtham, Varjyam and Amrit Kalam, checked against Drik Panchang. Telugu
-  festivals include Bhogi, Kanuma, Varalakshmi Vratam, Bathukamma, Atla Taddi and Nagula Chavithi.
+- **For grandparents:** official TTD (SVBC) temple videos in a simple swipe-up feed, and large, clear text.
+- **For the Panchang reader:** a Panchang for 47 cities, with samvatsara, masa, tithi and nakshatra end times,
+  Rahu Kalam, Yamagandam, Durmuhurtham, Varjyam and Amrit Kalam, checked against Drik Panchang. Choghadiya, Hora
+  and Gowri Panchangam show the running period, and a home-screen widget shows today's tithi and Rahu Kalam.
+  Regional festivals include Bhogi, Kanuma, Varalakshmi Vratam, Bathukamma, Atla Taddi and Nagula Chavithi.
+- **For the family calendar:** birthdays, anniversaries and remembrance days (taddinam) that repeat every year by
+  tithi, with a reminder the evening before, and marriage matching from the birth stars.
 - **For the music lover:** Annamacharya and Ramadasu keerthanas by M.S. Subbulakshmi and Balamuralikrishna (CC BY
   releases by Saregama). They keep playing on the lock screen, and each weekday puts its deity's songs first:
   Monday Shiva, Saturday Venkateswara.
 
-It also has all 701 verses of the Gita (in Telugu script), Telugu blessings written on wallpapers, a virtual Mandir,
-japa, Rashifal, statuses, and light and dark themes in five colours. It is inspired by apps like
+It also has all 701 verses of the Gita (shown in your own script), blessings written on wallpapers, festival
+greeting cards with your photo, temple booking guides, a virtual Mandir, japa, Rashifal, statuses, and light and
+dark themes in five colours. It is inspired by apps like
 Sanatan, but Devalay is an **original** app with its own name, design, code and legally sourced content.
 
 - **No ads, no analytics, no sign-up.** It works from the first launch. Only crash reports (Firebase Crashlytics) are collected, to fix bugs.
@@ -77,12 +82,15 @@ Each release lists SHA-256 checksums. `devalay-arm64-v8a.apk` is a smaller downl
 | | |
 |---|---|
 | **Android app** | Flutter 3.44 · Riverpod · go_router · just_audio (background playback) · Hive (offline) |
+| **Languages** | 11 Indian languages: string tables in `app/lib/l10n`, Devanagari-to-Indic script conversion, intl dates, Material localizations |
+| **Home-screen widget** | Android AppWidget (Kotlin RemoteViews) fed through `home_widget` |
 | **Backend** | Python 3.13 · FastAPI · SQLAlchemy 2 · PostgreSQL 17 · Alembic |
 | **Admin** | SQLAdmin dashboard at `/admin` (content, media upload, users, stats) |
 | **Panchang** | Skyfield + NASA JPL DE421 ephemeris, Lahiri ayanamsa |
 | **Media** | Cloudflare R2 (S3 API) or local disk |
 | **AI (optional)** | Claude via the Anthropic SDK, with free offline fallbacks |
-| **Notifications** | On-device scheduled notifications (no Firebase, no push server) |
+| **Notifications** | On-device scheduled reminders (festivals, morning Panchang, your events); Firebase Cloud Messaging for announcements |
+| **Updates and rating** | Firebase Remote Config force update, Google Play in-app updates and in-app review |
 
 ## Features
 
@@ -102,17 +110,23 @@ Each release lists SHA-256 checksums. `devalay-arm64-v8a.apk` is a smaller downl
 - **Read**: Bhagavad Gita (701 verses: Sanskrit, IAST, English) with a swipe reader and resume; Hanuman
   Chalisa, aartis, stotras and 26 mantras with transliteration and meanings; Ramayan (493 cantos, incl. Sundar
   Kand), Mahabharata, Upanishads, *The Song Celestial*.
-- **Panchang & calendar**: tithi, nakshatra, yoga, karana with end times; sunrise and sunset; Rahu Kaal,
-  Yamaganda, Gulika, Abhijit and Brahma muhurta; month calendar with Ekadashi, Purnima and Amavasya markers;
-  37 major festivals computed for any year from 1902 to 2049 for 28 cities; reminders.
-- **Rashifal**: daily reading for 12 rashis from the Moon's actual transit (Chandra gochar), Hindi and English.
+- **Panchang**: tithi, nakshatra, yoga, karana with end times; sunrise, sunset, moonrise and moonset; Rahu Kaal,
+  Yamaganda, Gulika, Durmuhurtham, Varjyam, Abhijit, Amrit Kalam and Brahma muhurta; a tap on any term explains
+  it; 45 festivals and monthly vratas computed for any year from 1902 to 2049 for 47 cities.
+- **Temple booking**: every TTD online service explained, with official booking links, TTD's latest announcements
+  and monthly quota reminders, plus 17 more temples and temple boards.
+- **Festival wishes**: greeting cards with your photo and name for 19 occasions, ready-made wishes in every language.
+- **Rashifal**: daily reading for 12 rashis from the Moon's actual transit (Chandra gochar).
 - **Japa mala**: 108-bead counter with haptics, rounds, and daily and lifetime totals.
 - **AI status maker**: devotional status lines for any deity and occasion, composed over sacred art and exported
   as a 1080×1920 image to share or save.
 - **Ask the Gita**: answers grounded in retrieved verses (BM25 retrieval, optional Claude synthesis).
 - **Wallpapers** (set home or lock screen, save, share), **ringtones** (set as ringtone, notification or alarm),
   **classic films** (Phalke's public-domain mythologicals).
-- **Search**, **favourites** (offline-first, synced when signed in), **downloads**, Hindi/English, light/dark.
+- **Search** (songs, scriptures, verses and festivals), **favourites** (offline-first, synced when signed in),
+  **downloads**, light and dark themes.
+- **Always current**: Google Play in-app updates, a force-update screen for very old builds, and a rate-and-share
+  card in More.
 - **Accounts are optional**: email and password, rotating refresh tokens, password reset, in-app account deletion.
 
 See [docs/FEATURES.md](docs/FEATURES.md) for the full parity matrix against the reference app, including what is
@@ -170,9 +184,13 @@ cd backend && .venv/bin/pytest -q && .venv/bin/ruff check .
 cd app && flutter analyze && flutter test
 ```
 
-The backend suite (48 tests) covers auth and token rotation, content APIs, admin access, AI quotas and fallbacks,
-premium verification, and the Panchang engine, which is checked against 33 published festival dates for 2025 and 2026.
-CI runs it on PostgreSQL and SQLite.
+The backend suite (54 tests) covers auth and token rotation, content APIs, admin access, AI quotas and fallbacks,
+premium verification, and the Panchang engine, which is checked against published festival dates, Drik Panchang
+timings and moonrise for 2025 and 2026. CI runs it on PostgreSQL and SQLite.
+
+The app suite (115 tests) covers the Choghadiya, Hora and Gowri tables, tithi recurrence, Tarabalam, marriage
+matching, the widget and notification text, and checks that every language translates every string with the same
+placeholders.
 
 ## Configuration
 
@@ -197,9 +215,18 @@ Release history: [CHANGELOG.md](CHANGELOG.md).
 Contributions are welcome. You could:
 
 - add public-domain chalisas, aartis and stotras;
-- translate the UI into more Indian languages;
+- translate Devalay into another language, or improve a translation (see below);
 - add cities to the Panchang;
 - pick up an item from the [milestones](https://github.com/ChandraChaan/devalay/milestones).
+
+### Adding or improving a language
+
+1. Run `python3 tool/l10n/extract.py` in `app/`. It lists every string to translate in `tool/l10n/strings.json`
+   (UI and Panchang names), `strings_content.json` (wishes and the temple guide) and `strings_descriptions.json`.
+2. Copy `app/lib/l10n/kn.dart`, `kn_content.dart` and `kn_desc.dart` to your language code and translate the values.
+   Keep the English keys and the `{0}` placeholders exactly as they are.
+3. Add the language to `appLanguages` in `app/lib/core/languages.dart` and to the table in `app/lib/l10n/l10n.dart`.
+4. `flutter test test/l10n_test.dart` tells you if anything is missing.
 
 Please open an issue first for larger changes. Any new content must be public domain or under an open licence, with
 its source recorded in [CONTENT_LICENSES.md](CONTENT_LICENSES.md).
