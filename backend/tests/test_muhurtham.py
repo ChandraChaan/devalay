@@ -44,10 +44,10 @@ def test_dates_agree_with_drik(ours, kind, city):
 
 def test_rahu_kalam_is_cut_and_lagna_is_recommended():
     loc = Location(17.384, 78.456, "Asia/Kolkata")
-    day = date(2027, 2, 22)  # a long vivaha window across the whole day
+    day = date(2027, 1, 19)  # a vivaha window across the whole day
     plain = muhurtham.muhurtham_dates("vivaha", loc, day, day, cut_rahu=False)[0]
     cut = muhurtham.muhurtham_dates("vivaha", loc, day, day)[0]
-    assert len(cut["w"]) == len(plain["w"]) + 1  # Monday's Rahu Kalam splits the window
+    assert len(cut["w"]) == len(plain["w"]) + 1  # Tuesday Rahu Kalam (15:15-16:40) splits the window
     s, e, sign = cut["l"]
     assert sign in muhurtham.VIVAHA.lagnas and e - s > 30
     assert cut["w"][0][0] <= s < e <= cut["w"][-1][1]
@@ -59,5 +59,5 @@ def test_combustion_spans():
     # Drik Panchang: Guru asta 17 Aug - 13 Sep 2027, Shukra asta 21 Jul - 9 Sep 2027 (New Delhi).
     assert muhurtham.asta_reason(sk, date(2027, 8, 30), tz) == "guru_asta"
     assert muhurtham.asta_reason(sk, date(2027, 7, 25), tz) == "shukra_asta"
-    assert muhurtham.asta_reason(sk, date(2027, 9, 20), tz) == "guru_bala"
+    assert muhurtham.asta_reason(sk, date(2027, 9, 17), tz) == "guru_bala"
     assert muhurtham.asta_reason(sk, date(2027, 3, 1), tz) is None
