@@ -205,7 +205,10 @@ def main() -> None:
     workers = int(os.environ.get("DEVALAY_EXPORT_WORKERS", os.cpu_count() or 1))
     if workers > 1:
         with multiprocessing.get_context("fork").Pool(workers, initializer=_worker_init) as pool:
-            ex.count += sum(pool.imap_unordered(export_city, jobs))
+            for done, n in enumerate(pool.imap_unordered(export_city, jobs), 1):
+                ex.count += n
+                if done % 25 == 0 or done == len(jobs):
+                    print(f"Cities: {done}/{len(jobs)}", flush=True)
     else:
         ex.count += sum(map(export_city, jobs))
 
