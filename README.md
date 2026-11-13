@@ -55,14 +55,17 @@ Sanatan, but Devalay is an **original** app with its own name, design, code and 
 
 ## Screenshots
 
-New in 1.4: a calendar with Choghadiya, Hora and Gowri timings, a home-screen widget, important days, marriage
-matching, and the whole app in 11 languages.
+New in 1.4: the whole app in 11 languages; a calendar with Choghadiya, Hora and Gowri timings, state holidays and
+regional dates; Shubha Muhurtham, eclipses and Jatakam; pooja guides; a thought of the day; widgets; and marriage
+matching.
 
 | Home | Calendar with festivals and auspicious days | Choghadiya, Hora and Gowri, with the running period | Important days |
 |:-:|:-:|:-:|:-:|
 | <img src="docs/screenshots/13-home.jpg" width="200"> | <img src="docs/screenshots/14-calendar.jpg" width="200"> | <img src="docs/screenshots/15-timings.jpg" width="200"> | <img src="docs/screenshots/16-important-days.jpg" width="200"> |
 | **Home-screen widget** | **11 Indian languages** | **The whole app in Tamil** | **Marriage matching (Guna Milan)** |
 | <img src="docs/screenshots/17-widget.jpg" width="200"> | <img src="docs/screenshots/18-languages.jpg" width="200"> | <img src="docs/screenshots/19-tamil-home.jpg" width="200"> | <img src="docs/screenshots/20-matching.jpg" width="200"> |
+| **Thought of the day** | **Shubha Muhurtham** | **Jatakam (birth chart)** | **Pooja guides with samagri** |
+| <img src="docs/screenshots/21-thought-of-the-day.jpg" width="200"> | <img src="docs/screenshots/22-muhurtham.jpg" width="200"> | <img src="docs/screenshots/23-jatakam.jpg" width="200"> | <img src="docs/screenshots/24-pooja-guide.jpg" width="200"> |
 
 | Home in dark theme | Home with today's Panchang and songs | Telugu Panchangam | Good times and times to avoid |
 |:-:|:-:|:-:|:-:|
