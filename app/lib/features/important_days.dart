@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -7,6 +8,7 @@ import 'package:intl/intl.dart';
 import '../core/events.dart';
 import '../core/i18n.dart';
 import '../core/muhurta.dart';
+import '../core/names.dart';
 import '../core/providers.dart';
 import '../core/storage.dart';
 import '../core/telugu.dart';
@@ -297,12 +299,12 @@ class _ImportantDaysScreenState extends ConsumerState<ImportantDaysScreen> {
                           ),
                         ),
                       for (final MapEntry(key: month, value: list) in byMonth.entries) ...[
-                        SectionHeader(
-                          lang == 'te'
-                              ? '${teluguGregorianMonths[month - 1]} $_year'
-                              : DateFormat('MMMM y').format(DateTime(_year, month)),
-                        ),
-                        for (final d in list) _Tile(day: d, lang: lang, today: today),
+                        SectionHeader(fmtDate(lang, 'MMMM y', DateTime(_year, month))),
+                        for (final (i, d) in list.indexed)
+                          _Tile(day: d, lang: lang, today: today)
+                              .animate(delay: (25 * i.clamp(0, 12)).ms)
+                              .fadeIn(duration: 220.ms)
+                              .slideX(begin: 0.04, curve: Curves.easeOut),
                       ],
                     ],
                   ),
@@ -323,10 +325,8 @@ class _NextUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final away = day.date.difference(today).inDays;
-    final weekday = lang == 'te' ? teluguWeekdays[day.date.weekday - 1] : DateFormat('EEEE').format(day.date);
-    final month = lang == 'te'
-        ? teluguGregorianMonths[day.date.month - 1]
-        : DateFormat('MMM').format(day.date).toUpperCase();
+    final weekday = fmtDate(lang, 'EEEE', day.date);
+    final month = lang == 'en' ? DateFormat('MMM').format(day.date).toUpperCase() : fmtDate(lang, 'MMMM', day.date);
     return Padding(
       padding: const EdgeInsets.only(top: 4, bottom: 4),
       child: GradientCard(
@@ -383,7 +383,7 @@ class _Tile extends StatelessWidget {
     final away = day.date.difference(today).inDays;
     final past = away < 0;
     final scheme = Theme.of(context).colorScheme;
-    final weekday = lang == 'te' ? teluguWeekdays[day.date.weekday - 1] : DateFormat('EEE').format(day.date);
+    final weekday = lang == 'te' ? teluguWeekdays[day.date.weekday - 1] : fmtDate(lang, 'EEE', day.date);
     return Card(
       margin: const EdgeInsets.only(bottom: 8),
       child: ListTile(

@@ -20,10 +20,15 @@ class FavoritesScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(title: Text(tr(ref, 'favorites'))),
       body: favs.isEmpty
-          ? const EmptyState(
+          ? EmptyState(
               icon: Icons.favorite_border_rounded,
-              title: 'No favourites yet',
-              subtitle: 'Tap the heart on any aarti, verse, track or wallpaper to keep it here.',
+              title: t3(appLang, 'No favourites yet', 'अभी कोई पसंदीदा नहीं', 'ఇంకా ఇష్టమైనవి లేవు'),
+              subtitle: t3(
+                appLang,
+                'Tap the heart on any aarti, verse, track or wallpaper to keep it here.',
+                'किसी भी आरती, श्लोक, गीत या वॉलपेपर पर दिल दबाएँ, वह यहाँ रहेगा।',
+                'ఏ హారతి, శ్లోకం, పాట లేదా వాల్‌పేపర్‌పై హృదయం గుర్తు నొక్కితే ఇక్కడ ఉంటుంది.',
+              ),
             )
           : ListView.separated(
               padding: const EdgeInsets.all(16),
@@ -95,10 +100,15 @@ class DownloadsScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(title: Text(tr(ref, 'downloads'))),
       body: tracks.isEmpty
-          ? const EmptyState(
+          ? EmptyState(
               icon: Icons.download_for_offline_outlined,
-              title: 'No downloads',
-              subtitle: 'Open the player and tap Download to listen without internet.',
+              title: t3(appLang, 'No downloads', 'कोई डाउनलोड नहीं', 'డౌన్‌లోడ్‌లు లేవు'),
+              subtitle: t3(
+                appLang,
+                'Open the player and tap Download to listen without internet.',
+                'बिना इंटरनेट सुनने के लिए प्लेयर खोलकर डाउनलोड दबाएँ।',
+                'ఇంటర్నెట్ లేకుండా వినడానికి ప్లేయర్ తెరిచి డౌన్‌లోడ్ నొక్కండి.',
+              ),
             )
           : ListView(
               padding: const EdgeInsets.all(16),
@@ -108,7 +118,7 @@ class DownloadsScreen extends ConsumerWidget {
                 FilledButton.tonalIcon(
                   onPressed: () => ref.read(audioProvider).playQueue(tracks),
                   icon: const Icon(Icons.play_arrow_rounded),
-                  label: const Text('Play all offline'),
+                  label: Text(t3(appLang, 'Play all offline', 'सब ऑफ़लाइन चलाएँ', 'అన్నీ ఆఫ్‌లైన్‌లో ప్లే చేయండి')),
                 ),
                 const SizedBox(height: 8),
                 for (final (i, t) in tracks.indexed)

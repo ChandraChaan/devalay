@@ -8,7 +8,6 @@ import 'package:wakelock_plus/wakelock_plus.dart';
 import '../core/audio.dart';
 import '../core/favorites.dart';
 import '../core/i18n.dart';
-import '../core/telugu.dart';
 import '../core/models.dart';
 import '../core/providers.dart';
 import '../core/storage.dart';
@@ -29,7 +28,10 @@ class TextListScreen extends ConsumerWidget {
         loading: () => const LoadingList(),
         error: (e, _) => ErrorRetry(error: e, onRetry: () => ref.invalidate(textsProvider(kind))),
         data: (list) => list.isEmpty
-            ? const EmptyState(icon: Icons.menu_book_rounded, title: 'Coming soon')
+            ? EmptyState(
+                icon: Icons.menu_book_rounded,
+                title: t3(appLang, 'Coming soon', 'जल्द आ रहा है', 'త్వరలో వస్తుంది'),
+              )
             : ListView.separated(
                 padding: const EdgeInsets.all(16),
                 itemCount: list.length,
@@ -118,14 +120,17 @@ class _TextReaderScreenState extends ConsumerState<TextReaderScreen> {
                       border: Border.all(color: Palette.marigold.withValues(alpha: 0.3)),
                     ),
                     child: SelectableText(
-                      uiLang(ref) == 'te' ? toTeluguScript(t.body) : t.body,
+                      scriptFor(uiLang(ref), t.body),
                       textAlign: TextAlign.center,
                       style: scriptureStyle(context, size: 20 * prefs.textScale),
                     ),
                   ),
                   if (prefs.showTransliteration && t.transliteration.isNotEmpty) ...[
                     const SizedBox(height: 20),
-                    Text('Transliteration', style: Theme.of(context).textTheme.titleMedium),
+                    Text(
+                      t3(appLang, 'Transliteration', 'लिप्यंतरण', 'లిప్యంతరీకరణ'),
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
                     const SizedBox(height: 8),
                     SelectableText(
                       t.transliteration,
@@ -193,12 +198,12 @@ class _TextReaderScreenState extends ConsumerState<TextReaderScreen> {
                   ],
                 ),
                 SwitchListTile(
-                  title: const Text('Show transliteration'),
+                  title: Text(t3(appLang, 'Show transliteration', 'लिप्यंतरण दिखाएँ', 'లిప్యంతరీకరణ చూపించు')),
                   value: prefs.showTransliteration,
                   onChanged: (v) => n.set('show_translit', v),
                 ),
                 SwitchListTile(
-                  title: const Text('Show meaning'),
+                  title: Text(t3(appLang, 'Show meaning', 'अर्थ दिखाएँ', 'అర్థం చూపించు')),
                   value: prefs.showMeaning,
                   onChanged: (v) => n.set('show_meaning', v),
                 ),

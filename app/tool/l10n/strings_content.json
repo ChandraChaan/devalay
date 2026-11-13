@@ -1,0 +1,2222 @@
+[
+ {
+  "en": "A paid ticket for quicker darshan in a chosen slot.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "A paid ticket for quicker darshan.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "A separate free darshan slot for senior citizens and differently abled pilgrims.",
+  "hi": "वरिष्ठ नागरिकों और दिव्यांग यात्रियों के लिए अलग निःशुल्क दर्शन।",
+  "te": "వృద్ధులకు, దివ్యాంగులకు ప్రత్యేక ఉచిత దర్శనం.",
+  "where": "temples.json"
+ },
+ {
+  "en": "AP Endowments Department",
+  "hi": "आंध्र प्रदेश देवादाय विभाग",
+  "te": "ఏపీ దేవాదాయ శాఖ",
+  "where": "temples.json"
+ },
+ {
+  "en": "Aarti booking",
+  "hi": "आरती बुकिंग",
+  "te": "హారతి బుకింగ్",
+  "where": "temples.json"
+ },
+ {
+  "en": "Aarti pass",
+  "hi": "आरती पास",
+  "te": "హారతి పాస్",
+  "where": "temples.json"
+ },
+ {
+  "en": "Abhishekam, Kalyanam and other sevas.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Abhishekam, Kumkumarchana, Kalyanotsavam and other sevas.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Abhishekam, archana and other sevas at each temple.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Accommodation",
+  "hi": "आवास (कमरे)",
+  "te": "వసతి (గదులు)",
+  "where": "temples.json"
+ },
+ {
+  "en": "Andhra Pradesh temples",
+  "hi": "आंध्र प्रदेश के मंदिर",
+  "te": "ఆంధ్రప్రదేశ్ ఆలయాలు",
+  "where": "temples.json"
+ },
+ {
+  "en": "Angapradakshinam",
+  "hi": "अंगप्रदक्षिणम्",
+  "te": "అంగప్రదక్షిణం",
+  "where": "temples.json"
+ },
+ {
+  "en": "Any amount",
+  "hi": "कोई भी राशि",
+  "te": "ఎంతైనా",
+  "where": "temples.json"
+ },
+ {
+  "en": "Arjitha Sevas",
+  "hi": "आर्जित सेवाएँ",
+  "te": "ఆర్జిత సేవలు",
+  "where": "temples.json"
+ },
+ {
+  "en": "Battery car and ropeway",
+  "hi": "बैटरी कार और रोपवे",
+  "te": "బ్యాటరీ కార్, రోప్‌వే",
+  "where": "temples.json"
+ },
+ {
+  "en": "Battery car on the track and the ropeway to Bhairon Ghati.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Bhadradri Kothagudem district",
+  "hi": "भद्राद्रि कोत्तागुडेम ज़िला",
+  "te": "భద్రాద్రి కొత్తగూడెం జిల్లా",
+  "where": "temples.json"
+ },
+ {
+  "en": "Bhasma Aarti",
+  "hi": "भस्म आरती",
+  "te": "భస్మ హారతి",
+  "where": "temples.json"
+ },
+ {
+  "en": "Book Rudrabhishek and other poojas performed by temple priests.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Book TTD's marriage halls in other towns.",
+  "hi": "अन्य शहरों में टीटीडी के विवाह भवन बुक करें।",
+  "te": "ఇతర ఊళ్లలోని టీటీడీ కల్యాణ మండపాలను బుక్ చేసుకోండి.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Book a darshan slot with the Devaswom.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Book a darshan time slot at the Samadhi Mandir.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Book a place at the pre-dawn Bhasma Aarti. Seats are limited and open in advance.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Book a slot to get married at TTD's Kalyana Vedika in Tirumala.",
+  "hi": "तिरुमला की टीटीडी कल्याण वेदिका में विवाह के लिए स्लॉट बुक करें।",
+  "te": "తిరుమల కల్యాణ వేదికలో వివాహానికి స్లాట్ బుక్ చేసుకోండి.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Book poojas and Abhishek with the temple trust.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Book poojas and offerings that the Devaswom Board opens online.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Book poojas with Shree Somnath Trust. Darshan itself is free and needs no ticket.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Book poojas with the Badrinath-Kedarnath Temple Committee.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Book the Atka Aarti and individual poojas at the Bhawan.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Book vazhipadu (offerings) and poojas.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Book your darshan date and time slot. Carry the booking and your ID on the trek.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Carry the same original photo ID you used while booking, and the ticket on paper or on your phone.",
+  "hi": "बुकिंग में दिया गया वही मूल फोटो पहचान पत्र और टिकट (काग़ज़ या फोन पर) साथ रखें।",
+  "te": "బుకింగ్‌లో ఇచ్చిన అదే ఒరిజినల్ ఫోటో గుర్తింపు కార్డు, టికెట్ (ప్రింట్ లేదా ఫోన్‌లో) వెంట ఉంచుకోండి.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Char Dham Yatra",
+  "hi": "चार धाम यात्रा",
+  "te": "చార్ ధామ్ యాత్ర",
+  "where": "temples.json"
+ },
+ {
+  "en": "Choose the service, then the date and time slot.",
+  "hi": "सेवा चुनें, फिर तारीख और समय स्लॉट।",
+  "te": "సేవను ఎంచుకుని, తేదీ, టైమ్ స్లాట్ ఎంచుకోండి.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Choose the temple first, then book darshan.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Choose the temple under e-Services, then book darshan.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Choose the temple, then book sevas such as Sarpa Samskara at Kukke or Chandika Homa at Kollur.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Darshan and room quota for donors to the SRIVANI Trust, which builds and restores temples.",
+  "hi": "मंदिर निर्माण करने वाले श्रीवाणी ट्रस्ट के दाताओं के लिए दर्शन और कमरों का कोटा।",
+  "te": "ఆలయాల నిర్మాణం చేసే శ్రీవాణి ట్రస్ట్ దాతలకు దర్శనం, గదుల కోటా.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Darshan booking",
+  "hi": "दर्शन बुकिंग",
+  "te": "దర్శన బుకింగ్",
+  "where": "temples.json"
+ },
+ {
+  "en": "Darshan pass",
+  "hi": "दर्शन पास",
+  "te": "దర్శన పాస్",
+  "where": "temples.json"
+ },
+ {
+  "en": "Darshan tickets",
+  "hi": "दर्शन टिकट",
+  "te": "దర్శన టికెట్లు",
+  "where": "temples.json"
+ },
+ {
+  "en": "Darshan tickets opened online by the Devasthanam.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Darshan tickets opened online by the temple trust.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Darshan tickets, sevas, rooms, e-Hundi and every TTD online service",
+  "hi": "दर्शन टिकट, सेवा, कमरे, ई-हुंडी और टीटीडी की हर ऑनलाइन सेवा",
+  "te": "దర్శన టికెట్లు, సేవలు, గదులు, ఈ-హుండీ మరియు టీటీడీ ఆన్‌లైన్ సేవలన్నీ",
+  "where": "temples.json"
+ },
+ {
+  "en": "Devasthanam rooms and cottages.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Devasthanam rooms.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Devaswom guest houses.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Divya Darshan (pilgrims on foot)",
+  "hi": "दिव्य दर्शन (पैदल यात्री)",
+  "te": "దివ్య దర్శనం (కాలినడక భక్తులు)",
+  "where": "temples.json"
+ },
+ {
+  "en": "Donate online to Shree Saibaba Sansthan Trust.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Donate online to Shree Somnath Trust.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Donate online to Shri Ram Janmbhoomi Teerth Kshetra.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Donate online to the Devasthanam.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Donate online to the Devaswom.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Donate online to the Shrine Board.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Donate online to the temple committee.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Donate online to the temple trust.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Donate online to the temple you choose, including to Annadanam.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Donate online to the temple you choose.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Donate online, including to Annadanam.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Donate to TTD trusts such as SV Pranadana (Udayasthamana Seva scheme) and book the darshan and rooms given to donors.",
+  "hi": "एसवी प्राणदान (उदयास्तमान सेवा योजना) जैसे टीटीडी ट्रस्टों को दान दें और दाताओं को मिलने वाले दर्शन व कमरे बुक करें।",
+  "te": "ఎస్వీ ప్రాణదాన (ఉదయాస్తమాన సేవ పథకం) వంటి టీటీడీ ట్రస్టులకు విరాళం ఇవ్వండి, దాతలకు లభించే దర్శనం, గదులు బుక్ చేసుకోండి.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Donation",
+  "hi": "दान",
+  "te": "విరాళం",
+  "where": "temples.json"
+ },
+ {
+  "en": "Donation and e-Hundi",
+  "hi": "दान और ई-हुंडी",
+  "te": "విరాళం, ఈ-హుండీ",
+  "where": "temples.json"
+ },
+ {
+  "en": "Enter each pilgrim's name, age and photo ID number exactly as printed on the ID.",
+  "hi": "हर यात्री का नाम, आयु और फोटो पहचान नंबर ठीक वैसे भरें जैसे पहचान पत्र पर छपा है।",
+  "te": "ప్రతి భక్తుని పేరు, వయసు, ఫోటో గుర్తింపు నంబర్‌ను కార్డులో ఉన్నట్లే నమోదు చేయండి.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Every pilgrim must register with Uttarakhand Tourism before the yatra, in the season.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Everyone. Each pilgrim needs a photo ID.",
+  "hi": "सभी के लिए। हर यात्री का फोटो पहचान पत्र चाहिए।",
+  "te": "అందరికీ. ప్రతి భక్తునికి ఫోటో గుర్తింపు కార్డు కావాలి.",
+  "where": "temples.json"
+ },
+ {
+  "en": "For pilgrims who climb by the Alipiri or Srivari Mettu footpath. Check TTD's latest notice on tokens before you start.",
+  "hi": "अलिपिरि या श्रीवारी मेट्टु पैदल मार्ग से चढ़ने वाले यात्रियों के लिए। निकलने से पहले टोकन पर टीटीडी की ताज़ा सूचना देखें।",
+  "te": "అలిపిరి లేదా శ్రీవారి మెట్టు నడక మార్గంలో వచ్చే భక్తులకు. బయలుదేరే ముందు టోకెన్లపై టీటీడీ తాజా ప్రకటన చూడండి.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Free",
+  "hi": "निःशुल्क",
+  "te": "ఉచితం",
+  "where": "temples.json"
+ },
+ {
+  "en": "Free time-slot tokens given in person at TTD counters in Tirupati. Carry your Aadhaar card.",
+  "hi": "तिरुपति के टीटीडी काउंटरों पर स्वयं जाकर मिलने वाले निःशुल्क समय-स्लॉट टोकन। आधार कार्ड साथ रखें।",
+  "te": "తిరుపతిలోని టీటీడీ కౌంటర్లలో స్వయంగా ఇచ్చే ఉచిత టైమ్ స్లాట్ టోకెన్లు. ఆధార్ కార్డు తీసుకెళ్లండి.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Free to register. You pay only if you are selected.",
+  "hi": "पंजीकरण निःशुल्क। चुने जाने पर ही भुगतान।",
+  "te": "నమోదు ఉచితం. ఎంపికైతేనే చెల్లింపు.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Free tokens for the early-morning Angapradakshinam around the sanctum, followed by darshan.",
+  "hi": "तड़के गर्भगृह की अंगप्रदक्षिणा और उसके बाद दर्शन के लिए निःशुल्क टोकन।",
+  "te": "తెల్లవారుజామున అంగప్రదక్షిణం, ఆ తర్వాత దర్శనానికి ఉచిత టోకెన్లు.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Garhwal Himalaya",
+  "hi": "गढ़वाल हिमालय",
+  "te": "గఢ్వాల్ హిమాలయాలు",
+  "where": "temples.json"
+ },
+ {
+  "en": "Guest house rooms",
+  "hi": "अतिथि गृह के कमरे",
+  "te": "అతిథి గృహ గదులు",
+  "where": "temples.json"
+ },
+ {
+  "en": "Guruvayur Sri Krishna Temple",
+  "hi": "गुरुवायूर श्री कृष्ण मंदिर",
+  "te": "గురువాయూర్ శ్రీకృష్ణ ఆలయం",
+  "where": "temples.json"
+ },
+ {
+  "en": "HR&CE Department",
+  "hi": "एचआर एंड सीई विभाग",
+  "te": "హెచ్‌ఆర్ & సీఈ శాఖ",
+  "where": "temples.json"
+ },
+ {
+  "en": "Helicopter",
+  "hi": "हेलीकॉप्टर",
+  "te": "హెలికాప్టర్",
+  "where": "temples.json"
+ },
+ {
+  "en": "Helicopter tickets are sold only on IRCTC's Heli Yatra site.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Helicopter tickets between Katra and Sanjichhat.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Homam at the Saptha Go Pradakshina Shala, Alipiri, at the foot of the hills.",
+  "hi": "पहाड़ी की तलहटी में अलिपिरि की सप्त गो प्रदक्षिणा शाला में होमम्।",
+  "te": "అలిపిరి సప్త గో ప్రదక్షిణ శాలలో హోమం.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Indrakeeladri, Vijayawada",
+  "hi": "इंद्रकीलाद्रि, विजयवाड़ा",
+  "te": "ఇంద్రకీలాద్రి, విజయవాడ",
+  "where": "temples.json"
+ },
+ {
+  "en": "Kalyana Vedika (weddings at Tirumala)",
+  "hi": "कल्याण वेदिका (तिरुमला में विवाह)",
+  "te": "కల్యాణ వేదిక (తిరుమలలో వివాహం)",
+  "where": "temples.json"
+ },
+ {
+  "en": "Kalyanamandapams",
+  "hi": "कल्याण मंडपम्",
+  "te": "కల్యాణ మండపాలు",
+  "where": "temples.json"
+ },
+ {
+  "en": "Kalyanotsavam, Unjal Seva, Arjitha Brahmotsavam and Sahasra Deepalankara Seva, booked first come, first served.",
+  "hi": "कल्याणोत्सवम्, ऊंजल सेवा, आर्जित ब्रह्मोत्सवम् और सहस्र दीपालंकार सेवा। पहले आओ, पहले पाओ।",
+  "te": "కల్యాణోత్సవం, ఊంజల్ సేవ, ఆర్జిత బ్రహ్మోత్సవం, సహస్ర దీపాలంకార సేవ. ముందు వచ్చిన వారికి ముందు.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Kanaka Durga Temple, Vijayawada",
+  "hi": "कनक दुर्गा मंदिर, विजयवाड़ा",
+  "te": "కనకదుర్గ ఆలయం, విజయవాడ",
+  "where": "temples.json"
+ },
+ {
+  "en": "Karnataka Endowments Department",
+  "hi": "कर्नाटक धर्मादाय विभाग",
+  "te": "కర్ణాటక దేవాదాయ శాఖ",
+  "where": "temples.json"
+ },
+ {
+  "en": "Karnataka temples",
+  "hi": "कर्नाटक के मंदिर",
+  "te": "కర్ణాటక ఆలయాలు",
+  "where": "temples.json"
+ },
+ {
+  "en": "Katra",
+  "hi": "कटरा",
+  "te": "కట్రా",
+  "where": "temples.json"
+ },
+ {
+  "en": "Kedarnath and Badrinath pooja",
+  "hi": "केदारनाथ और बद्रीनाथ पूजा",
+  "te": "కేదార్‌నాథ్, బద్రీనాథ్ పూజ",
+  "where": "temples.json"
+ },
+ {
+  "en": "Kedarnath helicopter",
+  "hi": "केदारनाथ हेलीकॉप्टर",
+  "te": "కేదార్‌నాథ్ హెలికాప్టర్",
+  "where": "temples.json"
+ },
+ {
+  "en": "Kedarnath, Badrinath, Gangotri, Yamunotri",
+  "hi": "केदारनाथ, बद्रीनाथ, गंगोत्री, यमुनोत्री",
+  "te": "కేదార్‌నాథ్, బద్రీనాథ్, గంగోత్రి, యమునోత్రి",
+  "where": "temples.json"
+ },
+ {
+  "en": "Khandwa district",
+  "hi": "खंडवा ज़िला",
+  "te": "ఖాండ్వా జిల్లా",
+  "where": "temples.json"
+ },
+ {
+  "en": "Kukke Subramanya, Kollur Mookambika, Chamundeshwari and more",
+  "hi": "कुक्के सुब्रह्मण्य, कोल्लूर मूकांबिका, चामुंडेश्वरी आदि",
+  "te": "కుక్కె సుబ్రహ్మణ్య, కొల్లూరు మూకాంబిక, చాముండేశ్వరి మొదలైనవి",
+  "where": "temples.json"
+ },
+ {
+  "en": "Kumkumarchana, Chandi Homam and other sevas.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Log in with your mobile number and OTP",
+  "hi": "मोबाइल नंबर और OTP से लॉग इन करें",
+  "te": "మొబైల్ నంబర్, OTP తో లాగిన్ అవ్వండి",
+  "where": "temples.json"
+ },
+ {
+  "en": "Log in with your mobile number and the OTP that TTD sends.",
+  "hi": "अपने मोबाइल नंबर और टीटीडी से आए OTP से लॉग इन करें।",
+  "te": "మీ మొబైల్ నంబర్, టీటీడీ పంపే OTP తో లాగిన్ అవ్వండి.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Lord Shiva",
+  "hi": "भगवान शिव",
+  "te": "శివుడు",
+  "where": "temples.json"
+ },
+ {
+  "en": "Lord Shiva (Jyotirlinga)",
+  "hi": "भगवान शिव (ज्योतिर्लिंग)",
+  "te": "శివుడు (జ్యోతిర్లింగం)",
+  "where": "temples.json"
+ },
+ {
+  "en": "Madurai Meenakshi, Palani, Tiruchendur, Rameswaram, Srirangam, Tiruvannamalai and more",
+  "hi": "मदुरै मीनाक्षी, पलनी, तिरुचेंदूर, रामेश्वरम्, श्रीरंगम्, तिरुवन्नामलै आदि",
+  "te": "మదురై మీనాక్షి, పళని, తిరుచెందూర్, రామేశ్వరం, శ్రీరంగం, తిరువణ్ణామలై మొదలైనవి",
+  "where": "temples.json"
+ },
+ {
+  "en": "Make your hundi offering online to Sri Venkateswara Swamy or to Sri Padmavathi Ammavaru.",
+  "hi": "श्री वेंकटेश्वर स्वामी या श्री पद्मावती अम्मावारु को हुंडी की भेंट ऑनलाइन चढ़ाएँ।",
+  "te": "శ్రీవారికి లేదా శ్రీ పద్మావతి అమ్మవారికి హుండీ కానుకను ఆన్‌లైన్‌లో సమర్పించండి.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Mangala Aarti before dawn and the other daily aartis.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Mata Vaishno Devi",
+  "hi": "माता वैष्णो देवी",
+  "te": "మాతా వైష్ణో దేవి",
+  "where": "temples.json"
+ },
+ {
+  "en": "Nandyal district",
+  "hi": "नंद्याल ज़िला",
+  "te": "నంద్యాల జిల్లా",
+  "where": "temples.json"
+ },
+ {
+  "en": "Nitya Kalyanam, Abhishekam and other sevas.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Online Sevas (virtual participation)",
+  "hi": "ऑनलाइन सेवाएँ (वर्चुअल सहभागिता)",
+  "te": "ఆన్‌లైన్ సేవలు (వర్చువల్)",
+  "where": "temples.json"
+ },
+ {
+  "en": "Online darshan booking",
+  "hi": "ऑनलाइन दर्शन बुकिंग",
+  "te": "ఆన్‌లైన్ దర్శన బుకింగ్",
+  "where": "temples.json"
+ },
+ {
+  "en": "Online participation in sevas at the Tiruchanoor temple, such as Laksha Kumkumarchana when announced.",
+  "hi": "तिरुचानूर मंदिर की सेवाओं में ऑनलाइन सहभागिता, जैसे घोषणा होने पर लक्ष कुंकुमार्चना।",
+  "te": "తిరుచానూరు ఆలయ సేవల్లో ఆన్‌లైన్‌గా పాల్గొనడం, ప్రకటించినప్పుడు లక్ష కుంకుమార్చన వంటివి.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Online pooja",
+  "hi": "ऑनलाइन पूजा",
+  "te": "ఆన్‌లైన్ పూజ",
+  "where": "temples.json"
+ },
+ {
+  "en": "Open to all through the Vaikuntam Queue Complex in Tirumala. No ticket is needed. The wait can be many hours on busy days.",
+  "hi": "तिरुमला के वैकुंठम् क्यू कॉम्प्लेक्स से सबके लिए खुला। टिकट नहीं चाहिए। भीड़ के दिनों में कई घंटे लग सकते हैं।",
+  "te": "తిరుమల వైకుంఠం క్యూ కాంప్లెక్స్ ద్వారా అందరికీ. టికెట్ అవసరం లేదు. రద్దీ రోజుల్లో చాలా గంటలు పట్టవచ్చు.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Order Aravana and Appam in advance and collect them at Sannidhanam.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Order TTD's Panchagavya products online.",
+  "hi": "टीटीडी के पंचगव्य उत्पाद ऑनलाइन मँगवाएँ।",
+  "te": "టీటీడీ పంచగవ్య ఉత్పత్తులను ఆన్‌లైన్‌లో ఆర్డర్ చేయండి.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Other TTD temples",
+  "hi": "टीटीडी के अन्य मंदिर",
+  "te": "ఇతర టీటీడీ ఆలయాలు",
+  "where": "temples.json"
+ },
+ {
+  "en": "Padmavathi Ammavari Darshan (₹200)",
+  "hi": "पद्मावती अम्मावारी दर्शन (₹200)",
+  "te": "పద్మావతి అమ్మవారి దర్శనం (₹200)",
+  "where": "temples.json"
+ },
+ {
+  "en": "Panchagavya products",
+  "hi": "पंचगव्य उत्पाद",
+  "te": "పంచగవ్య ఉత్పత్తులు",
+  "where": "temples.json"
+ },
+ {
+  "en": "Passes for the daily aartis: Kakad, Madhyan, Dhoop and Shej.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Passes to attend the daily aartis of Ram Lalla.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Pathanamthitta",
+  "hi": "पतनमतिट्टा",
+  "te": "పతనంతిట్ట",
+  "where": "temples.json"
+ },
+ {
+  "en": "Pay on the TTD portal, then download the ticket. You can find it again under Transaction History.",
+  "hi": "टीटीडी पोर्टल पर भुगतान करें और टिकट डाउनलोड करें। यह बाद में Transaction History में भी मिलता है।",
+  "te": "టీటీడీ పోర్టల్‌లో చెల్లించి, టికెట్ డౌన్‌లోడ్ చేసుకోండి. తర్వాత Transaction History లో కూడా దొరుకుతుంది.",
+  "where": "temples.json"
+ },
+ {
+  "en": "People living in Tirupati, Tirumala, Chandragiri and Renigunta have a separate e-Dip. See \"Angapradakshinam (for Locals)\" on the portal.",
+  "hi": "तिरुपति, तिरुमला, चंद्रगिरि और रेणिगुंटा के निवासियों के लिए अलग ई-डिप है। पोर्टल पर \"Angapradakshinam (for Locals)\" देखें।",
+  "te": "తిరుపతి, తిరుమల, చంద్రగిరి, రేణిగుంట స్థానికులకు వేరుగా ఈ-డిప్ ఉంది. పోర్టల్‌లో \"Angapradakshinam (for Locals)\" చూడండి.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Pooja and Abhishek",
+  "hi": "पूजा और अभिषेक",
+  "te": "పూజ, అభిషేకం",
+  "where": "temples.json"
+ },
+ {
+  "en": "Pooja and Atka Aarti",
+  "hi": "पूजा और अटका आरती",
+  "te": "పూజ, అట్కా హారతి",
+  "where": "temples.json"
+ },
+ {
+  "en": "Pooja booking",
+  "hi": "पूजा बुकिंग",
+  "te": "పూజ బుకింగ్",
+  "where": "temples.json"
+ },
+ {
+  "en": "Poojas and offerings",
+  "hi": "पूजा और भेंट",
+  "te": "పూజలు, కానుకలు",
+  "where": "temples.json"
+ },
+ {
+  "en": "Prabhas Patan, Veraval",
+  "hi": "प्रभास पाटन, वेरावल",
+  "te": "ప్రభాస్ పాటన్, వెరావల్",
+  "where": "temples.json"
+ },
+ {
+  "en": "Prasadam booking",
+  "hi": "प्रसादम् बुकिंग",
+  "te": "ప్రసాదం బుకింగ్",
+  "where": "temples.json"
+ },
+ {
+  "en": "Quick darshan tickets and Sparsha Darshan, as opened by the Devasthanam.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Rajanna Sircilla district",
+  "hi": "राजन्ना सिरसिल्ला ज़िला",
+  "te": "రాజన్న సిరిసిల్ల జిల్లా",
+  "where": "temples.json"
+ },
+ {
+  "en": "Reach the reporting point at the time printed on your ticket.",
+  "hi": "टिकट पर छपे समय पर रिपोर्टिंग पॉइंट पहुँचें।",
+  "te": "టికెట్‌పై ఉన్న సమయానికి రిపోర్టింగ్ పాయింట్‌కు చేరుకోండి.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Register for the draw for Suprabhatam, Thomala Seva, Archana and Astadala Pada Padmaradhana.",
+  "hi": "सुप्रभातम्, तोमाल सेवा, अर्चना और अष्टदल पाद पद्माराधना के ड्रॉ के लिए पंजीकरण।",
+  "te": "సుప్రభాతం, తోమాల సేవ, అర్చన, అష్టదళ పాద పద్మారాధన సేవల డ్రా కోసం నమోదు.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Register for the yatra before you start the climb from Katra.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Registration usually stays open for about two days. Selected pilgrims get an SMS and must pay within the time given.",
+  "hi": "पंजीकरण आमतौर पर लगभग दो दिन खुला रहता है। चुने गए यात्रियों को SMS आता है और तय समय में भुगतान करना होता है।",
+  "te": "నమోదు సాధారణంగా రెండు రోజులు ఉంటుంది. ఎంపికైన వారికి SMS వస్తుంది, ఇచ్చిన గడువులో చెల్లించాలి.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Rooms",
+  "hi": "कमरे",
+  "te": "గదులు",
+  "where": "temples.json"
+ },
+ {
+  "en": "Rooms at Sannidhanam, when the Devaswom Board opens them online.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Rooms at temple guest houses across Karnataka, on the state's accommodation site.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Rooms in the Sansthan's Bhakta Niwas buildings.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Rooms in the Trust's guest houses near the temple.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Rooms offered by the temple trust.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Rooms open a few hours after the ₹300 darshan quota on the same day, so you can book both together.",
+  "hi": "कमरे उसी दिन ₹300 दर्शन कोटे के कुछ घंटे बाद खुलते हैं, इसलिए दोनों साथ बुक कर सकते हैं।",
+  "te": "₹300 దర్శన కోటా విడుదలైన రోజే కొన్ని గంటల తర్వాత గదులు విడుదలవుతాయి, రెండూ కలిపి బుక్ చేసుకోవచ్చు.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Rudrabhishek and poojas",
+  "hi": "रुद्राभिषेक और पूजा",
+  "te": "రుద్రాభిషేకం, పూజలు",
+  "where": "temples.json"
+ },
+ {
+  "en": "SRIVANI Trust Darshan",
+  "hi": "श्रीवाणी ट्रस्ट दर्शन",
+  "te": "శ్రీవాణి ట్రస్ట్ దర్శనం",
+  "where": "temples.json"
+ },
+ {
+  "en": "Sabarimala Ayyappa Temple",
+  "hi": "सबरीमाला अय्यप्पा मंदिर",
+  "te": "శబరిమల అయ్యప్ప ఆలయం",
+  "where": "temples.json"
+ },
+ {
+  "en": "Sabarimala pilgrim information",
+  "hi": "सबरीमाला यात्री जानकारी",
+  "te": "శబరిమల యాత్రికుల సమాచారం",
+  "where": "temples.json"
+ },
+ {
+  "en": "Sapthagiri magazine",
+  "hi": "सप्तगिरि पत्रिका",
+  "te": "సప్తగిరి మాసపత్రిక",
+  "where": "temples.json"
+ },
+ {
+  "en": "Sarva Darshan (free)",
+  "hi": "सर्व दर्शन (निःशुल्क)",
+  "te": "సర్వ దర్శనం (ఉచితం)",
+  "where": "temples.json"
+ },
+ {
+  "en": "Senior Citizen / Differently Abled Darshan",
+  "hi": "वरिष्ठ नागरिक / दिव्यांग दर्शन",
+  "te": "వృద్ధులు / దివ్యాంగుల దర్శనం",
+  "where": "temples.json"
+ },
+ {
+  "en": "Senior citizens and differently abled pilgrims. The portal shows the age limit, the papers needed and who may come along.",
+  "hi": "वरिष्ठ नागरिक और दिव्यांग यात्री। आयु सीमा, ज़रूरी काग़ज़ और साथ आने वाले की जानकारी पोर्टल पर है।",
+  "te": "వృద్ధులు, దివ్యాంగులు. వయో పరిమితి, కావలసిన పత్రాలు, తోడుగా ఎవరు రావచ్చో పోర్టల్‌లో ఉంటుంది.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Serve pilgrims as a volunteer: General Srivari Seva, Navaneeta Seva and Parakamani Seva.",
+  "hi": "स्वयंसेवक बनकर यात्रियों की सेवा करें: सामान्य श्रीवारी सेवा, नवनीत सेवा और परकामणि सेवा।",
+  "te": "స్వచ్ఛంద సేవకులుగా భక్తులకు సేవ చేయండి: సాధారణ శ్రీవారి సేవ, నవనీత సేవ, పరకామణి సేవ.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Seva e-Dip (lucky dip)",
+  "hi": "सेवा ई-डिप (लकी डिप)",
+  "te": "సేవా ఈ-డిప్ (లక్కీ డిప్)",
+  "where": "temples.json"
+ },
+ {
+  "en": "Sevas and archana",
+  "hi": "सेवा और अर्चना",
+  "te": "సేవలు, అర్చన",
+  "where": "temples.json"
+ },
+ {
+  "en": "Sevas and poojas",
+  "hi": "सेवा और पूजा",
+  "te": "సేవలు, పూజలు",
+  "where": "temples.json"
+ },
+ {
+  "en": "Sevas at TTD's local temples in and around Tirupati. Open \"TTD Temples\" on the portal.",
+  "hi": "तिरुपति और आसपास के टीटीडी मंदिरों की सेवाएँ। पोर्टल पर \"TTD Temples\" खोलें।",
+  "te": "తిరుపతి పరిసరాల్లోని టీటీడీ స్థానిక ఆలయాల సేవలు. పోర్టల్‌లో \"TTD Temples\" తెరవండి.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Sevas at each temple, such as Rahu Ketu Pooja at Srikalahasti and Satyanarayana Vratam at Annavaram.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Sheeghra Darshan",
+  "hi": "शीघ्र दर्शन",
+  "te": "శీఘ్ర దర్శనం",
+  "where": "temples.json"
+ },
+ {
+  "en": "Shirdi",
+  "hi": "शिरडी",
+  "te": "షిరిడీ",
+  "where": "temples.json"
+ },
+ {
+  "en": "Shirdi Sai Baba Temple",
+  "hi": "शिरडी साईं बाबा मंदिर",
+  "te": "షిరిడీ సాయిబాబా ఆలయం",
+  "where": "temples.json"
+ },
+ {
+  "en": "Shree Somnath",
+  "hi": "श्री सोमनाथ",
+  "te": "శ్రీ సోమనాథ్",
+  "where": "temples.json"
+ },
+ {
+  "en": "Shri Kashi Vishwanath",
+  "hi": "श्री काशी विश्वनाथ",
+  "te": "శ్రీ కాశీ విశ్వనాథ్",
+  "where": "temples.json"
+ },
+ {
+  "en": "Shri Mahakaleshwar",
+  "hi": "श्री महाकालेश्वर",
+  "te": "శ్రీ మహాకాళేశ్వర్",
+  "where": "temples.json"
+ },
+ {
+  "en": "Shri Omkareshwar",
+  "hi": "श्री ओंकारेश्वर",
+  "te": "శ్రీ ఓంకారేశ్వర్",
+  "where": "temples.json"
+ },
+ {
+  "en": "Shri Ram Lalla",
+  "hi": "श्री राम लला",
+  "te": "శ్రీ రామ్ లల్లా",
+  "where": "temples.json"
+ },
+ {
+  "en": "Shri Ram Mandir, Ayodhya",
+  "hi": "श्री राम मंदिर, अयोध्या",
+  "te": "శ్రీ రామ మందిరం, అయోధ్య",
+  "where": "temples.json"
+ },
+ {
+  "en": "Shri Sai Baba",
+  "hi": "श्री साईं बाबा",
+  "te": "శ్రీ సాయిబాబా",
+  "where": "temples.json"
+ },
+ {
+  "en": "Shrine Board information",
+  "hi": "श्राइन बोर्ड की जानकारी",
+  "te": "శ్రైన్ బోర్డ్ సమాచారం",
+  "where": "temples.json"
+ },
+ {
+  "en": "Shrine Board rooms and dormitories at Katra, on the track and at the Bhawan.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Slotted Sarva Darshan (SSD) tokens",
+  "hi": "स्लॉटेड सर्व दर्शन (SSD) टोकन",
+  "te": "స్లాటెడ్ సర్వ దర్శనం (SSD) టోకెన్లు",
+  "where": "temples.json"
+ },
+ {
+  "en": "Special Entry Darshan (₹300)",
+  "hi": "विशेष प्रवेश दर्शन (₹300)",
+  "te": "ప్రత్యేక ప్రవేశ దర్శనం (₹300)",
+  "where": "temples.json"
+ },
+ {
+  "en": "Special Entry Darshan at Sri Padmavathi Ammavari Temple, Tiruchanoor.",
+  "hi": "तिरुचानूर के श्री पद्मावती अम्मावारी मंदिर में विशेष प्रवेश दर्शन।",
+  "te": "తిరుచానూరు శ్రీ పద్మావతి అమ్మవారి ఆలయంలో ప్రత్యేక ప్రవేశ దర్శనం.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Sree Dharma Sastha (Ayyappa)",
+  "hi": "श्री धर्म शास्ता (अय्यप्पा)",
+  "te": "శ్రీ ధర్మశాస్త (అయ్యప్ప)",
+  "where": "temples.json"
+ },
+ {
+  "en": "Sri Guruvayurappan",
+  "hi": "श्री गुरुवायूरप्पन",
+  "te": "శ్రీ గురువాయూరప్పన్",
+  "where": "temples.json"
+ },
+ {
+  "en": "Sri Kanaka Durga and Malleswara Swamy",
+  "hi": "श्री कनक दुर्गा और मल्लेश्वर स्वामी",
+  "te": "శ్రీ కనకదుర్గమ్మ, మల్లేశ్వర స్వామి",
+  "where": "temples.json"
+ },
+ {
+  "en": "Sri Mallikarjuna Swamy and Bhramarambika Devi",
+  "hi": "श्री मल्लिकार्जुन स्वामी और भ्रमरांबिका देवी",
+  "te": "శ్రీ మల్లికార్జున స్వామి, భ్రమరాంబికా దేవి",
+  "where": "temples.json"
+ },
+ {
+  "en": "Sri Padmavathi Ammavari Virtual Seva",
+  "hi": "श्री पद्मावती अम्मावारी वर्चुअल सेवा",
+  "te": "శ్రీ పద్మావతి అమ్మవారి వర్చువల్ సేవ",
+  "where": "temples.json"
+ },
+ {
+  "en": "Sri Raja Rajeshwara Swamy",
+  "hi": "श्री राज राजेश्वर स्वामी",
+  "te": "శ్రీ రాజరాజేశ్వర స్వామి",
+  "where": "temples.json"
+ },
+ {
+  "en": "Sri Seetha Ramachandra Swamy",
+  "hi": "श्री सीता रामचंद्र स्वामी",
+  "te": "శ్రీ సీతారామచంద్ర స్వామి",
+  "where": "temples.json"
+ },
+ {
+  "en": "Sri Srinivasa Divyanugraha Homam",
+  "hi": "श्री श्रीनिवास दिव्यानुग्रह होमम्",
+  "te": "శ్రీ శ్రీనివాస దివ్యానుగ్రహ హోమం",
+  "where": "temples.json"
+ },
+ {
+  "en": "Sri Venkateswara Swamy",
+  "hi": "श्री वेंकटेश्वर स्वामी",
+  "te": "శ్రీ వేంకటేశ్వర స్వామి",
+  "where": "temples.json"
+ },
+ {
+  "en": "Srikalahasti, Simhachalam, Annavaram, Kanipakam, Dwaraka Tirumala and more",
+  "hi": "श्रीकालहस्ती, सिंहाचलम्, अन्नवरम्, काणिपाकम्, द्वारका तिरुमला आदि",
+  "te": "శ్రీకాళహస్తి, సింహాచలం, అన్నవరం, కాణిపాకం, ద్వారకా తిరుమల మొదలైనవి",
+  "where": "temples.json"
+ },
+ {
+  "en": "Srivari Seva (volunteering)",
+  "hi": "श्रीवारी सेवा (स्वयंसेवा)",
+  "te": "శ్రీవారి సేవ (స్వచ్ఛంద సేవ)",
+  "where": "temples.json"
+ },
+ {
+  "en": "Subscribe to TTD's monthly devotional magazine.",
+  "hi": "टीटीडी की मासिक भक्ति पत्रिका की सदस्यता लें।",
+  "te": "టీటీడీ ఆధ్యాత్మిక మాసపత్రికకు చందా కట్టండి.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Sugam Darshan",
+  "hi": "सुगम दर्शन",
+  "te": "సుగమ దర్శనం",
+  "where": "temples.json"
+ },
+ {
+  "en": "TTD has no booking agents. Do not pay anyone who promises tickets outside the official portal.",
+  "hi": "टीटीडी का कोई बुकिंग एजेंट नहीं है। आधिकारिक पोर्टल के बाहर टिकट दिलाने का वादा करने वाले किसी को पैसे न दें।",
+  "te": "టీటీడీకి బుకింగ్ ఏజెంట్లు లేరు. అధికారిక పోర్టల్ బయట టికెట్లు ఇప్పిస్తామనే వారికి డబ్బు ఇవ్వకండి.",
+  "where": "temples.json"
+ },
+ {
+  "en": "TTD news and announcements",
+  "hi": "टीटीडी समाचार और सूचनाएँ",
+  "te": "టీటీడీ వార్తలు, ప్రకటనలు",
+  "where": "temples.json"
+ },
+ {
+  "en": "TTD rooms and cottages in Tirumala and Tirupati.",
+  "hi": "तिरुमला और तिरुपति में टीटीडी के कमरे और कॉटेज।",
+  "te": "తిరుమల, తిరుపతిలో టీటీడీ గదులు, కాటేజీలు.",
+  "where": "temples.json"
+ },
+ {
+  "en": "TTD · Tirumala",
+  "hi": "टीटीडी · तिरुमला",
+  "te": "టీటీడీ · తిరుమల",
+  "where": "temples.json"
+ },
+ {
+  "en": "Take part in a seva from home. The ticket also carries a darshan quota, as shown on the portal.",
+  "hi": "घर से सेवा में भाग लें। टिकट के साथ दर्शन का कोटा भी मिलता है, जैसा पोर्टल पर बताया गया है।",
+  "te": "ఇంటి నుంచే సేవలో పాల్గొనండి. పోర్టల్‌లో చూపినట్లు టికెట్‌తో దర్శన కోటా కూడా ఉంటుంది.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Tamil Nadu temples",
+  "hi": "तमिलनाडु के मंदिर",
+  "te": "తమిళనాడు ఆలయాలు",
+  "where": "temples.json"
+ },
+ {
+  "en": "Tap \"Book on official site\". The TTD portal opens inside Devalay.",
+  "hi": "\"आधिकारिक साइट पर बुक करें\" दबाएँ। टीटीडी पोर्टल देवालय के अंदर खुलता है।",
+  "te": "\"అధికారిక సైట్‌లో బుక్ చేయండి\" నొక్కండి. టీటీడీ పోర్టల్ దేవాలయం యాప్‌లోనే తెరుచుకుంటుంది.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Temple cottages and rooms, where the temple offers them online.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Temple guest houses and rooms.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "The most booked ticket: darshan of Sri Venkateswara Swamy in a reserved time slot.",
+  "hi": "सबसे ज़्यादा बुक होने वाला टिकट: तय समय पर श्री वेंकटेश्वर स्वामी के दर्शन।",
+  "te": "ఎక్కువ మంది బుక్ చేసే టికెట్: ఎంచుకున్న సమయానికి శ్రీవారి దర్శనం.",
+  "where": "temples.json"
+ },
+ {
+  "en": "The quota often fills within minutes. Log in a little early and keep every pilgrim's ID number ready.",
+  "hi": "कोटा अक्सर कुछ ही मिनटों में भर जाता है। थोड़ा पहले लॉग इन करें और सभी यात्रियों के पहचान नंबर तैयार रखें।",
+  "te": "కోటా చాలాసార్లు నిమిషాల్లో అయిపోతుంది. కొంచెం ముందే లాగిన్ అయ్యి, భక్తులందరి గుర్తింపు నంబర్లు సిద్ధంగా ఉంచుకోండి.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Thrissur district",
+  "hi": "त्रिशूर ज़िला",
+  "te": "త్రిస్సూర్ జిల్లా",
+  "where": "temples.json"
+ },
+ {
+  "en": "Time-slot darshan passes issued by the temple trust.",
+  "hi": "",
+  "te": "",
+  "where": "temples.json"
+ },
+ {
+  "en": "Tirumala Tirupati Devasthanams",
+  "hi": "तिरुमला तिरुपति देवस्थानम्",
+  "te": "తిరుమల తిరుపతి దేవస్థానములు",
+  "where": "temples.json"
+ },
+ {
+  "en": "Tirumala, Tirupati",
+  "hi": "तिरुमला, तिरुपति",
+  "te": "తిరుమల, తిరుపతి",
+  "where": "temples.json"
+ },
+ {
+  "en": "Traditional dress is compulsory. Men: dhoti or pyjama with an upper cloth. Women: saree, half-saree or churidar with dupatta.",
+  "hi": "पारंपरिक वेशभूषा अनिवार्य है। पुरुष: धोती या पायजामा और उत्तरीय। महिलाएँ: साड़ी, हाफ-साड़ी या दुपट्टे के साथ चूड़ीदार।",
+  "te": "సంప్రదాయ దుస్తులు తప్పనిసరి. పురుషులు: పంచె లేదా పైజామా, ఉత్తరీయం. మహిళలు: చీర, లంగా ఓణీ లేదా దుపట్టాతో చుడీదార్.",
+  "where": "temples.json"
+ },
+ {
+  "en": "Trust donations and donor privileges",
+  "hi": "ट्रस्ट दान और दाता सुविधाएँ",
+  "te": "ట్రస్ట్ విరాళాలు, దాతల సౌకర్యాలు",
+  "where": "temples.json"
+ },
+ {
+  "en": "Varies by room",
+  "hi": "कमरे के अनुसार",
+  "te": "గదిని బట్టి",
+  "where": "temples.json"
+ },
+ {
+  "en": "Varies by seva",
+  "hi": "सेवा के अनुसार",
+  "te": "సేవను బట్టి",
+  "where": "temples.json"
+ },
+ {
+  "en": "Vemulawada",
+  "hi": "वेमुलवाड़ा",
+  "te": "వేములవాడ",
+  "where": "temples.json"
+ },
+ {
+  "en": "Virtual-Q darshan booking",
+  "hi": "वर्चुअल-क्यू दर्शन बुकिंग",
+  "te": "వర్చువల్-క్యూ దర్శన బుకింగ్",
+  "where": "temples.json"
+ },
+ {
+  "en": "Yatra registration",
+  "hi": "यात्रा पंजीकरण",
+  "te": "యాత్ర నమోదు",
+  "where": "temples.json"
+ },
+ {
+  "en": "e-Donation",
+  "hi": "ई-दान",
+  "te": "ఈ-విరాళం",
+  "where": "temples.json"
+ },
+ {
+  "en": "e-Hundi",
+  "hi": "ई-हुंडी",
+  "te": "ఈ-హుండీ",
+  "where": "temples.json"
+ },
+ {
+  "en": "e-Sevas",
+  "hi": "ई-सेवा",
+  "te": "ఈ-సేవలు",
+  "where": "temples.json"
+ },
+ {
+  "en": "₹10,500 per person (donation and ticket)",
+  "hi": "₹10,500 प्रति व्यक्ति (दान और टिकट)",
+  "te": "ఒక్కొక్కరికి ₹10,500 (విరాళం, టికెట్)",
+  "where": "temples.json"
+ },
+ {
+  "en": "₹200 per person",
+  "hi": "₹200 प्रति व्यक्ति",
+  "te": "ఒక్కొక్కరికి ₹200",
+  "where": "temples.json"
+ },
+ {
+  "en": "₹300 per person",
+  "hi": "₹300 प्रति व्यक्ति",
+  "te": "ఒక్కొక్కరికి ₹300",
+  "where": "temples.json"
+ },
+ {
+  "en": "A new year, new hopes, new beginnings.",
+  "hi": "नया वर्ष, नई आशाएँ, नई शुरुआत।",
+  "te": "కొత్త సంవత్సరం, కొత్త ఆశలు, కొత్త ఆరంభాలు.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "A thread of love that protects for a lifetime.",
+  "hi": "प्रेम का यह धागा जीवन भर रक्षा करे।",
+  "te": "ప్రేమతో కట్టిన ఈ దారం జీవితాంతం రక్షగా నిలవాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Auspicious red",
+  "hi": "मंगल लाल",
+  "te": "మంగళ ఎరుపు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Ayodhya saffron",
+  "hi": "अयोध्या केसरिया",
+  "te": "అయోధ్య కాషాయం",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Begin the year with a prayer.",
+  "hi": "वर्ष का आरंभ प्रार्थना से करें।",
+  "te": "సంవత్సరాన్ని ప్రార్థనతో ప్రారంభించండి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Begin with a prayer, continue with faith, end with gratitude.",
+  "hi": "प्रार्थना से शुरुआत, विश्वास से आगे, कृतज्ञता से समापन।",
+  "te": "ప్రార్థనతో ప్రారంభించండి, విశ్వాసంతో సాగండి, కృతజ్ఞతతో ముగించండి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Blessings",
+  "hi": "आशीर्वाद",
+  "te": "ఆశీస్సులు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Blessings on your birthday",
+  "hi": "जन्मदिन पर आशीर्वाद",
+  "te": "జన్మదిన శుభాశీస్సులు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Braj Holi",
+  "hi": "ब्रज की होली",
+  "te": "బ్రజ్ హోళీ",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Butter and flute",
+  "hi": "माखन और मुरली",
+  "te": "వెన్న, మురళి",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Celebration",
+  "hi": "उत्सव",
+  "te": "వేడుక",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Daily blessing",
+  "hi": "दैनिक आशीर्वाद",
+  "te": "రోజువారీ ఆశీస్సులు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Distance cannot loosen this knot.",
+  "hi": "दूरी इस बंधन को ढीला नहीं कर सकती।",
+  "te": "దూరం ఈ బంధాన్ని సడలించలేదు.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Diwali",
+  "hi": "दीपावली",
+  "te": "దీపావళి",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Do your duty and leave the rest to Him.",
+  "hi": "अपना कर्म कीजिए, बाकी उन पर छोड़ दीजिए।",
+  "te": "మీ కర్తవ్యం మీరు చేయండి, మిగతాది ఆయనకు వదిలేయండి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Dussehra",
+  "hi": "दशहरा",
+  "te": "దసరా",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Evening lamp",
+  "hi": "संध्या दीप",
+  "te": "సంధ్యా దీపం",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Festival of lamps",
+  "hi": "दीपोत्सव",
+  "te": "దీపోత్సవం",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Festive gold",
+  "hi": "उत्सव स्वर्ण",
+  "te": "పండుగ బంగారం",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Forget old quarrels, share sweets and colours. Happy Holi!",
+  "hi": "पुराने गिले-शिकवे भूलकर मिठाई और रंग बाँटें। होली मुबारक!",
+  "te": "పాత మనస్పర్థలు మరచి, మిఠాయిలు, రంగులు పంచుకుందాం. హోళీ శుభాకాంక్షలు!",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Fresh start",
+  "hi": "नई शुरुआत",
+  "te": "కొత్త ఆరంభం",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Ganpati Bappa Morya",
+  "hi": "गणपति बप्पा मोरया",
+  "te": "గణపతి బప్పా మోరియా",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Ganpati red",
+  "hi": "गणपति लाल",
+  "te": "గణపతి ఎరుపు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Garba night",
+  "hi": "गरबा रात",
+  "te": "గర్బా రాత్రి",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Golden Lakshmi",
+  "hi": "स्वर्ण लक्ष्मी",
+  "te": "స్వర్ణ లక్ష్మి",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Good afternoon",
+  "hi": "शुभ दोपहर",
+  "te": "శుభ మధ్యాహ్నం",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Good evening",
+  "hi": "शुभ संध्या",
+  "te": "శుభ సాయంత్రం",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Good morning",
+  "hi": "सुप्रभात",
+  "te": "శుభోదయం",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Good night",
+  "hi": "शुभ रात्रि",
+  "te": "శుభ రాత్రి",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Gulal",
+  "hi": "गुलाल",
+  "te": "గులాల్",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Happy Anniversary",
+  "hi": "विवाह वर्षगाँठ की शुभकामनाएँ",
+  "te": "పెళ్లిరోజు శుభాకాంక్షలు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Happy Bhogi",
+  "hi": "भोगी की शुभकामनाएँ",
+  "te": "భోగి శుభాకాంక్షలు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Happy Birthday",
+  "hi": "जन्मदिन की शुभकामनाएँ",
+  "te": "పుట్టినరోజు శుభాకాంక్షలు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Happy Dev Deepawali",
+  "hi": "देव दीपावली की शुभकामनाएँ",
+  "te": "కార్తీక దీపోత్సవ శుభాకాంక్షలు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Happy Diwali",
+  "hi": "दीपावली की शुभकामनाएँ",
+  "te": "దీపావళి శుభాకాంక్షలు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Happy Dussehra",
+  "hi": "दशहरा की शुभकामनाएँ",
+  "te": "దసరా శుభాకాంక్షలు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Happy Ganesh Chaturthi",
+  "hi": "गणेश चतुर्थी की शुभकामनाएँ",
+  "te": "వినాయక చవితి శుభాకాంక్షలు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Happy Gita Jayanti",
+  "hi": "गीता जयंती की शुभकामनाएँ",
+  "te": "గీతా జయంతి శుభాకాంక్షలు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Happy Gudi Padwa",
+  "hi": "गुड़ी पड़वा की शुभकामनाएँ",
+  "te": "గుడి పడ్వా శుభాకాంక్షలు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Happy Hanuman Jayanti",
+  "hi": "हनुमान जयंती की शुभकामनाएँ",
+  "te": "హనుమాన్ జయంతి శుభాకాంక్షలు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Happy Holi",
+  "hi": "होली की शुभकामनाएँ",
+  "te": "హోళీ శుభాకాంక్షలు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Happy Janmashtami",
+  "hi": "जन्माष्टमी की शुभकामनाएँ",
+  "te": "శ్రీకృష్ణ జన్మాష్టమి శుభాకాంక్షలు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Happy Kartik Purnima",
+  "hi": "कार्तिक पूर्णिमा की शुभकामनाएँ",
+  "te": "కార్తీక పౌర్ణమి శుభాకాంక్షలు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Happy Maha Shivaratri",
+  "hi": "महाशिवरात्रि की शुभकामनाएँ",
+  "te": "మహా శివరాత్రి శుభాకాంక్షలు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Happy Makar Sankranti",
+  "hi": "मकर संक्रांति की शुभकामनाएँ",
+  "te": "సంక్రాంతి శుభాకాంక్షలు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Happy Navratri",
+  "hi": "नवरात्रि की शुभकामनाएँ",
+  "te": "శరన్నవరాత్రి శుభాకాంక్షలు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Happy New Year",
+  "hi": "नव वर्ष की शुभकामनाएँ",
+  "te": "నూతన సంవత్సర శుభాకాంక్షలు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Happy New Year {year}",
+  "hi": "नव वर्ष {year} की शुभकामनाएँ",
+  "te": "నూతన సంవత్సర శుభాకాంక్షలు {year}",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Happy Pongal",
+  "hi": "पोंगल की शुभकामनाएँ",
+  "te": "పొంగల్ శుభాకాంక్షలు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Happy Rakhi",
+  "hi": "राखी की बधाई",
+  "te": "రాఖీ శుభాకాంక్షలు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Happy Raksha Bandhan",
+  "hi": "रक्षा बंधन की शुभकामनाएँ",
+  "te": "రాఖీ పండుగ శుభాకాంక్షలు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Happy Rama Navami",
+  "hi": "राम नवमी की शुभकामनाएँ",
+  "te": "శ్రీరామ నవమి శుభాకాంక్షలు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Happy Ugadi",
+  "hi": "उगादी की शुभकामनाएँ",
+  "te": "ఉగాది శుభాకాంక్షలు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Happy Varalakshmi Vratam",
+  "hi": "वरलक्ष्मी व्रत की शुभकामनाएँ",
+  "te": "వరలక్ష్మీ వ్రత శుభాకాంక్షలు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Happy Vijayadashami",
+  "hi": "विजयादशमी की शुभकामनाएँ",
+  "te": "విజయదశమి శుభాకాంక్షలు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Har Har Mahadev",
+  "hi": "हर हर महादेव",
+  "te": "హర హర మహాదేవ",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Harvest sun",
+  "hi": "फसल का सूरज",
+  "te": "పంట సూర్యుడు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Have a blessed day",
+  "hi": "आपका दिन मंगलमय हो",
+  "te": "మీ రోజు శుభప్రదం కావాలి",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Holi Hai!",
+  "hi": "होली है!",
+  "te": "హోళీ హై!",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Jai Bajrangbali",
+  "hi": "जय बजरंगबली",
+  "te": "జై హనుమాన్",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Jai Hanuman",
+  "hi": "जय हनुमान",
+  "te": "జై హనుమాన్",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Jai Mata Di",
+  "hi": "जय माता दी",
+  "te": "జై మాతా దీ",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Jai Shri Krishna",
+  "hi": "जय श्री कृष्ण",
+  "te": "జై శ్రీకృష్ణ",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Jai Shri Ram",
+  "hi": "जय श्री राम",
+  "te": "జై శ్రీరామ్",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Kailash night",
+  "hi": "कैलाश की रात",
+  "te": "కైలాస రాత్రి",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Kartik Purnima",
+  "hi": "कार्तिक पूर्णिमा",
+  "te": "కార్తీక పౌర్ణమి",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Kites in the sky",
+  "hi": "आसमान में पतंगें",
+  "te": "ఆకాశంలో గాలిపటాలు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Kumkum",
+  "hi": "कुमकुम",
+  "te": "కుంకుమ",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Kurukshetra dawn",
+  "hi": "कुरुक्षेत्र का प्रभात",
+  "te": "కురుక్షేత్ర ప్రభాతం",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Leave today's worries at God's feet and sleep in peace.",
+  "hi": "आज की चिंताएँ प्रभु के चरणों में रखकर चैन से सोइए।",
+  "te": "ఈ రోజు చింతలన్నీ భగవంతుని పాదాల చెంత ఉంచి ప్రశాంతంగా నిద్రించండి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Let light win over darkness, in our homes and in our hearts.",
+  "hi": "अंधकार पर प्रकाश की जीत हो, हमारे घरों में भी और हमारे मन में भी।",
+  "te": "చీకటిపై వెలుగు గెలవాలి, మన ఇళ్లలోనూ మన మనసుల్లోనూ.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Like Ugadi pachadi, may you accept every taste of life with a smile.",
+  "hi": "उगादी पचड़ी की तरह जीवन के हर स्वाद को मुस्कान के साथ अपनाएँ।",
+  "te": "ఉగాది పచ్చడిలా జీవితంలోని ప్రతి రుచినీ చిరునవ్వుతో స్వీకరించండి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Lotus dawn",
+  "hi": "कमल प्रभात",
+  "te": "కమల ప్రభాతం",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Lotus gold",
+  "hi": "स्वर्ण कमल",
+  "te": "స్వర్ణ కమలం",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Maha Shivaratri",
+  "hi": "महाशिवरात्रि",
+  "te": "మహా శివరాత్రి",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Mango leaves",
+  "hi": "आम के पत्ते",
+  "te": "మామిడి తోరణం",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May Bappa bring happiness and good beginnings to your home.",
+  "hi": "बप्पा आपके घर में खुशियाँ और शुभ आरंभ लेकर आएँ।",
+  "te": "గణపయ్య మీ ఇంటికి ఆనందాన్ని, శుభారంభాలను తీసుకురావాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May God bless you with a long, healthy and happy life.",
+  "hi": "ईश्वर आपको दीर्घ, स्वस्थ और सुखी जीवन प्रदान करें।",
+  "te": "భగవంతుడు మీకు ఆయురారోగ్యాలు, సుఖసంతోషాలు ప్రసాదించాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May God's grace be with you and your family, today and always.",
+  "hi": "ईश्वर की कृपा आप और आपके परिवार पर सदा बनी रहे।",
+  "te": "భగవంతుని కృప మీపై, మీ కుటుంబంపై ఎల్లప్పుడూ ఉండాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May Goddess Lakshmi bless you and your family this Diwali.",
+  "hi": "इस दीपावली माँ लक्ष्मी की कृपा आप और आपके परिवार पर बनी रहे।",
+  "te": "ఈ దీపావళి నాడు లక్ష్మీదేవి అనుగ్రహం మీపై, మీ కుటుంబంపై ఉండాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May Goddess Lakshmi fill your home with prosperity.",
+  "hi": "माँ लक्ष्मी आपके घर को सुख-समृद्धि से भर दें।",
+  "te": "లక్ష్మీదేవి మీ ఇంటిని సిరిసంపదలతో నింపాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May Goddess Varalakshmi bless your home with health, wealth and harmony.",
+  "hi": "माँ वरलक्ष्मी आपके घर को स्वास्थ्य, धन और सौहार्द का आशीर्वाद दें।",
+  "te": "వరలక్ష్మీ దేవి మీ ఇంటికి ఆరోగ్యం, ఐశ్వర్యం, సౌభాగ్యాన్ని ప్రసాదించాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May Hanuman give you courage for every task today.",
+  "hi": "हनुमान जी आज हर कार्य में आपको साहस दें।",
+  "te": "ఆంజనేయుడు ఈ రోజు ప్రతి పనిలో మీకు ధైర్యాన్ని ఇవ్వాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May Hanuman give you strength, courage and devotion.",
+  "hi": "हनुमान जी आपको बल, साहस और भक्ति प्रदान करें।",
+  "te": "ఆంజనేయస్వామి మీకు బలం, ధైర్యం, భక్తిని ప్రసాదించాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May Lakshmi and Narayana bless your home with love and harmony.",
+  "hi": "लक्ष्मी-नारायण आपके घर को प्रेम और सौहार्द से भर दें।",
+  "te": "లక్ష్మీనారాయణులు మీ ఇంటిని ప్రేమానురాగాలతో నింపాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May Lord Ganesha remove every obstacle and bless you with wisdom.",
+  "hi": "श्री गणेश आपके सभी विघ्न हरें और बुद्धि का आशीर्वाद दें।",
+  "te": "విఘ్నేశ్వరుడు మీ విఘ్నాలన్నీ తొలగించి, జ్ఞానాన్ని ప్రసాదించాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May Lord Ganesha remove every obstacle from your path.",
+  "hi": "श्री गणेश आपके मार्ग की हर बाधा दूर करें।",
+  "te": "విఘ్నేశ్వరుడు మీ దారిలోని ప్రతి అడ్డంకినీ తొలగించాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May Lord Rama bless your home with peace, dharma and happiness.",
+  "hi": "प्रभु श्री राम आपके घर को शांति, धर्म और सुख से भर दें।",
+  "te": "శ్రీరామచంద్రుడు మీ ఇంటిని శాంతి, ధర్మం, సుఖంతో నింపాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May Lord Shiva bless you with peace, strength and good health.",
+  "hi": "भगवान शिव आपको शांति, शक्ति और उत्तम स्वास्थ्य प्रदान करें।",
+  "te": "పరమశివుడు మీకు శాంతి, శక్తి, ఆరోగ్యాన్ని ప్రసాదించాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May Lord Shiva bless your week with strength and calm.",
+  "hi": "भगवान शिव आपके सप्ताह को शक्ति और शांति से भर दें।",
+  "te": "పరమశివుడు మీ వారాన్ని శక్తితో, శాంతితో నింపాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May Lord Venkateswara grant all that is good for you.",
+  "hi": "भगवान वेंकटेश्वर आपका हर शुभ मनोरथ पूर्ण करें।",
+  "te": "శ్రీ వేంకటేశ్వరుడు మీకు సకల శుభాలు ప్రసాదించాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May Lord Vishnu protect you and your family.",
+  "hi": "भगवान विष्णु आपकी और आपके परिवार की रक्षा करें।",
+  "te": "శ్రీమహావిష్ణువు మిమ్మల్ని, మీ కుటుంబాన్ని కాపాడాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May Maa Durga give you strength, courage and success.",
+  "hi": "माँ दुर्गा आपको शक्ति, साहस और सफलता प्रदान करें।",
+  "te": "దుర్గామాత మీకు శక్తి, ధైర్యం, విజయాన్ని ప్రసాదించాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May Sankat Mochan remove every trouble from your life.",
+  "hi": "संकट मोचन आपके जीवन के सभी संकट हर लें।",
+  "te": "సంకటమోచనుడు మీ జీవితంలోని కష్టాలన్నీ తొలగించాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May Sita and Rama bless your family with love and togetherness.",
+  "hi": "सीता-राम आपके परिवार को प्रेम और एकता का आशीर्वाद दें।",
+  "te": "సీతారాములు మీ కుటుంబానికి ప్రేమ, ఐకమత్యాన్ని అనుగ్రహించాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May every new work you begin end in success.",
+  "hi": "आपका हर नया कार्य सफल हो।",
+  "te": "మీరు ప్రారంభించే ప్రతి కొత్త పని విజయవంతం కావాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May every wish of your heart come true this year.",
+  "hi": "इस वर्ष आपके मन की हर इच्छा पूरी हो।",
+  "te": "ఈ ఏడాది మీ మనసులోని ప్రతి కోరికా నెరవేరాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May good always win over evil, in the world and within us.",
+  "hi": "बुराई पर अच्छाई की सदा जीत हो, संसार में भी और हमारे भीतर भी।",
+  "te": "చెడుపై మంచి ఎల్లప్పుడూ గెలవాలి, లోకంలోనూ మనలోనూ.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May little Krishna fill your home with laughter and love.",
+  "hi": "नन्हे कान्हा आपके घर को हँसी और प्रेम से भर दें।",
+  "te": "చిన్ని కృష్ణుడు మీ ఇంటిని నవ్వులతో, ప్రేమతో నింపాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May the Mother grant every good wish of your family.",
+  "hi": "माँ आपके परिवार की हर शुभ कामना पूरी करें।",
+  "te": "అమ్మవారు మీ కుటుంబం కోరిన శుభ వరాలన్నీ ప్రసాదించాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May the Mother remove every sorrow and fill your life with joy.",
+  "hi": "माँ आपके सभी दुख दूर करें और जीवन को खुशियों से भर दें।",
+  "te": "అమ్మవారు మీ కష్టాలన్నీ తొలగించి, జీవితాన్ని ఆనందంతో నింపాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May the Mother's blessings stay with your family always.",
+  "hi": "माँ का आशीर्वाद आपके परिवार पर सदा बना रहे।",
+  "te": "అమ్మవారి ఆశీస్సులు మీ కుటుంబంపై ఎల్లప్పుడూ ఉండాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May the Sun God bless you with health and energy.",
+  "hi": "सूर्य देव आपको स्वास्थ्य और ऊर्जा प्रदान करें।",
+  "te": "సూర్యభగవానుడు మీకు ఆరోగ్యాన్ని, ఉత్సాహాన్ని ప్రసాదించాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May the Sun's new journey bring light and a good harvest to your life.",
+  "hi": "सूर्य देव की नई यात्रा आपके जीवन में उजाला और समृद्धि लाए।",
+  "te": "సూర్యుని కొత్త ప్రయాణం మీ జీవితంలో వెలుగును, సిరులను తీసుకురావాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May the blessings of Shiva and Parvati stay with your family.",
+  "hi": "शिव-पार्वती का आशीर्वाद आपके परिवार पर बना रहे।",
+  "te": "శివపార్వతుల ఆశీస్సులు మీ కుటుంబంపై ఉండాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May the eight blessings of Ashta Lakshmi be with you and yours.",
+  "hi": "अष्ट लक्ष्मी के आठों आशीर्वाद आपको प्राप्त हों।",
+  "te": "అష్టలక్ష్ముల అనుగ్రహం మీకు, మీ వారికి కలగాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May the flute of Krishna bring sweetness and peace to your life.",
+  "hi": "कृष्ण की बाँसुरी आपके जीवन में मधुरता और शांति लाए।",
+  "te": "కృష్ణుని మురళి మీ జీవితంలో మాధుర్యాన్ని, శాంతిని తీసుకురావాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May the lamps of Kartika light up your home and your heart.",
+  "hi": "कार्तिक के दीप आपके घर और मन को प्रकाशित करें।",
+  "te": "కార్తీక దీపాలు మీ ఇంటినీ, మనసునూ వెలిగించాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May the light of the diyas fill your home with joy, health and prosperity.",
+  "hi": "दीपों का यह प्रकाश आपके घर को सुख, स्वास्थ्य और समृद्धि से भर दे।",
+  "te": "దీపాల వెలుగు మీ ఇంటిని ఆనందం, ఆరోగ్యం, ఐశ్వర్యాలతో నింపాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May the name of Rama be your strength every day.",
+  "hi": "राम नाम हर दिन आपकी शक्ति बने।",
+  "te": "రామనామం ప్రతిరోజూ మీకు బలంగా నిలవాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May the new year bring health, happiness and prosperity to your family.",
+  "hi": "नया वर्ष आपके परिवार के लिए स्वास्थ्य, सुख और समृद्धि लाए।",
+  "te": "ఈ నూతన సంవత్సరం మీ కుటుంబానికి ఆరోగ్యం, ఆనందం, ఐశ్వర్యం తీసుకురావాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May the new year bring you health, peace and many reasons to be grateful.",
+  "hi": "नया साल आपके लिए स्वास्थ्य, शांति और कृतज्ञता के अनेक कारण लेकर आए।",
+  "te": "కొత్త సంవత్సరం మీకు ఆరోగ్యం, శాంతి, ఎన్నో సంతోషాలను తీసుకురావాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May the wisdom of the Gita guide every step you take.",
+  "hi": "गीता का ज्ञान आपके हर कदम का मार्गदर्शन करे।",
+  "te": "గీతా జ్ఞానం మీ ప్రతి అడుగుకూ దారి చూపాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May this Vijayadashami bring victory to all your efforts.",
+  "hi": "यह विजयादशमी आपके हर प्रयास को सफलता दे।",
+  "te": "ఈ విజయదశమి మీ ప్రతి ప్రయత్నానికీ విజయాన్ని అందించాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May this morning bring you peace, good health and a reason to smile.",
+  "hi": "यह सुबह आपके जीवन में शांति, स्वास्थ्य और मुस्कान लेकर आए।",
+  "te": "ఈ ఉదయం మీకు శాంతి, ఆరోగ్యం, చిరునవ్వు తీసుకురావాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May your bond grow stronger with every passing year.",
+  "hi": "हर बीतते वर्ष के साथ आपका बंधन और मज़बूत हो।",
+  "te": "గడిచే ప్రతి ఏడాదితో మీ బంధం మరింత బలపడాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May your home overflow with joy like the Pongal pot.",
+  "hi": "पोंगल के बर्तन की तरह आपका घर खुशियों से भर जाए।",
+  "te": "పొంగలి కుండలా మీ ఇల్లు ఆనందంతో పొంగిపొర్లాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "May your life be filled with the colours of joy, love and friendship.",
+  "hi": "आपका जीवन खुशी, प्रेम और मित्रता के रंगों से भर जाए।",
+  "te": "మీ జీవితం ఆనందం, ప్రేమ, స్నేహం అనే రంగులతో నిండాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Midnight sparkle",
+  "hi": "आधी रात की चमक",
+  "te": "అర్ధరాత్రి మెరుపులు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Modak morning",
+  "hi": "मोदक प्रभात",
+  "te": "మోదక ప్రభాతం",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Mother's victory",
+  "hi": "माँ की विजय",
+  "te": "అమ్మవారి విజయం",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Navratri",
+  "hi": "नवरात्रि",
+  "te": "నవరాత్రులు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "New Year",
+  "hi": "नव वर्ष",
+  "te": "నూతన సంవత్సరం",
+  "where": "wishes.json"
+ },
+ {
+  "en": "New dawn",
+  "hi": "नई सुबह",
+  "te": "నవోదయం",
+  "where": "wishes.json"
+ },
+ {
+  "en": "New year, same blessings: may God walk with you every day.",
+  "hi": "नया साल, वही आशीर्वाद: ईश्वर हर दिन आपके साथ चलें।",
+  "te": "కొత్త సంవత్సరం, అవే ఆశీస్సులు: భగవంతుడు ప్రతిరోజూ మీ వెంట నడవాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Night of lamps",
+  "hi": "दीपों की रात",
+  "te": "దీపాల రాత్రి",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Night sky",
+  "hi": "रात्रि आकाश",
+  "te": "రాత్రి ఆకాశం",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Nine nights of devotion, nine forms of the Mother. May she bless your home.",
+  "hi": "भक्ति की नौ रातें, माँ के नौ रूप। माँ आपके घर पर कृपा करें।",
+  "te": "భక్తితో తొమ్మిది రాత్రులు, అమ్మవారి తొమ్మిది రూపాలు. అమ్మ మీ ఇంటిని దీవించాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Om Gam Ganapataye Namah",
+  "hi": "ॐ गं गणपतये नमः",
+  "te": "ఓం గం గణపతయే నమః",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Om Namah Shivaya",
+  "hi": "ॐ नमः शिवाय",
+  "te": "ఓం నమః శివాయ",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Om Namo Narayanaya",
+  "hi": "ॐ नमो नारायणाय",
+  "te": "ఓం నమో నారాయణాయ",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Om Namo Venkatesaya",
+  "hi": "ॐ नमो वेंकटेशाय",
+  "te": "ఓం నమో వేంకటేశాయ",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Om Shri Mahalakshmyai Namah",
+  "hi": "ॐ श्री महालक्ष्म्यै नमः",
+  "te": "ఓం శ్రీ మహాలక్ష్మ్యై నమః",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Om Suryaya Namah",
+  "hi": "ॐ सूर्याय नमः",
+  "te": "ఓం సూర్యాయ నమః",
+  "where": "wishes.json"
+ },
+ {
+  "en": "On this full moon, may Shiva and Vishnu bless your family.",
+  "hi": "इस पूर्णिमा पर शिव और विष्णु आपके परिवार पर कृपा करें।",
+  "te": "ఈ పౌర్ణమి నాడు శివకేశవుల అనుగ్రహం మీ కుటుంబంపై ఉండాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "On this holy night, may Mahadev remove every fear from your heart.",
+  "hi": "इस पावन रात्रि में महादेव आपके मन का हर भय दूर करें।",
+  "te": "ఈ పవిత్ర రాత్రి మహాదేవుడు మీ మనసులోని ప్రతి భయాన్నీ తొలగించాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "One lamp lit with devotion drives away much darkness.",
+  "hi": "श्रद्धा से जलाया एक दीप बहुत अंधकार मिटा देता है।",
+  "te": "భక్తితో వెలిగించిన ఒక్క దీపం ఎంతో చీకటిని పారద్రోలుతుంది.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Peacock blue",
+  "hi": "मोरपंखी नीला",
+  "te": "నెమలి నీలం",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Peacock feather",
+  "hi": "मोरपंख",
+  "te": "నెమలి పింఛం",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Play safe, play with love.",
+  "hi": "सुरक्षित खेलें, प्रेम से खेलें।",
+  "te": "జాగ్రత్తగా ఆడండి, ప్రేమతో ఆడండి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Rakhi thread",
+  "hi": "राखी का धागा",
+  "te": "రాఖీ దారం",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Rama Navami",
+  "hi": "राम नवमी",
+  "te": "శ్రీరామ నవమి",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Rama's victory",
+  "hi": "राम की विजय",
+  "te": "రామ విజయం",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Rangoli",
+  "hi": "रंगोली",
+  "te": "రంగవల్లి",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Read one verse today. Let it stay with you all day.",
+  "hi": "आज एक श्लोक पढ़िए। उसे दिन भर अपने साथ रखिए।",
+  "te": "ఈ రోజు ఒక శ్లోకం చదవండి. దాన్ని రోజంతా మీతో ఉంచుకోండి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "River at dusk",
+  "hi": "संध्या का घाट",
+  "te": "సంధ్యా తీరం",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Sacred ash",
+  "hi": "भस्म",
+  "te": "విభూతి",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Sanjeevani",
+  "hi": "संजीवनी",
+  "te": "సంజీవని",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Sankranti · Pongal",
+  "hi": "संक्रांति · पोंगल",
+  "te": "సంక్రాంతి",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Shakti red",
+  "hi": "शक्ति लाल",
+  "te": "శక్తి ఎరుపు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Shatamanam bhavati: may you live a hundred years.",
+  "hi": "शतमानं भवति: आप सौ वर्ष जिएँ।",
+  "te": "శతమానం భవతి: నూరేళ్లు చల్లగా ఉండండి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Shubh Deepavali",
+  "hi": "शुभ दीपावली",
+  "te": "శుభ దీపావళి",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Sindoor",
+  "hi": "सिंदूर",
+  "te": "సిందూరం",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Sweet as jaggery, high as the kites. Happy Sankranti to your family.",
+  "hi": "गुड़ जैसी मिठास, पतंग जैसी ऊँचाई। आपके परिवार को संक्रांति की बधाई।",
+  "te": "బెల్లంలా తీయగా, గాలిపటంలా ఎత్తుగా. మీ కుటుంబానికి సంక్రాంతి శుభాకాంక్షలు.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "To my brother: may God keep you safe and happy always.",
+  "hi": "मेरे भाई के लिए: ईश्वर तुम्हें सदा सुरक्षित और खुश रखे।",
+  "te": "నా సోదరునికి: భగవంతుడు నిన్ను ఎల్లప్పుడూ క్షేమంగా, సంతోషంగా ఉంచాలి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "To my sister: I am always with you, today and every day.",
+  "hi": "मेरी बहन के लिए: मैं हमेशा तुम्हारे साथ हूँ, आज भी और हर दिन।",
+  "te": "నా సోదరికి: నేను ఎప్పుడూ నీకు తోడుగా ఉంటాను, ఈ రోజూ, ప్రతి రోజూ.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Together",
+  "hi": "साथ-साथ",
+  "te": "కలిసి",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Together for many more years, in health and happiness.",
+  "hi": "स्वास्थ्य और सुख के साथ आप सदा साथ रहें।",
+  "te": "ఆరోగ్యంతో, ఆనందంతో కలకాలం కలిసి ఉండండి.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Tulsi",
+  "hi": "तुलसी",
+  "te": "తులసి",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Ugadi · Gudi Padwa",
+  "hi": "उगादी · गुड़ी पड़वा",
+  "te": "ఉగాది",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Wedding anniversary",
+  "hi": "विवाह वर्षगाँठ",
+  "te": "పెళ్లిరోజు",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Where there is Rama's name, there is Hanuman's protection.",
+  "hi": "जहाँ राम का नाम है, वहाँ हनुमान की रक्षा है।",
+  "te": "రామనామం ఉన్నచోట హనుమంతుని రక్ష ఉంటుంది.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "Wishing you a safe, bright and happy Diwali.",
+  "hi": "आपको सुरक्षित, उज्ज्वल और मंगलमय दीपावली की शुभकामनाएँ।",
+  "te": "మీకు సురక్షితమైన, వెలుగులు నిండిన దీపావళి శుభాకాంక్షలు.",
+  "where": "wishes.json"
+ },
+ {
+  "en": "You have a right to your work, never to its fruits. (Gita 2.47)",
+  "hi": "कर्म करने में ही तुम्हारा अधिकार है, फल में कभी नहीं। (गीता 2.47)",
+  "te": "కర్మ చేయడంలోనే నీకు అధికారం ఉంది, ఫలితంపై ఎన్నడూ కాదు. (గీత 2.47)",
+  "where": "wishes.json"
+ }
+]

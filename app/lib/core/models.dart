@@ -1,6 +1,7 @@
 // Plain models parsed from the API. Kept dependency-free (no code generation).
 
 import 'telugu.dart';
+import 'i18n.dart';
 
 String _s(Object? v) => v?.toString() ?? '';
 int _i(Object? v) => v is int ? v : int.tryParse('$v') ?? 0;
@@ -23,12 +24,7 @@ class Deity {
   String label(String lang) => _label(lang, name, nameHi, teluguDeities[slug]);
 }
 
-String _label(String lang, String en, String hi, String? te) => switch (lang) {
-  'hi' when hi.isNotEmpty => hi,
-  'te' when te != null => te,
-  'te' when hi.isNotEmpty => toTeluguScript(hi),
-  _ => en,
-};
+String _label(String lang, String en, String hi, String? te) => pickLang(lang, en, hi, te: te);
 
 mixin Licensed {
   String get attribution;

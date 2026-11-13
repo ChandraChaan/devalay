@@ -206,7 +206,7 @@ class FavoriteButton extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final fav = ref.watch(favoritesProvider.select((m) => m.containsKey(item.key)));
     return IconButton(
-      tooltip: 'Favourite',
+      tooltip: t3(appLang, 'Favourite', 'पसंदीदा', 'ఇష్టమైనది'),
       onPressed: () => ref.read(favoritesProvider.notifier).toggle(item),
       icon: AnimatedSwitcher(
         duration: const Duration(milliseconds: 250),

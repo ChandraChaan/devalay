@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import '../core/i18n.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../core/config.dart';
@@ -53,7 +55,7 @@ class CreditsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Credits & licences')),
+      appBar: AppBar(title: Text(t3(appLang, 'Credits & licences', 'श्रेय और लाइसेंस', 'క్రెడిట్స్ & లైసెన్సులు'))),
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
@@ -68,11 +70,20 @@ class CreditsScreen extends StatelessWidget {
               Uri.parse('${AppConfig.sourceUrl}/blob/main/CONTENT_LICENSES.md'),
               mode: LaunchMode.externalApplication,
             ),
-            child: const Text('Full content licence list'),
+            child: Text(
+              t3(appLang, 'Full content licence list', 'सभी सामग्री लाइसेंस', 'పూర్తి కంటెంట్ లైసెన్సుల జాబితా'),
+            ),
           ),
           TextButton(
             onPressed: () => showLicensePage(context: context, applicationName: 'Devalay'),
-            child: const Text('Open-source software licences'),
+            child: Text(
+              t3(
+                appLang,
+                'Open-source software licences',
+                'ओपन-सोर्स सॉफ़्टवेयर लाइसेंस',
+                'ఓపెన్-సోర్స్ సాఫ్ట్‌వేర్ లైసెన్సులు',
+              ),
+            ),
           ),
         ],
       ),

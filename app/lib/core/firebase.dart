@@ -8,6 +8,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
+import 'languages.dart';
 import 'notifications.dart';
 
 /// Crash reports, push announcements and force update, all through the Devalay
@@ -45,7 +46,7 @@ class FirebaseServices {
     final messaging = FirebaseMessaging.instance;
     try {
       await messaging.subscribeToTopic('all');
-      for (final lang in const ['te', 'hi', 'en']) {
+      for (final lang in appLanguages.map((l) => l.code)) {
         if (lang == language) {
           await messaging.subscribeToTopic('lang_$lang');
         } else {
@@ -59,8 +60,11 @@ class FirebaseServices {
 }
 
 class UpdateInfo {
-  const UpdateInfo({required this.required, required this.url, required this.message});
+  const UpdateInfo({required this.required, required this.url, required this.message, this.build = 0, this.latest = 0});
   final bool required;
+
+  /// This build's version code and the newest one published (Remote Config `latest_version_code`).
+  final int build, latest;
   final String url;
   final Map<String, String> message;
 }
@@ -79,6 +83,7 @@ final updateProvider = FutureProvider<UpdateInfo>((ref) async {
     );
     await rc.setDefaults(const {
       'min_version_code': 0,
+      'latest_version_code': 0,
       'update_message_te': '',
       'update_message_hi': '',
       'update_message_en': '',
@@ -94,10 +99,10 @@ final updateProvider = FutureProvider<UpdateInfo>((ref) async {
   final fromPlay = info.installerStore == 'com.android.vending';
   return UpdateInfo(
     required: build < rc.getInt('min_version_code'),
+    build: build,
+    latest: rc.getInt('latest_version_code'),
     url: fromPlay ? _playUrl : _apkUrl,
-    message: {
-      for (final l in const ['te', 'hi', 'en']) l: rc.getString('update_message_$l'),
-    },
+    message: {for (final l in appLanguages) l.code: rc.getString('update_message_${l.code}')},
   );
 });
 

@@ -4,6 +4,7 @@ import 'package:hive_ce_flutter/hive_ce_flutter.dart';
 import 'package:uuid/uuid.dart';
 
 import 'firebase.dart';
+import 'languages.dart';
 import 'theme.dart';
 
 /// Local, on-device storage. Nothing here leaves the phone unless the user signs in
@@ -77,7 +78,7 @@ class Prefs {
   final Accent accent;
 
   static Prefs load(Box box) => Prefs(
-    language: box.get('language', defaultValue: 'en') as String,
+    language: box.get('language', defaultValue: _deviceLanguage()) as String,
     themeMode: ThemeMode.values[box.get('theme', defaultValue: 0) as int],
     onboarded: box.get('onboarded', defaultValue: false) as bool,
     ishtaDevta: box.get('ishta') as String?,
@@ -122,6 +123,12 @@ class PrefsNotifier extends Notifier<Prefs> {
   Future<void> setRashi(String? v) => set('rashi', v);
   Future<void> setCity(String v) => set('city', v);
   Future<void> completeOnboarding() => set('onboarded', true);
+}
+
+/// The phone's language when the app supports it (a phone set to Kannada opens in Kannada), else English.
+String _deviceLanguage() {
+  final code = WidgetsBinding.instance.platformDispatcher.locale.languageCode;
+  return isSupportedLanguage(code) ? code : 'en';
 }
 
 final prefsProvider = NotifierProvider<PrefsNotifier, Prefs>(PrefsNotifier.new);

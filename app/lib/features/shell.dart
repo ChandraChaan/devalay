@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:home_widget/home_widget.dart';
 
+import '../core/app_care.dart';
 import '../core/calendar_reminders.dart';
 import '../core/i18n.dart';
 import '../core/storage.dart';
@@ -25,7 +26,11 @@ class _AppShellState extends ConsumerState<AppShell> {
     super.initState();
     // Calendar alarms are laid a few weeks ahead from cached data; top them up on every start.
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (mounted) refreshCalendarReminders(ref);
+      if (!mounted) return;
+      refreshCalendarReminders(ref);
+      checkForAppUpdate(context, ref);
+      // A quiet moment after the first screen settles; Play decides whether to show the card.
+      Future.delayed(const Duration(seconds: 20), maybeAskForReview);
     });
     // Tapping the home-screen Panchang widget opens the calendar.
     HomeWidget.initiallyLaunchedFromHomeWidget().then((uri) {

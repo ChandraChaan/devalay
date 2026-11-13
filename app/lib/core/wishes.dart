@@ -9,6 +9,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 
 import 'api.dart';
+import 'i18n.dart';
 import 'models.dart';
 import 'providers.dart';
 import 'storage.dart';
@@ -37,11 +38,7 @@ enum WishLayout {
   const WishLayout(this.id, this.en, this.hi, this.te);
   final String id, en, hi, te;
 
-  String label(String lang) => switch (lang) {
-    'hi' => hi,
-    'te' => te,
-    _ => en,
-  };
+  String label(String lang) => t3(lang, en, hi, te);
 
   /// The layout a catalogue names; a name from a newer catalogue falls back to [darshan].
   static WishLayout byId(Object? id) => values.where((l) => l.id == id).firstOrNull ?? darshan;

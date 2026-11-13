@@ -7,13 +7,17 @@ import 'package:just_audio_background/just_audio_background.dart';
 
 import 'app.dart';
 import 'core/api.dart';
+import 'core/app_care.dart';
 import 'core/firebase.dart';
+import 'core/names.dart';
 import 'core/notifications.dart';
 import 'core/storage.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Boxes.init();
+  await initDates();
+  recordAppOpen();
   await TokenStore.load();
   await JustAudioBackground.init(
     androidNotificationChannelId: 'com.chandrachaan.devalay.audio',

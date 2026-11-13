@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import '../app.dart';
 import '../core/audio.dart';
 import '../core/i18n.dart';
+import '../core/names.dart';
 import '../core/location.dart';
 import '../core/models.dart';
 import '../core/providers.dart';
@@ -193,8 +194,12 @@ class _Hero extends ConsumerWidget {
                     ? '${teluguVara['${panchang['vara']}'] ?? ''} · ${teluguPaksha[tithi['paksha']] ?? ''} '
                           '${teluguTithi[tithi['name']] ?? ''} · ${teluguMonths[month['index'] as int]} మాసం'
                           '${panchang['samvatsara'] is Map ? ' · ${teluguSamvatsara[(panchang['samvatsara'] as Map)['index'] as int]} నామ సంవత్సరం' : ''}'
-                    : '${panchang['vara']} · ${tithi['paksha']} ${tithi['name']} · ${month['name']}'
-                          '${month['adhika'] == true ? ' (Adhik)' : ''} · VS ${panchang['vikram_samvat']}',
+                    : lang == 'en'
+                    ? '${panchang['vara']} · ${tithi['paksha']} ${tithi['name']} · ${month['name']}'
+                          '${month['adhika'] == true ? ' (Adhik)' : ''} · VS ${panchang['vikram_samvat']}'
+                    : '${varaIn(lang, '${panchang['vara']}')} · ${pakshaIn(lang, '${tithi['paksha']}')} '
+                          '${tithiIn(lang, '${tithi['name']}')} · ${monthIn(lang, month['index'] as int)}'
+                          '${panchang['samvatsara'] is Map ? ' · ${samvatsaraIn(lang, (panchang['samvatsara'] as Map)['index'] as int, '${(panchang['samvatsara'] as Map)['name']}')}' : ''}',
                 style: const TextStyle(color: Colors.white70),
               ),
               const SizedBox(height: 18),
@@ -414,16 +419,8 @@ class _PanchangCard extends ConsumerWidget {
                 const SizedBox(height: 14),
                 Row(
                   children: [
-                    cell(
-                      tr(ref, 'tithi'),
-                      lang == 'te' ? (teluguTithi['${tithi['name']}'] ?? '${tithi['name']}') : '${tithi['name']}',
-                      Icons.brightness_3_rounded,
-                    ),
-                    cell(
-                      tr(ref, 'nakshatra'),
-                      lang == 'te' ? teluguNakshatra[nak['index'] as int] : '${nak['name']}',
-                      Icons.auto_awesome_rounded,
-                    ),
+                    cell(tr(ref, 'tithi'), tithiIn(lang, '${tithi['name']}'), Icons.brightness_3_rounded),
+                    cell(tr(ref, 'nakshatra'), nakshatraIn(lang, '${nak['name']}'), Icons.auto_awesome_rounded),
                   ],
                 ),
                 const SizedBox(height: 12),
@@ -548,10 +545,7 @@ class _VerseCard extends ConsumerWidget {
                   ],
                 ),
                 const SizedBox(height: 12),
-                Text(
-                  uiLang(ref) == 'te' ? toTeluguScript(verse.sanskrit) : verse.sanskrit,
-                  style: scriptureStyle(context, size: 18),
-                ),
+                Text(scriptFor(uiLang(ref), verse.sanskrit), style: scriptureStyle(context, size: 18)),
                 const SizedBox(height: 10),
                 Text(verse.translation, style: Theme.of(context).textTheme.bodyLarge?.copyWith(height: 1.5)),
               ],
@@ -648,11 +642,7 @@ class _TodaysSongs extends ConsumerWidget {
     final deity = deities.where((d) => d.slug == slug).firstOrNull ?? serverDeity;
     final tracks = ref.watch(tracksProvider((kind: null, deity: slug))).value ?? const <Track>[];
     if (tracks.isEmpty || deity == null) return const SizedBox.shrink();
-    final day = switch (lang) {
-      'te' => teluguWeekdays[weekday],
-      'hi' => const ['सोमवार', 'मंगलवार', 'बुधवार', 'गुरुवार', 'शुक्रवार', 'शनिवार', 'रविवार'][weekday],
-      _ => const ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'][weekday],
-    };
+    final day = fmtDate(lang, 'EEEE', DateTime.now());
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -135,16 +136,19 @@ class _MuhurtaTimingsState extends ConsumerState<MuhurtaTimings> {
               ],
             ),
             const SizedBox(height: 4),
-            for (final p in shown)
+            for (final (i, p) in shown.indexed)
               _PeriodRow(
-                time: '${clock(p.start)} – ${clock(p.end)}',
-                name: label(p),
-                note: _tab == 'hora' ? horaUse(lang, p.key) : null,
-                quality: qualityLabel(lang, p.quality),
-                color: tone(p.quality),
-                now: identical(p, current),
-                nowLabel: nowWord,
-              ),
+                    time: '${clock(p.start)} – ${clock(p.end)}',
+                    name: label(p),
+                    note: _tab == 'hora' ? horaUse(lang, p.key) : null,
+                    quality: qualityLabel(lang, p.quality),
+                    color: tone(p.quality),
+                    now: identical(p, current),
+                    nowLabel: nowWord,
+                  )
+                  .animate(key: ValueKey('$_tab$night$i'), delay: (30 * i).ms)
+                  .fadeIn(duration: 200.ms)
+                  .slideX(begin: 0.05),
             Padding(
               padding: const EdgeInsets.fromLTRB(4, 8, 4, 4),
               child: Text(switch (_tab) {

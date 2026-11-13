@@ -1,0 +1,5174 @@
+[
+ {
+  "en": "Dakshinayana",
+  "hi": "",
+  "te": "దక్షిణాయనం",
+  "where": "ayana"
+ },
+ {
+  "en": "Uttarayana",
+  "hi": "",
+  "te": "ఉత్తరాయణం",
+  "where": "ayana"
+ },
+ {
+  "en": "Ahmedabad",
+  "hi": "अहमदाबाद",
+  "te": "అహ్మదాబాద్",
+  "where": "city"
+ },
+ {
+  "en": "Anantapur",
+  "hi": "अनंतपुर",
+  "te": "అనంతపురం",
+  "where": "city"
+ },
+ {
+  "en": "Ayodhya",
+  "hi": "अयोध्या",
+  "te": "అయోధ్య",
+  "where": "city"
+ },
+ {
+  "en": "Bengaluru",
+  "hi": "बेंगलुरु",
+  "te": "బెంగళూరు",
+  "where": "city"
+ },
+ {
+  "en": "Bhadrachalam",
+  "hi": "भद्राचलम",
+  "te": "భద్రాచలం",
+  "where": "city"
+ },
+ {
+  "en": "Bhopal",
+  "hi": "भोपाल",
+  "te": "భోపాల్",
+  "where": "city"
+ },
+ {
+  "en": "Chennai",
+  "hi": "चेन्नई",
+  "te": "చెన్నై",
+  "where": "city"
+ },
+ {
+  "en": "Dubai",
+  "hi": "दुबई",
+  "te": "దుబాయ్",
+  "where": "city"
+ },
+ {
+  "en": "Eluru",
+  "hi": "एलुरु",
+  "te": "ఏలూరు",
+  "where": "city"
+ },
+ {
+  "en": "Guntur",
+  "hi": "गुंटूर",
+  "te": "గుంటూరు",
+  "where": "city"
+ },
+ {
+  "en": "Guwahati",
+  "hi": "गुवाहाटी",
+  "te": "గువాహటి",
+  "where": "city"
+ },
+ {
+  "en": "Haridwar",
+  "hi": "हरिद्वार",
+  "te": "హరిద్వార్",
+  "where": "city"
+ },
+ {
+  "en": "Hyderabad",
+  "hi": "हैदराबाद",
+  "te": "హైదరాబాద్",
+  "where": "city"
+ },
+ {
+  "en": "Jaipur",
+  "hi": "जयपुर",
+  "te": "జైపూర్",
+  "where": "city"
+ },
+ {
+  "en": "Kadapa",
+  "hi": "कडपा",
+  "te": "కడప",
+  "where": "city"
+ },
+ {
+  "en": "Kakinada",
+  "hi": "काकीनाडा",
+  "te": "కాకినాడ",
+  "where": "city"
+ },
+ {
+  "en": "Karimnagar",
+  "hi": "करीमनगर",
+  "te": "కరీంనగర్",
+  "where": "city"
+ },
+ {
+  "en": "Kathmandu",
+  "hi": "काठमांडू",
+  "te": "ఖాట్మండు",
+  "where": "city"
+ },
+ {
+  "en": "Khammam",
+  "hi": "खम्मम",
+  "te": "ఖమ్మం",
+  "where": "city"
+ },
+ {
+  "en": "Kochi",
+  "hi": "कोच्चि",
+  "te": "కొచ్చి",
+  "where": "city"
+ },
+ {
+  "en": "Kolkata",
+  "hi": "कोलकाता",
+  "te": "కోల్‌కతా",
+  "where": "city"
+ },
+ {
+  "en": "Kurnool",
+  "hi": "कुर्नूल",
+  "te": "కర్నూలు",
+  "where": "city"
+ },
+ {
+  "en": "London",
+  "hi": "लंदन",
+  "te": "లండన్",
+  "where": "city"
+ },
+ {
+  "en": "Lucknow",
+  "hi": "लखनऊ",
+  "te": "లక్నో",
+  "where": "city"
+ },
+ {
+  "en": "Mathura",
+  "hi": "मथुरा",
+  "te": "మథుర",
+  "where": "city"
+ },
+ {
+  "en": "Mumbai",
+  "hi": "मुंबई",
+  "te": "ముంబై",
+  "where": "city"
+ },
+ {
+  "en": "Nellore",
+  "hi": "नेल्लोर",
+  "te": "నెల్లూరు",
+  "where": "city"
+ },
+ {
+  "en": "New Delhi",
+  "hi": "नई दिल्ली",
+  "te": "న్యూఢిల్లీ",
+  "where": "city"
+ },
+ {
+  "en": "New York",
+  "hi": "न्यूयॉर्क",
+  "te": "న్యూయార్క్",
+  "where": "city"
+ },
+ {
+  "en": "Nizamabad",
+  "hi": "निज़ामाबाद",
+  "te": "నిజామాబాద్",
+  "where": "city"
+ },
+ {
+  "en": "Ongole",
+  "hi": "ओंगोल",
+  "te": "ఒంగోలు",
+  "where": "city"
+ },
+ {
+  "en": "Patna",
+  "hi": "पटना",
+  "te": "పాట్నా",
+  "where": "city"
+ },
+ {
+  "en": "Pune",
+  "hi": "पुणे",
+  "te": "పుణె",
+  "where": "city"
+ },
+ {
+  "en": "Puri",
+  "hi": "पुरी",
+  "te": "పూరి",
+  "where": "city"
+ },
+ {
+  "en": "Rajahmundry",
+  "hi": "राजमुंदरी",
+  "te": "రాజమహేంద్రవరం",
+  "where": "city"
+ },
+ {
+  "en": "San Francisco",
+  "hi": "सैन फ़्रांसिस्को",
+  "te": "శాన్ ఫ్రాన్సిస్కో",
+  "where": "city"
+ },
+ {
+  "en": "Singapore",
+  "hi": "सिंगापुर",
+  "te": "సింగపూర్",
+  "where": "city"
+ },
+ {
+  "en": "Srikakulam",
+  "hi": "श्रीकाकुलम",
+  "te": "శ్రీకాకుళం",
+  "where": "city"
+ },
+ {
+  "en": "Srisailam",
+  "hi": "श्रीशैलम",
+  "te": "శ్రీశైలం",
+  "where": "city"
+ },
+ {
+  "en": "Sydney",
+  "hi": "सिडनी",
+  "te": "సిడ్నీ",
+  "where": "city"
+ },
+ {
+  "en": "Tirupati",
+  "hi": "तिरुपति",
+  "te": "తిరుపతి",
+  "where": "city"
+ },
+ {
+  "en": "Toronto",
+  "hi": "टोरंटो",
+  "te": "టొరంటో",
+  "where": "city"
+ },
+ {
+  "en": "Ujjain",
+  "hi": "उज्जैन",
+  "te": "ఉజ్జయిని",
+  "where": "city"
+ },
+ {
+  "en": "Varanasi",
+  "hi": "वाराणसी",
+  "te": "వారణాసి",
+  "where": "city"
+ },
+ {
+  "en": "Vijayawada",
+  "hi": "विजयवाड़ा",
+  "te": "విజయవాడ",
+  "where": "city"
+ },
+ {
+  "en": "Visakhapatnam",
+  "hi": "विशाखापत्तनम",
+  "te": "విశాఖపట్నం",
+  "where": "city"
+ },
+ {
+  "en": "Warangal",
+  "hi": "वारंगल",
+  "te": "వరంగల్",
+  "where": "city"
+ },
+ {
+  "en": "Durga",
+  "hi": "",
+  "te": "దుర్గమ్మ",
+  "where": "deity (slug durga)"
+ },
+ {
+  "en": "Ganesha",
+  "hi": "",
+  "te": "వినాయకుడు",
+  "where": "deity (slug ganesha)"
+ },
+ {
+  "en": "General",
+  "hi": "",
+  "te": "అన్ని భక్తి",
+  "where": "deity (slug general)"
+ },
+ {
+  "en": "Hanuman",
+  "hi": "",
+  "te": "ఆంజనేయ స్వామి",
+  "where": "deity (slug hanuman)"
+ },
+ {
+  "en": "Kali",
+  "hi": "",
+  "te": "కాళీమాత",
+  "where": "deity (slug kali)"
+ },
+ {
+  "en": "Lakshmi",
+  "hi": "",
+  "te": "లక్ష్మీదేవి",
+  "where": "deity (slug lakshmi)"
+ },
+ {
+  "en": "Rama",
+  "hi": "",
+  "te": "శ్రీరాముడు",
+  "where": "deity (slug rama)"
+ },
+ {
+  "en": "Saraswati",
+  "hi": "",
+  "te": "సరస్వతీదేవి",
+  "where": "deity (slug saraswati)"
+ },
+ {
+  "en": "Shani",
+  "hi": "",
+  "te": "శనిదేవుడు",
+  "where": "deity (slug shani)"
+ },
+ {
+  "en": "Surya",
+  "hi": "",
+  "te": "సూర్యభగవానుడు",
+  "where": "deity (slug surya)"
+ },
+ {
+  "en": "Venkateswara",
+  "hi": "",
+  "te": "శ్రీ వేంకటేశ్వర స్వామి",
+  "where": "deity (slug venkateswara)"
+ },
+ {
+  "en": "Vishnu",
+  "hi": "",
+  "te": "శ్రీ మహావిష్ణువు",
+  "where": "deity (slug vishnu)"
+ },
+ {
+  "en": "Akshaya Tritiya",
+  "hi": "अक्षय तृतीया",
+  "te": "అక్షయ తృతీయ",
+  "where": "festival name"
+ },
+ {
+  "en": "Anant Chaturdashi",
+  "hi": "अनंत चतुर्दशी",
+  "te": "అనంత చతుర్దశి",
+  "where": "festival name"
+ },
+ {
+  "en": "Atla Taddi",
+  "hi": "अटला तद्दी",
+  "te": "అట్లతద్ది",
+  "where": "festival name"
+ },
+ {
+  "en": "Bhai Dooj",
+  "hi": "भाई दूज",
+  "te": "భగినీ హస్త భోజనం",
+  "where": "festival name"
+ },
+ {
+  "en": "Bhogi",
+  "hi": "भोगी",
+  "te": "భోగి",
+  "where": "festival name"
+ },
+ {
+  "en": "Buddha Purnima",
+  "hi": "बुद्ध पूर्णिमा",
+  "te": "బుద్ధ పౌర్ణమి",
+  "where": "festival name"
+ },
+ {
+  "en": "Chhath Puja",
+  "hi": "छठ पूजा",
+  "te": "ఛఠ్ పూజ",
+  "where": "festival name"
+ },
+ {
+  "en": "Dev Uthani Ekadashi",
+  "hi": "देवउठनी एकादशी",
+  "te": "ఉత్థాన ఏకాదశి",
+  "where": "festival name"
+ },
+ {
+  "en": "Devshayani Ekadashi",
+  "hi": "देवशयनी एकादशी",
+  "te": "తొలి ఏకాదశి",
+  "where": "festival name"
+ },
+ {
+  "en": "Dhanteras",
+  "hi": "धनतेरस",
+  "te": "ధన త్రయోదశి",
+  "where": "festival name"
+ },
+ {
+  "en": "Diwali / Lakshmi Puja",
+  "hi": "दीपावली / लक्ष्मी पूजा",
+  "te": "దీపావళి",
+  "where": "festival name"
+ },
+ {
+  "en": "Durga Ashtami",
+  "hi": "दुर्गा अष्टमी",
+  "te": "దుర్గాష్టమి",
+  "where": "festival name"
+ },
+ {
+  "en": "Dussehra / Vijayadashami",
+  "hi": "दशहरा / विजयादशमी",
+  "te": "విజయదశమి (దసరా)",
+  "where": "festival name"
+ },
+ {
+  "en": "Engili Pula Bathukamma",
+  "hi": "बतुकम्मा आरंभ",
+  "te": "ఎంగిలి పూల బతుకమ్మ",
+  "where": "festival name"
+ },
+ {
+  "en": "Ganesh Chaturthi",
+  "hi": "गणेश चतुर्थी",
+  "te": "వినాయక చవితి",
+  "where": "festival name"
+ },
+ {
+  "en": "Ganga Dussehra",
+  "hi": "गंगा दशहरा",
+  "te": "గంగా దశహరా",
+  "where": "festival name"
+ },
+ {
+  "en": "Gita Jayanti",
+  "hi": "गीता जयंती",
+  "te": "గీతా జయంతి",
+  "where": "festival name"
+ },
+ {
+  "en": "Govardhan Puja",
+  "hi": "गोवर्धन पूजा",
+  "te": "గోవర్ధన పూజ",
+  "where": "festival name"
+ },
+ {
+  "en": "Guru Purnima",
+  "hi": "गुरु पूर्णिमा",
+  "te": "గురు పౌర్ణమి",
+  "where": "festival name"
+ },
+ {
+  "en": "Hanuman Jayanti",
+  "hi": "हनुमान जयंती",
+  "te": "హనుమాన్ జయంతి",
+  "where": "festival name"
+ },
+ {
+  "en": "Hartalika Teej",
+  "hi": "हरतालिका तीज",
+  "te": "హరితాళిక వ్రతం",
+  "where": "festival name"
+ },
+ {
+  "en": "Holi",
+  "hi": "होली",
+  "te": "హోళీ",
+  "where": "festival name"
+ },
+ {
+  "en": "Holika Dahan",
+  "hi": "होलिका दहन",
+  "te": "కామదహనం",
+  "where": "festival name"
+ },
+ {
+  "en": "Jagannath Rath Yatra",
+  "hi": "जगन्नाथ रथ यात्रा",
+  "te": "జగన్నాథ రథయాత్ర",
+  "where": "festival name"
+ },
+ {
+  "en": "Kanuma",
+  "hi": "कनुमा",
+  "te": "కనుమ",
+  "where": "festival name"
+ },
+ {
+  "en": "Kartik Purnima / Dev Deepawali",
+  "hi": "कार्तिक पूर्णिमा / देव दीपावली",
+  "te": "కార్తీక పౌర్ణమి",
+  "where": "festival name"
+ },
+ {
+  "en": "Karwa Chauth",
+  "hi": "करवा चौथ",
+  "te": "కర్వా చౌత్",
+  "where": "festival name"
+ },
+ {
+  "en": "Krishna Janmashtami",
+  "hi": "कृष्ण जन्माष्टमी",
+  "te": "శ్రీకృష్ణ జన్మాష్టమి",
+  "where": "festival name"
+ },
+ {
+  "en": "Maha Shivratri",
+  "hi": "महाशिवरात्रि",
+  "te": "మహా శివరాత్రి",
+  "where": "festival name"
+ },
+ {
+  "en": "Makar Sankranti",
+  "hi": "मकर संक्रांति",
+  "te": "మకర సంక్రాంతి",
+  "where": "festival name"
+ },
+ {
+  "en": "Nag Panchami",
+  "hi": "नाग पंचमी",
+  "te": "నాగ పంచమి",
+  "where": "festival name"
+ },
+ {
+  "en": "Naga Chaturthi",
+  "hi": "नाग चतुर्थी",
+  "te": "నాగుల చవితి",
+  "where": "festival name"
+ },
+ {
+  "en": "Narak Chaturdashi",
+  "hi": "नरक चतुर्दशी",
+  "te": "నరక చతుర్దశి",
+  "where": "festival name"
+ },
+ {
+  "en": "Nirjala Ekadashi",
+  "hi": "निर्जला एकादशी",
+  "te": "నిర్జల ఏకాదశి",
+  "where": "festival name"
+ },
+ {
+  "en": "Pitru Paksha begins",
+  "hi": "पितृ पक्ष आरंभ",
+  "te": "మహాలయ పక్షం ప్రారంభం",
+  "where": "festival name"
+ },
+ {
+  "en": "Raksha Bandhan",
+  "hi": "रक्षा बंधन",
+  "te": "రాఖీ పౌర్ణమి",
+  "where": "festival name"
+ },
+ {
+  "en": "Ram Navami",
+  "hi": "राम नवमी",
+  "te": "శ్రీరామ నవమి",
+  "where": "festival name"
+ },
+ {
+  "en": "Ratha Saptami",
+  "hi": "रथ सप्तमी",
+  "te": "రథసప్తమి",
+  "where": "festival name"
+ },
+ {
+  "en": "Saddula Bathukamma",
+  "hi": "सद्दुला बतुकम्मा",
+  "te": "సద్దుల బతుకమ్మ",
+  "where": "festival name"
+ },
+ {
+  "en": "Sharad Navratri begins",
+  "hi": "शारदीय नवरात्रि आरंभ",
+  "te": "దసరా నవరాత్రులు ప్రారంభం",
+  "where": "festival name"
+ },
+ {
+  "en": "Sharad Purnima",
+  "hi": "शरद पूर्णिमा",
+  "te": "శరత్ పౌర్ణమి",
+  "where": "festival name"
+ },
+ {
+  "en": "Ugadi / Gudi Padwa",
+  "hi": "उगादी / गुड़ी पड़वा",
+  "te": "ఉగాది",
+  "where": "festival name"
+ },
+ {
+  "en": "Varalakshmi Vratam",
+  "hi": "वरलक्ष्मी व्रत",
+  "te": "వరలక్ష్మీ వ్రతం",
+  "where": "festival name"
+ },
+ {
+  "en": "Vasant Panchami",
+  "hi": "वसंत पंचमी",
+  "te": "వసంత పంచమి",
+  "where": "festival name"
+ },
+ {
+  "en": "Vivah Panchami",
+  "hi": "विवाह पंचमी",
+  "te": "వివాహ పంచమి",
+  "where": "festival name"
+ },
+ {
+  "en": "A window of about 1½ hours set by the nakshatra, considered very auspicious; it often helps when Rahu Kalam or Varjyam blocks the day.",
+  "hi": "नक्षत्र के अनुसार लगभग डेढ़ घंटे का समय, अत्यंत शुभ माना जाता है।",
+  "te": "నక్షత్రాన్ని బట్టి సుమారు గంటన్నర సమయం, చాలా శుభంగా భావిస్తారు.",
+  "where": "glossary"
+ },
+ {
+  "en": "About 1½ hours inside each nakshatra that Telugu and Tamil panchangams mark as unfit for any good work.",
+  "hi": "हर नक्षत्र के भीतर लगभग डेढ़ घंटा, जिसे दक्षिण भारतीय पंचांग शुभ कार्य के लिए वर्जित मानते हैं।",
+  "te": "ప్రతి నక్షత్రంలో సుమారు గంటన్నర సమయం, ఏ శుభ కార్యానికీ పనికిరానిదిగా పంచాంగాలు చెబుతాయి.",
+  "where": "glossary"
+ },
+ {
+  "en": "About 48 minutes around local noon, held good for starting most work. It is skipped on Wednesdays.",
+  "hi": "स्थानीय दोपहर के आसपास लगभग 48 मिनट, अधिकतर कार्य आरंभ के लिए शुभ। बुधवार को इसे नहीं लेते।",
+  "te": "మధ్యాహ్నం చుట్టూ సుమారు 48 నిమిషాలు, చాలా పనుల ప్రారంభానికి శుభం. బుధవారం దీనిని తీసుకోరు.",
+  "where": "glossary"
+ },
+ {
+  "en": "An eighth of the daytime ruled by Gulika, Saturn's son. Whatever is begun in it is said to repeat, so it suits good deeds but not funerals or debts.",
+  "hi": "शनि पुत्र गुलिक का समय। इसमें शुरू किया काम दोहराता है, इसलिए शुभ कार्य ठीक हैं पर ऋण या अंतिम संस्कार नहीं।",
+  "te": "శని కుమారుడు గుళికుని కాలం. ఇందులో మొదలుపెట్టింది మళ్లీ జరుగుతుందని నమ్మకం; మంచి పనులకు సరే, అప్పులకు కాదు.",
+  "where": "glossary"
+ },
+ {
+  "en": "Another eighth of the daytime, ruled by Yama, avoided for auspicious beginnings.",
+  "hi": "दिन का एक और आठवाँ भाग, यम का समय, शुभ आरंभ के लिए टाला जाता है।",
+  "te": "పగటిలో మరో ఎనిమిదో భాగం, యముని కాలం, శుభ ప్రారంభాలకు వద్దు.",
+  "where": "glossary"
+ },
+ {
+  "en": "Eight day and eight night periods named Amrutham, Udyogam, Labham, Dhanam, Sukham (good) and Rogam, Choram, Visham (bad). Popular in Tamil Nadu and Andhra Pradesh for choosing a good time (nalla neram).",
+  "hi": "दिन और रात के आठ-आठ भाग: अमृत, उद्योग, लाभ, धन, सुख शुभ और रोग, चोर, विष अशुभ।",
+  "te": "పగలు, రాత్రి ఎనిమిదేసి భాగాలు: అమృతం, ఉద్యోగం, లాభం, ధనం, సుఖం మంచివి; రోగం, చోరం, విషం చెడ్డవి.",
+  "where": "glossary"
+ },
+ {
+  "en": "Gowri Panchangam",
+  "hi": "गौरी पंचांग",
+  "te": "గౌరీ పంచాంగం",
+  "where": "glossary"
+ },
+ {
+  "en": "Gulika Kalam",
+  "hi": "गुलिक काल",
+  "te": "గుళిక కాలం",
+  "where": "glossary"
+ },
+ {
+  "en": "Half of a tithi, so there are two in a day. Vishti (Bhadra) karana is avoided for auspicious work.",
+  "hi": "तिथि का आधा भाग, इसलिए एक दिन में दो करण होते हैं। विष्टि (भद्रा) करण शुभ कार्य के लिए टाला जाता है।",
+  "te": "తిథిలో సగ భాగం, కాబట్టి రోజుకు రెండు కరణాలు. విష్టి (భద్ర) కరణంలో శుభ కార్యాలు చేయరు.",
+  "where": "glossary"
+ },
+ {
+  "en": "How today's nakshatra stands from your birth star, counted in nine groups. Sampat, Kshema, Sadhana, Mitra and Parama Mitra are good; Vipat, Pratyak and Naidhana are not.",
+  "hi": "आज का नक्षत्र आपके जन्म नक्षत्र से किस गिनती में है। संपत, क्षेम, साधना, मित्र, परम मित्र शुभ; विपत, प्रत्यक, नैधन अशुभ।",
+  "te": "నేటి నక్షత్రం మీ జన్మ నక్షత్రం నుంచి ఎన్నోది. సంపత్, క్షేమ, సాధన, మిత్ర, పరమ మిత్ర మంచివి; విపత్, ప్రత్యక్, నైధన మంచివి కావు.",
+  "where": "glossary"
+ },
+ {
+  "en": "Masa (lunar month)",
+  "hi": "मास",
+  "te": "మాసం",
+  "where": "glossary"
+ },
+ {
+  "en": "One eighth of the daytime, about 1½ hours, ruled by Rahu. People avoid starting journeys, purchases and new work in it. Its place in the day changes with the weekday.",
+  "hi": "दिन के समय का आठवाँ भाग, लगभग डेढ़ घंटा, जिसका स्वामी राहु है। इसमें यात्रा, खरीद और नए कार्य आरंभ नहीं करते। वार के अनुसार इसका समय बदलता है।",
+  "te": "పగటి సమయంలో ఎనిమిదో భాగం, సుమారు గంటన్నర, రాహువు అధిపతి. ఇందులో ప్రయాణాలు, కొనుగోళ్లు, కొత్త పనులు మొదలుపెట్టరు. వారాన్ని బట్టి సమయం మారుతుంది.",
+  "where": "glossary"
+ },
+ {
+  "en": "One of 27 daily combinations of the Sun and Moon, found from their added longitudes. A few yogas, such as Vyatipata and Vaidhriti, are avoided for new work.",
+  "hi": "सूर्य और चंद्रमा के देशांतर जोड़कर बनने वाले 27 योगों में से एक। व्यतीपात और वैधृति जैसे कुछ योग नए कार्य के लिए टाले जाते हैं।",
+  "te": "సూర్య చంద్రుల రేఖాంశాల మొత్తంతో ఏర్పడే 27 యోగాలలో ఒకటి. వ్యతీపాతం, వైధృతి వంటి కొన్ని యోగాలలో కొత్త పనులు చేయరు.",
+  "where": "glossary"
+ },
+ {
+  "en": "One or two inauspicious muhurtas (48 minutes each) of the day, fixed by the weekday.",
+  "hi": "दिन के एक या दो अशुभ मुहूर्त (48 मिनट), वार के अनुसार।",
+  "te": "రోజులో ఒకటి లేదా రెండు అశుభ ముహూర్తాలు (ఒక్కొక్కటి 48 నిమిషాలు), వారాన్ని బట్టి.",
+  "where": "glossary"
+ },
+ {
+  "en": "Planetary hours: daytime and night are each split into twelve, ruled in turn by the Sun, Venus, Mercury, Moon, Saturn, Jupiter and Mars, starting with the lord of the weekday at sunrise.",
+  "hi": "ग्रहों के घंटे: दिन और रात बारह-बारह भागों में, सूर्योदय पर वार के स्वामी से शुरू होकर सूर्य, शुक्र, बुध, चंद्र, शनि, गुरु, मंगल क्रम से।",
+  "te": "గ్రహ హోరలు: పగలు, రాత్రి పన్నెండు భాగాలుగా, సూర్యోదయాన వారాధిపతితో మొదలై సూర్య, శుక్ర, బుధ, చంద్ర, శని, గురు, కుజ క్రమంలో.",
+  "where": "glossary"
+ },
+ {
+  "en": "Telugu and South Indian calendars count a month from new moon to new moon (amanta). It is named after the solar sign the Sun is in at the new moon, so a year sometimes gets an extra (Adhika) month.",
+  "hi": "दक्षिण भारत में मास अमावस्या से अमावस्या तक (अमांत) गिना जाता है। अमावस्या पर सूर्य जिस राशि में हो उससे नाम पड़ता है, इसलिए कभी-कभी अधिक मास आता है।",
+  "te": "తెలుగు పంచాంగంలో మాసం అమావాస్య నుంచి అమావాస్య వరకు (అమాంత). అమావాస్య నాడు సూర్యుడున్న రాశిని బట్టి పేరు, అందుకే అప్పుడప్పుడు అధిక మాసం వస్తుంది.",
+  "where": "glossary"
+ },
+ {
+  "en": "The day and the night are each split into eight parts, each ruled by a planet. Amrit, Shubh and Labh are good for new work, Char for travel; Rog, Kaal and Udveg are avoided. Widely used in Gujarat and North India.",
+  "hi": "दिन और रात को आठ-आठ भागों में बाँटा जाता है। अमृत, शुभ, लाभ नए कार्य के लिए, चर यात्रा के लिए; रोग, काल, उद्वेग टाले जाते हैं।",
+  "te": "పగలు, రాత్రి ఒక్కొక్కటి ఎనిమిది భాగాలు. అమృత, శుభ, లాభ కొత్త పనులకు, చర ప్రయాణానికి మంచివి; రోగ, కాల, ఉద్వేగ వద్దు.",
+  "where": "glossary"
+ },
+ {
+  "en": "The fortnight. Shukla paksha is the bright half from new moon to full moon; Krishna (Bahula) paksha is the dark half back to new moon.",
+  "hi": "पखवाड़ा। अमावस्या से पूर्णिमा तक शुक्ल पक्ष, और पूर्णिमा से अमावस्या तक कृष्ण पक्ष।",
+  "te": "పక్షం అంటే పదిహేను రోజులు. అమావాస్య నుంచి పౌర్ణమి వరకు శుక్ల పక్షం, పౌర్ణమి నుంచి అమావాస్య వరకు బహుళ పక్షం.",
+  "where": "glossary"
+ },
+ {
+  "en": "The hour and a half before sunrise, ending 48 minutes before it: the best time for meditation, prayer and study.",
+  "hi": "सूर्योदय से पहले का समय (सूर्योदय से 96 से 48 मिनट पहले), ध्यान, पूजा और अध्ययन के लिए श्रेष्ठ।",
+  "te": "సూర్యోదయానికి 96 నుంచి 48 నిమిషాల ముందు సమయం, ధ్యానం, పూజ, చదువుకు శ్రేష్ఠం.",
+  "where": "glossary"
+ },
+ {
+  "en": "The lunar day. Each tithi is the time the Moon takes to move 12° ahead of the Sun, so it can begin at any hour and lasts 19 to 26 hours. Festivals and vratas follow the tithi.",
+  "hi": "चंद्र दिवस। चंद्रमा को सूर्य से 12° आगे बढ़ने में जितना समय लगता है, वह एक तिथि है, इसलिए यह किसी भी समय शुरू हो सकती है और 19 से 26 घंटे की होती है। त्योहार और व्रत तिथि से चलते हैं।",
+  "te": "చాంద్ర దినం. చంద్రుడు సూర్యుని కంటే 12° ముందుకు వెళ్లడానికి పట్టే సమయం ఒక తిథి. అందుకే ఇది ఏ సమయంలోనైనా మొదలై 19 నుంచి 26 గంటలు ఉంటుంది. పండుగలు, వ్రతాలు తిథిని బట్టి జరుగుతాయి.",
+  "where": "glossary"
+ },
+ {
+  "en": "The star the Moon is passing through. The sky is divided into 27 nakshatras; the Moon spends about a day in each. Your birth star is the nakshatra at the time you were born.",
+  "hi": "चंद्रमा जिस तारामंडल से गुजर रहा है। आकाश 27 नक्षत्रों में बँटा है और चंद्रमा हर नक्षत्र में लगभग एक दिन रहता है। जन्म के समय का नक्षत्र आपका जन्म नक्षत्र है।",
+  "te": "చంద్రుడు ప్రయాణిస్తున్న నక్షత్రం. ఆకాశం 27 నక్షత్రాలుగా విభజించబడింది; చంద్రుడు ప్రతి దానిలో సుమారు ఒక రోజు ఉంటాడు. పుట్టిన సమయంలోని నక్షత్రమే మీ జన్మ నక్షత్రం.",
+  "where": "glossary"
+ },
+ {
+  "en": "Which house from your moon sign (rashi) the Moon is in today. The 1st, 3rd, 6th, 7th, 10th and 11th are favourable.",
+  "hi": "आज चंद्रमा आपकी राशि से किस भाव में है। 1, 3, 6, 7, 10 और 11वाँ भाव अनुकूल।",
+  "te": "నేడు చంద్రుడు మీ రాశి నుంచి ఎన్నో స్థానంలో ఉన్నాడు. 1, 3, 6, 7, 10, 11 స్థానాలు అనుకూలం.",
+  "where": "glossary"
+ },
+ {
+  "en": "Yamagandam",
+  "hi": "यमगंड",
+  "te": "యమగండం",
+  "where": "glossary"
+ },
+ {
+  "en": "AI Status",
+  "hi": "AI स्टेटस",
+  "te": "భక్తి స్టేటస్",
+  "where": "i18n"
+ },
+ {
+  "en": "Aarti",
+  "hi": "आरती",
+  "te": "హారతి",
+  "where": "i18n"
+ },
+ {
+  "en": "Abhijit Muhurta",
+  "hi": "अभिजित मुहूर्त",
+  "te": "అభిజిత్ ముహూర్తం",
+  "where": "i18n"
+ },
+ {
+  "en": "All",
+  "hi": "सभी",
+  "te": "అన్నీ",
+  "where": "i18n"
+ },
+ {
+  "en": "Ask the Gita",
+  "hi": "गीता से पूछें",
+  "te": "గీతను అడగండి",
+  "where": "i18n"
+ },
+ {
+  "en": "Bhagavad Gita",
+  "hi": "भगवद गीता",
+  "te": "భగవద్గీత",
+  "where": "i18n"
+ },
+ {
+  "en": "Bhajan",
+  "hi": "भजन",
+  "te": "భజన",
+  "where": "i18n"
+ },
+ {
+  "en": "Bhakti for today",
+  "hi": "आज की भक्ति",
+  "te": "నేటి భక్తి",
+  "where": "i18n"
+ },
+ {
+  "en": "Bhakti videos",
+  "hi": "भक्ति वीडियो",
+  "te": "భక్తి వీడియోలు",
+  "where": "i18n"
+ },
+ {
+  "en": "Booking",
+  "hi": "बुकिंग",
+  "te": "బుకింగ్",
+  "where": "i18n"
+ },
+ {
+  "en": "Calendar",
+  "hi": "कैलेंडर",
+  "te": "క్యాలెండర్",
+  "where": "i18n"
+ },
+ {
+  "en": "Chalisa",
+  "hi": "चालीसा",
+  "te": "చాలీసా",
+  "where": "i18n"
+ },
+ {
+  "en": "Classic films",
+  "hi": "क्लासिक फ़िल्में",
+  "te": "పాత భక్తి చిత్రాలు",
+  "where": "i18n"
+ },
+ {
+  "en": "Could not load. Check your connection.",
+  "hi": "लोड नहीं हो सका। इंटरनेट जाँचें।",
+  "te": "లోడ్ కాలేదు. ఇంటర్నెట్ చూసుకోండి.",
+  "where": "i18n"
+ },
+ {
+  "en": "Dhun",
+  "hi": "धुन",
+  "te": "ధున్",
+  "where": "i18n"
+ },
+ {
+  "en": "Downloads",
+  "hi": "डाउनलोड",
+  "te": "డౌన్‌లోడ్లు",
+  "where": "i18n"
+ },
+ {
+  "en": "Favourites",
+  "hi": "पसंदीदा",
+  "te": "ఇష్టమైనవి",
+  "where": "i18n"
+ },
+ {
+  "en": "Festival wishes",
+  "hi": "त्योहार शुभकामनाएँ",
+  "te": "పండుగ శుభాకాంక్షలు",
+  "where": "i18n"
+ },
+ {
+  "en": "Gita verse of the day",
+  "hi": "आज का गीता श्लोक",
+  "te": "నేటి గీతా శ్లోకం",
+  "where": "i18n"
+ },
+ {
+  "en": "Home",
+  "hi": "होम",
+  "te": "హోమ్",
+  "where": "i18n"
+ },
+ {
+  "en": "Japa Mala",
+  "hi": "जाप माला",
+  "te": "జపమాల",
+  "where": "i18n"
+ },
+ {
+  "en": "Karana",
+  "hi": "करण",
+  "te": "కరణం",
+  "where": "i18n"
+ },
+ {
+  "en": "Light the diya",
+  "hi": "दीप जलाएँ",
+  "te": "దీపం వెలిగించండి",
+  "where": "i18n"
+ },
+ {
+  "en": "Mandir",
+  "hi": "मंदिर",
+  "te": "మందిరం",
+  "where": "i18n"
+ },
+ {
+  "en": "Mantra",
+  "hi": "मंत्र",
+  "te": "మంత్రం",
+  "where": "i18n"
+ },
+ {
+  "en": "Marriage matching",
+  "hi": "विवाह मिलान",
+  "te": "వివాహ పొంతన",
+  "where": "i18n"
+ },
+ {
+  "en": "Meditation",
+  "hi": "ध्यान",
+  "te": "ధ్యానం",
+  "where": "i18n"
+ },
+ {
+  "en": "More",
+  "hi": "और",
+  "te": "మరిన్ని",
+  "where": "i18n"
+ },
+ {
+  "en": "Namaste",
+  "hi": "नमस्ते",
+  "te": "నమస్కారం",
+  "where": "i18n"
+ },
+ {
+  "en": "Offer flowers",
+  "hi": "पुष्प अर्पित करें",
+  "te": "పూలు సమర్పించండి",
+  "where": "i18n"
+ },
+ {
+  "en": "Panchang",
+  "hi": "पंचांग",
+  "te": "పంచాంగం",
+  "where": "i18n"
+ },
+ {
+  "en": "Premium",
+  "hi": "प्रीमियम",
+  "te": "ప్రీమియం",
+  "where": "i18n"
+ },
+ {
+  "en": "Rahu Kaal",
+  "hi": "राहु काल",
+  "te": "రాహుకాలం",
+  "where": "i18n"
+ },
+ {
+  "en": "Rashifal",
+  "hi": "राशिफल",
+  "te": "రాశిఫలాలు",
+  "where": "i18n"
+ },
+ {
+  "en": "Read",
+  "hi": "पढ़ें",
+  "te": "చదవండి",
+  "where": "i18n"
+ },
+ {
+  "en": "Ring bell",
+  "hi": "घंटी बजाएँ",
+  "te": "గంట కొట్టండి",
+  "where": "i18n"
+ },
+ {
+  "en": "Ringtones",
+  "hi": "रिंगटोन",
+  "te": "రింగ్‌టోన్లు",
+  "where": "i18n"
+ },
+ {
+  "en": "Scriptures",
+  "hi": "शास्त्र",
+  "te": "గ్రంథాలు",
+  "where": "i18n"
+ },
+ {
+  "en": "See all",
+  "hi": "सभी देखें",
+  "te": "అన్నీ చూడండి",
+  "where": "i18n"
+ },
+ {
+  "en": "Settings",
+  "hi": "सेटिंग्स",
+  "te": "సెట్టింగ్స్",
+  "where": "i18n"
+ },
+ {
+  "en": "Shankh",
+  "hi": "शंख",
+  "te": "శంఖం",
+  "where": "i18n"
+ },
+ {
+  "en": "Shubh Ratri",
+  "hi": "शुभ रात्रि",
+  "te": "శుభ రాత్రి",
+  "where": "i18n"
+ },
+ {
+  "en": "Shubh Sandhya",
+  "hi": "शुभ संध्या",
+  "te": "శుభ సాయంత్రం",
+  "where": "i18n"
+ },
+ {
+  "en": "Stotra",
+  "hi": "स्तोत्र",
+  "te": "స్తోత్రం",
+  "where": "i18n"
+ },
+ {
+  "en": "Stuti",
+  "hi": "स्तुति",
+  "te": "స్తుతి",
+  "where": "i18n"
+ },
+ {
+  "en": "Sunset",
+  "hi": "सूर्यास्त",
+  "te": "సూర్యాస్తమయం",
+  "where": "i18n"
+ },
+ {
+  "en": "Suprabhat",
+  "hi": "सुप्रभात",
+  "te": "శుభోదయం",
+  "where": "i18n"
+ },
+ {
+  "en": "Temple booking",
+  "hi": "मंदिर बुकिंग",
+  "te": "ఆలయ బుకింగ్",
+  "where": "i18n"
+ },
+ {
+  "en": "Upcoming festivals",
+  "hi": "आने वाले त्योहार",
+  "te": "రాబోయే పండుగలు",
+  "where": "i18n"
+ },
+ {
+  "en": "Wallpapers",
+  "hi": "वॉलपेपर",
+  "te": "వాల్‌పేపర్లు",
+  "where": "i18n"
+ },
+ {
+  "en": "Yoga",
+  "hi": "योग",
+  "te": "యోగం",
+  "where": "i18n"
+ },
+ {
+  "en": "You are offline. Showing saved content.",
+  "hi": "आप ऑफ़लाइन हैं। सहेजी गई सामग्री दिख रही है।",
+  "te": "మీరు ఆఫ్‌లైన్‌లో ఉన్నారు. దాచిన కంటెంట్ చూపిస్తున్నాం.",
+  "where": "i18n"
+ },
+ {
+  "en": "Balava",
+  "hi": "",
+  "te": "బాలవ",
+  "where": "karana name"
+ },
+ {
+  "en": "Bava",
+  "hi": "",
+  "te": "బవ",
+  "where": "karana name"
+ },
+ {
+  "en": "Chatushpada",
+  "hi": "",
+  "te": "చతుష్పాద",
+  "where": "karana name"
+ },
+ {
+  "en": "Gara",
+  "hi": "",
+  "te": "గరజి",
+  "where": "karana name"
+ },
+ {
+  "en": "Kaulava",
+  "hi": "",
+  "te": "కౌలవ",
+  "where": "karana name"
+ },
+ {
+  "en": "Kimstughna",
+  "hi": "",
+  "te": "కింస్తుఘ్నం",
+  "where": "karana name"
+ },
+ {
+  "en": "Naga",
+  "hi": "",
+  "te": "నాగవం",
+  "where": "karana name"
+ },
+ {
+  "en": "Shakuni",
+  "hi": "",
+  "te": "శకుని",
+  "where": "karana name"
+ },
+ {
+  "en": "Taitila",
+  "hi": "",
+  "te": "తైతుల",
+  "where": "karana name"
+ },
+ {
+  "en": "Vanija",
+  "hi": "",
+  "te": "వణిజ",
+  "where": "karana name"
+ },
+ {
+  "en": "Vishti",
+  "hi": "",
+  "te": "విష్టి (భద్ర)",
+  "where": "karana name"
+ },
+ {
+  "en": "Please update Devalay",
+  "hi": "नया संस्करण उपलब्ध है",
+  "te": "కొత్త వెర్షన్ అందుబాటులో ఉంది",
+  "where": "lib/app.dart"
+ },
+ {
+  "en": "This version is no longer supported. Please install the latest version to continue.",
+  "hi": "देवालय का उपयोग जारी रखने के लिए कृपया नया संस्करण इंस्टॉल करें।",
+  "te": "దేవాలయం కొనసాగించడానికి దయచేసి తాజా వెర్షన్‌కు అప్‌డేట్ చేయండి.",
+  "where": "lib/app.dart"
+ },
+ {
+  "en": "Update now",
+  "hi": "अभी अपडेट करें",
+  "te": "ఇప్పుడే అప్‌డేట్ చేయండి",
+  "where": "lib/app.dart"
+ },
+ {
+  "en": "A new version of Devalay is ready",
+  "hi": "देवालय का नया संस्करण तैयार है",
+  "te": "దేవాలయం కొత్త వెర్షన్ సిద్ధంగా ఉంది",
+  "where": "lib/core/app_care.dart"
+ },
+ {
+  "en": "Later",
+  "hi": "बाद में",
+  "te": "తర్వాత",
+  "where": "lib/core/app_care.dart"
+ },
+ {
+  "en": "New features, festival dates and fixes. It downloads in the background while you keep using the app.",
+  "hi": "नई सुविधाएँ, त्योहार तिथियाँ और सुधार। ऐप चलाते हुए पीछे डाउनलोड होगा।",
+  "te": "కొత్త ఫీచర్లు, పండుగ తేదీలు, సవరణలు. మీరు యాప్ వాడుతుండగానే వెనుక డౌన్‌లోడ్ అవుతుంది.",
+  "where": "lib/core/app_care.dart"
+ },
+ {
+  "en": "Restart",
+  "hi": "रीस्टार्ट",
+  "te": "మళ్లీ ప్రారంభించు",
+  "where": "lib/core/app_care.dart"
+ },
+ {
+  "en": "Update downloaded",
+  "hi": "अपडेट डाउनलोड हो गया",
+  "te": "అప్‌డేట్ డౌన్‌లోడ్ అయింది",
+  "where": "lib/core/app_care.dart"
+ },
+ {
+  "en": "Nakshatra",
+  "hi": "नक्षत्र",
+  "te": "నక్షత్రం",
+  "where": "lib/core/calendar_reminders.dart"
+ },
+ {
+  "en": "Rahu Kalam",
+  "hi": "राहु काल",
+  "te": "రాహు కాలం",
+  "where": "lib/core/calendar_reminders.dart"
+ },
+ {
+  "en": "Today",
+  "hi": "आज",
+  "te": "ఈరోజు",
+  "where": "lib/core/calendar_reminders.dart"
+ },
+ {
+  "en": "Today's Panchang",
+  "hi": "आज का पंचांग",
+  "te": "నేటి పంచాంగం",
+  "where": "lib/core/calendar_reminders.dart"
+ },
+ {
+  "en": "Tomorrow",
+  "hi": "कल",
+  "te": "రేపు",
+  "where": "lib/core/calendar_reminders.dart"
+ },
+ {
+  "en": "Your Tarabalam",
+  "hi": "आपका तारा बल",
+  "te": "మీ తారాబలం",
+  "where": "lib/core/calendar_reminders.dart"
+ },
+ {
+  "en": "Anniversary",
+  "hi": "सालगिरह",
+  "te": "వివాహ వార్షికోత్సవం",
+  "where": "lib/core/events.dart"
+ },
+ {
+  "en": "Birthday",
+  "hi": "जन्मदिन",
+  "te": "పుట్టినరోజు",
+  "where": "lib/core/events.dart"
+ },
+ {
+  "en": "Other",
+  "hi": "अन्य",
+  "te": "ఇతర",
+  "where": "lib/core/events.dart"
+ },
+ {
+  "en": "Puja / Vratam",
+  "hi": "पूजा / व्रत",
+  "te": "పూజ / వ్రతం",
+  "where": "lib/core/events.dart"
+ },
+ {
+  "en": "Remembrance (Shraddha)",
+  "hi": "श्राद्ध / पुण्यतिथि",
+  "te": "తద్దినం / ఆబ్దికం",
+  "where": "lib/core/events.dart"
+ },
+ {
+  "en": "Got it",
+  "hi": "ठीक है",
+  "te": "సరే",
+  "where": "lib/core/glossary.dart"
+ },
+ {
+  "en": "Open Devalay to load today's Panchang",
+  "hi": "आज का पंचांग देखने के लिए देवालय खोलें",
+  "te": "నేటి పంచాంగం కోసం దేవాలయం తెరవండి",
+  "where": "lib/core/home_widget_sync.dart"
+ },
+ {
+  "en": "A good day to begin important work.",
+  "hi": "महत्वपूर्ण कार्य आरंभ करने के लिए शुभ दिन।",
+  "te": "ముఖ్యమైన పనులు ప్రారంభించడానికి మంచి రోజు.",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Amrit",
+  "hi": "अमृत",
+  "te": "అమృత",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Amrita Siddhi Yoga",
+  "hi": "अमृत सिद्धि योग",
+  "te": "అమృత సిద్ధి యోగం",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Amrutham",
+  "hi": "अमृत",
+  "te": "అమృతం",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Avoid",
+  "hi": "अशुभ",
+  "te": "అశుభం",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Best",
+  "hi": "उत्तम",
+  "te": "ఉత్తమం",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Char",
+  "hi": "चर",
+  "te": "చర",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Choram",
+  "hi": "चोर",
+  "te": "చోరం",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Christmas",
+  "hi": "क्रिसमस",
+  "te": "క్రిస్మస్",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Dhanam",
+  "hi": "धन",
+  "te": "ధనం",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Gandhi Jayanti",
+  "hi": "गांधी जयंती",
+  "te": "గాంధీ జయంతి",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Good",
+  "hi": "शुभ",
+  "te": "శుభం",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Government work, meeting officials",
+  "hi": "सरकारी काम, अधिकारी से मिलना",
+  "te": "ప్రభుత్వ పనులు, అధికారులను కలవడం",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Guru Pushya Yoga",
+  "hi": "गुरु पुष्य योग",
+  "te": "గురు పుష్య యోగం",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Hard labour and repairs; avoid new starts",
+  "hi": "मेहनत, मरम्मत; नई शुरुआत टालें",
+  "te": "శ్రమ, మరమ్మతులు; కొత్త ఆరంభాలు వద్దు",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Independence Day",
+  "hi": "स्वतंत्रता दिवस",
+  "te": "స్వాతంత్ర్య దినోత్సవం",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Janma",
+  "hi": "जन्म",
+  "te": "జన్మ",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Jupiter",
+  "hi": "गुरु",
+  "te": "గురు",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Kaal",
+  "hi": "काल",
+  "te": "కాల",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Kshema",
+  "hi": "क्षेम",
+  "te": "క్షేమ",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Labh",
+  "hi": "लाभ",
+  "te": "లాభ",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Labham",
+  "hi": "लाभ",
+  "te": "లాభం",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Land, courage, sport; avoid quarrels",
+  "hi": "भूमि, साहस, खेल; विवाद टालें",
+  "te": "భూమి, ధైర్యం, ఆటలు; తగాదాలు వద్దు",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Marriage talks, arts, jewellery, clothes",
+  "hi": "विवाह बात, कला, आभूषण, वस्त्र",
+  "te": "పెళ్లి మాటలు, కళలు, ఆభరణాలు, బట్టలు",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Mars",
+  "hi": "मंगल",
+  "te": "కుజ",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Mercury",
+  "hi": "बुध",
+  "te": "బుధ",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Mitra",
+  "hi": "मित्र",
+  "te": "మిత్ర",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Moon",
+  "hi": "चंद्र",
+  "te": "చంద్ర",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Naidhana",
+  "hi": "नैधन",
+  "te": "నైధన",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Neutral",
+  "hi": "सामान्य",
+  "te": "సామాన్యం",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Parama Mitra",
+  "hi": "परम मित्र",
+  "te": "పరమ మిత్ర",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Pratyak",
+  "hi": "प्रत्यक",
+  "te": "ప్రత్యక్",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Puja, learning, every good deed",
+  "hi": "पूजा, विद्या, हर शुभ कार्य",
+  "te": "పూజ, విద్య, అన్ని శుభ కార్యాలు",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Ravi Pushya Yoga",
+  "hi": "रवि पुष्य योग",
+  "te": "రవి పుష్య యోగం",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Republic Day",
+  "hi": "गणतंत्र दिवस",
+  "te": "గణతంత్ర దినోత్సవం",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Rog",
+  "hi": "रोग",
+  "te": "రోగ",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Rogam",
+  "hi": "रोग",
+  "te": "రోగం",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Sadhana",
+  "hi": "साधना",
+  "te": "సాధన",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Sampat",
+  "hi": "संपत",
+  "te": "సంపత్",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Saturn",
+  "hi": "शनि",
+  "te": "శని",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Shubh",
+  "hi": "शुभ",
+  "te": "శుభ",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Study, business, writing, accounts",
+  "hi": "पढ़ाई, व्यापार, लेखन, हिसाब",
+  "te": "చదువు, వ్యాపారం, రాత, లెక్కలు",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Sukham",
+  "hi": "सुख",
+  "te": "సుఖం",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Sun",
+  "hi": "सूर्य",
+  "te": "సూర్య",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Travel, new ventures, meeting people",
+  "hi": "यात्रा, नए काम, मिलना-जुलना",
+  "te": "ప్రయాణం, కొత్త పనులు, కలయికలు",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Udveg",
+  "hi": "उद्वेग",
+  "te": "ఉద్వేగ",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Udyogam",
+  "hi": "उद्योग",
+  "te": "ఉద్యోగం",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Venus",
+  "hi": "शुक्र",
+  "te": "శుక్ర",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Very auspicious for buying gold, starting studies, business and new work.",
+  "hi": "सोना खरीदने, पढ़ाई, व्यापार और नए कार्य के लिए अति शुभ।",
+  "te": "బంగారం కొనుగోలు, విద్యారంభం, వ్యాపారం, కొత్త పనులకు చాలా శుభం.",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Vipat",
+  "hi": "विपत",
+  "te": "విపత్",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Visham",
+  "hi": "विष",
+  "te": "విషం",
+  "where": "lib/core/muhurta.dart"
+ },
+ {
+  "en": "Bhajans of {0}",
+  "hi": "{0} के भजन",
+  "te": "{0} పాటలు",
+  "where": "lib/core/notifications.dart"
+ },
+ {
+  "en": "Listen to the bhajans of {0}, light a diya and see today's Panchang.",
+  "hi": "आज {0} के भजन सुनें, दीप जलाएँ और आज का पंचांग देखें।",
+  "te": "ఈ రోజు {0} భక్తి పాటలు వినండి, దీపం వెలిగించండి.",
+  "where": "lib/core/notifications.dart"
+ },
+ {
+  "en": "Tomorrow {0} · {1}",
+  "hi": "कल {0} · {1}",
+  "te": "రేపు {0} · {1}",
+  "where": "lib/core/notifications.dart"
+ },
+ {
+  "en": "Wishing you a blessed festival!",
+  "hi": "आज का पर्व मंगलमय हो!",
+  "te": "పండుగ శుభాకాంక్షలు!",
+  "where": "lib/core/notifications.dart"
+ },
+ {
+  "en": "{0} opens at {1}",
+  "hi": "{0} बजे {1}",
+  "te": "{0} కు {1}",
+  "where": "lib/core/notifications.dart"
+ },
+ {
+  "en": "{0}: online booking usually opens tomorrow. Keep your ID details ready.",
+  "hi": "{0}: ऑनलाइन बुकिंग आमतौर पर कल खुलती है।",
+  "te": "{0}: ఆన్‌లైన్ బుకింగ్ సాధారణంగా రేపు మొదలవుతుంది.",
+  "where": "lib/core/notifications.dart"
+ },
+ {
+  "en": "{0}: the quota usually opens today. Open Booking in Devalay.",
+  "hi": "{0}: कोटा आमतौर पर आज खुलता है।",
+  "te": "{0}: కోటా సాధారణంగా ఈ రోజు విడుదలవుతుంది.",
+  "where": "lib/core/notifications.dart"
+ },
+ {
+  "en": "Ask the Gita…",
+  "hi": "गीता से पूछें…",
+  "te": "గీతను అడగండి…",
+  "where": "lib/features/ask_gita.dart"
+ },
+ {
+  "en": "No videos right now.",
+  "hi": "अभी कोई वीडियो नहीं।",
+  "te": "ప్రస్తుతం వీడియోలు లేవు.",
+  "where": "lib/features/bhakti_videos.dart"
+ },
+ {
+  "en": "Swipe up for the next video",
+  "hi": "अगले वीडियो के लिए ऊपर खिसकाएँ",
+  "te": "తర్వాతి వీడియో కోసం పైకి జరపండి",
+  "where": "lib/features/bhakti_videos.dart"
+ },
+ {
+  "en": "Continue from chapter {0}",
+  "hi": "अध्याय {0} से जारी रखें",
+  "te": "{0} వ అధ్యాయం నుంచి కొనసాగించండి",
+  "where": "lib/features/books.dart"
+ },
+ {
+  "en": "Find a chapter",
+  "hi": "अध्याय खोजें",
+  "te": "అధ్యాయం వెతకండి",
+  "where": "lib/features/books.dart"
+ },
+ {
+  "en": "Next",
+  "hi": "अगला",
+  "te": "తదుపరి",
+  "where": "lib/features/books.dart"
+ },
+ {
+  "en": "Previous",
+  "hi": "पिछला",
+  "te": "మునుపటి",
+  "where": "lib/features/books.dart"
+ },
+ {
+  "en": "Add a birthday, anniversary or reminder",
+  "hi": "जन्मदिन, सालगिरह या रिमाइंडर जोड़ें",
+  "te": "పుట్టినరోజు, వార్షికోత్సవం లేదా రిమైండర్ జోడించండి",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Add event",
+  "hi": "दिन जोड़ें",
+  "te": "రోజు జోడించు",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Amavasya",
+  "hi": "अमावस्या",
+  "te": "అమావాస్య",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Auspicious",
+  "hi": "शुभ योग",
+  "te": "శుభ యోగం",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Dates are computed from the lunar calendar for your city. Local traditions may observe some festivals a day apart.",
+  "hi": "तिथियाँ आपके शहर के चंद्र पंचांग से गणना की गई हैं। स्थानीय परंपरा में कुछ पर्व एक दिन आगे-पीछे हो सकते हैं।",
+  "te": "తేదీలు మీ నగరపు చాంద్రమాన పంచాంగం ప్రకారం లెక్కించినవి. కొన్ని పండుగలు స్థానిక ఆచారంలో ఒక రోజు తేడాతో ఉండవచ్చు.",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Ekadashi",
+  "hi": "एकादशी",
+  "te": "ఏకాదశి",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Exit full screen",
+  "hi": "पूर्ण स्क्रीन बंद",
+  "te": "పూర్తి స్క్రీన్ మూసివేయి",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Festival",
+  "hi": "त्योहार",
+  "te": "పండుగ",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Festival reminders",
+  "hi": "त्योहार रिमाइंडर",
+  "te": "పండుగ రిమైండర్లు",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Festival reminders off",
+  "hi": "त्योहार रिमाइंडर बंद",
+  "te": "పండుగ రిమైండర్లు ఆఫ్",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Festival reminders on (7 AM)",
+  "hi": "त्योहार रिमाइंडर चालू (सुबह 7 बजे)",
+  "te": "పండుగ రిమైండర్లు ఆన్ (ఉదయం 7)",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Festivals this month",
+  "hi": "इस माह के त्योहार",
+  "te": "ఈ నెల పండుగలు",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Full panchang & details",
+  "hi": "पूरा पंचांग व विवरण",
+  "te": "పూర్తి పంచాంగం & వివరాలు",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Full screen",
+  "hi": "पूर्ण स्क्रीन",
+  "te": "పూర్తి స్క్రీన్",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Important days",
+  "hi": "महत्वपूर्ण दिन",
+  "te": "ముఖ్యమైన రోజులు",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Month",
+  "hi": "मास",
+  "te": "మాసం",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Morning Panchang notification",
+  "hi": "सुबह का पंचांग सूचना",
+  "te": "ఉదయపు పంచాంగం నోటిఫికేషన్",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Morning Panchang off",
+  "hi": "सुबह का पंचांग बंद",
+  "te": "ఉదయపు పంచాంగం ఆఫ్",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "My events",
+  "hi": "मेरे दिन",
+  "te": "నా రోజులు",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "My events & reminders",
+  "hi": "मेरे दिन व रिमाइंडर",
+  "te": "నా రోజులు & రిమైండర్లు",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "National holiday",
+  "hi": "राष्ट्रीय अवकाश",
+  "te": "జాతీయ సెలవు దినం",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "No major festivals this month.",
+  "hi": "इस माह कोई बड़ा त्योहार नहीं।",
+  "te": "ఈ నెల పెద్ద పండుగలు లేవు.",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Paksha",
+  "hi": "पक्ष",
+  "te": "పక్షం",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Pick a date",
+  "hi": "तारीख चुनें",
+  "te": "తేదీ ఎంచుకోండి",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Purnima",
+  "hi": "पूर्णिमा",
+  "te": "పౌర్ణమి",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Send wishes",
+  "hi": "शुभकामनाएँ भेजें",
+  "te": "శుభాకాంక్షలు పంపండి",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Share",
+  "hi": "शेयर करें",
+  "te": "షేర్ చేయండి",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Sunrise",
+  "hi": "सूर्योदय",
+  "te": "సూర్యోదయం",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "The full panchang for this date isn't available offline yet. Dates within a few weeks of today work best.",
+  "hi": "इस तारीख का पूरा पंचांग अभी उपलब्ध नहीं है। आज के आसपास की तारीखें देखें।",
+  "te": "ఈ తేదీకి పూర్తి పంచాంగం ఇంకా అందుబాటులో లేదు. ఈరోజుకు దగ్గరి తేదీలు చూడండి.",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Today's Panchang will arrive every morning at {0}",
+  "hi": "हर सुबह {0} बजे आज का पंचांग मिलेगा",
+  "te": "ప్రతి ఉదయం {0}కు నేటి పంచాంగం వస్తుంది",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Try again",
+  "hi": "फिर कोशिश करें",
+  "te": "మళ్ళీ ప్రయత్నించండి",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Vrats & observances ({0})",
+  "hi": "व्रत व पर्व ({0})",
+  "te": "వ్రతాలు & పర్వదినాలు ({0})",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Wishes",
+  "hi": "शुभकामनाएँ",
+  "te": "శుభాకాంక్షలు",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Yesterday",
+  "hi": "कल था",
+  "te": "నిన్న",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "in {0} days",
+  "hi": "{0} दिन में",
+  "te": "{0} రోజుల్లో",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "till",
+  "hi": "तक",
+  "te": "వరకు",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "{0} days ago",
+  "hi": "{0} दिन पहले",
+  "te": "{0} రోజుల క్రితం",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "{0} festivals",
+  "hi": "{0} त्योहार",
+  "te": "{0} పండుగలు",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "— Devalay: free Panchang & bhakti app, no ads",
+  "hi": "— देवालय: मुफ़्त पंचांग व भक्ति ऐप, बिना विज्ञापन",
+  "te": "— దేవాలయం: ఉచిత పంచాంగం & భక్తి యాప్, ప్రకటనలు లేవు",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Credits & licences",
+  "hi": "श्रेय और लाइसेंस",
+  "te": "క్రెడిట్స్ & లైసెన్సులు",
+  "where": "lib/features/credits.dart"
+ },
+ {
+  "en": "Full content licence list",
+  "hi": "सभी सामग्री लाइसेंस",
+  "te": "పూర్తి కంటెంట్ లైసెన్సుల జాబితా",
+  "where": "lib/features/credits.dart"
+ },
+ {
+  "en": "Open-source software licences",
+  "hi": "ओपन-सोर्स सॉफ़्टवेयर लाइसेंस",
+  "te": "ఓపెన్-సోర్స్ సాఫ్ట్‌వేర్ లైసెన్సులు",
+  "where": "lib/features/credits.dart"
+ },
+ {
+  "en": "Bhagavad Gita {0}",
+  "hi": "भगवद गीता {0}",
+  "te": "భగవద్గీత {0}",
+  "where": "lib/features/gita.dart"
+ },
+ {
+  "en": "Chapter",
+  "hi": "अध्याय",
+  "te": "అధ్యాయం",
+  "where": "lib/features/gita.dart"
+ },
+ {
+  "en": "Continue {0}",
+  "hi": "जारी रखें {0}",
+  "te": "కొనసాగించండి {0}",
+  "where": "lib/features/gita.dart"
+ },
+ {
+  "en": "Hari Om Tat Sat 🙏",
+  "hi": "हरि ॐ तत् सत् 🙏",
+  "te": "హరి ఓం తత్ సత్ 🙏",
+  "where": "lib/features/gita.dart"
+ },
+ {
+  "en": "Intro",
+  "hi": "परिचय",
+  "te": "పరిచయం",
+  "where": "lib/features/gita.dart"
+ },
+ {
+  "en": "Listen",
+  "hi": "सुनें",
+  "te": "వినండి",
+  "where": "lib/features/gita.dart"
+ },
+ {
+  "en": "Listen to chapter",
+  "hi": "अध्याय सुनें",
+  "te": "అధ్యాయం వినండి",
+  "where": "lib/features/gita.dart"
+ },
+ {
+  "en": "Meaning only",
+  "hi": "केवल अर्थ",
+  "te": "అర్థం మాత్రమే",
+  "where": "lib/features/gita.dart"
+ },
+ {
+  "en": "No Hindi voice on this phone, reading the translation only. Add one in Settings › Text-to-speech.",
+  "hi": "इस फ़ोन में हिंदी आवाज़ नहीं है, केवल अनुवाद पढ़ा जाएगा।",
+  "te": "ఈ ఫోన్‌లో హిందీ వాయిస్ లేదు, అనువాదం మాత్రమే చదువుతాం.",
+  "where": "lib/features/gita.dart"
+ },
+ {
+  "en": "Sanskrit + meaning",
+  "hi": "संस्कृत + अर्थ",
+  "te": "సంస్కృతం + అర్థం",
+  "where": "lib/features/gita.dart"
+ },
+ {
+  "en": "Sanskrit only",
+  "hi": "केवल संस्कृत",
+  "te": "సంస్కృతం మాత్రమే",
+  "where": "lib/features/gita.dart"
+ },
+ {
+  "en": "Swipe to begin →",
+  "hi": "शुरू करने के लिए स्वाइप करें →",
+  "te": "మొదలుపెట్టడానికి స్వైప్ చేయండి →",
+  "where": "lib/features/gita.dart"
+ },
+ {
+  "en": "Text size",
+  "hi": "अक्षर आकार",
+  "te": "అక్షర పరిమాణం",
+  "where": "lib/features/gita.dart"
+ },
+ {
+  "en": "Transliteration",
+  "hi": "लिप्यंतरण",
+  "te": "లిప్యంతరీకరణ",
+  "where": "lib/features/gita.dart"
+ },
+ {
+  "en": "Verse",
+  "hi": "श्लोक",
+  "te": "శ్లోకం",
+  "where": "lib/features/gita.dart"
+ },
+ {
+  "en": "Deity of the day",
+  "hi": "आज के देवता",
+  "te": "నేటి దైవం",
+  "where": "lib/features/home.dart"
+ },
+ {
+  "en": "Play all",
+  "hi": "सब चलाएँ",
+  "te": "అన్నీ ప్లే",
+  "where": "lib/features/home.dart"
+ },
+ {
+  "en": "{0} · {1} songs",
+  "hi": "{0} · {1} के भजन",
+  "te": "{0} · {1} పాటలు",
+  "where": "lib/features/home.dart"
+ },
+ {
+  "en": "Add",
+  "hi": "जोड़ें",
+  "te": "జోడించు",
+  "where": "lib/features/important_days.dart"
+ },
+ {
+  "en": "Auspicious days",
+  "hi": "शुभ योग",
+  "te": "శుభ యోగాలు",
+  "where": "lib/features/important_days.dart"
+ },
+ {
+  "en": "Festivals",
+  "hi": "त्योहार",
+  "te": "పండుగలు",
+  "where": "lib/features/important_days.dart"
+ },
+ {
+  "en": "Holidays",
+  "hi": "अवकाश",
+  "te": "సెలవులు",
+  "where": "lib/features/important_days.dart"
+ },
+ {
+  "en": "Masa Shivaratri",
+  "hi": "मासिक शिवरात्रि",
+  "te": "మాస శివరాత్రి",
+  "where": "lib/features/important_days.dart"
+ },
+ {
+  "en": "Next · in {0} days",
+  "hi": "अगला · {0} दिन में",
+  "te": "తదుపరి · {0} రోజుల్లో",
+  "where": "lib/features/important_days.dart"
+ },
+ {
+  "en": "No events yet. Add birthdays, anniversaries and remembrance days.",
+  "hi": "अभी कोई दिन नहीं। जन्मदिन, सालगिरह और श्राद्ध जोड़ें।",
+  "te": "ఇంకా ఏమీ లేవు. పుట్టినరోజులు, పెళ్లి రోజులు, తద్దినాలు జోడించండి.",
+  "where": "lib/features/important_days.dart"
+ },
+ {
+  "en": "Nothing to show.",
+  "hi": "कुछ नहीं मिला।",
+  "te": "ఏమీ లేవు.",
+  "where": "lib/features/important_days.dart"
+ },
+ {
+  "en": "Pradosham",
+  "hi": "प्रदोष",
+  "te": "ప్రదోషం",
+  "where": "lib/features/important_days.dart"
+ },
+ {
+  "en": "Sankashti",
+  "hi": "संकष्टी",
+  "te": "సంకటహర చవితి",
+  "where": "lib/features/important_days.dart"
+ },
+ {
+  "en": "Search",
+  "hi": "खोजें",
+  "te": "వెతకండి",
+  "where": "lib/features/important_days.dart"
+ },
+ {
+  "en": "Search festivals, e.g. Diwali",
+  "hi": "त्योहार खोजें, जैसे दिवाली",
+  "te": "పండుగ వెతకండి, ఉదా: దీపావళి",
+  "where": "lib/features/important_days.dart"
+ },
+ {
+  "en": "Show {0} earlier",
+  "hi": "{0} पिछले दिखाएँ",
+  "te": "గడిచిన {0} చూపించు",
+  "where": "lib/features/important_days.dart"
+ },
+ {
+  "en": "Lifetime",
+  "hi": "कुल",
+  "te": "మొత్తం",
+  "where": "lib/features/japa.dart"
+ },
+ {
+  "en": "Rounds",
+  "hi": "माला",
+  "te": "మాలలు",
+  "where": "lib/features/japa.dart"
+ },
+ {
+  "en": "Rounds: {0}",
+  "hi": "माला: {0}",
+  "te": "మాలలు: {0}",
+  "where": "lib/features/japa.dart"
+ },
+ {
+  "en": "Tap anywhere for each chant of \"{0}\"",
+  "hi": "जाप करते हुए स्क्रीन पर कहीं भी टैप करें",
+  "te": "ప్రతి జపానికి స్క్రీన్‌పై ఎక్కడైనా తాకండి",
+  "where": "lib/features/japa.dart"
+ },
+ {
+  "en": "No downloads",
+  "hi": "कोई डाउनलोड नहीं",
+  "te": "డౌన్‌లోడ్‌లు లేవు",
+  "where": "lib/features/library.dart"
+ },
+ {
+  "en": "No favourites yet",
+  "hi": "अभी कोई पसंदीदा नहीं",
+  "te": "ఇంకా ఇష్టమైనవి లేవు",
+  "where": "lib/features/library.dart"
+ },
+ {
+  "en": "Open the player and tap Download to listen without internet.",
+  "hi": "बिना इंटरनेट सुनने के लिए प्लेयर खोलकर डाउनलोड दबाएँ।",
+  "te": "ఇంటర్నెట్ లేకుండా వినడానికి ప్లేయర్ తెరిచి డౌన్‌లోడ్ నొక్కండి.",
+  "where": "lib/features/library.dart"
+ },
+ {
+  "en": "Play all offline",
+  "hi": "सब ऑफ़लाइन चलाएँ",
+  "te": "అన్నీ ఆఫ్‌లైన్‌లో ప్లే చేయండి",
+  "where": "lib/features/library.dart"
+ },
+ {
+  "en": "Tap the heart on any aarti, verse, track or wallpaper to keep it here.",
+  "hi": "किसी भी आरती, श्लोक, गीत या वॉलपेपर पर दिल दबाएँ, वह यहाँ रहेगा।",
+  "te": "ఏ హారతి, శ్లోకం, పాట లేదా వాల్‌పేపర్‌పై హృదయం గుర్తు నొక్కితే ఇక్కడ ఉంటుంది.",
+  "where": "lib/features/library.dart"
+ },
+ {
+  "en": "More recordings are added as licensed content becomes available.",
+  "hi": "लाइसेंस वाली सामग्री मिलते ही और रिकॉर्डिंग जोड़ी जाएँगी।",
+  "te": "లైసెన్స్ ఉన్న కంటెంట్ దొరికినప్పుడల్లా మరిన్ని రికార్డింగ్‌లు జోడిస్తాం.",
+  "where": "lib/features/listen.dart"
+ },
+ {
+  "en": "Nothing here yet",
+  "hi": "अभी यहाँ कुछ नहीं",
+  "te": "ఇక్కడ ఇంకా ఏమీ లేదు",
+  "where": "lib/features/listen.dart"
+ },
+ {
+  "en": "My Mandir",
+  "hi": "मेरा मंदिर",
+  "te": "నా మందిరం",
+  "where": "lib/features/mandir.dart"
+ },
+ {
+  "en": "day streak",
+  "hi": "दिन",
+  "te": "రోజుల వరుస",
+  "where": "lib/features/mandir.dart"
+ },
+ {
+  "en": "10 Porutham",
+  "hi": "10 पोरुत्तम",
+  "te": "దశవిధ పొంతన",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "18 or more is the usual minimum. 21 to 30 is very good.",
+  "hi": "आम तौर पर कम से कम 18 गुण देखे जाते हैं। 21 से 30 बहुत अच्छा है।",
+  "te": "సాధారణంగా కనీసం 18 గుణాలు చూస్తారు. 21 నుండి 30 చాలా మంచిది.",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Adi",
+  "hi": "आदि",
+  "te": "ఆది",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Antya",
+  "hi": "अंत्य",
+  "te": "అంత్య",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Average match",
+  "hi": "मध्यम मिलान",
+  "te": "మధ్యమ పొంతన",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Bhakoot",
+  "hi": "भकूट",
+  "te": "భకూట",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Bhakoot dosha: the Moon signs are 2/12, 5/9 or 6/8 from each other.",
+  "hi": "भकूट दोष: दोनों राशियाँ एक-दूसरे से 2/12, 5/9 या 6/8 पर हैं।",
+  "te": "భకూట దోషం: రెండు రాశులు ఒకదానికొకటి 2/12, 5/9 లేదా 6/8 స్థానాల్లో ఉన్నాయి.",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Brahmin",
+  "hi": "ब्राह्मण",
+  "te": "బ్రాహ్మణ",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Bride",
+  "hi": "वधू",
+  "te": "వధువు",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Bride to groom",
+  "hi": "वधू से वर",
+  "te": "వధువు నుండి వరుడు",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Buffalo",
+  "hi": "महिष",
+  "te": "గేదె",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Cat",
+  "hi": "मार्जार",
+  "te": "పిల్లి",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Children and prosperity",
+  "hi": "संतान और समृद्धि",
+  "te": "సంతానం, అభివృద్ధి",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Choose both birth stars to see the match",
+  "hi": "मिलान देखने के लिए दोनों जन्म नक्षत्र चुनें",
+  "te": "పొంతన చూడటానికి ఇద్దరి జన్మ నక్షత్రాలు ఎంచుకోండి",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Count from the bride's rashi",
+  "hi": "वधू की राशि से गिनती",
+  "te": "వధువు రాశి నుండి లెక్క",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Count from the bride's star",
+  "hi": "वधू के नक्षत्र से गिनती",
+  "te": "వధువు నక్షత్రం నుండి లెక్క",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Cow",
+  "hi": "गौ",
+  "te": "ఆవు",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Deer",
+  "hi": "मृग",
+  "te": "జింక",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Deva",
+  "hi": "देव",
+  "te": "దేవ",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Dina",
+  "hi": "दिन",
+  "te": "దిన",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Dog",
+  "hi": "श्वान",
+  "te": "కుక్క",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Elephant",
+  "hi": "गज",
+  "te": "ఏనుగు",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Excellent match",
+  "hi": "उत्तम मिलान",
+  "te": "ఉత్తమ పొంతన",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Family welfare, wealth and children, from the distance between the Moon signs",
+  "hi": "परिवार का कल्याण, धन और संतान, दोनों राशियों की दूरी से",
+  "te": "కుటుంబ క్షేమం, ధనం, సంతానం — రెండు రాశుల దూరం నుండి",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Feet",
+  "hi": "पाद",
+  "te": "పాద",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Freedom from affliction. Some stars obstruct each other.",
+  "hi": "कष्टों से मुक्ति। कुछ नक्षत्र एक-दूसरे को बाधित करते हैं।",
+  "te": "బాధల నుండి విముక్తి. కొన్ని నక్షత్రాలు ఒకదానినొకటి వేధిస్తాయి.",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Friendship between the lords of the Moon signs",
+  "hi": "दोनों राशियों के स्वामियों की मित्रता",
+  "te": "రాశ్యాధిపతుల మధ్య స్నేహం",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Gana",
+  "hi": "गण",
+  "te": "గణ",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Graha Maitri",
+  "hi": "ग्रह मैत्री",
+  "te": "గ్రహ మైత్రి",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Groom",
+  "hi": "वर",
+  "te": "వరుడు",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Guna Milan (36)",
+  "hi": "गुण मिलान (36)",
+  "te": "గుణ మేళనం (36)",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Harmony in the family, from the Moon signs",
+  "hi": "परिवार में सामंजस्य, दोनों राशियों से",
+  "te": "కుటుంబంలో సామరస్యం — రాశుల నుండి",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Head",
+  "hi": "शिर",
+  "te": "శిరో",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Health and children. The same Nadi for both is a dosha.",
+  "hi": "स्वास्थ्य और संतान। दोनों की एक ही नाडी होना दोष है।",
+  "te": "ఆరోగ్యం, సంతానం. ఇద్దరిదీ ఒకే నాడి అయితే దోషం.",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Health and long, happy days together",
+  "hi": "स्वास्थ्य और साथ के लंबे, सुखी दिन",
+  "te": "ఆరోగ్యం, కలిసి సుఖమైన దీర్ఘ జీవితం",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Horse",
+  "hi": "अश्व",
+  "te": "గుర్రం",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Human",
+  "hi": "मानव",
+  "te": "మానవ",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Insect",
+  "hi": "कीट",
+  "te": "కీటక",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Kshatriya",
+  "hi": "क्षत्रिय",
+  "te": "క్షత్రియ",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Lion",
+  "hi": "सिंह",
+  "te": "సింహం",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Long married life. The same rajju for both is avoided.",
+  "hi": "लंबा वैवाहिक जीवन। दोनों का एक ही रज्जु वर्जित है।",
+  "te": "దీర్ఘ దాంపత్యం. ఇద్దరిదీ ఒకే రజ్జు అయితే నిషిద్ధం.",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Luck and well-being, from the count between the two stars",
+  "hi": "भाग्य और कुशलता, दोनों नक्षत्रों की गिनती से",
+  "te": "అదృష్టం, క్షేమం — రెండు నక్షత్రాల మధ్య లెక్క నుండి",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Madhya",
+  "hi": "मध्य",
+  "te": "మధ్య",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Mahendra",
+  "hi": "माहेंद्र",
+  "te": "మాహేంద్ర",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Manushya",
+  "hi": "मनुष्य",
+  "te": "మనుష్య",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Mental friendship, from the lords of the Moon signs",
+  "hi": "मानसिक मित्रता, दोनों राशियों के स्वामियों से",
+  "te": "మానసిక స్నేహం — రాశ్యాధిపతుల మైత్రి నుండి",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Mongoose",
+  "hi": "नकुल",
+  "te": "ముంగిస",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Monkey",
+  "hi": "वानर",
+  "te": "కోతి",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Mutual attraction and affection",
+  "hi": "परस्पर आकर्षण और स्नेह",
+  "te": "పరస్పర ఆకర్షణ, అనురాగం",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Mutual attraction and influence",
+  "hi": "परस्पर आकर्षण और प्रभाव",
+  "te": "పరస్పర ఆకర్షణ, ప్రభావం",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Mutual respect and comfort",
+  "hi": "परस्पर सम्मान और सहजता",
+  "te": "పరస్పర గౌరవం, సౌఖ్యం",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Nadi",
+  "hi": "नाडी",
+  "te": "నాడి",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Nadi dosha: both are in the same Nadi. Traditionally this outweighs the total.",
+  "hi": "नाडी दोष: दोनों की नाडी एक है। परंपरा में यह कुल गुणों से अधिक महत्वपूर्ण माना जाता है।",
+  "te": "నాడీ దోషం: ఇద్దరిదీ ఒకే నాడి. సంప్రదాయంలో ఇది మొత్తం గుణాల కంటే ముఖ్యం.",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Nakshatra (birth star)",
+  "hi": "नक्षत्र (जन्म तारा)",
+  "te": "నక్షత్రం (జన్మ తార)",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Navel",
+  "hi": "नाभि",
+  "te": "నాభి",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Neck",
+  "hi": "कंठ",
+  "te": "కంఠ",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Not known",
+  "hi": "पता नहीं",
+  "te": "తెలియదు",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Not recommended",
+  "hi": "अनुशंसित नहीं",
+  "te": "సిఫార్సు చేయదగినది కాదు",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Pada",
+  "hi": "पद",
+  "te": "పాదం",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Physical and instinctive compatibility",
+  "hi": "शारीरिक और स्वाभाविक अनुकूलता",
+  "te": "శారీరక, సహజ అనుకూలత",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Physical compatibility",
+  "hi": "शारीरिक अनुकूलता",
+  "te": "శారీరక అనుకూలత",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Pick the bride's and groom's birth nakshatra and rashi. Add the pada if you know it.",
+  "hi": "वधू और वर का जन्म नक्षत्र और राशि चुनें। पद पता हो तो वह भी चुनें।",
+  "te": "వధూవరుల జన్మ నక్షత్రం, రాశి ఎంచుకోండి. పాదం తెలిస్తే అది కూడా ఎంచుకోండి.",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Pratyari",
+  "hi": "प्रत्यरि",
+  "te": "ప్రత్యక్",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Quadruped",
+  "hi": "चतुष्पद",
+  "te": "చతుష్పాద",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Rajju",
+  "hi": "रज्जु",
+  "te": "రజ్జు",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Rajju and Vedha both match. Many families look for at least five of the ten.",
+  "hi": "रज्जु और वेध दोनों मेल खाते हैं। कई परिवार दस में से कम से कम पाँच देखते हैं।",
+  "te": "రజ్జు, వేధ రెండూ కుదిరాయి. చాలా కుటుంబాలు పదిలో కనీసం ఐదు చూస్తాయి.",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Rajju or Vedha does not match. Traditionally a match is not made without these two.",
+  "hi": "रज्जु या वेध मेल नहीं खाता। परंपरा में इन दोनों के बिना विवाह तय नहीं किया जाता।",
+  "te": "రజ్జు లేదా వేధ కుదరలేదు. సంప్రదాయంలో ఈ రెండూ లేకుండా సంబంధం కుదుర్చరు.",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Rakshasa",
+  "hi": "राक्षस",
+  "te": "రాక్షస",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Rashi (Moon sign)",
+  "hi": "राशि (चंद्र राशि)",
+  "te": "రాశి (చంద్ర రాశి)",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Rasi",
+  "hi": "राशि",
+  "te": "రాశి",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Rasyadhipati",
+  "hi": "राश्याधिपति",
+  "te": "రాశ్యాధిపతి",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Rat",
+  "hi": "मूषक",
+  "te": "ఎలుక",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Sadhaka",
+  "hi": "साधक",
+  "te": "సాధక",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Serpent",
+  "hi": "सर्प",
+  "te": "సర్పం",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Sheep",
+  "hi": "मेढ़ा",
+  "te": "మేక",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Shudra",
+  "hi": "शूद्र",
+  "te": "శూద్ర",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Stree Deergha",
+  "hi": "स्त्री दीर्घ",
+  "te": "స్త్రీ దీర్ఘ",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Tara",
+  "hi": "तारा",
+  "te": "తారా",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Temperament: Deva, Manushya or Rakshasa",
+  "hi": "स्वभाव: देव, मनुष्य या राक्षस",
+  "te": "స్వభావం: దేవ, మనుష్య లేదా రాక్షస",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Temperaments that suit each other",
+  "hi": "एक-दूसरे के अनुकूल स्वभाव",
+  "te": "ఒకరికొకరు సరిపడే స్వభావం",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "The bride's well-being and prosperity",
+  "hi": "वधू का कल्याण और समृद्धि",
+  "te": "వధువు క్షేమం, ఐశ్వర్యం",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "This is the traditional star match from the birth stars alone. It does not read the full horoscopes (Kuja dosha, dashas and more), and traditions differ in the details. Please consult your family priest or astrologer before deciding.",
+  "hi": "यह केवल जन्म नक्षत्रों से किया गया पारंपरिक मिलान है। इसमें पूरी कुंडली (मंगल दोष, दशा आदि) नहीं देखी जाती, और परंपराओं में नियम कुछ अलग होते हैं। निर्णय से पहले अपने कुल पुरोहित या ज्योतिषी से परामर्श करें।",
+  "te": "ఇది జన్మ నక్షత్రాల నుండి మాత్రమే చూసే సంప్రదాయ పొంతన. ఇందులో పూర్తి జాతకం (కుజ దోషం, దశలు మొదలైనవి) చూడబడదు, సంప్రదాయాన్ని బట్టి నియమాలు కొంత మారుతాయి. నిర్ణయం తీసుకునే ముందు మీ కుటుంబ పురోహితుడిని లేదా జ్యోతిష్యుడిని సంప్రదించండి.",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Tiger",
+  "hi": "व्याघ्र",
+  "te": "పులి",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Vadha",
+  "hi": "वध",
+  "te": "వధ",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Vaishya",
+  "hi": "वैश्य",
+  "te": "వైశ్య",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Varna",
+  "hi": "वर्ण",
+  "te": "వర్ణ",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Vashya",
+  "hi": "वश्य",
+  "te": "వశ్య",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Vasya",
+  "hi": "वश्य",
+  "te": "వశ్య",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Vedha",
+  "hi": "वेध",
+  "te": "వేధ",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Very good match",
+  "hi": "बहुत अच्छा मिलान",
+  "te": "చాలా మంచి పొంతన",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Waist",
+  "hi": "कटि",
+  "te": "కటి",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Water",
+  "hi": "जलचर",
+  "te": "జలచర",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Wild",
+  "hi": "वनचर",
+  "te": "వనచర",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "Yoni",
+  "hi": "योनि",
+  "te": "యోని",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "groom to bride",
+  "hi": "वर से वधू",
+  "te": "వరుడు నుండి వధువు",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "poruthams match",
+  "hi": "पोरुत्तम मेल खाते हैं",
+  "te": "పొంతనలు కుదిరాయి",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "A rating on Google Play helps other families find it. It is free and has no ads, thanks to you.",
+  "hi": "Google Play पर रेटिंग से दूसरे परिवार इसे खोज पाते हैं। यह मुफ़्त और विज्ञापन-रहित है।",
+  "te": "Google Playలో మీ రేటింగ్ ఇతర కుటుంబాలకు ఈ యాప్‌ను చూపిస్తుంది. ఇది ఉచితం, ప్రకటనలు లేవు.",
+  "where": "lib/features/more.dart"
+ },
+ {
+  "en": "Cards with your photo and name for every festival and every morning",
+  "hi": "हर त्योहार और हर सुबह के लिए आपकी फ़ोटो और नाम वाले कार्ड",
+  "te": "ప్రతి పండుగకు, ప్రతి ఉదయానికి మీ ఫోటో, పేరుతో కార్డులు",
+  "where": "lib/features/more.dart"
+ },
+ {
+  "en": "Devalay: free Panchang, aartis and bhakti app in your language, with no ads.\nhttps://play.google.com/store/apps/details?id={0}",
+  "hi": "देवालय: आपकी भाषा में मुफ़्त पंचांग, आरती और भक्ति ऐप, बिना विज्ञापन।\nhttps://play.google.com/store/apps/details?id={0}",
+  "te": "దేవాలయం: మీ భాషలో ఉచిత పంచాంగం, హారతులు, భక్తి యాప్, ప్రకటనలు లేవు.\nhttps://play.google.com/store/apps/details?id={0}",
+  "where": "lib/features/more.dart"
+ },
+ {
+  "en": "Enjoying Devalay?",
+  "hi": "देवालय पसंद आ रहा है?",
+  "te": "దేవాలయం నచ్చిందా?",
+  "where": "lib/features/more.dart"
+ },
+ {
+  "en": "Rate on Play",
+  "hi": "Play पर रेट करें",
+  "te": "Playలో రేట్ చేయండి",
+  "where": "lib/features/more.dart"
+ },
+ {
+  "en": "Send feedback",
+  "hi": "सुझाव भेजें",
+  "te": "సూచనలు పంపండి",
+  "where": "lib/features/more.dart"
+ },
+ {
+  "en": "Share with family",
+  "hi": "परिवार से साझा करें",
+  "te": "కుటుంబంతో పంచుకోండి",
+  "where": "lib/features/more.dart"
+ },
+ {
+  "en": "Sign in to sync favourites",
+  "hi": "पसंदीदा सिंक करने के लिए साइन इन करें",
+  "te": "ఇష్టమైనవి సింక్ చేయడానికి సైన్ ఇన్ చేయండి",
+  "where": "lib/features/more.dart"
+ },
+ {
+  "en": "TTD darshan tickets, sevas, rooms and more temples",
+  "hi": "टीटीडी दर्शन टिकट, सेवा, कमरे और अन्य मंदिर",
+  "te": "టీటీడీ దర్శన టికెట్లు, సేవలు, గదులు, మరిన్ని ఆలయాలు",
+  "where": "lib/features/more.dart"
+ },
+ {
+  "en": "Amrit, Shubh and Labh are best for new work; Char suits travel.",
+  "hi": "नए कार्य के लिए अमृत, शुभ, लाभ उत्तम; यात्रा के लिए चर।",
+  "te": "కొత్త పనులకు అమృత, శుభ, లాభ ఉత్తమం; ప్రయాణానికి చర.",
+  "where": "lib/features/muhurta_view.dart"
+ },
+ {
+  "en": "Choghadiya",
+  "hi": "चौघड़िया",
+  "te": "చోఘడియ",
+  "where": "lib/features/muhurta_view.dart"
+ },
+ {
+  "en": "Day",
+  "hi": "दिन",
+  "te": "పగలు",
+  "where": "lib/features/muhurta_view.dart"
+ },
+ {
+  "en": "Each hora is ruled by a planet; begin work in the hora that suits it.",
+  "hi": "हर होरा का स्वामी एक ग्रह है; कार्य उसके अनुकूल होरा में आरंभ करें।",
+  "te": "ప్రతి హోరకు ఒక గ్రహం అధిపతి; పనికి తగిన హోరలో ప్రారంభించండి.",
+  "where": "lib/features/muhurta_view.dart"
+ },
+ {
+  "en": "Gowri",
+  "hi": "गौरी",
+  "te": "గౌరీ",
+  "where": "lib/features/muhurta_view.dart"
+ },
+ {
+  "en": "Gowri Panchangam (Nalla Neram), followed in Tamil Nadu and Andhra Pradesh.",
+  "hi": "गौरी पंचांग, तमिलनाडु और आंध्र प्रदेश में प्रचलित।",
+  "te": "గౌరీ పంచాంగం (మంచి సమయం), తమిళనాడు, ఆంధ్రప్రదేశ్‌లలో ఆచరణలో ఉంది.",
+  "where": "lib/features/muhurta_view.dart"
+ },
+ {
+  "en": "Hora",
+  "hi": "होरा",
+  "te": "హోర",
+  "where": "lib/features/muhurta_view.dart"
+ },
+ {
+  "en": "Muhurta timings",
+  "hi": "मुहूर्त समय",
+  "te": "ముహూర్త సమయాలు",
+  "where": "lib/features/muhurta_view.dart"
+ },
+ {
+  "en": "Night",
+  "hi": "रात",
+  "te": "రాత్రి",
+  "where": "lib/features/muhurta_view.dart"
+ },
+ {
+  "en": "Now",
+  "hi": "अभी",
+  "te": "ఇప్పుడు",
+  "where": "lib/features/muhurta_view.dart"
+ },
+ {
+  "en": "Add to my calendar",
+  "hi": "मेरे कैलेंडर में जोड़ें",
+  "te": "నా క్యాలెండర్‌లో జోడించు",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "All my days",
+  "hi": "मेरे सभी दिन",
+  "te": "నా అన్ని రోజులు",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Birthdays, wedding anniversaries and remembrance days, by date or by tithi, with a reminder the evening before.",
+  "hi": "जन्मदिन, सालगिरह और श्राद्ध, तारीख या तिथि से, एक दिन पहले याद दिलाने के साथ।",
+  "te": "పుట్టినరోజులు, పెళ్లి రోజులు, తద్దినాలు: తేదీ లేదా తిథి ప్రకారం, ముందు రోజే గుర్తుచేస్తాం.",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "By tithi",
+  "hi": "तिथि से",
+  "te": "తిథి ప్రకారం",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Cancel",
+  "hi": "रद्द करें",
+  "te": "రద్దు",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Change",
+  "hi": "बदलें",
+  "te": "మార్చు",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Coming up",
+  "hi": "आने वाला",
+  "te": "రాబోయేది",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Date",
+  "hi": "तारीख",
+  "te": "తేదీ",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Delete",
+  "hi": "हटाएँ",
+  "te": "తొలగించు",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Delete this event?",
+  "hi": "यह दिन हटाएँ?",
+  "te": "ఈ రోజును తొలగించాలా?",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Edit",
+  "hi": "बदलें",
+  "te": "మార్చు",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Every year by tithi",
+  "hi": "हर साल तिथि अनुसार",
+  "te": "ప్రతి సంవత్సరం తిథి ప్రకారం",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Every year on this date",
+  "hi": "हर साल इसी तारीख",
+  "te": "ప్రతి సంవత్సరం ఇదే తేదీన",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Krishna",
+  "hi": "कृष्ण",
+  "te": "బహుళ",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Name",
+  "hi": "नाम",
+  "te": "పేరు",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Never miss a family day",
+  "hi": "परिवार का कोई दिन न भूलें",
+  "te": "కుటుంబపు ఏ రోజూ మర్చిపోకండి",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Once",
+  "hi": "एक बार",
+  "te": "ఒక్కసారి",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Please choose the tithi",
+  "hi": "कृपया तिथि चुनें",
+  "te": "దయచేసి తిథి ఎంచుకోండి",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Please enter a name",
+  "hi": "कृपया नाम लिखें",
+  "te": "దయచేసి పేరు రాయండి",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Remind me",
+  "hi": "याद दिलाएँ",
+  "te": "గుర్తు చేయి",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Repeats",
+  "hi": "दोहराव",
+  "te": "పునరావృతం",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Repeats every year on the same lunar month and tithi, the way families keep birthdays and remembrance days.",
+  "hi": "हर साल उसी चंद्र मास और तिथि पर आता है, जैसे परिवार जन्मदिन और श्राद्ध मनाते हैं।",
+  "te": "ప్రతి సంవత్సరం అదే మాసం, తిథి నాడు వస్తుంది, కుటుంబాల్లో పుట్టినరోజు, తద్దినం పాటించినట్లే.",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Save",
+  "hi": "सहेजें",
+  "te": "సేవ్",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Saved",
+  "hi": "सहेजा गया",
+  "te": "సేవ్ అయింది",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Saved. Next",
+  "hi": "सहेजा गया। अगली बार",
+  "te": "సేవ్ అయింది. తదుపరి",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "See all important days",
+  "hi": "सभी महत्वपूर्ण दिन देखें",
+  "te": "అన్ని ముఖ్యమైన రోజులు చూడండి",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Shraddha by tithi",
+  "hi": "तिथि से श्राद्ध",
+  "te": "తిథి ప్రకారం తద్దినం",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Shukla",
+  "hi": "शुक्ल",
+  "te": "శుక్ల",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "The evening before (7 PM) and that morning (7 AM)",
+  "hi": "एक दिन पहले शाम 7 बजे और उस दिन सुबह 7 बजे",
+  "te": "ముందు రోజు సాయంత్రం 7కు, ఆ రోజు ఉదయం 7కు",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Tithi",
+  "hi": "तिथि",
+  "te": "తిథి",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Tithi dates follow the sunrise tithi for your Panchang city. Confirm the day with your family priest for rituals.",
+  "hi": "तिथि की तारीख आपके पंचांग शहर के सूर्योदय तिथि से है। अनुष्ठान के लिए पुरोहित से पुष्टि करें।",
+  "te": "తిథి తేదీలు మీ పంచాంగ నగరపు సూర్యోదయ తిథి ప్రకారం. కార్యక్రమాలకు పురోహితులను సంప్రదించండి.",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "What kind of day?",
+  "hi": "कैसा दिन?",
+  "te": "ఏ రకమైన రోజు?",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Yearly",
+  "hi": "हर साल",
+  "te": "ఏటా",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "days",
+  "hi": "दिन",
+  "te": "రోజులు",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "e.g. Amma's birthday",
+  "hi": "जैसे: माँ का जन्मदिन",
+  "te": "ఉదా: అమ్మ పుట్టినరోజు",
+  "where": "lib/features/my_events.dart"
+ },
+ {
+  "en": "Aarti, bhajans, mantras, the Gita, Panchang and your own Mandir. Free, ad-free and private.",
+  "hi": "आरती, भजन, मंत्र, गीता, पंचांग और आपका अपना मंदिर। निःशुल्क, विज्ञापन-रहित और निजी।",
+  "te": "హారతులు, భజనలు, మంత్రాలు, భగవద్గీత, పంచాంగం, మీ సొంత మందిరం. ఉచితం, ప్రకటనలు లేవు, మీ సమాచారం మీ దగ్గరే.",
+  "where": "lib/features/onboarding.dart"
+ },
+ {
+  "en": "Begin 🙏",
+  "hi": "आरंभ करें 🙏",
+  "te": "ప్రారంభించండి 🙏",
+  "where": "lib/features/onboarding.dart"
+ },
+ {
+  "en": "Choose your language",
+  "hi": "भाषा चुनें",
+  "te": "మీ భాషను ఎంచుకోండి",
+  "where": "lib/features/onboarding.dart"
+ },
+ {
+  "en": "Morning prayer reminder (6:30 AM)",
+  "hi": "सुबह प्रार्थना याद दिलाएँ (6:30)",
+  "te": "ఉదయం పూజ రిమైండర్ (6:30)",
+  "where": "lib/features/onboarding.dart"
+ },
+ {
+  "en": "Panchang & Rashi",
+  "hi": "पंचांग और राशि",
+  "te": "పంచాంగం & రాశి",
+  "where": "lib/features/onboarding.dart"
+ },
+ {
+  "en": "Skip",
+  "hi": "छोड़ें",
+  "te": "దాటవేయండి",
+  "where": "lib/features/onboarding.dart"
+ },
+ {
+  "en": "Sunrise and muhurta timings for your city. No GPS needed.",
+  "hi": "सूर्योदय और मुहूर्त आपके शहर के अनुसार। GPS की आवश्यकता नहीं।",
+  "te": "మీ నగరానికి సూర్యోదయం, ముహూర్త సమయాలు. GPS అవసరం లేదు.",
+  "where": "lib/features/onboarding.dart"
+ },
+ {
+  "en": "Your Ishta Devta",
+  "hi": "आपके इष्ट देव",
+  "te": "మీ ఇష్ట దైవం",
+  "where": "lib/features/onboarding.dart"
+ },
+ {
+  "en": "Your Mandir and home screen will be dedicated to them",
+  "hi": "आपका मंदिर और होम स्क्रीन इन्हीं से सजेगा",
+  "te": "మీ మందిరం, హోమ్ స్క్రీన్ ఈ దైవానికి అంకితం",
+  "where": "lib/features/onboarding.dart"
+ },
+ {
+  "en": "Your Moon sign (optional)",
+  "hi": "आपकी चंद्र राशि (वैकल्पिक)",
+  "te": "మీ చంద్ర రాశి (ఐచ్ఛికం)",
+  "where": "lib/features/onboarding.dart"
+ },
+ {
+  "en": "Adhika",
+  "hi": "अधिक",
+  "te": "అధిక",
+  "where": "lib/features/panchang.dart"
+ },
+ {
+  "en": "Amrit Kalam",
+  "hi": "अमृत काल",
+  "te": "అమృత కాలం",
+  "where": "lib/features/panchang.dart"
+ },
+ {
+  "en": "Brahma Muhurta",
+  "hi": "ब्रह्म मुहूर्त",
+  "te": "బ్రహ్మ ముహూర్తం",
+  "where": "lib/features/panchang.dart"
+ },
+ {
+  "en": "Computed astronomically (NASA JPL DE421, Lahiri ayanamsa). Regional almanacs may differ by a few minutes.",
+  "hi": "खगोलीय गणना (NASA JPL DE421, लाहिरी अयनांश)। स्थानीय पंचांगों में कुछ मिनट का अंतर हो सकता है।",
+  "te": "ఖగోళ గణన ఆధారంగా (NASA JPL DE421, లాహిరి అయనాంశ). స్థానిక పంచాంగాలతో కొన్ని నిమిషాల తేడా ఉండవచ్చు.",
+  "where": "lib/features/panchang.dart"
+ },
+ {
+  "en": "Durmuhurtham",
+  "hi": "दुर्मुहूर्त",
+  "te": "దుర్ముహూర్తం",
+  "where": "lib/features/panchang.dart"
+ },
+ {
+  "en": "Good times",
+  "hi": "शुभ समय",
+  "te": "శుభ సమయాలు",
+  "where": "lib/features/panchang.dart"
+ },
+ {
+  "en": "Gulika Kaal",
+  "hi": "गुलिक काल",
+  "te": "గుళిక కాలం",
+  "where": "lib/features/panchang.dart"
+ },
+ {
+  "en": "Shaka",
+  "hi": "शक",
+  "te": "శక",
+  "where": "lib/features/panchang.dart"
+ },
+ {
+  "en": "Sun in {0} · Moon in {1}",
+  "hi": "सूर्य {0} · चंद्र {1}",
+  "te": "సూర్యుడు {0} · చంద్రుడు {1}",
+  "where": "lib/features/panchang.dart"
+ },
+ {
+  "en": "Times to avoid",
+  "hi": "अशुभ समय",
+  "te": "అశుభ సమయాలు",
+  "where": "lib/features/panchang.dart"
+ },
+ {
+  "en": "Varjyam",
+  "hi": "वर्ज्यम्",
+  "te": "వర్జ్యం",
+  "where": "lib/features/panchang.dart"
+ },
+ {
+  "en": "Vikram Samvat",
+  "hi": "विक्रम संवत",
+  "te": "విక్రమ శకం",
+  "where": "lib/features/panchang.dart"
+ },
+ {
+  "en": "Yamaganda",
+  "hi": "यमगंड",
+  "te": "యమగండం",
+  "where": "lib/features/panchang.dart"
+ },
+ {
+  "en": "masa",
+  "hi": "मास",
+  "te": "మాసం",
+  "where": "lib/features/panchang.dart"
+ },
+ {
+  "en": "samvatsara",
+  "hi": "संवत्सर",
+  "te": "నామ సంవత్సరం",
+  "where": "lib/features/panchang.dart"
+ },
+ {
+  "en": "A good day for you",
+  "hi": "आपके लिए शुभ दिन",
+  "te": "మీకు మంచి రోజు",
+  "where": "lib/features/personal_day.dart"
+ },
+ {
+  "en": "A mixed day: plan big things with care",
+  "hi": "मिला-जुला दिन: बड़े काम सोचकर करें",
+  "te": "మిశ్రమ రోజు: పెద్ద పనులు జాగ్రత్తగా",
+  "where": "lib/features/personal_day.dart"
+ },
+ {
+  "en": "Add your birth star to see your Tarabalam and Chandrabalam every day.",
+  "hi": "हर दिन अपना तारा बल और चंद्र बल देखने के लिए जन्म नक्षत्र जोड़ें।",
+  "te": "ప్రతి రోజు మీ తారాబలం, చంద్రబలం చూడటానికి జన్మ నక్షత్రం జోడించండి.",
+  "where": "lib/features/personal_day.dart"
+ },
+ {
+  "en": "Better to postpone big beginnings",
+  "hi": "बड़े आरंभ टालना बेहतर",
+  "te": "పెద్ద ప్రారంభాలు వాయిదా వేయడం మంచిది",
+  "where": "lib/features/personal_day.dart"
+ },
+ {
+  "en": "Chandrabalam",
+  "hi": "चंद्र बल",
+  "te": "చంద్రబలం",
+  "where": "lib/features/personal_day.dart"
+ },
+ {
+  "en": "For you",
+  "hi": "आपके लिए",
+  "te": "మీ కోసం",
+  "where": "lib/features/personal_day.dart"
+ },
+ {
+  "en": "From your horoscope (jatakam). Kept on this phone only.",
+  "hi": "अपनी जन्म कुंडली से। केवल इसी फ़ोन पर रहता है।",
+  "te": "మీ జాతకం నుంచి. ఈ ఫోన్‌లో మాత్రమే ఉంటుంది.",
+  "where": "lib/features/personal_day.dart"
+ },
+ {
+  "en": "Is today good for you?",
+  "hi": "क्या आज आपके लिए शुभ है?",
+  "te": "ఈ రోజు మీకు మంచిదేనా?",
+  "where": "lib/features/personal_day.dart"
+ },
+ {
+  "en": "My birth star",
+  "hi": "मेरा जन्म नक्षत्र",
+  "te": "నా జన్మ నక్షత్రం",
+  "where": "lib/features/personal_day.dart"
+ },
+ {
+  "en": "Rashi (moon sign)",
+  "hi": "राशि (चंद्र राशि)",
+  "te": "రాశి (చంద్ర రాశి)",
+  "where": "lib/features/personal_day.dart"
+ },
+ {
+  "en": "Tarabalam",
+  "hi": "तारा बल",
+  "te": "తారాబలం",
+  "where": "lib/features/personal_day.dart"
+ },
+ {
+  "en": "house",
+  "hi": "भाव",
+  "te": "స్థానం",
+  "where": "lib/features/personal_day.dart"
+ },
+ {
+  "en": "Free plan keeps {0} downloads. Remove one or go Premium.",
+  "hi": "मुफ़्त प्लान में {0} डाउनलोड रहते हैं। एक हटाएँ या प्रीमियम लें।",
+  "te": "ఉచిత ప్లాన్‌లో {0} డౌన్‌లోడ్‌లు మాత్రమే. ఒకటి తీసేయండి లేదా ప్రీమియం తీసుకోండి.",
+  "where": "lib/features/player.dart"
+ },
+ {
+  "en": "Lyrics",
+  "hi": "बोल",
+  "te": "సాహిత్యం",
+  "where": "lib/features/player.dart"
+ },
+ {
+  "en": "Nothing playing",
+  "hi": "कुछ नहीं चल रहा",
+  "te": "ఏదీ ప్లే అవ్వడం లేదు",
+  "where": "lib/features/player.dart"
+ },
+ {
+  "en": "Off",
+  "hi": "बंद",
+  "te": "ఆఫ్",
+  "where": "lib/features/player.dart"
+ },
+ {
+  "en": "Saved for offline listening",
+  "hi": "ऑफ़लाइन सुनने के लिए सहेजा गया",
+  "te": "ఆఫ్‌లైన్‌లో వినడానికి సేవ్ అయింది",
+  "where": "lib/features/player.dart"
+ },
+ {
+  "en": "Sleep timer",
+  "hi": "स्लीप टाइमर",
+  "te": "స్లీప్ టైమర్",
+  "where": "lib/features/player.dart"
+ },
+ {
+  "en": "Health",
+  "hi": "स्वास्थ्य",
+  "te": "ఆరోగ్యం",
+  "where": "lib/features/rashifal.dart"
+ },
+ {
+  "en": "Lucky colour",
+  "hi": "शुभ रंग",
+  "te": "అదృష్ట రంగు",
+  "where": "lib/features/rashifal.dart"
+ },
+ {
+  "en": "Lucky number",
+  "hi": "शुभ अंक",
+  "te": "అదృష్ట సంఖ్య",
+  "where": "lib/features/rashifal.dart"
+ },
+ {
+  "en": "Make this my rashi",
+  "hi": "इसे मेरी राशि बनाएँ",
+  "te": "ఇది నా రాశి",
+  "where": "lib/features/rashifal.dart"
+ },
+ {
+  "en": "Relationships",
+  "hi": "संबंध",
+  "te": "బంధాలు",
+  "where": "lib/features/rashifal.dart"
+ },
+ {
+  "en": "Upay",
+  "hi": "उपाय",
+  "te": "పరిహారం",
+  "where": "lib/features/rashifal.dart"
+ },
+ {
+  "en": "Work",
+  "hi": "कार्य",
+  "te": "పని",
+  "where": "lib/features/rashifal.dart"
+ },
+ {
+  "en": "Your rashi",
+  "hi": "आपकी राशि",
+  "te": "మీ రాశి",
+  "where": "lib/features/rashifal.dart"
+ },
+ {
+  "en": "Prayers & Paath",
+  "hi": "प्रार्थना और पाठ",
+  "te": "ప్రార్థనలు & పారాయణం",
+  "where": "lib/features/read.dart"
+ },
+ {
+  "en": "Could not set ringtone: {0}",
+  "hi": "रिंगटोन सेट नहीं हो सका: {0}",
+  "te": "రింగ్‌టోన్ సెట్ కాలేదు: {0}",
+  "where": "lib/features/ringtones.dart"
+ },
+ {
+  "en": "One-time permission",
+  "hi": "एक बार की अनुमति",
+  "te": "ఒక్కసారి అనుమతి",
+  "where": "lib/features/ringtones.dart"
+ },
+ {
+  "en": "Open settings",
+  "hi": "सेटिंग्स खोलें",
+  "te": "సెట్టింగ్స్ తెరవండి",
+  "where": "lib/features/ringtones.dart"
+ },
+ {
+  "en": "Set",
+  "hi": "लगाएँ",
+  "te": "పెట్టండి",
+  "where": "lib/features/ringtones.dart"
+ },
+ {
+  "en": "Hanuman, Diwali, karma…",
+  "hi": "हनुमान, दिवाली, कर्म…",
+  "te": "హనుమాన్, ఉగాది, కర్మ…",
+  "where": "lib/features/search.dart"
+ },
+ {
+  "en": "No results",
+  "hi": "कुछ नहीं मिला",
+  "te": "ఏమీ దొరకలేదు",
+  "where": "lib/features/search.dart"
+ },
+ {
+  "en": "Search bhajans, aartis, mantras, scriptures, Gita verses and festivals",
+  "hi": "भजन, आरती, मंत्र, ग्रंथ, गीता श्लोक और त्योहार खोजें",
+  "te": "భజనలు, ఆరతులు, మంత్రాలు, గ్రంథాలు, గీతా శ్లోకాలు, పండుగలు వెతకండి",
+  "where": "lib/features/search.dart"
+ },
+ {
+  "en": "About",
+  "hi": "जानकारी",
+  "te": "గురించి",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Account",
+  "hi": "खाता",
+  "te": "ఖాతా",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "App colour",
+  "hi": "ऐप का रंग",
+  "te": "యాప్ రంగు",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Cache cleared",
+  "hi": "कैश साफ़ हो गया",
+  "te": "కాష్ తొలగించబడింది",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Change time",
+  "hi": "समय बदलें",
+  "te": "సమయం మార్చండి",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Clear offline cache",
+  "hi": "ऑफ़लाइन कैश साफ़ करें",
+  "te": "ఆఫ్‌లైన్ కాష్ తొలగించండి",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Content credits & licences",
+  "hi": "सामग्री श्रेय और लाइसेंस",
+  "te": "కంటెంట్ క్రెడిట్స్ & లైసెన్సులు",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Daily prayer reminder",
+  "hi": "दैनिक प्रार्थना",
+  "te": "రోజువారీ పూజ రిమైండర్",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Dark",
+  "hi": "डार्क",
+  "te": "డార్క్",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Delete account",
+  "hi": "खाता हटाएँ",
+  "te": "ఖాతా తొలగించండి",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Language",
+  "hi": "भाषा",
+  "te": "భాష",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Light",
+  "hi": "लाइट",
+  "te": "లైట్",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Morning Panchang",
+  "hi": "सुबह का पंचांग",
+  "te": "ఉదయపు పంచాంగం",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "No ads · No analytics · Open source",
+  "hi": "विज्ञापन नहीं · एनालिटिक्स नहीं · ओपन सोर्स",
+  "te": "ప్రకటనలు లేవు · అనలిటిక్స్ లేవు · ఓపెన్ సోర్స్",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Panchang city",
+  "hi": "पंचांग शहर",
+  "te": "పంచాంగం నగరం",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Preferences",
+  "hi": "पसंद",
+  "te": "ప్రాధాన్యతలు",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Privacy policy",
+  "hi": "गोपनीयता नीति",
+  "te": "గోప్యతా విధానం",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Rate Devalay on Google Play",
+  "hi": "Google Play पर देवालय को रेट करें",
+  "te": "Google Playలో దేవాలయాన్ని రేట్ చేయండి",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Reminders",
+  "hi": "सूचनाएँ",
+  "te": "రిమైండర్లు",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Sign in / create account",
+  "hi": "साइन इन / खाता बनाएँ",
+  "te": "సైన్ ఇన్ / ఖాతా సృష్టించండి",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Sign out",
+  "hi": "साइन आउट",
+  "te": "సైన్ అవుట్",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "System",
+  "hi": "सिस्टम",
+  "te": "ఫోన్ ప్రకారం",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Theme",
+  "hi": "थीम",
+  "te": "థీమ్",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Tithi, nakshatra, Rahu Kalam and festivals at",
+  "hi": "तिथि, नक्षत्र, राहु काल व त्योहार,",
+  "te": "తిథి, నక్షత్రం, రాహు కాలం, పండుగలు",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Both",
+  "hi": "दोनों",
+  "te": "రెండూ",
+  "where": "lib/features/status_maker.dart"
+ },
+ {
+  "en": "Could not save: {0}",
+  "hi": "सहेजा नहीं जा सका: {0}",
+  "te": "సేవ్ కాలేదు: {0}",
+  "where": "lib/features/status_maker.dart"
+ },
+ {
+  "en": "Could not set: {0}",
+  "hi": "लगाया नहीं जा सका: {0}",
+  "te": "పెట్టలేకపోయాం: {0}",
+  "where": "lib/features/status_maker.dart"
+ },
+ {
+  "en": "Create status",
+  "hi": "स्टेटस बनाएँ",
+  "te": "స్టేటస్ తయారు చేయండి",
+  "where": "lib/features/status_maker.dart"
+ },
+ {
+  "en": "Deity",
+  "hi": "देवता",
+  "te": "దైవం",
+  "where": "lib/features/status_maker.dart"
+ },
+ {
+  "en": "Festival name, e.g. Diwali",
+  "hi": "त्योहार का नाम, जैसे दीपावली",
+  "te": "పండుగ పేరు, ఉదా. దీపావళి",
+  "where": "lib/features/status_maker.dart"
+ },
+ {
+  "en": "For whom? (optional)",
+  "hi": "किसके लिए? (वैकल्पिक)",
+  "te": "ఎవరి కోసం? (ఐచ్ఛికం)",
+  "where": "lib/features/status_maker.dart"
+ },
+ {
+  "en": "Home screen",
+  "hi": "होम स्क्रीन",
+  "te": "హోమ్ స్క్రీన్",
+  "where": "lib/features/status_maker.dart"
+ },
+ {
+  "en": "Lock screen",
+  "hi": "लॉक स्क्रीन",
+  "te": "లాక్ స్క్రీన్",
+  "where": "lib/features/status_maker.dart"
+ },
+ {
+  "en": "Occasion",
+  "hi": "अवसर",
+  "te": "సందర్భం",
+  "where": "lib/features/status_maker.dart"
+ },
+ {
+  "en": "Offline",
+  "hi": "ऑफ़लाइन",
+  "te": "ఆఫ్‌లైన్",
+  "where": "lib/features/status_maker.dart"
+ },
+ {
+  "en": "Radha Krishna",
+  "hi": "राधा कृष्ण",
+  "te": "రాధాకృష్ణులు",
+  "where": "lib/features/status_maker.dart"
+ },
+ {
+  "en": "Saved to Pictures/Devalay",
+  "hi": "Pictures/Devalay में सहेजा गया",
+  "te": "Pictures/Devalayలో సేవ్ అయింది",
+  "where": "lib/features/status_maker.dart"
+ },
+ {
+  "en": "Status",
+  "hi": "स्टेटस",
+  "te": "స్టేటస్",
+  "where": "lib/features/status_maker.dart"
+ },
+ {
+  "en": "Wallpaper",
+  "hi": "वॉलपेपर",
+  "te": "వాల్‌పేపర్",
+  "where": "lib/features/status_maker.dart"
+ },
+ {
+  "en": "Wallpaper set 🙏",
+  "hi": "वॉलपेपर लग गया 🙏",
+  "te": "వాల్‌పేపర్ పెట్టాం 🙏",
+  "where": "lib/features/status_maker.dart"
+ },
+ {
+  "en": "left today",
+  "hi": "आज शेष",
+  "te": "ఈ రోజు మిగిలినవి",
+  "where": "lib/features/status_maker.dart"
+ },
+ {
+  "en": ", for visits in the next month",
+  "hi": ", अगले महीने की यात्रा के लिए",
+  "te": ", తర్వాతి నెల దర్శనానికి",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": ", for visits {0} months later",
+  "hi": ", {0} महीने बाद की यात्रा के लिए",
+  "te": ", {0} నెలల తర్వాతి దర్శనానికి",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "Allow notifications for Devalay in your phone settings to get reminders.",
+  "hi": "रिमाइंडर के लिए फोन की सेटिंग में देवालय की सूचनाएँ चालू करें।",
+  "te": "రిమైండర్ల కోసం ఫోన్ సెట్టింగ్స్‌లో దేవాలయం నోటిఫికేషన్లను అనుమతించండి.",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "Before you go",
+  "hi": "जाने से पहले",
+  "te": "వెళ్లే ముందు",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "Book darshan tickets",
+  "hi": "दर्शन टिकट बुक करें",
+  "te": "దర్శన టికెట్లు బుక్ చేయండి",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "Book on official site",
+  "hi": "आधिकारिक साइट पर बुक करें",
+  "te": "అధికారిక సైట్‌లో బుక్ చేయండి",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "Could not open the site. Check your internet connection.",
+  "hi": "साइट नहीं खुल सकी। अपना इंटरनेट कनेक्शन जाँचें।",
+  "te": "సైట్ తెరుచుకోలేదు. మీ ఇంటర్నెట్ కనెక్షన్ చూడండి.",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "Details checked on {0}.",
+  "hi": "जानकारी {0} को जाँची गई।",
+  "te": "వివరాలు {0} {1} {2} న సరిచూశాం.",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "How to book",
+  "hi": "बुकिंग कैसे करें",
+  "te": "బుక్ చేయడం ఎలా",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "In the temple's own words, from {0}. Checked on {1}.",
+  "hi": "मंदिर के अपने शब्दों में, {0} से। {1} को जाँचा गया।",
+  "te": "ఆలయం మాటల్లోనే, {0} నుంచి. {1} న సరిచూశాం.",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "Latest from the temple",
+  "hi": "मंदिर की ताज़ा सूचनाएँ",
+  "te": "ఆలయ తాజా ప్రకటనలు",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "More official links",
+  "hi": "अन्य आधिकारिक लिंक",
+  "te": "ఇతర అధికారిక లింకులు",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "Next usual opening",
+  "hi": "अगली सामान्य तारीख",
+  "te": "తదుపరి సాధారణ తేదీ",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "No temple found",
+  "hi": "कोई मंदिर नहीं मिला",
+  "te": "ఆలయం దొరకలేదు",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "Open official site",
+  "hi": "आधिकारिक साइट खोलें",
+  "te": "అధికారిక సైట్ తెరవండి",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "Price",
+  "hi": "शुल्क",
+  "te": "ధర",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "Remind me every month",
+  "hi": "हर महीने याद दिलाएँ",
+  "te": "ప్రతి నెల గుర్తు చేయండి",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "Reminder off.",
+  "hi": "रिमाइंडर बंद।",
+  "te": "రిమైండర్ ఆఫ్.",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "Reminder on: the evening before and again before it opens, every month.",
+  "hi": "रिमाइंडर चालू: हर महीने एक शाम पहले और खुलने से पहले फिर।",
+  "te": "రిమైండర్ ఆన్: ప్రతి నెల ముందు రోజు సాయంత్రం, విడుదలకు ముందు మళ్లీ.",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "Search temple, city or state",
+  "hi": "मंदिर, शहर या राज्य खोजें",
+  "te": "ఆలయం, ఊరు లేదా రాష్ట్రం వెతకండి",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "See all {0} services",
+  "hi": "सभी {0} सेवाएँ देखें",
+  "te": "మొత్తం {0} సేవలు చూడండి",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "Show all {0} announcements",
+  "hi": "सभी {0} सूचनाएँ दिखाएँ",
+  "te": "మొత్తం {0} ప్రకటనలు చూపించు",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "Show all {0} dates",
+  "hi": "सभी {0} तारीखें दिखाएँ",
+  "te": "మొత్తం {0} తేదీలు చూపించు",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "Show fewer",
+  "hi": "कम दिखाएँ",
+  "te": "తక్కువ చూపించు",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "TTD darshan, sevas, rooms and more temples",
+  "hi": "टीटीडी दर्शन, सेवा, कमरे और अन्य मंदिर",
+  "te": "టీటీడీ దర్శనం, సేవలు, గదులు, మరిన్ని ఆలయాలు",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "Temples change prices, rules and dates. What the official site says is final.",
+  "hi": "मंदिर कीमतें, नियम और तारीखें बदलते रहते हैं। आधिकारिक साइट पर लिखी बात ही अंतिम है।",
+  "te": "ఆలయాలు ధరలు, నియమాలు, తేదీలు మారుస్తుంటాయి. అధికారిక సైట్‌లో ఉన్నదే తుది మాట.",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "The evening before and again before it opens",
+  "hi": "एक शाम पहले और खुलने से पहले फिर",
+  "te": "ముందు రోజు సాయంత్రం, విడుదలకు ముందు మళ్లీ",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "These are the usual dates. The temple confirms the exact date and time each month under Latest Updates on its site. Tap the bell for a reminder.",
+  "hi": "ये सामान्य तारीखें हैं। मंदिर हर महीने सही तारीख और समय अपनी साइट के Latest Updates में बताता है। रिमाइंडर के लिए घंटी दबाएँ।",
+  "te": "ఇవి సాధారణ తేదీలు. ఖచ్చితమైన తేదీ, సమయాన్ని ఆలయం ప్రతి నెల తన సైట్‌లోని Latest Updates లో ప్రకటిస్తుంది. రిమైండర్ కోసం గంట గుర్తు నొక్కండి.",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "This temple is not listed yet",
+  "hi": "यह मंदिर अभी सूची में नहीं है",
+  "te": "ఈ ఆలయం ఇంకా జాబితాలో లేదు",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "Try the city or the state name.",
+  "hi": "शहर या राज्य का नाम आज़माएँ।",
+  "te": "ఊరు లేదా రాష్ట్రం పేరుతో వెతకండి.",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "Usual booking dates",
+  "hi": "बुकिंग की सामान्य तारीखें",
+  "te": "సాధారణ బుకింగ్ తేదీలు",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "Usually opens on the {0} of each month at {1} IST{2}.",
+  "hi": "आमतौर पर हर महीने की {0} तारीख को {1} (IST) पर खुलता है{2}।",
+  "te": "సాధారణంగా ప్రతి నెల {0}వ తేదీ {1} (IST) కు విడుదలవుతుంది{2}.",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "When booking opens",
+  "hi": "बुकिंग कब खुलती है",
+  "te": "బుకింగ్ ఎప్పుడు మొదలవుతుంది",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "Who can book",
+  "hi": "कौन बुक कर सकता है",
+  "te": "ఎవరు బుక్ చేయవచ్చు",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "Without online booking",
+  "hi": "बिना ऑनलाइन बुकिंग",
+  "te": "ఆన్‌లైన్ బుకింగ్ లేకుండా",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "You book and pay only on the temple's official site, which opens inside Devalay. Devalay is not connected to any temple or government body and never asks you for money.",
+  "hi": "बुकिंग और भुगतान केवल मंदिर की आधिकारिक साइट पर होता है, जो देवालय के अंदर खुलती है। देवालय किसी मंदिर या सरकारी संस्था से जुड़ा नहीं है और आपसे कभी पैसे नहीं माँगता।",
+  "te": "బుకింగ్, చెల్లింపు ఆలయ అధికారిక సైట్‌లో మాత్రమే జరుగుతాయి; అది దేవాలయం యాప్‌లోనే తెరుచుకుంటుంది. దేవాలయం యాప్‌కు ఏ ఆలయంతోనూ, ప్రభుత్వ సంస్థతోనూ సంబంధం లేదు; మీ నుంచి డబ్బు అడగదు.",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "for {0}",
+  "hi": "{0} के लिए",
+  "te": "{0} కోసం",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "{0}, then choose this service.",
+  "hi": "{0}, फिर यह सेवा चुनें।",
+  "te": "{0}, తర్వాత ఈ సేవను ఎంచుకోండి.",
+  "where": "lib/features/temples.dart"
+ },
+ {
+  "en": "Coming soon",
+  "hi": "जल्द आ रहा है",
+  "te": "త్వరలో వస్తుంది",
+  "where": "lib/features/text_reader.dart"
+ },
+ {
+  "en": "Listen along",
+  "hi": "साथ में सुनें",
+  "te": "వింటూ చదవండి",
+  "where": "lib/features/text_reader.dart"
+ },
+ {
+  "en": "Meaning",
+  "hi": "भावार्थ",
+  "te": "భావం",
+  "where": "lib/features/text_reader.dart"
+ },
+ {
+  "en": "Show meaning",
+  "hi": "अर्थ दिखाएँ",
+  "te": "అర్థం చూపించు",
+  "where": "lib/features/text_reader.dart"
+ },
+ {
+  "en": "Show transliteration",
+  "hi": "लिप्यंतरण दिखाएँ",
+  "te": "లిప్యంతరీకరణ చూపించు",
+  "where": "lib/features/text_reader.dart"
+ },
+ {
+  "en": "Add a blessing",
+  "hi": "आशीर्वचन लिखें",
+  "te": "తెలుగు శుభాకాంక్ష రాయండి",
+  "where": "lib/features/wallpapers.dart"
+ },
+ {
+  "en": "Could not complete: {0}",
+  "hi": "पूरा नहीं हो सका: {0}",
+  "te": "పూర్తి కాలేదు: {0}",
+  "where": "lib/features/wallpapers.dart"
+ },
+ {
+  "en": "Or write your own",
+  "hi": "या अपना लिखें",
+  "te": "లేదా మీరే రాయండి",
+  "where": "lib/features/wallpapers.dart"
+ },
+ {
+  "en": "Save to gallery",
+  "hi": "गैलरी में सहेजें",
+  "te": "గ్యాలరీలో సేవ్ చేయండి",
+  "where": "lib/features/wallpapers.dart"
+ },
+ {
+  "en": "Set as",
+  "hi": "इस रूप में लगाएँ",
+  "te": "ఇలా పెట్టు",
+  "where": "lib/features/wallpapers.dart"
+ },
+ {
+  "en": "& family",
+  "hi": "एवं परिवार",
+  "te": "మరియు కుటుంబం",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "Add your photo",
+  "hi": "अपनी फ़ोटो जोड़ें",
+  "te": "మీ ఫోటో జోడించండి",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "Any day",
+  "hi": "किसी भी दिन",
+  "te": "ఏ రోజైనా",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "Caption",
+  "hi": "शीर्षक",
+  "te": "శీర్షిక",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "Could not open photos",
+  "hi": "फ़ोटो नहीं खुलीं",
+  "te": "ఫోటోలు తెరవలేకపోయాం",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "Could not share: {0}",
+  "hi": "शेयर नहीं हो सका: {0}",
+  "te": "షేర్ కాలేదు: {0}",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "Design",
+  "hi": "डिज़ाइन",
+  "te": "డిజైన్",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "Drag or pinch the photo on the card to fit it in its frame.",
+  "hi": "फ़्रेम में ठीक बैठाने के लिए कार्ड पर फ़ोटो को खींचें या पिंच करें।",
+  "te": "ఫ్రేమ్‌లో సరిగ్గా కూర్చేందుకు కార్డుపై ఫోటోను లాగండి లేదా పించ్ చేయండి.",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "Good morning and festival cards with your photo and name",
+  "hi": "आपकी फ़ोटो और नाम के साथ सुप्रभात और त्योहार कार्ड",
+  "te": "మీ ఫోటో, పేరుతో శుభోదయం, పండుగ కార్డులు",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "In {0} days · {1}",
+  "hi": "{0} दिन में · {1}",
+  "te": "{0} రోజుల్లో · {1}",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "Layout",
+  "hi": "लेआउट",
+  "te": "లేఅవుట్",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "Make a wishes card with your photo and name, and share it on your status.",
+  "hi": "अपनी फ़ोटो और नाम के साथ शुभकामना कार्ड बनाएँ और स्टेटस पर लगाएँ।",
+  "te": "మీ ఫోటో, పేరుతో శుభాకాంక్షల కార్డు తయారు చేసి స్టేటస్‌లో పెట్టండి.",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "Make card",
+  "hi": "कार्ड बनाएँ",
+  "te": "కార్డు చేయండి",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "Message",
+  "hi": "संदेश",
+  "te": "సందేశం",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "No message",
+  "hi": "कोई संदेश नहीं",
+  "te": "సందేశం వద్దు",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "On now",
+  "hi": "जारी है",
+  "te": "జరుగుతోంది",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "Paintings are public-domain works, such as Raja Ravi Varma prints.",
+  "hi": "चित्र सार्वजनिक डोमेन की कृतियाँ हैं, जैसे राजा रवि वर्मा के प्रिंट।",
+  "te": "చిత్రాలు పబ్లిక్ డొమైన్ కృతులు, రాజా రవివర్మ ప్రింట్ల వంటివి.",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "Photo",
+  "hi": "फ़ोटो",
+  "te": "ఫోటో",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "Picture",
+  "hi": "चित्र",
+  "te": "చిత్రం",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "Ready-made wishes",
+  "hi": "तैयार शुभकामनाएँ",
+  "te": "సిద్ధంగా ఉన్న శుభాకాంక్షలు",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "Remembered on this phone for your next card",
+  "hi": "अगले कार्ड के लिए इसी फ़ोन में याद रहेगा",
+  "te": "తదుపరి కార్డు కోసం ఈ ఫోన్‌లోనే గుర్తుంటుంది",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "Remove",
+  "hi": "हटाएँ",
+  "te": "తొలగించండి",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "Reset",
+  "hi": "रीसेट",
+  "te": "రీసెట్",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "Second line (optional)",
+  "hi": "दूसरी पंक्ति (वैकल्पिक)",
+  "te": "రెండో వరుస (ఐచ్ఛికం)",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "Share to status",
+  "hi": "स्टेटस पर शेयर",
+  "te": "స్టేటస్‌కు షేర్",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "This card is not available",
+  "hi": "यह कार्ड उपलब्ध नहीं है",
+  "te": "ఈ కార్డు అందుబాటులో లేదు",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "Today's blessing card, with the deity of the day",
+  "hi": "आज का आशीर्वाद कार्ड, आज के देवता के साथ",
+  "te": "నేటి దైవంతో ఈ రోజు ఆశీస్సుల కార్డు",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "With best wishes",
+  "hi": "शुभकामनाओं सहित",
+  "te": "శుభాకాంక్షలతో",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "Words",
+  "hi": "शब्द",
+  "te": "అక్షరాలు",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "Your name",
+  "hi": "आपका नाम",
+  "te": "మీ పేరు",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "Your photo stays on this phone. Devalay never uploads it; only the card you share leaves your phone, to the app you choose.",
+  "hi": "आपकी फ़ोटो इसी फ़ोन में रहती है। देवालय उसे कभी अपलोड नहीं करता; केवल वह कार्ड जिसे आप शेयर करते हैं, आपके चुने ऐप तक जाता है।",
+  "te": "మీ ఫోటో ఈ ఫోన్‌లోనే ఉంటుంది. దేవాలయం దాన్ని ఎప్పుడూ అప్‌లోడ్ చేయదు; మీరు షేర్ చేసే కార్డు మాత్రమే మీరు ఎంచుకున్న యాప్‌కు వెళ్తుంది.",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "Zoom",
+  "hi": "ज़ूम",
+  "te": "జూమ్",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "make a card with your photo",
+  "hi": "अपनी फ़ोटो के साथ कार्ड बनाएँ",
+  "te": "మీ ఫోటోతో కార్డు చేయండి",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "{0} themes",
+  "hi": "{0} थीम",
+  "te": "{0} థీమ్‌లు",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "{0} wishes",
+  "hi": "{0} की शुभकामनाएँ",
+  "te": "{0} శుభాకాంక్షలు",
+  "where": "lib/features/wishes.dart"
+ },
+ {
+  "en": "Search city",
+  "hi": "शहर खोजें",
+  "te": "నగరం వెతకండి",
+  "where": "lib/widgets/city_picker.dart"
+ },
+ {
+  "en": "Sunrise, tithi end times and Rahu Kalam are worked out for this city. Pick the nearest one.",
+  "hi": "सूर्योदय, तिथि का समय और राहु काल इसी शहर के लिए हैं। सबसे नज़दीकी शहर चुनें।",
+  "te": "సూర్యోదయం, తిథి సమయాలు, రాహుకాలం ఈ నగరం ప్రకారం. దగ్గరలోని నగరం ఎంచుకోండి.",
+  "where": "lib/widgets/city_picker.dart"
+ },
+ {
+  "en": "Favourite",
+  "hi": "पसंदीदा",
+  "te": "ఇష్టమైనది",
+  "where": "lib/widgets/common.dart"
+ },
+ {
+  "en": "The whole app, the Panchang and festival names change to your language.",
+  "hi": "पूरा ऐप, पंचांग और त्योहारों के नाम आपकी भाषा में।",
+  "te": "యాప్ మొత్తం, పంచాంగం, పండుగల పేర్లు మీ భాషలో.",
+  "where": "lib/widgets/language_picker.dart"
+ },
+ {
+  "en": "Ashadha",
+  "hi": "",
+  "te": "ఆషాఢం",
+  "where": "lunar month"
+ },
+ {
+  "en": "Ashwin",
+  "hi": "",
+  "te": "ఆశ్వయుజం",
+  "where": "lunar month"
+ },
+ {
+  "en": "Bhadrapada",
+  "hi": "",
+  "te": "భాద్రపదం",
+  "where": "lunar month"
+ },
+ {
+  "en": "Chaitra",
+  "hi": "",
+  "te": "చైత్రం",
+  "where": "lunar month"
+ },
+ {
+  "en": "Kartika",
+  "hi": "",
+  "te": "కార్తీకం",
+  "where": "lunar month"
+ },
+ {
+  "en": "Margashirsha",
+  "hi": "",
+  "te": "మార్గశిరం",
+  "where": "lunar month"
+ },
+ {
+  "en": "Pausha",
+  "hi": "",
+  "te": "పుష్యం",
+  "where": "lunar month"
+ },
+ {
+  "en": "Phalguna",
+  "hi": "",
+  "te": "ఫాల్గుణం",
+  "where": "lunar month"
+ },
+ {
+  "en": "Vaishakha",
+  "hi": "",
+  "te": "వైశాఖం",
+  "where": "lunar month"
+ },
+ {
+  "en": "Anuradha",
+  "hi": "",
+  "te": "అనూరాధ",
+  "where": "nakshatra name"
+ },
+ {
+  "en": "Ardra",
+  "hi": "",
+  "te": "ఆర్ద్ర",
+  "where": "nakshatra name"
+ },
+ {
+  "en": "Ashlesha",
+  "hi": "",
+  "te": "ఆశ్లేష",
+  "where": "nakshatra name"
+ },
+ {
+  "en": "Ashwini",
+  "hi": "",
+  "te": "అశ్విని",
+  "where": "nakshatra name"
+ },
+ {
+  "en": "Bharani",
+  "hi": "",
+  "te": "భరణి",
+  "where": "nakshatra name"
+ },
+ {
+  "en": "Chitra",
+  "hi": "",
+  "te": "చిత్త",
+  "where": "nakshatra name"
+ },
+ {
+  "en": "Dhanishta",
+  "hi": "",
+  "te": "ధనిష్ఠ",
+  "where": "nakshatra name"
+ },
+ {
+  "en": "Hasta",
+  "hi": "",
+  "te": "హస్త",
+  "where": "nakshatra name"
+ },
+ {
+  "en": "Jyeshtha",
+  "hi": "",
+  "te": "జ్యేష్ఠ",
+  "where": "nakshatra name"
+ },
+ {
+  "en": "Krittika",
+  "hi": "",
+  "te": "కృత్తిక",
+  "where": "nakshatra name"
+ },
+ {
+  "en": "Magha",
+  "hi": "",
+  "te": "మఖ",
+  "where": "nakshatra name"
+ },
+ {
+  "en": "Mrigashira",
+  "hi": "",
+  "te": "మృగశిర",
+  "where": "nakshatra name"
+ },
+ {
+  "en": "Mula",
+  "hi": "",
+  "te": "మూల",
+  "where": "nakshatra name"
+ },
+ {
+  "en": "Punarvasu",
+  "hi": "",
+  "te": "పునర్వసు",
+  "where": "nakshatra name"
+ },
+ {
+  "en": "Purva Ashadha",
+  "hi": "",
+  "te": "పూర్వాషాఢ",
+  "where": "nakshatra name"
+ },
+ {
+  "en": "Purva Bhadrapada",
+  "hi": "",
+  "te": "పూర్వాభాద్ర",
+  "where": "nakshatra name"
+ },
+ {
+  "en": "Purva Phalguni",
+  "hi": "",
+  "te": "పుబ్బ",
+  "where": "nakshatra name"
+ },
+ {
+  "en": "Pushya",
+  "hi": "",
+  "te": "పుష్యమి",
+  "where": "nakshatra name"
+ },
+ {
+  "en": "Revati",
+  "hi": "",
+  "te": "రేవతి",
+  "where": "nakshatra name"
+ },
+ {
+  "en": "Rohini",
+  "hi": "",
+  "te": "రోహిణి",
+  "where": "nakshatra name"
+ },
+ {
+  "en": "Shatabhisha",
+  "hi": "",
+  "te": "శతభిషం",
+  "where": "nakshatra name"
+ },
+ {
+  "en": "Shravana",
+  "hi": "",
+  "te": "శ్రవణం",
+  "where": "nakshatra name"
+ },
+ {
+  "en": "Swati",
+  "hi": "",
+  "te": "స్వాతి",
+  "where": "nakshatra name"
+ },
+ {
+  "en": "Uttara Ashadha",
+  "hi": "",
+  "te": "ఉత్తరాషాఢ",
+  "where": "nakshatra name"
+ },
+ {
+  "en": "Uttara Bhadrapada",
+  "hi": "",
+  "te": "ఉత్తరాభాద్ర",
+  "where": "nakshatra name"
+ },
+ {
+  "en": "Uttara Phalguni",
+  "hi": "",
+  "te": "ఉత్తర",
+  "where": "nakshatra name"
+ },
+ {
+  "en": "Vishakha",
+  "hi": "",
+  "te": "విశాఖ",
+  "where": "nakshatra name"
+ },
+ {
+  "en": "Dhanu",
+  "hi": "",
+  "te": "ధనుస్సు",
+  "where": "rashi"
+ },
+ {
+  "en": "Kanya",
+  "hi": "",
+  "te": "కన్య",
+  "where": "rashi"
+ },
+ {
+  "en": "Karka",
+  "hi": "",
+  "te": "కర్కాటకం",
+  "where": "rashi"
+ },
+ {
+  "en": "Kumbha",
+  "hi": "",
+  "te": "కుంభం",
+  "where": "rashi"
+ },
+ {
+  "en": "Makara",
+  "hi": "",
+  "te": "మకరం",
+  "where": "rashi"
+ },
+ {
+  "en": "Meena",
+  "hi": "",
+  "te": "మీనం",
+  "where": "rashi"
+ },
+ {
+  "en": "Mesha",
+  "hi": "",
+  "te": "మేషం",
+  "where": "rashi"
+ },
+ {
+  "en": "Mithuna",
+  "hi": "",
+  "te": "మిథునం",
+  "where": "rashi"
+ },
+ {
+  "en": "Simha",
+  "hi": "",
+  "te": "సింహం",
+  "where": "rashi"
+ },
+ {
+  "en": "Tula",
+  "hi": "",
+  "te": "తుల",
+  "where": "rashi"
+ },
+ {
+  "en": "Vrishabha",
+  "hi": "",
+  "te": "వృషభం",
+  "where": "rashi"
+ },
+ {
+  "en": "Vrishchika",
+  "hi": "",
+  "te": "వృశ్చికం",
+  "where": "rashi"
+ },
+ {
+  "en": "Masik Shivratri",
+  "hi": "मासिक शिवरात्रि",
+  "te": "మాస శివరాత్రి",
+  "where": "recurring observance"
+ },
+ {
+  "en": "Pradosh Vrat",
+  "hi": "प्रदोष व्रत",
+  "te": "ప్రదోషం",
+  "where": "recurring observance"
+ },
+ {
+  "en": "Sankashti Chaturthi",
+  "hi": "संकष्टी चतुर्थी",
+  "te": "సంకటహర చతుర్థి",
+  "where": "recurring observance"
+ },
+ {
+  "en": "Grishma",
+  "hi": "",
+  "te": "గ్రీష్మ ఋతువు",
+  "where": "ritu (season)"
+ },
+ {
+  "en": "Hemanta",
+  "hi": "",
+  "te": "హేమంత ఋతువు",
+  "where": "ritu (season)"
+ },
+ {
+  "en": "Sharad",
+  "hi": "",
+  "te": "శరద్ ఋతువు",
+  "where": "ritu (season)"
+ },
+ {
+  "en": "Shishira",
+  "hi": "",
+  "te": "శిశిర ఋతువు",
+  "where": "ritu (season)"
+ },
+ {
+  "en": "Varsha",
+  "hi": "",
+  "te": "వర్ష ఋతువు",
+  "where": "ritu (season)"
+ },
+ {
+  "en": "Vasanta",
+  "hi": "",
+  "te": "వసంత ఋతువు",
+  "where": "ritu (season)"
+ },
+ {
+  "en": "Akshaya",
+  "hi": "",
+  "te": "అక్షయ",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Ananda",
+  "hi": "",
+  "te": "ఆనంద",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Angirasa",
+  "hi": "",
+  "te": "ఆంగీరస",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Bahudhanya",
+  "hi": "",
+  "te": "బహుధాన్య",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Bhava",
+  "hi": "",
+  "te": "భావ",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Chitrabhanu",
+  "hi": "",
+  "te": "చిత్రభాను",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Dhatri",
+  "hi": "",
+  "te": "ధాత",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Dundubhi",
+  "hi": "",
+  "te": "దుందుభి",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Durmati",
+  "hi": "",
+  "te": "దుర్మతి",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Durmukhi",
+  "hi": "",
+  "te": "దుర్ముఖి",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Hevilambi",
+  "hi": "",
+  "te": "హేవిళంబి",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Ishvara",
+  "hi": "",
+  "te": "ఈశ్వర",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Jaya",
+  "hi": "",
+  "te": "జయ",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Kalayukti",
+  "hi": "",
+  "te": "కాళయుక్తి",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Khara",
+  "hi": "",
+  "te": "ఖర",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Kilaka",
+  "hi": "",
+  "te": "కీలక",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Krodhana",
+  "hi": "",
+  "te": "క్రోధన",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Krodhi",
+  "hi": "",
+  "te": "క్రోధి",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Manmatha",
+  "hi": "",
+  "te": "మన్మథ",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Nala",
+  "hi": "",
+  "te": "నల",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Nandana",
+  "hi": "",
+  "te": "నందన",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Parabhava",
+  "hi": "",
+  "te": "పరాభవ",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Paridhavi",
+  "hi": "",
+  "te": "పరీధావి",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Parthiva",
+  "hi": "",
+  "te": "పార్థివ",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Pingala",
+  "hi": "",
+  "te": "పింగళ",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Plava",
+  "hi": "",
+  "te": "ప్లవ",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Plavanga",
+  "hi": "",
+  "te": "ప్లవంగ",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Prabhava",
+  "hi": "",
+  "te": "ప్రభవ",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Prajotpatti",
+  "hi": "",
+  "te": "ప్రజోత్పత్తి",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Pramadicha",
+  "hi": "",
+  "te": "ప్రమాదీచ",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Pramathi",
+  "hi": "",
+  "te": "ప్రమాది",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Pramoduta",
+  "hi": "",
+  "te": "ప్రమోదూత",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Raktakshi",
+  "hi": "",
+  "te": "రక్తాక్షి",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Raudri",
+  "hi": "",
+  "te": "రౌద్రి",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Rudhirodgari",
+  "hi": "",
+  "te": "రుధిరోద్గారి",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Sadharana",
+  "hi": "",
+  "te": "సాధారణ",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Sarvadhari",
+  "hi": "",
+  "te": "సర్వధారి",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Sarvajit",
+  "hi": "",
+  "te": "సర్వజిత్",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Saumya",
+  "hi": "",
+  "te": "సౌమ్య",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Sharvari",
+  "hi": "",
+  "te": "శార్వరి",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Shobhakrit",
+  "hi": "",
+  "te": "శోభకృత్",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Shrimukha",
+  "hi": "",
+  "te": "శ్రీముఖ",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Shubhakrit",
+  "hi": "",
+  "te": "శుభకృత్",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Siddharthi",
+  "hi": "",
+  "te": "సిద్ధార్థి",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Svabhanu",
+  "hi": "",
+  "te": "స్వభాను",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Tarana",
+  "hi": "",
+  "te": "తారణ",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Vibhava",
+  "hi": "",
+  "te": "విభవ",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Vijaya",
+  "hi": "",
+  "te": "విజయ",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Vikari",
+  "hi": "",
+  "te": "వికారి",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Vikrama",
+  "hi": "",
+  "te": "విక్రమ",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Vikriti",
+  "hi": "",
+  "te": "వికృతి",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Vilambi",
+  "hi": "",
+  "te": "విళంబి",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Virodhi",
+  "hi": "",
+  "te": "విరోధి",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Virodhikrit",
+  "hi": "",
+  "te": "విరోధికృత్",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Vishvavasu",
+  "hi": "",
+  "te": "విశ్వావసు",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Vrisha",
+  "hi": "",
+  "te": "వృష",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Vyaya",
+  "hi": "",
+  "te": "వ్యయ",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Yuva",
+  "hi": "",
+  "te": "యువ",
+  "where": "samvatsara (60-year cycle)"
+ },
+ {
+  "en": "Ashtami",
+  "hi": "",
+  "te": "అష్టమి",
+  "where": "tithi name"
+ },
+ {
+  "en": "Chaturdashi",
+  "hi": "",
+  "te": "చతుర్దశి",
+  "where": "tithi name"
+ },
+ {
+  "en": "Chaturthi",
+  "hi": "",
+  "te": "చవితి",
+  "where": "tithi name"
+ },
+ {
+  "en": "Dashami",
+  "hi": "",
+  "te": "దశమి",
+  "where": "tithi name"
+ },
+ {
+  "en": "Dwadashi",
+  "hi": "",
+  "te": "ద్వాదశి",
+  "where": "tithi name"
+ },
+ {
+  "en": "Dwitiya",
+  "hi": "",
+  "te": "విదియ",
+  "where": "tithi name"
+ },
+ {
+  "en": "Navami",
+  "hi": "",
+  "te": "నవమి",
+  "where": "tithi name"
+ },
+ {
+  "en": "Panchami",
+  "hi": "",
+  "te": "పంచమి",
+  "where": "tithi name"
+ },
+ {
+  "en": "Pratipada",
+  "hi": "",
+  "te": "పాడ్యమి",
+  "where": "tithi name"
+ },
+ {
+  "en": "Saptami",
+  "hi": "",
+  "te": "సప్తమి",
+  "where": "tithi name"
+ },
+ {
+  "en": "Shashthi",
+  "hi": "",
+  "te": "షష్ఠి",
+  "where": "tithi name"
+ },
+ {
+  "en": "Trayodashi",
+  "hi": "",
+  "te": "త్రయోదశి",
+  "where": "tithi name"
+ },
+ {
+  "en": "Tritiya",
+  "hi": "",
+  "te": "తదియ",
+  "where": "tithi name"
+ },
+ {
+  "en": "Budhavara",
+  "hi": "",
+  "te": "బుధవారం",
+  "where": "weekday (vara)"
+ },
+ {
+  "en": "Guruvara",
+  "hi": "",
+  "te": "గురువారం",
+  "where": "weekday (vara)"
+ },
+ {
+  "en": "Mangalavara",
+  "hi": "",
+  "te": "మంగళవారం",
+  "where": "weekday (vara)"
+ },
+ {
+  "en": "Ravivara",
+  "hi": "",
+  "te": "ఆదివారం",
+  "where": "weekday (vara)"
+ },
+ {
+  "en": "Shanivara",
+  "hi": "",
+  "te": "శనివారం",
+  "where": "weekday (vara)"
+ },
+ {
+  "en": "Shukravara",
+  "hi": "",
+  "te": "శుక్రవారం",
+  "where": "weekday (vara)"
+ },
+ {
+  "en": "Somavara",
+  "hi": "",
+  "te": "సోమవారం",
+  "where": "weekday (vara)"
+ },
+ {
+  "en": "Atiganda",
+  "hi": "",
+  "te": "అతిగండం",
+  "where": "yoga name"
+ },
+ {
+  "en": "Ayushman",
+  "hi": "",
+  "te": "ఆయుష్మాన్",
+  "where": "yoga name"
+ },
+ {
+  "en": "Brahma",
+  "hi": "",
+  "te": "బ్రహ్మం",
+  "where": "yoga name"
+ },
+ {
+  "en": "Dhriti",
+  "hi": "",
+  "te": "ధృతి",
+  "where": "yoga name"
+ },
+ {
+  "en": "Dhruva",
+  "hi": "",
+  "te": "ధ్రువం",
+  "where": "yoga name"
+ },
+ {
+  "en": "Ganda",
+  "hi": "",
+  "te": "గండం",
+  "where": "yoga name"
+ },
+ {
+  "en": "Harshana",
+  "hi": "",
+  "te": "హర్షణం",
+  "where": "yoga name"
+ },
+ {
+  "en": "Indra",
+  "hi": "",
+  "te": "ఐంద్రం",
+  "where": "yoga name"
+ },
+ {
+  "en": "Parigha",
+  "hi": "",
+  "te": "పరిఘం",
+  "where": "yoga name"
+ },
+ {
+  "en": "Priti",
+  "hi": "",
+  "te": "ప్రీతి",
+  "where": "yoga name"
+ },
+ {
+  "en": "Sadhya",
+  "hi": "",
+  "te": "సాధ్యం",
+  "where": "yoga name"
+ },
+ {
+  "en": "Saubhagya",
+  "hi": "",
+  "te": "సౌభాగ్యం",
+  "where": "yoga name"
+ },
+ {
+  "en": "Shiva",
+  "hi": "",
+  "te": "శివం",
+  "where": "yoga name"
+ },
+ {
+  "en": "Shobhana",
+  "hi": "",
+  "te": "శోభనం",
+  "where": "yoga name"
+ },
+ {
+  "en": "Shubha",
+  "hi": "",
+  "te": "శుభం",
+  "where": "yoga name"
+ },
+ {
+  "en": "Shula",
+  "hi": "",
+  "te": "శూలం",
+  "where": "yoga name"
+ },
+ {
+  "en": "Siddha",
+  "hi": "",
+  "te": "సిద్ధం",
+  "where": "yoga name"
+ },
+ {
+  "en": "Siddhi",
+  "hi": "",
+  "te": "సిద్ధి",
+  "where": "yoga name"
+ },
+ {
+  "en": "Sukarma",
+  "hi": "",
+  "te": "సుకర్మ",
+  "where": "yoga name"
+ },
+ {
+  "en": "Vaidhriti",
+  "hi": "",
+  "te": "వైధృతి",
+  "where": "yoga name"
+ },
+ {
+  "en": "Vajra",
+  "hi": "",
+  "te": "వజ్రం",
+  "where": "yoga name"
+ },
+ {
+  "en": "Variyana",
+  "hi": "",
+  "te": "వరీయాన్",
+  "where": "yoga name"
+ },
+ {
+  "en": "Vishkambha",
+  "hi": "",
+  "te": "విష్కంభం",
+  "where": "yoga name"
+ },
+ {
+  "en": "Vriddhi",
+  "hi": "",
+  "te": "వృద్ధి",
+  "where": "yoga name"
+ },
+ {
+  "en": "Vyaghata",
+  "hi": "",
+  "te": "వ్యాఘాతం",
+  "where": "yoga name"
+ },
+ {
+  "en": "Vyatipata",
+  "hi": "",
+  "te": "వ్యతీపాతం",
+  "where": "yoga name"
+ }
+]

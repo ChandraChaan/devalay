@@ -3,8 +3,18 @@
 Each milestone is a git tag and a [GitHub release](https://github.com/ChandraChaan/devalay/releases). Releases from
 v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the section below that matches the tag.
 
-## Unreleased
+## v1.4.0 — 2026-11-13
 
+- Devalay now speaks 11 languages: English, हिन्दी, বাংলা, मराठी, తెలుగు, தமிழ், ગુજરાતી, ಕನ್ನಡ, മലയാളം, ଓଡ଼ିଆ
+  and ਪੰਜਾਬੀ. Every screen is translated, along with the Panchang names (tithi, nakshatra, yoga, karana, months,
+  samvatsara, rashi), festival names, city names, festival wishes and the temple booking guide. Aartis, mantras
+  and Gita verses are shown in your own script, and dates, date pickers and month names follow your language.
+  A phone set to one of these languages opens the app in it; change it any time in Settings.
+- Updates: Play installs update in the background with Google Play's in-app update, and urgent releases use
+  Play's full-screen update. Builds that are too old still have to update first (force update), now in every
+  language.
+- Rate Devalay: a card in More to rate it on Google Play, share it with family or send feedback. After you
+  have used the app for a few days, Play may ask once for a rating, with no questions before it.
 - Calendar: Choghadiya, Hora and Gowri Panchangam (Nalla Neram) for every day, by day and by night, with the
   running period marked "Now". Each hora says what it suits: puja, study, travel, business or government work.
 - Calendar: Rahu Kalam on the selected day, the lunar months of each month in the header (Kartika – Margashirsha),

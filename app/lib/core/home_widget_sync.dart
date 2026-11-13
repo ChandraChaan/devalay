@@ -10,16 +10,15 @@ import 'events.dart';
 import 'i18n.dart';
 import 'models.dart';
 import 'muhurta.dart';
+import 'names.dart';
 import 'providers.dart';
 import 'storage.dart';
-import 'telugu.dart';
 
 /// Days written ahead for the home-screen widget, so it keeps turning over offline.
 const widgetDays = 30;
 
 /// The widget's text for one day, already in the user's language.
 Map<String, String> widgetDay(String lang, DateTime day, Map s, List<Festival> festivals, List<UserEvent> events) {
-  final te = lang == 'te';
   final month = s['lunar_month'] as int?;
   final tithi = s['tithi_index'] as int?;
   final star = nakshatraNames.indexOf('${s['nakshatra']}');
@@ -34,11 +33,8 @@ Map<String, String> widgetDay(String lang, DateTime day, Map s, List<Festival> f
   final yoga = shubhYoga(day, '${s['nakshatra']}');
   return {
     'day': '${day.day}',
-    'weekday': te ? teluguWeekdays[day.weekday - 1] : DateFormat('EEEE').format(day),
-    'month': [
-      te ? '${teluguGregorianMonths[day.month - 1]} ${day.year}' : DateFormat('MMMM y').format(day),
-      if (month != null) lunarMonthLabel(lang, month),
-    ].join(' · '),
+    'weekday': fmtDate(lang, 'EEEE', day),
+    'month': [fmtDate(lang, 'MMMM y', day), if (month != null) lunarMonthLabel(lang, month)].join(' · '),
     'tithi': tithi == null ? '' : tithiName(lang, tithi),
     'star': star < 0 ? '' : '${t3(lang, 'Nakshatra', 'नक्षत्र', 'నక్షత్రం')}: ${nakshatraLabel(lang, star)}',
     'rahu': rahu ?? '',

@@ -266,9 +266,14 @@ class _StatusComposerState extends ConsumerState<StatusComposer> {
     try {
       await saveToGallery(await _render());
       HapticFeedback.mediumImpact();
-      if (mounted) toast(context, 'Saved to Pictures/Devalay');
+      if (mounted) {
+        toast(
+          context,
+          t3(appLang, 'Saved to Pictures/Devalay', 'Pictures/Devalay में सहेजा गया', 'Pictures/Devalayలో సేవ్ అయింది'),
+        );
+      }
     } catch (e) {
-      if (mounted) toast(context, 'Could not save: $e');
+      if (mounted) toast(context, t3(appLang, 'Could not save: $e', 'सहेजा नहीं जा सका: $e', 'సేవ్ కాలేదు: $e'));
     } finally {
       if (mounted) setState(() => _busy = false);
     }
@@ -301,7 +306,9 @@ class _StatusComposerState extends ConsumerState<StatusComposer> {
                       toast(context, t3(lang, 'Wallpaper set 🙏', 'वॉलपेपर लग गया 🙏', 'వాల్‌పేపర్ పెట్టాం 🙏'));
                     }
                   } catch (e) {
-                    if (mounted) toast(context, 'Could not set: $e');
+                    if (mounted) {
+                      toast(context, t3(appLang, 'Could not set: $e', 'लगाया नहीं जा सका: $e', 'పెట్టలేకపోయాం: $e'));
+                    }
                   } finally {
                     if (mounted) setState(() => _busy = false);
                   }

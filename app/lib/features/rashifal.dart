@@ -56,7 +56,11 @@ class RashifalScreen extends ConsumerWidget {
                       '★' * (r['rating'] as int) + '☆' * (5 - (r['rating'] as int)),
                       style: const TextStyle(color: Palette.gold, fontSize: 13),
                     ),
-                    if (isMine) const Text('Your rashi', style: TextStyle(color: Colors.white, fontSize: 11)),
+                    if (isMine)
+                      Text(
+                        t3(appLang, 'Your rashi', 'आपकी राशि', 'మీ రాశి'),
+                        style: TextStyle(color: Colors.white, fontSize: 11),
+                      ),
                   ],
                 ),
               ).animate().fadeIn(delay: (35 * i).ms).scale(begin: const Offset(0.9, 0.9));

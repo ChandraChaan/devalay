@@ -176,7 +176,10 @@ class _AskGitaScreenState extends ConsumerState<AskGitaScreen> {
                       maxLines: 4,
                       textInputAction: TextInputAction.send,
                       onSubmitted: _ask,
-                      decoration: const InputDecoration(hintText: 'Ask the Gita…', counterText: ''),
+                      decoration: InputDecoration(
+                        hintText: t3(appLang, 'Ask the Gita…', 'गीता से पूछें…', 'గీతను అడగండి…'),
+                        counterText: '',
+                      ),
                     ),
                   ),
                   const SizedBox(width: 8),

@@ -155,7 +155,7 @@ class _WallpaperDetailScreenState extends ConsumerState<WallpaperDetailScreen> {
       ref.read(apiProvider).post('/wallpapers/${widget.wallpaper.id}/download').catchError((_) {});
       if (mounted) toast(context, done);
     } catch (e) {
-      if (mounted) toast(context, 'Could not complete: $e');
+      if (mounted) toast(context, t3(appLang, 'Could not complete: $e', 'पूरा नहीं हो सका: $e', 'పూర్తి కాలేదు: $e'));
     } finally {
       if (mounted) setState(() => _busy = false);
     }
@@ -312,12 +312,12 @@ class _WallpaperDetailScreenState extends ConsumerState<WallpaperDetailScreen> {
                         child: FilledButton.icon(
                           onPressed: _busy ? null : _setAs,
                           icon: const Icon(Icons.wallpaper_rounded),
-                          label: const Text('Set as'),
+                          label: Text(t3(appLang, 'Set as', 'इस रूप में लगाएँ', 'ఇలా పెట్టు')),
                         ),
                       ),
                       const SizedBox(width: 10),
                       IconButton.filledTonal(
-                        tooltip: 'Save to gallery',
+                        tooltip: t3(appLang, 'Save to gallery', 'गैलरी में सहेजें', 'గ్యాలరీలో సేవ్ చేయండి'),
                         onPressed: _busy
                             ? null
                             : () => _run((p) async {
@@ -326,7 +326,7 @@ class _WallpaperDetailScreenState extends ConsumerState<WallpaperDetailScreen> {
                         icon: const Icon(Icons.download_rounded),
                       ),
                       IconButton.filledTonal(
-                        tooltip: 'Share',
+                        tooltip: t3(appLang, 'Share', 'शेयर करें', 'షేర్ చేయండి'),
                         onPressed: _busy
                             ? null
                             : () => _run((p) async {

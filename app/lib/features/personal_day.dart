@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/glossary.dart';
@@ -143,18 +144,20 @@ class PersonalBalam extends ConsumerWidget {
                     ),
                   const SizedBox(height: 6),
                   Container(
-                    width: double.infinity,
-                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                    decoration: BoxDecoration(
-                      gradient: good ? const LinearGradient(colors: Palette.sunrise) : null,
-                      color: good ? null : scheme.surfaceContainerHigh,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Text(
-                      '${good ? '🌟 ' : ''}$verdict',
-                      style: TextStyle(fontWeight: FontWeight.w700, color: good ? Colors.white : null),
-                    ),
-                  ),
+                        width: double.infinity,
+                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                        decoration: BoxDecoration(
+                          gradient: good ? const LinearGradient(colors: Palette.sunrise) : null,
+                          color: good ? null : scheme.surfaceContainerHigh,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Text(
+                          '${good ? '🌟 ' : ''}$verdict',
+                          style: TextStyle(fontWeight: FontWeight.w700, color: good ? Colors.white : null),
+                        ),
+                      )
+                      .animate(onPlay: good ? (c) => c.repeat() : null)
+                      .shimmer(duration: 2600.ms, delay: 800.ms, color: good ? Colors.white38 : Colors.transparent),
                 ],
               ),
             ),
