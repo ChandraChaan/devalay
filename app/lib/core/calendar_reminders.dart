@@ -129,6 +129,7 @@ Future<void> refreshEventReminders(WidgetRef ref) async {
   for (final e in events) {
     await scheduleEventReminder(e, lang, thisYear: thisYear, nextYear: nextYear);
   }
+  await Notifications.eventsRefreshed();
 }
 
 Future<void> scheduleEventReminder(

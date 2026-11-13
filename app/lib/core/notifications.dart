@@ -6,6 +6,7 @@ import 'package:timezone/timezone.dart' as tz;
 import 'i18n.dart';
 import 'models.dart';
 import 'names.dart';
+import 'storage.dart';
 import 'telugu.dart';
 
 /// On-device reminders: daily prayer and festival reminders are scheduled with the
@@ -60,7 +61,9 @@ class Notifications {
     ),
   );
 
-  static const _panchangBase = 400000;
+  // One id per calendar day (days since 1970, mod 1000), so a day keeps its id as the window moves.
+  static const _panchangBase = 410000;
+  static const _legacyPanchangBase = 400000; // 1.3 and earlier: 400000 + position in the window
   static const panchangDays = 45;
 
   static const _quota = AndroidNotificationDetails(
@@ -206,20 +209,24 @@ class Notifications {
   }
 
   /// One morning message per day for the coming days ([panchangDays] at most). Each day's
-  /// text differs, so these are one-off alarms re-laid each time the app opens.
+  /// text differs, so these are one-off alarms; only days whose time or text changed are sent again.
   static Future<void> schedulePanchang(
     List<({DateTime day, String title, String body})> items, {
     required int hour,
     required int minute,
   }) async {
-    await cancelPanchang();
+    final ledger = _Ledger('notif_panchang');
+    if (!ledger.exists) await _cancelLegacyPanchang();
     final now = tz.TZDateTime.now(tz.local);
-    var i = 0;
+    final wanted = <int>{};
     for (final item in items.take(panchangDays)) {
       final when = _next(hour, minute, item.day);
       if (!when.isAfter(now)) continue;
+      final id = _panchangBase + _dayNumber(item.day) % 1000;
+      wanted.add(id);
+      if (!ledger.changed(id, when, '${item.title}|${item.body}')) continue;
       await _plugin.zonedSchedule(
-        id: _panchangBase + i++,
+        id: id,
         scheduledDate: when,
         notificationDetails: _expanded(_panchang, item.body),
         androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
@@ -227,28 +234,48 @@ class Notifications {
         body: item.body,
       );
     }
+    for (final id in ledger.futureIdsExcept(wanted, now)) {
+      await _plugin.cancel(id: id);
+    }
+    await ledger.save(keep: wanted);
   }
 
   static Future<void> cancelPanchang() async {
+    final ledger = _Ledger('notif_panchang');
+    if (!ledger.exists) await _cancelLegacyPanchang();
+    for (final id in ledger.futureIdsExcept(const {}, tz.TZDateTime.now(tz.local))) {
+      await _plugin.cancel(id: id);
+    }
+    await ledger.save(keep: const {});
+  }
+
+  static Future<void> _cancelLegacyPanchang() async {
     for (var i = 0; i < panchangDays; i++) {
-      await _plugin.cancel(id: _panchangBase + i);
+      await _plugin.cancel(id: _legacyPanchangBase + i);
     }
   }
 
-  /// A personal event: the evening before (7 PM) and the morning of (7 AM).
+  static int _dayNumber(DateTime d) => DateTime.utc(d.year, d.month, d.day).millisecondsSinceEpoch ~/ 86400000;
+
+  /// A personal event: the evening before (7 PM) and the morning of (7 AM). Unchanged reminders are
+  /// left alone.
   static Future<void> scheduleEvent(
     String id, {
     required DateTime on,
     required (String, String) eve,
     required (String, String) morning,
   }) async {
-    await cancelEvent(id);
+    final ledger = _Ledger('notif_events');
     final now = tz.TZDateTime.now(tz.local);
     final slots = [(_next(19, 0, on.subtract(const Duration(days: 1))), eve), (_next(7, 0, on), morning)];
+    final wanted = <int>{};
     for (final (i, (at, (title, body))) in slots.indexed) {
       if (!at.isAfter(now)) continue;
+      final nid = _eventId(id) + i;
+      wanted.add(nid);
+      if (!ledger.changed(nid, at, '$title|$body')) continue;
       await _plugin.zonedSchedule(
-        id: _eventId(id) + i,
+        id: nid,
         scheduledDate: at,
         notificationDetails: _expanded(_events, body),
         androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
@@ -256,12 +283,28 @@ class Notifications {
         body: body,
       );
     }
+    final mine = {_eventId(id), _eventId(id) + 1};
+    for (final nid in ledger.futureIdsExcept(wanted, now).where(mine.contains)) {
+      await _plugin.cancel(id: nid);
+    }
+    await ledger.save(keep: wanted, within: mine);
   }
 
   static Future<void> cancelEvent(String id) async {
-    await _plugin.cancel(id: _eventId(id));
-    await _plugin.cancel(id: _eventId(id) + 1);
+    final ledger = _Ledger('notif_events');
+    final mine = {_eventId(id), _eventId(id) + 1};
+    // Before 1.4 nothing was recorded, so cancel both slots once; after that only what is pending.
+    final pending = ledger.exists
+        ? ledger.futureIdsExcept(const {}, tz.TZDateTime.now(tz.local)).where(mine.contains)
+        : mine;
+    for (final nid in pending) {
+      await _plugin.cancel(id: nid);
+    }
+    await ledger.save(keep: const {}, within: mine);
   }
+
+  /// Called after every event has been scheduled at start, so later refreshes today skip unchanged ones.
+  static Future<void> eventsRefreshed() => _Ledger.markFresh('notif_events');
 
   static int _eventId(String key) => 300000 + _hash(key) % 4000 * 2;
 
@@ -362,3 +405,80 @@ class Notifications {
 /// "10:00 AM" for a 24-hour time.
 String clock12(int hour, int minute) =>
     '${hour % 12 == 0 ? 12 : hour % 12}:${minute.toString().padLeft(2, '0')} ${hour >= 12 ? 'PM' : 'AM'}';
+
+/// What is scheduled under one key: notification id -> (time, hash of the text). A refresh sends the
+/// plugin only what changed, because every plugin call rewrites its whole store on Android's main
+/// thread: re-sending 45 days at each start froze the app for seconds on slow phones. Everything is
+/// sent again on the first refresh of each day anyway, in case the phone dropped the alarms (a force
+/// stop or an aggressive battery saver does that), so reminders still heal themselves.
+class _Ledger {
+  _Ledger(this.key) {
+    final raw = Boxes.stats.get(key);
+    exists = raw is Map;
+    if (raw is! Map) return;
+    _fresh = raw['day'] == _today();
+    final items = raw['items'];
+    if (items is Map) {
+      for (final e in items.entries) {
+        final v = '${e.value}'.split(':');
+        final id = int.tryParse('${e.key}');
+        if (id != null && v.length == 2) _items[id] = (int.parse(v[0]), int.parse(v[1]));
+      }
+    }
+  }
+
+  final String key;
+  late final bool exists;
+  bool _fresh = false;
+  final _items = <int, (int, int)>{};
+  final _next = <int, (int, int)>{};
+
+  static String _today() {
+    final d = DateTime.now();
+    return '${d.year}-${d.month}-${d.day}';
+  }
+
+  /// Whether [id] needs sending: new, moved, reworded, or the day's full refresh is due.
+  bool changed(int id, DateTime at, String text) {
+    final v = (at.millisecondsSinceEpoch, _hash(text));
+    _next[id] = v;
+    return !_fresh || _items[id] != v;
+  }
+
+  /// Recorded ids still in the future that are no longer wanted.
+  Iterable<int> futureIdsExcept(Set<int> wanted, DateTime now) => _items.entries
+      .where((e) => !wanted.contains(e.key) && e.value.$1 > now.millisecondsSinceEpoch)
+      .map((e) => e.key)
+      .toList();
+
+  /// Records [keep] (with what [changed] saw). With [within], only those ids are replaced and the
+  /// rest of the record is kept (events share one record).
+  Future<void> save({required Set<int> keep, Set<int>? within}) async {
+    final out = <int, (int, int)>{
+      if (within != null)
+        for (final e in _items.entries)
+          if (!within.contains(e.key)) e.key: e.value,
+      for (final id in keep) id: ?(_next[id] ?? _items[id]),
+    };
+    // A shared record (events) is marked fresh by [markFresh] once every entry has been through the
+    // day's refresh; a single edit keeps the day it had.
+    final day = within == null ? _today() : (Boxes.stats.get(key) as Map?)?['day'];
+    await Boxes.stats.put(key, {
+      'day': day,
+      'items': {for (final e in out.entries) '${e.key}': '${e.value.$1}:${e.value.$2}'},
+    });
+  }
+
+  static Future<void> markFresh(String key) async {
+    final raw = Boxes.stats.get(key);
+    await Boxes.stats.put(key, {'items': raw is Map ? raw['items'] : const {}, 'day': _today()});
+  }
+
+  static int _hash(String s) {
+    var h = 0;
+    for (final c in s.codeUnits) {
+      h = (h * 31 + c) & 0x7fffffff;
+    }
+    return h;
+  }
+}
