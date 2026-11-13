@@ -14,14 +14,15 @@ void main() {
   final strings = (jsonDecode(File('tool/l10n/strings.json').readAsStringSync()) as List).cast<Map>();
   final content = (jsonDecode(File('tool/l10n/strings_content.json').readAsStringSync()) as List).cast<Map>();
   final descriptions = (jsonDecode(File('tool/l10n/strings_descriptions.json').readAsStringSync()) as List).cast<Map>();
+  final pooja = (jsonDecode(File('tool/l10n/strings_pooja.json').readAsStringSync()) as List).cast<Map>();
   final placeholder = RegExp(r'\{\d+\}');
   Set<String> marks(String s) => placeholder.allMatches(s).map((m) => m[0]!).toSet();
 
   for (final code in ['bn', 'mr', 'ta', 'gu', 'kn', 'ml', 'or', 'pa']) {
-    test('$code translates every UI string and wish', () {
+    test('$code translates every UI string, wish and pooja guide', () {
       final table = tableFor(code)!;
       final missing = [
-        for (final e in [...strings, ...content, ...descriptions])
+        for (final e in [...strings, ...content, ...descriptions, ...pooja])
           if (!table.containsKey(e['en'])) e['en'],
       ];
       expect(missing, isEmpty, reason: '$code is missing ${missing.length}: ${missing.take(5)}');
@@ -42,6 +43,14 @@ void main() {
       ], isEmpty);
     });
   }
+
+  test('pooja guides carry their own Hindi and Telugu', () {
+    expect(pooja, isNotEmpty);
+    expect([
+      for (final e in pooja)
+        if ('${e['hi']}'.isEmpty || '${e['te']}'.isEmpty) e['en'],
+    ], isEmpty);
+  });
 
   test('Hindi has every Panchang name the UI copy lacks', () {
     final table = tableFor('hi')!;

@@ -22,6 +22,34 @@ Rule for adding content: only public-domain, CC0, CC BY or CC BY-SA (or equivale
 
 **Deliberately excluded:** the gita/gita dataset's modern translations, commentaries and word meanings (Ramsukhdas, Tejomayananda, Gambirananda, Sivananda, Sankaranarayan and others), which are still under copyright, and Shri Purohit Swami's 1935 translation, which is still under copyright in the USA until the end of 2030.
 
+## Thought of the day (`app/assets/data/thoughts.json`)
+
+About 60 short verses per language, each copied by script from a public-domain text on Wikisource (or, for 56 of
+Farid's sloks, the gurbani text on gurugranthdarpan.net) and re-checked against that page by
+`python3 -I app/tool/thoughts/verify.py`. Every verse carries its source URL, shown in the app. Wikisource page
+formatting is CC BY-SA; the texts themselves are public domain. The meanings, in each language and in English, are
+original writing for Devalay (MIT/CC0). Full per-language notes: `app/tool/thoughts/SOURCES.md`.
+
+| Language | Work | Status | Source |
+|---|---|---|---|
+| Sanskrit (for English) | Bhartrihari's Nitishatakam, Hitopadesha (Narayana Pandita), Chanakya Niti Darpana | Public domain (ancient) | [sa.wikisource](https://sa.wikisource.org/wiki/नीतिशतकम्) |
+| Hindi | Kabir's sakhis, from Kavita Kaumudi Part 1 (ed. Ramnaresh Tripathi, 1918; editor d. 1962) | Public domain | [hi.wikisource](https://hi.wikisource.org/wiki/विषयसूची:कविता-कौमुदी_1.pdf) |
+| Bengali | Rabindranath Tagore, Kanika (1899 first edition; author d. 1941) | Public domain in India | [bn.wikisource](https://bn.wikisource.org/wiki/কণিকা_(রবীন্দ্রনাথ_ঠাকুর)) |
+| Marathi | Sant Tukaram's abhangs, Tukaram Gatha (d. 1650) | Public domain | [mr.wikisource](https://mr.wikisource.org/wiki/तुकाराम_गाथा) |
+| Telugu | Vemana Shatakam (17th c.; text of C. P. Brown's edition, d. 1884) and Baddena's Sumathi Satakam (13th c.) | Public domain | [te.wikisource](https://te.wikisource.org/wiki/వేమన_పద్యాలు), [Sumathi](https://te.wikisource.org/wiki/సుమతీ_శతకము) |
+| Tamil | Thiruvalluvar's Thirukkural | Public domain (ancient) | [ta.wikisource](https://ta.wikisource.org/wiki/திருக்குறள்,_மூலம்) |
+| Gujarati | Narsinh Mehta's padas (15th c.), from Bruhad Kavyadohan (1908) and other scanned books | Public domain | [gu.wikisource](https://gu.wikisource.org/wiki/શ્રેણી:નરસિંહ_મહેતા) |
+| Kannada | Sarvajna's tripadis (16th c.) | Public domain | [kn.wikisource](https://kn.wikisource.org/wiki/ಸರ್ವಜ್ಞನ_ವಚನಗಳು) |
+| Malayalam | Poonthanam's Jnanappana (16th c.) and Sree Narayana Guru's verses (d. 1928) | Public domain | [ml.wikisource](https://ml.wikisource.org/wiki/ജ്ഞാനപ്പാന), [Daiva Dasakam](https://ml.wikisource.org/wiki/ദൈവദശകം) |
+| Odia | Jagannath Das's Odia Bhagabata (16th c.), mostly Book 11 | Public domain | [or.wikisource](https://or.wikisource.org/wiki/ଓଡ଼ିଆ_ଭାଗବତ) |
+| Punjabi | Baba Sheikh Farid's sloks in the Guru Granth Sahib (d. 1266), Ang 1377–1384 | Public domain | [gurugranthdarpan.net](https://www.gurugranthdarpan.net/1378.html) (gurbani text only, not the commentary), [pa.wikisource](https://pa.wikisource.org/wiki/ਸ਼ਲੋਕ_ਸ਼ੇਖ_ਫਰੀਦ) |
+
+## Pooja guides (`app/assets/data/pooja_guides.json`)
+
+The steps, item lists and mantra meanings are original writing for Devalay (MIT/CC0), in our own words; no puja book
+was copied. The mantras are traditional Sanskrit (public domain) and are taken verbatim from the app's own mantra
+library (`backend/app/seed/texts.py`) by `app/tool/pooja/build_guides.py`.
+
 ## Original audio (CC0)
 
 Temple bell, ghanti, shankh, Om drone, tanpura, bansuri (raga Bhupali phrase), damru and five ringtones are synthesised from scratch by `backend/scripts/generate_audio.py` and released under CC0.

@@ -5,12 +5,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../core/i18n.dart';
 import '../core/glossary.dart';
 import '../core/location.dart';
+import '../core/panchang_voice.dart';
 import '../core/names.dart';
 import '../core/providers.dart';
 import '../core/storage.dart';
 import '../core/telugu.dart';
 import '../core/theme.dart';
 import '../widgets/common.dart';
+import '../widgets/read_aloud_button.dart';
 import 'muhurta_view.dart';
 import 'personal_day.dart';
 
@@ -22,6 +24,19 @@ class PanchangScreen extends ConsumerStatefulWidget {
 
 class _PanchangScreenState extends ConsumerState<PanchangScreen> {
   DateTime _day = DateUtils.dateOnly(DateTime.now());
+  late final PanchangVoice _voice;
+
+  @override
+  void initState() {
+    super.initState();
+    _voice = ref.read(panchangVoiceProvider.notifier);
+  }
+
+  @override
+  void dispose() {
+    _voice.stop();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +47,7 @@ class _PanchangScreenState extends ConsumerState<PanchangScreen> {
       appBar: AppBar(
         title: Text(tr(ref, 'today_panchang')),
         actions: [
+          ReadAloudButton(day: _day),
           IconButton(
             onPressed: () async {
               final picked = await showDatePicker(
