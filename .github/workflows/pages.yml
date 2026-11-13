@@ -18,9 +18,11 @@ permissions:
   pages: write
   id-token: write
 
+# A full export takes about an hour for 300+ cities, so let a running one finish: a newer push
+# waits behind it (only the newest waiting run is kept) instead of cancelling it.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
