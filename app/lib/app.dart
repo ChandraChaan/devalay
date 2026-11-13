@@ -18,6 +18,7 @@ import 'features/japa.dart';
 import 'features/library.dart';
 import 'features/listen.dart';
 import 'features/mandir.dart';
+import 'features/matching.dart';
 import 'features/more.dart';
 import 'features/onboarding.dart';
 import 'features/calendar.dart';
@@ -107,6 +108,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/rashifal', builder: (_, _) => const RashifalScreen()),
       GoRoute(path: '/panchang', builder: (_, _) => const PanchangScreen()),
       GoRoute(path: '/calendar', builder: (_, _) => const CalendarScreen()),
+      GoRoute(path: '/matching', builder: (_, _) => const MatchingScreen()),
       GoRoute(
         path: '/calendar/day/:date',
         builder: (_, s) =>
