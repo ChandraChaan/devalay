@@ -28,12 +28,17 @@ Devalay brings the temple to your phone for every member of the family, in the l
 English, हिन्दी, বাংলা, मराठी, తెలుగు, தமிழ், ગુજરાતી, ಕನ್ನಡ, മലയാളം, ଓଡ଼ିଆ or ਪੰਜਾਬੀ.
 
 - **For grandparents:** official TTD (SVBC) temple videos in a simple swipe-up feed, and large, clear text.
-- **For the Panchang reader:** a Panchang for 47 cities, with samvatsara, masa, tithi and nakshatra end times,
+- **For the Panchang reader:** a Panchang for more than 300 cities (or "Use my location"), with samvatsara, masa, tithi and nakshatra end times,
   Rahu Kalam, Yamagandam, Durmuhurtham, Varjyam and Amrit Kalam, checked against Drik Panchang. Choghadiya, Hora
-  and Gowri Panchangam show the running period, and a home-screen widget shows today's tithi and Rahu Kalam.
+  and Gowri Panchangam show the running period, and four home-screen widgets show today's tithi, Rahu Kalam,
+  the running Choghadiya and the next festival. Tamil, Malayalam, Bengali and Odia solar dates, Amanta or
+  Purnimanta months, and each state's public and bank holidays are on the calendar.
   Regional festivals include Bhogi, Kanuma, Varalakshmi Vratam, Bathukamma, Atla Taddi and Nagula Chavithi.
 - **For the family calendar:** birthdays, anniversaries and remembrance days (taddinam) that repeat every year by
-  tithi, with a reminder the evening before, and marriage matching from the birth stars.
+  tithi, with a reminder the evening before, and marriage matching from the birth stars. Back them up to a file,
+  export them to Google Calendar, or import birthdays from your contacts.
+- **For the family priest in you:** Shubha Muhurtham for marriage, griha pravesham and a vehicle, eclipses with
+  Sutak, a Jatakam (birth chart) worked out on the phone, and step-by-step pooja guides with samagri checklists.
 - **For the music lover:** Annamacharya and Ramadasu keerthanas by M.S. Subbulakshmi and Balamuralikrishna (CC BY
   releases by Saregama). They keep playing on the lock screen, and each weekday puts its deity's songs first:
   Monday Shiva, Saturday Venkateswara.
@@ -113,11 +118,14 @@ Each release lists SHA-256 checksums. `devalay-arm64-v8a.apk` is a smaller downl
   Kand), Mahabharata, Upanishads, *The Song Celestial*.
 - **Panchang**: tithi, nakshatra, yoga, karana with end times; sunrise, sunset, moonrise and moonset; Rahu Kaal,
   Yamaganda, Gulika, Durmuhurtham, Varjyam, Abhijit, Amrit Kalam and Brahma muhurta; a tap on any term explains
-  it; 45 festivals and monthly vratas computed for any year from 1902 to 2049 for 47 cities.
+  it; 45 festivals and monthly vratas computed for any year from 1902 to 2049 for more than 300 cities. A speaker button reads the day's Panchang aloud.
 - **Temple booking**: every TTD online service explained, with official booking links, TTD's latest announcements
   and monthly quota reminders, plus 17 more temples and temple boards.
 - **Festival wishes**: greeting cards with your photo and name for 19 occasions, ready-made wishes in every language.
-- **Rashifal**: daily reading for 12 rashis from the Moon's actual transit (Chandra gochar).
+- **Rashifal**: daily, weekly, monthly and yearly readings for 12 rashis from the actual transits of the Moon, Sun,
+  Jupiter and Saturn, with Chandrashtamam and Sade Sati.
+- **Thought of the day**: a verse a day from your language's classics (Vemana, Thirukkural, Kabir, Tukaram,
+  Sarvajna, Tagore and more), each checked against a public-domain edition.
 - **Japa mala**: 108-bead counter with haptics, rounds, and daily and lifetime totals.
 - **AI status maker**: devotional status lines for any deity and occasion, composed over sacred art and exported
   as a 1080×1920 image to share or save.
@@ -185,12 +193,12 @@ cd backend && .venv/bin/pytest -q && .venv/bin/ruff check .
 cd app && flutter analyze && flutter test
 ```
 
-The backend suite (54 tests) covers auth and token rotation, content APIs, admin access, AI quotas and fallbacks,
+The backend suite (74 tests) covers auth and token rotation, content APIs, admin access, AI quotas and fallbacks,
 premium verification, and the Panchang engine, which is checked against published festival dates, Drik Panchang
-timings and moonrise for 2025 and 2026. CI runs it on PostgreSQL and SQLite.
+timings and moonrise for 2025 and 2026, NASA eclipse times, and Drik's muhurtham lists. CI runs it on PostgreSQL and SQLite.
 
-The app suite (115 tests) covers the Choghadiya, Hora and Gowri tables, tithi recurrence, Tarabalam, marriage
-matching, the widget and notification text, and checks that every language translates every string with the same
+The app suite (164 tests) covers the Choghadiya, Hora and Gowri tables, tithi recurrence, Tarabalam, marriage
+matching, the Jatakam against the DE421 ephemeris, regional solar dates, backup and restore, the widget and notification text, and checks that every language translates every string with the same
 placeholders.
 
 ## Configuration

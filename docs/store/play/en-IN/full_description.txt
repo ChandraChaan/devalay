@@ -14,13 +14,26 @@ Devalay is a small temple on your phone for the whole family. It's free, and you
 • Tithi, nakshatra, yoga and karana, each with its end time
 • Good times: Abhijit muhurta, Amrit Kalam and Brahma muhurta
 • Times to avoid: Rahu Kaal, Yamaganda, Durmuhurtham, Varjyam and Gulika
-• 47 cities across India and abroad, including Delhi, Mumbai, Kolkata, Chennai, Bengaluru, Hyderabad, Varanasi and Tirupati
+• More than 300 cities in India and abroad, every district headquarters in the South and Maharashtra, or tap "Use my location"
+• Tamil, Malayalam, Bengali and Odia solar dates, Amanta or Purnimanta months, and your state's public and bank holidays
 • Choghadiya, Hora and Gowri Panchangam, with the running period marked, plus moonrise and moonset
 • Tarabalam and Chandrabalam for your birth star, and auspicious days such as Guru Pushya
-• A home-screen widget with today's tithi, nakshatra, Rahu Kalam and festival
+• Home-screen widgets: today's Panchang, tithi, a festival countdown, and the running Choghadiya or Rahu Kalam
+• Read the day's Panchang aloud in your language
 • Birthdays, anniversaries and remembrance days that repeat by tithi, with reminders
 • Marriage matching: Guna Milan out of 36 and the 10 Porutham
+• Backup to a file, export festivals to Google Calendar, and import birthdays from your contacts
 • A festival calendar with reminders: Diwali, Holi, Navratri, Ganesh Chaturthi, Janmashtami, Maha Shivratri, Ugadi, Sankranti, Bathukamma, Varalakshmi Vratam and more
+
+🌸 Muhurtham, Grahanam and Jatakam
+• Shubha Muhurtham for marriage, griha pravesham and a new vehicle, with the good time and lagna for your city
+• Solar and lunar eclipses with begin and end times and Sutak
+• Your Jatakam (birth chart) in South or North Indian style, worked out on your phone
+• Daily, weekly, monthly and yearly Rashifal
+
+🙏 Pooja guides and a thought for the day
+• Step-by-step vidhanam with a samagri checklist: daily puja, Satyanarayana Vratam, Varalakshmi Vratam, Vinayaka Chavithi, Lakshmi Puja, Maha Shivaratri, Ekadashi and Pradosham
+• A verse a day from Vemana, Thirukkural, Kabir, Tukaram, Sarvajna, Tagore and more, with its meaning
 
 🎬 Bhakti videos
 • Official temple videos from TTD (SVBC) in a simple swipe-up feed that elders find easy to use

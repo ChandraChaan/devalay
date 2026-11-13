@@ -3,7 +3,7 @@
 Each milestone is a git tag and a [GitHub release](https://github.com/ChandraChaan/devalay/releases). Releases from
 v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the section below that matches the tag.
 
-## Unreleased
+## v1.4.0 — 2026-11-13
 
 - Smaller download: Google Play now sends about 14.2 MB to most phones (arm64) instead of 16.1 MB, and 13.9 MB
   instead of 15.9 MB to older 32-bit phones. Nothing is removed: every language, the Mandir sounds and the
@@ -70,8 +70,6 @@ v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the 
   and saved births fill in marriage matching.
 - Rashifal: weekly, monthly and yearly readings for every rashi beside the daily one, from the real transits of
   the Moon, Sun, Jupiter and Saturn, with good days, Chandrashtamam and Sade Sati, in every language.
-
-## v1.4.0 — 2026-11-13
 
 - Devalay now speaks 11 languages: English, हिन्दी, বাংলা, मराठी, తెలుగు, தமிழ், ગુજરાતી, ಕನ್ನಡ, മലയാളം, ଓଡ଼ିଆ
   and ਪੰਜਾਬੀ. Every screen is translated, along with the Panchang names (tithi, nakshatra, yoga, karana, months,
