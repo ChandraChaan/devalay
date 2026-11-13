@@ -19,6 +19,7 @@ import 'features/japa.dart';
 import 'features/library.dart';
 import 'features/listen.dart';
 import 'features/mandir.dart';
+import 'features/matching.dart';
 import 'features/more.dart';
 import 'features/my_events.dart';
 import 'features/onboarding.dart';
@@ -115,6 +116,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/calendar', builder: (_, _) => const CalendarScreen()),
       GoRoute(path: '/calendar/important', builder: (_, _) => const ImportantDaysScreen()),
       GoRoute(path: '/calendar/events', builder: (_, _) => const MyEventsScreen()),
+      GoRoute(path: '/matching', builder: (_, _) => const MatchingScreen()),
       GoRoute(
         path: '/calendar/day/:date',
         builder: (_, s) =>

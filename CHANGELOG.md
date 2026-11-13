@@ -29,7 +29,13 @@ v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the 
 - The city is shown and can be changed right from the calendar header; the city list can be searched.
 - Search festivals in Important days, and from the app's main search ("ugadi", "ఏకాదశి").
 - Adding a birthday or remembrance day opens the date picker on the year list instead of paging back month by month.
-
+- Marriage matching: pick the bride's and groom's birth nakshatra and rashi (and the pada, if known) to see the
+  Ashtakoota Guna Milan score out of 36. Varna, Vashya, Tara, Yoni, Graha Maitri, Gana, Bhakoot and Nadi each show
+  their points, what they stand for and both partners' values, with Nadi and Bhakoot dosha called out.
+- The South Indian 10 Porutham view (Dina, Gana, Mahendra, Stree Deergha, Yoni, Rasi, Rasyadhipati, Vasya, Rajju
+  and Vedha) shows each as a match or not, with Rajju and Vedha marked as the essential two.
+- Worked out on the phone, with tables checked against Drik Panchang and other published sources. A note asks you
+  to consult your family priest before deciding. In More, in English, Hindi and Telugu.
 - Temple booking: every online service of Tirumala Tirupati Devasthanams in one place. Special Entry Darshan
   (₹300), senior citizen and SRIVANI darshan, Angapradakshinam, Arjitha Sevas and the Seva e-Dip, rooms, e-Hundi,
   donations and more, each explained in English, Hindi and Telugu, with the steps to book and what to carry.
