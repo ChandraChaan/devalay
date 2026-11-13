@@ -6,7 +6,7 @@
 library;
 
 import 'i18n.dart';
-import 'telugu.dart';
+import 'names.dart';
 
 /// "2026-11-13T06:24:10+05:30" -> 06:24:10 on 13 Nov as a UTC DateTime (the city's wall clock).
 DateTime wallClock(String iso) => DateTime.parse('${iso.substring(0, 19)}Z');
@@ -330,8 +330,12 @@ const _lunarMonthsTe = [
   'ఆశ్వయుజం', 'కార్తీకం', 'మార్గశిరం', 'పుష్యం', 'మాఘం', 'ఫాల్గుణం',
 ];
 
-String lunarMonthLabel(String lang, int i) =>
-    t3(lang, lunarMonthNames[i % 12], _lunarMonthsHi[i % 12], _lunarMonthsTe[i % 12]);
+String lunarMonthLabel(String lang, int i) => switch (lang) {
+  'en' => lunarMonthNames[i % 12],
+  'hi' => _lunarMonthsHi[i % 12],
+  'te' => _lunarMonthsTe[i % 12],
+  _ => monthIn(lang, i),
+};
 
 // ---------------------------------------------------------------------------
 // Tarabalam and Chandrabalam: the day measured from the user's birth star and moon sign
@@ -377,8 +381,15 @@ String taraLabel(String lang, String key) => switch (key) {
 
 /// "1st", "2nd", "3rd" in English; "3वाँ" / "3వ" otherwise.
 String ordinal(String lang, int n) => switch (lang) {
-  'hi' => '$nवाँ',
+  'hi' || 'mr' => '$nवाँ',
   'te' => '$nవ',
+  'kn' => '$nನೇ',
+  'ta' => '$nஆம்',
+  'ml' => '$nാം',
+  'gu' => '$nમું',
+  'bn' => '$nম',
+  'or' => '$nମ',
+  'pa' => '$nਵਾਂ',
   _ =>
     '$n${n == 1
         ? 'st'
@@ -398,16 +409,14 @@ const _nakshatraHi = [
 const _rashiHi = ['मेष', 'वृषभ', 'मिथुन', 'कर्क', 'सिंह', 'कन्या', 'तुला', 'वृश्चिक', 'धनु', 'मकर', 'कुंभ', 'मीन'];
 
 /// Nakshatra 0–26 in the user's language.
-String nakshatraLabel(String lang, int i) => t3(
-  lang,
-  nakshatraNames[i],
-  _nakshatraHi[i],
-  teluguNakshatra.length > i + 1 ? teluguNakshatra[i + 1] : nakshatraNames[i],
-);
+String nakshatraLabel(String lang, int i) => switch (lang) {
+  'en' => nakshatraNames[i],
+  'hi' => _nakshatraHi[i],
+  _ => nakshatraIn(lang, nakshatraNames[i]),
+};
 
 /// Rashi 0–11 in the user's language.
-String rashiLabel(String lang, int i) =>
-    t3(lang, rashiNames[i], _rashiHi[i], teluguRashi[rashiNames[i]] ?? rashiNames[i]);
+String rashiLabel(String lang, int i) => lang == 'hi' ? _rashiHi[i] : rashiIn(lang, rashiNames[i]);
 
 /// The rashi holding the first pada of nakshatra [star] (each star is 13°20', each rashi 30°).
 int rashiOfStar(int star) => star * 4 ~/ 9;

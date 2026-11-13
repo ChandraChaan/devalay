@@ -4,6 +4,7 @@ import 'package:uuid/uuid.dart';
 
 import 'i18n.dart';
 import 'muhurta.dart';
+import 'names.dart';
 import 'providers.dart';
 import 'storage.dart';
 import 'telugu.dart';
@@ -159,7 +160,8 @@ String tithiName(String lang, int tithi) {
     final n = tithi == 15 ? 'पूर्णिमा' : (tithi == 30 ? 'अमावस्या' : hi[(tithi - 1) % 15]);
     return '${shukla ? 'शुक्ल' : 'कृष्ण'} $n';
   }
-  return '$paksha $name';
+  if (lang == 'en') return '$paksha $name';
+  return '${pakshaIn(lang, paksha)} ${tithiIn(lang, name)}';
 }
 
 /// Days on which [tithi] of nija [lunarMonth] is observed, by the sunrise rule: the first

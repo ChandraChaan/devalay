@@ -5,6 +5,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../core/i18n.dart';
+import '../core/languages.dart';
+import '../widgets/language_picker.dart';
 import '../core/location.dart';
 import '../core/models.dart';
 import '../core/notifications.dart';
@@ -149,7 +151,7 @@ class _Welcome extends StatelessWidget {
         ),
         const SizedBox(height: 24),
         Text(
-          lang == 'te' ? 'దేవాలయం' : 'देवालय',
+          appNameIn(lang),
           style: const TextStyle(fontSize: 44, color: Colors.white, fontWeight: FontWeight.w700),
         ).animate().fadeIn(delay: 300.ms).slideY(begin: 0.3),
         const Text('Devalay', style: TextStyle(fontSize: 18, color: Colors.white70, letterSpacing: 6)),
@@ -178,27 +180,10 @@ class _LanguagePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final lang = ref.watch(prefsProvider).language;
-    Widget option(String code, String label, String sub) => Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8),
-      child: _Choice(
-        selected: lang == code,
-        onTap: () => ref.read(prefsProvider.notifier).setLanguage(code),
-        child: ListTile(
-          title: Text(
-            label,
-            style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w700, color: Colors.white),
-          ),
-          subtitle: Text(sub, style: const TextStyle(color: Colors.white70)),
-        ),
-      ),
-    );
     return _Page(
       title: t3(lang, 'Choose your language', 'भाषा चुनें', 'మీ భాషను ఎంచుకోండి'),
-      children: [
-        option('en', 'English', 'Interface in English, scriptures in the original'),
-        option('hi', 'हिन्दी', 'मंत्र, आरती और पाठ हिन्दी में'),
-        option('te', 'తెలుగు', 'పాటలు, పంచాంగం, శ్లోకాలు తెలుగులో'),
-      ],
+      subtitle: languageOf(lang).greeting,
+      children: const [LanguageGrid(onDark: true)],
     );
   }
 }

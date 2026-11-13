@@ -5,13 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:intl/intl.dart';
 import 'package:share_plus/share_plus.dart';
 
 import '../core/i18n.dart';
+import '../core/names.dart';
 import '../core/models.dart';
 import '../core/storage.dart';
-import '../core/telugu.dart';
 import '../core/theme.dart';
 import '../core/wishes.dart';
 import '../widgets/common.dart';
@@ -33,7 +32,7 @@ String whenLabel(DateTime? date, DateTime now, String lang) {
   if (days < 0) return t3(lang, 'On now', 'जारी है', 'జరుగుతోంది');
   if (days == 0) return trLang(lang, 'today');
   if (days == 1) return trLang(lang, 'tomorrow');
-  final day = lang == 'te' ? '${date.day} ${teluguGregorianMonths[date.month - 1]}' : DateFormat('d MMM').format(date);
+  final day = fmtDate(lang, 'd MMM', date);
   return t3(lang, 'In $days days · $day', '$days दिन में · $day', '$days రోజుల్లో · $day');
 }
 
@@ -436,7 +435,7 @@ class _WishEditorScreenState extends ConsumerState<WishEditorScreen> {
         await SharePlus.instance.share(ShareParams(files: [XFile(file.path, mimeType: 'image/png')]));
       }
     } catch (e) {
-      if (mounted) toast(context, 'Could not share: $e');
+      if (mounted) toast(context, t3(appLang, 'Could not share: $e', 'शेयर नहीं हो सका: $e', 'షేర్ కాలేదు: $e'));
     } finally {
       if (mounted) setState(() => _busy = false);
     }
@@ -456,7 +455,7 @@ class _WishEditorScreenState extends ConsumerState<WishEditorScreen> {
         );
       }
     } catch (e) {
-      if (mounted) toast(context, 'Could not save: $e');
+      if (mounted) toast(context, t3(appLang, 'Could not save: $e', 'सहेजा नहीं जा सका: $e', 'సేవ్ కాలేదు: $e'));
     } finally {
       if (mounted) setState(() => _busy = false);
     }

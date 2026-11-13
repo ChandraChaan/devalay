@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../l10n/l10n.dart';
 import 'i18n.dart';
 
 /// Plain-language meanings of Panchang terms, shown when a term is tapped.
@@ -171,6 +172,9 @@ Future<void> showMeaning(BuildContext context, String lang, String key) {
     'te' => 2,
     _ => 0,
   };
+  // Other languages translate the English title and meaning through lib/l10n.
+  final title = i == 0 ? (translate(lang, g[0]) ?? g[0]) : g[i];
+  final meaning = i == 0 ? (translate(lang, g[3]) ?? g[3]) : g[3 + i];
   return showModalBottomSheet(
     context: context,
     showDragHandle: true,
@@ -185,11 +189,11 @@ Future<void> showMeaning(BuildContext context, String lang, String key) {
               children: [
                 Icon(Icons.auto_stories_rounded, color: Theme.of(c).colorScheme.primary),
                 const SizedBox(width: 10),
-                Text(g[i], style: Theme.of(c).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w700)),
+                Text(title, style: Theme.of(c).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w700)),
               ],
             ),
             const SizedBox(height: 12),
-            Text(g[3 + i], style: const TextStyle(fontSize: 16, height: 1.55)),
+            Text(meaning, style: const TextStyle(fontSize: 16, height: 1.55)),
             const SizedBox(height: 8),
             Align(
               alignment: Alignment.centerRight,

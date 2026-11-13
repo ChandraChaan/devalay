@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:share_plus/share_plus.dart';
 
+import '../core/app_care.dart';
 import '../core/auth.dart';
 import '../core/config.dart';
 import '../core/i18n.dart';
@@ -177,19 +179,124 @@ class MoreScreen extends ConsumerWidget {
                     children: [
                       Text(emoji, style: const TextStyle(fontSize: 30)),
                       const SizedBox(height: 6),
-                      Text(
+                      TileLabel(
                         tr(ref, key),
-                        textAlign: TextAlign.center,
-                        maxLines: 2,
-                        style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700, height: 1.1),
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w700,
+                          height: 1.1,
+                          fontSize: 14,
+                        ),
                       ),
                     ],
                   ),
                 ).animate().fadeIn(delay: (30 * i).ms).scale(begin: const Offset(0.92, 0.92)),
             ],
           ),
+          const SizedBox(height: 16),
+          const RateCard(),
         ],
       ),
     );
+  }
+}
+
+/// "Enjoying Devalay?": rate on Play, share with family, or send feedback.
+class RateCard extends ConsumerWidget {
+  const RateCard({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final lang = uiLang(ref);
+    Widget action(IconData icon, String label, VoidCallback onTap) => Expanded(
+      child: InkWell(
+        borderRadius: BorderRadius.circular(14),
+        onTap: onTap,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8),
+          child: Column(
+            children: [
+              Icon(icon, color: Colors.white),
+              const SizedBox(height: 4),
+              Text(
+                label,
+                textAlign: TextAlign.center,
+                maxLines: 2,
+                style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 12, height: 1.1),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+    return GradientCard(
+      colors: Palette.dusk,
+      padding: 16,
+      onTap: rateApp,
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      t3(lang, 'Enjoying Devalay?', 'देवालय पसंद आ रहा है?', 'దేవాలయం నచ్చిందా?'),
+                      style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w800),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      t3(
+                        lang,
+                        'A rating on Google Play helps other families find it. It is free and has no ads, thanks to you.',
+                        'Google Play पर रेटिंग से दूसरे परिवार इसे खोज पाते हैं। यह मुफ़्त और विज्ञापन-रहित है।',
+                        'Google Playలో మీ రేటింగ్ ఇతర కుటుంబాలకు ఈ యాప్‌ను చూపిస్తుంది. ఇది ఉచితం, ప్రకటనలు లేవు.',
+                      ),
+                      style: const TextStyle(color: Colors.white70, height: 1.3),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              for (var i = 0; i < 5; i++)
+                const Icon(Icons.star_rounded, color: Palette.gold, size: 34)
+                    .animate(delay: (120 * i).ms)
+                    .scale(begin: const Offset(0.3, 0.3), curve: Curves.easeOutBack, duration: 400.ms),
+            ],
+          ),
+          const SizedBox(height: 6),
+          Row(
+            children: [
+              action(
+                Icons.star_rate_rounded,
+                t3(lang, 'Rate on Play', 'Play पर रेट करें', 'Playలో రేట్ చేయండి'),
+                rateApp,
+              ),
+              action(
+                Icons.share_rounded,
+                t3(lang, 'Share with family', 'परिवार से साझा करें', 'కుటుంబంతో పంచుకోండి'),
+                () => SharePlus.instance.share(
+                  ShareParams(
+                    text: t3(
+                      lang,
+                      'Devalay: free Panchang, aartis and bhakti app in your language, with no ads.\nhttps://play.google.com/store/apps/details?id=$playListingId',
+                      'देवालय: आपकी भाषा में मुफ़्त पंचांग, आरती और भक्ति ऐप, बिना विज्ञापन।\nhttps://play.google.com/store/apps/details?id=$playListingId',
+                      'దేవాలయం: మీ భాషలో ఉచిత పంచాంగం, హారతులు, భక్తి యాప్, ప్రకటనలు లేవు.\nhttps://play.google.com/store/apps/details?id=$playListingId',
+                    ),
+                  ),
+                ),
+              ),
+              action(Icons.feedback_rounded, t3(lang, 'Send feedback', 'सुझाव भेजें', 'సూచనలు పంపండి'), sendFeedback),
+            ],
+          ),
+        ],
+      ),
+    ).animate().fadeIn(delay: 300.ms).slideY(begin: 0.1);
   }
 }

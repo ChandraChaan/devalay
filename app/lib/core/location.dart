@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'storage.dart';
+import '../l10n/l10n.dart';
 import 'telugu.dart';
 
 /// Panchang timings depend on location. Users pick the nearest city instead of
@@ -19,7 +20,7 @@ class City {
   String label(String lang) => switch (lang) {
     'hi' => nameHi,
     'te' => teluguCities[id] ?? name,
-    _ => name,
+    _ => translate(lang, name) ?? name,
   };
 }
 

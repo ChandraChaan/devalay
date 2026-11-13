@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:url_launcher/url_launcher.dart';
 
+import 'core/app_care.dart';
 import 'core/firebase.dart';
+import 'core/i18n.dart';
+import 'core/languages.dart';
 import 'core/models.dart';
 import 'core/storage.dart';
 import 'core/theme.dart';
@@ -163,6 +167,10 @@ class DevalayApp extends ConsumerWidget {
       theme: buildTheme(Brightness.light, prefs.accent),
       darkTheme: buildTheme(Brightness.dark, prefs.accent),
       themeMode: prefs.themeMode,
+      // Material's own text (date and time pickers, tooltips) follows the app language.
+      locale: languageOf(prefs.language).locale,
+      supportedLocales: [for (final l in appLanguages) l.locale],
+      localizationsDelegates: GlobalMaterialLocalizations.delegates,
       routerConfig: ref.watch(routerProvider),
       builder: (context, child) => MediaQuery(
         data: MediaQuery.of(
@@ -187,18 +195,6 @@ class _UpdateGate extends ConsumerWidget {
   const _UpdateGate({required this.child});
   final Widget child;
 
-  static const _title = {
-    'te': 'కొత్త వెర్షన్ అందుబాటులో ఉంది',
-    'hi': 'नया संस्करण उपलब्ध है',
-    'en': 'Please update Devalay',
-  };
-  static const _body = {
-    'te': 'దేవాలయం కొనసాగించడానికి దయచేసి తాజా వెర్షన్‌కు అప్‌డేట్ చేయండి.',
-    'hi': 'देवालय का उपयोग जारी रखने के लिए कृपया नया संस्करण इंस्टॉल करें।',
-    'en': 'This version is no longer supported. Please install the latest version to continue.',
-  };
-  static const _button = {'te': 'ఇప్పుడే అప్‌డేట్ చేయండి', 'hi': 'अभी अपडेट करें', 'en': 'Update now'};
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final update = ref.watch(updateProvider).value;
@@ -213,24 +209,33 @@ class _UpdateGate extends ConsumerWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text('🛕', style: TextStyle(fontSize: 64)),
+              const Text('🛕', style: TextStyle(fontSize: 64))
+                  .animate(onPlay: (c) => c.repeat(reverse: true))
+                  .scale(begin: const Offset(0.95, 0.95), end: const Offset(1.05, 1.05), duration: 1600.ms),
               const SizedBox(height: 24),
               Text(
-                _title[lang] ?? _title['en']!,
+                t3(lang, 'Please update Devalay', 'नया संस्करण उपलब्ध है', 'కొత్త వెర్షన్ అందుబాటులో ఉంది'),
                 textAlign: TextAlign.center,
                 style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.w700),
               ),
               const SizedBox(height: 12),
               Text(
-                message.isNotEmpty ? message : (_body[lang] ?? _body['en']!),
+                message.isNotEmpty
+                    ? message
+                    : t3(
+                        lang,
+                        'This version is no longer supported. Please install the latest version to continue.',
+                        'देवालय का उपयोग जारी रखने के लिए कृपया नया संस्करण इंस्टॉल करें।',
+                        'దేవాలయం కొనసాగించడానికి దయచేసి తాజా వెర్షన్‌కు అప్‌డేట్ చేయండి.',
+                      ),
                 textAlign: TextAlign.center,
                 style: const TextStyle(color: Colors.white70, fontSize: 16, height: 1.5),
               ),
               const SizedBox(height: 32),
               FilledButton(
                 style: FilledButton.styleFrom(backgroundColor: Palette.gold, foregroundColor: Palette.maroon),
-                onPressed: () => launchUrl(Uri.parse(update.url), mode: LaunchMode.externalApplication),
-                child: Text(_button[lang] ?? _button['en']!),
+                onPressed: () => performForcedUpdate(update.url),
+                child: Text(t3(lang, 'Update now', 'अभी अपडेट करें', 'ఇప్పుడే అప్‌డేట్ చేయండి')),
               ),
             ],
           ),

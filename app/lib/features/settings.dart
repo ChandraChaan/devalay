@@ -8,12 +8,15 @@ import '../core/api.dart';
 import '../core/auth.dart';
 import '../core/config.dart';
 import '../core/calendar_reminders.dart';
+import '../core/app_care.dart';
 import '../core/i18n.dart';
+import '../core/languages.dart';
 import '../core/location.dart';
 import '../core/notifications.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
 import '../widgets/city_picker.dart';
+import '../widgets/language_picker.dart';
 import '../widgets/common.dart';
 
 class SettingsScreen extends ConsumerWidget {
@@ -75,15 +78,9 @@ class SettingsScreen extends ConsumerWidget {
           ListTile(
             leading: const Icon(Icons.language_rounded),
             title: Text(t3(lang, 'Language', 'भाषा', 'భాష')),
-            trailing: SegmentedButton<String>(
-              segments: const [
-                ButtonSegment(value: 'en', label: Text('EN')),
-                ButtonSegment(value: 'hi', label: Text('हिन्दी')),
-                ButtonSegment(value: 'te', label: Text('తెలుగు')),
-              ],
-              selected: {prefs.language},
-              onSelectionChanged: (s) => n.setLanguage(s.first),
-            ),
+            subtitle: Text(languageOf(prefs.language).native),
+            trailing: const Icon(Icons.chevron_right_rounded),
+            onTap: () => showLanguagePicker(context, ref),
           ),
           ListTile(
             leading: const Icon(Icons.dark_mode_rounded),
@@ -201,6 +198,23 @@ class SettingsScreen extends ConsumerWidget {
           ),
           _Header(t3(lang, 'About', 'जानकारी', 'గురించి')),
           ListTile(
+            leading: const Icon(Icons.star_rate_rounded),
+            title: Text(
+              t3(
+                lang,
+                'Rate Devalay on Google Play',
+                'Google Play पर देवालय को रेट करें',
+                'Google Playలో దేవాలయాన్ని రేట్ చేయండి',
+              ),
+            ),
+            onTap: rateApp,
+          ),
+          ListTile(
+            leading: const Icon(Icons.feedback_rounded),
+            title: Text(t3(lang, 'Send feedback', 'सुझाव भेजें', 'సూచనలు పంపండి')),
+            onTap: sendFeedback,
+          ),
+          ListTile(
             leading: const Icon(Icons.copyright_rounded),
             title: Text(
               t3(lang, 'Content credits & licences', 'सामग्री श्रेय और लाइसेंस', 'కంటెంట్ క్రెడిట్స్ & లైసెన్సులు'),
@@ -217,7 +231,9 @@ class SettingsScreen extends ConsumerWidget {
             title: Text(t3(lang, 'Clear offline cache', 'ऑफ़लाइन कैश साफ़ करें', 'ఆఫ్‌లైన్ కాష్ తొలగించండి')),
             onTap: () async {
               await Boxes.cache.clear();
-              if (context.mounted) toast(context, 'Cache cleared');
+              if (context.mounted) {
+                toast(context, t3(appLang, 'Cache cleared', 'कैश साफ़ हो गया', 'కాష్ తొలగించబడింది'));
+              }
             },
           ),
           ListTile(

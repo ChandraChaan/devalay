@@ -91,9 +91,9 @@ class _BookScreenState extends ConsumerState<BookScreen> {
                       Padding(
                         padding: const EdgeInsets.only(top: 12),
                         child: TextField(
-                          decoration: const InputDecoration(
-                            prefixIcon: Icon(Icons.search_rounded),
-                            hintText: 'Find a chapter',
+                          decoration: InputDecoration(
+                            prefixIcon: const Icon(Icons.search_rounded),
+                            hintText: t3(appLang, 'Find a chapter', 'अध्याय खोजें', 'అధ్యాయం వెతకండి'),
                           ),
                           onChanged: (v) => setState(() => _filter = v),
                         ),
@@ -167,14 +167,14 @@ class _BookChapterScreenState extends ConsumerState<BookChapterScreen> {
                   OutlinedButton.icon(
                     onPressed: () => context.pushReplacement('/books/${widget.slug}/${widget.number - 1}'),
                     icon: const Icon(Icons.chevron_left_rounded),
-                    label: const Text('Previous'),
+                    label: Text(t3(appLang, 'Previous', 'पिछला', 'మునుపటి')),
                   ),
                 const Spacer(),
                 if (c['has_next'] == true)
                   FilledButton.icon(
                     onPressed: () => context.pushReplacement('/books/${widget.slug}/${widget.number + 1}'),
                     icon: const Icon(Icons.chevron_right_rounded),
-                    label: const Text('Next'),
+                    label: Text(t3(appLang, 'Next', 'अगला', 'తదుపరి')),
                   ),
               ],
             ),

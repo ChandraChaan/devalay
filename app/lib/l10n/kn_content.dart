@@ -1,0 +1,462 @@
+/// Kannada translations of Devalay's festival wishes (wishes.json) and temple booking guide (temples.json),
+/// keyed by the English text. Source list: tool/l10n/strings_content.json. Keys must match the English exactly.
+const contentKn = <String, String>{
+  'A paid ticket for quicker darshan in a chosen slot.': 'ಆಯ್ಕೆ ಮಾಡಿದ ಸ್ಲಾಟ್‌ನಲ್ಲಿ ಬೇಗನೆ ದರ್ಶನಕ್ಕೆ ಪಾವತಿ ಟಿಕೆಟ್.',
+  'A paid ticket for quicker darshan.': 'ಬೇಗನೆ ದರ್ಶನಕ್ಕೆ ಪಾವತಿ ಟಿಕೆಟ್.',
+  'A separate free darshan slot for senior citizens and differently abled pilgrims.':
+      'ಹಿರಿಯ ನಾಗರಿಕರು ಮತ್ತು ವಿಶೇಷ ಚೇತನ ಭಕ್ತರಿಗೆ ಪ್ರತ್ಯೇಕ ಉಚಿತ ದರ್ಶನ ಸ್ಲಾಟ್.',
+  'AP Endowments Department': 'ಆಂಧ್ರಪ್ರದೇಶ ಮುಜರಾಯಿ (ದೇವಾದಾಯ) ಇಲಾಖೆ',
+  'Aarti booking': 'ಆರತಿ ಬುಕಿಂಗ್',
+  'Aarti pass': 'ಆರತಿ ಪಾಸ್',
+  'Abhishekam, Kalyanam and other sevas.': 'ಅಭಿಷೇಕ, ಕಲ್ಯಾಣ ಮತ್ತು ಇತರ ಸೇವೆಗಳು.',
+  'Abhishekam, Kumkumarchana, Kalyanotsavam and other sevas.': 'ಅಭಿಷೇಕ, ಕುಂಕುಮಾರ್ಚನೆ, ಕಲ್ಯಾಣೋತ್ಸವ ಮತ್ತು ಇತರ ಸೇವೆಗಳು.',
+  'Abhishekam, archana and other sevas at each temple.': 'ಪ್ರತಿ ದೇವಸ್ಥಾನದಲ್ಲಿ ಅಭಿಷೇಕ, ಅರ್ಚನೆ ಮತ್ತು ಇತರ ಸೇವೆಗಳು.',
+  'Accommodation': 'ವಸತಿ (ಕೊಠಡಿಗಳು)',
+  'Andhra Pradesh temples': 'ಆಂಧ್ರಪ್ರದೇಶದ ದೇವಸ್ಥಾನಗಳು',
+  'Angapradakshinam': 'ಅಂಗಪ್ರದಕ್ಷಿಣೆ',
+  'Any amount': 'ಯಾವುದೇ ಮೊತ್ತ',
+  'Arjitha Sevas': 'ಆರ್ಜಿತ ಸೇವೆಗಳು',
+  'Battery car and ropeway': 'ಬ್ಯಾಟರಿ ಕಾರ್ ಮತ್ತು ರೋಪ್‌ವೇ',
+  'Battery car on the track and the ropeway to Bhairon Ghati.': 'ಮಾರ್ಗದಲ್ಲಿ ಬ್ಯಾಟರಿ ಕಾರ್ ಮತ್ತು ಭೈರೋನ್ ಘಾಟಿಗೆ ರೋಪ್‌ವೇ.',
+  'Bhadradri Kothagudem district': 'ಭದ್ರಾದ್ರಿ ಕೊತ್ತಗೂಡೆಂ ಜಿಲ್ಲೆ',
+  'Bhasma Aarti': 'ಭಸ್ಮ ಆರತಿ',
+  'Book Rudrabhishek and other poojas performed by temple priests.':
+      'ದೇವಸ್ಥಾನದ ಅರ್ಚಕರು ನೆರವೇರಿಸುವ ರುದ್ರಾಭಿಷೇಕ ಮತ್ತು ಇತರ ಪೂಜೆಗಳನ್ನು ಬುಕ್ ಮಾಡಿ.',
+  'Book TTD\'s marriage halls in other towns.': 'ಇತರ ಊರುಗಳಲ್ಲಿರುವ TTD ಕಲ್ಯಾಣ ಮಂಟಪಗಳನ್ನು ಬುಕ್ ಮಾಡಿ.',
+  'Book a darshan slot with the Devaswom.': 'ದೇವಸ್ವಂ ಮೂಲಕ ದರ್ಶನ ಸ್ಲಾಟ್ ಬುಕ್ ಮಾಡಿ.',
+  'Book a darshan time slot at the Samadhi Mandir.': 'ಸಮಾಧಿ ಮಂದಿರದಲ್ಲಿ ದರ್ಶನದ ಸಮಯದ ಸ್ಲಾಟ್ ಬುಕ್ ಮಾಡಿ.',
+  'Book a place at the pre-dawn Bhasma Aarti. Seats are limited and open in advance.':
+      'ಮುಂಜಾನೆಯ ಭಸ್ಮ ಆರತಿಗೆ ಸ್ಥಳ ಬುಕ್ ಮಾಡಿ. ಆಸನಗಳು ಸೀಮಿತ, ಮುಂಚಿತವಾಗಿ ತೆರೆಯುತ್ತವೆ.',
+  'Book a slot to get married at TTD\'s Kalyana Vedika in Tirumala.':
+      'ತಿರುಮಲದ TTD ಕಲ್ಯಾಣ ವೇದಿಕೆಯಲ್ಲಿ ವಿವಾಹವಾಗಲು ಸ್ಲಾಟ್ ಬುಕ್ ಮಾಡಿ.',
+  'Book poojas and Abhishek with the temple trust.': 'ದೇವಸ್ಥಾನ ಟ್ರಸ್ಟ್ ಮೂಲಕ ಪೂಜೆ ಮತ್ತು ಅಭಿಷೇಕ ಬುಕ್ ಮಾಡಿ.',
+  'Book poojas and offerings that the Devaswom Board opens online.':
+      'ದೇವಸ್ವಂ ಮಂಡಳಿ ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ತೆರೆಯುವ ಪೂಜೆ ಮತ್ತು ಕಾಣಿಕೆಗಳನ್ನು ಬುಕ್ ಮಾಡಿ.',
+  'Book poojas with Shree Somnath Trust. Darshan itself is free and needs no ticket.':
+      'ಶ್ರೀ ಸೋಮನಾಥ ಟ್ರಸ್ಟ್ ಮೂಲಕ ಪೂಜೆಗಳನ್ನು ಬುಕ್ ಮಾಡಿ. ದರ್ಶನ ಉಚಿತ, ಟಿಕೆಟ್ ಅಗತ್ಯವಿಲ್ಲ.',
+  'Book poojas with the Badrinath-Kedarnath Temple Committee.':
+      'ಬದರಿನಾಥ-ಕೇದಾರನಾಥ ದೇವಸ್ಥಾನ ಸಮಿತಿಯ ಮೂಲಕ ಪೂಜೆಗಳನ್ನು ಬುಕ್ ಮಾಡಿ.',
+  'Book the Atka Aarti and individual poojas at the Bhawan.':
+      'ಭವನದಲ್ಲಿ ಅಟ್ಕಾ ಆರತಿ ಮತ್ತು ವೈಯಕ್ತಿಕ ಪೂಜೆಗಳನ್ನು ಬುಕ್ ಮಾಡಿ.',
+  'Book vazhipadu (offerings) and poojas.': 'ವಳಿಪಾಡು (ಕಾಣಿಕೆಗಳು) ಮತ್ತು ಪೂಜೆಗಳನ್ನು ಬುಕ್ ಮಾಡಿ.',
+  'Book your darshan date and time slot. Carry the booking and your ID on the trek.':
+      'ನಿಮ್ಮ ದರ್ಶನದ ದಿನಾಂಕ ಮತ್ತು ಸಮಯದ ಸ್ಲಾಟ್ ಬುಕ್ ಮಾಡಿ. ಚಾರಣದಲ್ಲಿ ಬುಕಿಂಗ್ ಮತ್ತು ನಿಮ್ಮ ಗುರುತಿನ ಚೀಟಿ ಜೊತೆಗಿರಲಿ.',
+  'Carry the same original photo ID you used while booking, and the ticket on paper or on your phone.':
+      'ಬುಕಿಂಗ್ ಮಾಡುವಾಗ ಬಳಸಿದ ಅದೇ ಮೂಲ ಫೋಟೋ ಗುರುತಿನ ಚೀಟಿ ಮತ್ತು ಟಿಕೆಟ್ (ಮುದ್ರಿತ ಅಥವಾ ಫೋನ್‌ನಲ್ಲಿ) ಜೊತೆಗೆ ತನ್ನಿ.',
+  'Char Dham Yatra': 'ಚಾರ್ ಧಾಮ್ ಯಾತ್ರೆ',
+  'Choose the service, then the date and time slot.': 'ಸೇವೆಯನ್ನು ಆರಿಸಿ, ನಂತರ ದಿನಾಂಕ ಮತ್ತು ಸಮಯದ ಸ್ಲಾಟ್ ಆರಿಸಿ.',
+  'Choose the temple first, then book darshan.': 'ಮೊದಲು ದೇವಸ್ಥಾನವನ್ನು ಆರಿಸಿ, ನಂತರ ದರ್ಶನ ಬುಕ್ ಮಾಡಿ.',
+  'Choose the temple under e-Services, then book darshan.':
+      'e-Services ಅಡಿಯಲ್ಲಿ ದೇವಸ್ಥಾನವನ್ನು ಆರಿಸಿ, ನಂತರ ದರ್ಶನ ಬುಕ್ ಮಾಡಿ.',
+  'Choose the temple, then book sevas such as Sarpa Samskara at Kukke or Chandika Homa at Kollur.':
+      'ದೇವಸ್ಥಾನವನ್ನು ಆರಿಸಿ, ನಂತರ ಕುಕ್ಕೆಯಲ್ಲಿ ಸರ್ಪ ಸಂಸ್ಕಾರ ಅಥವಾ ಕೊಲ್ಲೂರಿನಲ್ಲಿ ಚಂಡಿಕಾ ಹೋಮದಂತಹ ಸೇವೆಗಳನ್ನು ಬುಕ್ ಮಾಡಿ.',
+  'Darshan and room quota for donors to the SRIVANI Trust, which builds and restores temples.':
+      'ದೇವಸ್ಥಾನಗಳನ್ನು ನಿರ್ಮಿಸುವ ಮತ್ತು ಜೀರ್ಣೋದ್ಧಾರ ಮಾಡುವ ಶ್ರೀವಾಣಿ ಟ್ರಸ್ಟ್‌ನ ದಾನಿಗಳಿಗೆ ದರ್ಶನ ಮತ್ತು ಕೊಠಡಿ ಕೋಟಾ.',
+  'Darshan booking': 'ದರ್ಶನ ಬುಕಿಂಗ್',
+  'Darshan pass': 'ದರ್ಶನ ಪಾಸ್',
+  'Darshan tickets': 'ದರ್ಶನ ಟಿಕೆಟ್‌ಗಳು',
+  'Darshan tickets opened online by the Devasthanam.': 'ದೇವಸ್ಥಾನಂ ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ತೆರೆಯುವ ದರ್ಶನ ಟಿಕೆಟ್‌ಗಳು.',
+  'Darshan tickets opened online by the temple trust.': 'ದೇವಸ್ಥಾನ ಟ್ರಸ್ಟ್ ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ತೆರೆಯುವ ದರ್ಶನ ಟಿಕೆಟ್‌ಗಳು.',
+  'Darshan tickets, sevas, rooms, e-Hundi and every TTD online service':
+      'ದರ್ಶನ ಟಿಕೆಟ್‌ಗಳು, ಸೇವೆಗಳು, ಕೊಠಡಿಗಳು, ಇ-ಹುಂಡಿ ಮತ್ತು TTD ಯ ಎಲ್ಲಾ ಆನ್‌ಲೈನ್ ಸೇವೆಗಳು',
+  'Devasthanam rooms and cottages.': 'ದೇವಸ್ಥಾನಂ ಕೊಠಡಿಗಳು ಮತ್ತು ಕಾಟೇಜ್‌ಗಳು.',
+  'Devasthanam rooms.': 'ದೇವಸ್ಥಾನಂ ಕೊಠಡಿಗಳು.',
+  'Devaswom guest houses.': 'ದೇವಸ್ವಂ ಅತಿಥಿ ಗೃಹಗಳು.',
+  'Divya Darshan (pilgrims on foot)': 'ದಿವ್ಯ ದರ್ಶನ (ಕಾಲ್ನಡಿಗೆ ಭಕ್ತರು)',
+  'Donate online to Shree Saibaba Sansthan Trust.': 'ಶ್ರೀ ಸಾಯಿಬಾಬಾ ಸಂಸ್ಥಾನ ಟ್ರಸ್ಟ್‌ಗೆ ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ದೇಣಿಗೆ ನೀಡಿ.',
+  'Donate online to Shree Somnath Trust.': 'ಶ್ರೀ ಸೋಮನಾಥ ಟ್ರಸ್ಟ್‌ಗೆ ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ದೇಣಿಗೆ ನೀಡಿ.',
+  'Donate online to Shri Ram Janmbhoomi Teerth Kshetra.':
+      'ಶ್ರೀ ರಾಮ ಜನ್ಮಭೂಮಿ ತೀರ್ಥ ಕ್ಷೇತ್ರಕ್ಕೆ ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ದೇಣಿಗೆ ನೀಡಿ.',
+  'Donate online to the Devasthanam.': 'ದೇವಸ್ಥಾನಂಗೆ ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ದೇಣಿಗೆ ನೀಡಿ.',
+  'Donate online to the Devaswom.': 'ದೇವಸ್ವಂಗೆ ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ದೇಣಿಗೆ ನೀಡಿ.',
+  'Donate online to the Shrine Board.': 'ಶ್ರೈನ್ ಬೋರ್ಡ್‌ಗೆ ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ದೇಣಿಗೆ ನೀಡಿ.',
+  'Donate online to the temple committee.': 'ದೇವಸ್ಥಾನ ಸಮಿತಿಗೆ ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ದೇಣಿಗೆ ನೀಡಿ.',
+  'Donate online to the temple trust.': 'ದೇವಸ್ಥಾನ ಟ್ರಸ್ಟ್‌ಗೆ ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ದೇಣಿಗೆ ನೀಡಿ.',
+  'Donate online to the temple you choose, including to Annadanam.':
+      'ನೀವು ಆರಿಸುವ ದೇವಸ್ಥಾನಕ್ಕೆ, ಅನ್ನದಾನ ಸೇರಿದಂತೆ, ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ದೇಣಿಗೆ ನೀಡಿ.',
+  'Donate online to the temple you choose.': 'ನೀವು ಆರಿಸುವ ದೇವಸ್ಥಾನಕ್ಕೆ ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ದೇಣಿಗೆ ನೀಡಿ.',
+  'Donate online, including to Annadanam.': 'ಅನ್ನದಾನ ಸೇರಿದಂತೆ ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ದೇಣಿಗೆ ನೀಡಿ.',
+  'Donate to TTD trusts such as SV Pranadana (Udayasthamana Seva scheme) and book the darshan and rooms given to donors.':
+      'SV ಪ್ರಾಣದಾನ (ಉದಯಾಸ್ತಮಾನ ಸೇವಾ ಯೋಜನೆ) ಮುಂತಾದ TTD ಟ್ರಸ್ಟ್‌ಗಳಿಗೆ ದೇಣಿಗೆ ನೀಡಿ ಮತ್ತು ದಾನಿಗಳಿಗೆ ನೀಡುವ ದರ್ಶನ ಹಾಗೂ ಕೊಠಡಿಗಳನ್ನು ಬುಕ್ ಮಾಡಿ.',
+  'Donation': 'ದೇಣಿಗೆ',
+  'Donation and e-Hundi': 'ದೇಣಿಗೆ ಮತ್ತು ಇ-ಹುಂಡಿ',
+  'Enter each pilgrim\'s name, age and photo ID number exactly as printed on the ID.':
+      'ಪ್ರತಿ ಭಕ್ತರ ಹೆಸರು, ವಯಸ್ಸು ಮತ್ತು ಫೋಟೋ ಗುರುತಿನ ಚೀಟಿ ಸಂಖ್ಯೆಯನ್ನು ಚೀಟಿಯಲ್ಲಿ ಇರುವಂತೆಯೇ ನಮೂದಿಸಿ.',
+  'Every pilgrim must register with Uttarakhand Tourism before the yatra, in the season.':
+      'ಯಾತ್ರೆಯ ಋತುವಿನಲ್ಲಿ ಪ್ರತಿ ಯಾತ್ರಿಕರೂ ಯಾತ್ರೆಗೆ ಮುನ್ನ ಉತ್ತರಾಖಂಡ ಪ್ರವಾಸೋದ್ಯಮದಲ್ಲಿ ನೋಂದಾಯಿಸಬೇಕು.',
+  'Everyone. Each pilgrim needs a photo ID.': 'ಎಲ್ಲರೂ. ಪ್ರತಿ ಭಕ್ತರಿಗೂ ಫೋಟೋ ಗುರುತಿನ ಚೀಟಿ ಬೇಕು.',
+  'For pilgrims who climb by the Alipiri or Srivari Mettu footpath. Check TTD\'s latest notice on tokens before you start.':
+      'ಅಲಿಪಿರಿ ಅಥವಾ ಶ್ರೀವಾರಿ ಮೆಟ್ಟು ಕಾಲುದಾರಿಯಲ್ಲಿ ಬೆಟ್ಟ ಹತ್ತುವ ಭಕ್ತರಿಗೆ. ಹೊರಡುವ ಮುನ್ನ ಟೋಕನ್‌ಗಳ ಬಗ್ಗೆ TTD ಯ ಇತ್ತೀಚಿನ ಪ್ರಕಟಣೆ ನೋಡಿ.',
+  'Free': 'ಉಚಿತ',
+  'Free time-slot tokens given in person at TTD counters in Tirupati. Carry your Aadhaar card.':
+      'ತಿರುಪತಿಯ TTD ಕೌಂಟರ್‌ಗಳಲ್ಲಿ ಖುದ್ದಾಗಿ ನೀಡುವ ಉಚಿತ ಸಮಯ-ಸ್ಲಾಟ್ ಟೋಕನ್‌ಗಳು. ಆಧಾರ್ ಕಾರ್ಡ್ ಜೊತೆಗಿರಲಿ.',
+  'Free to register. You pay only if you are selected.': 'ನೋಂದಣಿ ಉಚಿತ. ಆಯ್ಕೆಯಾದರೆ ಮಾತ್ರ ಪಾವತಿಸಿ.',
+  'Free tokens for the early-morning Angapradakshinam around the sanctum, followed by darshan.':
+      'ಗರ್ಭಗುಡಿಯ ಸುತ್ತ ಮುಂಜಾನೆಯ ಅಂಗಪ್ರದಕ್ಷಿಣೆಗೆ ಉಚಿತ ಟೋಕನ್‌ಗಳು, ನಂತರ ದರ್ಶನ.',
+  'Garhwal Himalaya': 'ಗಢವಾಲ್ ಹಿಮಾಲಯ',
+  'Guest house rooms': 'ಅತಿಥಿ ಗೃಹದ ಕೊಠಡಿಗಳು',
+  'Guruvayur Sri Krishna Temple': 'ಗುರುವಾಯೂರು ಶ್ರೀಕೃಷ್ಣ ದೇವಸ್ಥಾನ',
+  'HR&CE Department': 'HR&CE ಇಲಾಖೆ',
+  'Helicopter': 'ಹೆಲಿಕಾಪ್ಟರ್',
+  'Helicopter tickets are sold only on IRCTC\'s Heli Yatra site.':
+      'ಹೆಲಿಕಾಪ್ಟರ್ ಟಿಕೆಟ್‌ಗಳನ್ನು IRCTC ಯ Heli Yatra ಸೈಟ್‌ನಲ್ಲಿ ಮಾತ್ರ ಮಾರಾಟ ಮಾಡಲಾಗುತ್ತದೆ.',
+  'Helicopter tickets between Katra and Sanjichhat.': 'ಕಟ್ರಾ ಮತ್ತು ಸಾಂಝಿಛತ್ ನಡುವೆ ಹೆಲಿಕಾಪ್ಟರ್ ಟಿಕೆಟ್‌ಗಳು.',
+  'Homam at the Saptha Go Pradakshina Shala, Alipiri, at the foot of the hills.':
+      'ಬೆಟ್ಟದ ತಪ್ಪಲಿನಲ್ಲಿರುವ ಅಲಿಪಿರಿಯ ಸಪ್ತ ಗೋ ಪ್ರದಕ್ಷಿಣ ಶಾಲೆಯಲ್ಲಿ ಹೋಮ.',
+  'Indrakeeladri, Vijayawada': 'ಇಂದ್ರಕೀಲಾದ್ರಿ, ವಿಜಯವಾಡ',
+  'Kalyana Vedika (weddings at Tirumala)': 'ಕಲ್ಯಾಣ ವೇದಿಕೆ (ತಿರುಮಲದಲ್ಲಿ ವಿವಾಹ)',
+  'Kalyanamandapams': 'ಕಲ್ಯಾಣ ಮಂಟಪಗಳು',
+  'Kalyanotsavam, Unjal Seva, Arjitha Brahmotsavam and Sahasra Deepalankara Seva, booked first come, first served.':
+      'ಕಲ್ಯಾಣೋತ್ಸವ, ಊಂಜಲ್ ಸೇವೆ, ಆರ್ಜಿತ ಬ್ರಹ್ಮೋತ್ಸವ ಮತ್ತು ಸಹಸ್ರ ದೀಪಾಲಂಕಾರ ಸೇವೆ; ಮೊದಲು ಬಂದವರಿಗೆ ಮೊದಲ ಆದ್ಯತೆ.',
+  'Kanaka Durga Temple, Vijayawada': 'ಕನಕದುರ್ಗ ದೇವಸ್ಥಾನ, ವಿಜಯವಾಡ',
+  'Karnataka Endowments Department': 'ಕರ್ನಾಟಕ ಮುಜರಾಯಿ ಇಲಾಖೆ',
+  'Karnataka temples': 'ಕರ್ನಾಟಕದ ದೇವಸ್ಥಾನಗಳು',
+  'Katra': 'ಕಟ್ರಾ',
+  'Kedarnath and Badrinath pooja': 'ಕೇದಾರನಾಥ ಮತ್ತು ಬದರಿನಾಥ ಪೂಜೆ',
+  'Kedarnath helicopter': 'ಕೇದಾರನಾಥ ಹೆಲಿಕಾಪ್ಟರ್',
+  'Kedarnath, Badrinath, Gangotri, Yamunotri': 'ಕೇದಾರನಾಥ, ಬದರಿನಾಥ, ಗಂಗೋತ್ರಿ, ಯಮುನೋತ್ರಿ',
+  'Khandwa district': 'ಖಾಂಡ್ವಾ ಜಿಲ್ಲೆ',
+  'Kukke Subramanya, Kollur Mookambika, Chamundeshwari and more':
+      'ಕುಕ್ಕೆ ಸುಬ್ರಹ್ಮಣ್ಯ, ಕೊಲ್ಲೂರು ಮೂಕಾಂಬಿಕಾ, ಚಾಮುಂಡೇಶ್ವರಿ ಮತ್ತು ಇನ್ನಷ್ಟು',
+  'Kumkumarchana, Chandi Homam and other sevas.': 'ಕುಂಕುಮಾರ್ಚನೆ, ಚಂಡೀ ಹೋಮ ಮತ್ತು ಇತರ ಸೇವೆಗಳು.',
+  'Log in with your mobile number and OTP': 'ಮೊಬೈಲ್ ಸಂಖ್ಯೆ ಮತ್ತು OTP ಮೂಲಕ ಲಾಗಿನ್ ಮಾಡಿ',
+  'Log in with your mobile number and the OTP that TTD sends.':
+      'ನಿಮ್ಮ ಮೊಬೈಲ್ ಸಂಖ್ಯೆ ಮತ್ತು TTD ಕಳುಹಿಸುವ OTP ಮೂಲಕ ಲಾಗಿನ್ ಮಾಡಿ.',
+  'Lord Shiva': 'ಶಿವ',
+  'Lord Shiva (Jyotirlinga)': 'ಶಿವ (ಜ್ಯೋತಿರ್ಲಿಂಗ)',
+  'Madurai Meenakshi, Palani, Tiruchendur, Rameswaram, Srirangam, Tiruvannamalai and more':
+      'ಮದುರೈ ಮೀನಾಕ್ಷಿ, ಪಳನಿ, ತಿರುಚೆಂದೂರು, ರಾಮೇಶ್ವರಂ, ಶ್ರೀರಂಗಂ, ತಿರುವಣ್ಣಾಮಲೈ ಮತ್ತು ಇನ್ನಷ್ಟು',
+  'Make your hundi offering online to Sri Venkateswara Swamy or to Sri Padmavathi Ammavaru.':
+      'ಶ್ರೀ ವೆಂಕಟೇಶ್ವರ ಸ್ವಾಮಿಗೆ ಅಥವಾ ಶ್ರೀ ಪದ್ಮಾವತಿ ಅಮ್ಮನವರಿಗೆ ನಿಮ್ಮ ಹುಂಡಿ ಕಾಣಿಕೆಯನ್ನು ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ಸಲ್ಲಿಸಿ.',
+  'Mangala Aarti before dawn and the other daily aartis.': 'ಮುಂಜಾನೆಯ ಮಂಗಳಾರತಿ ಮತ್ತು ಇತರ ದೈನಂದಿನ ಆರತಿಗಳು.',
+  'Mata Vaishno Devi': 'ಮಾತಾ ವೈಷ್ಣೋದೇವಿ',
+  'Nandyal district': 'ನಂದ್ಯಾಲ ಜಿಲ್ಲೆ',
+  'Nitya Kalyanam, Abhishekam and other sevas.': 'ನಿತ್ಯ ಕಲ್ಯಾಣ, ಅಭಿಷೇಕ ಮತ್ತು ಇತರ ಸೇವೆಗಳು.',
+  'Online Sevas (virtual participation)': 'ಆನ್‌ಲೈನ್ ಸೇವೆಗಳು (ವರ್ಚುವಲ್ ಭಾಗವಹಿಸುವಿಕೆ)',
+  'Online darshan booking': 'ಆನ್‌ಲೈನ್ ದರ್ಶನ ಬುಕಿಂಗ್',
+  'Online participation in sevas at the Tiruchanoor temple, such as Laksha Kumkumarchana when announced.':
+      'ತಿರುಚಾನೂರು ದೇವಸ್ಥಾನದ ಸೇವೆಗಳಲ್ಲಿ ಆನ್‌ಲೈನ್ ಭಾಗವಹಿಸುವಿಕೆ, ಉದಾಹರಣೆಗೆ ಪ್ರಕಟಿಸಿದಾಗ ಲಕ್ಷ ಕುಂಕುಮಾರ್ಚನೆ.',
+  'Online pooja': 'ಆನ್‌ಲೈನ್ ಪೂಜೆ',
+  'Open to all through the Vaikuntam Queue Complex in Tirumala. No ticket is needed. The wait can be many hours on busy days.':
+      'ತಿರುಮಲದ ವೈಕುಂಠಂ ಕ್ಯೂ ಕಾಂಪ್ಲೆಕ್ಸ್ ಮೂಲಕ ಎಲ್ಲರಿಗೂ ತೆರೆದಿದೆ. ಟಿಕೆಟ್ ಅಗತ್ಯವಿಲ್ಲ. ಜನದಟ್ಟಣೆಯ ದಿನಗಳಲ್ಲಿ ಹಲವು ಗಂಟೆ ಕಾಯಬೇಕಾಗಬಹುದು.',
+  'Order Aravana and Appam in advance and collect them at Sannidhanam.':
+      'ಅರವಣ ಮತ್ತು ಅಪ್ಪಂ ಅನ್ನು ಮುಂಚಿತವಾಗಿ ಆರ್ಡರ್ ಮಾಡಿ ಸನ್ನಿಧಾನದಲ್ಲಿ ಪಡೆದುಕೊಳ್ಳಿ.',
+  'Order TTD\'s Panchagavya products online.': 'TTD ಯ ಪಂಚಗವ್ಯ ಉತ್ಪನ್ನಗಳನ್ನು ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ಆರ್ಡರ್ ಮಾಡಿ.',
+  'Other TTD temples': 'ಇತರ TTD ದೇವಸ್ಥಾನಗಳು',
+  'Padmavathi Ammavari Darshan (₹200)': 'ಪದ್ಮಾವತಿ ಅಮ್ಮನವರ ದರ್ಶನ (₹200)',
+  'Panchagavya products': 'ಪಂಚಗವ್ಯ ಉತ್ಪನ್ನಗಳು',
+  'Passes for the daily aartis: Kakad, Madhyan, Dhoop and Shej.':
+      'ದೈನಂದಿನ ಆರತಿಗಳಿಗೆ ಪಾಸ್‌ಗಳು: ಕಾಕಡ, ಮಧ್ಯಾಹ್ನ, ಧೂಪ ಮತ್ತು ಶೇಜ್.',
+  'Passes to attend the daily aartis of Ram Lalla.': 'ರಾಮಲಲ್ಲಾನ ದೈನಂದಿನ ಆರತಿಗಳಲ್ಲಿ ಪಾಲ್ಗೊಳ್ಳಲು ಪಾಸ್‌ಗಳು.',
+  'Pathanamthitta': 'ಪತ್ತನಂತಿಟ್ಟ',
+  'Pay on the TTD portal, then download the ticket. You can find it again under Transaction History.':
+      'TTD ಪೋರ್ಟಲ್‌ನಲ್ಲಿ ಪಾವತಿಸಿ, ನಂತರ ಟಿಕೆಟ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ. Transaction History ಅಡಿಯಲ್ಲಿ ಅದನ್ನು ಮತ್ತೆ ಪಡೆಯಬಹುದು.',
+  'People living in Tirupati, Tirumala, Chandragiri and Renigunta have a separate e-Dip. See "Angapradakshinam (for Locals)" on the portal.':
+      'ತಿರುಪತಿ, ತಿರುಮಲ, ಚಂದ್ರಗಿರಿ ಮತ್ತು ರೇಣಿಗುಂಟದ ನಿವಾಸಿಗಳಿಗೆ ಪ್ರತ್ಯೇಕ ಇ-ಡಿಪ್ ಇದೆ. ಪೋರ್ಟಲ್‌ನಲ್ಲಿ "Angapradakshinam (for Locals)" ನೋಡಿ.',
+  'Pooja and Abhishek': 'ಪೂಜೆ ಮತ್ತು ಅಭಿಷೇಕ',
+  'Pooja and Atka Aarti': 'ಪೂಜೆ ಮತ್ತು ಅಟ್ಕಾ ಆರತಿ',
+  'Pooja booking': 'ಪೂಜೆ ಬುಕಿಂಗ್',
+  'Poojas and offerings': 'ಪೂಜೆಗಳು ಮತ್ತು ಕಾಣಿಕೆಗಳು',
+  'Prabhas Patan, Veraval': 'ಪ್ರಭಾಸ ಪಾಟಣ, ವೆರಾವಲ್',
+  'Prasadam booking': 'ಪ್ರಸಾದ ಬುಕಿಂಗ್',
+  'Quick darshan tickets and Sparsha Darshan, as opened by the Devasthanam.':
+      'ದೇವಸ್ಥಾನಂ ತೆರೆಯುವ ಶೀಘ್ರ ದರ್ಶನ ಟಿಕೆಟ್‌ಗಳು ಮತ್ತು ಸ್ಪರ್ಶ ದರ್ಶನ.',
+  'Rajanna Sircilla district': 'ರಾಜಣ್ಣ ಸಿರಿಸಿಲ್ಲ ಜಿಲ್ಲೆ',
+  'Reach the reporting point at the time printed on your ticket.':
+      'ಟಿಕೆಟ್‌ನಲ್ಲಿ ಮುದ್ರಿಸಿರುವ ಸಮಯಕ್ಕೆ ರಿಪೋರ್ಟಿಂಗ್ ಪಾಯಿಂಟ್ ತಲುಪಿ.',
+  'Register for the draw for Suprabhatam, Thomala Seva, Archana and Astadala Pada Padmaradhana.':
+      'ಸುಪ್ರಭಾತ, ತೋಮಾಲ ಸೇವೆ, ಅರ್ಚನೆ ಮತ್ತು ಅಷ್ಟದಳ ಪಾದ ಪದ್ಮಾರಾಧನೆಯ ಡ್ರಾಗೆ ನೋಂದಾಯಿಸಿ.',
+  'Register for the yatra before you start the climb from Katra.': 'ಕಟ್ರಾದಿಂದ ಏರಲು ಆರಂಭಿಸುವ ಮುನ್ನ ಯಾತ್ರೆಗೆ ನೋಂದಾಯಿಸಿ.',
+  'Registration usually stays open for about two days. Selected pilgrims get an SMS and must pay within the time given.':
+      'ನೋಂದಣಿ ಸಾಮಾನ್ಯವಾಗಿ ಸುಮಾರು ಎರಡು ದಿನ ತೆರೆದಿರುತ್ತದೆ. ಆಯ್ಕೆಯಾದ ಭಕ್ತರಿಗೆ SMS ಬರುತ್ತದೆ, ನೀಡಿದ ಸಮಯದೊಳಗೆ ಪಾವತಿಸಬೇಕು.',
+  'Rooms': 'ಕೊಠಡಿಗಳು',
+  'Rooms at Sannidhanam, when the Devaswom Board opens them online.':
+      'ದೇವಸ್ವಂ ಮಂಡಳಿ ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ತೆರೆದಾಗ ಸನ್ನಿಧಾನದಲ್ಲಿ ಕೊಠಡಿಗಳು.',
+  'Rooms at temple guest houses across Karnataka, on the state\'s accommodation site.':
+      'ರಾಜ್ಯದ ವಸತಿ ಸೈಟ್‌ನಲ್ಲಿ, ಕರ್ನಾಟಕದಾದ್ಯಂತ ದೇವಸ್ಥಾನಗಳ ಅತಿಥಿ ಗೃಹಗಳ ಕೊಠಡಿಗಳು.',
+  'Rooms in the Sansthan\'s Bhakta Niwas buildings.': 'ಸಂಸ್ಥಾನದ ಭಕ್ತ ನಿವಾಸ ಕಟ್ಟಡಗಳಲ್ಲಿ ಕೊಠಡಿಗಳು.',
+  'Rooms in the Trust\'s guest houses near the temple.': 'ದೇವಸ್ಥಾನದ ಸಮೀಪವಿರುವ ಟ್ರಸ್ಟ್‌ನ ಅತಿಥಿ ಗೃಹಗಳಲ್ಲಿ ಕೊಠಡಿಗಳು.',
+  'Rooms offered by the temple trust.': 'ದೇವಸ್ಥಾನ ಟ್ರಸ್ಟ್ ನೀಡುವ ಕೊಠಡಿಗಳು.',
+  'Rooms open a few hours after the ₹300 darshan quota on the same day, so you can book both together.':
+      'ಅದೇ ದಿನ ₹300 ದರ್ಶನ ಕೋಟಾ ತೆರೆದ ಕೆಲವು ಗಂಟೆಗಳ ನಂತರ ಕೊಠಡಿಗಳು ತೆರೆಯುತ್ತವೆ, ಹಾಗಾಗಿ ಎರಡನ್ನೂ ಜೊತೆಯಾಗಿ ಬುಕ್ ಮಾಡಬಹುದು.',
+  'Rudrabhishek and poojas': 'ರುದ್ರಾಭಿಷೇಕ ಮತ್ತು ಪೂಜೆಗಳು',
+  'SRIVANI Trust Darshan': 'ಶ್ರೀವಾಣಿ ಟ್ರಸ್ಟ್ ದರ್ಶನ',
+  'Sabarimala Ayyappa Temple': 'ಶಬರಿಮಲೆ ಅಯ್ಯಪ್ಪ ದೇವಸ್ಥಾನ',
+  'Sabarimala pilgrim information': 'ಶಬರಿಮಲೆ ಯಾತ್ರಿಕರ ಮಾಹಿತಿ',
+  'Sapthagiri magazine': 'ಸಪ್ತಗಿರಿ ಮಾಸಪತ್ರಿಕೆ',
+  'Sarva Darshan (free)': 'ಸರ್ವ ದರ್ಶನ (ಉಚಿತ)',
+  'Senior Citizen / Differently Abled Darshan': 'ಹಿರಿಯ ನಾಗರಿಕರು / ವಿಶೇಷ ಚೇತನರ ದರ್ಶನ',
+  'Senior citizens and differently abled pilgrims. The portal shows the age limit, the papers needed and who may come along.':
+      'ಹಿರಿಯ ನಾಗರಿಕರು ಮತ್ತು ವಿಶೇಷ ಚೇತನ ಭಕ್ತರು. ವಯೋಮಿತಿ, ಬೇಕಾದ ದಾಖಲೆಗಳು ಮತ್ತು ಜೊತೆಗೆ ಯಾರು ಬರಬಹುದು ಎಂಬುದನ್ನು ಪೋರ್ಟಲ್ ತೋರಿಸುತ್ತದೆ.',
+  'Serve pilgrims as a volunteer: General Srivari Seva, Navaneeta Seva and Parakamani Seva.':
+      'ಸ್ವಯಂಸೇವಕರಾಗಿ ಭಕ್ತರ ಸೇವೆ ಮಾಡಿ: ಸಾಮಾನ್ಯ ಶ್ರೀವಾರಿ ಸೇವೆ, ನವನೀತ ಸೇವೆ ಮತ್ತು ಪರಕಾಮಣಿ ಸೇವೆ.',
+  'Seva e-Dip (lucky dip)': 'ಸೇವಾ ಇ-ಡಿಪ್ (ಲಕ್ಕಿ ಡಿಪ್)',
+  'Sevas and archana': 'ಸೇವೆಗಳು ಮತ್ತು ಅರ್ಚನೆ',
+  'Sevas and poojas': 'ಸೇವೆಗಳು ಮತ್ತು ಪೂಜೆಗಳು',
+  'Sevas at TTD\'s local temples in and around Tirupati. Open "TTD Temples" on the portal.':
+      'ತಿರುಪತಿ ಮತ್ತು ಸುತ್ತಮುತ್ತಲಿನ TTD ಸ್ಥಳೀಯ ದೇವಸ್ಥಾನಗಳಲ್ಲಿ ಸೇವೆಗಳು. ಪೋರ್ಟಲ್‌ನಲ್ಲಿ "TTD Temples" ತೆರೆಯಿರಿ.',
+  'Sevas at each temple, such as Rahu Ketu Pooja at Srikalahasti and Satyanarayana Vratam at Annavaram.':
+      'ಪ್ರತಿ ದೇವಸ್ಥಾನದ ಸೇವೆಗಳು, ಉದಾಹರಣೆಗೆ ಶ್ರೀಕಾಳಹಸ್ತಿಯಲ್ಲಿ ರಾಹು ಕೇತು ಪೂಜೆ ಮತ್ತು ಅನ್ನವರಂನಲ್ಲಿ ಸತ್ಯನಾರಾಯಣ ವ್ರತ.',
+  'Sheeghra Darshan': 'ಶೀಘ್ರ ದರ್ಶನ',
+  'Shirdi': 'ಶಿರಡಿ',
+  'Shirdi Sai Baba Temple': 'ಶಿರಡಿ ಸಾಯಿಬಾಬಾ ದೇವಸ್ಥಾನ',
+  'Shree Somnath': 'ಶ್ರೀ ಸೋಮನಾಥ',
+  'Shri Kashi Vishwanath': 'ಶ್ರೀ ಕಾಶಿ ವಿಶ್ವನಾಥ',
+  'Shri Mahakaleshwar': 'ಶ್ರೀ ಮಹಾಕಾಳೇಶ್ವರ',
+  'Shri Omkareshwar': 'ಶ್ರೀ ಓಂಕಾರೇಶ್ವರ',
+  'Shri Ram Lalla': 'ಶ್ರೀ ರಾಮಲಲ್ಲಾ',
+  'Shri Ram Mandir, Ayodhya': 'ಶ್ರೀ ರಾಮ ಮಂದಿರ, ಅಯೋಧ್ಯೆ',
+  'Shri Sai Baba': 'ಶ್ರೀ ಸಾಯಿಬಾಬಾ',
+  'Shrine Board information': 'ಶ್ರೈನ್ ಬೋರ್ಡ್ ಮಾಹಿತಿ',
+  'Shrine Board rooms and dormitories at Katra, on the track and at the Bhawan.':
+      'ಕಟ್ರಾದಲ್ಲಿ, ಮಾರ್ಗದಲ್ಲಿ ಮತ್ತು ಭವನದಲ್ಲಿ ಶ್ರೈನ್ ಬೋರ್ಡ್‌ನ ಕೊಠಡಿಗಳು ಮತ್ತು ಡಾರ್ಮಿಟರಿಗಳು.',
+  'Slotted Sarva Darshan (SSD) tokens': 'ಸ್ಲಾಟೆಡ್ ಸರ್ವ ದರ್ಶನ (SSD) ಟೋಕನ್‌ಗಳು',
+  'Special Entry Darshan (₹300)': 'ವಿಶೇಷ ಪ್ರವೇಶ ದರ್ಶನ (₹300)',
+  'Special Entry Darshan at Sri Padmavathi Ammavari Temple, Tiruchanoor.':
+      'ತಿರುಚಾನೂರಿನ ಶ್ರೀ ಪದ್ಮಾವತಿ ಅಮ್ಮನವರ ದೇವಸ್ಥಾನದಲ್ಲಿ ವಿಶೇಷ ಪ್ರವೇಶ ದರ್ಶನ.',
+  'Sree Dharma Sastha (Ayyappa)': 'ಶ್ರೀ ಧರ್ಮಶಾಸ್ತಾ (ಅಯ್ಯಪ್ಪ)',
+  'Sri Guruvayurappan': 'ಶ್ರೀ ಗುರುವಾಯೂರಪ್ಪನ್',
+  'Sri Kanaka Durga and Malleswara Swamy': 'ಶ್ರೀ ಕನಕದುರ್ಗಾ ಮತ್ತು ಮಲ್ಲೇಶ್ವರ ಸ್ವಾಮಿ',
+  'Sri Mallikarjuna Swamy and Bhramarambika Devi': 'ಶ್ರೀ ಮಲ್ಲಿಕಾರ್ಜುನ ಸ್ವಾಮಿ ಮತ್ತು ಭ್ರಮರಾಂಬಿಕಾ ದೇವಿ',
+  'Sri Padmavathi Ammavari Virtual Seva': 'ಶ್ರೀ ಪದ್ಮಾವತಿ ಅಮ್ಮನವರ ವರ್ಚುವಲ್ ಸೇವೆ',
+  'Sri Raja Rajeshwara Swamy': 'ಶ್ರೀ ರಾಜರಾಜೇಶ್ವರ ಸ್ವಾಮಿ',
+  'Sri Seetha Ramachandra Swamy': 'ಶ್ರೀ ಸೀತಾ ರಾಮಚಂದ್ರ ಸ್ವಾಮಿ',
+  'Sri Srinivasa Divyanugraha Homam': 'ಶ್ರೀ ಶ್ರೀನಿವಾಸ ದಿವ್ಯಾನುಗ್ರಹ ಹೋಮ',
+  'Sri Venkateswara Swamy': 'ಶ್ರೀ ವೆಂಕಟೇಶ್ವರ ಸ್ವಾಮಿ',
+  'Srikalahasti, Simhachalam, Annavaram, Kanipakam, Dwaraka Tirumala and more':
+      'ಶ್ರೀಕಾಳಹಸ್ತಿ, ಸಿಂಹಾಚಲ, ಅನ್ನವರಂ, ಕಾಣಿಪಾಕಂ, ದ್ವಾರಕಾ ತಿರುಮಲ ಮತ್ತು ಇನ್ನಷ್ಟು',
+  'Srivari Seva (volunteering)': 'ಶ್ರೀವಾರಿ ಸೇವೆ (ಸ್ವಯಂಸೇವೆ)',
+  'Subscribe to TTD\'s monthly devotional magazine.': 'TTD ಯ ಮಾಸಿಕ ಭಕ್ತಿ ಪತ್ರಿಕೆಗೆ ಚಂದಾದಾರರಾಗಿ.',
+  'Sugam Darshan': 'ಸುಗಮ ದರ್ಶನ',
+  'TTD has no booking agents. Do not pay anyone who promises tickets outside the official portal.':
+      'TTD ಗೆ ಯಾವುದೇ ಬುಕಿಂಗ್ ಏಜೆಂಟ್‌ಗಳಿಲ್ಲ. ಅಧಿಕೃತ ಪೋರ್ಟಲ್‌ನ ಹೊರಗೆ ಟಿಕೆಟ್ ಕೊಡಿಸುವುದಾಗಿ ಹೇಳುವ ಯಾರಿಗೂ ಹಣ ನೀಡಬೇಡಿ.',
+  'TTD news and announcements': 'TTD ಸುದ್ದಿ ಮತ್ತು ಪ್ರಕಟಣೆಗಳು',
+  'TTD rooms and cottages in Tirumala and Tirupati.': 'ತಿರುಮಲ ಮತ್ತು ತಿರುಪತಿಯಲ್ಲಿ TTD ಕೊಠಡಿಗಳು ಮತ್ತು ಕಾಟೇಜ್‌ಗಳು.',
+  'TTD · Tirumala': 'TTD · ತಿರುಮಲ',
+  'Take part in a seva from home. The ticket also carries a darshan quota, as shown on the portal.':
+      'ಮನೆಯಿಂದಲೇ ಸೇವೆಯಲ್ಲಿ ಪಾಲ್ಗೊಳ್ಳಿ. ಪೋರ್ಟಲ್‌ನಲ್ಲಿ ತೋರಿಸಿದಂತೆ ಈ ಟಿಕೆಟ್‌ನೊಂದಿಗೆ ದರ್ಶನ ಕೋಟಾ ಕೂಡ ಸಿಗುತ್ತದೆ.',
+  'Tamil Nadu temples': 'ತಮಿಳುನಾಡಿನ ದೇವಸ್ಥಾನಗಳು',
+  'Tap "Book on official site". The TTD portal opens inside Devalay.':
+      '"ಅಧಿಕೃತ ಸೈಟ್‌ನಲ್ಲಿ ಬುಕ್ ಮಾಡಿ" ಒತ್ತಿ. TTD ಪೋರ್ಟಲ್ ದೇವಾಲಯ ಆ್ಯಪ್‌ನೊಳಗೇ ತೆರೆಯುತ್ತದೆ.',
+  'Temple cottages and rooms, where the temple offers them online.':
+      'ದೇವಸ್ಥಾನವು ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ನೀಡುವಲ್ಲಿ, ದೇವಸ್ಥಾನದ ಕಾಟೇಜ್‌ಗಳು ಮತ್ತು ಕೊಠಡಿಗಳು.',
+  'Temple guest houses and rooms.': 'ದೇವಸ್ಥಾನದ ಅತಿಥಿ ಗೃಹಗಳು ಮತ್ತು ಕೊಠಡಿಗಳು.',
+  'The most booked ticket: darshan of Sri Venkateswara Swamy in a reserved time slot.':
+      'ಅತಿ ಹೆಚ್ಚು ಬುಕ್ ಆಗುವ ಟಿಕೆಟ್: ಕಾಯ್ದಿರಿಸಿದ ಸಮಯದ ಸ್ಲಾಟ್‌ನಲ್ಲಿ ಶ್ರೀ ವೆಂಕಟೇಶ್ವರ ಸ್ವಾಮಿಯ ದರ್ಶನ.',
+  'The quota often fills within minutes. Log in a little early and keep every pilgrim\'s ID number ready.':
+      'ಕೋಟಾ ಹಲವು ಬಾರಿ ಕೆಲವೇ ನಿಮಿಷಗಳಲ್ಲಿ ಭರ್ತಿಯಾಗುತ್ತದೆ. ಸ್ವಲ್ಪ ಮುಂಚಿತವಾಗಿ ಲಾಗಿನ್ ಮಾಡಿ, ಪ್ರತಿ ಭಕ್ತರ ಗುರುತಿನ ಚೀಟಿ ಸಂಖ್ಯೆ ಸಿದ್ಧವಾಗಿಡಿ.',
+  'Thrissur district': 'ತ್ರಿಶೂರ್ ಜಿಲ್ಲೆ',
+  'Time-slot darshan passes issued by the temple trust.': 'ದೇವಸ್ಥಾನ ಟ್ರಸ್ಟ್ ನೀಡುವ ಸಮಯ-ಸ್ಲಾಟ್ ದರ್ಶನ ಪಾಸ್‌ಗಳು.',
+  'Tirumala Tirupati Devasthanams': 'ತಿರುಮಲ ತಿರುಪತಿ ದೇವಸ್ಥಾನಮ್ಸ್',
+  'Tirumala, Tirupati': 'ತಿರುಮಲ, ತಿರುಪತಿ',
+  'Traditional dress is compulsory. Men: dhoti or pyjama with an upper cloth. Women: saree, half-saree or churidar with dupatta.':
+      'ಸಾಂಪ್ರದಾಯಿಕ ಉಡುಪು ಕಡ್ಡಾಯ. ಪುರುಷರು: ಪಂಚೆ ಅಥವಾ ಪೈಜಾಮ ಜೊತೆಗೆ ಮೇಲುವಸ್ತ್ರ. ಮಹಿಳೆಯರು: ಸೀರೆ, ಲಂಗ-ದಾವಣಿ ಅಥವಾ ದುಪಟ್ಟಾ ಸಹಿತ ಚೂಡಿದಾರ್.',
+  'Trust donations and donor privileges': 'ಟ್ರಸ್ಟ್ ದೇಣಿಗೆಗಳು ಮತ್ತು ದಾನಿಗಳ ಸೌಲಭ್ಯಗಳು',
+  'Varies by room': 'ಕೊಠಡಿಯನ್ನು ಅವಲಂಬಿಸಿದೆ',
+  'Varies by seva': 'ಸೇವೆಯನ್ನು ಅವಲಂಬಿಸಿದೆ',
+  'Vemulawada': 'ವೇಮುಲವಾಡ',
+  'Virtual-Q darshan booking': 'ವರ್ಚುವಲ್-Q ದರ್ಶನ ಬುಕಿಂಗ್',
+  'Yatra registration': 'ಯಾತ್ರಾ ನೋಂದಣಿ',
+  'e-Donation': 'ಇ-ದೇಣಿಗೆ',
+  'e-Hundi': 'ಇ-ಹುಂಡಿ',
+  'e-Sevas': 'ಇ-ಸೇವೆಗಳು',
+  '₹10,500 per person (donation and ticket)': 'ಪ್ರತಿ ವ್ಯಕ್ತಿಗೆ ₹10,500 (ದೇಣಿಗೆ ಮತ್ತು ಟಿಕೆಟ್)',
+  '₹200 per person': 'ಪ್ರತಿ ವ್ಯಕ್ತಿಗೆ ₹200',
+  '₹300 per person': 'ಪ್ರತಿ ವ್ಯಕ್ತಿಗೆ ₹300',
+  'A new year, new hopes, new beginnings.': 'ಹೊಸ ವರ್ಷ, ಹೊಸ ಭರವಸೆ, ಹೊಸ ಆರಂಭ.',
+  'A thread of love that protects for a lifetime.': 'ಜೀವನವಿಡೀ ಕಾಪಾಡುವ ಪ್ರೀತಿಯ ಎಳೆ.',
+  'Auspicious red': 'ಶುಭ ಕೆಂಪು',
+  'Ayodhya saffron': 'ಅಯೋಧ್ಯೆಯ ಕೇಸರಿ',
+  'Begin the year with a prayer.': 'ಪ್ರಾರ್ಥನೆಯೊಂದಿಗೆ ವರ್ಷವನ್ನು ಆರಂಭಿಸಿ.',
+  'Begin with a prayer, continue with faith, end with gratitude.':
+      'ಪ್ರಾರ್ಥನೆಯಿಂದ ಆರಂಭಿಸಿ, ಶ್ರದ್ಧೆಯಿಂದ ಮುಂದುವರಿಸಿ, ಕೃತಜ್ಞತೆಯಿಂದ ಮುಗಿಸಿ.',
+  'Blessings': 'ಆಶೀರ್ವಾದ',
+  'Blessings on your birthday': 'ಹುಟ್ಟುಹಬ್ಬಕ್ಕೆ ಶುಭಾಶೀರ್ವಾದಗಳು',
+  'Braj Holi': 'ಬ್ರಜದ ಹೋಳಿ',
+  'Butter and flute': 'ಬೆಣ್ಣೆ ಮತ್ತು ಕೊಳಲು',
+  'Celebration': 'ಸಂಭ್ರಮ',
+  'Daily blessing': 'ದಿನದ ಆಶೀರ್ವಾದ',
+  'Distance cannot loosen this knot.': 'ದೂರ ಎಷ್ಟೇ ಇರಲಿ, ಈ ಬಂಧ ಸಡಿಲಾಗದು.',
+  'Diwali': 'ದೀಪಾವಳಿ',
+  'Do your duty and leave the rest to Him.': 'ನಿನ್ನ ಕರ್ತವ್ಯ ಮಾಡು, ಉಳಿದದ್ದನ್ನು ಅವನಿಗೆ ಬಿಡು.',
+  'Dussehra': 'ದಸರಾ',
+  'Evening lamp': 'ಸಂಜೆಯ ದೀಪ',
+  'Festival of lamps': 'ದೀಪಗಳ ಹಬ್ಬ',
+  'Festive gold': 'ಹಬ್ಬದ ಬಂಗಾರ',
+  'Forget old quarrels, share sweets and colours. Happy Holi!':
+      'ಹಳೆಯ ಜಗಳ ಮರೆತು, ಸಿಹಿ ಮತ್ತು ಬಣ್ಣ ಹಂಚಿಕೊಳ್ಳಿ. ಹೋಳಿ ಹಬ್ಬದ ಶುಭಾಶಯಗಳು!',
+  'Fresh start': 'ಹೊಸ ಆರಂಭ',
+  'Ganpati Bappa Morya': 'ಗಣಪತಿ ಬಪ್ಪಾ ಮೋರಯಾ',
+  'Ganpati red': 'ಗಣಪತಿ ಕೆಂಪು',
+  'Garba night': 'ಗರ್ಬಾ ರಾತ್ರಿ',
+  'Golden Lakshmi': 'ಸ್ವರ್ಣ ಲಕ್ಷ್ಮೀ',
+  'Good afternoon': 'ಶುಭ ಮಧ್ಯಾಹ್ನ',
+  'Good evening': 'ಶುಭ ಸಂಜೆ',
+  'Good morning': 'ಶುಭೋದಯ',
+  'Good night': 'ಶುಭ ರಾತ್ರಿ',
+  'Gulal': 'ಗುಲಾಲ್',
+  'Happy Anniversary': 'ವಿವಾಹ ವಾರ್ಷಿಕೋತ್ಸವದ ಶುಭಾಶಯಗಳು',
+  'Happy Bhogi': 'ಭೋಗಿ ಹಬ್ಬದ ಶುಭಾಶಯಗಳು',
+  'Happy Birthday': 'ಹುಟ್ಟುಹಬ್ಬದ ಶುಭಾಶಯಗಳು',
+  'Happy Dev Deepawali': 'ದೇವ ದೀಪಾವಳಿಯ ಶುಭಾಶಯಗಳು',
+  'Happy Diwali': 'ದೀಪಾವಳಿ ಹಬ್ಬದ ಹಾರ್ದಿಕ ಶುಭಾಶಯಗಳು',
+  'Happy Dussehra': 'ದಸರಾ ಹಬ್ಬದ ಶುಭಾಶಯಗಳು',
+  'Happy Ganesh Chaturthi': 'ಗಣೇಶ ಚತುರ್ಥಿಯ ಶುಭಾಶಯಗಳು',
+  'Happy Gita Jayanti': 'ಗೀತಾ ಜಯಂತಿಯ ಶುಭಾಶಯಗಳು',
+  'Happy Gudi Padwa': 'ಗುಡಿ ಪಾಡ್ವಾ ಶುಭಾಶಯಗಳು',
+  'Happy Hanuman Jayanti': 'ಹನುಮ ಜಯಂತಿಯ ಶುಭಾಶಯಗಳು',
+  'Happy Holi': 'ಹೋಳಿ ಹಬ್ಬದ ಶುಭಾಶಯಗಳು',
+  'Happy Janmashtami': 'ಶ್ರೀಕೃಷ್ಣ ಜನ್ಮಾಷ್ಟಮಿಯ ಶುಭಾಶಯಗಳು',
+  'Happy Kartik Purnima': 'ಕಾರ್ತಿಕ ಹುಣ್ಣಿಮೆಯ ಶುಭಾಶಯಗಳು',
+  'Happy Maha Shivaratri': 'ಮಹಾ ಶಿವರಾತ್ರಿಯ ಶುಭಾಶಯಗಳು',
+  'Happy Makar Sankranti': 'ಮಕರ ಸಂಕ್ರಾಂತಿಯ ಹಾರ್ದಿಕ ಶುಭಾಶಯಗಳು',
+  'Happy Navratri': 'ನವರಾತ್ರಿಯ ಶುಭಾಶಯಗಳು',
+  'Happy New Year': 'ಹೊಸ ವರ್ಷದ ಶುಭಾಶಯಗಳು',
+  'Happy New Year {year}': 'ಹೊಸ ವರ್ಷ {year} ರ ಶುಭಾಶಯಗಳು',
+  'Happy Pongal': 'ಪೊಂಗಲ್ ಹಬ್ಬದ ಶುಭಾಶಯಗಳು',
+  'Happy Rakhi': 'ರಾಖಿ ಹಬ್ಬದ ಶುಭಾಶಯಗಳು',
+  'Happy Raksha Bandhan': 'ರಕ್ಷಾ ಬಂಧನದ ಶುಭಾಶಯಗಳು',
+  'Happy Rama Navami': 'ಶ್ರೀರಾಮ ನವಮಿಯ ಶುಭಾಶಯಗಳು',
+  'Happy Ugadi': 'ಯುಗಾದಿ ಹಬ್ಬದ ಹಾರ್ದಿಕ ಶುಭಾಶಯಗಳು',
+  'Happy Varalakshmi Vratam': 'ವರಮಹಾಲಕ್ಷ್ಮೀ ವ್ರತದ ಶುಭಾಶಯಗಳು',
+  'Happy Vijayadashami': 'ವಿಜಯದಶಮಿಯ ಹಾರ್ದಿಕ ಶುಭಾಶಯಗಳು',
+  'Har Har Mahadev': 'ಹರ ಹರ ಮಹಾದೇವ',
+  'Harvest sun': 'ಸುಗ್ಗಿಯ ಸೂರ್ಯ',
+  'Have a blessed day': 'ನಿಮ್ಮ ದಿನ ಶುಭವಾಗಲಿ',
+  'Holi Hai!': 'ಹೋಳಿ ಹೈ!',
+  'Jai Bajrangbali': 'ಜೈ ಬಜರಂಗಬಲಿ',
+  'Jai Hanuman': 'ಜೈ ಹನುಮಾನ್',
+  'Jai Mata Di': 'ಜೈ ಮಾತಾ ದೀ',
+  'Jai Shri Krishna': 'ಜೈ ಶ್ರೀಕೃಷ್ಣ',
+  'Jai Shri Ram': 'ಜೈ ಶ್ರೀರಾಮ್',
+  'Kailash night': 'ಕೈಲಾಸದ ರಾತ್ರಿ',
+  'Kartik Purnima': 'ಕಾರ್ತಿಕ ಹುಣ್ಣಿಮೆ',
+  'Kites in the sky': 'ಆಗಸದಲ್ಲಿ ಗಾಳಿಪಟಗಳು',
+  'Kumkum': 'ಕುಂಕುಮ',
+  'Kurukshetra dawn': 'ಕುರುಕ್ಷೇತ್ರದ ಮುಂಜಾನೆ',
+  'Leave today\'s worries at God\'s feet and sleep in peace.':
+      'ಇಂದಿನ ಚಿಂತೆಗಳನ್ನೆಲ್ಲ ದೇವರ ಪಾದಗಳಿಗೆ ಅರ್ಪಿಸಿ, ನೆಮ್ಮದಿಯಿಂದ ನಿದ್ರಿಸಿ.',
+  'Let light win over darkness, in our homes and in our hearts.':
+      'ನಮ್ಮ ಮನೆಗಳಲ್ಲೂ ಮನಸ್ಸುಗಳಲ್ಲೂ ಕತ್ತಲೆಯ ಮೇಲೆ ಬೆಳಕು ಗೆಲ್ಲಲಿ.',
+  'Like Ugadi pachadi, may you accept every taste of life with a smile.':
+      'ಬೇವು-ಬೆಲ್ಲದಂತೆ ಬದುಕಿನ ಪ್ರತಿ ರುಚಿಯನ್ನೂ ನಗುನಗುತ್ತಾ ಸ್ವೀಕರಿಸಿ.',
+  'Lotus dawn': 'ಕಮಲದ ಮುಂಜಾನೆ',
+  'Lotus gold': 'ಸ್ವರ್ಣ ಕಮಲ',
+  'Maha Shivaratri': 'ಮಹಾ ಶಿವರಾತ್ರಿ',
+  'Mango leaves': 'ಮಾವಿನ ತೋರಣ',
+  'May Bappa bring happiness and good beginnings to your home.': 'ಗಣಪ ನಿಮ್ಮ ಮನೆಗೆ ಸಂತೋಷ ಮತ್ತು ಶುಭಾರಂಭಗಳನ್ನು ತರಲಿ.',
+  'May God bless you with a long, healthy and happy life.':
+      'ದೇವರು ನಿಮಗೆ ದೀರ್ಘಾಯುಷ್ಯ, ಆರೋಗ್ಯ ಮತ್ತು ಸಂತೋಷದ ಬದುಕನ್ನು ಕರುಣಿಸಲಿ.',
+  'May God\'s grace be with you and your family, today and always.':
+      'ಇಂದು ಮತ್ತು ಎಂದೆಂದೂ ದೇವರ ಕೃಪೆ ನಿಮ್ಮ ಮತ್ತು ನಿಮ್ಮ ಕುಟುಂಬದ ಮೇಲಿರಲಿ.',
+  'May Goddess Lakshmi bless you and your family this Diwali.':
+      'ಈ ದೀಪಾವಳಿಯಲ್ಲಿ ಲಕ್ಷ್ಮೀದೇವಿ ನಿಮ್ಮನ್ನೂ ನಿಮ್ಮ ಕುಟುಂಬವನ್ನೂ ಹರಸಲಿ.',
+  'May Goddess Lakshmi fill your home with prosperity.': 'ಲಕ್ಷ್ಮೀದೇವಿ ನಿಮ್ಮ ಮನೆಯನ್ನು ಸಿರಿಸಂಪತ್ತಿನಿಂದ ತುಂಬಲಿ.',
+  'May Goddess Varalakshmi bless your home with health, wealth and harmony.':
+      'ವರಮಹಾಲಕ್ಷ್ಮೀ ನಿಮ್ಮ ಮನೆಗೆ ಆರೋಗ್ಯ, ಐಶ್ವರ್ಯ ಮತ್ತು ಸಾಮರಸ್ಯವನ್ನು ಕರುಣಿಸಲಿ.',
+  'May Hanuman give you courage for every task today.': 'ಇಂದಿನ ಪ್ರತಿ ಕೆಲಸಕ್ಕೂ ಹನುಮಂತ ನಿಮಗೆ ಧೈರ್ಯ ನೀಡಲಿ.',
+  'May Hanuman give you strength, courage and devotion.': 'ಹನುಮಂತ ನಿಮಗೆ ಶಕ್ತಿ, ಧೈರ್ಯ ಮತ್ತು ಭಕ್ತಿಯನ್ನು ಕರುಣಿಸಲಿ.',
+  'May Lakshmi and Narayana bless your home with love and harmony.':
+      'ಲಕ್ಷ್ಮೀನಾರಾಯಣರು ನಿಮ್ಮ ಮನೆಯನ್ನು ಪ್ರೀತಿ ಮತ್ತು ಸಾಮರಸ್ಯದಿಂದ ಹರಸಲಿ.',
+  'May Lord Ganesha remove every obstacle and bless you with wisdom.':
+      'ವಿಘ್ನೇಶ್ವರ ಎಲ್ಲಾ ವಿಘ್ನಗಳನ್ನು ನಿವಾರಿಸಿ ನಿಮಗೆ ಜ್ಞಾನವನ್ನು ಕರುಣಿಸಲಿ.',
+  'May Lord Ganesha remove every obstacle from your path.': 'ವಿಘ್ನೇಶ್ವರ ನಿಮ್ಮ ದಾರಿಯ ಪ್ರತಿ ಅಡ್ಡಿಯನ್ನೂ ನಿವಾರಿಸಲಿ.',
+  'May Lord Rama bless your home with peace, dharma and happiness.':
+      'ಶ್ರೀರಾಮ ನಿಮ್ಮ ಮನೆಗೆ ಶಾಂತಿ, ಧರ್ಮ ಮತ್ತು ಸಂತೋಷವನ್ನು ಕರುಣಿಸಲಿ.',
+  'May Lord Shiva bless you with peace, strength and good health.':
+      'ಪರಮಶಿವ ನಿಮಗೆ ಶಾಂತಿ, ಶಕ್ತಿ ಮತ್ತು ಉತ್ತಮ ಆರೋಗ್ಯವನ್ನು ಕರುಣಿಸಲಿ.',
+  'May Lord Shiva bless your week with strength and calm.': 'ಪರಮಶಿವ ನಿಮ್ಮ ವಾರವನ್ನು ಶಕ್ತಿ ಮತ್ತು ನೆಮ್ಮದಿಯಿಂದ ತುಂಬಲಿ.',
+  'May Lord Venkateswara grant all that is good for you.': 'ಶ್ರೀ ವೆಂಕಟೇಶ್ವರ ನಿಮಗೆ ಸಕಲ ಶುಭವನ್ನೂ ಕರುಣಿಸಲಿ.',
+  'May Lord Vishnu protect you and your family.': 'ಶ್ರೀ ಮಹಾವಿಷ್ಣು ನಿಮ್ಮನ್ನೂ ನಿಮ್ಮ ಕುಟುಂಬವನ್ನೂ ಕಾಪಾಡಲಿ.',
+  'May Maa Durga give you strength, courage and success.': 'ದುರ್ಗಾಮಾತೆ ನಿಮಗೆ ಶಕ್ತಿ, ಧೈರ್ಯ ಮತ್ತು ಯಶಸ್ಸನ್ನು ಕರುಣಿಸಲಿ.',
+  'May Sankat Mochan remove every trouble from your life.': 'ಸಂಕಟಮೋಚನ ನಿಮ್ಮ ಬದುಕಿನ ಪ್ರತಿ ಕಷ್ಟವನ್ನೂ ನಿವಾರಿಸಲಿ.',
+  'May Sita and Rama bless your family with love and togetherness.':
+      'ಸೀತಾರಾಮರು ನಿಮ್ಮ ಕುಟುಂಬಕ್ಕೆ ಪ್ರೀತಿ ಮತ್ತು ಒಗ್ಗಟ್ಟನ್ನು ಕರುಣಿಸಲಿ.',
+  'May every new work you begin end in success.': 'ನೀವು ಆರಂಭಿಸುವ ಪ್ರತಿ ಹೊಸ ಕೆಲಸವೂ ಯಶಸ್ವಿಯಾಗಲಿ.',
+  'May every wish of your heart come true this year.': 'ಈ ವರ್ಷ ನಿಮ್ಮ ಮನಸ್ಸಿನ ಪ್ರತಿ ಆಸೆಯೂ ಈಡೇರಲಿ.',
+  'May good always win over evil, in the world and within us.': 'ಜಗತ್ತಿನಲ್ಲೂ ನಮ್ಮೊಳಗೂ ಕೆಡುಕಿನ ಮೇಲೆ ಒಳಿತು ಸದಾ ಗೆಲ್ಲಲಿ.',
+  'May little Krishna fill your home with laughter and love.':
+      'ಮುದ್ದು ಕೃಷ್ಣ ನಿಮ್ಮ ಮನೆಯನ್ನು ನಗು ಮತ್ತು ಪ್ರೀತಿಯಿಂದ ತುಂಬಲಿ.',
+  'May the Mother grant every good wish of your family.': 'ತಾಯಿ ನಿಮ್ಮ ಕುಟುಂಬದ ಪ್ರತಿ ಶುಭ ಆಸೆಯನ್ನೂ ಈಡೇರಿಸಲಿ.',
+  'May the Mother remove every sorrow and fill your life with joy.':
+      'ತಾಯಿ ಪ್ರತಿ ದುಃಖವನ್ನೂ ದೂರಮಾಡಿ ನಿಮ್ಮ ಬದುಕನ್ನು ಆನಂದದಿಂದ ತುಂಬಲಿ.',
+  'May the Mother\'s blessings stay with your family always.': 'ತಾಯಿಯ ಆಶೀರ್ವಾದ ಸದಾ ನಿಮ್ಮ ಕುಟುಂಬದೊಂದಿಗಿರಲಿ.',
+  'May the Sun God bless you with health and energy.': 'ಸೂರ್ಯದೇವ ನಿಮಗೆ ಆರೋಗ್ಯ ಮತ್ತು ಚೈತನ್ಯವನ್ನು ಕರುಣಿಸಲಿ.',
+  'May the Sun\'s new journey bring light and a good harvest to your life.':
+      'ಸೂರ್ಯನ ಹೊಸ ಪಯಣ ನಿಮ್ಮ ಬದುಕಿಗೆ ಬೆಳಕು ಮತ್ತು ಸಮೃದ್ಧ ಸುಗ್ಗಿಯನ್ನು ತರಲಿ.',
+  'May the blessings of Shiva and Parvati stay with your family.': 'ಶಿವ-ಪಾರ್ವತಿಯರ ಆಶೀರ್ವಾದ ಸದಾ ನಿಮ್ಮ ಕುಟುಂಬದೊಂದಿಗಿರಲಿ.',
+  'May the eight blessings of Ashta Lakshmi be with you and yours.':
+      'ಅಷ್ಟಲಕ್ಷ್ಮಿಯರ ಎಂಟು ಆಶೀರ್ವಾದಗಳು ನಿಮಗೂ ನಿಮ್ಮವರಿಗೂ ದೊರೆಯಲಿ.',
+  'May the flute of Krishna bring sweetness and peace to your life.':
+      'ಕೃಷ್ಣನ ಕೊಳಲು ನಿಮ್ಮ ಬದುಕಿಗೆ ಮಾಧುರ್ಯ ಮತ್ತು ಶಾಂತಿಯನ್ನು ತರಲಿ.',
+  'May the lamps of Kartika light up your home and your heart.': 'ಕಾರ್ತಿಕ ದೀಪಗಳು ನಿಮ್ಮ ಮನೆಯನ್ನೂ ಮನಸ್ಸನ್ನೂ ಬೆಳಗಲಿ.',
+  'May the light of the diyas fill your home with joy, health and prosperity.':
+      'ದೀಪಗಳ ಬೆಳಕು ನಿಮ್ಮ ಮನೆಯನ್ನು ಸಂತೋಷ, ಆರೋಗ್ಯ ಮತ್ತು ಸಮೃದ್ಧಿಯಿಂದ ತುಂಬಲಿ.',
+  'May the name of Rama be your strength every day.': 'ರಾಮನಾಮ ಪ್ರತಿದಿನ ನಿಮ್ಮ ಶಕ್ತಿಯಾಗಲಿ.',
+  'May the new year bring health, happiness and prosperity to your family.':
+      'ಹೊಸ ವರ್ಷ ನಿಮ್ಮ ಕುಟುಂಬಕ್ಕೆ ಆರೋಗ್ಯ, ಸಂತೋಷ ಮತ್ತು ಸಮೃದ್ಧಿಯನ್ನು ತರಲಿ.',
+  'May the new year bring you health, peace and many reasons to be grateful.':
+      'ಹೊಸ ವರ್ಷ ನಿಮಗೆ ಆರೋಗ್ಯ, ಶಾಂತಿ ಮತ್ತು ಕೃತಜ್ಞರಾಗಿರಲು ಹಲವು ಕಾರಣಗಳನ್ನು ತರಲಿ.',
+  'May the wisdom of the Gita guide every step you take.': 'ಗೀತೆಯ ಜ್ಞಾನ ನಿಮ್ಮ ಪ್ರತಿ ಹೆಜ್ಜೆಗೂ ದಾರಿದೀಪವಾಗಲಿ.',
+  'May this Vijayadashami bring victory to all your efforts.': 'ಈ ವಿಜಯದಶಮಿ ನಿಮ್ಮ ಎಲ್ಲಾ ಪ್ರಯತ್ನಗಳಿಗೂ ಜಯ ತರಲಿ.',
+  'May this morning bring you peace, good health and a reason to smile.':
+      'ಈ ಮುಂಜಾನೆ ನಿಮಗೆ ಶಾಂತಿ, ಉತ್ತಮ ಆರೋಗ್ಯ ಮತ್ತು ನಗಲು ಒಂದು ಕಾರಣ ತರಲಿ.',
+  'May your bond grow stronger with every passing year.': 'ಪ್ರತಿ ವರ್ಷ ಕಳೆದಂತೆ ನಿಮ್ಮ ಬಾಂಧವ್ಯ ಇನ್ನಷ್ಟು ಗಟ್ಟಿಯಾಗಲಿ.',
+  'May your home overflow with joy like the Pongal pot.': 'ಪೊಂಗಲ್ ಮಡಕೆಯಂತೆ ನಿಮ್ಮ ಮನೆ ಸಂತೋಷದಿಂದ ಉಕ್ಕಿ ಹರಿಯಲಿ.',
+  'May your life be filled with the colours of joy, love and friendship.':
+      'ನಿಮ್ಮ ಬದುಕು ಸಂತೋಷ, ಪ್ರೀತಿ ಮತ್ತು ಸ್ನೇಹದ ಬಣ್ಣಗಳಿಂದ ತುಂಬಿರಲಿ.',
+  'Midnight sparkle': 'ಮಧ್ಯರಾತ್ರಿಯ ಮಿನುಗು',
+  'Modak morning': 'ಮೋದಕದ ಮುಂಜಾನೆ',
+  'Mother\'s victory': 'ತಾಯಿಯ ವಿಜಯ',
+  'Navratri': 'ನವರಾತ್ರಿ',
+  'New Year': 'ಹೊಸ ವರ್ಷ',
+  'New dawn': 'ಹೊಸ ಮುಂಜಾನೆ',
+  'New year, same blessings: may God walk with you every day.':
+      'ಹೊಸ ವರ್ಷ, ಅದೇ ಆಶೀರ್ವಾದ: ದೇವರು ಪ್ರತಿದಿನ ನಿಮ್ಮ ಜೊತೆಗಿರಲಿ.',
+  'Night of lamps': 'ದೀಪಗಳ ರಾತ್ರಿ',
+  'Night sky': 'ರಾತ್ರಿಯ ಆಗಸ',
+  'Nine nights of devotion, nine forms of the Mother. May she bless your home.':
+      'ಒಂಬತ್ತು ರಾತ್ರಿಗಳ ಭಕ್ತಿ, ತಾಯಿಯ ಒಂಬತ್ತು ರೂಪಗಳು. ಅವಳು ನಿಮ್ಮ ಮನೆಯನ್ನು ಹರಸಲಿ.',
+  'Om Gam Ganapataye Namah': 'ಓಂ ಗಂ ಗಣಪತಯೇ ನಮಃ',
+  'Om Namah Shivaya': 'ಓಂ ನಮಃ ಶಿವಾಯ',
+  'Om Namo Narayanaya': 'ಓಂ ನಮೋ ನಾರಾಯಣಾಯ',
+  'Om Namo Venkatesaya': 'ಓಂ ನಮೋ ವೇಂಕಟೇಶಾಯ',
+  'Om Shri Mahalakshmyai Namah': 'ಓಂ ಶ್ರೀ ಮಹಾಲಕ್ಷ್ಮ್ಯೈ ನಮಃ',
+  'Om Suryaya Namah': 'ಓಂ ಸೂರ್ಯಾಯ ನಮಃ',
+  'On this full moon, may Shiva and Vishnu bless your family.':
+      'ಈ ಹುಣ್ಣಿಮೆಯಂದು ಶಿವ ಮತ್ತು ವಿಷ್ಣು ನಿಮ್ಮ ಕುಟುಂಬವನ್ನು ಹರಸಲಿ.',
+  'On this holy night, may Mahadev remove every fear from your heart.':
+      'ಈ ಪವಿತ್ರ ರಾತ್ರಿ ಮಹಾದೇವ ನಿಮ್ಮ ಮನಸ್ಸಿನ ಪ್ರತಿ ಭಯವನ್ನೂ ದೂರಮಾಡಲಿ.',
+  'One lamp lit with devotion drives away much darkness.': 'ಭಕ್ತಿಯಿಂದ ಹಚ್ಚಿದ ಒಂದು ದೀಪ ಅಪಾರ ಕತ್ತಲೆಯನ್ನು ಓಡಿಸುತ್ತದೆ.',
+  'Peacock blue': 'ನವಿಲು ನೀಲಿ',
+  'Peacock feather': 'ನವಿಲುಗರಿ',
+  'Play safe, play with love.': 'ಸುರಕ್ಷಿತವಾಗಿ ಆಡಿ, ಪ್ರೀತಿಯಿಂದ ಆಡಿ.',
+  'Rakhi thread': 'ರಾಖಿ ದಾರ',
+  'Rama Navami': 'ಶ್ರೀರಾಮ ನವಮಿ',
+  'Rama\'s victory': 'ರಾಮನ ವಿಜಯ',
+  'Rangoli': 'ರಂಗೋಲಿ',
+  'Read one verse today. Let it stay with you all day.': 'ಇಂದು ಒಂದು ಶ್ಲೋಕ ಓದಿ. ಅದು ದಿನವಿಡೀ ನಿಮ್ಮೊಂದಿಗಿರಲಿ.',
+  'River at dusk': 'ಸಂಜೆಯ ನದೀತೀರ',
+  'Sacred ash': 'ವಿಭೂತಿ',
+  'Sanjeevani': 'ಸಂಜೀವಿನಿ',
+  'Sankranti · Pongal': 'ಸಂಕ್ರಾಂತಿ · ಪೊಂಗಲ್',
+  'Shakti red': 'ಶಕ್ತಿ ಕೆಂಪು',
+  'Shatamanam bhavati: may you live a hundred years.': 'ಶತಮಾನಂ ಭವತಿ: ನೂರು ವರ್ಷ ಸುಖವಾಗಿ ಬಾಳಿ.',
+  'Shubh Deepavali': 'ಶುಭ ದೀಪಾವಳಿ',
+  'Sindoor': 'ಸಿಂಧೂರ',
+  'Sweet as jaggery, high as the kites. Happy Sankranti to your family.':
+      'ಎಳ್ಳು-ಬೆಲ್ಲ ತಿಂದು ಒಳ್ಳೆಯ ಮಾತಾಡಿ, ಗಾಳಿಪಟದಂತೆ ಎತ್ತರಕ್ಕೇರಿ. ನಿಮ್ಮ ಕುಟುಂಬಕ್ಕೆ ಸಂಕ್ರಾಂತಿಯ ಶುಭಾಶಯಗಳು.',
+  'To my brother: may God keep you safe and happy always.':
+      'ನನ್ನ ಅಣ್ಣ/ತಮ್ಮನಿಗೆ: ದೇವರು ನಿನ್ನನ್ನು ಸದಾ ಸುರಕ್ಷಿತವಾಗಿ, ಸಂತೋಷವಾಗಿ ಇಡಲಿ.',
+  'To my sister: I am always with you, today and every day.':
+      'ನನ್ನ ಅಕ್ಕ/ತಂಗಿಗೆ: ಇಂದು ಮತ್ತು ಪ್ರತಿದಿನ ನಾನು ಸದಾ ನಿನ್ನ ಜೊತೆಗಿದ್ದೇನೆ.',
+  'Together': 'ಜೊತೆಯಾಗಿ',
+  'Together for many more years, in health and happiness.': 'ಆರೋಗ್ಯ ಮತ್ತು ಸಂತೋಷದೊಂದಿಗೆ ಇನ್ನೂ ಹಲವು ವರ್ಷ ಜೊತೆಯಾಗಿರಿ.',
+  'Tulsi': 'ತುಳಸಿ',
+  'Ugadi · Gudi Padwa': 'ಯುಗಾದಿ · ಗುಡಿ ಪಾಡ್ವಾ',
+  'Wedding anniversary': 'ವಿವಾಹ ವಾರ್ಷಿಕೋತ್ಸವ',
+  'Where there is Rama\'s name, there is Hanuman\'s protection.': 'ರಾಮನಾಮ ಇರುವಲ್ಲಿ ಹನುಮಂತನ ರಕ್ಷೆ ಇರುತ್ತದೆ.',
+  'Wishing you a safe, bright and happy Diwali.': 'ನಿಮಗೆ ಸುರಕ್ಷಿತ, ಬೆಳಕಿನ ಮತ್ತು ಸಂತಸದ ದೀಪಾವಳಿಯ ಶುಭಾಶಯಗಳು.',
+  'You have a right to your work, never to its fruits. (Gita 2.47)':
+      'ಕರ್ಮ ಮಾಡುವುದರಲ್ಲಿ ಮಾತ್ರ ನಿನಗೆ ಅಧಿಕಾರ, ಅದರ ಫಲದಲ್ಲಿ ಎಂದಿಗೂ ಇಲ್ಲ. (ಗೀತೆ 2.47)',
+};

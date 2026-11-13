@@ -14,10 +14,10 @@ import '../core/i18n.dart';
 import '../core/location.dart';
 import '../core/models.dart';
 import '../core/muhurta.dart';
+import '../core/names.dart';
 import '../core/notifications.dart';
 import '../core/providers.dart';
 import '../core/storage.dart';
-import '../core/telugu.dart';
 import '../core/theme.dart';
 import '../core/wishes.dart';
 import '../widgets/city_picker.dart';
@@ -41,24 +41,17 @@ String _iso(DateTime d) => DateFormat('yyyy-MM-dd').format(d);
 List<String> _weekdayLabels(String lang) => switch (lang) {
   'te' => ['ఆది', 'సోమ', 'మంగళ', 'బుధ', 'గురు', 'శుక్ర', 'శని'],
   'hi' => ['रवि', 'सोम', 'मंगल', 'बुध', 'गुरु', 'शुक्र', 'शनि'],
-  _ => ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+  'en' => ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+  _ => weekdayInitials(lang),
 };
 
-String _monthTitle(String lang, DateTime m) =>
-    lang == 'te' ? '${teluguGregorianMonths[m.month - 1]} ${m.year}' : DateFormat('MMMM y').format(m);
+String _monthTitle(String lang, DateTime m) => fmtDate(lang, 'MMMM y', m);
 
-String _tithiLabel(String lang, Map d) =>
-    lang == 'te' ? (teluguTithi['${d['tithi']}'] ?? '${d['tithi']}') : '${d['tithi']}';
+String _tithiLabel(String lang, Map d) => tithiIn(lang, '${d['tithi']}');
 
-String _pakshaLabel(String lang, Map d) =>
-    lang == 'te' ? (teluguPaksha['${d['paksha']}'] ?? '${d['paksha']}') : '${d['paksha']} paksha';
+String _pakshaLabel(String lang, Map d) => lang == 'en' ? '${d['paksha']} paksha' : pakshaIn(lang, '${d['paksha']}');
 
-String _nakshatraLabel(String lang, Map d) {
-  final name = '${d['nakshatra']}';
-  if (lang != 'te') return name;
-  final i = nakshatraNames.indexOf(name);
-  return i < 0 ? name : teluguNakshatra[i + 1];
-}
+String _nakshatraLabel(String lang, Map d) => nakshatraIn(lang, '${d['nakshatra']}');
 
 /// 🌕 Purnima, 🌑 Amavasya, 🙏 Ekadashi, else empty.
 String _moonMark(Map d) => switch (d['tithi_index'] as int? ?? 0) {
@@ -83,7 +76,6 @@ Map<DateTime, List<Festival>> _festivalsByDay(List<Festival>? list) {
 /// Rahu Kalam, festivals and auspicious yoga, from the full panchang when cached.
 Future<void> shareDay(WidgetRef ref, DateTime day) async {
   final lang = ref.read(prefsProvider).language;
-  final te = lang == 'te';
   Map? p;
   try {
     p = await ref.read(panchangProvider(day).future);
@@ -107,10 +99,10 @@ Future<void> shareDay(WidgetRef ref, DateTime day) async {
   final yoga = s == null ? null : shubhYoga(day, '${s['nakshatra']}');
   final city = ref.read(cityProvider).label(lang);
   final lines = <String>[
-    '🗓️ ${te ? teluguDate(day) : DateFormat('EEEE, d MMMM y').format(day)}',
+    '🗓️ ${fmtDate(lang, 'EEEE, d MMMM y', day)}',
     for (final f in fest) '${f.major ? '🪔' : '🙏'} ${f.label(lang)}',
     if (tithi != null)
-      '${tr(ref, 'tithi')}: ${te ? '${teluguPaksha[tithi['paksha']] ?? ''} ${teluguTithi[tithi['name']] ?? tithi['name']}' : '${tithi['paksha']} ${tithi['name']}'}'
+      '${tr(ref, 'tithi')}: ${pakshaIn(lang, '${tithi['paksha']}')} ${tithiIn(lang, '${tithi['name']}')}'
           '${tithi['ends'] == null ? '' : ' (${t3(lang, 'till', 'तक', 'వరకు')} ${hhmm('${tithi['ends']}')})'}'
     else if (s != null)
       '${tr(ref, 'tithi')}: ${tithiName(lang, s['tithi_index'] as int)}',
@@ -735,7 +727,7 @@ class _DayCell extends StatelessWidget {
       if (info != null)
         FittedBox(
           child: Text(
-            lang == 'te' ? _tithiLabel(lang, info!) : _tithiLabel(lang, info!).substring(0, 3),
+            lang == 'en' ? _tithiLabel(lang, info!).substring(0, 3) : _tithiLabel(lang, info!),
             style: TextStyle(fontSize: 10, color: sub),
           ),
         ),
@@ -885,9 +877,7 @@ class _SelectedDayCard extends ConsumerWidget {
                       style: const TextStyle(color: Colors.white, fontSize: 40, fontWeight: FontWeight.w800, height: 1),
                     ),
                     Text(
-                      lang == 'te'
-                          ? teluguGregorianMonths[date.month - 1]
-                          : DateFormat('MMM').format(date).toUpperCase(),
+                      lang == 'en' ? DateFormat('MMM').format(date).toUpperCase() : fmtDate(lang, 'MMMM', date),
                       style: const TextStyle(color: Colors.white70, fontWeight: FontWeight.w700, letterSpacing: 1),
                     ),
                   ],
@@ -901,7 +891,7 @@ class _SelectedDayCard extends ConsumerWidget {
                         children: [
                           Expanded(
                             child: Text(
-                              lang == 'te' ? teluguWeekdays[date.weekday - 1] : DateFormat('EEEE').format(date),
+                              fmtDate(lang, 'EEEE', date),
                               style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w700),
                             ),
                           ),
@@ -1048,7 +1038,7 @@ class _MonthFestivals extends ConsumerWidget {
             f.label(lang),
             style: TextStyle(fontWeight: FontWeight.w700, color: past ? Theme.of(context).colorScheme.outline : null),
           ),
-          subtitle: f.description.isEmpty ? null : Text(f.description, maxLines: 2, overflow: TextOverflow.ellipsis),
+          subtitle: f.description.isEmpty ? null : Text(f.describe(lang), maxLines: 2, overflow: TextOverflow.ellipsis),
           trailing: away >= 0 && away <= 60
               ? Text(
                   _countdown(lang, away),
@@ -1126,11 +1116,7 @@ class _CalendarDayScreenState extends ConsumerState<CalendarDayScreen> {
     final today = DateUtils.dateOnly(DateTime.now());
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          lang == 'te'
-              ? '${_day.day} ${teluguGregorianMonths[_day.month - 1]} ${_day.year}'
-              : DateFormat('d MMM y').format(_day),
-        ),
+        title: Text(fmtDate(lang, 'd MMM y', _day)),
         actions: [
           if (!DateUtils.isSameDay(_day, today))
             IconButton(
@@ -1151,7 +1137,11 @@ class _CalendarDayScreenState extends ConsumerState<CalendarDayScreen> {
             },
             icon: const Icon(Icons.edit_calendar_rounded),
           ),
-          IconButton(tooltip: 'Share', onPressed: _share, icon: const Icon(Icons.share_rounded)),
+          IconButton(
+            tooltip: t3(appLang, 'Share', 'शेयर करें', 'షేర్ చేయండి'),
+            onPressed: _share,
+            icon: const Icon(Icons.share_rounded),
+          ),
         ],
       ),
       body: Stack(
@@ -1196,8 +1186,7 @@ class _CalendarDayScreenState extends ConsumerState<CalendarDayScreen> {
     );
   }
 
-  static String _shortDay(String lang, DateTime d) =>
-      lang == 'te' ? '${d.day} ${teluguGregorianMonths[d.month - 1]}' : DateFormat('d MMM').format(d);
+  static String _shortDay(String lang, DateTime d) => fmtDate(lang, 'd MMM', d);
 }
 
 class _NudgeButton extends StatelessWidget {
@@ -1268,7 +1257,7 @@ class _DayPage extends ConsumerWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  lang == 'te' ? teluguWeekdays[day.weekday - 1] : DateFormat('EEEE').format(day),
+                  fmtDate(lang, 'EEEE', day),
                   style: const TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w700),
                 ),
                 Text(_monthTitle(lang, day), style: const TextStyle(color: Colors.white70, fontSize: 16)),
@@ -1312,12 +1301,12 @@ class _DayPage extends ConsumerWidget {
                       ),
                       if (f.deity.isNotEmpty)
                         Text(
-                          f.deity[0].toUpperCase() + f.deity.substring(1),
+                          f.deityLabel(lang),
                           style: TextStyle(color: Theme.of(context).colorScheme.primary, fontWeight: FontWeight.w600),
                         ),
                       if (f.description.isNotEmpty) ...[
                         const SizedBox(height: 6),
-                        Text(f.description, style: const TextStyle(height: 1.5)),
+                        Text(f.describe(lang), style: const TextStyle(height: 1.5)),
                       ],
                       if (wishes?.forFestival(f) case final w?)
                         Padding(

@@ -1,11 +1,14 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../l10n/l10n.dart';
+import 'script.dart';
 import 'storage.dart';
 import 'telugu.dart';
 
-/// UI strings in English, Hindi and Telugu. Content arrives in English and Hindi from the API;
-/// Telugu names come from core/telugu.dart and Sanskrit is shown in Telugu script there.
+/// UI strings in English, Hindi and Telugu; the other Indian languages translate the English value
+/// through lib/l10n. Content arrives in English and Hindi from the API; Telugu names come from
+/// core/telugu.dart, and Sanskrit is shown in the reader's own script (core/script.dart).
 const _strings = <String, Map<String, String>>{
   'home': {'en': 'Home', 'hi': 'होम', 'te': 'హోమ్'},
   'listen': {'en': 'Listen', 'hi': 'सुनें', 'te': 'వినండి'},
@@ -85,24 +88,47 @@ const _strings = <String, Map<String, String>>{
 
 String tr(WidgetRef ref, String key) {
   final lang = ref.watch(prefsProvider.select((p) => p.language));
-  return _strings[key]?[lang] ?? _strings[key]?['en'] ?? key;
+  return trLang(lang, key);
 }
 
-String trLang(String lang, String key) => _strings[key]?[lang] ?? _strings[key]?['en'] ?? key;
+String trLang(String lang, String key) {
+  final en = _strings[key]?['en'] ?? key;
+  return _strings[key]?[lang] ?? translate(lang, en) ?? en;
+}
 
 /// Picks the variant of an API field for the UI language. Telugu uses [te] when the app has a
-/// Telugu name for it, otherwise the Hindi text in Telugu script (how Telugu books print aartis).
+/// Telugu name for it; every other Indian language uses its translation of [en] when it has one,
+/// otherwise the Hindi text in its own script (how regional books print aartis and mantras).
 String pick(WidgetRef ref, String en, String hi, {String? te}) {
   final lang = ref.watch(prefsProvider.select((p) => p.language));
   return pickLang(lang, en, hi, te: te);
 }
 
 String pickLang(String lang, String en, String hi, {String? te}) => switch (lang) {
+  'en' => en,
   'hi' when hi.isNotEmpty => hi,
   'te' when te != null && te.isNotEmpty => te,
   'te' when hi.isNotEmpty => toTeluguScript(hi),
-  _ => en,
+  'mr' when hi.isNotEmpty => translate(lang, en) ?? hi,
+  _ when hi.isNotEmpty && needsScriptChange(lang) => translate(lang, en) ?? toIndicScript(lang, hi),
+  _ => translate(lang, en) ?? en,
 };
+
+/// A Panchang or place name in [lang]: Telugu from its own table ([te]), Hindi from [hi] when given,
+/// everything else from the lib/l10n tables, falling back to the English name.
+String nameIn(String lang, String en, {String? te, String? hi}) => switch (lang) {
+  'en' => en,
+  'te' when te != null && te.isNotEmpty => te,
+  'hi' when hi != null && hi.isNotEmpty => hi,
+  _ => translate(lang, en) ?? en,
+};
+
+/// Sanskrit or Hindi (Devanagari) text in the reader's script; unchanged for Hindi, Marathi and English.
+String scriptFor(String lang, String devanagari) =>
+    lang == 'te' ? toTeluguScript(devanagari) : toIndicScript(lang, devanagari);
+
+/// The app language where no WidgetRef is at hand (dialogs, toasts, empty states).
+String get appLang => Prefs.load(Boxes.prefs).language;
 
 String uiLang(WidgetRef ref) => ref.watch(prefsProvider.select((p) => p.language));
 
@@ -110,11 +136,13 @@ String uiLang(WidgetRef ref) => ref.watch(prefsProvider.select((p) => p.language
 String l3(WidgetRef ref, String en, String hi, String te) =>
     t3(ref.watch(prefsProvider.select((p) => p.language)), en, hi, te);
 
-/// Three-way inline text for UI copy that is not shared enough to live in [_strings].
+/// Inline UI copy: English, Hindi and Telugu at the call site; the other languages translate the
+/// English through lib/l10n (tool/l10n/extract.py collects these calls for translators).
 String t3(String lang, String en, String hi, String te) => switch (lang) {
+  'en' => en,
   'hi' => hi,
   'te' => te,
-  _ => en,
+  _ => translate(lang, en) ?? en,
 };
 
 extension BuildContextX on BuildContext {

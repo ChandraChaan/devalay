@@ -113,7 +113,7 @@ void main() {
     const slot = ReleaseSlot(day: 23, hour: 15, minute: 0, ahead: 3);
     final now = DateTime.utc(2026, 11, 11);
     expect(nextOpening(slot, 'en', now: now), '23 Nov, 3:00 PM · for February 2027');
-    expect(nextOpening(slot, 'hi', now: now, short: true), '23 Nov, 3:00 PM · Feb 2027 के लिए');
+    expect(nextOpening(slot, 'hi', now: now, short: true), '23 नवंबर, 3:00 PM · फ़रवरी 2027 के लिए');
     expect(nextOpening(slot, 'te', now: now), '23 నవంబర్, 3:00 PM · ఫిబ్రవరి 2027 కోసం');
     expect(
       usualOpening(slot, 'en'),

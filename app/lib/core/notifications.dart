@@ -3,7 +3,9 @@ import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:timezone/data/latest_all.dart' as tzdata;
 import 'package:timezone/timezone.dart' as tz;
 
+import 'i18n.dart';
 import 'models.dart';
+import 'names.dart';
 import 'telugu.dart';
 
 /// On-device reminders: daily prayer and festival reminders are scheduled with the
@@ -147,12 +149,25 @@ class Notifications {
           '🪔 ${day[wd]} · ${deity[wd]} के भजन',
           'आज ${deity[wd]} के भजन सुनें, दीप जलाएँ और आज का पंचांग देखें।',
         );
-      default:
+      case 'en':
         const day = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
         const deity = ['Shiva', 'Hanuman', 'Ganesha', 'Vishnu', 'Lakshmi', 'Shani Dev', 'Surya'];
         return (
           "🪔 ${day[wd]} · ${deity[wd]}'s songs",
           "Listen to ${deity[wd]}'s bhajans, light a diya and see today's Panchang.",
+        );
+      default:
+        const deity = ['Shiva', 'Hanuman', 'Ganesha', 'Vishnu', 'Lakshmi', 'Shani', 'Surya'];
+        final day = fmtDate(lang, 'EEEE', DateTime(2026, 11, 16 + wd)); // 16 Nov 2026 is a Monday
+        final name = nameIn(lang, deity[wd]);
+        return (
+          '🪔 $day · ${t3(lang, 'Bhajans of $name', '$name के भजन', '$name పాటలు')}',
+          t3(
+            lang,
+            'Listen to the bhajans of $name, light a diya and see today\'s Panchang.',
+            'आज $name के भजन सुनें, दीप जलाएँ और आज का पंचांग देखें।',
+            'ఈ రోజు $name భక్తి పాటలు వినండి, దీపం వెలిగించండి.',
+          ),
         );
     }
   }
@@ -176,10 +191,10 @@ class Notifications {
         scheduledDate: when,
         notificationDetails: const NotificationDetails(android: _festival),
         androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
-        title: lang == 'hi' && f.nameHi.isNotEmpty ? '🙏 ${f.nameHi}' : '🙏 ${f.name}',
-        body: f.description.isNotEmpty
+        title: '🙏 ${f.label(lang)}',
+        body: f.description.isNotEmpty && lang == 'en'
             ? f.description
-            : (lang == 'hi' ? 'आज का पर्व मंगलमय हो!' : 'Wishing you a blessed festival!'),
+            : t3(lang, 'Wishing you a blessed festival!', 'आज का पर्व मंगलमय हो!', 'పండుగ శుభాకాంక్షలు!'),
       );
     }
   }
@@ -295,8 +310,13 @@ class Notifications {
             '$temple: ऑनलाइन बुकिंग आमतौर पर कल खुलती है। पहचान पत्र की जानकारी तैयार रखें।',
           ),
           _ => (
-            '🎟️ Tomorrow $time · $service',
-            '$temple: online booking usually opens tomorrow. Keep your ID details ready.',
+            '🎟️ ${t3(lang, 'Tomorrow $time · $service', 'कल $time · $service', 'రేపు $time · $service')}',
+            t3(
+              lang,
+              '$temple: online booking usually opens tomorrow. Keep your ID details ready.',
+              '$temple: ऑनलाइन बुकिंग आमतौर पर कल खुलती है।',
+              '$temple: ఆన్‌లైన్ బుకింగ్ సాధారణంగా రేపు మొదలవుతుంది.',
+            ),
           ),
         },
       ),
@@ -308,7 +328,15 @@ class Notifications {
             '$temple: కోటా సాధారణంగా ఈ రోజు విడుదలవుతుంది. దేవాలయం యాప్‌లో బుకింగ్ తెరవండి.',
           ),
           'hi' => ('🎟️ $time बजे $service', '$temple: कोटा आमतौर पर आज खुलता है। देवालय में बुकिंग खोलें।'),
-          _ => ('🎟️ $service opens at $time', '$temple: the quota usually opens today. Open Booking in Devalay.'),
+          _ => (
+            '🎟️ ${t3(lang, '$service opens at $time', '$time बजे $service', '$time కు $service')}',
+            t3(
+              lang,
+              '$temple: the quota usually opens today. Open Booking in Devalay.',
+              '$temple: कोटा आमतौर पर आज खुलता है।',
+              '$temple: కోటా సాధారణంగా ఈ రోజు విడుదలవుతుంది.',
+            ),
+          ),
         },
       ),
     ];

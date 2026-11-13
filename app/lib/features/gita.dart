@@ -8,7 +8,6 @@ import 'package:share_plus/share_plus.dart';
 import '../core/favorites.dart';
 import '../core/gita_voice.dart';
 import '../core/i18n.dart';
-import '../core/telugu.dart';
 import '../core/models.dart';
 import '../core/providers.dart';
 import '../core/storage.dart';
@@ -235,7 +234,7 @@ class _GitaChapterScreenState extends ConsumerState<GitaChapterScreen> {
         title: Text('${l3(ref, 'Chapter', 'अध्याय', 'అధ్యాయం')} ${widget.chapter}'),
         actions: [
           IconButton(
-            tooltip: 'Transliteration',
+            tooltip: t3(appLang, 'Transliteration', 'लिप्यंतरण', 'లిప్యంతరీకరణ'),
             onPressed: () => ref.read(prefsProvider.notifier).set('show_translit', !prefs.showTransliteration),
             icon: Icon(
               prefs.showTransliteration ? Icons.translate_rounded : Icons.translate_outlined,
@@ -477,7 +476,10 @@ class _ChapterIntro extends StatelessWidget {
         Text(chapter.summary, style: const TextStyle(fontSize: 17, height: 1.6)),
         const SizedBox(height: 24),
         Center(
-          child: Text('Swipe to begin →', style: TextStyle(color: Theme.of(context).colorScheme.primary)),
+          child: Text(
+            t3(appLang, 'Swipe to begin →', 'शुरू करने के लिए स्वाइप करें →', 'మొదలుపెట్టడానికి స్వైప్ చేయండి →'),
+            style: TextStyle(color: Theme.of(context).colorScheme.primary),
+          ),
         ),
       ],
     ).animate().fadeIn();
@@ -515,7 +517,7 @@ class _VersePage extends ConsumerWidget {
               item: FavoriteItem(
                 type: 'verse',
                 id: verse.ref,
-                title: 'Bhagavad Gita ${verse.ref}',
+                title: t3(appLang, 'Bhagavad Gita ${verse.ref}', 'भगवद गीता ${verse.ref}', 'భగవద్గీత ${verse.ref}'),
                 subtitle: verse.translation,
               ),
             ),
@@ -545,7 +547,7 @@ class _VersePage extends ConsumerWidget {
             ),
           ),
           child: Text(
-            uiLang(ref) == 'te' ? toTeluguScript(verse.sanskrit) : verse.sanskrit,
+            scriptFor(uiLang(ref), verse.sanskrit),
             textAlign: TextAlign.center,
             style: scriptureStyle(context, size: 21 * prefs.textScale),
           ),

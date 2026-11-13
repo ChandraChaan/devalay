@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import '../l10n/l10n.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -15,7 +16,15 @@ import 'storage.dart';
 /// the static API, so a changed web address or release date reaches users without an app update.
 
 /// Text in the UI language, falling back to English. Catalogue text is `{en, hi, te}`.
-String loc(Object? text, String lang) => text is Map ? '${text[lang] ?? text['en'] ?? ''}' : '${text ?? ''}';
+/// A {"en", "hi", "te"} text from the bundled catalogues in [lang]; other languages translate the
+/// English through lib/l10n (tool/l10n/strings_content.json).
+String loc(Object? text, String lang) {
+  if (text is! Map) return '${text ?? ''}';
+  final own = text[lang];
+  if (own is String && own.isNotEmpty) return own;
+  final en = '${text['en'] ?? ''}';
+  return translate(lang, en) ?? en;
+}
 
 /// India time as wall-clock fields. Temples publish release times in IST wherever the phone is.
 DateTime istNow() => DateTime.now().toUtc().add(const Duration(hours: 5, minutes: 30));

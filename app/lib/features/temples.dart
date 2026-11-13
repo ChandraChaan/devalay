@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../core/i18n.dart';
+import '../core/names.dart';
 import '../core/notifications.dart' show clock12;
 import '../core/storage.dart';
 import '../core/telugu.dart';
@@ -47,11 +48,9 @@ String _state(String state, String lang) {
   return names == null ? state : t3(lang, state, names.$1, names.$2);
 }
 
-String _dayMonth(DateTime d, String lang) =>
-    lang == 'te' ? '${d.day} ${teluguGregorianMonths[d.month - 1]}' : DateFormat('d MMM').format(d);
+String _dayMonth(DateTime d, String lang) => fmtDate(lang, 'd MMM', d);
 
-String _monthYear(DateTime d, String lang) =>
-    lang == 'te' ? '${teluguGregorianMonths[d.month - 1]} ${d.year}' : DateFormat('MMMM y').format(d);
+String _monthYear(DateTime d, String lang) => fmtDate(lang, 'MMMM y', d);
 
 String _ordinal(int n) {
   if (n % 100 >= 11 && n % 100 <= 13) return '${n}th';
@@ -74,7 +73,8 @@ String usualOpening(ReleaseSlot slot, String lang) {
   };
   return t3(
     lang,
-    'Usually opens on the ${_ordinal(slot.day)} of each month at $time IST$visits.',
+    // Other languages fill "{0}" in their own grammar, so they get the bare day number.
+    'Usually opens on the ${lang == 'en' ? _ordinal(slot.day) : slot.day} of each month at $time IST$visits.',
     'आमतौर पर हर महीने की ${slot.day} तारीख को $time (IST) पर खुलता है$visits।',
     'సాధారణంగా ప్రతి నెల ${slot.day}వ తేదీ $time (IST) కు విడుదలవుతుంది$visits.',
   );
@@ -86,7 +86,7 @@ String nextOpening(ReleaseSlot slot, String lang, {DateTime? now, bool short = f
   final when = '${_dayMonth(next, lang)}, ${clock12(slot.hour, slot.minute)}';
   if (slot.ahead == 0) return when;
   final quota = slot.quotaMonth(next);
-  final month = short && lang != 'te' ? DateFormat('MMM y').format(quota) : _monthYear(quota, lang);
+  final month = short && lang == 'en' ? DateFormat('MMM y').format(quota) : _monthYear(quota, lang);
   return '$when · ${t3(lang, 'for $month', '$month के लिए', '$month కోసం')}';
 }
 

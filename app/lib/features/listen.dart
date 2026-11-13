@@ -105,10 +105,15 @@ class _TrackList extends ConsumerWidget {
       loading: () => const LoadingList(),
       error: (e, _) => ErrorRetry(error: e, onRetry: () => ref.invalidate(tracksProvider(query))),
       data: (list) => list.isEmpty
-          ? const EmptyState(
+          ? EmptyState(
               icon: Icons.music_off_rounded,
-              title: 'Nothing here yet',
-              subtitle: 'More recordings are added as licensed content becomes available.',
+              title: t3(appLang, 'Nothing here yet', 'अभी यहाँ कुछ नहीं', 'ఇక్కడ ఇంకా ఏమీ లేదు'),
+              subtitle: t3(
+                appLang,
+                'More recordings are added as licensed content becomes available.',
+                'लाइसेंस वाली सामग्री मिलते ही और रिकॉर्डिंग जोड़ी जाएँगी।',
+                'లైసెన్స్ ఉన్న కంటెంట్ దొరికినప్పుడల్లా మరిన్ని రికార్డింగ్‌లు జోడిస్తాం.',
+              ),
             )
           : RefreshIndicator(
               onRefresh: () => ref.refresh(tracksProvider(query).future),

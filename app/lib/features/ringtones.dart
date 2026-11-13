@@ -116,14 +116,20 @@ class RingtonesScreen extends ConsumerWidget {
       final ok = await showDialog<bool>(
         context: context,
         builder: (ctx) => AlertDialog(
-          title: const Text('One-time permission'),
+          title: Text(t3(appLang, 'One-time permission', 'एक बार की अनुमति', 'ఒక్కసారి అనుమతి')),
           content: const Text(
             'Android needs "Modify system settings" permission for Devalay to change your ringtone. '
             'Turn it on, then come back and tap Set again.',
           ),
           actions: [
-            TextButton(onPressed: () => Navigator.pop(ctx, false), child: const Text('Cancel')),
-            FilledButton(onPressed: () => Navigator.pop(ctx, true), child: const Text('Open settings')),
+            TextButton(
+              onPressed: () => Navigator.pop(ctx, false),
+              child: Text(t3(appLang, 'Cancel', 'रद्द करें', 'రద్దు')),
+            ),
+            FilledButton(
+              onPressed: () => Navigator.pop(ctx, true),
+              child: Text(t3(appLang, 'Open settings', 'सेटिंग्स खोलें', 'సెట్టింగ్స్ తెరవండి')),
+            ),
           ],
         ),
       );
@@ -137,7 +143,12 @@ class RingtonesScreen extends ConsumerWidget {
       await NativeBridge.setRingtone(path, 'Devalay - ${t.title}', type);
       if (context.mounted) toast(context, '${t.title} set as $type 🙏');
     } catch (e) {
-      if (context.mounted) toast(context, 'Could not set ringtone: $e');
+      if (context.mounted) {
+        toast(
+          context,
+          t3(appLang, 'Could not set ringtone: $e', 'रिंगटोन सेट नहीं हो सका: $e', 'రింగ్‌టోన్ సెట్ కాలేదు: $e'),
+        );
+      }
     }
   }
 }

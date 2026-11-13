@@ -27,7 +27,10 @@ class PlayerScreen extends ConsumerWidget {
     if (track == null) {
       return Scaffold(
         appBar: AppBar(),
-        body: const EmptyState(icon: Icons.music_note_rounded, title: 'Nothing playing'),
+        body: EmptyState(
+          icon: Icons.music_note_rounded,
+          title: t3(appLang, 'Nothing playing', 'कुछ नहीं चल रहा', 'ఏదీ ప్లే అవ్వడం లేదు'),
+        ),
       );
     }
     final playing = ref.watch(playingProvider).value ?? false;
@@ -161,7 +164,7 @@ class PlayerScreen extends ConsumerWidget {
                       TextButton.icon(
                         onPressed: () => context.push('/text/${track.textSlug}'),
                         icon: const Icon(Icons.lyrics_outlined, color: Colors.white),
-                        label: const Text('Lyrics', style: TextStyle(color: Colors.white)),
+                        label: Text(t3(appLang, 'Lyrics', 'बोल', 'సాహిత్యం'), style: TextStyle(color: Colors.white)),
                       ),
                   ],
                 ),
@@ -233,7 +236,7 @@ class _SleepButtonState extends State<_SleepButton> {
   Widget build(BuildContext context) {
     final active = widget.audio.sleepAt != null && widget.audio.sleepAt!.isAfter(DateTime.now());
     return PopupMenuButton<int>(
-      tooltip: 'Sleep timer',
+      tooltip: t3(appLang, 'Sleep timer', 'स्लीप टाइमर', 'స్లీప్ టైమర్'),
       icon: Icon(Icons.bedtime_outlined, color: active ? Palette.gold : Colors.white),
       onSelected: (m) {
         widget.audio.setSleepTimer(m == 0 ? null : Duration(minutes: m));
@@ -242,7 +245,7 @@ class _SleepButtonState extends State<_SleepButton> {
       },
       itemBuilder: (_) => [
         for (final m in [10, 20, 30, 60]) PopupMenuItem(value: m, child: Text('$m minutes')),
-        const PopupMenuItem(value: 0, child: Text('Off')),
+        PopupMenuItem(value: 0, child: Text(t3(appLang, 'Off', 'बंद', 'ఆఫ్'))),
       ],
     );
   }
@@ -279,10 +282,28 @@ class _DownloadButton extends ConsumerWidget {
             premium: ref.read(authProvider).isPremium,
             freeLimit: AppConfig.freeDownloadLimit,
           );
-          if (context.mounted) toast(context, 'Saved for offline listening');
+          if (context.mounted) {
+            toast(
+              context,
+              t3(
+                appLang,
+                'Saved for offline listening',
+                'ऑफ़लाइन सुनने के लिए सहेजा गया',
+                'ఆఫ్‌లైన్‌లో వినడానికి సేవ్ అయింది',
+              ),
+            );
+          }
         } on DownloadLimitReached {
           if (context.mounted) {
-            toast(context, 'Free plan keeps ${AppConfig.freeDownloadLimit} downloads. Remove one or go Premium.');
+            toast(
+              context,
+              t3(
+                appLang,
+                'Free plan keeps ${AppConfig.freeDownloadLimit} downloads. Remove one or go Premium.',
+                'मुफ़्त प्लान में ${AppConfig.freeDownloadLimit} डाउनलोड रहते हैं। एक हटाएँ या प्रीमियम लें।',
+                'ఉచిత ప్లాన్‌లో ${AppConfig.freeDownloadLimit} డౌన్‌లోడ్‌లు మాత్రమే. ఒకటి తీసేయండి లేదా ప్రీమియం తీసుకోండి.',
+              ),
+            );
           }
         } catch (_) {
           if (context.mounted) toast(context, tr(ref, 'error'));

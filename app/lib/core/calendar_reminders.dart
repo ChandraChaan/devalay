@@ -7,10 +7,10 @@ import 'home_widget_sync.dart';
 import 'i18n.dart';
 import 'models.dart';
 import 'muhurta.dart';
+import 'names.dart';
 import 'notifications.dart';
 import 'providers.dart';
 import 'storage.dart';
-import 'telugu.dart';
 
 /// Lays out the calendar's on-device alarms: the morning Panchang message for the coming
 /// weeks and each personal event's next reminder. Alarms only reach as far as the data the
@@ -82,8 +82,8 @@ Future<void> refreshPanchangNotifications(WidgetRef ref) async {
   List<UserEvent> events, {
   int? birthStar,
 }) {
-  final weekday = lang == 'te' ? teluguWeekdays[day.weekday - 1] : DateFormat('EEEE').format(day);
-  final date = lang == 'te' ? '${day.day} ${teluguGregorianMonths[day.month - 1]}' : DateFormat('d MMM').format(day);
+  final weekday = fmtDate(lang, 'EEEE', day);
+  final date = fmtDate(lang, 'd MMM', day);
   final major = festivals.where((f) => f.major).toList();
   final title = major.isNotEmpty
       ? '🪔 ${major.map((f) => f.label(lang)).join(' · ')} · $weekday'
@@ -95,7 +95,7 @@ Future<void> refreshPanchangNotifications(WidgetRef ref) async {
   final starIndex = nakshatraNames.indexOf(nakshatra);
   final lines = <String>[
     [if (month != null) lunarMonthLabel(lang, month), if (tithi != null) tithiName(lang, tithi)].join(' '),
-    '${t3(lang, 'Nakshatra', 'नक्षत्र', 'నక్షత్రం')}: ${lang == 'te' && starIndex >= 0 ? teluguNakshatra[starIndex + 1] : nakshatra}',
+    '${t3(lang, 'Nakshatra', 'नक्षत्र', 'నక్షత్రం')}: ${nakshatraIn(lang, nakshatra)}',
   ];
   if (s['sunset'] != null) {
     final (from, to) = rahuKalam(day, wallClock('${s['sunrise']}'), wallClock('${s['sunset']}'));
@@ -144,7 +144,7 @@ Future<void> scheduleEventReminder(
   final detail = [
     UserEvent.kindLabel(lang, e.kind),
     if (e.repeat == EventRepeat.tithi) e.tithiLabel(lang),
-    lang == 'te' ? '${on.day} ${teluguGregorianMonths[on.month - 1]}' : DateFormat('EEE, d MMM').format(on),
+    fmtDate(lang, 'EEE, d MMM', on),
   ].join(' · ');
   await Notifications.scheduleEvent(
     e.id,

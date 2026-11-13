@@ -9,8 +9,8 @@ import '../core/api.dart';
 import '../core/audio.dart';
 import '../core/i18n.dart';
 import '../core/models.dart';
+import '../core/names.dart';
 import '../core/providers.dart';
-import '../core/telugu.dart';
 import '../widgets/common.dart';
 
 class SearchScreen extends ConsumerStatefulWidget {
@@ -133,11 +133,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
                   ListTile(
                     leading: Text(f.major ? '🪔' : '🙏', style: const TextStyle(fontSize: 26)),
                     title: Text(f.label(lang)),
-                    subtitle: Text(
-                      lang == 'te'
-                          ? '${f.date.day} ${teluguGregorianMonths[f.date.month - 1]} ${f.date.year}'
-                          : DateFormat('EEE, d MMM y').format(f.date),
-                    ),
+                    subtitle: Text(fmtDate(lang, 'EEE, d MMM y', f.date)),
                     trailing: const Icon(Icons.chevron_right_rounded),
                     onTap: () => context.push('/calendar/day/${DateFormat('yyyy-MM-dd').format(f.date)}'),
                   ),

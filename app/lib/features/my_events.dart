@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
@@ -8,15 +9,14 @@ import '../core/events.dart';
 import '../core/home_widget_sync.dart';
 import '../core/i18n.dart';
 import '../core/muhurta.dart';
+import '../core/names.dart';
 import '../core/notifications.dart';
 import '../core/providers.dart';
 import '../core/storage.dart';
-import '../core/telugu.dart';
 import '../core/theme.dart';
 import '../widgets/common.dart';
 
-String _fmtDate(String lang, DateTime d) =>
-    lang == 'te' ? '${d.day} ${teluguGregorianMonths[d.month - 1]} ${d.year}' : DateFormat('EEE, d MMM y').format(d);
+String _fmtDate(String lang, DateTime d) => fmtDate(lang, 'EEE, d MMM y', d);
 
 String _repeatLabel(String lang, UserEvent e) => switch (e.repeat) {
   EventRepeat.once => t3(lang, 'Once', 'एक बार', 'ఒక్కసారి'),
@@ -512,7 +512,7 @@ class MyEventsScreen extends ConsumerWidget {
           if (rows.isNotEmpty && rows.first.$2 != null)
             _NextUp(event: rows.first.$1, on: rows.first.$2!, today: today, lang: lang),
           if (rows.isNotEmpty) SectionHeader(t3(lang, 'All my days', 'मेरे सभी दिन', 'నా అన్ని రోజులు')),
-          for (final (e, next) in rows)
+          for (final (i, (e, next)) in rows.indexed)
             Card(
               margin: const EdgeInsets.only(bottom: 8),
               child: ListTile(
@@ -529,7 +529,7 @@ class MyEventsScreen extends ConsumerWidget {
                 subtitle: Text([_repeatLabel(lang, e), if (next != null) _fmtDate(lang, next)].join('\n')),
                 trailing: next == null ? null : DaysLeft(next.difference(today).inDays, lang: lang),
               ),
-            ),
+            ).animate(delay: (40 * i.clamp(0, 10)).ms).fadeIn(duration: 250.ms).slideY(begin: 0.08),
           if (tithi)
             Padding(
               padding: const EdgeInsets.all(8),

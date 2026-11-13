@@ -1,10 +1,12 @@
 import 'dart:io';
 
+import 'package:devalay/core/names.dart';
 import 'package:devalay/core/storage.dart';
 import 'package:hive_ce/hive.dart';
 
 /// Opens the app's Hive boxes in a temporary directory for tests.
 Future<void> initTestStorage() async {
+  await initDates();
   final dir = await Directory.systemTemp.createTemp('devalay-test');
   Hive.init(dir.path);
   Boxes.prefs = await Hive.openBox('prefs');

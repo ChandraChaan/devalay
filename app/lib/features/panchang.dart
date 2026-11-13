@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:intl/intl.dart';
 
 import '../core/i18n.dart';
 import '../core/glossary.dart';
 import '../core/location.dart';
+import '../core/names.dart';
 import '../core/providers.dart';
 import '../core/storage.dart';
 import '../core/telugu.dart';
@@ -60,7 +60,7 @@ class _PanchangScreenState extends ConsumerState<PanchangScreen> {
                   child: Column(
                     children: [
                       Text(
-                        lang == 'te' ? teluguDate(_day) : DateFormat('EEEE, d MMMM y').format(_day),
+                        fmtDate(lang, 'EEEE, d MMMM y', _day),
                         style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
                       ),
                       Text(city.label(lang), style: Theme.of(context).textTheme.bodySmall),
@@ -114,18 +114,16 @@ class PanchangDetail extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final lang = ref.watch(prefsProvider).language;
-    final te = lang == 'te';
     final month = data['lunar_month'] as Map;
     final monthIndex = month['index'] as int;
     final tithis = (data['tithi'] as List).cast<Map>();
     final till = t3(lang, 'till', 'तक', 'వరకు');
 
-    String tithiName(Map m) => te
-        ? '${teluguPaksha[m['paksha']] ?? ''} ${teluguTithi[m['name']] ?? m['name']}'
-        : '${m['paksha']} ${m['name']}';
-    String indexed(List<String> names, Map m) => te ? names[m['index'] as int] : '${m['name']}';
-    String karana(Map m) => te ? (teluguKarana[m['name']] ?? '${m['name']}') : '${m['name']}';
-    String rashi(Object? r) => te ? (teluguRashi['$r'] ?? '$r') : '$r';
+    String tithiName(Map m) => lang == 'en'
+        ? '${m['paksha']} ${m['name']}'
+        : '${pakshaIn(lang, '${m['paksha']}')} ${tithiIn(lang, '${m['name']}')}';
+    String karana(Map m) => karanaIn(lang, '${m['name']}');
+    String rashi(Object? r) => rashiIn(lang, '$r');
 
     Widget limb(String key, List items, String Function(Map) label) => Card(
       margin: const EdgeInsets.only(bottom: 10),
@@ -237,9 +235,16 @@ class PanchangDetail extends ConsumerWidget {
         '${month['name']} ${adhika ? '(अधिक) ' : ''}· विक्रम संवत ${data['vikram_samvat']}',
         if (samvatsara != null) '${samvatsara['name']} संवत्सर · शक ${data['shaka_samvat']}',
       ],
-      _ => [
+      'en' => [
         '${month['name']} ${adhika ? '(Adhik) ' : ''}· Vikram Samvat ${data['vikram_samvat']}',
         if (samvatsara != null) '${samvatsara['name']} samvatsara · Shaka ${data['shaka_samvat']}',
+      ],
+      _ => [
+        if (samvatsara != null)
+          '${samvatsaraIn(lang, samvatsara['index'] as int, '${samvatsara['name']}')} ${t3(lang, 'samvatsara', 'संवत्सर', 'నామ సంవత్సరం')}',
+        '${adhika ? '${t3(lang, 'Adhika', 'अधिक', 'అధిక')} ' : ''}${monthIn(lang, monthIndex)} ${t3(lang, 'masa', 'मास', 'మాసం')} · ${pakshaIn(lang, '${tithis.first['paksha']}')}',
+        '${ayanaIn(lang, _uttarayana.contains(sunRashi))} · ${rituIn(lang, monthIndex ~/ 2)}',
+        '${t3(lang, 'Vikram Samvat', 'विक्रम संवत', 'విక్రమ శకం')} ${data['vikram_samvat']} · ${t3(lang, 'Shaka', 'शक', 'శక')} ${data['shaka_samvat']}',
       ],
     };
 
@@ -256,15 +261,15 @@ class PanchangDetail extends ConsumerWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      te ? (teluguVara['${data['vara']}'] ?? '${data['vara']}') : '${data['vara']}',
+                      varaIn(lang, '${data['vara']}'),
                       style: const TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w700),
                     ),
                     for (final l in headerLines) Text(l, style: const TextStyle(color: Colors.white)),
                     Text(
                       t3(
                         lang,
-                        'Sun in ${data['sun_rashi']} · Moon in ${data['moon_rashi']}',
-                        'सूर्य ${data['sun_rashi']} · चंद्र ${data['moon_rashi']}',
+                        'Sun in ${lang == 'en' ? data['sun_rashi'] : rashi(data['sun_rashi'])} · Moon in ${lang == 'en' ? data['moon_rashi'] : rashi(data['moon_rashi'])}',
+                        'सूर्य ${rashi(data['sun_rashi'])} · चंद्र ${rashi(data['moon_rashi'])}',
                         'సూర్యుడు ${rashi(data['sun_rashi'])} · చంద్రుడు ${rashi(data['moon_rashi'])}',
                       ),
                       style: const TextStyle(color: Colors.white70),
@@ -307,8 +312,8 @@ class PanchangDetail extends ConsumerWidget {
         PersonalBalam(data: data),
         const SizedBox(height: 12),
         limb('tithi', tithis, tithiName),
-        limb('nakshatra', data['nakshatra'] as List, (m) => indexed(teluguNakshatra, m)),
-        limb('yoga', data['yoga'] as List, (m) => indexed(teluguYoga, m)),
+        limb('nakshatra', data['nakshatra'] as List, (m) => nakshatraIn(lang, '${m['name']}')),
+        limb('yoga', data['yoga'] as List, (m) => yogaIn(lang, '${m['name']}', m['index'] as int)),
         limb('karana', data['karana'] as List, karana),
         const SizedBox(height: 4),
         SectionHeader(t3(lang, 'Good times', 'शुभ समय', 'శుభ సమయాలు')),
