@@ -55,7 +55,7 @@ class _ShubhaMuhurthamScreenState extends ConsumerState<ShubhaMuhurthamScreen> {
           Text(_about(lang, _kind), style: Theme.of(context).textTheme.bodySmall),
           const SizedBox(height: 10),
           ...data.when(
-            loading: () => [const LoadingList(height: 90)],
+            loading: () => [const SizedBox(height: 420, child: LoadingList(height: 90))],
             error: (e, _) => [ErrorRetry(error: e, onRetry: () => ref.invalidate(muhurthamProvider))],
             data: (all) => _list(lang, all[_kind] ?? const []),
           ),
