@@ -110,11 +110,15 @@ class MainActivity : AudioServiceActivity() {
         val recent = (providers + LocationManager.PASSIVE_PROVIDER)
             .mapNotNull { runCatching { manager.getLastKnownLocation(it) }.getOrNull() }
             .maxByOrNull { it.time }
-        if (recent != null && System.currentTimeMillis() - recent.time < 6 * 60 * 60 * 1000L) {
+        // A fix from the last few minutes is still where the user is; an older one may be the city they
+        // travelled from, so ask for a fresh fix and keep the old one only as the fallback.
+        if (recent != null && System.currentTimeMillis() - recent.time < 15 * 60 * 1000L) {
             answer(recent)
             return
         }
-        val provider = providers.first()
+        val fused = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S &&
+            runCatching { manager.isProviderEnabled(LocationManager.FUSED_PROVIDER) }.getOrDefault(false)
+        val provider = if (fused) LocationManager.FUSED_PROVIDER else providers.first()
         val main = Handler(Looper.getMainLooper())
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             val cancel = CancellationSignal()
