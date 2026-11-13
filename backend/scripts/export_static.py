@@ -143,6 +143,9 @@ def main() -> None:
             "occasion_prefix": ai.OCCASION_PREFIX,
         })
 
+        # Transits behind the weekly, monthly and yearly Rashi phalalu (the text is written on the phone).
+        ex.get("/gochara")
+
         for lang in ("hi", "en", "te"):
             for offset in HOME_DAYS:
                 ex.get("/rashifal", {"lang": lang, "day": (today + timedelta(days=offset)).isoformat()})
@@ -169,6 +172,9 @@ def main() -> None:
             for y in (today.year, today.year + 1):
                 q = {"year": str(y), "include_recurring": "true"}
                 ex.get("/festivals", {**loc, **q}, {**key, **q})
+            # Shubha Muhurtham from today to the end of next year, and this year's and next year's eclipses.
+            ex.get("/muhurtham", loc, key)
+            ex.get("/eclipses", loc, key)
 
         for page, name in (("/privacy", "privacy.html"), ("/terms", "terms.html")):
             (OUT / name).write_text(client.get(page).text)

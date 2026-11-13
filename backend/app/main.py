@@ -16,7 +16,7 @@ from app.admin.setup import mount_admin
 from app.config import get_settings
 from app.db import engine
 from app.deps import limiter
-from app.routers import ai_routes, astro, auth, content, home, me
+from app.routers import ai_routes, astro, auth, content, home, jyotish, me
 from app.services import ai, panchang
 
 settings = get_settings()
@@ -68,7 +68,7 @@ async def unhandled(request: Request, exc: Exception):
 
 
 API = "/api/v1"
-for module in (auth, content, astro, home, ai_routes, me):
+for module in (auth, content, astro, jyotish, home, ai_routes, me):
     app.include_router(module.router, prefix=API)
 
 

@@ -56,3 +56,15 @@ def test_visible_abroad():
     london = eclipses.eclipses(Location(51.51, -0.13, "Europe/London"), date(2026, 8, 1), date(2026, 8, 31))
     solar = next(e for e in london if e["kind"] == "solar")
     assert solar["visible"] and solar["local_type"] == "partial" and solar["magnitude"] > 0.9
+
+
+def test_api_endpoints(client):
+    r = client.get("/api/v1/eclipses", params={"lat": 17.39, "lon": 78.49, "tz": "Asia/Kolkata"})
+    assert r.status_code == 200 and {e["kind"] for e in r.json()} == {"solar", "lunar"}
+    g = client.get("/api/v1/gochara").json()
+    assert set(g["planets"]) == {"sun", "jupiter", "saturn"}
+    assert len(g["moon"]) == (date.fromisoformat(g["to"]) - date.fromisoformat(g["from"])).days + 1
+    m = client.get("/api/v1/muhurtham", params={"lat": 17.39, "lon": 78.49, "tz": "Asia/Kolkata"}).json()
+    assert set(m["kinds"]) == {"vivaha", "griha_pravesha", "vehicle"}
+    day = m["kinds"]["vivaha"][0]
+    assert day["d"] >= m["from"] and day["w"] and day["n"]
