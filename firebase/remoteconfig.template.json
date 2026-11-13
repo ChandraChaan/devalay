@@ -7,7 +7,7 @@
     },
     "latest_version_code": {
       "defaultValue": { "value": "0" },
-      "description": "Newest published versionCode. Older builds get a dismissible 'new version' prompt (APK installs; Play installs use Play's in-app update). v1.4.0 = 10402.",
+      "description": "Newest published versionCode. Older builds get a dismissible 'new version' prompt (APK installs; Play installs use Play's in-app update). v1.4.0 = 10403.",
       "valueType": "NUMBER"
     },
     "update_message_te": {

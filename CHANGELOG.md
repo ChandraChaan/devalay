@@ -63,6 +63,8 @@ v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the 
   months, nakshatra, tithi, weekday, yoga and karana, no Adhika masa, Chaturmas or Pitru Paksha where they
   apply, and no Guru or Shukra moudhyami. They agree with Drik Panchang's 2026-2027 lists for Hyderabad and
   New Delhi on 88-90% of marriage dates, 94-95% of house-warming dates and 99.5% of vehicle dates.
+- Namakaranam: good days for the naming ceremony in Shubha Muhurtham, agreeing with AstroSage's 2026-2027 list on
+  98% of dates.
 - Grahanam: solar and lunar eclipses this year and next, as seen from your city, with the begin, maximum and
   end times, whether it is visible, and Sutak (9 hours before a lunar eclipse, 12 before a solar one). They
   show in the calendar, on the day page and in a new Eclipses list in Important days.
