@@ -935,4 +935,183 @@ const stringsTa = <String, String>{
   'Vriddhi': 'விருத்தி',
   'Vyaghata': 'வியாகாதம்',
   'Vyatipata': 'வியதீபாதம்',
+  // Shubha Muhurtham, Grahanam, Jatakam and weekly, monthly and yearly Rashi phalalu.
+  'Jatakam': 'ஜாதகம்',
+  'A demanding month. Avoid big risks, look after health and keep faith.':
+      'சிரமமான மாதம். பெரிய அபாயங்களைத் தவிர்த்து, உடல்நலத்தைப் பேணி, நம்பிக்கையுடன் இருங்கள்.',
+  'A favourable month. Efforts bear fruit and support comes easily.':
+      'சாதகமான மாதம். முயற்சிகள் பலன் தரும், உதவி எளிதில் கிடைக்கும்.',
+  'A favourable week. Begin important work on the good days.':
+      'சாதகமான வாரம். முக்கியமான காரியங்களை நல்ல நாட்களில் தொடங்குங்கள்.',
+  'A favourable year. Jupiter and Saturn support growth; plan big steps.':
+      'சாதகமான ஆண்டு. குருவும் சனியும் வளர்ச்சிக்குத் துணை நிற்பர்; பெரிய அடிகளைத் திட்டமிடுங்கள்.',
+  'A hard stretch with obstacles and worries about health and money. Prayer and patience help.':
+      'தடைகளும், உடல்நலம், பணம் பற்றிய கவலைகளும் நிறைந்த கடினமான காலம். பிரார்த்தனையும் பொறுமையும் உதவும்.',
+  'A mixed month. Steady work and patience bring results.': 'கலவையான மாதம். நிலையான உழைப்பும் பொறுமையும் பலன் தரும்.',
+  'A mixed week. Keep important work for the good days.':
+      'கலவையான வாரம். முக்கியமான காரியங்களை நல்ல நாட்களுக்கு வைத்துக்கொள்ளுங்கள்.',
+  'A mixed year. Gains come with effort; choose your moments.':
+      'கலவையான ஆண்டு. உழைப்பால் லாபம் கிடைக்கும்; சரியான நேரத்தைத் தேர்ந்தெடுங்கள்.',
+  'A week to go slowly. Keep to routine, pray, and start new things on the good days.':
+      'நிதானமாகச் செல்ல வேண்டிய வாரம். வழக்கமான நடைமுறையைப் பின்பற்றி, பிரார்த்தனை செய்து, புதிய காரியங்களை நல்ல நாட்களில் தொடங்குங்கள்.',
+  'A year of tests. Slow, honest work and devotion carry you through.':
+      'சோதனைகளின் ஆண்டு. நிதானமான, நேர்மையான உழைப்பும் பக்தியும் உங்களைக் கரை சேர்க்கும்.',
+  'Ardhashtama Shani: worries at home and health need care. Avoid hasty moves.':
+      'அர்த்தாஷ்டம சனி: வீட்டுக் கவலைகளிலும் உடல்நலத்திலும் கவனம் தேவை. அவசர முடிவுகளைத் தவிர்க்கவும்.',
+  'Ashtama Shani: a demanding time. Avoid risks and look after your health.':
+      'அஷ்டம சனி: சிரமமான காலம். அபாயங்களைத் தவிர்த்து, உடல்நலத்தைப் பேணுங்கள்.',
+  'Chandrashtamam (Moon in the 8th), go gently: {0}': 'சந்திராஷ்டமம் (8-ஆம் இடத்தில் சந்திரன்), கவனமாக இருங்கள்: {0}',
+  'Children, learning and devotion flourish. Wise counsel and good decisions.':
+      'பிள்ளைகள், கல்வி, பக்தி செழிக்கும். நல்ல ஆலோசனையும் சரியான முடிவுகளும் அமையும்.',
+  'Comforts and peace at home need care, and relatives may trouble you.':
+      'வீட்டின் சுகமும் அமைதியும் கவனிக்கப்பட வேண்டும்; உறவினர்களால் தொல்லை வரலாம்.',
+  'Courage and success: efforts, short trips and dealings with officials go well.':
+      'துணிவும் வெற்றியும்: முயற்சிகள், குறுகிய பயணங்கள், அதிகாரிகளுடனான காரியங்கள் நன்றாக நடக்கும்.',
+  'Efforts bring less than hoped and changes come at work. Keep steady.':
+      'எதிர்பார்த்த அளவு பலன் கிடைக்காது, வேலையில் மாற்றங்கள் வரும். நிலையாக இருங்கள்.',
+  'Elders and superiors may be displeased. Keep faith and avoid long journeys.':
+      'பெரியவர்களும் மேலதிகாரிகளும் அதிருப்தி அடையலாம். நம்பிக்கையுடன் இருங்கள், நீண்ட பயணங்களைத் தவிர்க்கவும்.',
+  'Expenses and travel rise. Sleep well and spend on good causes.':
+      'செலவுகளும் பயணங்களும் கூடும். நன்றாகத் தூங்குங்கள், நல்ல காரியங்களுக்குச் செலவிடுங்கள்.',
+  'Fortune and faith rise: pilgrimage, elders\' blessings and progress.':
+      'அதிர்ஷ்டமும் நம்பிக்கையும் உயரும்: தீர்த்த யாத்திரை, பெரியோர் ஆசி, முன்னேற்றம்.',
+  'From {0} it moves into {1}: {2}': '{0} முதல் {1} ராசியில்: {2}',
+  'Gains from many sides. Wishes are fulfilled and friends help.':
+      'பல வழிகளில் லாபம். விருப்பங்கள் நிறைவேறும், நண்பர்கள் உதவுவார்கள்.',
+  'Gains, honour and good news. Wishes come true.': 'லாபம், கௌரவம், நல்ல செய்திகள். விருப்பங்கள் நிறைவேறும்.',
+  'Good days: {0}': 'நல்ல நாட்கள்: {0}',
+  'Health and money need caution. Avoid risks and quarrels.':
+      'உடல்நலம், பணம் விஷயத்தில் எச்சரிக்கை தேவை. அபாயங்களையும் சண்டைகளையும் தவிர்க்கவும்.',
+  'Jupiter (Guru)': 'குரு (வியாழன்)',
+  'Jupiter over your Moon sign: a testing stretch with changes of place and some worry. Stay patient.':
+      'உங்கள் ராசியில் குரு (ஜன்ம குரு): இட மாற்றங்களும் சில கவலைகளும் கொண்ட சோதனைக் காலம். பொறுமையாக இருங்கள்.',
+  'Luck moves slowly and elders may be displeased. Keep faith.':
+      'அதிர்ஷ்டம் மெதுவாகக் கைகூடும், பெரியவர்கள் அதிருப்தி அடையலாம். நம்பிக்கையுடன் இருங்கள்.',
+  'Marriage, partnership and travel are blessed. A good time for alliances.':
+      'திருமணம், கூட்டாண்மை, பயணம் சுபமாக அமையும். சம்பந்தம் பேச நல்ல நேரம்.',
+  'Money goes out faster and family talks need patience. Avoid lending.':
+      'பணம் விரைவாகச் செலவாகும், குடும்பப் பேச்சுகளில் பொறுமை தேவை. கடன் கொடுக்க வேண்டாம்.',
+  'Opponents and health need watching. Avoid loans and disputes.':
+      'எதிரிகளிடமும் உடல்நலத்திலும் கவனம் தேவை. கடன்களையும் சச்சரவுகளையும் தவிர்க்கவும்.',
+  'Opponents and illness retreat. You win disputes and finish pending work.':
+      'எதிரிகளும் நோய்களும் விலகும். சச்சரவுகளில் வெற்றி, நிலுவையில் உள்ள வேலைகள் முடியும்.',
+  'Partnerships and your spouse need patience; travel is tiring.':
+      'கூட்டாளிகளிடமும் வாழ்க்கைத் துணையிடமும் பொறுமை தேவை; பயணங்கள் களைப்பைத் தரும்.',
+  'Peace at home may be disturbed. Look after your health and your mother.':
+      'வீட்டில் அமைதி குலையலாம். உங்கள் உடல்நலத்தையும் தாயாரின் உடல்நலத்தையும் கவனியுங்கள்.',
+  'Pressure or changes at work. Hold your place through careful effort.':
+      'வேலையில் அழுத்தம் அல்லது மாற்றங்கள். கவனமான உழைப்பால் உங்கள் இடத்தைத் தக்கவைத்துக்கொள்ளுங்கள்.',
+  'Retrograde for part of this time: results come slowly; revisit old plans.':
+      'இக்காலத்தில் சில நாட்கள் வக்ர கதி: பலன்கள் மெதுவாக வரும்; பழைய திட்டங்களை மீண்டும் பாருங்கள்.',
+  'Saturn (Shani)': 'சனி',
+  'Saturn in the eleventh: steady income and gains.': 'பதினொன்றாம் இடத்தில் சனி: நிலையான வருமானம், லாபம்.',
+  'Saturn in the sixth: victory over opponents, better health and debts reduce.':
+      'ஆறாம் இடத்தில் சனி: எதிரிகள் மீது வெற்றி, உடல்நலம் மேம்படும், கடன்கள் குறையும்.',
+  'Saturn in the third: courage, success and steady gains.': 'மூன்றாம் இடத்தில் சனி: துணிவு, வெற்றி, நிலையான லாபம்.',
+  'Saturn over your Moon sign, the peak of Sade Sati: heavy duties and fatigue. Slow, honest work pays.':
+      'உங்கள் ராசியில் சனி (ஜன்ம சனி), ஏழரை சனியின் உச்சக் கட்டம்: கனமான பொறுப்புகள், களைப்பு. நிதானமான, நேர்மையான உழைப்பு பலன் தரும்.',
+  'Spending and travel rise, much of it on good causes. Guard your savings.':
+      'செலவுகளும் பயணங்களும் கூடும், பெரும்பாலும் நல்ல காரியங்களுக்கே. சேமிப்பைக் காத்துக்கொள்ளுங்கள்.',
+  'The Sun over your Moon sign brings fatigue and a short temper. Rest well and keep your words soft.':
+      'உங்கள் ராசியில் சூரியன் களைப்பையும் கோபத்தையும் தரும். நன்றாக ஓய்வெடுங்கள், மென்மையாகப் பேசுங்கள்.',
+  'The last phase of Sade Sati: family and money need care. Speak gently and save.':
+      'ஏழரை சனியின் கடைசிக் கட்டம் (பாத சனி): குடும்பம், பணத்தில் கவனம் தேவை. மென்மையாகப் பேசி, சேமியுங்கள்.',
+  'The mind and children need attention. Avoid speculation.':
+      'மனமும் பிள்ளைகளும் கவனம் பெற வேண்டும். ஊக வணிகத்தைத் தவிர்க்கவும்.',
+  'The mind is unsettled and plans slip. Take care with children and speculation.':
+      'மனம் நிலையில்லாமல் இருக்கும், திட்டங்கள் தள்ளிப்போகலாம். பிள்ளைகள், ஊக வணிக விஷயங்களில் கவனம் தேவை.',
+  'The start of Sade Sati: expenses and travel rise. Spend wisely.':
+      'ஏழரை சனியின் தொடக்கம் (விரய சனி): செலவுகளும் பயணங்களும் கூடும். கவனமாகச் செலவிடுங்கள்.',
+  'Travel tires you and partners may disagree. Give relationships extra care.':
+      'பயணங்கள் களைப்பைத் தரும், துணையுடன் கருத்து வேறுபாடு வரலாம். உறவுகளில் கூடுதல் அக்கறை காட்டுங்கள்.',
+  'Wealth and family grow, your words carry weight and savings rise.':
+      'செல்வமும் குடும்பமும் வளரும், உங்கள் சொல்லுக்கு மதிப்பு கூடும், சேமிப்பு உயரும்.',
+  'Work goes well: a good time for recognition and important tasks.':
+      'வேலை நன்றாக நடக்கும்: அங்கீகாரத்துக்கும் முக்கியப் பணிகளுக்கும் நல்ல நேரம்.',
+  'Work is heavy and delayed, but persistence brings results.':
+      'வேலை கனமாகவும் தாமதமாகவும் இருக்கும், ஆனால் விடாமுயற்சி பலன் தரும்.',
+  'Annular solar eclipse': 'வளைய சூரிய கிரகணம்',
+  'House warming (Griha Pravesham)': 'கிரகப் பிரவேசம் (புதுமனை புகுதல்)',
+  'Marriage (Vivaham)': 'திருமணம் (விவாகம்)',
+  'Not visible here. No Sutak.': 'இங்கே தெரியாது. சூதகம் இல்லை.',
+  'Partial lunar eclipse': 'பகுதி சந்திர கிரகணம்',
+  'Partial solar eclipse': 'பகுதி சூரிய கிரகணம்',
+  'Penumbral lunar eclipse': 'புறநிழல் சந்திர கிரகணம்',
+  'Total lunar eclipse': 'முழு சந்திர கிரகணம்',
+  'Total solar eclipse': 'முழு சூரிய கிரகணம்',
+  'Vehicle purchase': 'வாகனம் வாங்குதல்',
+  'Visible here {0}. Penumbral only: no Sutak.': 'இங்கே {0} தெரியும். புறநிழல் மட்டுமே: சூதகம் இல்லை.',
+  'Visible here {0}. Sutak from {1}.': 'இங்கே {0} தெரியும். சூதகம் {1} முதல்.',
+  'Begins': 'தொடக்கம் (ஸ்பரிசம்)',
+  'During Sutak, temples close and cooking and eating are avoided. Children, the elderly, the sick and pregnant women may keep a shorter Sutak. Bathe and offer prayers after the eclipse ends.':
+      'சூதக காலத்தில் கோயில்கள் மூடப்படும்; சமைப்பதும் உண்பதும் தவிர்க்கப்படும். குழந்தைகள், முதியோர், நோயாளிகள், கர்ப்பிணிகள் குறைந்த நேர சூதகம் கடைப்பிடிக்கலாம். கிரகணம் முடிந்ததும் நீராடி வழிபடுங்கள்.',
+  'Ends': 'முடிவு (மோட்சம்)',
+  'Magnitude': 'கிரகண அளவு',
+  'Maximum': 'மத்திய காலம்',
+  'Seen here': 'இங்கே தெரிவது',
+  'Shubha Muhurtham': 'சுப முகூர்த்தம்',
+  'Sutak': 'சூதகம்',
+  'Totality begins': 'முழு கிரகணம் தொடக்கம்',
+  'Totality ends': 'முழு கிரகணம் முடிவு',
+  'Eclipses': 'கிரகணங்கள்',
+  'Add a name to save this birth.': 'இந்தப் பிறப்பு விவரத்தைச் சேமிக்க ஒரு பெயரைச் சேர்க்கவும்.',
+  'Another place (enter latitude and longitude)': 'வேறு இடம் (அட்சரேகை, தீர்க்கரேகையை உள்ளிடவும்)',
+  'Asc': 'ல',
+  'Close to a boundary': 'எல்லைக்கு அருகில்',
+  'Enter the date, time and place of birth. Everything is worked out on your phone and stays on it.':
+      'பிறந்த தேதி, நேரம், இடத்தை உள்ளிடவும். கணக்குகள் அனைத்தும் உங்கள் போனிலேயே நடந்து, அங்கேயே இருக்கும்.',
+  'Fill in the date, time and place of birth.': 'பிறந்த தேதி, நேரம், இடத்தை நிரப்பவும்.',
+  'House': 'வீடு',
+  'Jatakam (birth chart)': 'ஜாதகம் (பிறப்புக் கட்டம்)',
+  'Ju': 'கு',
+  'Ke': 'கே',
+  'Ketu': 'கேது',
+  'Lagna': 'லக்னம்',
+  'Latitude (N +)': 'அட்சரேகை (வடக்கு +)',
+  'Longitude (E +)': 'தீர்க்கரேகை (கிழக்கு +)',
+  'Ma': 'செ',
+  'Make the Jatakam': 'ஜாதகம் கணிக்கவும்',
+  'Mars (Mangal)': 'செவ்வாய்',
+  'Me': 'பு',
+  'Mercury (Budh)': 'புதன்',
+  'Mo': 'சந்',
+  'Moon (Chandra)': 'சந்திரன்',
+  'Name (optional)': 'பெயர் (விருப்பத்தேர்வு)',
+  'North Indian': 'வட இந்திய',
+  'Place of birth': 'பிறந்த இடம்',
+  'Positions are sidereal (Lahiri ayanamsa); Rahu is the mean node. The Sun, Moon and lagna are accurate to a fraction of a minute of arc, the slow planets to about a fifth of a degree.':
+      'கிரக நிலைகள் நிராயன முறையில் (லாஹிரி அயனாம்சம்); ராகு சராசரிக் கணு (மத்திம ராகு). சூரியன், சந்திரன், லக்னம் ஒரு கலையின் சிறு பகுதி வரை துல்லியமானவை; மெதுவாக நகரும் கிரகங்கள் சுமார் ஐந்தில் ஒரு பாகை வரை.',
+  'Ra': 'ரா',
+  'Rahu': 'ராகு',
+  'Rashi': 'ராசி',
+  'Sa': 'சனி',
+  'Save for marriage matching': 'திருமணப் பொருத்தத்துக்குச் சேமி',
+  'South Indian': 'தென்னிந்திய',
+  'Su': 'சூ',
+  'Sun (Surya)': 'சூரியன்',
+  'The Moon is at the edge of a nakshatra pada or rashi; a few minutes of birth time decide it.':
+      'சந்திரன் ஒரு நட்சத்திரப் பாதம் அல்லது ராசியின் எல்லையில் உள்ளது; பிறந்த நேரத்தின் சில நிமிடங்களே அதைத் தீர்மானிக்கும்.',
+  'The lagna changes sign if the birth time is off by about {0} minutes. Check the time of birth.':
+      'பிறந்த நேரம் சுமார் {0} நிமிடங்கள் மாறினால் லக்னம் வேறு ராசிக்கு மாறும். பிறந்த நேரத்தைச் சரிபாருங்கள்.',
+  'Time': 'நேரம்',
+  'UTC offset': 'UTC வேறுபாடு',
+  'Use as my birth star and rashi': 'இவற்றை என் ஜன்ம நட்சத்திரம், ராசியாக்கு',
+  'Ve': 'சு',
+  'Venus (Shukra)': 'சுக்கிரன்',
+  'pada': 'பாதம்',
+  'From a saved Jatakam': 'சேமித்த ஜாதகத்திலிருந்து',
+  'Counted from the Moon sign (Chandra rashi) with the real positions of the Moon, Sun, Jupiter and Saturn. For reflection and inspiration, not prediction.':
+      'சந்திர ராசியிலிருந்து, சந்திரன், சூரியன், குரு, சனியின் உண்மையான நிலைகளைக் கொண்டு கணக்கிடப்பட்டது. சிந்தனைக்கும் ஊக்கத்துக்கும் மட்டுமே, எதிர்காலக் கணிப்பு அல்ல.',
+  'Monthly': 'மாத பலன்',
+  'Weekly': 'வார பலன்',
+  'Best lagna': 'சிறந்த லக்னம்',
+  'Magha, Phalguna, Vaishakha, Jyeshtha (or Kartika, Margashirsha); fixed and gentle nakshatras; good tithi and weekday; Guru and Shukra not combust. Rahu Kalam is left out.':
+      'மாகம், பால்குனம், வைசாகம், ஜ்யேஷ்டம் (அல்லது கார்த்திகம், மார்கசீர்ஷம்) மாதங்கள்; ஸ்திர, மிருது நட்சத்திரங்கள்; நல்ல திதி, கிழமை; குரு, சுக்கிர அஸ்தமனம் இல்லாத காலம். ராகு காலம் நீக்கப்பட்டுள்ளது.',
+  'Movable, gentle and light nakshatras; good tithi and weekday; not in Pitru Paksha or Adhika masa. Rahu Kalam is left out.':
+      'சர, மிருது, லகு நட்சத்திரங்கள்; நல்ல திதி, கிழமை; மகாளய பட்சம், அதிக மாதம் அல்லாத காலம். ராகு காலம் நீக்கப்பட்டுள்ளது.',
+  'No dates in this period': 'இந்தக் காலத்தில் தேதிகள் இல்லை',
+  'Sun in a marriage month, outside Chaturmas and Adhika masa, Guru and Shukra not combust; one of the 11 marriage nakshatras without a bad yoga or karana. Rahu Kalam is left out.':
+      'திருமணத்துக்கு உகந்த சூரிய மாதம், சாதுர்மாஸ்யம், அதிக மாதம் அல்லாத காலம், குரு, சுக்கிர அஸ்தமனம் இல்லாதது; தீய யோகம் அல்லது கரணம் இல்லாத 11 திருமண நட்சத்திரங்களில் ஒன்று. ராகு காலம் நீக்கப்பட்டுள்ளது.',
+  'These dates pass Panchang Shuddhi. Ask your family priest to match them with the horoscopes (Tarabalam, Chandrabalam) and fix the exact lagna.':
+      'இந்தத் தேதிகள் பஞ்சாங்க சுத்தி பெற்றவை. ஜாதகங்களுடன் பொருத்திப் பார்க்கவும் (தாரா பலம், சந்திர பலம்), சரியான லக்னத்தை நிர்ணயிக்கவும் உங்கள் குடும்ப புரோகிதரை அணுகவும்.',
 };
