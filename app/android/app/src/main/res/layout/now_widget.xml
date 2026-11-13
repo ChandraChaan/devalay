@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:ellipsize="end"
-        android:maxLines="1"
+        android:maxLines="2"
         android:text="Rahu Kalam: 10:44 AM – 12:05 PM"
         android:textColor="#FFFFC857"
         android:textSize="12sp" />
