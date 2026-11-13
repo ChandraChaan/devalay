@@ -1,5 +1,9 @@
 Devalay is a small temple on your phone for the whole family. It's free, and you don't need to sign up.
 
+🌏 In your language
+• English, हिन्दी, বাংলা, मराठी, తెలుగు, தமிழ், ગુજરાતી, ಕನ್ನಡ, മലയാളം, ଓଡ଼ିଆ and ਪੰਜਾਬੀ
+• Every screen, festival, Panchang name and greeting card, with aartis and mantras in your own script
+
 🎵 Devotional songs that keep playing on the lock screen
 • Aartis, mantras and bhajans: Om Jai Jagdish Hare, the Gayatri Mantra, the Mahamrityunjaya Mantra and more
 • Annamacharya keerthanas by M.S. Subbulakshmi, Ramadasu keerthanas by Dr. M. Balamuralikrishna, Bhaja Govindam and Siva Panchakshara Stotram
@@ -11,6 +15,11 @@ Devalay is a small temple on your phone for the whole family. It's free, and you
 • Good times: Abhijit muhurta, Amrit Kalam and Brahma muhurta
 • Times to avoid: Rahu Kaal, Yamaganda, Durmuhurtham, Varjyam and Gulika
 • 47 cities across India and abroad, including Delhi, Mumbai, Kolkata, Chennai, Bengaluru, Hyderabad, Varanasi and Tirupati
+• Choghadiya, Hora and Gowri Panchangam, with the running period marked, plus moonrise and moonset
+• Tarabalam and Chandrabalam for your birth star, and auspicious days such as Guru Pushya
+• A home-screen widget with today's tithi, nakshatra, Rahu Kalam and festival
+• Birthdays, anniversaries and remembrance days that repeat by tithi, with reminders
+• Marriage matching: Guna Milan out of 36 and the 10 Porutham
 • A festival calendar with reminders: Diwali, Holi, Navratri, Ganesh Chaturthi, Janmashtami, Maha Shivratri, Ugadi, Sankranti, Bathukamma, Varalakshmi Vratam and more
 
 🎬 Bhakti videos
@@ -24,7 +33,7 @@ Devalay is a small temple on your phone for the whole family. It's free, and you
 
 📿 Japa mala, ♈ daily Rashifal, 🔔 devotional ringtones
 
-Use the app in English, Hindi or Telugu, with light and dark themes in five colours.
+Use the app in any of 11 Indian languages, with light and dark themes in five colours.
 
 Devalay shows no ads of its own. The temple videos play in YouTube's player, so YouTube may show its ads there.
 
