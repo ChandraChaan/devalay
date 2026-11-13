@@ -1,5 +1,6 @@
 import 'package:devalay/core/calendar_reminders.dart';
 import 'package:devalay/core/events.dart';
+import 'package:devalay/core/home_widget_sync.dart';
 import 'package:devalay/core/models.dart';
 import 'package:devalay/core/muhurta.dart';
 import 'package:devalay/core/providers.dart';
@@ -228,6 +229,80 @@ void main() {
     expect(m.body, contains('Guru Pushya'));
     expect(m.body, contains('🙏 Ekadashi'));
     expect(m.body, contains("🎂 Amma's birthday"));
+  });
+
+  group('personal day', () {
+    test('Tarabalam counts nine taras from the birth star', () {
+      // Birth star Rohini (3). Rohini itself is Janma; Mrigashira Sampat; Ardra Vipat; Hasta (12) is the 10th star: Janma again.
+      expect(tarabalam(3, 3).key, 'janma');
+      expect(tarabalam(3, 4).key, 'sampat');
+      expect(tarabalam(3, 5).quality, Quality.bad);
+      expect(tarabalam(3, 12).key, 'janma');
+      expect(tarabalam(3, 11).key, 'parama-mitra');
+      // Wraps past Revati: Ashwini (0) is the 25th from Rohini, Naidhana.
+      expect(tarabalam(3, 0).key, 'naidhana');
+    });
+
+    test('Chandrabalam is good in the 1st, 3rd, 6th, 7th, 10th and 11th', () {
+      expect(chandrabalam(0, 0), (house: 1, quality: Quality.good));
+      expect(chandrabalam(0, 1).quality, Quality.bad);
+      expect(chandrabalam(10, 3), (house: 6, quality: Quality.good));
+      expect(chandrabalam(11, 10).house, 12);
+    });
+
+    test('first pada of each star sets the default rashi', () {
+      expect(rashiOfStar(0), 0); // Ashwini: Mesha
+      expect(rashiOfStar(2), 0); // Krittika pada 1: Mesha
+      expect(rashiOfStar(3), 1); // Rohini: Vrishabha
+      expect(rashiOfStar(26), 11); // Revati: Meena
+      expect(ordinal('en', 3), '3rd');
+      expect(nakshatraLabel('hi', 3), 'रोहिणी');
+      expect(rashiLabel('te', 1), 'వృషభం');
+    });
+  });
+
+  test('home-screen widget lines', () {
+    final w = widgetDay(
+      'en',
+      DateTime(2026, 11, 13),
+      {
+        'date': '2026-11-13',
+        'sunrise': '2026-11-13T06:41:00+05:30',
+        'sunset': '2026-11-13T17:28:00+05:30',
+        'tithi_index': 4,
+        'lunar_month': 7,
+        'nakshatra': 'Mula',
+      },
+      [
+        Festival({
+          'slug': 'naga-chaturthi',
+          'kind': 'festival',
+          'name': 'Naga Chaturthi',
+          'major': true,
+          'date': '2026-11-13',
+        }),
+      ],
+      const [],
+    );
+    expect(w['day'], '13');
+    expect(w['weekday'], 'Friday');
+    expect(w['month'], 'November 2026 · Kartika');
+    expect(w['tithi'], 'Shukla Chaturthi');
+    expect(w['star'], 'Nakshatra: Mula');
+    expect(w['rahu'], startsWith('Rahu Kalam: 10:4'));
+    expect(w['festival'], '🪔 Naga Chaturthi');
+  });
+
+  test('morning message adds Tarabalam when the birth star is set', () {
+    final m = panchangMessage(
+      'en',
+      DateTime(2026, 11, 13),
+      {'date': '2026-11-13', 'sunrise': '2026-11-13T06:41:00+05:30', 'tithi_index': 4, 'nakshatra': 'Mrigashira'},
+      const [],
+      const [],
+      birthStar: 3,
+    );
+    expect(m.body, contains('Your Tarabalam: Sampat (Good)'));
   });
 
   testWidgets('Muhurta card switches between Choghadiya, Hora and Gowri', (tester) async {

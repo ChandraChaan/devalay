@@ -20,6 +20,7 @@ import '../core/storage.dart';
 import '../core/telugu.dart';
 import '../core/theme.dart';
 import '../core/wishes.dart';
+import '../widgets/city_picker.dart';
 import '../widgets/common.dart';
 import 'my_events.dart';
 import 'panchang.dart';
@@ -76,6 +77,63 @@ Map<DateTime, List<Festival>> _festivalsByDay(List<Festival>? list) {
     l.sort((a, b) => (b.major ? 1 : 0) - (a.major ? 1 : 0));
   }
   return out;
+}
+
+/// Shares a day's panchang as text, ready for WhatsApp: tithi, nakshatra, sun times,
+/// Rahu Kalam, festivals and auspicious yoga, from the full panchang when cached.
+Future<void> shareDay(WidgetRef ref, DateTime day) async {
+  final lang = ref.read(prefsProvider).language;
+  final te = lang == 'te';
+  Map? p;
+  try {
+    p = await ref.read(panchangProvider(day).future);
+  } catch (_) {}
+  final days = await ref
+      .read(monthProvider((year: day.year, month: day.month)).future)
+      .catchError((Object _) => const <Map>[]);
+  final s = days.where((d) => d['date'] == _iso(day)).firstOrNull;
+  final fest = _festivalsByDay(ref.read(festivalsProvider(day.year)).value)[day] ?? const <Festival>[];
+  final tithi = p == null ? null : (p['tithi'] as List).first as Map;
+  final star = p == null ? null : (p['nakshatra'] as List).first as Map;
+  final month = p?['lunar_month'] is Map ? (p!['lunar_month'] as Map)['index'] as int? : s?['lunar_month'] as int?;
+  final rahu = p?['rahu_kaal'] is Map
+      ? '${hhmm('${(p!['rahu_kaal'] as Map)['starts']}')} – ${hhmm('${(p['rahu_kaal'] as Map)['ends']}')}'
+      : (s?['sunset'] == null
+            ? null
+            : () {
+                final (a, b) = rahuKalam(day, wallClock('${s!['sunrise']}'), wallClock('${s['sunset']}'));
+                return '${clock(a)} – ${clock(b)}';
+              }());
+  final yoga = s == null ? null : shubhYoga(day, '${s['nakshatra']}');
+  final city = ref.read(cityProvider).label(lang);
+  final lines = <String>[
+    '🗓️ ${te ? teluguDate(day) : DateFormat('EEEE, d MMMM y').format(day)}',
+    for (final f in fest) '${f.major ? '🪔' : '🙏'} ${f.label(lang)}',
+    if (tithi != null)
+      '${tr(ref, 'tithi')}: ${te ? '${teluguPaksha[tithi['paksha']] ?? ''} ${teluguTithi[tithi['name']] ?? tithi['name']}' : '${tithi['paksha']} ${tithi['name']}'}'
+          '${tithi['ends'] == null ? '' : ' (${t3(lang, 'till', 'तक', 'వరకు')} ${hhmm('${tithi['ends']}')})'}'
+    else if (s != null)
+      '${tr(ref, 'tithi')}: ${tithiName(lang, s['tithi_index'] as int)}',
+    if (month != null) '${t3(lang, 'Month', 'मास', 'మాసం')}: ${lunarMonthLabel(lang, month)}',
+    if (star != null)
+      '${tr(ref, 'nakshatra')}: ${nakshatraLabel(lang, (star['index'] as int) - 1)}'
+          '${star['ends'] == null ? '' : ' (${t3(lang, 'till', 'तक', 'వరకు')} ${hhmm('${star['ends']}')})'}'
+    else if (s != null)
+      '${tr(ref, 'nakshatra')}: ${_nakshatraLabel(lang, s)}',
+    if (p != null) '☀️ ${hhmm('${p['sunrise']}')}  🌇 ${hhmm('${p['sunset']}')}',
+    if (rahu != null) '${tr(ref, 'rahu_kaal')}: $rahu',
+    if (yoga != null) '✨ ${shubhYogaLabel(lang, yoga)}',
+    '📍 $city',
+    '',
+    t3(
+      lang,
+      '— Devalay: free Panchang & bhakti app, no ads',
+      '— देवालय: मुफ़्त पंचांग व भक्ति ऐप, बिना विज्ञापन',
+      '— దేవాలయం: ఉచిత పంచాంగం & భక్తి యాప్, ప్రకటనలు లేవు',
+    ),
+    'https://chandrachaan.github.io/devalay',
+  ];
+  await SharePlus.instance.share(ShareParams(text: lines.join('\n')));
 }
 
 /// The wishes card for the day's first festival that has one.
@@ -441,13 +499,44 @@ class _MonthHeader extends ConsumerWidget {
                         ],
                       ),
                     ),
-                    Text(
-                      [
-                        city.label(lang),
-                        if (lunar.isNotEmpty) lunar,
-                        if (major > 0) t3(lang, '$major festivals', '$major त्योहार', '$major పండుగలు'),
-                      ].join(' · '),
-                      style: Theme.of(context).textTheme.bodySmall,
+                    Wrap(
+                      alignment: WrapAlignment.center,
+                      crossAxisAlignment: WrapCrossAlignment.center,
+                      children: [
+                        // Tap to change: reviews of other apps ask which city the times are for.
+                        InkWell(
+                          borderRadius: BorderRadius.circular(10),
+                          onTap: () => showCityPicker(context, ref),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(Icons.place_rounded, size: 14, color: Theme.of(context).colorScheme.primary),
+                                Text(
+                                  city.label(lang),
+                                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                    color: Theme.of(context).colorScheme.primary,
+                                    fontWeight: FontWeight.w700,
+                                  ),
+                                ),
+                                Icon(
+                                  Icons.arrow_drop_down_rounded,
+                                  size: 16,
+                                  color: Theme.of(context).colorScheme.primary,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Text(
+                          [
+                            if (lunar.isNotEmpty) lunar,
+                            if (major > 0) t3(lang, '$major festivals', '$major त्योहार', '$major పండుగలు'),
+                          ].map((t) => ' · $t').join(),
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
+                      ],
                     ),
                   ],
                 ),
@@ -875,6 +964,13 @@ class _SelectedDayCard extends ConsumerWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
+                IconButton(
+                  tooltip: t3(lang, 'Share', 'शेयर करें', 'షేర్ చేయండి'),
+                  style: IconButton.styleFrom(backgroundColor: Colors.white.withValues(alpha: 0.18)),
+                  onPressed: () => shareDay(ref, date),
+                  icon: const Icon(Icons.share_rounded, color: Colors.white, size: 20),
+                ),
+                const SizedBox(width: 4),
                 if (wishesFor(ref, festivals) case final id?)
                   TextButton.icon(
                     style: TextButton.styleFrom(foregroundColor: Colors.white, padding: EdgeInsets.zero),
@@ -1022,25 +1118,7 @@ class _CalendarDayScreenState extends ConsumerState<CalendarDayScreen> {
     super.dispose();
   }
 
-  void _share() {
-    final lang = ref.read(prefsProvider).language;
-    final p = ref.read(panchangProvider(_day)).value;
-    final fest = _festivalsByDay(ref.read(festivalsProvider(_day.year)).value)[_day] ?? const <Festival>[];
-    final lines = <String>[
-      '🗓️ ${lang == 'te' ? teluguDate(_day) : DateFormat('EEEE, d MMMM y').format(_day)}',
-      for (final f in fest) '🪔 ${f.label(lang)}',
-      if (p != null) ...[
-        '${tr(ref, 'tithi')}: ${((p['tithi'] as List).first as Map)['paksha']} ${((p['tithi'] as List).first as Map)['name']}',
-        '${tr(ref, 'nakshatra')}: ${((p['nakshatra'] as List).first as Map)['name']}',
-        '☀ ${hhmm('${p['sunrise']}')}  🌙 ${hhmm('${p['sunset']}')}',
-        if (p['rahu_kaal'] is Map)
-          '${tr(ref, 'rahu_kaal')}: ${hhmm('${(p['rahu_kaal'] as Map)['starts']}')} – ${hhmm('${(p['rahu_kaal'] as Map)['ends']}')}',
-      ],
-      '',
-      '— Devalay',
-    ];
-    SharePlus.instance.share(ShareParams(text: lines.join('\n')));
-  }
+  void _share() => shareDay(ref, _day);
 
   @override
   Widget build(BuildContext context) {

@@ -45,6 +45,10 @@ final routerProvider = Provider<GoRouter>((ref) {
   return GoRouter(
     navigatorKey: _rootKey,
     initialLocation: Boxes.prefs.get('onboarded', defaultValue: false) == true ? '/home' : '/onboarding',
+    // Safety net: a devalay://calendar link that reaches the router maps to /calendar.
+    redirect: (_, state) => state.uri.scheme == 'devalay'
+        ? '/${state.uri.host}${state.uri.path}'.replaceFirst(RegExp(r'(?<=.)/+$'), '')
+        : null,
     routes: [
       GoRoute(path: '/onboarding', builder: (_, _) => const OnboardingScreen()),
       StatefulShellRoute.indexedStack(

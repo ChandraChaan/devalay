@@ -3,11 +3,14 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:intl/intl.dart';
 
 import '../core/api.dart';
 import '../core/audio.dart';
 import '../core/i18n.dart';
 import '../core/models.dart';
+import '../core/providers.dart';
+import '../core/telugu.dart';
 import '../widgets/common.dart';
 
 class SearchScreen extends ConsumerStatefulWidget {
@@ -64,7 +67,33 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
     final books = r == null ? <Book>[] : (r['books'] as List).map((b) => Book(b as Map)).toList();
     final walls = r == null ? <Wallpaper>[] : (r['wallpapers'] as List).map((w) => Wallpaper(w as Map)).toList();
     final verses = r == null ? <Verse>[] : (r['verses'] as List).map((v) => Verse(v as Map)).toList();
-    final empty = r != null && tracks.isEmpty && texts.isEmpty && books.isEmpty && walls.isEmpty && verses.isEmpty;
+    final lang = uiLang(ref);
+    // Festivals and vratas come from the calendar on the phone, so "ugadi" or "ఏకాదశి" finds the next dates.
+    final today = DateUtils.dateOnly(DateTime.now());
+    final q = _q.toLowerCase();
+    final festivals = q.length < 2
+        ? const <Festival>[]
+        : [
+            for (final y in [today.year, today.year + 1])
+              ...?ref
+                  .watch(festivalsProvider(y))
+                  .value
+                  ?.where(
+                    (f) =>
+                        !f.date.isBefore(today) &&
+                        (f.label(lang).toLowerCase().contains(q) ||
+                            f.name.toLowerCase().contains(q) ||
+                            f.nameHi.contains(_q)),
+                  ),
+          ].take(8).toList();
+    final empty =
+        r != null &&
+        festivals.isEmpty &&
+        tracks.isEmpty &&
+        texts.isEmpty &&
+        books.isEmpty &&
+        walls.isEmpty &&
+        verses.isEmpty;
     return Scaffold(
       appBar: AppBar(
         title: TextField(
@@ -73,7 +102,8 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
           onSubmitted: _search,
           textInputAction: TextInputAction.search,
           decoration: InputDecoration(
-            hintText: '${tr(ref, 'search')}: Hanuman, आरती, karma…',
+            hintText:
+                '${tr(ref, 'search')}: ${t3(uiLang(ref), 'Hanuman, Diwali, karma…', 'हनुमान, दिवाली, कर्म…', 'హనుమాన్, ఉగాది, కర్మ…')}',
             filled: false,
             border: InputBorder.none,
           ),
@@ -84,15 +114,33 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
           : _error != null
           ? ErrorRetry(error: _error!, onRetry: () => _search(_q))
           : r == null
-          ? const EmptyState(
+          ? EmptyState(
               icon: Icons.search_rounded,
-              title: 'Search bhajans, aartis, mantras, scriptures and Gita verses',
+              title: t3(
+                lang,
+                'Search bhajans, aartis, mantras, scriptures, Gita verses and festivals',
+                'भजन, आरती, मंत्र, ग्रंथ, गीता श्लोक और त्योहार खोजें',
+                'భజనలు, ఆరతులు, మంత్రాలు, గ్రంథాలు, గీతా శ్లోకాలు, పండుగలు వెతకండి',
+              ),
             )
           : empty
-          ? const EmptyState(icon: Icons.search_off_rounded, title: 'No results')
+          ? EmptyState(icon: Icons.search_off_rounded, title: t3(lang, 'No results', 'कुछ नहीं मिला', 'ఏమీ దొరకలేదు'))
           : ListView(
               padding: const EdgeInsets.all(12),
               children: [
+                if (festivals.isNotEmpty) SectionHeader(t3(lang, 'Festivals', 'त्योहार', 'పండుగలు')),
+                for (final f in festivals)
+                  ListTile(
+                    leading: Text(f.major ? '🪔' : '🙏', style: const TextStyle(fontSize: 26)),
+                    title: Text(f.label(lang)),
+                    subtitle: Text(
+                      lang == 'te'
+                          ? '${f.date.day} ${teluguGregorianMonths[f.date.month - 1]} ${f.date.year}'
+                          : DateFormat('EEE, d MMM y').format(f.date),
+                    ),
+                    trailing: const Icon(Icons.chevron_right_rounded),
+                    onTap: () => context.push('/calendar/day/${DateFormat('yyyy-MM-dd').format(f.date)}'),
+                  ),
                 if (tracks.isNotEmpty) SectionHeader(tr(ref, 'listen')),
                 for (final (i, t) in tracks.indexed)
                   ListTile(

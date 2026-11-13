@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
 import 'events.dart';
+import 'home_widget_sync.dart';
 import 'i18n.dart';
 import 'models.dart';
 import 'muhurta.dart';
@@ -18,6 +19,7 @@ Future<void> refreshCalendarReminders(WidgetRef ref) async {
   try {
     await refreshPanchangNotifications(ref);
     await refreshEventReminders(ref);
+    await syncHomeWidget(ref);
   } catch (_) {
     // Offline with nothing cached yet: the next start tries again.
   }
@@ -64,7 +66,9 @@ Future<void> refreshPanchangNotifications(WidgetRef ref) async {
   for (var day = today; !day.isAfter(last); day = DateTime(day.year, day.month, day.day + 1)) {
     final s = summaries[_iso(day)];
     if (s == null) continue;
-    items.add(panchangMessage(lang, day, s, festivals[day] ?? const [], events[day] ?? const []));
+    items.add(
+      panchangMessage(lang, day, s, festivals[day] ?? const [], events[day] ?? const [], birthStar: prefs.birthStar),
+    );
   }
   await Notifications.schedulePanchang(items, hour: prefs.panchangHour, minute: prefs.panchangMinute);
 }
@@ -75,8 +79,9 @@ Future<void> refreshPanchangNotifications(WidgetRef ref) async {
   DateTime day,
   Map s,
   List<Festival> festivals,
-  List<UserEvent> events,
-) {
+  List<UserEvent> events, {
+  int? birthStar,
+}) {
   final weekday = lang == 'te' ? teluguWeekdays[day.weekday - 1] : DateFormat('EEEE').format(day);
   final date = lang == 'te' ? '${day.day} ${teluguGregorianMonths[day.month - 1]}' : DateFormat('d MMM').format(day);
   final major = festivals.where((f) => f.major).toList();
@@ -97,6 +102,12 @@ Future<void> refreshPanchangNotifications(WidgetRef ref) async {
     lines.add('${t3(lang, 'Rahu Kalam', 'राहु काल', 'రాహు కాలం')}: ${clock(from)} – ${clock(to)}');
   }
   if (shubhYoga(day, nakshatra) case final y?) lines.add('✨ ${shubhYogaLabel(lang, y)}');
+  if (birthStar != null && starIndex >= 0) {
+    final t = tarabalam(birthStar, starIndex);
+    lines.add(
+      '🌟 ${t3(lang, 'Your Tarabalam', 'आपका तारा बल', 'మీ తారాబలం')}: ${taraLabel(lang, t.key)} (${qualityLabel(lang, t.quality)})',
+    );
+  }
   for (final f in festivals.where((f) => !f.major)) {
     lines.add('🙏 ${f.label(lang)}');
   }

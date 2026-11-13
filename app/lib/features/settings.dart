@@ -13,6 +13,7 @@ import '../core/location.dart';
 import '../core/notifications.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
+import '../widgets/city_picker.dart';
 import '../widgets/common.dart';
 
 class SettingsScreen extends ConsumerWidget {
@@ -136,7 +137,7 @@ class SettingsScreen extends ConsumerWidget {
             leading: const Icon(Icons.place_rounded),
             title: Text(t3(lang, 'Panchang city', 'पंचांग शहर', 'పంచాంగం నగరం')),
             subtitle: Text(city.label(lang)),
-            onTap: () => _pickCity(context, ref),
+            onTap: () => showCityPicker(context, ref),
           ),
           _Header(t3(lang, 'Reminders', 'सूचनाएँ', 'రిమైండర్లు')),
           SwitchListTile(
@@ -236,34 +237,6 @@ class SettingsScreen extends ConsumerWidget {
           ),
           const SizedBox(height: 24),
         ],
-      ),
-    );
-  }
-
-  void _pickCity(BuildContext context, WidgetRef ref) {
-    final lang = ref.read(prefsProvider).language;
-    showModalBottomSheet(
-      context: context,
-      showDragHandle: true,
-      isScrollControlled: true,
-      builder: (ctx) => DraggableScrollableSheet(
-        expand: false,
-        initialChildSize: 0.7,
-        builder: (_, scroll) => ListView(
-          controller: scroll,
-          children: [
-            for (final c in cities)
-              ListTile(
-                title: Text(c.label(lang)),
-                subtitle: Text(c.tz),
-                trailing: ref.read(prefsProvider).cityId == c.id ? const Icon(Icons.check_rounded) : null,
-                onTap: () {
-                  ref.read(prefsProvider.notifier).setCity(c.id);
-                  Navigator.pop(ctx);
-                },
-              ),
-          ],
-        ),
       ),
     );
   }

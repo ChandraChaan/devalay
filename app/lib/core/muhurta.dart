@@ -6,6 +6,7 @@
 library;
 
 import 'i18n.dart';
+import 'telugu.dart';
 
 /// "2026-11-13T06:24:10+05:30" -> 06:24:10 on 13 Nov as a UTC DateTime (the city's wall clock).
 DateTime wallClock(String iso) => DateTime.parse('${iso.substring(0, 19)}Z');
@@ -331,3 +332,82 @@ const _lunarMonthsTe = [
 
 String lunarMonthLabel(String lang, int i) =>
     t3(lang, lunarMonthNames[i % 12], _lunarMonthsHi[i % 12], _lunarMonthsTe[i % 12]);
+
+// ---------------------------------------------------------------------------
+// Tarabalam and Chandrabalam: the day measured from the user's birth star and moon sign
+// ---------------------------------------------------------------------------
+
+const rashiNames = [
+  'Mesha', 'Vrishabha', 'Mithuna', 'Karka', 'Simha', 'Kanya', //
+  'Tula', 'Vrishchika', 'Dhanu', 'Makara', 'Kumbha', 'Meena',
+];
+
+const _taraKeys = ['janma', 'sampat', 'vipat', 'kshema', 'pratyak', 'sadhana', 'naidhana', 'mitra', 'parama-mitra'];
+
+/// The tara (1–9) of [today] counted from [birth], both nakshatra indexes 0–26, with its quality.
+/// Janma tara is mixed: fine for routine work, avoided for big beginnings.
+({int tara, String key, Quality quality}) tarabalam(int birth, int today) {
+  final count = (today - birth) % 27 + 1;
+  final tara = (count - 1) % 9 + 1;
+  final quality = switch (tara) {
+    2 || 4 || 6 || 8 || 9 => Quality.good,
+    1 => Quality.neutral,
+    _ => Quality.bad,
+  };
+  return (tara: tara, key: _taraKeys[tara - 1], quality: quality);
+}
+
+String taraLabel(String lang, String key) => switch (key) {
+  'janma' => t3(lang, 'Janma', 'जन्म', 'జన్మ'),
+  'sampat' => t3(lang, 'Sampat', 'संपत', 'సంపత్'),
+  'vipat' => t3(lang, 'Vipat', 'विपत', 'విపత్'),
+  'kshema' => t3(lang, 'Kshema', 'क्षेम', 'క్షేమ'),
+  'pratyak' => t3(lang, 'Pratyak', 'प्रत्यक', 'ప్రత్యక్'),
+  'sadhana' => t3(lang, 'Sadhana', 'साधना', 'సాధన'),
+  'naidhana' => t3(lang, 'Naidhana', 'नैधन', 'నైధన'),
+  'mitra' => t3(lang, 'Mitra', 'मित्र', 'మిత్ర'),
+  _ => t3(lang, 'Parama Mitra', 'परम मित्र', 'పరమ మిత్ర'),
+};
+
+/// The house (1–12) the Moon is in from the user's moon sign, both rashi indexes 0–11.
+({int house, Quality quality}) chandrabalam(int birthRashi, int moonRashi) {
+  final house = (moonRashi - birthRashi) % 12 + 1;
+  return (house: house, quality: const {1, 3, 6, 7, 10, 11}.contains(house) ? Quality.good : Quality.bad);
+}
+
+/// "1st", "2nd", "3rd" in English; "3वाँ" / "3వ" otherwise.
+String ordinal(String lang, int n) => switch (lang) {
+  'hi' => '$nवाँ',
+  'te' => '$nవ',
+  _ =>
+    '$n${n == 1
+        ? 'st'
+        : n == 2
+        ? 'nd'
+        : n == 3
+        ? 'rd'
+        : 'th'}',
+};
+
+const _nakshatraHi = [
+  'अश्विनी', 'भरणी', 'कृत्तिका', 'रोहिणी', 'मृगशिरा', 'आर्द्रा', 'पुनर्वसु', 'पुष्य', 'आश्लेषा', //
+  'मघा', 'पूर्वा फाल्गुनी', 'उत्तरा फाल्गुनी', 'हस्त', 'चित्रा', 'स्वाति', 'विशाखा', 'अनुराधा',
+  'ज्येष्ठा', 'मूल', 'पूर्वाषाढ़ा', 'उत्तराषाढ़ा', 'श्रवण', 'धनिष्ठा', 'शतभिषा',
+  'पूर्वा भाद्रपद', 'उत्तरा भाद्रपद', 'रेवती',
+];
+const _rashiHi = ['मेष', 'वृषभ', 'मिथुन', 'कर्क', 'सिंह', 'कन्या', 'तुला', 'वृश्चिक', 'धनु', 'मकर', 'कुंभ', 'मीन'];
+
+/// Nakshatra 0–26 in the user's language.
+String nakshatraLabel(String lang, int i) => t3(
+  lang,
+  nakshatraNames[i],
+  _nakshatraHi[i],
+  teluguNakshatra.length > i + 1 ? teluguNakshatra[i + 1] : nakshatraNames[i],
+);
+
+/// Rashi 0–11 in the user's language.
+String rashiLabel(String lang, int i) =>
+    t3(lang, rashiNames[i], _rashiHi[i], teluguRashi[rashiNames[i]] ?? rashiNames[i]);
+
+/// The rashi holding the first pada of nakshatra [star] (each star is 13°20', each rashi 30°).
+int rashiOfStar(int star) => star * 4 ~/ 9;

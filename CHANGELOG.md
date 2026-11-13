@@ -17,6 +17,18 @@ v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the 
 - Morning Panchang: an optional notification each morning with the day's tithi, nakshatra, Rahu Kalam, festivals
   and your events. Turn it on from the calendar menu or Settings and pick the time.
 - The offline calendar now covers every month of this year and next.
+- Home-screen widget: today's date, tithi, nakshatra, Rahu Kalam and festival (or your own event) on a saffron
+  card, in your language. It holds the next 30 days, so it turns over at midnight even offline. Tap it to open
+  the calendar.
+- "For you": add your birth star and rashi once, and every day's Panchang shows your Tarabalam and Chandrabalam
+  with a plain verdict (good day, mixed, or better to postpone). The morning notification includes it too.
+- Moonrise and moonset on every day's Panchang.
+- Tap ⓘ next to tithi, nakshatra, yoga, karana, Rahu Kalam, Varjyam, Choghadiya, Hora and more for a short
+  explanation in English, Hindi or Telugu.
+- Share any day's Panchang to WhatsApp from the calendar card, with tithi and nakshatra end times and the city.
+- The city is shown and can be changed right from the calendar header; the city list can be searched.
+- Search festivals in Important days, and from the app's main search ("ugadi", "ఏకాదశి").
+- Adding a birthday or remembrance day opens the date picker on the year list instead of paging back month by month.
 
 - Temple booking: every online service of Tirumala Tirupati Devasthanams in one place. Special Entry Darshan
   (₹300), senior citizen and SRIVANI darshan, Angapradakshinam, Arjitha Sevas and the Seva e-Dip, rooms, e-Hundi,

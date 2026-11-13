@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 
 import '../core/calendar_reminders.dart';
 import '../core/events.dart';
+import '../core/home_widget_sync.dart';
 import '../core/i18n.dart';
 import '../core/muhurta.dart';
 import '../core/notifications.dart';
@@ -139,6 +140,11 @@ class _EventEditorState extends ConsumerState<_EventEditor> {
       initialDate: _date,
       firstDate: DateTime(1900),
       lastDate: DateTime(2049, 12, 31),
+      // Birthdays and remembrance days are usually years back: start on the year list instead of
+      // making people page back month by month (a common complaint about other calendar apps).
+      initialDatePickerMode: widget.existing == null && _kind != 'puja' && _kind != 'other'
+          ? DatePickerMode.year
+          : DatePickerMode.day,
     );
     if (picked == null) return;
     setState(() => _date = picked);
@@ -176,6 +182,7 @@ class _EventEditorState extends ConsumerState<_EventEditor> {
     final nextYear = tithi ? await days(now.year + 1) : const <Map>[];
     await scheduleEventReminder(e, lang, thisYear: thisYear, nextYear: nextYear);
     if (ref.read(prefsProvider).panchangDaily) await refreshPanchangNotifications(ref);
+    await syncHomeWidget(ref);
     if (!mounted) return;
     final next = nextOccurrence(e, now, thisYear, nextYear);
     Navigator.of(context).pop();

@@ -44,6 +44,42 @@ class _ImportantDaysScreenState extends ConsumerState<ImportantDaysScreen> {
       ? Boxes.prefs.get('important_filter') as String
       : 'festivals';
   bool _showPast = false;
+  bool _searching = false;
+  String _q = '';
+
+  /// Everything in the year whose name matches the search, in English or the chosen language.
+  List<_Day>? _search(String lang) {
+    final q = _q.trim().toLowerCase();
+    final festivals = ref.watch(festivalsProvider(_year)).value;
+    if (festivals == null) return null;
+    bool match(String a, [String b = '']) => a.toLowerCase().contains(q) || b.toLowerCase().contains(q);
+    return [
+      for (final f in festivals)
+        if (match(f.label(lang), '${f.name} ${f.nameHi} ${f.deity}'))
+          (
+            date: DateUtils.dateOnly(f.date),
+            emoji: f.major ? '🪔' : _emoji(f.kind == 'festival' ? 'festivals' : f.kind),
+            title: f.label(lang),
+            note: f.description.isEmpty ? null : f.description,
+            major: f.major,
+          ),
+      for (final (m, d) in const [(1, 26), (8, 15), (10, 2), (12, 25)])
+        if (match(
+          holidayLabel(lang, nationalHoliday(DateTime(_year, m, d))!),
+          holidayLabel('en', nationalHoliday(DateTime(_year, m, d))!),
+        ))
+          (
+            date: DateTime(_year, m, d),
+            emoji: '🇮🇳',
+            title: holidayLabel(lang, nationalHoliday(DateTime(_year, m, d))!),
+            note: null,
+            major: true,
+          ),
+      for (final MapEntry(key: date, value: events) in ref.watch(eventsByDayProvider(_year)).entries)
+        for (final e in events)
+          if (match(e.title)) (date: date, emoji: e.emoji, title: e.title, note: null, major: true),
+    ]..sort((a, b) => a.date.compareTo(b.date));
+  }
 
   String _label(String lang, String f) => switch (f) {
     'festivals' => t3(lang, 'Festivals', 'त्योहार', 'పండుగలు'),
@@ -135,8 +171,8 @@ class _ImportantDaysScreenState extends ConsumerState<ImportantDaysScreen> {
   Widget build(BuildContext context) {
     final lang = ref.watch(prefsProvider.select((p) => p.language));
     final today = DateUtils.dateOnly(DateTime.now());
-    final all = _days(lang);
-    final hidePast = _year == _thisYear && !_showPast;
+    final all = _q.trim().isEmpty ? _days(lang) : _search(lang);
+    final hidePast = _year == _thisYear && !_showPast && _q.trim().isEmpty;
     final items = all?.where((d) => !hidePast || !d.date.isBefore(today)).toList();
     final hidden = (all?.length ?? 0) - (items?.length ?? 0);
     final nextUp = items?.where((d) => !d.date.isBefore(today)).firstOrNull;
@@ -148,18 +184,33 @@ class _ImportantDaysScreenState extends ConsumerState<ImportantDaysScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(t3(lang, 'Important days', 'महत्वपूर्ण दिन', 'ముఖ్యమైన రోజులు')),
+        title: _searching
+            ? TextField(
+                autofocus: true,
+                onChanged: (v) => setState(() => _q = v),
+                decoration: InputDecoration(
+                  hintText: t3(
+                    lang,
+                    'Search festivals, e.g. Diwali',
+                    'त्योहार खोजें, जैसे दिवाली',
+                    'పండుగ వెతకండి, ఉదా: దీపావళి',
+                  ),
+                  filled: false,
+                  border: InputBorder.none,
+                  enabledBorder: InputBorder.none,
+                  focusedBorder: InputBorder.none,
+                ),
+              )
+            : Text(t3(lang, 'Important days', 'महत्वपूर्ण दिन', 'ముఖ్యమైన రోజులు')),
         actions: [
-          for (final y in [_thisYear, _thisYear + 1])
-            Padding(
-              padding: const EdgeInsets.only(right: 6),
-              child: ChoiceChip(
-                showCheckmark: false,
-                label: Text('$y'),
-                selected: _year == y,
-                onSelected: (_) => setState(() => _year = y),
-              ),
-            ),
+          IconButton(
+            tooltip: t3(lang, 'Search', 'खोजें', 'వెతకండి'),
+            onPressed: () => setState(() {
+              _searching = !_searching;
+              if (!_searching) _q = '';
+            }),
+            icon: Icon(_searching ? Icons.close_rounded : Icons.search_rounded),
+          ),
           const SizedBox(width: 6),
         ],
       ),
@@ -172,29 +223,46 @@ class _ImportantDaysScreenState extends ConsumerState<ImportantDaysScreen> {
           : null,
       body: Column(
         children: [
-          SizedBox(
-            height: 52,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-              children: [
-                for (final f in _filters)
-                  Padding(
-                    padding: const EdgeInsets.only(right: 8),
-                    child: ChoiceChip(
-                      showCheckmark: false,
-                      label: Text('${_emoji(f)} ${_label(lang, f)}'),
-                      selected: _filter == f,
-                      onSelected: (_) {
-                        HapticFeedback.selectionClick();
-                        setState(() => _filter = f);
-                        Boxes.prefs.put('important_filter', f);
-                      },
+          if (_q.trim().isEmpty)
+            SizedBox(
+              height: 52,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                children: [
+                  for (final y in [_thisYear, _thisYear + 1])
+                    Padding(
+                      padding: const EdgeInsets.only(right: 6),
+                      child: ChoiceChip(
+                        showCheckmark: false,
+                        avatar: _year == y ? const Icon(Icons.event_rounded, size: 16) : null,
+                        label: Text('$y'),
+                        selected: _year == y,
+                        onSelected: (_) => setState(() => _year = y),
+                      ),
                     ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 4, vertical: 6),
+                    child: VerticalDivider(width: 1),
                   ),
-              ],
+                  const SizedBox(width: 8),
+                  for (final f in _filters)
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8),
+                      child: ChoiceChip(
+                        showCheckmark: false,
+                        label: Text('${_emoji(f)} ${_label(lang, f)}'),
+                        selected: _filter == f,
+                        onSelected: (_) {
+                          HapticFeedback.selectionClick();
+                          setState(() => _filter = f);
+                          Boxes.prefs.put('important_filter', f);
+                        },
+                      ),
+                    ),
+                ],
+              ),
             ),
-          ),
           Expanded(
             child: items == null
                 ? const LoadingList()

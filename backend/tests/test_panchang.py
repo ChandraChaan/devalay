@@ -132,3 +132,14 @@ def test_telugu_timings_match_drik_panchang_hyderabad():
     assert near(p["durmuhurtham"][0], "2026-11-03T08:33", "2026-11-03T09:19")
     assert len(p["durmuhurtham"]) == 2  # Tuesday also has a night Durmuhurtham
     assert p["samvatsara"]["name"] == "Parabhava" and p["shaka_samvat"] == 1948
+
+
+def test_moonrise_and_moonset_hyderabad():
+    # Drik Panchang, Hyderabad, 3 Nov 2026: moonset 13:43, moonrise 01:50 on 4 Nov (the day runs to next sunrise).
+    p = panchang.daily_panchang(Location(17.385, 78.4867, "Asia/Kolkata"), date(2026, 11, 3))
+
+    def hm(iso: str) -> int:
+        return int(iso[11:13]) * 60 + int(iso[14:16])
+
+    assert p["moonset"].startswith("2026-11-03") and abs(hm(p["moonset"]) - hm("2026-11-03T13:43")) <= 6
+    assert p["moonrise"].startswith("2026-11-04") and abs(hm(p["moonrise"]) - hm("2026-11-04T01:50")) <= 6

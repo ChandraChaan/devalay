@@ -242,6 +242,23 @@ def _limb_timeline(t0, t1, kind: str, tz: ZoneInfo):
     return segments
 
 
+def moon_events(loc: Location, t0, t1) -> dict:
+    """First moonrise and moonset between two instants (a Panchang day runs sunrise to sunrise).
+    Either may be missing: the Moon skips one rise or set about once a month."""
+    _, eph = _ephemeris()
+    tz = ZoneInfo(loc.tz)
+    observer = eph["earth"] + wgs84.latlon(loc.lat, loc.lon)
+    out: dict[str, str | None] = {"moonrise": None, "moonset": None}
+    rises, rflags = almanac.find_risings(observer, eph["moon"], t0, t1)
+    sets, sflags = almanac.find_settings(observer, eph["moon"], t0, t1)
+    for key, times, flags in (("moonrise", rises, rflags), ("moonset", sets, sflags)):
+        for t, ok in zip(times, flags):
+            if ok:
+                out[key] = _to_local(t, tz).isoformat()
+                break
+    return out
+
+
 def daily_panchang(loc: Location, day: date) -> dict:
     """Full Panchang for a local civil day, measured from sunrise to next sunrise."""
     tz = ZoneInfo(loc.tz)
@@ -309,6 +326,7 @@ def daily_panchang(loc: Location, day: date) -> dict:
         "vara": VARA_NAMES[wd],
         "sunrise": sunrise.isoformat(),
         "sunset": sunset.isoformat(),
+        **moon_events(loc, t_rise, t_next),
         "tithi": describe("tithi"),
         "nakshatra": describe("nakshatra"),
         "yoga": describe("yoga"),

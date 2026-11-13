@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/i18n.dart';
+import '../core/glossary.dart';
 import '../core/muhurta.dart';
 import '../core/providers.dart';
 import '../core/storage.dart';
@@ -88,6 +89,7 @@ class _MuhurtaTimingsState extends ConsumerState<MuhurtaTimings> {
                       context,
                     ).textTheme.titleSmall?.copyWith(color: scheme.primary, fontWeight: FontWeight.w700),
                   ),
+                  MeaningButton(_tab, lang: lang),
                 ],
               ),
             ),

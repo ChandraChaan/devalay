@@ -38,6 +38,7 @@ class Prefs {
     required this.onboarded,
     required this.ishtaDevta,
     required this.rashi,
+    required this.birthStar,
     required this.cityId,
     required this.dailyReminder,
     required this.reminderHour,
@@ -57,6 +58,9 @@ class Prefs {
   final bool onboarded;
   final String? ishtaDevta;
   final String? rashi;
+
+  /// Birth nakshatra, 0 (Ashwini) to 26 (Revati), for Tarabalam.
+  final int? birthStar;
   final String cityId;
   final bool dailyReminder;
   final int reminderHour;
@@ -78,6 +82,7 @@ class Prefs {
     onboarded: box.get('onboarded', defaultValue: false) as bool,
     ishtaDevta: box.get('ishta') as String?,
     rashi: box.get('rashi') as String?,
+    birthStar: box.get('birth_star') as int?,
     cityId: box.get('city', defaultValue: 'delhi') as String,
     dailyReminder: box.get('daily_reminder', defaultValue: false) as bool,
     reminderHour: box.get('reminder_hour', defaultValue: 6) as int,
