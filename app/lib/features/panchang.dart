@@ -5,8 +5,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../core/i18n.dart';
 import '../core/glossary.dart';
 import '../core/location.dart';
+import '../core/muhurta.dart';
 import '../core/names.dart';
 import '../core/providers.dart';
+import '../core/regional.dart';
 import '../core/storage.dart';
 import '../core/telugu.dart';
 import '../core/theme.dart';
@@ -114,9 +116,16 @@ class PanchangDetail extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final lang = ref.watch(prefsProvider).language;
-    final month = data['lunar_month'] as Map;
-    final monthIndex = month['index'] as int;
+    final amanta = data['lunar_month'] as Map;
     final tithis = (data['tithi'] as List).cast<Map>();
+    // The month as the reader names it (Amanta or Purnimanta), from the paksha at sunrise.
+    final month = shownMonth(
+      ref.watch(monthSystemProvider),
+      amanta['index'] as int,
+      krishna: tithis.first['paksha'] == 'Krishna',
+      adhika: amanta['adhika'] == true,
+    );
+    final monthIndex = month.index;
     final till = t3(lang, 'till', 'तक', 'వరకు');
 
     String tithiName(Map m) => lang == 'en'
@@ -223,27 +232,27 @@ class PanchangDetail extends ConsumerWidget {
     );
 
     final samvatsara = data['samvatsara'] as Map?;
-    final adhika = month['adhika'] == true;
+    final adhika = month.adhika;
     final sunRashi = '${data['sun_rashi']}';
     final headerLines = switch (lang) {
       'te' => [
         if (samvatsara != null) 'శ్రీ ${teluguSamvatsara[samvatsara['index'] as int]} నామ సంవత్సరం',
         '${adhika ? 'అధిక ' : ''}${teluguMonths[monthIndex]} మాసం · ${teluguPaksha[tithis.first['paksha']] ?? ''}',
-        '${_uttarayana.contains(sunRashi) ? 'ఉత్తరాయణం' : 'దక్షిణాయనం'} · ${teluguRitu[monthIndex ~/ 2]} ఋతువు',
+        '${_uttarayana.contains(sunRashi) ? 'ఉత్తరాయణం' : 'దక్షిణాయనం'} · ${teluguRitu[(amanta['index'] as int) ~/ 2]} ఋతువు',
       ],
       'hi' => [
-        '${month['name']} ${adhika ? '(अधिक) ' : ''}· विक्रम संवत ${data['vikram_samvat']}',
+        '${lunarMonthLabel('hi', monthIndex)} ${adhika ? '(अधिक) ' : ''}· विक्रम संवत ${data['vikram_samvat']}',
         if (samvatsara != null) '${samvatsara['name']} संवत्सर · शक ${data['shaka_samvat']}',
       ],
       'en' => [
-        '${month['name']} ${adhika ? '(Adhik) ' : ''}· Vikram Samvat ${data['vikram_samvat']}',
+        '${lunarMonthNames[monthIndex]} ${adhika ? '(Adhik) ' : ''}· Vikram Samvat ${data['vikram_samvat']}',
         if (samvatsara != null) '${samvatsara['name']} samvatsara · Shaka ${data['shaka_samvat']}',
       ],
       _ => [
         if (samvatsara != null)
           '${samvatsaraIn(lang, samvatsara['index'] as int, '${samvatsara['name']}')} ${t3(lang, 'samvatsara', 'संवत्सर', 'నామ సంవత్సరం')}',
         '${adhika ? '${t3(lang, 'Adhika', 'अधिक', 'అధిక')} ' : ''}${monthIn(lang, monthIndex)} ${t3(lang, 'masa', 'मास', 'మాసం')} · ${pakshaIn(lang, '${tithis.first['paksha']}')}',
-        '${ayanaIn(lang, _uttarayana.contains(sunRashi))} · ${rituIn(lang, monthIndex ~/ 2)}',
+        '${ayanaIn(lang, _uttarayana.contains(sunRashi))} · ${rituIn(lang, (amanta['index'] as int) ~/ 2)}',
         '${t3(lang, 'Vikram Samvat', 'विक्रम संवत', 'విక్రమ శకం')} ${data['vikram_samvat']} · ${t3(lang, 'Shaka', 'शक', 'శక')} ${data['shaka_samvat']}',
       ],
     };

@@ -6,6 +6,7 @@ import 'i18n.dart';
 import 'muhurta.dart';
 import 'names.dart';
 import 'providers.dart';
+import 'regional.dart';
 import 'storage.dart';
 import 'telugu.dart';
 
@@ -74,7 +75,9 @@ class UserEvent {
   /// "Kartika Shukla Panchami" for a tithi event.
   String tithiLabel(String lang) {
     if (tithi == null || lunarMonth == null) return '';
-    return '${lunarMonthLabel(lang, lunarMonth!)} ${tithiName(lang, tithi!)}';
+    // Stored the Amanta way; a Purnimanta reader sees a Krishna-paksha day under the next month's name.
+    final shown = shownMonth(monthSystemFor(lang), lunarMonth!, krishna: tithi! > 15);
+    return '${lunarMonthLabel(lang, shown.index)} ${tithiName(lang, tithi!)}';
   }
 
   UserEvent copyWith({

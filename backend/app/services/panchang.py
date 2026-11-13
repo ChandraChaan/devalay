@@ -396,6 +396,7 @@ def month_sunrise_tithis(loc: Location, start: date, days: int) -> list[dict]:
     rises = [ev[start + timedelta(days=i)]["sunrise"] for i in range(days)]
     months = lunar_months(start.year)
     t = ts.from_datetimes(rises)
+    solar = solar_dates(loc, start, days)
     tithi = (_elongation(t) // 12.0).astype(int)
     nak = (_sidereal(t)[1] // (360.0 / 27)).astype(int)
     out = []
@@ -412,6 +413,7 @@ def month_sunrise_tithis(loc: Location, start: date, days: int) -> list[dict]:
             "tithi": name,
             "paksha": paksha,
             "nakshatra": NAKSHATRA_NAMES[int(nak[i])],
+            "solar": solar[i],
         })
     return out
 
@@ -426,6 +428,82 @@ def sankranti_times(year: int) -> list[tuple[int, datetime]]:
     sign_fn.step_days = 5
     times, values = find_discrete(ts.utc(year, 1, 1), ts.utc(year + 1, 1, 1), sign_fn)
     return [(int(v), t.utc_datetime()) for t, v in zip(times, values)]
+
+
+# ---------------------------------------------------------------------------
+# Regional solar calendars
+# ---------------------------------------------------------------------------
+#
+# Tamil, Malayalam, Bengali and Odia calendars count solar months: a month lasts while the Sun is in one
+# sidereal sign (month 0 = Mesha). They differ only in which civil day becomes day 1 when the sankranti
+# (the Sun's entry into the sign) falls during a day. Each rule names a critical moment of the civil day of
+# the sankranti: before it, that day is day 1; after it, the next day is.
+#
+# Sources: Sewell & Dikshit, "The Indian Calendar" (1896), Art. 28 "The beginning of a solar month";
+# Dershowitz & Reingold, "Indian Calendrical Calculations" sec. 4.2, eqs. 25-28
+# (https://www.reingold.co/hindu-paper.pdf); Drik Panchang's regional month calendars for 2026, which
+# tests/test_panchang.py checks against.
+#
+# - "sunset", Tamil: before sunset, same day (Sewell: "after sunrise and before sunset the month begins on
+#   the same day"; Reingold eq. 26). A sankranti between midnight and sunrise falls on its clock date.
+# - "aparahna", Malayalam: before 3/5 of the daytime, i.e. the start of aparahna, same day (Sewell's
+#   "Malabar rule": daytime in five parts, "within the first three of them the month begins on the same
+#   day"; Reingold eq. 27). Mithuna 2026 at 12:59 in Kochi starts Mithunam the same day, ruling out noon.
+# - "midnight", Bengali: the month always begins after the sankranti's day: the next civil day if the
+#   sankranti is before midnight, the day after that if between midnight and sunrise (Sewell's "Bengal
+#   rule"). Counted in civil dates, that is always the next calendar date. Reingold notes unpublished special
+#   cases within 24 minutes of midnight; Drik keeps Karka 2026 (23:45) on the plain rule.
+# - "nishita", Odia: the month begins on the sankranti's own day unless it falls after Hindu midnight
+#   (Drik Panchang, Mesha Sankranti: "same day as the Sankranti if it occurs before Hindu midnight").
+#   Drik's Odia Panji starts Shrabana 2026 on 17 Jul for a sankranti at 23:45 on 16 Jul, so its midnight
+#   is earlier than the middle of the night; the start of Nishita (sunset + 7/15 of the night) fits every
+#   2026 month. Sewell's textbook "Orissa rule" (the whole Hindu day, to next sunrise) does not match Drik.
+SOLAR_RULES = {"ta": "sunset", "ml": "aparahna", "bn": "midnight", "or": "nishita"}
+
+
+def _solar_first_day(rule: str, moment: datetime, sun: dict, next_sunrise: datetime) -> date:
+    """Day 1 of the month whose sankranti happens at `moment` (local time). `sun` holds sunrise and sunset of
+    the moment's civil date; `next_sunrise` is the following morning's."""
+    day = moment.date()
+    if rule == "midnight":
+        return day + timedelta(days=1)
+    cutoff = {
+        "sunset": sun["sunset"],
+        "aparahna": sun["sunrise"] + (sun["sunset"] - sun["sunrise"]) * 3 / 5,
+        "nishita": sun["sunset"] + (next_sunrise - sun["sunset"]) * 7 / 15,
+    }[rule]
+    if moment < sun["sunrise"] and rule == "nishita":
+        # Before dawn: still the previous evening's night, whose Nishita has passed.
+        return day
+    return day if moment < cutoff else day + timedelta(days=1)
+
+
+@lru_cache(maxsize=64)
+def _solar_starts(loc: Location, year: int) -> dict[str, list[tuple[date, int]]]:
+    """Day 1 of every solar month from the year before through the year after, per regional rule."""
+    tz = ZoneInfo(loc.tz)
+    moments = [(sign, t.astimezone(tz)) for y in (year - 1, year, year + 1) for sign, t in sankranti_times(y)]
+    out: dict[str, list[tuple[date, int]]] = {k: [] for k in SOLAR_RULES}
+    for sign, moment in moments:
+        ev = sun_events(loc, moment.date(), 2)
+        sun, next_sunrise = ev[moment.date()], ev[moment.date() + timedelta(days=1)]["sunrise"]
+        for key, rule in SOLAR_RULES.items():
+            out[key].append((_solar_first_day(rule, moment, sun, next_sunrise), sign))
+    return out
+
+
+def solar_dates(loc: Location, start: date, days: int) -> list[dict[str, list[int]]]:
+    """Per day, each regional calendar's [month, day]: month 0 = Mesha (Chithirai, Medam, Boishakh, Baisakha)."""
+    starts = _solar_starts(loc, start.year)
+    out = []
+    for i in range(days):
+        d = start + timedelta(days=i)
+        row = {}
+        for key, firsts in starts.items():
+            first, sign = max((f, s) for f, s in firsts if f <= d)
+            row[key] = [sign, (d - first).days + 1]
+        out.append(row)
+    return out
 
 
 def moon_rashi_on(day: date, tz: str = "Asia/Kolkata") -> int:

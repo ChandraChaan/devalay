@@ -29,6 +29,7 @@ import 'or.dart';
 import 'or_content.dart';
 import 'pa.dart';
 import 'pa_content.dart';
+import 'regional_strings.dart';
 import 'ta.dart';
 import 'ta_content.dart';
 
@@ -38,14 +39,14 @@ import 'ta_content.dart';
 const _tables = <String, Map<String, String>>{
   'hi': {...stringsHi, ...descHi},
   'te': descTe,
-  'bn': {...stringsBn, ...contentBn, ...descBn},
-  'mr': {...stringsMr, ...contentMr, ...descMr},
-  'ta': {...stringsTa, ...contentTa, ...descTa},
-  'gu': {...stringsGu, ...contentGu, ...descGu},
-  'kn': {...stringsKn, ...contentKn, ...descKn},
-  'ml': {...stringsMl, ...contentMl, ...descMl},
-  'or': {...stringsOr, ...contentOr, ...descOr},
-  'pa': {...stringsPa, ...contentPa, ...descPa},
+  'bn': {...stringsBn, ...contentBn, ...descBn, ...regionalBn},
+  'mr': {...stringsMr, ...contentMr, ...descMr, ...regionalMr},
+  'ta': {...stringsTa, ...contentTa, ...descTa, ...regionalTa},
+  'gu': {...stringsGu, ...contentGu, ...descGu, ...regionalGu},
+  'kn': {...stringsKn, ...contentKn, ...descKn, ...regionalKn},
+  'ml': {...stringsMl, ...contentMl, ...descMl, ...regionalMl},
+  'or': {...stringsOr, ...contentOr, ...descOr, ...regionalOr},
+  'pa': {...stringsPa, ...contentPa, ...descPa, ...regionalPa},
 };
 
 /// The table for [lang], or null (English, or a language without one).
