@@ -2,16 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../core/calendar_reminders.dart';
 import '../core/i18n.dart';
 import '../core/theme.dart';
 import '../widgets/mini_player.dart';
 
-class AppShell extends ConsumerWidget {
+class AppShell extends ConsumerStatefulWidget {
   const AppShell({super.key, required this.shell});
   final StatefulNavigationShell shell;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<AppShell> createState() => _AppShellState();
+}
+
+class _AppShellState extends ConsumerState<AppShell> {
+  @override
+  void initState() {
+    super.initState();
+    // Calendar alarms are laid a few weeks ahead from cached data; top them up on every start.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) refreshCalendarReminders(ref);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final shell = widget.shell;
     final items = [
       (Icons.home_outlined, Icons.home_rounded, 'home'),
       (Icons.headphones_outlined, Icons.headphones_rounded, 'listen'),

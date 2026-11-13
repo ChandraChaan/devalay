@@ -109,6 +109,11 @@ def test_month_calendar_has_every_day():
     days = panchang.month_sunrise_tithis(DELHI, date(2026, 2, 1), 28)
     assert len(days) == 28
     assert all(1 <= d["tithi_index"] <= 30 for d in days)
+    # 1 Feb 2026 is Magha Purnima; Phalguna (amanta) begins after the 17 Feb new moon.
+    assert days[0]["lunar_month"] == 10 and days[0]["tithi_index"] == 15
+    assert days[-1]["lunar_month"] == 11
+    assert not any(d["adhika"] for d in days)
+    assert all(d["sunset"] > d["sunrise"] for d in days)
 
 
 def test_telugu_timings_match_drik_panchang_hyderabad():

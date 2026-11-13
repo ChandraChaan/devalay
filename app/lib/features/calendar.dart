@@ -8,9 +8,12 @@ import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import 'package:share_plus/share_plus.dart';
 
+import '../core/calendar_reminders.dart';
+import '../core/events.dart';
 import '../core/i18n.dart';
 import '../core/location.dart';
 import '../core/models.dart';
+import '../core/muhurta.dart';
 import '../core/notifications.dart';
 import '../core/providers.dart';
 import '../core/storage.dart';
@@ -18,6 +21,7 @@ import '../core/telugu.dart';
 import '../core/theme.dart';
 import '../core/wishes.dart';
 import '../widgets/common.dart';
+import 'my_events.dart';
 import 'panchang.dart';
 
 // The calendar covers 1950–2049, the range the panchang is computed for.
@@ -31,13 +35,6 @@ DateTime _monthAt(int i) => DateTime(_firstMonth.year, i + 1);
 int _dayIndex(DateTime d) => DateTime.utc(d.year, d.month, d.day).difference(DateTime.utc(1950)).inDays;
 DateTime _dayAt(int i) => DateTime(_firstDay.year, 1, 1 + i);
 String _iso(DateTime d) => DateFormat('yyyy-MM-dd').format(d);
-
-const _nakshatraNames = [
-  'Ashwini', 'Bharani', 'Krittika', 'Rohini', 'Mrigashira', 'Ardra', 'Punarvasu', 'Pushya', 'Ashlesha', //
-  'Magha', 'Purva Phalguni', 'Uttara Phalguni', 'Hasta', 'Chitra', 'Swati', 'Vishakha', 'Anuradha',
-  'Jyeshtha', 'Mula', 'Purva Ashadha', 'Uttara Ashadha', 'Shravana', 'Dhanishta', 'Shatabhisha',
-  'Purva Bhadrapada', 'Uttara Bhadrapada', 'Revati',
-];
 
 /// Sunday first, as printed Indian calendars do.
 List<String> _weekdayLabels(String lang) => switch (lang) {
@@ -58,7 +55,7 @@ String _pakshaLabel(String lang, Map d) =>
 String _nakshatraLabel(String lang, Map d) {
   final name = '${d['nakshatra']}';
   if (lang != 'te') return name;
-  final i = _nakshatraNames.indexOf(name);
+  final i = nakshatraNames.indexOf(name);
   return i < 0 ? name : teluguNakshatra[i + 1];
 }
 
@@ -79,6 +76,16 @@ Map<DateTime, List<Festival>> _festivalsByDay(List<Festival>? list) {
     l.sort((a, b) => (b.major ? 1 : 0) - (a.major ? 1 : 0));
   }
   return out;
+}
+
+/// The wishes card for the day's first festival that has one.
+String? wishesFor(WidgetRef ref, List<Festival> festivals) {
+  final catalog = ref.watch(wishCatalogProvider).value;
+  if (catalog == null) return null;
+  for (final f in festivals) {
+    if (catalog.forFestival(f) case final w?) return w.id;
+  }
+  return null;
 }
 
 String _countdown(String lang, int days) => switch (days) {
@@ -187,6 +194,27 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
     );
   }
 
+  Future<void> _togglePanchangDaily() async {
+    final prefs = ref.read(prefsProvider);
+    final lang = prefs.language;
+    final on = !prefs.panchangDaily;
+    if (on && !await Notifications.requestPermission()) return;
+    await ref.read(prefsProvider.notifier).set('panchang_daily', on);
+    await refreshPanchangNotifications(ref);
+    if (!mounted) return;
+    toast(
+      context,
+      on
+          ? t3(
+              lang,
+              "Today's Panchang will arrive every morning at ${clock12(prefs.panchangHour, prefs.panchangMinute)}",
+              'हर सुबह ${clock12(prefs.panchangHour, prefs.panchangMinute)} बजे आज का पंचांग मिलेगा',
+              'ప్రతి ఉదయం ${clock12(prefs.panchangHour, prefs.panchangMinute)}కు నేటి పంచాంగం వస్తుంది',
+            )
+          : t3(lang, 'Morning Panchang off', 'सुबह का पंचांग बंद', 'ఉదయపు పంచాంగం ఆఫ్'),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final prefs = ref.watch(prefsProvider);
@@ -260,11 +288,46 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
             icon: const Icon(Icons.fullscreen_rounded),
           ),
           IconButton(
-            tooltip: t3(lang, 'Festival reminders', 'त्योहार रिमाइंडर', 'పండుగ రిమైండర్లు'),
-            icon: Icon(prefs.festivalReminders ? Icons.notifications_active_rounded : Icons.notifications_none_rounded),
-            onPressed: _toggleReminders,
+            tooltip: t3(lang, 'Important days', 'महत्वपूर्ण दिन', 'ముఖ్యమైన రోజులు'),
+            onPressed: () => context.push('/calendar/important'),
+            icon: const Icon(Icons.event_note_rounded),
+          ),
+          PopupMenuButton<String>(
+            onSelected: (v) => switch (v) {
+              'events' => context.push('/calendar/events'),
+              'festivals' => _toggleReminders(),
+              'panchang' => _togglePanchangDaily(),
+              _ => null,
+            },
+            itemBuilder: (_) => [
+              PopupMenuItem(
+                value: 'events',
+                child: ListTile(
+                  leading: const Icon(Icons.cake_rounded),
+                  title: Text(t3(lang, 'My events & reminders', 'मेरे दिन व रिमाइंडर', 'నా రోజులు & రిమైండర్లు')),
+                ),
+              ),
+              CheckedPopupMenuItem(
+                value: 'panchang',
+                checked: prefs.panchangDaily,
+                child: Text(
+                  t3(lang, 'Morning Panchang notification', 'सुबह का पंचांग सूचना', 'ఉదయపు పంచాంగం నోటిఫికేషన్'),
+                ),
+              ),
+              CheckedPopupMenuItem(
+                value: 'festivals',
+                checked: prefs.festivalReminders,
+                child: Text(t3(lang, 'Festival reminders', 'त्योहार रिमाइंडर', 'పండుగ రిమైండర్లు')),
+              ),
+            ],
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        heroTag: 'add-event',
+        onPressed: () => showEventEditor(context, ref, date: _selected),
+        icon: const Icon(Icons.add_alert_rounded),
+        label: Text(t3(lang, 'Add event', 'दिन जोड़ें', 'రోజు జోడించు')),
       ),
       body: LayoutBuilder(
         builder: (context, box) {
@@ -299,7 +362,7 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
                   _MonthFestivals(month: _month, onTap: (d) => setState(() => _selected = d)),
                   SliverToBoxAdapter(
                     child: Padding(
-                      padding: const EdgeInsets.fromLTRB(24, 8, 24, 32),
+                      padding: const EdgeInsets.fromLTRB(24, 8, 24, 96),
                       child: Text(
                         t3(
                           lang,
@@ -346,6 +409,11 @@ class _MonthHeader extends ConsumerWidget {
     final inMonth = festivals.where((f) => f.date.month == month.month).toList();
     final major = inMonth.where((f) => f.major).length;
     final city = ref.watch(cityProvider);
+    final days = ref.watch(monthProvider((year: month.year, month: month.month))).value ?? const <Map>[];
+    final lunar = <int>{
+      for (final d in days)
+        if (d['lunar_month'] case final int m) m,
+    }.map((m) => lunarMonthLabel(lang, m)).join(' – ');
     return Padding(
       padding: const EdgeInsets.fromLTRB(4, 4, 4, 6),
       child: Row(
@@ -376,6 +444,7 @@ class _MonthHeader extends ConsumerWidget {
                     Text(
                       [
                         city.label(lang),
+                        if (lunar.isNotEmpty) lunar,
                         if (major > 0) t3(lang, '$major festivals', '$major त्योहार', '$major పండుగలు'),
                       ].join(' · '),
                       style: Theme.of(context).textTheme.bodySmall,
@@ -431,6 +500,7 @@ class _MonthGrid extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final days = ref.watch(monthProvider((year: month.year, month: month.month)));
     final byDay = _festivalsByDay(ref.watch(festivalsProvider(month.year)).value);
+    final events = ref.watch(eventsByDayProvider(month.year));
     final lang = ref.watch(prefsProvider.select((p) => p.language));
     final lead = DateTime(month.year, month.month, 1).weekday % 7;
     final count = DateUtils.getDaysInMonth(month.year, month.month);
@@ -467,6 +537,7 @@ class _MonthGrid extends ConsumerWidget {
                                 date: date,
                                 info: summary[n],
                                 festivals: byDay[date] ?? const [],
+                                events: events[date] ?? const [],
                                 selected: DateUtils.isSameDay(date, selected),
                                 full: full,
                                 lang: lang,
@@ -491,6 +562,7 @@ class _DayCell extends StatelessWidget {
     required this.date,
     required this.info,
     required this.festivals,
+    required this.events,
     required this.selected,
     required this.full,
     required this.lang,
@@ -499,6 +571,7 @@ class _DayCell extends StatelessWidget {
   final DateTime date;
   final Map? info;
   final List<Festival> festivals;
+  final List<UserEvent> events;
   final bool selected, full;
   final String lang;
   final VoidCallback onTap;
@@ -508,10 +581,12 @@ class _DayCell extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
     final today = DateUtils.isSameDay(date, DateTime.now());
     final major = festivals.any((f) => f.major);
-    final sunday = date.weekday == DateTime.sunday;
-    final fg = selected ? Colors.white : (sunday || major ? Palette.vermilion : scheme.onSurface);
+    final holiday = nationalHoliday(date);
+    final red = date.weekday == DateTime.sunday || major || holiday != null;
+    final fg = selected ? Colors.white : (red ? Palette.vermilion : scheme.onSurface);
     final sub = selected ? Colors.white70 : scheme.outline;
     final mark = info == null ? '' : _moonMark(info!);
+    final yoga = info == null ? null : shubhYoga(date, '${info!['nakshatra']}');
 
     return Padding(
       padding: const EdgeInsets.all(2),
@@ -543,14 +618,25 @@ class _DayCell extends StatelessWidget {
                   : null,
             ),
             padding: EdgeInsets.symmetric(horizontal: full ? 2 : 3, vertical: full ? 4 : 2),
-            child: full ? _fullBody(context, fg, sub, mark) : _compactBody(fg, sub, mark),
+            child: full
+                ? _fullBody(context, fg, sub, mark, holiday, yoga)
+                : _compactBody(fg, sub, _marks(mark, holiday, yoga)),
           ),
         ),
       ),
     );
   }
 
-  Widget _compactBody(Color fg, Color sub, String mark) => Column(
+  /// Up to two small marks under the date: festival, personal event, holiday, moon, auspicious yoga.
+  String _marks(String moon, String? holiday, String? yoga) => [
+    if (festivals.isNotEmpty) festivals.any((f) => f.major) ? '🪔' : '•',
+    if (events.isNotEmpty) events.first.emoji,
+    if (holiday != null) '🇮🇳',
+    if (moon.isNotEmpty) moon,
+    if (yoga != null) '✨',
+  ].take(2).join();
+
+  Widget _compactBody(Color fg, Color sub, String marks) => Column(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
       Text(
@@ -566,14 +652,26 @@ class _DayCell extends StatelessWidget {
         ),
       SizedBox(
         height: 14,
-        child: festivals.isNotEmpty
-            ? Text(festivals.any((f) => f.major) ? '🪔' : '•', style: TextStyle(fontSize: 11, color: fg))
-            : Text(mark, style: const TextStyle(fontSize: 10)),
+        child: FittedBox(
+          child: Text(marks, style: TextStyle(fontSize: 10, color: fg)),
+        ),
       ),
     ],
   );
 
-  Widget _fullBody(BuildContext context, Color fg, Color sub, String mark) {
+  Widget _fullBody(BuildContext context, Color fg, Color sub, String mark, String? holiday, String? yoga) {
+    Widget line(String text, {Color? color, bool bold = false, int maxLines = 2}) => Text(
+      text,
+      maxLines: maxLines,
+      overflow: TextOverflow.ellipsis,
+      style: TextStyle(
+        fontSize: 9,
+        height: 1.15,
+        letterSpacing: -0.1,
+        fontWeight: bold ? FontWeight.w700 : FontWeight.w500,
+        color: selected ? Colors.white : (color ?? sub),
+      ),
+    );
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -585,6 +683,7 @@ class _DayCell extends StatelessWidget {
             ),
             const Spacer(),
             if (mark.isNotEmpty) Text(mark, style: const TextStyle(fontSize: 11)),
+            if (yoga != null) const Text('✨', style: TextStyle(fontSize: 10)),
           ],
         ),
         if (info != null)
@@ -601,18 +700,14 @@ class _DayCell extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                if (holiday != null) line(holidayLabel(lang, holiday), color: Palette.vermilion, bold: true),
+                for (final e in events) line('${e.emoji} ${e.title}', color: const Color(0xFF1565C0), bold: true),
                 for (final f in festivals)
-                  Text(
+                  line(
                     f.label(lang),
+                    color: f.major ? Palette.saffron : null,
+                    bold: f.major,
                     maxLines: f.major ? 3 : 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontSize: 9,
-                      height: 1.15,
-                      letterSpacing: -0.1,
-                      fontWeight: f.major ? FontWeight.w700 : FontWeight.w500,
-                      color: selected ? Colors.white : (f.major ? Palette.saffron : sub),
-                    ),
                   ),
               ],
             ),
@@ -648,6 +743,8 @@ class _Legend extends ConsumerWidget {
           item('🌕', t3(lang, 'Purnima', 'पूर्णिमा', 'పౌర్ణమి')),
           item('🌑', t3(lang, 'Amavasya', 'अमावस्या', 'అమావాస్య')),
           item('🙏', t3(lang, 'Ekadashi', 'एकादशी', 'ఏకాదశి')),
+          item('✨', t3(lang, 'Auspicious', 'शुभ योग', 'శుభ యోగం')),
+          item('🔔', t3(lang, 'My events', 'मेरे दिन', 'నా రోజులు')),
         ],
       ),
     );
@@ -665,8 +762,20 @@ class _SelectedDayCard extends ConsumerWidget {
     final days = ref.watch(monthProvider((year: date.year, month: date.month))).value ?? const <Map>[];
     final info = days.where((d) => d['date'] == _iso(date)).firstOrNull;
     final festivals = _festivalsByDay(ref.watch(festivalsProvider(date.year)).value)[date] ?? const <Festival>[];
+    final events = ref.watch(eventsByDayProvider(date.year))[date] ?? const <UserEvent>[];
     final major = festivals.any((f) => f.major);
     final away = date.difference(DateUtils.dateOnly(DateTime.now())).inDays;
+    final holiday = nationalHoliday(date);
+    final yoga = info == null ? null : shubhYoga(date, '${info['nakshatra']}');
+    final rahu = info?['sunset'] == null
+        ? null
+        : rahuKalam(date, wallClock('${info!['sunrise']}'), wallClock('${info['sunset']}'));
+    final chips = [
+      if (holiday != null) ('🇮🇳 ${holidayLabel(lang, holiday)}', true),
+      for (final e in events) ('${e.emoji} ${e.title}', true),
+      for (final f in festivals) ('${f.major ? '🪔 ' : ''}${f.label(lang)}', f.major),
+      if (yoga != null) ('✨ ${shubhYogaLabel(lang, yoga)}', false),
+    ];
 
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 4, 16, 4),
@@ -730,27 +839,32 @@ class _SelectedDayCard extends ConsumerWidget {
                           '${tr(ref, 'nakshatra')}: ${_nakshatraLabel(lang, info)} · ☀ ${hhmm('${info['sunrise']}')}',
                           style: const TextStyle(color: Colors.white70),
                         ),
+                        if (rahu != null)
+                          Text(
+                            '${tr(ref, 'rahu_kaal')}: ${clock(rahu.$1)} – ${clock(rahu.$2)}',
+                            style: const TextStyle(color: Colors.white70),
+                          ),
                       ],
                     ],
                   ),
                 ),
               ],
             ),
-            if (festivals.isNotEmpty) ...[
+            if (chips.isNotEmpty) ...[
               const SizedBox(height: 12),
               Wrap(
                 spacing: 6,
                 runSpacing: 6,
                 children: [
-                  for (final f in festivals)
+                  for (final (text, strong) in chips)
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                       decoration: BoxDecoration(
-                        color: Colors.white.withValues(alpha: f.major ? 0.25 : 0.14),
+                        color: Colors.white.withValues(alpha: strong ? 0.25 : 0.14),
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Text(
-                        '${f.major ? '🪔 ' : ''}${f.label(lang)}',
+                        text,
                         style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
                       ),
                     ),
@@ -761,6 +875,14 @@ class _SelectedDayCard extends ConsumerWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
+                if (wishesFor(ref, festivals) case final id?)
+                  TextButton.icon(
+                    style: TextButton.styleFrom(foregroundColor: Colors.white, padding: EdgeInsets.zero),
+                    onPressed: () => context.push('/wishes/$id'),
+                    icon: const Icon(Icons.card_giftcard_rounded, size: 18),
+                    label: Text(t3(lang, 'Wishes', 'शुभकामनाएँ', 'శుభాకాంక్షలు')),
+                  ),
+                const Spacer(),
                 Text(
                   t3(lang, 'Full panchang & details', 'पूरा पंचांग व विवरण', 'పూర్తి పంచాంగం & వివరాలు'),
                   style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
@@ -1038,6 +1160,12 @@ class _DayPage extends ConsumerWidget {
     final major = festivals.any((f) => f.major);
     final away = day.difference(DateUtils.dateOnly(DateTime.now())).inDays;
     final wishes = ref.watch(wishCatalogProvider).value;
+    final events = ref.watch(eventsByDayProvider(day.year))[day] ?? const <UserEvent>[];
+    final summary = (ref.watch(monthProvider((year: day.year, month: day.month))).value ?? const <Map>[])
+        .where((d) => d['date'] == _iso(day))
+        .firstOrNull;
+    final holiday = nationalHoliday(day);
+    final yoga = summary == null ? null : shubhYoga(day, '${summary['nakshatra']}');
 
     final hero = Container(
       margin: const EdgeInsets.only(bottom: 12),
@@ -1131,15 +1259,61 @@ class _DayPage extends ConsumerWidget {
           ),
         ),
     ];
+    Widget note(String emoji, String title, String? body, {VoidCallback? onTap, Color? color}) => Card(
+      margin: const EdgeInsets.only(bottom: 10),
+      child: ListTile(
+        onTap: onTap,
+        leading: Text(emoji, style: const TextStyle(fontSize: 26)),
+        title: Text(
+          title,
+          style: TextStyle(fontWeight: FontWeight.w700, color: color),
+        ),
+        subtitle: body == null ? null : Text(body),
+        trailing: onTap == null ? null : const Icon(Icons.edit_rounded, size: 18),
+      ),
+    );
+    final extras = [
+      if (holiday != null)
+        note(
+          '🇮🇳',
+          holidayLabel(lang, holiday),
+          t3(lang, 'National holiday', 'राष्ट्रीय अवकाश', 'జాతీయ సెలవు దినం'),
+          color: Palette.vermilion,
+        ),
+      for (final e in events)
+        note(
+          e.emoji,
+          e.title,
+          [UserEvent.kindLabel(lang, e.kind), if (e.repeat == EventRepeat.tithi) e.tithiLabel(lang)].join(' · '),
+          onTap: () => showEventEditor(context, ref, existing: e),
+        ),
+      if (yoga != null) note('✨', shubhYogaLabel(lang, yoga), shubhYogaNote(lang, yoga), color: Colors.green.shade700),
+      Align(
+        alignment: Alignment.centerLeft,
+        child: TextButton.icon(
+          onPressed: () => showEventEditor(context, ref, date: day),
+          icon: const Icon(Icons.add_alert_rounded),
+          label: Text(
+            t3(
+              lang,
+              'Add a birthday, anniversary or reminder',
+              'जन्मदिन, सालगिरह या रिमाइंडर जोड़ें',
+              'పుట్టినరోజు, వార్షికోత్సవం లేదా రిమైండర్ జోడించండి',
+            ),
+          ),
+        ),
+      ),
+    ];
     const pad = EdgeInsets.fromLTRB(16, 8, 16, 80);
 
     return panchang.when(
-      data: (d) => PanchangDetail(data: d, leading: [hero, ...festivalCards], padding: pad),
+      data: (d) => PanchangDetail(data: d, leading: [hero, ...festivalCards, ...extras], padding: pad),
       loading: () => ListView(
         padding: pad,
         children: [
           hero,
           ...festivalCards,
+          ...extras,
           const SkeletonBox(height: 110),
           const SizedBox(height: 10),
           const SkeletonBox(height: 260),
@@ -1150,6 +1324,7 @@ class _DayPage extends ConsumerWidget {
         children: [
           hero,
           ...festivalCards,
+          ...extras,
           _MonthSummary(day: day),
           Card(
             child: Padding(

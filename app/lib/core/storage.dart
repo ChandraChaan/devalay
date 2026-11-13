@@ -14,6 +14,7 @@ class Boxes {
   static late Box favorites;
   static late Box downloads;
   static late Box stats;
+  static late Box events;
 
   static Future<void> init() async {
     await Hive.initFlutter('devalay');
@@ -22,6 +23,7 @@ class Boxes {
     favorites = await Hive.openBox('favorites');
     downloads = await Hive.openBox('downloads');
     stats = await Hive.openBox('stats');
+    events = await Hive.openBox('events');
     if (prefs.get('device_id') == null) {
       await prefs.put('device_id', const Uuid().v4());
     }
@@ -41,6 +43,9 @@ class Prefs {
     required this.reminderHour,
     required this.reminderMinute,
     required this.festivalReminders,
+    required this.panchangDaily,
+    required this.panchangHour,
+    required this.panchangMinute,
     required this.textScale,
     required this.showTransliteration,
     required this.showMeaning,
@@ -57,6 +62,11 @@ class Prefs {
   final int reminderHour;
   final int reminderMinute;
   final bool festivalReminders;
+
+  /// Morning notification with the day's tithi, nakshatra, Rahu Kalam and festivals.
+  final bool panchangDaily;
+  final int panchangHour;
+  final int panchangMinute;
   final double textScale;
   final bool showTransliteration;
   final bool showMeaning;
@@ -73,6 +83,9 @@ class Prefs {
     reminderHour: box.get('reminder_hour', defaultValue: 6) as int,
     reminderMinute: box.get('reminder_minute', defaultValue: 30) as int,
     festivalReminders: box.get('festival_reminders', defaultValue: false) as bool,
+    panchangDaily: box.get('panchang_daily', defaultValue: false) as bool,
+    panchangHour: box.get('panchang_hour', defaultValue: 6) as int,
+    panchangMinute: box.get('panchang_minute', defaultValue: 0) as int,
     textScale: (box.get('text_scale', defaultValue: 1.0) as num).toDouble(),
     showTransliteration: box.get('show_translit', defaultValue: false) as bool,
     showMeaning: box.get('show_meaning', defaultValue: true) as bool,

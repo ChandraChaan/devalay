@@ -372,19 +372,24 @@ def lunar_month_at(moment: datetime) -> dict:
 
 
 def month_sunrise_tithis(loc: Location, start: date, days: int) -> list[dict]:
-    """Compact per-day summary (sunrise tithi, nakshatra) used by calendars."""
+    """Compact per-day summary (sunrise tithi, nakshatra, lunar month, sunset) used by calendars."""
     ts = _ts()
     ev = sun_events(loc, start, days)
     rises = [ev[start + timedelta(days=i)]["sunrise"] for i in range(days)]
+    months = lunar_months(start.year)
     t = ts.from_datetimes(rises)
     tithi = (_elongation(t) // 12.0).astype(int)
     nak = (_sidereal(t)[1] // (360.0 / 27)).astype(int)
     out = []
     for i, d in enumerate(rises):
         paksha, name = tithi_label(int(tithi[i]))
+        month = next((m for m in months if m["start"] <= d < m["end"]), None)
         out.append({
             "date": (start + timedelta(days=i)).isoformat(),
             "sunrise": d.isoformat(),
+            "sunset": ev[start + timedelta(days=i)]["sunset"].isoformat(),
+            "lunar_month": month["index"] if month else None,
+            "adhika": bool(month and month["adhika"]),
             "tithi_index": int(tithi[i]) + 1,
             "tithi": name,
             "paksha": paksha,

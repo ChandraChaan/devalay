@@ -33,6 +33,34 @@ class Notifications {
     importance: Importance.high,
   );
 
+  static const _panchang = AndroidNotificationDetails(
+    'panchang_daily',
+    "Today's Panchang",
+    channelDescription: "Each morning: today's tithi, nakshatra, Rahu Kalam and festivals",
+    importance: Importance.defaultImportance,
+  );
+
+  static const _events = AndroidNotificationDetails(
+    'my_events',
+    'My events',
+    channelDescription: 'Birthdays, anniversaries and remembrance days you added to the calendar',
+    importance: Importance.high,
+  );
+
+  /// The channel's details with the whole body shown when the notification is expanded.
+  static NotificationDetails _expanded(AndroidNotificationDetails c, String body) => NotificationDetails(
+    android: AndroidNotificationDetails(
+      c.channelId,
+      c.channelName,
+      channelDescription: c.channelDescription,
+      importance: c.importance,
+      styleInformation: BigTextStyleInformation(body),
+    ),
+  );
+
+  static const _panchangBase = 400000;
+  static const panchangDays = 45;
+
   static const _quota = AndroidNotificationDetails(
     'temple_booking',
     'Temple booking reminders',
@@ -162,14 +190,76 @@ class Notifications {
     }
   }
 
-  /// Two notification ids per reminder key, stable across app starts and clear of the other ranges.
-  static int _quotaId(String key) {
+  /// One morning message per day for the coming days ([panchangDays] at most). Each day's
+  /// text differs, so these are one-off alarms re-laid each time the app opens.
+  static Future<void> schedulePanchang(
+    List<({DateTime day, String title, String body})> items, {
+    required int hour,
+    required int minute,
+  }) async {
+    await cancelPanchang();
+    final now = tz.TZDateTime.now(tz.local);
+    var i = 0;
+    for (final item in items.take(panchangDays)) {
+      final when = _next(hour, minute, item.day);
+      if (!when.isAfter(now)) continue;
+      await _plugin.zonedSchedule(
+        id: _panchangBase + i++,
+        scheduledDate: when,
+        notificationDetails: _expanded(_panchang, item.body),
+        androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+        title: item.title,
+        body: item.body,
+      );
+    }
+  }
+
+  static Future<void> cancelPanchang() async {
+    for (var i = 0; i < panchangDays; i++) {
+      await _plugin.cancel(id: _panchangBase + i);
+    }
+  }
+
+  /// A personal event: the evening before (7 PM) and the morning of (7 AM).
+  static Future<void> scheduleEvent(
+    String id, {
+    required DateTime on,
+    required (String, String) eve,
+    required (String, String) morning,
+  }) async {
+    await cancelEvent(id);
+    final now = tz.TZDateTime.now(tz.local);
+    final slots = [(_next(19, 0, on.subtract(const Duration(days: 1))), eve), (_next(7, 0, on), morning)];
+    for (final (i, (at, (title, body))) in slots.indexed) {
+      if (!at.isAfter(now)) continue;
+      await _plugin.zonedSchedule(
+        id: _eventId(id) + i,
+        scheduledDate: at,
+        notificationDetails: _expanded(_events, body),
+        androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+        title: title,
+        body: body,
+      );
+    }
+  }
+
+  static Future<void> cancelEvent(String id) async {
+    await _plugin.cancel(id: _eventId(id));
+    await _plugin.cancel(id: _eventId(id) + 1);
+  }
+
+  static int _eventId(String key) => 300000 + _hash(key) % 4000 * 2;
+
+  static int _hash(String key) {
     var h = 0;
     for (final c in key.codeUnits) {
       h = (h * 31 + c) & 0x7fffffff;
     }
-    return 200000 + h % 4000 * 2;
+    return h;
   }
+
+  /// Two notification ids per reminder key, stable across app starts and clear of the other ranges.
+  static int _quotaId(String key) => 200000 + _hash(key) % 4000 * 2;
 
   /// Monthly reminders for a temple booking quota that usually opens on [day] at [hour]:[minute]
   /// India time: one the evening before and one 90 minutes ahead. Android may deliver an inexact

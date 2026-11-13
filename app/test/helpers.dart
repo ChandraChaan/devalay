@@ -12,5 +12,6 @@ Future<void> initTestStorage() async {
   Boxes.favorites = await Hive.openBox('favorites');
   Boxes.downloads = await Hive.openBox('downloads');
   Boxes.stats = await Hive.openBox('stats');
+  Boxes.events = await Hive.openBox('events');
   await Boxes.prefs.put('device_id', 'test-device-123456');
 }

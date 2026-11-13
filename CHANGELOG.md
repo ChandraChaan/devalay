@@ -5,6 +5,19 @@ v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the 
 
 ## Unreleased
 
+- Calendar: Choghadiya, Hora and Gowri Panchangam (Nalla Neram) for every day, by day and by night, with the
+  running period marked "Now". Each hora says what it suits: puja, study, travel, business or government work.
+- Calendar: Rahu Kalam on the selected day, the lunar months of each month in the header (Kartika – Margashirsha),
+  national holidays, and auspicious days (Amrita Siddhi, Guru Pushya, Ravi Pushya) marked with ✨.
+- Important days: one list for the year of festivals, Ekadashi, Purnima, Amavasya, Pradosham, Sankashti, Masa
+  Shivaratri, auspicious days, holidays and your own days, for this year and next.
+- My events: keep birthdays, wedding anniversaries and remembrance days (taddinam) in the calendar. Repeat them
+  every year by date, or by tithi and lunar month the way families do, with a reminder the evening before and that
+  morning.
+- Morning Panchang: an optional notification each morning with the day's tithi, nakshatra, Rahu Kalam, festivals
+  and your events. Turn it on from the calendar menu or Settings and pick the time.
+- The offline calendar now covers every month of this year and next.
+
 - Temple booking: every online service of Tirumala Tirupati Devasthanams in one place. Special Entry Darshan
   (₹300), senior citizen and SRIVANI darshan, Angapradakshinam, Arjitha Sevas and the Seva e-Dip, rooms, e-Hundi,
   donations and more, each explained in English, Hindi and Telugu, with the steps to book and what to carry.

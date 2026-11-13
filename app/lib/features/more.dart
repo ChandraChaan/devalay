@@ -19,6 +19,8 @@ class MoreScreen extends ConsumerWidget {
       ('🔮', 'rashifal', '/rashifal', Palette.dusk),
       ('📅', 'calendar', '/calendar', Palette.sunrise),
       ('🌞', 'today_panchang', '/panchang', const [Color(0xFFF57F17), Color(0xFFE65100)]),
+      ('🗓️', 'important_days', '/calendar/important', const [Color(0xFFAD1457), Color(0xFFE65100)]),
+      ('🎂', 'my_events', '/calendar/events', const [Color(0xFF1565C0), Color(0xFF7B1FA2)]),
       ('📿', 'japa', '/japa', const [Color(0xFF4E342E), Color(0xFF8D6E63)]),
       ('✨', 'ai_status', '/status', const [Color(0xFF6A1B9A), Color(0xFFD81B60)]),
       ('🖼️', 'wallpapers', '/wallpapers', Palette.sky),

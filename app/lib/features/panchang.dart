@@ -10,6 +10,7 @@ import '../core/storage.dart';
 import '../core/telugu.dart';
 import '../core/theme.dart';
 import '../widgets/common.dart';
+import 'muhurta_view.dart';
 
 class PanchangScreen extends ConsumerStatefulWidget {
   const PanchangScreen({super.key});
@@ -325,6 +326,7 @@ class PanchangDetail extends ConsumerWidget {
             Icons.hourglass_bottom_rounded,
           ),
         ]),
+        MuhurtaTimings(data: data),
         const SizedBox(height: 16),
         Text(
           t3(

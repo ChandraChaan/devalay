@@ -7,6 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../core/api.dart';
 import '../core/auth.dart';
 import '../core/config.dart';
+import '../core/calendar_reminders.dart';
 import '../core/i18n.dart';
 import '../core/location.dart';
 import '../core/notifications.dart';
@@ -166,6 +167,35 @@ class SettingsScreen extends ConsumerWidget {
               await n.set('reminder_hour', t.hour);
               await n.set('reminder_minute', t.minute);
               await Notifications.scheduleDaily(t.hour, t.minute, lang: prefs.language);
+            },
+          ),
+          SwitchListTile(
+            secondary: const Icon(Icons.wb_twilight_rounded),
+            title: Text(t3(lang, 'Morning Panchang', 'सुबह का पंचांग', 'ఉదయపు పంచాంగం')),
+            subtitle: Text(
+              '${t3(lang, 'Tithi, nakshatra, Rahu Kalam and festivals at', 'तिथि, नक्षत्र, राहु काल व त्योहार,', 'తిథి, నక్షత్రం, రాహు కాలం, పండుగలు')} '
+              '${clock12(prefs.panchangHour, prefs.panchangMinute)}',
+            ),
+            value: prefs.panchangDaily,
+            onChanged: (v) async {
+              if (v && !await Notifications.requestPermission()) return;
+              await n.set('panchang_daily', v);
+              await refreshPanchangNotifications(ref);
+            },
+          ),
+          ListTile(
+            leading: const SizedBox(width: 24),
+            title: Text(t3(lang, 'Change time', 'समय बदलें', 'సమయం మార్చండి')),
+            enabled: prefs.panchangDaily,
+            onTap: () async {
+              final t = await showTimePicker(
+                context: context,
+                initialTime: TimeOfDay(hour: prefs.panchangHour, minute: prefs.panchangMinute),
+              );
+              if (t == null) return;
+              await n.set('panchang_hour', t.hour);
+              await n.set('panchang_minute', t.minute);
+              await refreshPanchangNotifications(ref);
             },
           ),
           _Header(t3(lang, 'About', 'जानकारी', 'గురించి')),
