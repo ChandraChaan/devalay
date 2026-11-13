@@ -18,6 +18,7 @@ import '../core/theme.dart';
 import '../widgets/city_picker.dart';
 import '../widgets/language_picker.dart';
 import '../widgets/common.dart';
+import 'calendar_settings.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -135,6 +136,12 @@ class SettingsScreen extends ConsumerWidget {
             title: Text(t3(lang, 'Panchang city', 'पंचांग शहर', 'పంచాంగం నగరం')),
             subtitle: Text(city.label(lang)),
             onTap: () => showCityPicker(context, ref),
+          ),
+          ListTile(
+            leading: const Icon(Icons.calendar_month_rounded),
+            title: Text(tr(ref, 'calendar')),
+            subtitle: Text(calendarSettingsSummary(ref)),
+            onTap: () => showCalendarSettings(context),
           ),
           _Header(t3(lang, 'Reminders', 'सूचनाएँ', 'రిమైండర్లు')),
           SwitchListTile(

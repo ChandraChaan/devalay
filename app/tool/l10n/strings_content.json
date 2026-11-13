@@ -510,12 +510,6 @@
   "where": "temples.json"
  },
  {
-  "en": "Katra",
-  "hi": "कटरा",
-  "te": "కట్రా",
-  "where": "temples.json"
- },
- {
   "en": "Kedarnath and Badrinath pooja",
   "hi": "केदारनाथ और बद्रीनाथ पूजा",
   "te": "కేదార్‌నాథ్, బద్రీనాథ్ పూజ",
@@ -681,12 +675,6 @@
   "en": "Passes to attend the daily aartis of Ram Lalla.",
   "hi": "",
   "te": "",
-  "where": "temples.json"
- },
- {
-  "en": "Pathanamthitta",
-  "hi": "पतनमतिट्टा",
-  "te": "పతనంతిట్ట",
   "where": "temples.json"
  },
  {
@@ -903,12 +891,6 @@
   "en": "Sheeghra Darshan",
   "hi": "शीघ्र दर्शन",
   "te": "శీఘ్ర దర్శనం",
-  "where": "temples.json"
- },
- {
-  "en": "Shirdi",
-  "hi": "शिरडी",
-  "te": "షిరిడీ",
   "where": "temples.json"
  },
  {

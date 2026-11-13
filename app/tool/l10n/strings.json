@@ -12,9 +12,105 @@
   "where": "ayana"
  },
  {
+  "en": "Abu Dhabi",
+  "hi": "अबू धाबी",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Adilabad",
+  "hi": "आदिलाबाद",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Agartala",
+  "hi": "अगरतला",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Agra",
+  "hi": "आगरा",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Ahilyanagar",
+  "hi": "अहिल्यानगर",
+  "te": "",
+  "where": "city"
+ },
+ {
   "en": "Ahmedabad",
   "hi": "अहमदाबाद",
   "te": "అహ్మదాబాద్",
+  "where": "city"
+ },
+ {
+  "en": "Ajmer",
+  "hi": "अजमेर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Akola",
+  "hi": "अकोला",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Alappuzha",
+  "hi": "अलाप्पुझा",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Alibag",
+  "hi": "अलीबाग",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Aligarh",
+  "hi": "अलीगढ़",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Amalapuram",
+  "hi": "अमलापुरम",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Amaravati",
+  "hi": "अमरावती",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Amravati",
+  "hi": "अमरावती",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Amritsar",
+  "hi": "अमृतसर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Amsterdam",
+  "hi": "एम्स्टर्डम",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Anakapalli",
+  "hi": "अनकापल्ली",
+  "te": "",
   "where": "city"
  },
  {
@@ -24,9 +120,81 @@
   "where": "city"
  },
  {
+  "en": "Ariyalur",
+  "hi": "अरियलूर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Asansol",
+  "hi": "आसनसोल",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Asifabad",
+  "hi": "आसिफाबाद",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Atlanta",
+  "hi": "अटलांटा",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Auckland",
+  "hi": "ऑकलैंड",
+  "te": "",
+  "where": "city"
+ },
+ {
   "en": "Ayodhya",
   "hi": "अयोध्या",
   "te": "అయోధ్య",
+  "where": "city"
+ },
+ {
+  "en": "Bagalkot",
+  "hi": "बागलकोट",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Ballari",
+  "hi": "बल्लारी",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Bangkok",
+  "hi": "बैंकॉक",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Bapatla",
+  "hi": "बापटला",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Bareilly",
+  "hi": "बरेली",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Beed",
+  "hi": "बीड",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Belagavi",
+  "hi": "बेलगावी",
+  "te": "",
   "where": "city"
  },
  {
@@ -36,9 +204,45 @@
   "where": "city"
  },
  {
+  "en": "Berhampur",
+  "hi": "बरहमपुर",
+  "te": "",
+  "where": "city"
+ },
+ {
   "en": "Bhadrachalam",
   "hi": "भद्राचलम",
   "te": "భద్రాచలం",
+  "where": "city"
+ },
+ {
+  "en": "Bhagalpur",
+  "hi": "भागलपुर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Bhandara",
+  "hi": "भंडारा",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Bhavnagar",
+  "hi": "भावनगर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Bhimavaram",
+  "hi": "भीमावरम",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Bhongir",
+  "hi": "भोंगीर",
+  "te": "",
   "where": "city"
  },
  {
@@ -48,9 +252,213 @@
   "where": "city"
  },
  {
+  "en": "Bhubaneswar",
+  "hi": "भुवनेश्वर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Bhupalpally",
+  "hi": "भूपालपल्ली",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Bidar",
+  "hi": "बीदर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Bikaner",
+  "hi": "बीकानेर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Bilaspur",
+  "hi": "बिलासपुर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Birmingham",
+  "hi": "बर्मिंघम",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Buldhana",
+  "hi": "बुलढाणा",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Chamarajanagar",
+  "hi": "चामराजनगर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Chandrapur",
+  "hi": "चंद्रपुर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Chengalpattu",
+  "hi": "चेंगलपट्टू",
+  "te": "",
+  "where": "city"
+ },
+ {
   "en": "Chennai",
   "hi": "चेन्नई",
   "te": "చెన్నై",
+  "where": "city"
+ },
+ {
+  "en": "Chhatrapati Sambhajinagar",
+  "hi": "छत्रपति संभाजीनगर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Chicago",
+  "hi": "शिकागो",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Chikkaballapur",
+  "hi": "चिक्कबल्लापुर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Chikkamagaluru",
+  "hi": "चिक्कमगलूरु",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Chitradurga",
+  "hi": "चित्रदुर्ग",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Chittoor",
+  "hi": "चित्तूर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Coimbatore",
+  "hi": "कोयंबटूर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Colombo",
+  "hi": "कोलंबो",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Cuddalore",
+  "hi": "कुड्डालोर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Cuttack",
+  "hi": "कटक",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Dallas",
+  "hi": "डलास",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Darbhanga",
+  "hi": "दरभंगा",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Davanagere",
+  "hi": "दावणगेरे",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Dehradun",
+  "hi": "देहरादून",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Deoghar",
+  "hi": "देवघर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Dhaka",
+  "hi": "ढाका",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Dhanbad",
+  "hi": "धनबाद",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Dharashiv",
+  "hi": "धाराशिव",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Dharmapuri",
+  "hi": "धर्मपुरी",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Dharwad",
+  "hi": "धारवाड़",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Dhule",
+  "hi": "धुले",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Dibrugarh",
+  "hi": "डिब्रूगढ़",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Dindigul",
+  "hi": "डिंडीगुल",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Doha",
+  "hi": "दोहा",
+  "te": "",
   "where": "city"
  },
  {
@@ -60,9 +468,105 @@
   "where": "city"
  },
  {
+  "en": "Durban",
+  "hi": "डरबन",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Durgapur",
+  "hi": "दुर्गापुर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Dwarka",
+  "hi": "द्वारका",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Edison",
+  "hi": "एडिसन",
+  "te": "",
+  "where": "city"
+ },
+ {
   "en": "Eluru",
   "hi": "एलुरु",
   "te": "ఏలూరు",
+  "where": "city"
+ },
+ {
+  "en": "Erode",
+  "hi": "ईरोड",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Faridabad",
+  "hi": "फ़रीदाबाद",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Frankfurt",
+  "hi": "फ्रैंकफर्ट",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Gadag",
+  "hi": "गदग",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Gadchiroli",
+  "hi": "गढ़चिरौली",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Gadwal",
+  "hi": "गदवाल",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Gandhinagar",
+  "hi": "गांधीनगर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Gaya",
+  "hi": "गया",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Georgetown",
+  "hi": "जॉर्जटाउन",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Ghaziabad",
+  "hi": "गाज़ियाबाद",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Gondia",
+  "hi": "गोंदिया",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Gorakhpur",
+  "hi": "गोरखपुर",
+  "te": "",
   "where": "city"
  },
  {
@@ -72,9 +576,33 @@
   "where": "city"
  },
  {
+  "en": "Gurugram",
+  "hi": "गुरुग्राम",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Guruvayur",
+  "hi": "गुरुवायूर",
+  "te": "",
+  "where": "city"
+ },
+ {
   "en": "Guwahati",
   "hi": "गुवाहाटी",
   "te": "గువాహటి",
+  "where": "city"
+ },
+ {
+  "en": "Gwalior",
+  "hi": "ग्वालियर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Hanamkonda",
+  "hi": "हनमकोंडा",
+  "te": "",
   "where": "city"
  },
  {
@@ -84,15 +612,153 @@
   "where": "city"
  },
  {
+  "en": "Hassan",
+  "hi": "हासन",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Haveri",
+  "hi": "हावेरी",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Hingoli",
+  "hi": "हिंगोली",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Hong Kong",
+  "hi": "हांगकांग",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Hosapete",
+  "hi": "होसपेट",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Houston",
+  "hi": "ह्यूस्टन",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Hubballi",
+  "hi": "हुबली",
+  "te": "",
+  "where": "city"
+ },
+ {
   "en": "Hyderabad",
   "hi": "हैदराबाद",
   "te": "హైదరాబాద్",
   "where": "city"
  },
  {
+  "en": "Idukki",
+  "hi": "इडुक्की",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Imphal",
+  "hi": "इंफाल",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Indore",
+  "hi": "इंदौर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Jabalpur",
+  "hi": "जबलपुर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Jagtial",
+  "hi": "जगत्याल",
+  "te": "",
+  "where": "city"
+ },
+ {
   "en": "Jaipur",
   "hi": "जयपुर",
   "te": "జైపూర్",
+  "where": "city"
+ },
+ {
+  "en": "Jalandhar",
+  "hi": "जालंधर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Jalgaon",
+  "hi": "जलगांव",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Jalna",
+  "hi": "जालना",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Jammu",
+  "hi": "जम्मू",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Jamnagar",
+  "hi": "जामनगर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Jamshedpur",
+  "hi": "जमशेदपुर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Jangaon",
+  "hi": "जनगांव",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Jhansi",
+  "hi": "झांसी",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Jodhpur",
+  "hi": "जोधपुर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Johannesburg",
+  "hi": "जोहान्सबर्ग",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Jorhat",
+  "hi": "जोरहाट",
+  "te": "",
   "where": "city"
  },
  {
@@ -108,15 +774,81 @@
   "where": "city"
  },
  {
+  "en": "Kalaburagi",
+  "hi": "कलबुर्गी",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Kallakurichi",
+  "hi": "कल्लकुरिची",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Kalpetta",
+  "hi": "कलपेट्टा",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Kamareddy",
+  "hi": "कामारेड्डी",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Kanchipuram",
+  "hi": "कांचीपुरम",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Kannur",
+  "hi": "कन्नूर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Kanpur",
+  "hi": "कानपुर",
+  "te": "",
+  "where": "city"
+ },
+ {
   "en": "Karimnagar",
   "hi": "करीमनगर",
   "te": "కరీంనగర్",
   "where": "city"
  },
  {
+  "en": "Karur",
+  "hi": "करूर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Karwar",
+  "hi": "कारवार",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Kasaragod",
+  "hi": "कासरगोड",
+  "te": "",
+  "where": "city"
+ },
+ {
   "en": "Kathmandu",
   "hi": "काठमांडू",
   "te": "ఖాట్మండు",
+  "where": "city"
+ },
+ {
+  "en": "Katra",
+  "hi": "कटरा",
+  "te": "",
   "where": "city"
  },
  {
@@ -132,9 +864,75 @@
   "where": "city"
  },
  {
+  "en": "Kolar",
+  "hi": "कोलार",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Kolhapur",
+  "hi": "कोल्हापुर",
+  "te": "",
+  "where": "city"
+ },
+ {
   "en": "Kolkata",
   "hi": "कोलकाता",
   "te": "కోల్‌కతా",
+  "where": "city"
+ },
+ {
+  "en": "Kollam",
+  "hi": "कोल्लम",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Koppal",
+  "hi": "कोप्पल",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Kota",
+  "hi": "कोटा",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Kothagudem",
+  "hi": "कोठागुडेम",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Kottayam",
+  "hi": "कोट्टयम",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Kozhikode",
+  "hi": "कोझिकोड",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Krishnagiri",
+  "hi": "कृष्णगिरि",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Kuala Lumpur",
+  "hi": "कुआलालंपुर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Kumbakonam",
+  "hi": "कुंभकोणम",
+  "te": "",
   "where": "city"
  },
  {
@@ -144,9 +942,39 @@
   "where": "city"
  },
  {
+  "en": "Kurukshetra",
+  "hi": "कुरुक्षेत्र",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Kuwait City",
+  "hi": "कुवैत सिटी",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Latur",
+  "hi": "लातूर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Leicester",
+  "hi": "लेस्टर",
+  "te": "",
+  "where": "city"
+ },
+ {
   "en": "London",
   "hi": "लंदन",
   "te": "లండన్",
+  "where": "city"
+ },
+ {
+  "en": "Los Angeles",
+  "hi": "लॉस एंजिल्स",
+  "te": "",
   "where": "city"
  },
  {
@@ -156,15 +984,213 @@
   "where": "city"
  },
  {
+  "en": "Ludhiana",
+  "hi": "लुधियाना",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Machilipatnam",
+  "hi": "मछलीपट्टनम",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Madikeri",
+  "hi": "मडिकेरी",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Madurai",
+  "hi": "मदुरै",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Mahabubabad",
+  "hi": "महबूबाबाद",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Mahabubnagar",
+  "hi": "महबूबनगर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Malappuram",
+  "hi": "मलप्पुरम",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Manama",
+  "hi": "मनामा",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Mancherial",
+  "hi": "मंचेरियल",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Mandya",
+  "hi": "मांड्या",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Mangaluru",
+  "hi": "मंगलुरु",
+  "te": "",
+  "where": "city"
+ },
+ {
   "en": "Mathura",
   "hi": "मथुरा",
   "te": "మథుర",
   "where": "city"
  },
  {
+  "en": "Mayiladuthurai",
+  "hi": "मयिलादुतुरै",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Medak",
+  "hi": "मेदक",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Meerut",
+  "hi": "मेरठ",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Melbourne",
+  "hi": "मेलबर्न",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Moradabad",
+  "hi": "मुरादाबाद",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Mulugu",
+  "hi": "मुलुगु",
+  "te": "",
+  "where": "city"
+ },
+ {
   "en": "Mumbai",
   "hi": "मुंबई",
   "te": "ముంబై",
+  "where": "city"
+ },
+ {
+  "en": "Muscat",
+  "hi": "मस्कट",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Muzaffarpur",
+  "hi": "मुज़फ़्फ़रपुर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Mysuru",
+  "hi": "मैसूरु",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Nagapattinam",
+  "hi": "नागपट्टिनम",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Nagarkurnool",
+  "hi": "नागरकर्नूल",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Nagercoil",
+  "hi": "नागरकोइल",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Nagpur",
+  "hi": "नागपुर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Nairobi",
+  "hi": "नैरोबी",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Nalgonda",
+  "hi": "नलगोंडा",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Namakkal",
+  "hi": "नामक्कल",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Nanded",
+  "hi": "नांदेड़",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Nandurbar",
+  "hi": "नंदुरबार",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Nandyal",
+  "hi": "नंद्याल",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Narasaraopet",
+  "hi": "नरसरावपेट",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Narayanpet",
+  "hi": "नारायणपेट",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Nashik",
+  "hi": "नाशिक",
+  "te": "",
   "where": "city"
  },
  {
@@ -186,9 +1212,27 @@
   "where": "city"
  },
  {
+  "en": "Nirmal",
+  "hi": "निर्मल",
+  "te": "",
+  "where": "city"
+ },
+ {
   "en": "Nizamabad",
   "hi": "निज़ामाबाद",
   "te": "నిజామాబాద్",
+  "where": "city"
+ },
+ {
+  "en": "Noida",
+  "hi": "नोएडा",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Omkareshwar",
+  "hi": "ओंकारेश्वर",
+  "te": "",
   "where": "city"
  },
  {
@@ -198,9 +1242,111 @@
   "where": "city"
  },
  {
+  "en": "Ooty",
+  "hi": "ऊटी",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Paderu",
+  "hi": "पाडेरु",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Palakkad",
+  "hi": "पालक्काड",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Palghar",
+  "hi": "पालघर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Panaji",
+  "hi": "पणजी",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Pandharpur",
+  "hi": "पंढरपुर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Parbhani",
+  "hi": "परभणी",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Parvathipuram",
+  "hi": "पार्वतीपुरम",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Pathanamthitta",
+  "hi": "पतनमतिट्टा",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Patiala",
+  "hi": "पटियाला",
+  "te": "",
+  "where": "city"
+ },
+ {
   "en": "Patna",
   "hi": "पटना",
   "te": "పాట్నా",
+  "where": "city"
+ },
+ {
+  "en": "Peddapalli",
+  "hi": "पेद्दापल्ली",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Perambalur",
+  "hi": "पेरम्बलूर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Perth",
+  "hi": "पर्थ",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Port Louis",
+  "hi": "पोर्ट लुई",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Port of Spain",
+  "hi": "पोर्ट ऑफ़ स्पेन",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Prayagraj",
+  "hi": "प्रयागराज",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Pudukkottai",
+  "hi": "पुदुक्कोट्टई",
+  "te": "",
   "where": "city"
  },
  {
@@ -216,9 +1362,117 @@
   "where": "city"
  },
  {
+  "en": "Puttaparthi",
+  "hi": "पुट्टपर्थी",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Raichur",
+  "hi": "रायचूर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Raipur",
+  "hi": "रायपुर",
+  "te": "",
+  "where": "city"
+ },
+ {
   "en": "Rajahmundry",
   "hi": "राजमुंदरी",
   "te": "రాజమహేంద్రవరం",
+  "where": "city"
+ },
+ {
+  "en": "Rajkot",
+  "hi": "राजकोट",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Ramanagara",
+  "hi": "रामनगर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Ramanathapuram",
+  "hi": "रामनाथपुरम",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Rameswaram",
+  "hi": "रामेश्वरम",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Ranchi",
+  "hi": "रांची",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Ranipet",
+  "hi": "रानीपेट",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Ratnagiri",
+  "hi": "रत्नागिरी",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Rayachoti",
+  "hi": "रायचोटी",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Rewa",
+  "hi": "रीवा",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Rishikesh",
+  "hi": "ऋषिकेश",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Riyadh",
+  "hi": "रियाद",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Rourkela",
+  "hi": "राउरकेला",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Sagar",
+  "hi": "सागर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Salem",
+  "hi": "सेलम",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Sambalpur",
+  "hi": "संबलपुर",
+  "te": "",
   "where": "city"
  },
  {
@@ -228,9 +1482,105 @@
   "where": "city"
  },
  {
+  "en": "Sangareddy",
+  "hi": "संगारेड्डी",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Sangli",
+  "hi": "सांगली",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Satara",
+  "hi": "सातारा",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Seattle",
+  "hi": "सिएटल",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Shillong",
+  "hi": "शिलांग",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Shimla",
+  "hi": "शिमला",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Shirdi",
+  "hi": "शिरडी",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Shivamogga",
+  "hi": "शिवमोग्गा",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Siddipet",
+  "hi": "सिद्दीपेट",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Silchar",
+  "hi": "सिलचर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Siliguri",
+  "hi": "सिलीगुड़ी",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Sindhudurg",
+  "hi": "सिंधुदुर्ग",
+  "te": "",
+  "where": "city"
+ },
+ {
   "en": "Singapore",
   "hi": "सिंगापुर",
   "te": "సింగపూర్",
+  "where": "city"
+ },
+ {
+  "en": "Sircilla",
+  "hi": "सिरसिल्ला",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Sivaganga",
+  "hi": "शिवगंगा",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Solapur",
+  "hi": "सोलापुर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Somnath",
+  "hi": "सोमनाथ",
+  "te": "",
   "where": "city"
  },
  {
@@ -240,9 +1590,33 @@
   "where": "city"
  },
  {
+  "en": "Srinagar",
+  "hi": "श्रीनगर",
+  "te": "",
+  "where": "city"
+ },
+ {
   "en": "Srisailam",
   "hi": "श्रीशैलम",
   "te": "శ్రీశైలం",
+  "where": "city"
+ },
+ {
+  "en": "Surat",
+  "hi": "सूरत",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Suryapet",
+  "hi": "सूर्यापेट",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Suva",
+  "hi": "सुवा",
+  "te": "",
   "where": "city"
  },
  {
@@ -252,9 +1626,99 @@
   "where": "city"
  },
  {
+  "en": "Tenkasi",
+  "hi": "तेनकासी",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Thane",
+  "hi": "ठाणे",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Thanjavur",
+  "hi": "तंजावुर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Theni",
+  "hi": "तेनी",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Thiruvananthapuram",
+  "hi": "तिरुवनंतपुरम",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Thoothukudi",
+  "hi": "तूतीकोरिन",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Thrissur",
+  "hi": "त्रिशूर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Tiruchirappalli",
+  "hi": "तिरुचिरापल्ली",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Tirunelveli",
+  "hi": "तिरुनेलवेली",
+  "te": "",
+  "where": "city"
+ },
+ {
   "en": "Tirupati",
   "hi": "तिरुपति",
   "te": "తిరుపతి",
+  "where": "city"
+ },
+ {
+  "en": "Tirupattur",
+  "hi": "तिरुपत्तूर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Tiruppur",
+  "hi": "तिरुप्पुर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Tiruvallur",
+  "hi": "तिरुवल्लूर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Tiruvannamalai",
+  "hi": "तिरुवन्नामलई",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Tiruvarur",
+  "hi": "तिरुवारूर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Tokyo",
+  "hi": "टोक्यो",
+  "te": "",
   "where": "city"
  },
  {
@@ -264,9 +1728,39 @@
   "where": "city"
  },
  {
+  "en": "Tumakuru",
+  "hi": "तुमकुरु",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Udaipur",
+  "hi": "उदयपुर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Udupi",
+  "hi": "उडुपी",
+  "te": "",
+  "where": "city"
+ },
+ {
   "en": "Ujjain",
   "hi": "उज्जैन",
   "te": "ఉజ్జయిని",
+  "where": "city"
+ },
+ {
+  "en": "Vadodara",
+  "hi": "वडोदरा",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Vancouver",
+  "hi": "वैंकूवर",
+  "te": "",
   "where": "city"
  },
  {
@@ -276,9 +1770,39 @@
   "where": "city"
  },
  {
+  "en": "Vellore",
+  "hi": "वेल्लोर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Vijayapura",
+  "hi": "विजयपुरा",
+  "te": "",
+  "where": "city"
+ },
+ {
   "en": "Vijayawada",
   "hi": "विजयवाड़ा",
   "te": "విజయవాడ",
+  "where": "city"
+ },
+ {
+  "en": "Vikarabad",
+  "hi": "विकाराबाद",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Villupuram",
+  "hi": "विलुप्पुरम",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Virudhunagar",
+  "hi": "विरुधुनगर",
+  "te": "",
   "where": "city"
  },
  {
@@ -288,9 +1812,57 @@
   "where": "city"
  },
  {
+  "en": "Vizianagaram",
+  "hi": "विजयनगरम",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Vrindavan",
+  "hi": "वृंदावन",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Wanaparthy",
+  "hi": "वनपर्ती",
+  "te": "",
+  "where": "city"
+ },
+ {
   "en": "Warangal",
   "hi": "वारंगल",
   "te": "వరంగల్",
+  "where": "city"
+ },
+ {
+  "en": "Wardha",
+  "hi": "वर्धा",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Washim",
+  "hi": "वाशिम",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Washington, D.C.",
+  "hi": "वॉशिंगटन डी.सी.",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Yadgir",
+  "hi": "यादगीर",
+  "te": "",
+  "where": "city"
+ },
+ {
+  "en": "Yavatmal",
+  "hi": "यवतमाल",
+  "te": "",
   "where": "city"
  },
  {
@@ -1272,6 +2844,186 @@
   "where": "lib/core/glossary.dart"
  },
  {
+  "en": "Andhra Pradesh",
+  "hi": "आंध्र प्रदेश",
+  "te": "ఆంధ్రప్రదేశ్",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Assam",
+  "hi": "असम",
+  "te": "అస్సాం",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Bank holiday",
+  "hi": "बैंक अवकाश",
+  "te": "బ్యాంకు సెలవు",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Bihar",
+  "hi": "बिहार",
+  "te": "బీహార్",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Chandigarh",
+  "hi": "चंडीगढ़",
+  "te": "చండీగఢ్",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Chhattisgarh",
+  "hi": "छत्तीसगढ़",
+  "te": "ఛత్తీస్‌గఢ్",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Delhi",
+  "hi": "दिल्ली",
+  "te": "ఢిల్లీ",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Goa",
+  "hi": "गोवा",
+  "te": "గోవా",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Gujarat",
+  "hi": "गुजरात",
+  "te": "గుజరాత్",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Haryana",
+  "hi": "हरियाणा",
+  "te": "హర్యానా",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Himachal Pradesh",
+  "hi": "हिमाचल प्रदेश",
+  "te": "హిమాచల్ ప్రదేశ్",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Jammu and Kashmir",
+  "hi": "जम्मू और कश्मीर",
+  "te": "జమ్మూ కాశ్మీర్",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Jharkhand",
+  "hi": "झारखंड",
+  "te": "ఝార్ఖండ్",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Karnataka",
+  "hi": "कर्नाटक",
+  "te": "కర్ణాటక",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Kerala",
+  "hi": "केरल",
+  "te": "కేరళ",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Madhya Pradesh",
+  "hi": "मध्य प्रदेश",
+  "te": "మధ్యప్రదేశ్",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Maharashtra",
+  "hi": "महाराष्ट्र",
+  "te": "మహారాష్ట్ర",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Manipur",
+  "hi": "मणिपुर",
+  "te": "మణిపూర్",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Meghalaya",
+  "hi": "मेघालय",
+  "te": "మేఘాలయ",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Odisha",
+  "hi": "ओडिशा",
+  "te": "ఒడిశా",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Public and bank holiday",
+  "hi": "सार्वजनिक व बैंक अवकाश",
+  "te": "ప్రభుత్వ, బ్యాంకు సెలవు",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Public holiday",
+  "hi": "सार्वजनिक अवकाश",
+  "te": "ప్రభుత్వ సెలవు",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Punjab",
+  "hi": "पंजाब",
+  "te": "పంజాబ్",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Rajasthan",
+  "hi": "राजस्थान",
+  "te": "రాజస్థాన్",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Tamil Nadu",
+  "hi": "तमिलनाडु",
+  "te": "తమిళనాడు",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Telangana",
+  "hi": "तेलंगाना",
+  "te": "తెలంగాణ",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Tripura",
+  "hi": "त्रिपुरा",
+  "te": "త్రిపుర",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Uttar Pradesh",
+  "hi": "उत्तर प्रदेश",
+  "te": "ఉత్తరప్రదేశ్",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "Uttarakhand",
+  "hi": "उत्तराखंड",
+  "te": "ఉత్తరాఖండ్",
+  "where": "lib/core/holidays.dart"
+ },
+ {
+  "en": "West Bengal",
+  "hi": "पश्चिम बंगाल",
+  "te": "పశ్చిమ బెంగాల్",
+  "where": "lib/core/holidays.dart"
+ },
+ {
   "en": "Choghadiya now",
   "hi": "अभी का चौघड़िया",
   "te": "ఇప్పటి చౌఘడియ",
@@ -1708,6 +3460,60 @@
   "hi": "त्योहार",
   "te": "పండుగ",
   "where": "lib/core/portability.dart"
+ },
+ {
+  "en": "Adhika",
+  "hi": "अधिक",
+  "te": "అధిక",
+  "where": "lib/core/regional.dart"
+ },
+ {
+  "en": "Amanta (month ends on Amavasya)",
+  "hi": "अमांत (अमावस्या पर मास पूरा)",
+  "te": "అమాంత (అమావాస్యతో మాసం ముగింపు)",
+  "where": "lib/core/regional.dart"
+ },
+ {
+  "en": "Bangabda",
+  "hi": "बंगाब्द",
+  "te": "బంగాబ్దం",
+  "where": "lib/core/regional.dart"
+ },
+ {
+  "en": "Bengali calendar (Bangabda)",
+  "hi": "बंगाली पंचांग (बंगाब्द)",
+  "te": "బెంగాలీ క్యాలెండర్ (బంగాబ్దం)",
+  "where": "lib/core/regional.dart"
+ },
+ {
+  "en": "Kollam Era",
+  "hi": "कोल्लम संवत",
+  "te": "కొల్లం శకం",
+  "where": "lib/core/regional.dart"
+ },
+ {
+  "en": "Malayalam calendar (Kollam era)",
+  "hi": "मलयालम पंचांग (कोल्लम संवत)",
+  "te": "మలయాళ క్యాలెండర్ (కొల్లం శకం)",
+  "where": "lib/core/regional.dart"
+ },
+ {
+  "en": "Odia solar calendar",
+  "hi": "ओड़िया सौर पंचांग",
+  "te": "ఒడియా సౌరమానం",
+  "where": "lib/core/regional.dart"
+ },
+ {
+  "en": "Purnimanta (month ends on Purnima)",
+  "hi": "पूर्णिमांत (पूर्णिमा पर मास पूरा)",
+  "te": "పూర్ణిమాంత (పౌర్ణమితో మాసం ముగింపు)",
+  "where": "lib/core/regional.dart"
+ },
+ {
+  "en": "Tamil solar calendar",
+  "hi": "तमिल सौर पंचांग",
+  "te": "తమిళ సౌరమానం",
+  "where": "lib/core/regional.dart"
  },
  {
   "en": "Ask the Gita…",
@@ -2160,6 +3966,12 @@
   "where": "lib/features/calendar.dart"
  },
  {
+  "en": "Months, solar calendar, holidays",
+  "hi": "मास, सौर पंचांग, अवकाश",
+  "te": "మాసాలు, సౌరమానం, సెలవులు",
+  "where": "lib/features/calendar.dart"
+ },
+ {
   "en": "Morning Panchang notification",
   "hi": "सुबह का पंचांग सूचना",
   "te": "ఉదయపు పంచాంగం నోటిఫికేషన్",
@@ -2217,6 +4029,12 @@
   "en": "Send wishes",
   "hi": "शुभकामनाएँ भेजें",
   "te": "శుభాకాంక్షలు పంపండి",
+  "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "State holiday",
+  "hi": "राज्य अवकाश",
+  "te": "రాష్ట్ర సెలవు",
   "where": "lib/features/calendar.dart"
  },
  {
@@ -2290,6 +4108,84 @@
   "hi": "— देवालय: मुफ़्त पंचांग व भक्ति ऐप, बिना विज्ञापन",
   "te": "— దేవాలయం: ఉచిత పంచాంగం & భక్తి యాప్, ప్రకటనలు లేవు",
   "where": "lib/features/calendar.dart"
+ },
+ {
+  "en": "Amanta",
+  "hi": "अमांत",
+  "te": "అమాంత",
+  "where": "lib/features/calendar_settings.dart"
+ },
+ {
+  "en": "Automatic",
+  "hi": "अपने आप",
+  "te": "ఆటోమేటిక్",
+  "where": "lib/features/calendar_settings.dart"
+ },
+ {
+  "en": "Extra calendar",
+  "hi": "अतिरिक्त पंचांग",
+  "te": "అదనపు క్యాలెండర్",
+  "where": "lib/features/calendar_settings.dart"
+ },
+ {
+  "en": "From your city: {0}",
+  "hi": "आपके शहर से: {0}",
+  "te": "మీ నగరం ప్రకారం: {0}",
+  "where": "lib/features/calendar_settings.dart"
+ },
+ {
+  "en": "Lunar month names",
+  "hi": "चंद्र मास के नाम",
+  "te": "చాంద్రమాన మాసాల పేర్లు",
+  "where": "lib/features/calendar_settings.dart"
+ },
+ {
+  "en": "None",
+  "hi": "कोई नहीं",
+  "te": "ఏదీ వద్దు",
+  "where": "lib/features/calendar_settings.dart"
+ },
+ {
+  "en": "None for this language",
+  "hi": "इस भाषा के लिए कोई नहीं",
+  "te": "ఈ భాషకు ఏదీ లేదు",
+  "where": "lib/features/calendar_settings.dart"
+ },
+ {
+  "en": "North India ends each month on Purnima, so the dark fortnight takes the next month's name. Festivals and tithi reminders stay on the same days either way.",
+  "hi": "उत्तर भारत में मास पूर्णिमा पर पूरा होता है, इसलिए कृष्ण पक्ष अगले मास के नाम से जाना जाता है। दोनों तरह त्योहार और तिथि रिमाइंडर उन्हीं दिनों रहते हैं।",
+  "te": "ఉత్తర భారతంలో మాసం పౌర్ణమితో ముగుస్తుంది, అందుకే బహుళ పక్షానికి తర్వాతి మాసం పేరు. ఏ పద్ధతైనా పండుగలు, తిథి రిమైండర్లు అవే రోజుల్లో ఉంటాయి.",
+  "where": "lib/features/calendar_settings.dart"
+ },
+ {
+  "en": "Public and bank holidays from the state government and RBI lists.",
+  "hi": "राज्य सरकार व RBI की सूची से सार्वजनिक व बैंक अवकाश।",
+  "te": "రాష్ట్ర ప్రభుత్వ, RBI జాబితాల నుంచి ప్రభుత్వ, బ్యాంకు సెలవులు.",
+  "where": "lib/features/calendar_settings.dart"
+ },
+ {
+  "en": "Purnimanta",
+  "hi": "पूर्णिमांत",
+  "te": "పూర్ణిమాంత",
+  "where": "lib/features/calendar_settings.dart"
+ },
+ {
+  "en": "Shows the solar month and date (such as Aippasi 27) in the calendar.",
+  "hi": "कैलेंडर में सौर मास और तारीख (जैसे ऐप्पसि 27) दिखाता है।",
+  "te": "క్యాలెండర్‌లో సౌర మాసం, తేదీ (ఉదా: ఐప్పసి 27) చూపిస్తుంది.",
+  "where": "lib/features/calendar_settings.dart"
+ },
+ {
+  "en": "State holidays",
+  "hi": "राज्य अवकाश",
+  "te": "రాష్ట్ర సెలవులు",
+  "where": "lib/features/calendar_settings.dart"
+ },
+ {
+  "en": "Your city is outside India",
+  "hi": "आपका शहर भारत से बाहर है",
+  "te": "మీ నగరం భారత్ బయట ఉంది",
+  "where": "lib/features/calendar_settings.dart"
  },
  {
   "en": "Credits & licences",
@@ -2460,9 +4356,21 @@
   "where": "lib/features/important_days.dart"
  },
  {
+  "en": "No official holiday list for {0} in {1} yet.",
+  "hi": "{0} के लिए {1} की सरकारी अवकाश सूची अभी नहीं है।",
+  "te": "{0}కి {1} అధికారిక సెలవుల జాబితా ఇంకా లేదు.",
+  "where": "lib/features/important_days.dart"
+ },
+ {
   "en": "Nothing to show.",
   "hi": "कुछ नहीं मिला।",
   "te": "ఏమీ లేవు.",
+  "where": "lib/features/important_days.dart"
+ },
+ {
+  "en": "Pick your state in Settings › Calendar to see state and bank holidays.",
+  "hi": "राज्य व बैंक अवकाश देखने के लिए सेटिंग्स › कैलेंडर में अपना राज्य चुनें।",
+  "te": "రాష్ట్ర, బ్యాంకు సెలవులు చూడటానికి సెట్టింగ్స్ › క్యాలెండర్‌లో మీ రాష్ట్రం ఎంచుకోండి.",
   "where": "lib/features/important_days.dart"
  },
  {
@@ -2493,6 +4401,12 @@
   "en": "Show {0} earlier",
   "hi": "{0} पिछले दिखाएँ",
   "te": "గడిచిన {0} చూపించు",
+  "where": "lib/features/important_days.dart"
+ },
+ {
+  "en": "{0} holidays from the state government and RBI lists:",
+  "hi": "{0} के अवकाश राज्य सरकार व RBI की सूची से:",
+  "te": "{0} సెలవులు రాష్ట్ర ప్రభుత్వ, RBI జాబితాల నుంచి:",
   "where": "lib/features/important_days.dart"
  },
  {
@@ -3520,12 +5434,6 @@
   "hi": "आपकी चंद्र राशि (वैकल्पिक)",
   "te": "మీ చంద్ర రాశి (ఐచ్ఛికం)",
   "where": "lib/features/onboarding.dart"
- },
- {
-  "en": "Adhika",
-  "hi": "अधिक",
-  "te": "అధిక",
-  "where": "lib/features/panchang.dart"
  },
  {
   "en": "Amrit Kalam",
@@ -4650,6 +6558,42 @@
   "where": "lib/features/wishes.dart"
  },
  {
+  "en": "Could not find your location. Pick your city from the list.",
+  "hi": "आपकी लोकेशन नहीं मिल सकी। सूची से शहर चुनें।",
+  "te": "మీ లొకేషన్ దొరకలేదు. జాబితా నుంచి నగరం ఎంచుకోండి.",
+  "where": "lib/widgets/city_picker.dart"
+ },
+ {
+  "en": "Devalay checks your approximate location once, now, to pick the nearest city for sunrise, tithi and Rahu Kalam times. It is not saved or sent anywhere, and the app never tracks you in the background.",
+  "hi": "देवालय अभी एक बार आपकी अनुमानित लोकेशन देखकर सूर्योदय, तिथि और राहु काल के लिए सबसे नज़दीकी शहर चुनता है। लोकेशन न सहेजी जाती है, न कहीं भेजी जाती है, और ऐप पीछे से आपको ट्रैक नहीं करता।",
+  "te": "సూర్యోదయం, తిథి, రాహుకాలం సమయాల కోసం దగ్గరి నగరాన్ని ఎంచుకోవడానికి దేవాలయం ఇప్పుడు ఒక్కసారి మీ సుమారు లొకేషన్ చూస్తుంది. అది ఎక్కడా దాచబడదు, పంపబడదు; యాప్ వెనుక నుంచి మిమ్మల్ని ట్రాక్ చేయదు.",
+  "where": "lib/widgets/city_picker.dart"
+ },
+ {
+  "en": "Location is turned off on this phone. Turn it on or pick your city from the list.",
+  "hi": "फ़ोन में लोकेशन बंद है। उसे चालू करें या सूची से शहर चुनें।",
+  "te": "ఫోన్‌లో లొకేషన్ ఆఫ్‌లో ఉంది. ఆన్ చేయండి లేదా జాబితా నుంచి నగరం ఎంచుకోండి.",
+  "where": "lib/widgets/city_picker.dart"
+ },
+ {
+  "en": "Location permission was not given. Pick your city from the list.",
+  "hi": "लोकेशन की अनुमति नहीं मिली। सूची से अपना शहर चुनें।",
+  "te": "లొకేషన్ అనుమతి ఇవ్వలేదు. జాబితా నుంచి మీ నగరం ఎంచుకోండి.",
+  "where": "lib/widgets/city_picker.dart"
+ },
+ {
+  "en": "Nearest city: {0} ({1} km)",
+  "hi": "सबसे नज़दीकी शहर: {0} ({1} कि.मी.)",
+  "te": "దగ్గరి నగరం: {0} ({1} కి.మీ.)",
+  "where": "lib/widgets/city_picker.dart"
+ },
+ {
+  "en": "Picks the nearest city. Asked once, never tracked.",
+  "hi": "सबसे नज़दीकी शहर चुनता है। एक बार पूछता है, ट्रैक नहीं करता।",
+  "te": "దగ్గరి నగరం ఎంచుకుంటుంది. ఒక్కసారే అడుగుతుంది, ట్రాక్ చేయదు.",
+  "where": "lib/widgets/city_picker.dart"
+ },
+ {
   "en": "Search city",
   "hi": "शहर खोजें",
   "te": "నగరం వెతకండి",
@@ -4659,6 +6603,18 @@
   "en": "Sunrise, tithi end times and Rahu Kalam are worked out for this city. Pick the nearest one.",
   "hi": "सूर्योदय, तिथि का समय और राहु काल इसी शहर के लिए हैं। सबसे नज़दीकी शहर चुनें।",
   "te": "సూర్యోదయం, తిథి సమయాలు, రాహుకాలం ఈ నగరం ప్రకారం. దగ్గరలోని నగరం ఎంచుకోండి.",
+  "where": "lib/widgets/city_picker.dart"
+ },
+ {
+  "en": "Use my location",
+  "hi": "मेरी लोकेशन इस्तेमाल करें",
+  "te": "నా లొకేషన్ వాడండి",
+  "where": "lib/widgets/city_picker.dart"
+ },
+ {
+  "en": "Use my location?",
+  "hi": "मेरी लोकेशन इस्तेमाल करें?",
+  "te": "నా లొకేషన్ వాడాలా?",
   "where": "lib/widgets/city_picker.dart"
  },
  {

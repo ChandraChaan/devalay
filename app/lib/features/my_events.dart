@@ -13,6 +13,7 @@ import '../core/names.dart';
 import '../core/notifications.dart';
 import '../core/portability.dart';
 import '../core/providers.dart';
+import '../core/regional.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
 import '../widgets/common.dart';
@@ -348,7 +349,17 @@ class _EventEditorState extends ConsumerState<_EventEditor> {
                       isExpanded: true,
                       decoration: InputDecoration(labelText: t3(lang, 'Month', 'मास', 'మాసం')),
                       items: [
-                        for (var i = 0; i < 12; i++) DropdownMenuItem(value: i, child: Text(lunarMonthLabel(lang, i))),
+                        // The value stays Amanta; the label follows the reader's month system.
+                        for (var i = 0; i < 12; i++)
+                          DropdownMenuItem(
+                            value: i,
+                            child: Text(
+                              lunarMonthLabel(
+                                lang,
+                                shownMonth(ref.watch(monthSystemProvider), i, krishna: !shukla).index,
+                              ),
+                            ),
+                          ),
                       ],
                       onChanged: (v) => setState(() => _month = v),
                     ),

@@ -38,6 +38,23 @@ v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the 
 - Import birthdays from contacts: after a clear explanation and Android's Contacts permission, pick which
   birthdays and anniversaries to add to My events. Only those dates and names are read, and nothing leaves the
   phone.
+- Solar calendars: the Tamil (Aippasi 27, with the year's name), Malayalam (Kollam era), Bengali (Bangabda) and
+  Odia solar dates in the calendar cells, the month header, the selected day and the day page. They show by
+  themselves in Tamil, Malayalam, Bengali and Odia; anyone can turn one on in Settings › Calendar. Each region's
+  rule for the first day of a month is followed (Tamil: sunset, Malayalam: three-fifths of the day, Bengali:
+  midnight, Odia: Hindu midnight), checked against Drik Panchang for every month of 2026.
+- Amanta or Purnimanta: North Indian month names, where the dark fortnight takes the next month's name, for the
+  month header, day page, home screen, morning notification, widget and tithi events. Purnimanta is the default
+  in Hindi and Punjabi, Amanta elsewhere; change it in Settings › Calendar. Festivals stay on the same days.
+- State holidays: public holidays from each state government's order and bank holidays from RBI for 2026 (and
+  2027 where already published), marked on the calendar and listed in Important days with their sources. The
+  state follows your city, or pick one in Settings › Calendar. The lists are published with the website, so a
+  corrected date reaches the app without an update.
+- Use my location: one tap in the city picker finds the nearest city from your approximate location. It asks only
+  when you tap it, uses the location once on the phone and never tracks you.
+- 263 more cities: every district headquarters in Andhra Pradesh, Telangana, Karnataka, Tamil Nadu, Kerala and
+  Maharashtra, the main cities of the other states, and Indian communities abroad (the Gulf, Malaysia, Africa,
+  Mauritius, Fiji, the Caribbean, Europe, North America, Australia and New Zealand).
 
 ## v1.4.0 — 2026-11-13
 

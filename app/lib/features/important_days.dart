@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 
 import '../core/events.dart';
+import '../core/holidays.dart';
 import '../core/i18n.dart';
 import '../core/muhurta.dart';
 import '../core/names.dart';
@@ -77,10 +78,28 @@ class _ImportantDaysScreenState extends ConsumerState<ImportantDaysScreen> {
             note: null,
             major: true,
           ),
+      for (final h in _stateHolidays(lang))
+        if (match(h.title, ref.read(stateHolidaysProvider(_year))[h.date]?.name ?? '')) h,
       for (final MapEntry(key: date, value: events) in ref.watch(eventsByDayProvider(_year)).entries)
         for (final e in events)
           if (match(e.title)) (date: date, emoji: e.emoji, title: e.title, note: null, major: true),
     ]..sort((a, b) => a.date.compareTo(b.date));
+  }
+
+  /// The chosen state's public and bank holidays, leaving out the national ones listed already.
+  List<_Day> _stateHolidays(String lang) {
+    final state = ref.watch(holidayStateProvider);
+    return [
+      for (final h in ref.watch(stateHolidaysProvider(_year)).values)
+        if (nationalHoliday(h.date) == null)
+          (
+            date: h.date,
+            emoji: h.public ? '🏛️' : '🏦',
+            title: h.label(lang),
+            note: [h.kindLabel(lang), if (state != null) stateName(lang, state)].join(' · '),
+            major: h.public,
+          ),
+    ];
   }
 
   String _label(String lang, String f) => switch (f) {
@@ -149,7 +168,8 @@ class _ImportantDaysScreenState extends ConsumerState<ImportantDaysScreen> {
               note: null,
               major: true,
             ),
-        ];
+          ..._stateHolidays(lang),
+        ]..sort((a, b) => a.date.compareTo(b.date));
       default:
         final byDay = ref.watch(eventsByDayProvider(_year));
         return [
@@ -306,9 +326,57 @@ class _ImportantDaysScreenState extends ConsumerState<ImportantDaysScreen> {
                               .fadeIn(duration: 220.ms)
                               .slideX(begin: 0.04, curve: Curves.easeOut),
                       ],
+                      if (_filter == 'holidays') _HolidaySources(year: _year, lang: lang),
                     ],
                   ),
           ),
+        ],
+      ),
+    );
+  }
+}
+
+/// Which state's lists are shown and where they come from, or how to choose a state.
+class _HolidaySources extends ConsumerWidget {
+  const _HolidaySources({required this.year, required this.lang});
+  final int year;
+  final String lang;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final state = ref.watch(holidayStateProvider);
+    final sources = state == null ? const <String>[] : ref.watch(holidayCatalogProvider).value?.sources(state, year);
+    final style = Theme.of(context).textTheme.bodySmall;
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(8, 16, 8, 0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            state == null
+                ? t3(
+                    lang,
+                    'Pick your state in Settings › Calendar to see state and bank holidays.',
+                    'राज्य व बैंक अवकाश देखने के लिए सेटिंग्स › कैलेंडर में अपना राज्य चुनें।',
+                    'రాష్ట్ర, బ్యాంకు సెలవులు చూడటానికి సెట్టింగ్స్ › క్యాలెండర్‌లో మీ రాష్ట్రం ఎంచుకోండి.',
+                  )
+                : (sources ?? const []).isEmpty
+                ? t3(
+                    lang,
+                    'No official holiday list for ${stateName(lang, state)} in $year yet.',
+                    '$year के लिए ${stateName(lang, state)} की सरकारी अवकाश सूची अभी नहीं है।',
+                    '$yearకి ${stateName(lang, state)} అధికారిక సెలవుల జాబితా ఇంకా లేదు.',
+                  )
+                : t3(
+                    lang,
+                    '${stateName(lang, state)} holidays from the state government and RBI lists:',
+                    '${stateName(lang, state)} के अवकाश राज्य सरकार व RBI की सूची से:',
+                    '${stateName(lang, state)} సెలవులు రాష్ట్ర ప్రభుత్వ, RBI జాబితాల నుంచి:',
+                  ),
+            style: style,
+          ),
+          for (final url in sources ?? const <String>[])
+            Text(url, style: style?.copyWith(color: Theme.of(context).colorScheme.primary)),
         ],
       ),
     );

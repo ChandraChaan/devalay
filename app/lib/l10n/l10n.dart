@@ -36,6 +36,7 @@ import 'or_pooja.dart';
 import 'pa.dart';
 import 'pa_content.dart';
 import 'pa_pooja.dart';
+import 'regional_strings.dart';
 import 'ta.dart';
 import 'ta_content.dart';
 import 'ta_pooja.dart';
@@ -44,17 +45,17 @@ import 'ta_pooja.dart';
 /// (<code>_content.dart), festival and deity descriptions (<code>_desc.dart), and the pooja guides with
 /// the thought-of-the-day and read-aloud screens (<code>_pooja.dart), per language.
 /// Telugu and Hindi UI copy lives at the t3 call sites, so their tables hold names and descriptions.
-const _tables = <String, Map<String, String>>{
+final _tables = <String, Map<String, String>>{
   'hi': {...stringsHi, ...descHi},
   'te': descTe,
-  'bn': {...stringsBn, ...contentBn, ...descBn, ...poojaBn},
-  'mr': {...stringsMr, ...contentMr, ...descMr, ...poojaMr},
-  'ta': {...stringsTa, ...contentTa, ...descTa, ...poojaTa},
-  'gu': {...stringsGu, ...contentGu, ...descGu, ...poojaGu},
-  'kn': {...stringsKn, ...contentKn, ...descKn, ...poojaKn},
-  'ml': {...stringsMl, ...contentMl, ...descMl, ...poojaMl},
-  'or': {...stringsOr, ...contentOr, ...descOr, ...poojaOr},
-  'pa': {...stringsPa, ...contentPa, ...descPa, ...poojaPa},
+  'bn': {...stringsBn, ...contentBn, ...descBn, ...poojaBn, ...regionalBn},
+  'mr': {...stringsMr, ...contentMr, ...descMr, ...poojaMr, ...regionalMr},
+  'ta': {...stringsTa, ...contentTa, ...descTa, ...poojaTa, ...regionalTa},
+  'gu': {...stringsGu, ...contentGu, ...descGu, ...poojaGu, ...regionalGu},
+  'kn': {...stringsKn, ...contentKn, ...descKn, ...poojaKn, ...regionalKn},
+  'ml': {...stringsMl, ...contentMl, ...descMl, ...poojaMl, ...regionalMl},
+  'or': {...stringsOr, ...contentOr, ...descOr, ...poojaOr, ...regionalOr},
+  'pa': {...stringsPa, ...contentPa, ...descPa, ...poojaPa, ...regionalPa},
 };
 
 /// The table for [lang], or null (English, or a language without one).

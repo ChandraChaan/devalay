@@ -12,6 +12,7 @@ import 'models.dart';
 import 'muhurta.dart';
 import 'names.dart';
 import 'providers.dart';
+import 'regional.dart';
 import 'storage.dart';
 
 /// Days written ahead for the home-screen widget, so it keeps turning over offline.
@@ -19,7 +20,7 @@ const widgetDays = 30;
 
 /// The widget's text for one day, already in the user's language.
 Map<String, String> widgetDay(String lang, DateTime day, Map s, List<Festival> festivals, List<UserEvent> events) {
-  final month = s['lunar_month'] as int?;
+  final month = shownMonthOf(monthSystemFor(lang), s);
   final tithi = s['tithi_index'] as int?;
   final star = nakshatraNames.indexOf('${s['nakshatra']}');
   String? rahu;
@@ -39,7 +40,7 @@ Map<String, String> widgetDay(String lang, DateTime day, Map s, List<Festival> f
   return {
     'day': '${day.day}',
     'weekday': fmtDate(lang, 'EEEE', day),
-    'month': [fmtDate(lang, 'MMMM y', day), if (month != null) lunarMonthLabel(lang, month)].join(' · '),
+    'month': [fmtDate(lang, 'MMMM y', day), if (month != null) shownMonthLabel(lang, month)].join(' · '),
     'tithi': tithi == null ? '' : tithiName(lang, tithi),
     'star': star < 0 ? '' : '${t3(lang, 'Nakshatra', 'नक्षत्र', 'నక్షత్రం')}: ${nakshatraLabel(lang, star)}',
     'rahu': rahu ?? '',
