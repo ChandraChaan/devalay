@@ -3,6 +3,16 @@
 Each milestone is a git tag and a [GitHub release](https://github.com/ChandraChaan/devalay/releases). Releases from
 v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the section below that matches the tag.
 
+## Unreleased
+
+- Smaller download: Google Play now sends about 14.2 MB to most phones (arm64) instead of 16.1 MB, and 13.9 MB
+  instead of 15.9 MB to older 32-bit phones. Nothing is removed: every language, the Mandir sounds and the
+  offline Panchang stay the same.
+  - The bundled fonts are about half the size. They no longer carry hinting, which Android doesn't use, and the
+    Telugu fallback fonts keep only Telugu letters. An italic Sanskrit font that nothing used is gone.
+  - Release builds keep the Dart debug symbols out of the app. They are attached to each release as
+    `devalay-symbols.zip` and, when the `FIREBASE_SERVICE_ACCOUNT` secret is set, uploaded to Crashlytics.
+
 ## v1.4.0 — 2026-11-13
 
 - Devalay now speaks 11 languages: English, हिन्दी, বাংলা, मराठी, తెలుగు, தமிழ், ગુજરાતી, ಕನ್ನಡ, മലയാളം, ଓଡ଼ିଆ

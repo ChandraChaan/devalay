@@ -91,6 +91,7 @@ Each release lists SHA-256 checksums. `devalay-arm64-v8a.apk` is a smaller downl
 | **AI (optional)** | Claude via the Anthropic SDK, with free offline fallbacks |
 | **Notifications** | On-device scheduled reminders (festivals, morning Panchang, your events); Firebase Cloud Messaging for announcements |
 | **Updates and rating** | Firebase Remote Config force update, Google Play in-app updates and in-app review |
+| **Download size** | About 14 MB from Google Play: split per ABI and density, R8, slim fonts, Dart symbols kept out of the app ([how](docs/DEPLOYMENT.md#02-keeping-the-download-small)) |
 
 ## Features
 
