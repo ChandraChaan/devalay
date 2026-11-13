@@ -1,6 +1,7 @@
 """Panchang and festival engine checked against published dates."""
 
-from datetime import date
+from datetime import date, datetime
+from zoneinfo import ZoneInfo
 
 import pytest
 
@@ -184,3 +185,13 @@ def test_odia_rule_keeps_late_evening_sankranti_on_same_day():
     d = panchang.solar_dates(loc, date(2026, 11, 16), 2)
     assert d[0]["or"] == [7, 1]
     assert d[0]["ta"][0] == 6 and d[1]["ta"] == [7, 1]
+
+
+def test_sankranti_moments_match_swiss_ephemeris_2026():
+    # Sidereal Sun entering each sign with the true Lahiri ayanamsa, from Swiss Ephemeris (IST).
+    expected = {9: "01-14 15:07", 0: "04-14 09:32", 3: "07-16 23:39", 7: "11-16 19:43"}
+    ist = ZoneInfo("Asia/Kolkata")
+    got = {sign: at.astimezone(ist) for sign, at in panchang.sankranti_times(2026)}
+    for sign, want in expected.items():
+        w = datetime.strptime(f"2026-{want}", "%Y-%m-%d %H:%M").replace(tzinfo=ist)
+        assert abs((got[sign] - w).total_seconds()) <= 120, (sign, got[sign])

@@ -21,6 +21,7 @@ import numpy as np
 from skyfield import almanac
 from skyfield.api import Loader, wgs84
 from skyfield.framelib import ecliptic_frame
+from skyfield.nutationlib import iau2000b_radians
 from skyfield.searchlib import find_discrete
 
 from app.config import get_settings
@@ -112,8 +113,13 @@ def _ts():
 
 
 def ayanamsa(t) -> np.ndarray | float:
+    """True Lahiri ayanamsa: the mean value plus nutation in longitude. The Sun and Moon longitudes are
+    apparent (they include nutation), so subtracting the true ayanamsa cancels it, as Swiss Ephemeris and
+    Drik Panchang do. With the mean value alone, sidereal positions were off by up to 17 arcseconds and
+    sankrantis came a few minutes early."""
     years = (t.tt - 2451545.0) / 365.25
-    return LAHIRI_J2000 + PRECESSION_PER_YEAR * years
+    dpsi, _ = iau2000b_radians(t)
+    return LAHIRI_J2000 + PRECESSION_PER_YEAR * years + np.degrees(dpsi)
 
 
 def _longitudes(t):

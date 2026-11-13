@@ -5,6 +5,8 @@ v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the 
 
 ## v1.4.0 — 2026-11-13
 
+- Sidereal positions use the true Lahiri ayanamsa (mean plus nutation), as Swiss Ephemeris does, so sankranti
+  moments, nakshatra and rashi boundaries and the Jatakam agree with it; sankrantis had come 2-4 minutes early.
 - Smaller download: Google Play now sends about 14.2 MB to most phones (arm64) instead of 16.1 MB, and 13.9 MB
   instead of 15.9 MB to older 32-bit phones. Nothing is removed: every language, the Mandir sounds and the
   offline Panchang stay the same.

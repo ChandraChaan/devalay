@@ -30,8 +30,9 @@ class Jatakam {
   static Jatakam compute(DateTime utc, double lat, double lon) {
     final jdUt = julianDay(utc);
     final jd = jdUt + deltaT(utc.year + (utc.month - 0.5) / 12) / 86400;
-    final aya = lahiri(jd);
     final nut = _Nutation(jd);
+    // True ayanamsa (mean plus nutation), so the nutation in the apparent longitudes cancels, as on the server.
+    final aya = lahiri(jd) + nut.dPsi;
     double sid(double tropical) => _norm(tropical - aya);
     final rahu = _norm(meanNode(jd) + nut.dPsi - aya);
     final planets = [for (final p in _planets) sid(_planetLongitude(p, jd) + nut.dPsi)];

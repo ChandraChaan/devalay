@@ -41,7 +41,7 @@ void main() {
         expect(diff(j.of(g), c[k] as num), lessThan(tolerance[k]!), reason: '$k for ${c['utc']}');
       }
       expect(diff(j.lagna, c['ascendant'] as num), lessThan(tolerance['ascendant']!), reason: 'lagna ${c['utc']}');
-      expect((j.ayanamsa - (c['ayanamsa'] as num)).abs(), lessThan(1e-5));
+      expect((j.ayanamsa - (c['ayanamsa'] as num)).abs(), lessThan(3e-4)); // ~1 arcsec: the phone uses a short nutation series
     }
   });
 
