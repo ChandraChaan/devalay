@@ -1,0 +1,134 @@
+[
+{
+"kind": "solar",
+"type": "annular",
+"date": "2026-02-17",
+"visible": false,
+"sutak": null
+},
+{
+"kind": "lunar",
+"type": "total",
+"date": "2026-03-03",
+"max": "2026-03-03T17:03+05:30",
+"contacts": {
+"penumbral_begin": "2026-03-03T14:15+05:30",
+"partial_begin": "2026-03-03T15:20+05:30",
+"total_begin": "2026-03-03T16:35+05:30",
+"total_end": "2026-03-03T17:33+05:30",
+"partial_end": "2026-03-03T18:47+05:30",
+"penumbral_end": "2026-03-03T19:53+05:30"
+},
+"begins": "2026-03-03T15:20+05:30",
+"ends": "2026-03-03T18:47+05:30",
+"magnitude": 1.149,
+"visible": true,
+"visible_from": "2026-03-03T18:23+05:30",
+"visible_to": "2026-03-03T18:47+05:30",
+"sutak": {
+"starts": "2026-03-03T06:20+05:30",
+"ends": "2026-03-03T18:47+05:30"
+}
+},
+{
+"kind": "solar",
+"type": "total",
+"date": "2026-08-12",
+"visible": false,
+"sutak": null
+},
+{
+"kind": "lunar",
+"type": "partial",
+"date": "2026-08-28",
+"max": "2026-08-28T09:42+05:30",
+"contacts": {
+"penumbral_begin": "2026-08-28T06:54+05:30",
+"partial_begin": "2026-08-28T08:04+05:30",
+"partial_end": "2026-08-28T11:22+05:30",
+"penumbral_end": "2026-08-28T12:32+05:30"
+},
+"begins": "2026-08-28T08:04+05:30",
+"ends": "2026-08-28T11:22+05:30",
+"magnitude": 0.929,
+"visible": false,
+"visible_from": null,
+"visible_to": null,
+"sutak": null
+},
+{
+"kind": "solar",
+"type": "annular",
+"date": "2027-02-06",
+"visible": false,
+"sutak": null
+},
+{
+"kind": "lunar",
+"type": "penumbral",
+"date": "2027-02-21",
+"max": "2027-02-21T04:42+05:30",
+"contacts": {
+"penumbral_begin": "2027-02-21T02:43+05:30",
+"penumbral_end": "2027-02-21T06:43+05:30"
+},
+"begins": "2027-02-21T02:43+05:30",
+"ends": "2027-02-21T06:43+05:30",
+"magnitude": 0.926,
+"visible": true,
+"visible_from": "2027-02-21T02:43+05:30",
+"visible_to": "2027-02-21T06:43+05:30",
+"sutak": null
+},
+{
+"kind": "lunar",
+"type": "penumbral",
+"date": "2027-07-18",
+"max": "2027-07-18T21:32+05:30",
+"contacts": {
+"penumbral_begin": "2027-07-18T21:26+05:30",
+"penumbral_end": "2027-07-18T21:41+05:30"
+},
+"begins": "2027-07-18T21:26+05:30",
+"ends": "2027-07-18T21:41+05:30",
+"magnitude": 0.002,
+"visible": true,
+"visible_from": "2027-07-18T21:26+05:30",
+"visible_to": "2027-07-18T21:41+05:30",
+"sutak": null
+},
+{
+"kind": "solar",
+"type": "total",
+"date": "2027-08-02",
+"visible": true,
+"local_type": "partial",
+"begins": "2027-08-02T15:53+05:30",
+"max": "2027-08-02T16:29+05:30",
+"ends": "2027-08-02T17:02+05:30",
+"visible_from": "2027-08-02T15:53+05:30",
+"visible_to": "2027-08-02T17:02+05:30",
+"magnitude": 0.169,
+"sutak": {
+"starts": "2027-08-02T03:53+05:30",
+"ends": "2027-08-02T17:02+05:30"
+}
+},
+{
+"kind": "lunar",
+"type": "penumbral",
+"date": "2027-08-17",
+"max": "2027-08-17T12:43+05:30",
+"contacts": {
+"penumbral_begin": "2027-08-17T10:55+05:30",
+"penumbral_end": "2027-08-17T14:33+05:30"
+},
+"begins": "2027-08-17T10:55+05:30",
+"ends": "2027-08-17T14:33+05:30",
+"magnitude": 0.545,
+"visible": false,
+"visible_from": null,
+"visible_to": null,
+"sutak": null
+}
+]
