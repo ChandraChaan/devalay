@@ -8,6 +8,7 @@ import 'package:intl/intl.dart';
 import '../core/events.dart';
 import '../core/holidays.dart';
 import '../core/i18n.dart';
+import '../core/jyotish.dart';
 import '../core/muhurta.dart';
 import '../core/names.dart';
 import '../core/providers.dart';
@@ -37,6 +38,7 @@ class _ImportantDaysScreenState extends ConsumerState<ImportantDaysScreen> {
     'sankashti',
     'masik-shivratri',
     'shubh',
+    'eclipses',
     'holidays',
     'mine',
   ];
@@ -111,6 +113,7 @@ class _ImportantDaysScreenState extends ConsumerState<ImportantDaysScreen> {
     'sankashti' => t3(lang, 'Sankashti', 'संकष्टी', 'సంకటహర చవితి'),
     'masik-shivratri' => t3(lang, 'Masa Shivaratri', 'मासिक शिवरात्रि', 'మాస శివరాత్రి'),
     'shubh' => t3(lang, 'Auspicious days', 'शुभ योग', 'శుభ యోగాలు'),
+    'eclipses' => t3(lang, 'Eclipses', 'ग्रहण', 'గ్రహణాలు'),
     'holidays' => t3(lang, 'Holidays', 'अवकाश', 'సెలవులు'),
     _ => t3(lang, 'My events', 'मेरे दिन', 'నా రోజులు'),
   };
@@ -123,6 +126,7 @@ class _ImportantDaysScreenState extends ConsumerState<ImportantDaysScreen> {
     'pradosh' || 'masik-shivratri' => '🔱',
     'sankashti' => '🐘',
     'shubh' => '✨',
+    'eclipses' => '🌘',
     'holidays' => '🇮🇳',
     _ => '🎂',
   };
@@ -157,6 +161,14 @@ class _ImportantDaysScreenState extends ConsumerState<ImportantDaysScreen> {
                 note: shubhYogaNote(lang, y),
                 major: y != 'amrita-siddhi',
               ),
+        ];
+      case 'eclipses':
+        final eclipses = ref.watch(eclipsesProvider);
+        if (eclipses.isLoading) return null;
+        return [
+          for (final e in eclipses.value ?? const <Eclipse>[])
+            if (e.date.year == _year)
+              (date: e.day, emoji: e.emoji, title: e.title(lang), note: e.note(lang), major: e.visible),
         ];
       case 'holidays':
         return [

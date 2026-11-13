@@ -55,6 +55,21 @@ v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the 
 - 263 more cities: every district headquarters in Andhra Pradesh, Telangana, Karnataka, Tamil Nadu, Kerala and
   Maharashtra, the main cities of the other states, and Indian communities abroad (the Gulf, Malaysia, Africa,
   Mauritius, Fiji, the Caribbean, Europe, North America, Australia and New Zealand).
+- Shubha Muhurtham: good days from today to the end of next year for marriage (Vivaham), house warming (Griha
+  Pravesham) and buying a vehicle, for your city, with the good time window of each day (Rahu Kalam left out)
+  and the best lagna in it. Dates follow Muhurta Chintamani as Drik Panchang summarises it: solar and lunar
+  months, nakshatra, tithi, weekday, yoga and karana, no Adhika masa, Chaturmas or Pitru Paksha where they
+  apply, and no Guru or Shukra moudhyami. They agree with Drik Panchang's 2026-2027 lists for Hyderabad and
+  New Delhi on 88-90% of marriage dates, 94-95% of house-warming dates and 99.5% of vehicle dates.
+- Grahanam: solar and lunar eclipses this year and next, as seen from your city, with the begin, maximum and
+  end times, whether it is visible, and Sutak (9 hours before a lunar eclipse, 12 before a solar one). They
+  show in the calendar, on the day page and in a new Eclipses list in Important days.
+- Jatakam: enter the date, time and place of birth for the lagna, Moon rashi, nakshatra and pada and the
+  positions of the nine grahas, in a South or North Indian chart. It is worked out on the phone, warns when a
+  few minutes of birth time would change the lagna or nakshatra, saves the birth star and rashi for Tarabalam,
+  and saved births fill in marriage matching.
+- Rashifal: weekly, monthly and yearly readings for every rashi beside the daily one, from the real transits of
+  the Moon, Sun, Jupiter and Saturn, with good days, Chandrashtamam and Sade Sati, in every language.
 
 ## v1.4.0 — 2026-11-13
 

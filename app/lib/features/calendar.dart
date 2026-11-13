@@ -12,6 +12,7 @@ import '../core/calendar_reminders.dart';
 import '../core/events.dart';
 import '../core/holidays.dart';
 import '../core/i18n.dart';
+import '../core/jyotish.dart';
 import '../core/location.dart';
 import '../core/models.dart';
 import '../core/muhurta.dart';
@@ -29,6 +30,7 @@ import '../widgets/common.dart';
 import '../widgets/read_aloud_button.dart';
 import 'backup.dart';
 import 'calendar_settings.dart';
+import 'grahanam.dart';
 import 'my_events.dart';
 import 'panchang.dart';
 
@@ -631,6 +633,7 @@ class _MonthGrid extends ConsumerWidget {
     final days = ref.watch(monthProvider((year: month.year, month: month.month)));
     final byDay = _festivalsByDay(ref.watch(festivalsProvider(month.year)).value);
     final events = ref.watch(eventsByDayProvider(month.year));
+    final eclipses = ref.watch(eclipsesByDayProvider);
     final lang = ref.watch(prefsProvider.select((p) => p.language));
     final holidays = ref.watch(stateHolidaysProvider(month.year));
     final solarCal = ref.watch(solarCalendarProvider);
@@ -670,6 +673,7 @@ class _MonthGrid extends ConsumerWidget {
                                 info: summary[n],
                                 festivals: byDay[date] ?? const [],
                                 events: events[date] ?? const [],
+                                eclipse: eclipses[date]?.first,
                                 stateHoliday: holidays[date],
                                 solar: solarCal == null || summary[n] == null
                                     ? null
@@ -699,6 +703,7 @@ class _DayCell extends StatelessWidget {
     required this.info,
     required this.festivals,
     required this.events,
+    this.eclipse,
     required this.selected,
     required this.full,
     required this.lang,
@@ -710,6 +715,7 @@ class _DayCell extends StatelessWidget {
   final Map? info;
   final List<Festival> festivals;
   final List<UserEvent> events;
+  final Eclipse? eclipse;
   final StateHoliday? stateHoliday;
   final SolarDate? solar;
   final bool selected, full;
@@ -770,6 +776,7 @@ class _DayCell extends StatelessWidget {
   /// Up to two small marks under the date: festival, personal event, holiday, moon, auspicious yoga.
   String _marks(String moon, String? holiday, String? yoga) => [
     if (festivals.isNotEmpty) festivals.any((f) => f.major) ? '🪔' : '•',
+    if (eclipse != null) eclipse!.emoji,
     if (events.isNotEmpty) events.first.emoji,
     if (holiday != null) '🇮🇳' else if (stateHoliday != null) stateHoliday!.public ? '🏛️' : '🏦',
     if (moon.isNotEmpty) moon,
@@ -883,6 +890,7 @@ class _DayCell extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 if (holiday != null) line(holidayLabel(lang, holiday), color: Palette.vermilion, bold: true),
+                if (eclipse != null) line('${eclipse!.emoji} ${eclipse!.title(lang)}', bold: true),
                 if (holiday == null && stateHoliday != null)
                   line(
                     stateHoliday!.label(lang),
@@ -1519,6 +1527,8 @@ class _DayPage extends ConsumerWidget {
           onTap: () => showEventEditor(context, ref, existing: e),
         ),
       if (yoga != null) note('✨', shubhYogaLabel(lang, yoga), shubhYogaNote(lang, yoga), color: Colors.green.shade700),
+      for (final e in ref.watch(eclipsesByDayProvider)[day] ?? const <Eclipse>[]) EclipseCard(eclipse: e, lang: lang),
+      DayMuhurthamNotes(day: day, lang: lang),
       Align(
         alignment: Alignment.centerLeft,
         child: TextButton.icon(

@@ -43,7 +43,7 @@ from app.db import Base, SessionLocal, engine  # noqa: E402
 from app.main import app  # noqa: E402
 from app.routers import astro  # noqa: E402
 from app.seed.loader import load_all  # noqa: E402
-from app.services import ai, gita_search, temple_updates  # noqa: E402
+from app.services import ai, eclipses, gita_search, muhurtham, temple_updates  # noqa: E402
 
 TEMPLES = ROOT.parent / "app" / "assets" / "data" / "temples.json"
 WISHES = ROOT.parent / "app" / "assets" / "data" / "wishes.json"
@@ -112,6 +112,9 @@ def export_city(job: tuple[str, dict, date, list[tuple[int, int]]]) -> int:
         for y in (today.year, today.year + 1):
             q = {"year": str(y), "include_recurring": "true"}
             ex.get("/festivals", {**loc, **q}, {**key, **q})
+        # Shubha Muhurtham from today to the end of next year, and this year's and next year's eclipses.
+        ex.get("/muhurtham", loc, key)
+        ex.get("/eclipses", loc, key)
     return ex.count
 
 
@@ -176,6 +179,9 @@ def main() -> None:
             "occasion_prefix": ai.OCCASION_PREFIX,
         })
 
+        # Transits behind the weekly, monthly and yearly Rashi phalalu (the text is written on the phone).
+        ex.get("/gochara")
+
         for lang in ("hi", "en", "te"):
             for offset in HOME_DAYS:
                 ex.get("/rashifal", {"lang": lang, "day": (today + timedelta(days=offset)).isoformat()})
@@ -189,6 +195,12 @@ def main() -> None:
             (OUT / name).write_text(client.get(page).text)
 
     # Per-city files, outside the client above so no event-loop thread is alive when the workers fork.
+    # The sky behind the muhurtham and eclipse lists is the same for every city: work it out once here so
+    # the forked workers inherit it instead of each recomputing it.
+    muhurtham.sky(today, date(today.year + 1, 12, 31))
+    muhurtham._special_periods(today, date(today.year + 1, 12, 31))
+    eclipses._lunar_events(date(today.year, 1, 1), date(today.year + 1, 12, 31))
+    eclipses._new_moons_near_node(date(today.year, 1, 1), date(today.year + 1, 12, 31))
     jobs = [(cid, loc, today, months) for cid, loc in cities()]
     workers = int(os.environ.get("DEVALAY_EXPORT_WORKERS", os.cpu_count() or 1))
     if workers > 1:

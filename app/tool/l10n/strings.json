@@ -2466,6 +2466,12 @@
   "where": "i18n"
  },
  {
+  "en": "Jatakam",
+  "hi": "जन्म कुंडली",
+  "te": "జాతకం",
+  "where": "i18n"
+ },
+ {
   "en": "Karana",
   "hi": "करण",
   "te": "కరణం",
@@ -2844,6 +2850,324 @@
   "where": "lib/core/glossary.dart"
  },
  {
+  "en": "A demanding month. Avoid big risks, look after health and keep faith.",
+  "hi": "कठिन महीना। बड़े जोखिम से बचें, स्वास्थ्य का ध्यान रखें और आस्था बनाए रखें।",
+  "te": "శ్రమతో కూడిన నెల. పెద్ద సాహసాలు వద్దు, ఆరోగ్యం చూసుకోండి, విశ్వాసం కోల్పోకండి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "A favourable month. Efforts bear fruit and support comes easily.",
+  "hi": "अनुकूल महीना। प्रयास सफल होंगे और सहयोग आसानी से मिलेगा।",
+  "te": "అనుకూలమైన నెల. ప్రయత్నాలు ఫలిస్తాయి, సహకారం సులువుగా అందుతుంది.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "A favourable week. Begin important work on the good days.",
+  "hi": "अनुकूल सप्ताह। महत्वपूर्ण काम शुभ दिनों में शुरू करें।",
+  "te": "అనుకూలమైన వారం. ముఖ్యమైన పనులు మంచి రోజుల్లో మొదలుపెట్టండి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "A favourable year. Jupiter and Saturn support growth; plan big steps.",
+  "hi": "अनुकूल वर्ष। गुरु और शनि उन्नति में सहायक हैं; बड़े कदमों की योजना बनाएँ।",
+  "te": "అనుకూలమైన సంవత్సరం. గురు, శని అభివృద్ధికి తోడ్పడతారు; పెద్ద అడుగులు ప్లాన్ చేసుకోండి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "A hard stretch with obstacles and worries about health and money. Prayer and patience help.",
+  "hi": "बाधाओं और स्वास्थ्य व धन की चिंता वाला कठिन समय। प्रार्थना और धैर्य सहायक होंगे।",
+  "te": "అడ్డంకులు, ఆరోగ్యం-డబ్బు ఆందోళనలతో కష్టకాలం. ప్రార్థన, ఓపిక సహాయపడతాయి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "A mixed month. Steady work and patience bring results.",
+  "hi": "मिला-जुला महीना। लगातार मेहनत और धैर्य से परिणाम मिलेंगे।",
+  "te": "మిశ్రమ ఫలితాల నెల. నిలకడైన కృషి, ఓపిక ఫలితాన్నిస్తాయి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "A mixed week. Keep important work for the good days.",
+  "hi": "मिला-जुला सप्ताह। महत्वपूर्ण काम शुभ दिनों के लिए रखें।",
+  "te": "మిశ్రమ ఫలితాల వారం. ముఖ్యమైన పనులు మంచి రోజులకు ఉంచుకోండి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "A mixed year. Gains come with effort; choose your moments.",
+  "hi": "मिला-जुला वर्ष। मेहनत से लाभ मिलेगा; सही समय चुनें।",
+  "te": "మిశ్రమ ఫలితాల సంవత్సరం. కృషితో లాభాలు వస్తాయి; సరైన సమయం ఎంచుకోండి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "A week to go slowly. Keep to routine, pray, and start new things on the good days.",
+  "hi": "धीरे चलने का सप्ताह। दिनचर्या बनाए रखें, प्रार्थना करें और नए काम शुभ दिनों में शुरू करें।",
+  "te": "నెమ్మదిగా సాగాల్సిన వారం. దినచర్య పాటించండి, ప్రార్థించండి, కొత్త పనులు మంచి రోజుల్లో మొదలుపెట్టండి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "A year of tests. Slow, honest work and devotion carry you through.",
+  "hi": "परीक्षा का वर्ष। धीमी, ईमानदार मेहनत और भक्ति आपको पार लगाएगी।",
+  "te": "పరీక్షల సంవత్సరం. నెమ్మదైన, నిజాయితీ కృషి, భక్తి మిమ్మల్ని గట్టెక్కిస్తాయి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Ardhashtama Shani: worries at home and health need care. Avoid hasty moves.",
+  "hi": "अर्धाष्टम शनि: घर की चिंताएँ और स्वास्थ्य पर ध्यान दें। जल्दबाज़ी न करें।",
+  "te": "అర్ధాష్టమ శని: ఇంటి సమస్యలు, ఆరోగ్యంపై శ్రద్ధ అవసరం. తొందరపడకండి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Ashtama Shani: a demanding time. Avoid risks and look after your health.",
+  "hi": "अष्टम शनि: कठिन समय। जोखिम से बचें और स्वास्थ्य का ध्यान रखें।",
+  "te": "అష్టమ శని: శ్రమతో కూడిన కాలం. సాహసాలు వద్దు, ఆరోగ్యం చూసుకోండి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Chandrashtamam (Moon in the 8th), go gently: {0}",
+  "hi": "चंद्राष्टम (आठवें भाव में चंद्र), संभलकर चलें: {0}",
+  "te": "చంద్రాష్టమం (8వ ఇంట చంద్రుడు), జాగ్రత్తగా ఉండండి: {0}",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Children, learning and devotion flourish. Wise counsel and good decisions.",
+  "hi": "संतान, विद्या और भक्ति फलेंगी। सही सलाह और अच्छे निर्णय।",
+  "te": "సంతానం, విద్య, భక్తి వర్ధిల్లుతాయి. మంచి సలహాలు, సరైన నిర్ణయాలు.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Comforts and peace at home need care, and relatives may trouble you.",
+  "hi": "घर के सुख और शांति पर ध्यान दें; संबंधी परेशान कर सकते हैं।",
+  "te": "ఇంటి సుఖశాంతులపై శ్రద్ధ అవసరం; బంధువుల వల్ల ఇబ్బందులు రావచ్చు.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Courage and success: efforts, short trips and dealings with officials go well.",
+  "hi": "साहस और सफलता: प्रयास, छोटी यात्राएँ और अधिकारियों से काम अच्छे बनेंगे।",
+  "te": "ధైర్యం, విజయం: ప్రయత్నాలు, చిన్న ప్రయాణాలు, అధికారులతో పనులు బాగా సాగుతాయి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Efforts bring less than hoped and changes come at work. Keep steady.",
+  "hi": "प्रयासों का फल अपेक्षा से कम और कार्य में बदलाव। स्थिर रहें।",
+  "te": "ప్రయత్నాలకు ఆశించినంత ఫలితం రాదు, పనిలో మార్పులు. నిలకడగా ఉండండి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Elders and superiors may be displeased. Keep faith and avoid long journeys.",
+  "hi": "बड़े और वरिष्ठ नाराज़ हो सकते हैं। आस्था रखें और लंबी यात्राओं से बचें।",
+  "te": "పెద్దలు, పై అధికారులు అసంతృప్తి చెందవచ్చు. విశ్వాసం ఉంచండి, దూర ప్రయాణాలు వద్దు.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Expenses and travel rise. Sleep well and spend on good causes.",
+  "hi": "ख़र्च और यात्राएँ बढ़ेंगी। अच्छी नींद लें और शुभ कार्यों में व्यय करें।",
+  "te": "ఖర్చులు, ప్రయాణాలు పెరుగుతాయి. బాగా నిద్రపోండి, మంచి పనులకు ఖర్చు చేయండి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Fortune and faith rise: pilgrimage, elders' blessings and progress.",
+  "hi": "भाग्य और आस्था बढ़ेगी: तीर्थयात्रा, बड़ों का आशीर्वाद और उन्नति।",
+  "te": "అదృష్టం, విశ్వాసం పెరుగుతాయి: తీర్థయాత్రలు, పెద్దల ఆశీస్సులు, పురోగతి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "From {0} it moves into {1}: {2}",
+  "hi": "{0} से {1} में: {2}",
+  "te": "{0} నుండి {1}లో: {2}",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Gains from many sides. Wishes are fulfilled and friends help.",
+  "hi": "कई ओर से लाभ। मनोकामनाएँ पूरी होंगी और मित्र सहायता करेंगे।",
+  "te": "అనేక వైపుల నుండి లాభాలు. కోరికలు నెరవేరుతాయి, మిత్రులు సహాయం చేస్తారు.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Gains, honour and good news. Wishes come true.",
+  "hi": "लाभ, सम्मान और शुभ समाचार। मनोकामनाएँ पूरी होंगी।",
+  "te": "లాభాలు, గౌరవం, శుభవార్తలు. కోరికలు నెరవేరుతాయి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Good days: {0}",
+  "hi": "शुभ दिन: {0}",
+  "te": "మంచి రోజులు: {0}",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Health and money need caution. Avoid risks and quarrels.",
+  "hi": "स्वास्थ्य और धन में सावधानी चाहिए। जोखिम और झगड़ों से बचें।",
+  "te": "ఆరోగ్యం, డబ్బు విషయంలో జాగ్రత్త అవసరం. సాహసాలు, గొడవలు వద్దు.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Jupiter (Guru)",
+  "hi": "गुरु (बृहस्पति)",
+  "te": "గురువు (బృహస్పతి)",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Jupiter over your Moon sign: a testing stretch with changes of place and some worry. Stay patient.",
+  "hi": "चंद्र राशि पर गुरु: स्थान परिवर्तन और कुछ चिंता के साथ परीक्षा का समय। धैर्य रखें।",
+  "te": "చంద్ర రాశిపై గురువు: స్థాన మార్పులు, కొంత ఆందోళనతో పరీక్షా సమయం. ఓపికగా ఉండండి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Luck moves slowly and elders may be displeased. Keep faith.",
+  "hi": "भाग्य धीरे चलेगा और बड़े नाराज़ हो सकते हैं। आस्था बनाए रखें।",
+  "te": "అదృష్టం నెమ్మదిగా కలిసొస్తుంది, పెద్దలు అసంతృప్తి చెందవచ్చు. విశ్వాసం ఉంచండి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Marriage, partnership and travel are blessed. A good time for alliances.",
+  "hi": "विवाह, साझेदारी और यात्रा शुभ। संबंध जोड़ने का अच्छा समय।",
+  "te": "వివాహం, భాగస్వామ్యం, ప్రయాణాలు శుభప్రదం. సంబంధాలు కుదుర్చుకోవడానికి మంచి సమయం.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Money goes out faster and family talks need patience. Avoid lending.",
+  "hi": "धन जल्दी ख़र्च होगा और परिवार में बातचीत धैर्य से करें। उधार देने से बचें।",
+  "te": "డబ్బు త్వరగా ఖర్చవుతుంది, కుటుంబంలో మాటలు ఓపికగా ఉండాలి. అప్పులు ఇవ్వకండి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Moon",
+  "hi": "चंद्र",
+  "te": "చంద్రుడు",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Opponents and health need watching. Avoid loans and disputes.",
+  "hi": "विरोधियों और स्वास्थ्य पर नज़र रखें। कर्ज़ और विवाद से बचें।",
+  "te": "ప్రత్యర్థులు, ఆరోగ్యంపై కన్నేసి ఉంచండి. అప్పులు, వివాదాలు వద్దు.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Opponents and illness retreat. You win disputes and finish pending work.",
+  "hi": "विरोधी और रोग पीछे हटेंगे। विवादों में जीत और रुके काम पूरे होंगे।",
+  "te": "ప్రత్యర్థులు, అనారోగ్యం వెనక్కి తగ్గుతాయి. వివాదాల్లో గెలుపు, పెండింగ్ పనులు పూర్తవుతాయి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Partnerships and your spouse need patience; travel is tiring.",
+  "hi": "साझेदारी और जीवनसाथी के साथ धैर्य रखें; यात्रा थकाएगी।",
+  "te": "భాగస్వామ్యాలు, జీవిత భాగస్వామితో ఓపిక అవసరం; ప్రయాణాలు అలసటనిస్తాయి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Peace at home may be disturbed. Look after your health and your mother.",
+  "hi": "घर की शांति भंग हो सकती है। अपने और माता के स्वास्थ्य का ध्यान रखें।",
+  "te": "ఇంట్లో ప్రశాంతత దెబ్బతినవచ్చు. మీ ఆరోగ్యం, అమ్మ ఆరోగ్యం చూసుకోండి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Pressure or changes at work. Hold your place through careful effort.",
+  "hi": "कार्य में दबाव या बदलाव। सावधानीपूर्वक प्रयास से अपना स्थान बनाए रखें।",
+  "te": "పనిలో ఒత్తిడి లేదా మార్పులు. జాగ్రత్తైన కృషితో మీ స్థానం నిలబెట్టుకోండి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Retrograde for part of this time: results come slowly; revisit old plans.",
+  "hi": "इस अवधि में कुछ समय वक्री: परिणाम धीरे मिलेंगे; पुरानी योजनाओं पर फिर से ध्यान दें।",
+  "te": "ఈ కాలంలో కొంతకాలం వక్రగతి: ఫలితాలు నెమ్మదిగా వస్తాయి; పాత ప్రణాళికలను మళ్ళీ చూడండి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Saturn (Shani)",
+  "hi": "शनि",
+  "te": "శని",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Saturn in the eleventh: steady income and gains.",
+  "hi": "ग्यारहवें भाव में शनि: स्थिर आय और लाभ।",
+  "te": "పదకొండవ ఇంట శని: స్థిరమైన ఆదాయం, లాభాలు.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Saturn in the sixth: victory over opponents, better health and debts reduce.",
+  "hi": "छठे भाव में शनि: विरोधियों पर विजय, स्वास्थ्य में सुधार और कर्ज़ घटेगा।",
+  "te": "ఆరవ ఇంట శని: ప్రత్యర్థులపై విజయం, ఆరోగ్యం మెరుగు, అప్పులు తగ్గుతాయి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Saturn in the third: courage, success and steady gains.",
+  "hi": "तीसरे भाव में शनि: साहस, सफलता और स्थिर लाभ।",
+  "te": "మూడవ ఇంట శని: ధైర్యం, విజయం, స్థిరమైన లాభాలు.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Saturn over your Moon sign, the peak of Sade Sati: heavy duties and fatigue. Slow, honest work pays.",
+  "hi": "चंद्र राशि पर शनि, साढ़े साती का चरम: भारी ज़िम्मेदारियाँ और थकान। धीमी, ईमानदार मेहनत फल देगी।",
+  "te": "చంద్ర రాశిపై శని, ఏలినాటి శని మధ్య దశ: భారమైన బాధ్యతలు, అలసట. నెమ్మదైన, నిజాయితీ కృషి ఫలిస్తుంది.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Spending and travel rise, much of it on good causes. Guard your savings.",
+  "hi": "ख़र्च और यात्राएँ बढ़ेंगी, अधिकतर शुभ कार्यों पर। अपनी बचत संभालें।",
+  "te": "ఖర్చులు, ప్రయాణాలు పెరుగుతాయి, ఎక్కువగా మంచి పనులకే. పొదుపును కాపాడుకోండి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Sun",
+  "hi": "सूर्य",
+  "te": "సూర్యుడు",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "The Sun over your Moon sign brings fatigue and a short temper. Rest well and keep your words soft.",
+  "hi": "चंद्र राशि पर सूर्य थकान और चिड़चिड़ापन लाता है। भरपूर आराम करें और वाणी मधुर रखें।",
+  "te": "మీ చంద్ర రాశిపై సూర్యుడు అలసట, కోపం తెస్తాడు. బాగా విశ్రాంతి తీసుకోండి, మృదువుగా మాట్లాడండి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "The last phase of Sade Sati: family and money need care. Speak gently and save.",
+  "hi": "साढ़े साती का अंतिम चरण: परिवार और धन पर ध्यान दें। मधुर बोलें और बचत करें।",
+  "te": "ఏలినాటి శని చివరి దశ: కుటుంబం, డబ్బుపై శ్రద్ధ అవసరం. మృదువుగా మాట్లాడండి, పొదుపు చేయండి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "The mind and children need attention. Avoid speculation.",
+  "hi": "मन और संतान पर ध्यान दें। सट्टे से बचें।",
+  "te": "మనసు, సంతానంపై శ్రద్ధ పెట్టండి. ఊహాజనిత పెట్టుబడులు వద్దు.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "The mind is unsettled and plans slip. Take care with children and speculation.",
+  "hi": "मन अस्थिर रहेगा और योजनाएँ खिसक सकती हैं। संतान और सट्टे में सावधानी रखें।",
+  "te": "మనసు నిలకడగా ఉండదు, ప్రణాళికలు జారిపోవచ్చు. పిల్లలు, ఊహాజనిత పెట్టుబడుల విషయంలో జాగ్రత్త.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "The start of Sade Sati: expenses and travel rise. Spend wisely.",
+  "hi": "साढ़े साती का आरंभ: ख़र्च और यात्राएँ बढ़ेंगी। सोच-समझकर व्यय करें।",
+  "te": "ఏలినాటి శని ప్రారంభం: ఖర్చులు, ప్రయాణాలు పెరుగుతాయి. ఆలోచించి ఖర్చు చేయండి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Travel tires you and partners may disagree. Give relationships extra care.",
+  "hi": "यात्रा थकाएगी और साथी से मतभेद हो सकते हैं। रिश्तों पर अधिक ध्यान दें।",
+  "te": "ప్రయాణాలు అలసటనిస్తాయి, భాగస్వామితో భేదాభిప్రాయాలు రావచ్చు. బంధాలపై ఎక్కువ శ్రద్ధ పెట్టండి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Wealth and family grow, your words carry weight and savings rise.",
+  "hi": "धन और परिवार में वृद्धि, वाणी में प्रभाव और बचत बढ़ेगी।",
+  "te": "ధనం, కుటుంబం వృద్ధి చెందుతాయి, మీ మాటకు విలువ పెరుగుతుంది, పొదుపు పెరుగుతుంది.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Work goes well: a good time for recognition and important tasks.",
+  "hi": "कार्य अच्छा चलेगा: सम्मान और महत्वपूर्ण कामों के लिए अच्छा समय।",
+  "te": "పని బాగా సాగుతుంది: గుర్తింపుకు, ముఖ్యమైన పనులకు మంచి సమయం.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
+  "en": "Work is heavy and delayed, but persistence brings results.",
+  "hi": "कार्य भारी और विलंबित रहेगा, पर लगन से परिणाम मिलेंगे।",
+  "te": "పని భారంగా, ఆలస్యంగా సాగుతుంది, కానీ పట్టుదలతో ఫలితాలు వస్తాయి.",
+  "where": "lib/core/gochara.dart"
+ },
+ {
   "en": "Andhra Pradesh",
   "hi": "आंध्र प्रदेश",
   "te": "ఆంధ్రప్రదేశ్",
@@ -3066,6 +3390,78 @@
   "where": "lib/core/home_widget_sync.dart"
  },
  {
+  "en": "Annular solar eclipse",
+  "hi": "वलयाकार सूर्य ग्रहण",
+  "te": "కంకణాకార సూర్య గ్రహణం",
+  "where": "lib/core/jyotish.dart"
+ },
+ {
+  "en": "House warming (Griha Pravesham)",
+  "hi": "गृह प्रवेश",
+  "te": "గృహ ప్రవేశం",
+  "where": "lib/core/jyotish.dart"
+ },
+ {
+  "en": "Marriage (Vivaham)",
+  "hi": "विवाह",
+  "te": "వివాహం",
+  "where": "lib/core/jyotish.dart"
+ },
+ {
+  "en": "Not visible here. No Sutak.",
+  "hi": "यहाँ दिखाई नहीं देगा। सूतक नहीं।",
+  "te": "ఇక్కడ కనిపించదు. సూతకం లేదు.",
+  "where": "lib/core/jyotish.dart"
+ },
+ {
+  "en": "Partial lunar eclipse",
+  "hi": "आंशिक चंद्र ग्रहण",
+  "te": "పాక్షిక చంద్ర గ్రహణం",
+  "where": "lib/core/jyotish.dart"
+ },
+ {
+  "en": "Partial solar eclipse",
+  "hi": "आंशिक सूर्य ग्रहण",
+  "te": "పాక్షిక సూర్య గ్రహణం",
+  "where": "lib/core/jyotish.dart"
+ },
+ {
+  "en": "Penumbral lunar eclipse",
+  "hi": "उपच्छाया चंद्र ग्रहण",
+  "te": "ఉపచ్ఛాయ చంద్ర గ్రహణం",
+  "where": "lib/core/jyotish.dart"
+ },
+ {
+  "en": "Total lunar eclipse",
+  "hi": "पूर्ण चंद्र ग्रहण",
+  "te": "సంపూర్ణ చంద్ర గ్రహణం",
+  "where": "lib/core/jyotish.dart"
+ },
+ {
+  "en": "Total solar eclipse",
+  "hi": "पूर्ण सूर्य ग्रहण",
+  "te": "సంపూర్ణ సూర్య గ్రహణం",
+  "where": "lib/core/jyotish.dart"
+ },
+ {
+  "en": "Vehicle purchase",
+  "hi": "वाहन ख़रीद",
+  "te": "వాహన కొనుగోలు",
+  "where": "lib/core/jyotish.dart"
+ },
+ {
+  "en": "Visible here {0}. Penumbral only: no Sutak.",
+  "hi": "यहाँ {0} दिखेगा। केवल उपच्छाया: सूतक नहीं।",
+  "te": "ఇక్కడ {0} కనిపిస్తుంది. ఉపచ్ఛాయ మాత్రమే: సూతకం లేదు.",
+  "where": "lib/core/jyotish.dart"
+ },
+ {
+  "en": "Visible here {0}. Sutak from {1}.",
+  "hi": "यहाँ {0} दिखेगा। सूतक {1} से।",
+  "te": "ఇక్కడ {0} కనిపిస్తుంది. సూతకం {1} నుండి.",
+  "where": "lib/core/jyotish.dart"
+ },
+ {
   "en": "A good day to begin important work.",
   "hi": "महत्वपूर्ण कार्य आरंभ करने के लिए शुभ दिन।",
   "te": "ముఖ్యమైన పనులు ప్రారంభించడానికి మంచి రోజు.",
@@ -3228,12 +3624,6 @@
   "where": "lib/core/muhurta.dart"
  },
  {
-  "en": "Moon",
-  "hi": "चंद्र",
-  "te": "చంద్ర",
-  "where": "lib/core/muhurta.dart"
- },
- {
   "en": "Naidhana",
   "hi": "नैधन",
   "te": "నైధన",
@@ -3321,12 +3711,6 @@
   "en": "Sukham",
   "hi": "सुख",
   "te": "సుఖం",
-  "where": "lib/core/muhurta.dart"
- },
- {
-  "en": "Sun",
-  "hi": "सूर्य",
-  "te": "సూర్య",
   "where": "lib/core/muhurta.dart"
  },
  {
@@ -4296,6 +4680,66 @@
   "where": "lib/features/gita.dart"
  },
  {
+  "en": "Begins",
+  "hi": "आरंभ (स्पर्श)",
+  "te": "ప్రారంభం (స్పర్శ)",
+  "where": "lib/features/grahanam.dart"
+ },
+ {
+  "en": "During Sutak, temples close and cooking and eating are avoided. Children, the elderly, the sick and pregnant women may keep a shorter Sutak. Bathe and offer prayers after the eclipse ends.",
+  "hi": "सूतक में मंदिर बंद रहते हैं और भोजन बनाना-खाना टाला जाता है। बच्चे, बुज़ुर्ग, रोगी और गर्भवती महिलाएँ छोटा सूतक रख सकते हैं। ग्रहण समाप्त होने पर स्नान करके पूजा करें।",
+  "te": "సూతక సమయంలో ఆలయాలు మూసివేస్తారు, వంట చేయడం, తినడం మానుకుంటారు. పిల్లలు, వృద్ధులు, రోగులు, గర్భిణీలు తక్కువ సూతకం పాటించవచ్చు. గ్రహణం ముగిశాక స్నానం చేసి పూజ చేయండి.",
+  "where": "lib/features/grahanam.dart"
+ },
+ {
+  "en": "Ends",
+  "hi": "समाप्त (मोक्ष)",
+  "te": "ముగింపు (మోక్షం)",
+  "where": "lib/features/grahanam.dart"
+ },
+ {
+  "en": "Magnitude",
+  "hi": "ग्रास",
+  "te": "గ్రాసం",
+  "where": "lib/features/grahanam.dart"
+ },
+ {
+  "en": "Maximum",
+  "hi": "मध्य",
+  "te": "మధ్యకాలం",
+  "where": "lib/features/grahanam.dart"
+ },
+ {
+  "en": "Seen here",
+  "hi": "यहाँ दिखेगा",
+  "te": "ఇక్కడ కనిపించేది",
+  "where": "lib/features/grahanam.dart"
+ },
+ {
+  "en": "Shubha Muhurtham",
+  "hi": "शुभ मुहूर्त",
+  "te": "శుభ ముహూర్తం",
+  "where": "lib/features/grahanam.dart"
+ },
+ {
+  "en": "Sutak",
+  "hi": "सूतक",
+  "te": "సూతకం",
+  "where": "lib/features/grahanam.dart"
+ },
+ {
+  "en": "Totality begins",
+  "hi": "पूर्णता आरंभ",
+  "te": "సంపూర్ణ దశ ప్రారంభం",
+  "where": "lib/features/grahanam.dart"
+ },
+ {
+  "en": "Totality ends",
+  "hi": "पूर्णता समाप्त",
+  "te": "సంపూర్ణ దశ ముగింపు",
+  "where": "lib/features/grahanam.dart"
+ },
+ {
   "en": "Deity of the day",
   "hi": "आज के देवता",
   "te": "నేటి దైవం",
@@ -4323,6 +4767,12 @@
   "en": "Auspicious days",
   "hi": "शुभ योग",
   "te": "శుభ యోగాలు",
+  "where": "lib/features/important_days.dart"
+ },
+ {
+  "en": "Eclipses",
+  "hi": "ग्रहण",
+  "te": "గ్రహణాలు",
   "where": "lib/features/important_days.dart"
  },
  {
@@ -4432,6 +4882,264 @@
   "hi": "जाप करते हुए स्क्रीन पर कहीं भी टैप करें",
   "te": "ప్రతి జపానికి స్క్రీన్‌పై ఎక్కడైనా తాకండి",
   "where": "lib/features/japa.dart"
+ },
+ {
+  "en": "Add a name to save this birth.",
+  "hi": "सहेजने के लिए नाम जोड़ें।",
+  "te": "దాచడానికి పేరు ఇవ్వండి.",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Another place (enter latitude and longitude)",
+  "hi": "अन्य स्थान (अक्षांश और देशांतर भरें)",
+  "te": "వేరే స్థలం (అక్షాంశం, రేఖాంశం ఇవ్వండి)",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Asc",
+  "hi": "ल",
+  "te": "ల",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Close to a boundary",
+  "hi": "सीमा के पास",
+  "te": "సరిహద్దుకు దగ్గరగా",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Date",
+  "hi": "तिथि",
+  "te": "తేదీ",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Enter the date, time and place of birth. Everything is worked out on your phone and stays on it.",
+  "hi": "जन्म की तिथि, समय और स्थान भरें। सारी गणना आपके फ़ोन पर होती है और वहीं रहती है।",
+  "te": "పుట్టిన తేదీ, సమయం, స్థలం ఇవ్వండి. లెక్కలన్నీ మీ ఫోన్‌లోనే జరుగుతాయి, అక్కడే ఉంటాయి.",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Fill in the date, time and place of birth.",
+  "hi": "जन्म की तिथि, समय और स्थान भरें।",
+  "te": "పుట్టిన తేదీ, సమయం, స్థలం నింపండి.",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "House",
+  "hi": "भाव",
+  "te": "భావం",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Jatakam (birth chart)",
+  "hi": "जन्म कुंडली",
+  "te": "జాతకం",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Ju",
+  "hi": "गु",
+  "te": "గు",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Ke",
+  "hi": "के",
+  "te": "కే",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Ketu",
+  "hi": "केतु",
+  "te": "కేతువు",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Lagna",
+  "hi": "लग्न",
+  "te": "లగ్నం",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Latitude (N +)",
+  "hi": "अक्षांश (उत्तर +)",
+  "te": "అక్షాంశం (ఉత్తరం +)",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Longitude (E +)",
+  "hi": "देशांतर (पूर्व +)",
+  "te": "రేఖాంశం (తూర్పు +)",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Ma",
+  "hi": "मं",
+  "te": "కు",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Make the Jatakam",
+  "hi": "कुंडली बनाएँ",
+  "te": "జాతకం వేయండి",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Mars (Mangal)",
+  "hi": "मंगल",
+  "te": "కుజుడు",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Me",
+  "hi": "बु",
+  "te": "బు",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Mercury (Budh)",
+  "hi": "बुध",
+  "te": "బుధుడు",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Mo",
+  "hi": "चं",
+  "te": "చం",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Moon (Chandra)",
+  "hi": "चंद्र",
+  "te": "చంద్రుడు",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Name (optional)",
+  "hi": "नाम (वैकल्पिक)",
+  "te": "పేరు (ఐచ్ఛికం)",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "North Indian",
+  "hi": "उत्तर भारतीय",
+  "te": "ఉత్తర భారత",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Place of birth",
+  "hi": "जन्म स्थान",
+  "te": "జన్మ స్థలం",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Positions are sidereal (Lahiri ayanamsa); Rahu is the mean node. The Sun, Moon and lagna are accurate to a fraction of a minute of arc, the slow planets to about a fifth of a degree.",
+  "hi": "स्थितियाँ निरयण (लाहिड़ी अयनांश) हैं; राहु मध्यम पात है। सूर्य, चंद्र और लग्न कला के अंश तक सटीक हैं, धीमे ग्रह लगभग 0.2 अंश तक।",
+  "te": "స్థానాలు నిరయన (లాహిరి అయనాంశ); రాహువు మధ్యమ పాతం. సూర్యుడు, చంద్రుడు, లగ్నం కళలో భాగం వరకు ఖచ్చితం, నెమ్మదిగా కదిలే గ్రహాలు సుమారు 0.2 డిగ్రీ వరకు.",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Ra",
+  "hi": "रा",
+  "te": "రా",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Rahu",
+  "hi": "राहु",
+  "te": "రాహువు",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Rashi",
+  "hi": "राशि",
+  "te": "రాశి",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Rashi (Moon sign)",
+  "hi": "राशि (चंद्र राशि)",
+  "te": "రాశి (చంద్ర రాశి)",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Sa",
+  "hi": "श",
+  "te": "శ",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Save for marriage matching",
+  "hi": "विवाह मिलान के लिए सहेजें",
+  "te": "వివాహ పొంతన కోసం దాచండి",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "South Indian",
+  "hi": "दक्षिण भारतीय",
+  "te": "దక్షిణ భారత",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Su",
+  "hi": "सू",
+  "te": "సూ",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Sun (Surya)",
+  "hi": "सूर्य",
+  "te": "సూర్యుడు",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "The Moon is at the edge of a nakshatra pada or rashi; a few minutes of birth time decide it.",
+  "hi": "चंद्रमा नक्षत्र पद या राशि की सीमा पर है; जन्म समय के कुछ मिनट इसका निर्णय करते हैं।",
+  "te": "చంద్రుడు నక్షత్ర పాదం లేదా రాశి సరిహద్దులో ఉన్నాడు; పుట్టిన సమయంలో కొన్ని నిమిషాలే దీన్ని నిర్ణయిస్తాయి.",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "The lagna changes sign if the birth time is off by about {0} minutes. Check the time of birth.",
+  "hi": "जन्म समय लगभग {0} मिनट आगे-पीछे होने पर लग्न बदल जाएगा। जन्म समय जाँच लें।",
+  "te": "పుట్టిన సమయం సుమారు {0} నిమిషాలు అటూ ఇటూ అయితే లగ్నం మారుతుంది. సమయం సరిచూసుకోండి.",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Time",
+  "hi": "समय",
+  "te": "సమయం",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "UTC offset",
+  "hi": "UTC अंतर",
+  "te": "UTC తేడా",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Use as my birth star and rashi",
+  "hi": "इसे मेरा जन्म नक्षत्र और राशि बनाएँ",
+  "te": "దీన్ని నా జన్మ నక్షత్రం, రాశిగా ఉంచండి",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Ve",
+  "hi": "शु",
+  "te": "శు",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "Venus (Shukra)",
+  "hi": "शुक्र",
+  "te": "శుక్రుడు",
+  "where": "lib/features/jatakam.dart"
+ },
+ {
+  "en": "pada",
+  "hi": "पद",
+  "te": "పాదం",
+  "where": "lib/features/jatakam.dart"
  },
  {
   "en": "No downloads",
@@ -4647,6 +5355,12 @@
   "en": "Friendship between the lords of the Moon signs",
   "hi": "दोनों राशियों के स्वामियों की मित्रता",
   "te": "రాశ్యాధిపతుల మధ్య స్నేహం",
+  "where": "lib/features/matching.dart"
+ },
+ {
+  "en": "From a saved Jatakam",
+  "hi": "सहेजी कुंडली से",
+  "te": "దాచిన జాతకం నుండి",
   "where": "lib/features/matching.dart"
  },
  {
@@ -4893,12 +5607,6 @@
   "en": "Rakshasa",
   "hi": "राक्षस",
   "te": "రాక్షస",
-  "where": "lib/features/matching.dart"
- },
- {
-  "en": "Rashi (Moon sign)",
-  "hi": "राशि (चंद्र राशि)",
-  "te": "రాశి (చంద్ర రాశి)",
   "where": "lib/features/matching.dart"
  },
  {
@@ -5211,12 +5919,6 @@
   "en": "Coming up",
   "hi": "आने वाला",
   "te": "రాబోయేది",
-  "where": "lib/features/my_events.dart"
- },
- {
-  "en": "Date",
-  "hi": "तारीख",
-  "te": "తేదీ",
   "where": "lib/features/my_events.dart"
  },
  {
@@ -5682,6 +6384,18 @@
   "where": "lib/features/pooja.dart"
  },
  {
+  "en": "Counted from the Moon sign (Chandra rashi) with the real positions of the Moon, Sun, Jupiter and Saturn. For reflection and inspiration, not prediction.",
+  "hi": "चंद्र राशि से गिना गया, चंद्र, सूर्य, गुरु और शनि की वास्तविक स्थितियों से। चिंतन और प्रेरणा हेतु, भविष्यवाणी नहीं।",
+  "te": "చంద్ర రాశి నుండి లెక్కించినది, చంద్రుడు, సూర్యుడు, గురువు, శని అసలు స్థానాలతో. ఆలోచనకు, ప్రేరణకు మాత్రమే, జోస్యం కాదు.",
+  "where": "lib/features/rashi_phalalu.dart"
+ },
+ {
+  "en": "Make this my rashi",
+  "hi": "इसे मेरी राशि बनाएँ",
+  "te": "ఇది నా రాశి",
+  "where": "lib/features/rashi_phalalu.dart"
+ },
+ {
   "en": "Health",
   "hi": "स्वास्थ्य",
   "te": "ఆరోగ్యం",
@@ -5700,9 +6414,9 @@
   "where": "lib/features/rashifal.dart"
  },
  {
-  "en": "Make this my rashi",
-  "hi": "इसे मेरी राशि बनाएँ",
-  "te": "ఇది నా రాశి",
+  "en": "Monthly",
+  "hi": "मासिक",
+  "te": "మాసఫలం",
   "where": "lib/features/rashifal.dart"
  },
  {
@@ -5715,6 +6429,12 @@
   "en": "Upay",
   "hi": "उपाय",
   "te": "పరిహారం",
+  "where": "lib/features/rashifal.dart"
+ },
+ {
+  "en": "Weekly",
+  "hi": "साप्ताहिक",
+  "te": "వారఫలం",
   "where": "lib/features/rashifal.dart"
  },
  {
@@ -5926,6 +6646,42 @@
   "hi": "तिथि, नक्षत्र, राहु काल व त्योहार,",
   "te": "తిథి, నక్షత్రం, రాహు కాలం, పండుగలు",
   "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Best lagna",
+  "hi": "श्रेष्ठ लग्न",
+  "te": "శ్రేష్ఠ లగ్నం",
+  "where": "lib/features/shubha_muhurtham.dart"
+ },
+ {
+  "en": "Magha, Phalguna, Vaishakha, Jyeshtha (or Kartika, Margashirsha); fixed and gentle nakshatras; good tithi and weekday; Guru and Shukra not combust. Rahu Kalam is left out.",
+  "hi": "माघ, फाल्गुन, वैशाख, ज्येष्ठ (या कार्तिक, मार्गशीर्ष); स्थिर और मृदु नक्षत्र; शुभ तिथि और वार; गुरु-शुक्र अस्त नहीं। राहु काल छोड़ा गया है।",
+  "te": "మాఘం, ఫాల్గుణం, వైశాఖం, జ్యేష్ఠం (లేదా కార్తీకం, మార్గశిరం); స్థిర, మృదు నక్షత్రాలు; మంచి తిథి, వారం; గురు-శుక్ర మౌఢ్యమి లేకుండా. రాహుకాలం తీసివేశాం.",
+  "where": "lib/features/shubha_muhurtham.dart"
+ },
+ {
+  "en": "Movable, gentle and light nakshatras; good tithi and weekday; not in Pitru Paksha or Adhika masa. Rahu Kalam is left out.",
+  "hi": "चर, मृदु और लघु नक्षत्र; शुभ तिथि और वार; पितृ पक्ष और अधिक मास नहीं। राहु काल छोड़ा गया है।",
+  "te": "చర, మృదు, లఘు నక్షత్రాలు; మంచి తిథి, వారం; పితృ పక్షం, అధిక మాసం కాకుండా. రాహుకాలం తీసివేశాం.",
+  "where": "lib/features/shubha_muhurtham.dart"
+ },
+ {
+  "en": "No dates in this period",
+  "hi": "इस अवधि में कोई तिथि नहीं",
+  "te": "ఈ కాలంలో తేదీలు లేవు",
+  "where": "lib/features/shubha_muhurtham.dart"
+ },
+ {
+  "en": "Sun in a marriage month, outside Chaturmas and Adhika masa, Guru and Shukra not combust; one of the 11 marriage nakshatras without a bad yoga or karana. Rahu Kalam is left out.",
+  "hi": "विवाह योग्य सौर मास, चातुर्मास और अधिक मास के बाहर, गुरु-शुक्र अस्त नहीं; 11 विवाह नक्षत्रों में से एक, अशुभ योग या करण नहीं। राहु काल छोड़ा गया है।",
+  "te": "వివాహానికి తగిన సౌర మాసం, చాతుర్మాసం, అధిక మాసం కాకుండా, గురు-శుక్ర మౌఢ్యమి లేకుండా; 11 వివాహ నక్షత్రాల్లో ఒకటి, చెడు యోగం లేదా కరణం లేకుండా. రాహుకాలం తీసివేశాం.",
+  "where": "lib/features/shubha_muhurtham.dart"
+ },
+ {
+  "en": "These dates pass Panchang Shuddhi. Ask your family priest to match them with the horoscopes (Tarabalam, Chandrabalam) and fix the exact lagna.",
+  "hi": "ये तिथियाँ पंचांग शुद्धि पर खरी हैं। कुंडलियों से मिलान (ताराबल, चंद्रबल) और सटीक लग्न के लिए अपने पुरोहित से पूछें।",
+  "te": "ఈ తేదీలు పంచాంగ శుద్ధిలో సరిపోయినవి. జాతకాలతో సరిపోల్చడానికి (తారాబలం, చంద్రబలం), ఖచ్చితమైన లగ్నం నిర్ణయించడానికి మీ పురోహితుడిని అడగండి.",
+  "where": "lib/features/shubha_muhurtham.dart"
  },
  {
   "en": "Both",

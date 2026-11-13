@@ -3,11 +3,13 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:share_plus/share_plus.dart';
 
+import '../core/gochara.dart';
 import '../core/i18n.dart';
 import '../core/providers.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
 import '../widgets/common.dart';
+import 'rashi_phalalu.dart';
 
 class RashifalScreen extends ConsumerWidget {
   const RashifalScreen({super.key});
@@ -16,57 +18,80 @@ class RashifalScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final data = ref.watch(rashifalProvider);
     final mine = ref.watch(prefsProvider).rashi;
-    return Scaffold(
-      appBar: AppBar(title: Text(tr(ref, 'rashifal'))),
-      body: data.when(
-        loading: () => const LoadingList(height: 90),
-        error: (e, _) => ErrorRetry(error: e, onRetry: () => ref.invalidate(rashifalProvider)),
-        data: (list) {
-          final ordered = [...list.where((r) => r['rashi'] == mine), ...list.where((r) => r['rashi'] != mine)];
-          return GridView.builder(
-            padding: const EdgeInsets.all(16),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
-              mainAxisSpacing: 12,
-              crossAxisSpacing: 12,
-              childAspectRatio: 0.82,
-            ),
-            itemCount: ordered.length,
-            itemBuilder: (_, i) {
-              final r = ordered[i];
-              final isMine = r['rashi'] == mine;
-              return GradientCard(
-                colors: isMine
-                    ? Palette.sunrise
-                    : (i.isEven ? Palette.dusk : const [Color(0xFF283593), Color(0xFF4A148C)]),
-                padding: 10,
-                onTap: () => _open(context, ref, r),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('${r['symbol']}', style: const TextStyle(fontSize: 34, color: Colors.white)),
-                    const SizedBox(height: 4),
+    final daily = data.when(
+      loading: () => const LoadingList(height: 90),
+      error: (e, _) => ErrorRetry(error: e, onRetry: () => ref.invalidate(rashifalProvider)),
+      data: (list) {
+        final ordered = [...list.where((r) => r['rashi'] == mine), ...list.where((r) => r['rashi'] != mine)];
+        return GridView.builder(
+          padding: const EdgeInsets.all(16),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+            mainAxisSpacing: 12,
+            crossAxisSpacing: 12,
+            childAspectRatio: 0.82,
+          ),
+          itemCount: ordered.length,
+          itemBuilder: (_, i) {
+            final r = ordered[i];
+            final isMine = r['rashi'] == mine;
+            return GradientCard(
+              colors: isMine
+                  ? Palette.sunrise
+                  : (i.isEven ? Palette.dusk : const [Color(0xFF283593), Color(0xFF4A148C)]),
+              padding: 10,
+              onTap: () => _open(context, ref, r),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('${r['symbol']}', style: const TextStyle(fontSize: 34, color: Colors.white)),
+                  const SizedBox(height: 4),
+                  Text(
+                    '${r['name']}',
+                    style: const TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.w700),
+                  ),
+                  Text('${r['name_en']}', style: const TextStyle(color: Colors.white70, fontSize: 12)),
+                  const SizedBox(height: 4),
+                  Text(
+                    '★' * (r['rating'] as int) + '☆' * (5 - (r['rating'] as int)),
+                    style: const TextStyle(color: Palette.gold, fontSize: 13),
+                  ),
+                  if (isMine)
                     Text(
-                      '${r['name']}',
-                      style: const TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.w700),
+                      t3(appLang, 'Your rashi', 'आपकी राशि', 'మీ రాశి'),
+                      style: TextStyle(color: Colors.white, fontSize: 11),
                     ),
-                    Text('${r['name_en']}', style: const TextStyle(color: Colors.white70, fontSize: 12)),
-                    const SizedBox(height: 4),
-                    Text(
-                      '★' * (r['rating'] as int) + '☆' * (5 - (r['rating'] as int)),
-                      style: const TextStyle(color: Palette.gold, fontSize: 13),
-                    ),
-                    if (isMine)
-                      Text(
-                        t3(appLang, 'Your rashi', 'आपकी राशि', 'మీ రాశి'),
-                        style: TextStyle(color: Colors.white, fontSize: 11),
-                      ),
-                  ],
-                ),
-              ).animate().fadeIn(delay: (35 * i).ms).scale(begin: const Offset(0.9, 0.9));
-            },
-          );
-        },
+                ],
+              ),
+            ).animate().fadeIn(delay: (35 * i).ms).scale(begin: const Offset(0.9, 0.9));
+          },
+        );
+      },
+    );
+    // Daily readings come from the server; weekly, monthly and yearly ones are written on the phone.
+    return DefaultTabController(
+      length: 4,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(tr(ref, 'rashifal')),
+          bottom: TabBar(
+            isScrollable: true,
+            tabs: [
+              Tab(text: l3(ref, 'Today', 'आज', 'ఈ రోజు')),
+              Tab(text: l3(ref, 'Weekly', 'साप्ताहिक', 'వారఫలం')),
+              Tab(text: l3(ref, 'Monthly', 'मासिक', 'మాసఫలం')),
+              Tab(text: l3(ref, 'Yearly', 'वार्षिक', 'వార్షిక ఫలం')),
+            ],
+          ),
+        ),
+        body: TabBarView(
+          children: [
+            daily,
+            const PeriodRashifal(period: Period.week),
+            const PeriodRashifal(period: Period.month),
+            const PeriodRashifal(period: Period.year),
+          ],
+        ),
       ),
     );
   }
