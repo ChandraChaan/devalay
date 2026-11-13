@@ -18,8 +18,11 @@
     and your synced favourites.</li>
   <li><strong>Device identifier for guests:</strong> a random ID created by the app, stored only as a keyed hash, used
     to apply daily limits to AI features.</li>
-  <li><strong>Location (optional):</strong> if you allow it, the app sends coarse coordinates (rounded to about 10 km)
-    to compute sunrise and Panchang timings. They are not stored.</li>
+  <li><strong>Location (optional):</strong> "Use my location" asks Android for your approximate location only when
+    you tap it. The phone picks the nearest city itself; the coordinates are not sent anywhere or kept. The app then
+    downloads that city's Panchang, so the request names the city, just as when you pick a city by hand. Requests are
+    not logged against you. Where the app uses its own backend instead, it sends coarse coordinates (rounded to about
+    10 km) to compute sunrise and Panchang timings; they are not stored.</li>
   <li><strong>Purchases:</strong> if you subscribe, Google Play handles payment. We store a hashed purchase token,
     product and expiry to unlock Premium. We never see card or UPI details.</li>
   <li><strong>Usage counters:</strong> anonymous play and download counts per item, not linked to you.</li>
@@ -65,6 +68,15 @@ of you. When AI is not enabled, everything is generated on our server without th
 <h2>On your device</h2>
 <p>Favourites, downloads, settings, japa counts and Mandir preferences are stored locally. Downloads stay in the app's
 private storage and are removed if you uninstall the app.</p>
+<ul>
+  <li>Your birth star and rashi, the days in My events, birth details you enter for a Jatakam and your pooja samagri
+    checklists stay on your phone. Marriage matching and the Jatakam are worked out on the phone.</li>
+  <li><strong>Contacts (optional):</strong> "Import birthdays from contacts" asks for Android's Contacts permission
+    when you tap it, then reads only names with a birthday or anniversary, on the phone. Only the dates you choose are
+    saved in the app. Nothing from your contacts is uploaded. You can turn the permission off in Android settings.</li>
+  <li>Backup files and calendar (.ics) exports are made on your phone and go only where you save or share them.</li>
+  <li>"Read aloud" uses your phone's own text-to-speech voice.</li>
+</ul>
 
 <h2>Retention and deletion</h2>
 <p>Account data is kept until you delete your account (Profile → Delete account), which permanently removes it.
