@@ -114,7 +114,7 @@ class Eclipse {
     if (!visible) {
       return t3(lang, 'Not visible here. No Sutak.', 'यहाँ दिखाई नहीं देगा। सूतक नहीं।', 'ఇక్కడ కనిపించదు. సూతకం లేదు.');
     }
-    final span = '${clock(lang, visibleFrom!)} – ${clock(lang, visibleTo!)}';
+    final span = '${hourMinute(lang, visibleFrom!)} – ${hourMinute(lang, visibleTo!)}';
     if (sutakStart == null) {
       return t3(
         lang,
@@ -133,11 +133,11 @@ class Eclipse {
 }
 
 /// "6:20 AM" in English, 24-hour elsewhere (as Indian-language calendars print it).
-String clock(String lang, DateTime t) => fmtDate(lang, lang == 'en' ? 'h:mm a' : 'HH:mm', t);
+String hourMinute(String lang, DateTime t) => fmtDate(lang, lang == 'en' ? 'h:mm a' : 'HH:mm', t);
 
-/// [clock], with the date when it falls on another day than [day].
+/// [hourMinute], with the date when it falls on another day than [day].
 String dayClock(String lang, DateTime t, DateTime day) =>
-    DateUtils.isSameDay(t, day) ? clock(lang, t) : '${fmtDate(lang, 'd MMM', t)}, ${clock(lang, t)}';
+    DateUtils.isSameDay(t, day) ? hourMinute(lang, t) : '${fmtDate(lang, 'd MMM', t)}, ${hourMinute(lang, t)}';
 
 final eclipsesProvider = FutureProvider<List<Eclipse>>((ref) async {
   final city = ref.watch(cityProvider);
