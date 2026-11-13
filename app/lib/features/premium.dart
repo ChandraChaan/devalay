@@ -46,10 +46,20 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
       final r = await _iap.queryProductDetails(AppConfig.premiumProductIds);
       _products = r.productDetails..sort((a, b) => a.rawPrice.compareTo(b.rawPrice));
       if (r.notFoundIDs.isNotEmpty && _products.isEmpty) {
-        _note = 'Subscriptions are not yet published on Google Play for this build.';
+        _note = t3(
+          appLang,
+          'Subscriptions are not yet published on Google Play for this build.',
+          'इस संस्करण के लिए सदस्यताएँ अभी Google Play पर उपलब्ध नहीं हैं।',
+          'ఈ వెర్షన్‌కు సబ్‌స్క్రిప్షన్లు ఇంకా Google Playలో అందుబాటులో లేవు.',
+        );
       }
     } else {
-      _note = 'Google Play billing is not available on this device.';
+      _note = t3(
+        appLang,
+        'Google Play billing is not available on this device.',
+        'इस फ़ोन पर Google Play से भुगतान उपलब्ध नहीं है।',
+        'ఈ ఫోన్‌లో Google Play బిల్లింగ్ అందుబాటులో లేదు.',
+      );
     }
     if (mounted) setState(() => _loading = false);
   }
@@ -57,11 +67,20 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
   Future<void> _onPurchases(List<PurchaseDetails> purchases) async {
     for (final p in purchases) {
       if (p.status == PurchaseStatus.pending) {
-        setState(() => _note = 'Payment pending. Premium unlocks once Google Play confirms.');
+        setState(
+          () => _note = t3(
+            appLang,
+            'Payment pending. Premium unlocks once Google Play confirms.',
+            'भुगतान बाकी है। Google Play की पुष्टि होते ही प्रीमियम खुल जाएगा।',
+            'చెల్లింపు పెండింగ్‌లో ఉంది. Google Play నిర్ధారించగానే ప్రీమియం మొదలవుతుంది.',
+          ),
+        );
         continue;
       }
       if (p.status == PurchaseStatus.error) {
-        setState(() => _note = p.error?.message ?? 'Purchase failed');
+        setState(
+          () => _note = p.error?.message ?? t3(appLang, 'Purchase failed', 'खरीद नहीं हो सकी', 'కొనుగోలు విఫలమైంది'),
+        );
       }
       if (p.status == PurchaseStatus.purchased || p.status == PurchaseStatus.restored) {
         try {
@@ -72,7 +91,17 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
                 data: {'product_id': p.productID, 'purchase_token': p.verificationData.serverVerificationData},
               );
           await ref.read(authProvider.notifier).refreshProfile();
-          if (mounted) toast(context, 'Premium unlocked. Thank you for supporting Devalay 🙏');
+          if (mounted) {
+            toast(
+              context,
+              t3(
+                appLang,
+                'Premium unlocked. Thank you for supporting Devalay 🙏',
+                'प्रीमियम शुरू हो गया। देवालय का साथ देने के लिए धन्यवाद 🙏',
+                'ప్రీమియం మొదలైంది. దేవాలయంకు అండగా నిలిచినందుకు ధన్యవాదాలు 🙏',
+              ),
+            );
+          }
         } on ApiException catch (e) {
           setState(() => _note = e.message);
         }
@@ -84,7 +113,15 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
 
   Future<void> _buy(ProductDetails product) async {
     if (!ref.read(authProvider).signedIn) {
-      toast(context, 'Please sign in first so Premium is linked to your account.');
+      toast(
+        context,
+        t3(
+          appLang,
+          'Please sign in first so Premium is linked to your account.',
+          'पहले साइन इन करें, ताकि प्रीमियम आपके खाते से जुड़ जाए।',
+          'ముందుగా సైన్ ఇన్ చేయండి, అప్పుడు ప్రీమియం మీ ఖాతాకు జతవుతుంది.',
+        ),
+      );
       context.push('/login');
       return;
     }
@@ -103,11 +140,29 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
     final auth = ref.watch(authProvider);
     final benefits =
         (_plans?['benefits'] as List?)?.cast<String>() ??
-        const [
-          'Unlimited offline downloads',
-          '100 AI status and Gita answers a day',
-          'Support an ad-free devotional app',
+        [
+          l3(ref, 'Unlimited offline downloads', 'असीमित ऑफ़लाइन डाउनलोड', 'అపరిమిత ఆఫ్‌లైన్ డౌన్‌లోడ్లు'),
+          l3(
+            ref,
+            '100 AI status and Gita answers a day',
+            'रोज़ 100 AI स्टेटस और गीता के उत्तर',
+            'రోజుకు 100 AI స్టేటస్‌లు, గీతా సమాధానాలు',
+          ),
+          l3(
+            ref,
+            'Support an ad-free devotional app',
+            'विज्ञापन-मुक्त भक्ति ऐप का साथ दें',
+            'ప్రకటనలు లేని భక్తి యాప్‌కు అండగా నిలవండి',
+          ),
         ];
+    final terms =
+        _plans?['terms'] ??
+        l3(
+          ref,
+          'Billed by Google Play. Cancel anytime in Play Store > Subscriptions.',
+          'भुगतान Google Play से होता है। Play Store > Subscriptions में जाकर कभी भी रद्द करें।',
+          'చెల్లింపు Google Play ద్వారా జరుగుతుంది. Play Store > Subscriptionsలో ఎప్పుడైనా రద్దు చేయవచ్చు.',
+        );
     return Scaffold(
       appBar: AppBar(title: Text(tr(ref, 'premium'))),
       body: ListView(
@@ -119,15 +174,24 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
               children: [
                 const Text('👑', style: TextStyle(fontSize: 48)),
                 Text(
-                  auth.isPremium ? 'You are Premium' : 'Devalay Premium',
+                  auth.isPremium
+                      ? l3(ref, 'You are Premium', 'आप प्रीमियम सदस्य हैं', 'మీరు ప్రీమియం సభ్యులు')
+                      : l3(ref, 'Devalay Premium', 'देवालय प्रीमियम', 'దేవాలయం ప్రీమియం'),
                   style: const TextStyle(color: Colors.white, fontSize: 26, fontWeight: FontWeight.w700),
                 ),
                 const SizedBox(height: 6),
-                const Text(
-                  'Every aarti, mantra, scripture, Panchang and the Mandir are free forever. '
-                  'Premium adds conveniences and keeps the app ad-free.',
+                Text(
+                  l3(
+                    ref,
+                    'Every aarti, mantra, scripture, Panchang and the Mandir are free forever. '
+                        'Premium adds conveniences and keeps the app ad-free.',
+                    'हर आरती, मंत्र, शास्त्र, पंचांग और मंदिर हमेशा मुफ़्त हैं। '
+                        'प्रीमियम कुछ सुविधाएँ जोड़ता है और ऐप को विज्ञापन-मुक्त रखता है।',
+                    'ప్రతి హారతి, మంత్రం, గ్రంథం, పంచాంగం, మందిరం ఎప్పటికీ ఉచితమే. '
+                        'ప్రీమియం కొన్ని సౌకర్యాలు జోడిస్తుంది, యాప్‌ను ప్రకటనలు లేకుండా ఉంచుతుంది.',
+                  ),
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
               ],
             ),
@@ -163,7 +227,14 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
                   margin: const EdgeInsets.only(bottom: 10),
                   child: ListTile(
                     title: Text('${plan['title']}'),
-                    subtitle: Text('${plan['display_price_hint']} (indicative)'),
+                    subtitle: Text(
+                      l3(
+                        ref,
+                        '${plan['display_price_hint']} (indicative)',
+                        '${plan['display_price_hint']} (अनुमानित)',
+                        '${plan['display_price_hint']} (సుమారుగా)',
+                      ),
+                    ),
                   ),
                 ),
             if (_note != null)
@@ -173,15 +244,11 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
               ),
             TextButton(
               onPressed: _storeAvailable ? () => _iap.restorePurchases() : null,
-              child: const Text('Restore purchases'),
+              child: Text(l3(ref, 'Restore purchases', 'खरीदारी वापस लाएँ', 'కొనుగోళ్లను పునరుద్ధరించండి')),
             ),
           ],
           const SizedBox(height: 8),
-          Text(
-            '${_plans?['terms'] ?? 'Billed by Google Play. Cancel anytime in Play Store > Subscriptions.'}',
-            textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.bodySmall,
-          ),
+          Text('$terms', textAlign: TextAlign.center, style: Theme.of(context).textTheme.bodySmall),
         ],
       ),
     );

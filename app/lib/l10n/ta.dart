@@ -1185,4 +1185,56 @@ const stringsTa = <String, String>{
       'இனி உங்கள் ரிங்டோனில் இறைவன். அசல் கோயில் மணிகள், சங்கு, புல்லாங்குழல், இலவசமாக.',
   'Public-domain mythological films by Dadasaheb Phalke, the father of Indian cinema.':
       'இந்திய சினிமாவின் தந்தை தாதாசாகேப் பால்கேயின் பொதுக் கள புராணத் திரைப்படங்கள்.',
+  // Sign-in, Premium and account deletion.
+  'If the account exists, a 6-digit code was emailed.':
+      'இந்தக் கணக்கு இருந்தால், 6 இலக்கக் குறியீடு மின்னஞ்சலில் அனுப்பப்பட்டுள்ளது.',
+  'Password updated. Please sign in.': 'கடவுச்சொல் மாற்றப்பட்டது. மீண்டும் உள்நுழையுங்கள்.',
+  'Welcome 🙏': 'வணக்கம் 🙏',
+  'Sign in': 'உள்நுழை',
+  'Create account': 'கணக்கு உருவாக்கு',
+  'Forgot password': 'கடவுச்சொல் மறந்துவிட்டது',
+  'Set a new password': 'புதிய கடவுச்சொல் அமைக்கவும்',
+  'An account is optional. It only syncs favourites and Premium across devices.':
+      'கணக்கு கட்டாயமில்லை. பிடித்தவை, பிரீமியம் ஆகியவற்றை எல்லா சாதனங்களிலும் ஒத்திசைக்க மட்டுமே அது உதவும்.',
+  'Email': 'மின்னஞ்சல்',
+  'Enter a valid email': 'சரியான மின்னஞ்சலை உள்ளிடவும்',
+  '6-digit code': '6 இலக்கக் குறியீடு',
+  'Enter the 6-digit code': '6 இலக்கக் குறியீட்டை உள்ளிடவும்',
+  'New password': 'புதிய கடவுச்சொல்',
+  'Password': 'கடவுச்சொல்',
+  'Enter your password': 'உங்கள் கடவுச்சொல்லை உள்ளிடவும்',
+  'At least 8 characters': 'குறைந்தது 8 எழுத்துகள்',
+  'New here? Create an account': 'புதியவரா? கணக்கு உருவாக்குங்கள்',
+  'Forgot password?': 'கடவுச்சொல் மறந்துவிட்டதா?',
+  'Back to sign in': 'உள்நுழைவுக்குத் திரும்பு',
+  'Subscriptions are not yet published on Google Play for this build.':
+      'இந்தப் பதிப்புக்கான சந்தாக்கள் இன்னும் Google Play-இல் வெளியிடப்படவில்லை.',
+  'Google Play billing is not available on this device.': 'இந்தப் போனில் Google Play கட்டண வசதி இல்லை.',
+  'Payment pending. Premium unlocks once Google Play confirms.':
+      'கட்டணம் நிலுவையில் உள்ளது. Google Play உறுதிசெய்ததும் பிரீமியம் தொடங்கும்.',
+  'Purchase failed': 'வாங்க முடியவில்லை',
+  'Premium unlocked. Thank you for supporting Devalay 🙏':
+      'பிரீமியம் தொடங்கியது. Devalay-க்கு ஆதரவு தந்ததற்கு நன்றி 🙏',
+  'Please sign in first so Premium is linked to your account.':
+      'பிரீமியம் உங்கள் கணக்குடன் இணைய, முதலில் உள்நுழையுங்கள்.',
+  'Unlimited offline downloads': 'வரம்பற்ற ஆஃப்லைன் பதிவிறக்கங்கள்',
+  '100 AI status and Gita answers a day': 'நாளொன்றுக்கு 100 AI ஸ்டேட்டஸ் மற்றும் கீதை பதில்கள்',
+  'Support an ad-free devotional app': 'விளம்பரமில்லாத பக்தி ஆப்பை ஆதரியுங்கள்',
+  'You are Premium': 'நீங்கள் பிரீமியம் உறுப்பினர்',
+  'Devalay Premium': 'Devalay பிரீமியம்',
+  'Every aarti, mantra, scripture, Panchang and the Mandir are free forever. Premium adds conveniences and keeps the app ad-free.':
+      'ஒவ்வொரு ஆரத்தி, மந்திரம், புனித நூல், பஞ்சாங்கம், கோயில் அனைத்தும் என்றும் இலவசம். பிரீமியம் சில வசதிகளைச் சேர்த்து, ஆப்பை விளம்பரமில்லாமல் வைத்திருக்கும்.',
+  '{0} (indicative)': '{0} (தோராயமாக)',
+  'Restore purchases': 'வாங்கியவற்றை மீட்டெடு',
+  'Billed by Google Play. Cancel anytime in Play Store > Subscriptions.':
+      'கட்டணம் Google Play மூலம். Play Store > Subscriptions-இல் எப்போது வேண்டுமானாலும் ரத்து செய்யலாம்.',
+  'Permanently removes your account and synced data': 'உங்கள் கணக்கையும் ஒத்திசைத்த தரவையும் நிரந்தரமாக நீக்கும்',
+  'Optional: sync favourites and Premium across devices':
+      'விருப்பம்: பிடித்தவை, பிரீமியத்தை எல்லா சாதனங்களிலும் ஒத்திசைக்கலாம்',
+  'Premium until {0}': '{0} வரை பிரீமியம்',
+  'Free plan': 'இலவசத் திட்டம்',
+  'Delete account?': 'கணக்கை நீக்கவா?',
+  'This permanently deletes your account, synced favourites and subscription link. Content saved on this phone stays. Cancel any Play subscription in Google Play.':
+      'இது உங்கள் கணக்கு, ஒத்திசைத்த பிடித்தவை, சந்தா இணைப்பு ஆகியவற்றை நிரந்தரமாக நீக்கும். இந்தப் போனில் சேமித்தவை அப்படியே இருக்கும். Play சந்தா ஏதேனும் இருந்தால் Google Play-இல் ரத்து செய்யுங்கள்.',
+  'Account deleted': 'கணக்கு நீக்கப்பட்டது',
 };

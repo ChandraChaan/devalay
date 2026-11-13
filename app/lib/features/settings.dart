@@ -42,8 +42,13 @@ class SettingsScreen extends ConsumerWidget {
                 title: Text(auth.user!.email),
                 subtitle: Text(
                   auth.isPremium
-                      ? 'Premium until ${auth.user!.premiumUntil?.toLocal().toString().substring(0, 10)}'
-                      : 'Free plan',
+                      ? l3(
+                          ref,
+                          'Premium until ${auth.user!.premiumUntil?.toLocal().toString().substring(0, 10)}',
+                          '${auth.user!.premiumUntil?.toLocal().toString().substring(0, 10)} तक प्रीमियम',
+                          '${auth.user!.premiumUntil?.toLocal().toString().substring(0, 10)} వరకు ప్రీమియం',
+                        )
+                      : l3(ref, 'Free plan', 'मुफ़्त प्लान', 'ఉచిత ప్లాన్'),
                 ),
               ),
               ListTile(
@@ -57,7 +62,14 @@ class SettingsScreen extends ConsumerWidget {
                   t3(lang, 'Delete account', 'खाता हटाएँ', 'ఖాతా తొలగించండి'),
                   style: const TextStyle(color: Colors.red),
                 ),
-                subtitle: const Text('Permanently removes your account and synced data'),
+                subtitle: Text(
+                  l3(
+                    ref,
+                    'Permanently removes your account and synced data',
+                    'आपका खाता और सिंक किया गया डेटा हमेशा के लिए हटा देता है',
+                    'మీ ఖాతాను, సింక్ చేసిన డేటాను శాశ్వతంగా తొలగిస్తుంది',
+                  ),
+                ),
                 onTap: () => _deleteAccount(context, ref),
               ),
             ] else
@@ -66,7 +78,14 @@ class SettingsScreen extends ConsumerWidget {
                 title: Text(
                   t3(lang, 'Sign in / create account', 'साइन इन / खाता बनाएँ', 'సైన్ ఇన్ / ఖాతా సృష్టించండి'),
                 ),
-                subtitle: const Text('Optional: sync favourites and Premium across devices'),
+                subtitle: Text(
+                  l3(
+                    ref,
+                    'Optional: sync favourites and Premium across devices',
+                    'वैकल्पिक: पसंदीदा और प्रीमियम सभी डिवाइस पर सिंक करें',
+                    'ఐచ్ఛికం: ఇష్టమైనవి, ప్రీమియంను అన్ని పరికరాల్లో సింక్ చేయండి',
+                  ),
+                ),
                 onTap: () => context.push('/login'),
               ),
             ListTile(
@@ -279,31 +298,39 @@ class SettingsScreen extends ConsumerWidget {
 
   Future<void> _deleteAccount(BuildContext context, WidgetRef ref) async {
     final password = TextEditingController();
+    final lang = appLang;
     final ok = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: const Text('Delete account?'),
+        title: Text(t3(lang, 'Delete account?', 'खाता हटाएँ?', 'ఖాతా తొలగించాలా?')),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text(
-              'This permanently deletes your account, synced favourites and subscription link. '
-              'Content saved on this phone stays. Cancel any Play subscription in Google Play.',
+            Text(
+              t3(
+                lang,
+                'This permanently deletes your account, synced favourites and subscription link. '
+                    'Content saved on this phone stays. Cancel any Play subscription in Google Play.',
+                'इससे आपका खाता, सिंक किए गए पसंदीदा और सदस्यता का जुड़ाव हमेशा के लिए हट जाएगा। '
+                    'इस फ़ोन पर सहेजी गई सामग्री बनी रहेगी। Play की कोई भी सदस्यता Google Play में जाकर रद्द करें।',
+                'దీంతో మీ ఖాతా, సింక్ చేసిన ఇష్టమైనవి, సబ్‌స్క్రిప్షన్ లింక్ శాశ్వతంగా తొలగిపోతాయి. '
+                    'ఈ ఫోన్‌లో దాచినవి అలాగే ఉంటాయి. Play సబ్‌స్క్రిప్షన్ ఏదైనా ఉంటే Google Playలో రద్దు చేయండి.',
+              ),
             ),
             const SizedBox(height: 12),
             TextField(
               controller: password,
               obscureText: true,
-              decoration: const InputDecoration(hintText: 'Password'),
+              decoration: InputDecoration(hintText: t3(lang, 'Password', 'पासवर्ड', 'పాస్‌వర్డ్')),
             ),
           ],
         ),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(ctx, false), child: const Text('Cancel')),
+          TextButton(onPressed: () => Navigator.pop(ctx, false), child: Text(t3(lang, 'Cancel', 'रद्द करें', 'రద్దు'))),
           FilledButton(
             style: FilledButton.styleFrom(backgroundColor: Colors.red),
             onPressed: () => Navigator.pop(ctx, true),
-            child: const Text('Delete'),
+            child: Text(t3(lang, 'Delete', 'हटाएँ', 'తొలగించండి')),
           ),
         ],
       ),
@@ -311,7 +338,7 @@ class SettingsScreen extends ConsumerWidget {
     if (ok != true) return;
     try {
       await ref.read(authProvider.notifier).deleteAccount(password.text);
-      if (context.mounted) toast(context, 'Account deleted');
+      if (context.mounted) toast(context, t3(appLang, 'Account deleted', 'खाता हटा दिया गया', 'ఖాతా తొలగించాం'));
     } on ApiException catch (e) {
       if (context.mounted) toast(context, e.message);
     }

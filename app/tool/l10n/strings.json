@@ -3906,6 +3906,126 @@
   "where": "lib/features/ask_gita.dart"
  },
  {
+  "en": "6-digit code",
+  "hi": "6 अंकों का कोड",
+  "te": "6 అంకెల కోడ్",
+  "where": "lib/features/auth_screens.dart"
+ },
+ {
+  "en": "An account is optional. It only syncs favourites and Premium across devices.",
+  "hi": "खाता ज़रूरी नहीं है। यह सिर्फ़ पसंदीदा और प्रीमियम को आपके सभी डिवाइस पर सिंक करता है।",
+  "te": "ఖాతా తప్పనిసరి కాదు. ఇది ఇష్టమైనవి, ప్రీమియంను మీ అన్ని పరికరాల్లో సింక్ చేయడానికి మాత్రమే.",
+  "where": "lib/features/auth_screens.dart"
+ },
+ {
+  "en": "At least 8 characters",
+  "hi": "कम से कम 8 अक्षर",
+  "te": "కనీసం 8 అక్షరాలు",
+  "where": "lib/features/auth_screens.dart"
+ },
+ {
+  "en": "Back to sign in",
+  "hi": "साइन इन पर वापस जाएँ",
+  "te": "సైన్ ఇన్‌కు వెనక్కి",
+  "where": "lib/features/auth_screens.dart"
+ },
+ {
+  "en": "Create account",
+  "hi": "खाता बनाएँ",
+  "te": "ఖాతా సృష్టించండి",
+  "where": "lib/features/auth_screens.dart"
+ },
+ {
+  "en": "Email",
+  "hi": "ईमेल",
+  "te": "ఈమెయిల్",
+  "where": "lib/features/auth_screens.dart"
+ },
+ {
+  "en": "Enter a valid email",
+  "hi": "सही ईमेल डालें",
+  "te": "సరైన ఈమెయిల్ ఇవ్వండి",
+  "where": "lib/features/auth_screens.dart"
+ },
+ {
+  "en": "Enter the 6-digit code",
+  "hi": "6 अंकों का कोड डालें",
+  "te": "6 అంకెల కోడ్ ఇవ్వండి",
+  "where": "lib/features/auth_screens.dart"
+ },
+ {
+  "en": "Enter your password",
+  "hi": "अपना पासवर्ड डालें",
+  "te": "మీ పాస్‌వర్డ్ ఇవ్వండి",
+  "where": "lib/features/auth_screens.dart"
+ },
+ {
+  "en": "Forgot password",
+  "hi": "पासवर्ड भूल गए",
+  "te": "పాస్‌వర్డ్ మర్చిపోయారు",
+  "where": "lib/features/auth_screens.dart"
+ },
+ {
+  "en": "Forgot password?",
+  "hi": "पासवर्ड भूल गए?",
+  "te": "పాస్‌వర్డ్ మర్చిపోయారా?",
+  "where": "lib/features/auth_screens.dart"
+ },
+ {
+  "en": "If the account exists, a 6-digit code was emailed.",
+  "hi": "अगर यह खाता मौजूद है, तो 6 अंकों का कोड ईमेल कर दिया गया है।",
+  "te": "ఈ ఖాతా ఉంటే, 6 అంకెల కోడ్ ఈమెయిల్‌కు పంపాం.",
+  "where": "lib/features/auth_screens.dart"
+ },
+ {
+  "en": "Name (optional)",
+  "hi": "नाम (वैकल्पिक)",
+  "te": "పేరు (ఐచ్ఛికం)",
+  "where": "lib/features/auth_screens.dart"
+ },
+ {
+  "en": "New here? Create an account",
+  "hi": "नए हैं? खाता बनाएँ",
+  "te": "కొత్తగా వచ్చారా? ఖాతా సృష్టించండి",
+  "where": "lib/features/auth_screens.dart"
+ },
+ {
+  "en": "New password",
+  "hi": "नया पासवर्ड",
+  "te": "కొత్త పాస్‌వర్డ్",
+  "where": "lib/features/auth_screens.dart"
+ },
+ {
+  "en": "Password",
+  "hi": "पासवर्ड",
+  "te": "పాస్‌వర్డ్",
+  "where": "lib/features/auth_screens.dart"
+ },
+ {
+  "en": "Password updated. Please sign in.",
+  "hi": "पासवर्ड बदल गया। कृपया साइन इन करें।",
+  "te": "పాస్‌వర్డ్ మార్చాం. దయచేసి సైన్ ఇన్ చేయండి.",
+  "where": "lib/features/auth_screens.dart"
+ },
+ {
+  "en": "Set a new password",
+  "hi": "नया पासवर्ड बनाएँ",
+  "te": "కొత్త పాస్‌వర్డ్ పెట్టుకోండి",
+  "where": "lib/features/auth_screens.dart"
+ },
+ {
+  "en": "Sign in",
+  "hi": "साइन इन",
+  "te": "సైన్ ఇన్",
+  "where": "lib/features/auth_screens.dart"
+ },
+ {
+  "en": "Welcome 🙏",
+  "hi": "स्वागत है 🙏",
+  "te": "స్వాగతం 🙏",
+  "where": "lib/features/auth_screens.dart"
+ },
+ {
   "en": "Added {0} days",
   "hi": "{0} दिन जोड़े गए",
   "te": "{0} రోజులు చేర్చాం",
@@ -5013,12 +5133,6 @@
   "en": "Moon (Chandra)",
   "hi": "चंद्र",
   "te": "చంద్రుడు",
-  "where": "lib/features/jatakam.dart"
- },
- {
-  "en": "Name (optional)",
-  "hi": "नाम (वैकल्पिक)",
-  "te": "పేరు (ఐచ్ఛికం)",
   "where": "lib/features/jatakam.dart"
  },
  {
@@ -6396,6 +6510,96 @@
   "where": "lib/features/pooja.dart"
  },
  {
+  "en": "100 AI status and Gita answers a day",
+  "hi": "रोज़ 100 AI स्टेटस और गीता के उत्तर",
+  "te": "రోజుకు 100 AI స్టేటస్‌లు, గీతా సమాధానాలు",
+  "where": "lib/features/premium.dart"
+ },
+ {
+  "en": "Billed by Google Play. Cancel anytime in Play Store > Subscriptions.",
+  "hi": "भुगतान Google Play से होता है। Play Store > Subscriptions में जाकर कभी भी रद्द करें।",
+  "te": "చెల్లింపు Google Play ద్వారా జరుగుతుంది. Play Store > Subscriptionsలో ఎప్పుడైనా రద్దు చేయవచ్చు.",
+  "where": "lib/features/premium.dart"
+ },
+ {
+  "en": "Devalay Premium",
+  "hi": "देवालय प्रीमियम",
+  "te": "దేవాలయం ప్రీమియం",
+  "where": "lib/features/premium.dart"
+ },
+ {
+  "en": "Every aarti, mantra, scripture, Panchang and the Mandir are free forever. Premium adds conveniences and keeps the app ad-free.",
+  "hi": "हर आरती, मंत्र, शास्त्र, पंचांग और मंदिर हमेशा मुफ़्त हैं। प्रीमियम कुछ सुविधाएँ जोड़ता है और ऐप को विज्ञापन-मुक्त रखता है।",
+  "te": "ప్రతి హారతి, మంత్రం, గ్రంథం, పంచాంగం, మందిరం ఎప్పటికీ ఉచితమే. ప్రీమియం కొన్ని సౌకర్యాలు జోడిస్తుంది, యాప్‌ను ప్రకటనలు లేకుండా ఉంచుతుంది.",
+  "where": "lib/features/premium.dart"
+ },
+ {
+  "en": "Google Play billing is not available on this device.",
+  "hi": "इस फ़ोन पर Google Play से भुगतान उपलब्ध नहीं है।",
+  "te": "ఈ ఫోన్‌లో Google Play బిల్లింగ్ అందుబాటులో లేదు.",
+  "where": "lib/features/premium.dart"
+ },
+ {
+  "en": "Payment pending. Premium unlocks once Google Play confirms.",
+  "hi": "भुगतान बाकी है। Google Play की पुष्टि होते ही प्रीमियम खुल जाएगा।",
+  "te": "చెల్లింపు పెండింగ్‌లో ఉంది. Google Play నిర్ధారించగానే ప్రీమియం మొదలవుతుంది.",
+  "where": "lib/features/premium.dart"
+ },
+ {
+  "en": "Please sign in first so Premium is linked to your account.",
+  "hi": "पहले साइन इन करें, ताकि प्रीमियम आपके खाते से जुड़ जाए।",
+  "te": "ముందుగా సైన్ ఇన్ చేయండి, అప్పుడు ప్రీమియం మీ ఖాతాకు జతవుతుంది.",
+  "where": "lib/features/premium.dart"
+ },
+ {
+  "en": "Premium unlocked. Thank you for supporting Devalay 🙏",
+  "hi": "प्रीमियम शुरू हो गया। देवालय का साथ देने के लिए धन्यवाद 🙏",
+  "te": "ప్రీమియం మొదలైంది. దేవాలయంకు అండగా నిలిచినందుకు ధన్యవాదాలు 🙏",
+  "where": "lib/features/premium.dart"
+ },
+ {
+  "en": "Purchase failed",
+  "hi": "खरीद नहीं हो सकी",
+  "te": "కొనుగోలు విఫలమైంది",
+  "where": "lib/features/premium.dart"
+ },
+ {
+  "en": "Restore purchases",
+  "hi": "खरीदारी वापस लाएँ",
+  "te": "కొనుగోళ్లను పునరుద్ధరించండి",
+  "where": "lib/features/premium.dart"
+ },
+ {
+  "en": "Subscriptions are not yet published on Google Play for this build.",
+  "hi": "इस संस्करण के लिए सदस्यताएँ अभी Google Play पर उपलब्ध नहीं हैं।",
+  "te": "ఈ వెర్షన్‌కు సబ్‌స్క్రిప్షన్లు ఇంకా Google Playలో అందుబాటులో లేవు.",
+  "where": "lib/features/premium.dart"
+ },
+ {
+  "en": "Support an ad-free devotional app",
+  "hi": "विज्ञापन-मुक्त भक्ति ऐप का साथ दें",
+  "te": "ప్రకటనలు లేని భక్తి యాప్‌కు అండగా నిలవండి",
+  "where": "lib/features/premium.dart"
+ },
+ {
+  "en": "Unlimited offline downloads",
+  "hi": "असीमित ऑफ़लाइन डाउनलोड",
+  "te": "అపరిమిత ఆఫ్‌లైన్ డౌన్‌లోడ్లు",
+  "where": "lib/features/premium.dart"
+ },
+ {
+  "en": "You are Premium",
+  "hi": "आप प्रीमियम सदस्य हैं",
+  "te": "మీరు ప్రీమియం సభ్యులు",
+  "where": "lib/features/premium.dart"
+ },
+ {
+  "en": "{0} (indicative)",
+  "hi": "{0} (अनुमानित)",
+  "te": "{0} (సుమారుగా)",
+  "where": "lib/features/premium.dart"
+ },
+ {
   "en": "Counted from the Moon sign (Chandra rashi) with the real positions of the Moon, Sun, Jupiter and Saturn. For reflection and inspiration, not prediction.",
   "hi": "चंद्र राशि से गिना गया, चंद्र, सूर्य, गुरु और शनि की वास्तविक स्थितियों से। चिंतन और प्रेरणा हेतु, भविष्यवाणी नहीं।",
   "te": "చంద్ర రాశి నుండి లెక్కించినది, చంద్రుడు, సూర్యుడు, గురువు, శని అసలు స్థానాలతో. ఆలోచనకు, ప్రేరణకు మాత్రమే, జోస్యం కాదు.",
@@ -6528,6 +6732,12 @@
   "where": "lib/features/settings.dart"
  },
  {
+  "en": "Account deleted",
+  "hi": "खाता हटा दिया गया",
+  "te": "ఖాతా తొలగించాం",
+  "where": "lib/features/settings.dart"
+ },
+ {
   "en": "App colour",
   "hi": "ऐप का रंग",
   "te": "యాప్ రంగు",
@@ -6582,6 +6792,18 @@
   "where": "lib/features/settings.dart"
  },
  {
+  "en": "Delete account?",
+  "hi": "खाता हटाएँ?",
+  "te": "ఖాతా తొలగించాలా?",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Free plan",
+  "hi": "मुफ़्त प्लान",
+  "te": "ఉచిత ప్లాన్",
+  "where": "lib/features/settings.dart"
+ },
+ {
   "en": "Language",
   "hi": "भाषा",
   "te": "భాష",
@@ -6606,15 +6828,33 @@
   "where": "lib/features/settings.dart"
  },
  {
+  "en": "Optional: sync favourites and Premium across devices",
+  "hi": "वैकल्पिक: पसंदीदा और प्रीमियम सभी डिवाइस पर सिंक करें",
+  "te": "ఐచ్ఛికం: ఇష్టమైనవి, ప్రీమియంను అన్ని పరికరాల్లో సింక్ చేయండి",
+  "where": "lib/features/settings.dart"
+ },
+ {
   "en": "Panchang city",
   "hi": "पंचांग शहर",
   "te": "పంచాంగం నగరం",
   "where": "lib/features/settings.dart"
  },
  {
+  "en": "Permanently removes your account and synced data",
+  "hi": "आपका खाता और सिंक किया गया डेटा हमेशा के लिए हटा देता है",
+  "te": "మీ ఖాతాను, సింక్ చేసిన డేటాను శాశ్వతంగా తొలగిస్తుంది",
+  "where": "lib/features/settings.dart"
+ },
+ {
   "en": "Preferences",
   "hi": "पसंद",
   "te": "ప్రాధాన్యతలు",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Premium until {0}",
+  "hi": "{0} तक प्रीमियम",
+  "te": "{0} వరకు ప్రీమియం",
   "where": "lib/features/settings.dart"
  },
  {
@@ -6657,6 +6897,12 @@
   "en": "Theme",
   "hi": "थीम",
   "te": "థీమ్",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "This permanently deletes your account, synced favourites and subscription link. Content saved on this phone stays. Cancel any Play subscription in Google Play.",
+  "hi": "इससे आपका खाता, सिंक किए गए पसंदीदा और सदस्यता का जुड़ाव हमेशा के लिए हट जाएगा। इस फ़ोन पर सहेजी गई सामग्री बनी रहेगी। Play की कोई भी सदस्यता Google Play में जाकर रद्द करें।",
+  "te": "దీంతో మీ ఖాతా, సింక్ చేసిన ఇష్టమైనవి, సబ్‌స్క్రిప్షన్ లింక్ శాశ్వతంగా తొలగిపోతాయి. ఈ ఫోన్‌లో దాచినవి అలాగే ఉంటాయి. Play సబ్‌స్క్రిప్షన్ ఏదైనా ఉంటే Google Playలో రద్దు చేయండి.",
   "where": "lib/features/settings.dart"
  },
  {

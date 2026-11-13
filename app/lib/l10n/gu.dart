@@ -1173,4 +1173,53 @@ const stringsGu = <String, String>{
       'હવે રિંગમાં ભગવાન. અસલ મંદિરના ઘંટ, શંખ અને વાંસળી, મફત.',
   'Public-domain mythological films by Dadasaheb Phalke, the father of Indian cinema.':
       'ભારતીય સિનેમાના પિતા દાદાસાહેબ ફાળકેની પબ્લિક-ડોમેન પૌરાણિક ફિલ્મો.',
+  // Sign-in, Premium and account deletion.
+  'If the account exists, a 6-digit code was emailed.': 'જો આ એકાઉન્ટ હશે, તો 6 અંકનો કોડ ઈમેલ પર મોકલાયો છે.',
+  'Password updated. Please sign in.': 'પાસવર્ડ બદલાઈ ગયો. કૃપા કરીને સાઇન ઇન કરો.',
+  'Welcome 🙏': 'સ્વાગત છે 🙏',
+  'Sign in': 'સાઇન ઇન',
+  'Create account': 'એકાઉન્ટ બનાવો',
+  'Forgot password': 'પાસવર્ડ ભૂલી ગયા',
+  'Set a new password': 'નવો પાસવર્ડ રાખો',
+  'An account is optional. It only syncs favourites and Premium across devices.':
+      'એકાઉન્ટ ફરજિયાત નથી. તે ફક્ત મનપસંદ અને પ્રીમિયમને તમારા બધા ડિવાઇસ પર સિંક કરે છે.',
+  'Email': 'ઈમેલ',
+  'Enter a valid email': 'સાચો ઈમેલ લખો',
+  '6-digit code': '6 અંકનો કોડ',
+  'Enter the 6-digit code': '6 અંકનો કોડ લખો',
+  'New password': 'નવો પાસવર્ડ',
+  'Password': 'પાસવર્ડ',
+  'Enter your password': 'તમારો પાસવર્ડ લખો',
+  'At least 8 characters': 'ઓછામાં ઓછા 8 અક્ષર',
+  'New here? Create an account': 'નવા છો? એકાઉન્ટ બનાવો',
+  'Forgot password?': 'પાસવર્ડ ભૂલી ગયા?',
+  'Back to sign in': 'સાઇન ઇન પર પાછા જાઓ',
+  'Subscriptions are not yet published on Google Play for this build.':
+      'આ વર્ઝન માટે સબ્સ્ક્રિપ્શન હજી Google Play પર ઉપલબ્ધ નથી.',
+  'Google Play billing is not available on this device.': 'આ ફોન પર Google Play બિલિંગ ઉપલબ્ધ નથી.',
+  'Payment pending. Premium unlocks once Google Play confirms.':
+      'ચુકવણી બાકી છે. Google Play પુષ્ટિ કરે એટલે પ્રીમિયમ શરૂ થશે.',
+  'Purchase failed': 'ખરીદી થઈ શકી નહીં',
+  'Premium unlocked. Thank you for supporting Devalay 🙏': 'પ્રીમિયમ શરૂ થયું. દેવાલયને સાથ આપવા બદલ આભાર 🙏',
+  'Please sign in first so Premium is linked to your account.':
+      'પહેલાં સાઇન ઇન કરો, જેથી પ્રીમિયમ તમારા એકાઉન્ટ સાથે જોડાય.',
+  'Unlimited offline downloads': 'અમર્યાદિત ઑફલાઇન ડાઉનલોડ',
+  '100 AI status and Gita answers a day': 'રોજના 100 AI સ્ટેટસ અને ગીતાના જવાબ',
+  'Support an ad-free devotional app': 'જાહેરાત વગરની ભક્તિ ઍપને સાથ આપો',
+  'You are Premium': 'તમે પ્રીમિયમ સભ્ય છો',
+  'Devalay Premium': 'દેવાલય પ્રીમિયમ',
+  'Every aarti, mantra, scripture, Panchang and the Mandir are free forever. Premium adds conveniences and keeps the app ad-free.':
+      'દરેક આરતી, મંત્ર, શાસ્ત્ર, પંચાંગ અને મંદિર હંમેશાં મફત છે. પ્રીમિયમ થોડી સુવિધાઓ ઉમેરે છે અને ઍપને જાહેરાત વગરની રાખે છે.',
+  '{0} (indicative)': '{0} (અંદાજિત)',
+  'Restore purchases': 'ખરીદી પાછી મેળવો',
+  'Billed by Google Play. Cancel anytime in Play Store > Subscriptions.':
+      'ચુકવણી Google Play દ્વારા થાય છે. Play Store > Subscriptions માં ગમે ત્યારે રદ કરો.',
+  'Permanently removes your account and synced data': 'તમારું એકાઉન્ટ અને સિંક થયેલો ડેટા કાયમ માટે કાઢી નાખે છે',
+  'Optional: sync favourites and Premium across devices': 'વૈકલ્પિક: મનપસંદ અને પ્રીમિયમ બધા ડિવાઇસ પર સિંક કરો',
+  'Premium until {0}': '{0} સુધી પ્રીમિયમ',
+  'Free plan': 'મફત પ્લાન',
+  'Delete account?': 'એકાઉન્ટ ડિલીટ કરવું છે?',
+  'This permanently deletes your account, synced favourites and subscription link. Content saved on this phone stays. Cancel any Play subscription in Google Play.':
+      'આનાથી તમારું એકાઉન્ટ, સિંક થયેલા મનપસંદ અને સબ્સ્ક્રિપ્શનનું જોડાણ કાયમ માટે ડિલીટ થશે. આ ફોનમાં સાચવેલું બધું એમ જ રહેશે. Play નું કોઈ સબ્સ્ક્રિપ્શન હોય તો Google Play માં જઈને રદ કરો.',
+  'Account deleted': 'એકાઉન્ટ ડિલીટ થયું',
 };
