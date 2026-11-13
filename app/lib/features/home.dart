@@ -235,7 +235,7 @@ class _Hero extends ConsumerWidget {
                               style: const TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.w700),
                             ),
                             Text(
-                              deity!.description,
+                              deity!.describe(lang),
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               style: const TextStyle(color: Colors.white70, fontSize: 13),

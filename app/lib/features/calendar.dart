@@ -1038,7 +1038,7 @@ class _MonthFestivals extends ConsumerWidget {
             f.label(lang),
             style: TextStyle(fontWeight: FontWeight.w700, color: past ? Theme.of(context).colorScheme.outline : null),
           ),
-          subtitle: f.description.isEmpty ? null : Text(f.description, maxLines: 2, overflow: TextOverflow.ellipsis),
+          subtitle: f.description.isEmpty ? null : Text(f.describe(lang), maxLines: 2, overflow: TextOverflow.ellipsis),
           trailing: away >= 0 && away <= 60
               ? Text(
                   _countdown(lang, away),
@@ -1301,12 +1301,12 @@ class _DayPage extends ConsumerWidget {
                       ),
                       if (f.deity.isNotEmpty)
                         Text(
-                          f.deity[0].toUpperCase() + f.deity.substring(1),
+                          f.deityLabel(lang),
                           style: TextStyle(color: Theme.of(context).colorScheme.primary, fontWeight: FontWeight.w600),
                         ),
                       if (f.description.isNotEmpty) ...[
                         const SizedBox(height: 6),
-                        Text(f.description, style: const TextStyle(height: 1.5)),
+                        Text(f.describe(lang), style: const TextStyle(height: 1.5)),
                       ],
                       if (wishes?.forFestival(f) case final w?)
                         Padding(

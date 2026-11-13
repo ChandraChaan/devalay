@@ -62,7 +62,7 @@ class _ImportantDaysScreenState extends ConsumerState<ImportantDaysScreen> {
             date: DateUtils.dateOnly(f.date),
             emoji: f.major ? '🪔' : _emoji(f.kind == 'festival' ? 'festivals' : f.kind),
             title: f.label(lang),
-            note: f.description.isEmpty ? null : f.description,
+            note: f.description.isEmpty ? null : f.describe(lang),
             major: f.major,
           ),
       for (final (m, d) in const [(1, 26), (8, 15), (10, 2), (12, 25)])
@@ -121,7 +121,7 @@ class _ImportantDaysScreenState extends ConsumerState<ImportantDaysScreen> {
                 date: DateUtils.dateOnly(f.date),
                 emoji: f.major ? '🪔' : _emoji(_filter),
                 title: f.label(lang),
-                note: f.description.isEmpty ? null : f.description,
+                note: f.description.isEmpty ? null : f.describe(lang),
                 major: f.major,
               ),
         ]..sort((a, b) => a.date.compareTo(b.date));

@@ -237,6 +237,25 @@ def main():
     for cid, name, name_hi in re.findall(r"City\('([\w-]+)', '([^']*)', '([^']*)'", loc):
         add(name, name_hi, te_city.get(cid, ""), "city")
 
+    # Festival and deity descriptions, which the server sends in English only (strings_descriptions.json).
+    desc: dict[str, dict] = {}
+    tree = ast.parse((BACKEND / "app/services/festivals.py").read_text())
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Call) and getattr(node.func, "id", "") == "FestivalRule":
+            name = ast.literal_eval(node.args[1]) if len(node.args) > 1 else ""
+            for kw in node.keywords:
+                if kw.arg == "description":
+                    text = ast.literal_eval(kw.value)
+                    if text:
+                        desc[text] = {"en": text, "hi": "", "te": "", "where": f"description of the festival {name}"}
+    tree = ast.parse((BACKEND / "app/seed/texts.py").read_text())
+    for node in tree.body:
+        if isinstance(node, ast.Assign) and getattr(node.targets[0], "id", "") == "DEITIES":
+            for row in ast.literal_eval(node.value):
+                desc[row[-1]] = {"en": row[-1], "hi": "", "te": "", "where": f"description of the deity {row[1]}"}
+    (OUT.parent / "strings_descriptions.json").write_text(json.dumps(list(desc.values()), ensure_ascii=False, indent=1))
+    print(f"{len(desc)} descriptions -> tool/l10n/strings_descriptions.json")
+
     # Content files: festival wishes and the temple booking guide ({"en", "hi", "te"} maps).
     content: dict[str, dict] = {}
 

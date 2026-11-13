@@ -2,6 +2,7 @@
 
 import 'telugu.dart';
 import 'i18n.dart';
+import '../l10n/l10n.dart';
 
 String _s(Object? v) => v?.toString() ?? '';
 int _i(Object? v) => v is int ? v : int.tryParse('$v') ?? 0;
@@ -22,6 +23,9 @@ class Deity {
   final int? weekday;
 
   String label(String lang) => _label(lang, name, nameHi, teluguDeities[slug]);
+
+  /// The description, translated when the app has it in [lang] (lib/l10n/*_desc.dart).
+  String describe(String lang) => lang == 'en' ? description : (translate(lang, description) ?? description);
 }
 
 String _label(String lang, String en, String hi, String? te) => pickLang(lang, en, hi, te: te);
@@ -203,6 +207,16 @@ class Festival {
   final bool major;
 
   String label(String lang) => _label(lang, name, nameHi, teluguFestivals[slug] ?? teluguFestivals[kind]);
+
+  /// The description, translated when the app has it in [lang] (lib/l10n/*_desc.dart).
+  String describe(String lang) => lang == 'en' ? description : (translate(lang, description) ?? description);
+
+  /// The deity this festival honours, by name in [lang] ("shiva" -> Shiva / శివుడు / ಶಿವ).
+  String deityLabel(String lang) {
+    if (deity.isEmpty) return '';
+    final en = deity.split('-').map((w) => w.isEmpty ? w : w[0].toUpperCase() + w.substring(1)).join(' ');
+    return nameIn(lang, en, te: teluguDeities[deity]);
+  }
 
   int daysFrom(DateTime today) =>
       DateTime(date.year, date.month, date.day).difference(DateTime(today.year, today.month, today.day)).inDays;

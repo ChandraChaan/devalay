@@ -268,8 +268,8 @@ class PanchangDetail extends ConsumerWidget {
                     Text(
                       t3(
                         lang,
-                        'Sun in ${data['sun_rashi']} · Moon in ${data['moon_rashi']}',
-                        'सूर्य ${data['sun_rashi']} · चंद्र ${data['moon_rashi']}',
+                        'Sun in ${lang == 'en' ? data['sun_rashi'] : rashi(data['sun_rashi'])} · Moon in ${lang == 'en' ? data['moon_rashi'] : rashi(data['moon_rashi'])}',
+                        'सूर्य ${rashi(data['sun_rashi'])} · चंद्र ${rashi(data['moon_rashi'])}',
                         'సూర్యుడు ${rashi(data['sun_rashi'])} · చంద్రుడు ${rashi(data['moon_rashi'])}',
                       ),
                       style: const TextStyle(color: Colors.white70),

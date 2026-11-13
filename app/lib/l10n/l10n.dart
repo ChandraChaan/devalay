@@ -5,6 +5,16 @@
 library;
 
 import 'bn.dart';
+import 'te_desc.dart';
+import 'ta_desc.dart';
+import 'pa_desc.dart';
+import 'or_desc.dart';
+import 'mr_desc.dart';
+import 'ml_desc.dart';
+import 'kn_desc.dart';
+import 'hi_desc.dart';
+import 'gu_desc.dart';
+import 'bn_desc.dart';
 import 'bn_content.dart';
 import 'gu.dart';
 import 'gu_content.dart';
@@ -22,18 +32,20 @@ import 'pa_content.dart';
 import 'ta.dart';
 import 'ta_content.dart';
 
-/// UI strings and Panchang names (<code>.dart) plus festival wishes and the temple guide
-/// (<code>_content.dart), per language.
+/// UI strings and Panchang names (<code>.dart), festival wishes and the temple guide
+/// (<code>_content.dart), and festival and deity descriptions (<code>_desc.dart), per language.
+/// Telugu and Hindi UI copy lives at the t3 call sites, so their tables hold names and descriptions.
 const _tables = <String, Map<String, String>>{
-  'hi': stringsHi,
-  'bn': {...stringsBn, ...contentBn},
-  'mr': {...stringsMr, ...contentMr},
-  'ta': {...stringsTa, ...contentTa},
-  'gu': {...stringsGu, ...contentGu},
-  'kn': {...stringsKn, ...contentKn},
-  'ml': {...stringsMl, ...contentMl},
-  'or': {...stringsOr, ...contentOr},
-  'pa': {...stringsPa, ...contentPa},
+  'hi': {...stringsHi, ...descHi},
+  'te': descTe,
+  'bn': {...stringsBn, ...contentBn, ...descBn},
+  'mr': {...stringsMr, ...contentMr, ...descMr},
+  'ta': {...stringsTa, ...contentTa, ...descTa},
+  'gu': {...stringsGu, ...contentGu, ...descGu},
+  'kn': {...stringsKn, ...contentKn, ...descKn},
+  'ml': {...stringsMl, ...contentMl, ...descMl},
+  'or': {...stringsOr, ...contentOr, ...descOr},
+  'pa': {...stringsPa, ...contentPa, ...descPa},
 };
 
 /// The table for [lang], or null (English, or a language without one).

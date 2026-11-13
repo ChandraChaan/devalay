@@ -13,6 +13,7 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   final strings = (jsonDecode(File('tool/l10n/strings.json').readAsStringSync()) as List).cast<Map>();
   final content = (jsonDecode(File('tool/l10n/strings_content.json').readAsStringSync()) as List).cast<Map>();
+  final descriptions = (jsonDecode(File('tool/l10n/strings_descriptions.json').readAsStringSync()) as List).cast<Map>();
   final placeholder = RegExp(r'\{\d+\}');
   Set<String> marks(String s) => placeholder.allMatches(s).map((m) => m[0]!).toSet();
 
@@ -20,7 +21,7 @@ void main() {
     test('$code translates every UI string and wish', () {
       final table = tableFor(code)!;
       final missing = [
-        for (final e in [...strings, ...content])
+        for (final e in [...strings, ...content, ...descriptions])
           if (!table.containsKey(e['en'])) e['en'],
       ];
       expect(missing, isEmpty, reason: '$code is missing ${missing.length}: ${missing.take(5)}');
@@ -29,6 +30,16 @@ void main() {
           if (!marks(table[e['en']]!).containsAll(marks('${e['en']}'))) e['en'],
       ];
       expect(broken, isEmpty, reason: '$code lost placeholders in $broken');
+    });
+  }
+
+  for (final code in ['hi', 'te']) {
+    test('$code has every festival and deity description', () {
+      final table = tableFor(code)!;
+      expect([
+        for (final e in descriptions)
+          if (!table.containsKey(e['en'])) e['en'],
+      ], isEmpty);
     });
   }
 
