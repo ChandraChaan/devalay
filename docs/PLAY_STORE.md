@@ -36,17 +36,26 @@ it before installing from Play (favourites and japa counts are stored on the pho
 
 ## 3. Store listing
 
-The listing files are in `docs/store/play/`:
+The listing files are in `docs/store/play/`, one folder per Play language: `en-IN` (default), `hi-IN`, `mr-IN`,
+`te-IN`, `ta-IN`, `kn-IN`, `ml-IN`, `gu`, `bn-BD` and `pa`. Play has no Odia listing language; Odia readers see
+en-IN.
 
 | Play field | File |
 |---|---|
-| Short description (≤80 characters; no price words such as "free") | `en-IN/short_description.txt` |
-| Full description (≤4000 characters) | `en-IN/full_description.txt` |
+| App name (≤30 characters) | `<lang>/title.txt` |
+| Short description (≤80; no price words such as "free", no "no ads") | `<lang>/short_description.txt` |
+| Full description (≤4000) | `<lang>/full_description.txt` |
+| What's new (≤500) | `<lang>/release_notes.txt` |
 | App icon 512×512 | `icon-512.png` |
-| Feature graphic 1024×500 | `feature-graphic.png` |
-| Phone screenshots (2–8) | `docs/store/play/screenshots/` (English screens, 1080×2160) |
+| Feature graphic 1024×500 | `<lang>/feature-graphic.png` (en-IN, hi-IN, te-IN) |
+| Phone screenshots (2–8), captioned | `<lang>/screenshots/` (en-IN, hi-IN, te-IN; 1080×1920) |
 
-Category: **Lifestyle**. Tags: Religion & spirituality.
+The captioned screenshots and feature graphics are made from the real 1.4 screens in `screenshots-v1.4/` by
+`docs/store/tools/make_store_images.py`; edit the captions there and run it again. Languages without their own
+images use the en-IN ones.
+
+Category: **Lifestyle**. Tags (Store settings → Manage tags, up to 5, from Play's list), for example Religion & spirituality, Calendar,
+Astrology & horoscope, Music & audio.
 
 ## 4. App content (Policy → App content)
 

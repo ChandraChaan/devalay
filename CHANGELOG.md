@@ -3,6 +3,18 @@
 Each milestone is a git tag and a [GitHub release](https://github.com/ChandraChaan/devalay/releases). Releases from
 v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the section below that matches the tag.
 
+## v1.5.0 — 2026-11-21
+
+- Every share now ends with "🪔 Devalay" and the app's Play link: the day's Panchang, festival wish cards,
+  statuses, wallpapers, Gita verses, Rashifal, songs and stotras. The link carries an install referrer
+  (`utm_source=devalay_app`, `utm_medium=share`, `utm_campaign=<what was shared>`), so Play Console's acquisition
+  report shows which shares bring installs. The app still has no analytics.
+- Share today's Panchang straight from the Panchang card on Home.
+- "Share with family" opens WhatsApp with an invitation ready to send (or the share sheet when WhatsApp is not
+  installed). From the second day of use, Home shows a card for it until you share or close it.
+- The Play rating card can also come right after a happy moment (a share, a finished japa mala), once the app has
+  been used for a day. Play's limits and Devalay's own (at most every 120 days, three times in all) still apply.
+
 ## v1.4.0 — 2026-11-13
 
 - Sidereal positions use the true Lahiri ayanamsa (mean plus nutation), as Swiss Ephemeris does, so sankranti

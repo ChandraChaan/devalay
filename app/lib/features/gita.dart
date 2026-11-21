@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:share_plus/share_plus.dart';
 
 import '../core/favorites.dart';
 import '../core/gita_voice.dart';
@@ -12,6 +11,7 @@ import '../core/models.dart';
 import '../core/providers.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
+import '../core/sharing.dart';
 import '../widgets/common.dart';
 import '../widgets/mandala.dart';
 
@@ -522,11 +522,9 @@ class _VersePage extends ConsumerWidget {
               ),
             ),
             IconButton(
-              onPressed: () => SharePlus.instance.share(
-                ShareParams(
-                  text:
-                      '${verse.sanskrit}\n\n${verse.translation}\n\n— Bhagavad Gita ${verse.ref} (tr. ${verse.translator})',
-                ),
+              onPressed: () => shareContent(
+                '${verse.sanskrit}\n\n${verse.translation}\n\n— Bhagavad Gita ${verse.ref} (tr. ${verse.translator})'
+                '\n\n${shareFooter('gita')}',
               ),
               icon: const Icon(Icons.share_rounded),
             ),

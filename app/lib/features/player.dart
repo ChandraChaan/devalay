@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:share_plus/share_plus.dart';
 
 import '../core/audio.dart';
 import '../core/auth.dart';
@@ -14,6 +13,7 @@ import '../core/favorites.dart';
 import '../core/i18n.dart';
 import '../core/models.dart';
 import '../core/theme.dart';
+import '../core/sharing.dart';
 import '../widgets/common.dart';
 import '../widgets/mandala.dart';
 
@@ -56,12 +56,7 @@ class PlayerScreen extends ConsumerWidget {
                     const Spacer(),
                     _SleepButton(audio: audio),
                     IconButton(
-                      onPressed: () => SharePlus.instance.share(
-                        ShareParams(
-                          text:
-                              '🙏 ${track.title} — listen on Devalay\n${track.sourceUrl.isNotEmpty ? track.sourceUrl : AppConfig.sourceUrl}',
-                        ),
-                      ),
+                      onPressed: () => shareContent('🙏 ${track.title} — listen on Devalay\n${playLink('song')}'),
                       icon: const Icon(Icons.share_rounded, color: Colors.white),
                     ),
                   ],

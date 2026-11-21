@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:share_plus/share_plus.dart';
 
 import '../core/gochara.dart';
 import '../core/i18n.dart';
@@ -8,6 +7,7 @@ import '../core/models.dart';
 import '../core/names.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
+import '../core/sharing.dart';
 import '../widgets/common.dart';
 
 /// Weekly, monthly or yearly Rashi phalalu for one Moon sign, from the transits of the Moon, Sun,
@@ -121,12 +121,10 @@ class _PeriodRashifalState extends ConsumerState<PeriodRashifal> with AutomaticK
                       ),
                       IconButton(
                         color: Colors.white,
-                        onPressed: () => SharePlus.instance.share(
-                          ShareParams(
-                            text:
-                                '$symbol ${signName(lang, _rashi)} · ${_title(lang, r.start, r.end)}\n\n${r.overview}\n\n'
-                                '${r.sections.map((s) => '${s.emoji} ${s.title}\n${s.text}').join('\n\n')}\n\n🪔 Devalay',
-                          ),
+                        onPressed: () => shareContent(
+                          '$symbol ${signName(lang, _rashi)} · ${_title(lang, r.start, r.end)}\n\n${r.overview}\n\n'
+                          '${r.sections.map((s) => '${s.emoji} ${s.title}\n${s.text}').join('\n\n')}\n\n'
+                          '${shareFooter('rashifal')}',
                         ),
                         icon: const Icon(Icons.share_rounded),
                       ),

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:share_plus/share_plus.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
 
 import '../core/audio.dart';
@@ -12,6 +11,7 @@ import '../core/models.dart';
 import '../core/providers.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
+import '../core/sharing.dart';
 import '../widgets/common.dart';
 
 class TextListScreen extends ConsumerWidget {
@@ -100,8 +100,7 @@ class _TextReaderScreenState extends ConsumerState<TextReaderScreen> {
                   item: FavoriteItem(type: 'text', id: t.slug, title: t.title, subtitle: t.titleHi),
                 ),
                 IconButton(
-                  onPressed: () =>
-                      SharePlus.instance.share(ShareParams(text: '${t.titleHi}\n\n${t.body}\n\n— Devalay')),
+                  onPressed: () => shareContent('${t.titleHi}\n\n${t.body}\n\n${shareFooter('text')}'),
                   icon: const Icon(Icons.share_rounded),
                 ),
                 IconButton(onPressed: () => _settings(context), icon: const Icon(Icons.text_fields_rounded)),

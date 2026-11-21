@@ -1227,4 +1227,9 @@ const stringsOr = <String, String>{
   'This permanently deletes your account, synced favourites and subscription link. Content saved on this phone stays. Cancel any Play subscription in Google Play.':
       'ଏହାଦ୍ୱାରା ଆପଣଙ୍କ ଆକାଉଣ୍ଟ, ସିଙ୍କ ହୋଇଥିବା ପସନ୍ଦ ଓ ସବସ୍କ୍ରିପସନ୍ ସଂଯୋଗ ସ୍ଥାୟୀ ଭାବେ ହଟିଯିବ। ଏହି ଫୋନରେ ସେଭ୍ ଥିବା ଜିନିଷ ରହିଯିବ। Play ସବସ୍କ୍ରିପସନ୍ ଥିଲେ Google Playରେ ବାତିଲ୍ କରନ୍ତୁ।',
   'Account deleted': 'ଆକାଉଣ୍ଟ ଡିଲିଟ୍ ହେଲା',
+  // Sharing Devalay.
+  'Devalay: Panchang, festival calendar, aartis and bhakti in your language.':
+      'ଦେବାଳୟ: ଆପଣଙ୍କ ଭାଷାରେ ପଞ୍ଜିକା, ପର୍ବପର୍ବାଣି କ୍ୟାଲେଣ୍ଡର, ଆରତୀ ଓ ଭକ୍ତି।',
+  'Send Devalay to your family WhatsApp group, so everyone has the day\'s Panchang and festival dates.':
+      'ଦେବାଳୟକୁ ପରିବାରର WhatsApp ଗ୍ରୁପ୍‌କୁ ପଠାନ୍ତୁ, ଯେପରି ସମସ୍ତେ ଦିନର ପଞ୍ଜିକା ଓ ପର୍ବ ତାରିଖ ଜାଣିପାରିବେ।',
 };

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../core/app_care.dart';
 import '../core/i18n.dart';
 import '../core/telugu.dart';
 import '../core/sfx.dart';
@@ -53,6 +54,8 @@ class _JapaScreenState extends ConsumerState<JapaScreen> with SingleTickerProvid
         _count = 0;
         _rounds++;
         HapticFeedback.heavyImpact();
+        // A finished mala is a good moment; Play's own limits decide whether the card shows.
+        Future.delayed(const Duration(seconds: 3), () => maybeAskForReview(happy: true));
         if (_sound) Sfx.play('temple-bell');
       } else {
         HapticFeedback.selectionClick();

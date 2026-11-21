@@ -16,6 +16,7 @@ import '../core/native.dart';
 import '../core/providers.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
+import '../core/sharing.dart';
 import '../widgets/common.dart';
 import '../widgets/mandala.dart';
 
@@ -258,9 +259,7 @@ class _StatusComposerState extends ConsumerState<StatusComposer> {
     setState(() => _busy = true);
     try {
       final f = await _render();
-      await SharePlus.instance.share(
-        ShareParams(files: [XFile(f.path)], text: [widget.text, ?widget.footnote].join('\n\n')),
-      );
+      await shareContent([widget.text, ?widget.footnote, shareFooter('status')].join('\n\n'), files: [XFile(f.path)]);
     } finally {
       if (mounted) setState(() => _busy = false);
     }

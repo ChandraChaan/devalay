@@ -3906,6 +3906,12 @@
   "where": "lib/core/regional.dart"
  },
  {
+  "en": "Devalay: Panchang, festival calendar, aartis and bhakti in your language.",
+  "hi": "देवालय: आपकी भाषा में पंचांग, त्योहार कैलेंडर, आरती और भक्ति।",
+  "te": "దేవాలయం: మీ భాషలో పంచాంగం, పండుగల క్యాలెండర్, హారతులు, భక్తి.",
+  "where": "lib/core/sharing.dart"
+ },
+ {
   "en": "Ask the Gita…",
   "hi": "गीता से पूछें…",
   "te": "గీతను అడగండి…",
@@ -5904,12 +5910,6 @@
   "where": "lib/features/more.dart"
  },
  {
-  "en": "Devalay: free Panchang, aartis and bhakti app in your language, with no ads.\nhttps://play.google.com/store/apps/details?id={0}",
-  "hi": "देवालय: आपकी भाषा में मुफ़्त पंचांग, आरती और भक्ति ऐप, बिना विज्ञापन।\nhttps://play.google.com/store/apps/details?id={0}",
-  "te": "దేవాలయం: మీ భాషలో ఉచిత పంచాంగం, హారతులు, భక్తి యాప్, ప్రకటనలు లేవు.\nhttps://play.google.com/store/apps/details?id={0}",
-  "where": "lib/features/more.dart"
- },
- {
   "en": "Enjoying Devalay?",
   "hi": "देवालय पसंद आ रहा है?",
   "te": "దేవాలయం నచ్చిందా?",
@@ -7720,6 +7720,12 @@
   "hi": "आपके फ़ोन में {0} की टेक्स्ट-टू-स्पीच आवाज़ नहीं है, इसलिए हमने अंग्रेज़ी में पढ़ा। {1} में सुनने के लिए:",
   "te": "మీ ఫోన్‌లో {0} టెక్స్ట్-టు-స్పీచ్ వాయిస్ లేదు, అందుకే ఇంగ్లీషులో చదివాం. {1}లో వినడానికి:",
   "where": "lib/widgets/read_aloud_button.dart"
+ },
+ {
+  "en": "Send Devalay to your family WhatsApp group, so everyone has the day's Panchang and festival dates.",
+  "hi": "देवालय को परिवार के WhatsApp ग्रुप में भेजें, ताकि सबके पास आज का पंचांग और त्योहार की तिथियाँ रहें।",
+  "te": "దేవాలయం యాప్‌ను కుటుంబ WhatsApp గ్రూప్‌కు పంపండి, అందరికీ నేటి పంచాంగం, పండుగ తేదీలు తెలుస్తాయి.",
+  "where": "lib/widgets/share_app_card.dart"
  },
  {
   "en": "Ashadha",

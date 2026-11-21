@@ -13,6 +13,7 @@ import '../core/models.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
 import '../core/wishes.dart';
+import '../core/sharing.dart';
 import '../widgets/common.dart';
 import '../widgets/wish_card.dart';
 import 'status_maker.dart' show renderStatusImage, saveToGallery;
@@ -432,7 +433,7 @@ class _WishEditorScreenState extends ConsumerState<WishEditorScreen> {
     try {
       final file = await _render();
       if (file != null) {
-        await SharePlus.instance.share(ShareParams(files: [XFile(file.path, mimeType: 'image/png')]));
+        await shareContent(shareFooter('wish'), files: [XFile(file.path, mimeType: 'image/png')]);
       }
     } catch (e) {
       if (mounted) toast(context, t3(appLang, 'Could not share: $e', 'शेयर नहीं हो सका: $e', 'షేర్ కాలేదు: $e'));

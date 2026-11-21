@@ -6,7 +6,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
-import 'package:share_plus/share_plus.dart';
 
 import '../core/calendar_reminders.dart';
 import '../core/events.dart';
@@ -25,6 +24,7 @@ import '../core/regional.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
 import '../core/wishes.dart';
+import '../core/sharing.dart';
 import '../widgets/city_picker.dart';
 import '../widgets/common.dart';
 import '../widgets/read_aloud_button.dart';
@@ -145,9 +145,9 @@ Future<void> shareDay(WidgetRef ref, DateTime day) async {
       '— देवालय: मुफ़्त पंचांग व भक्ति ऐप, बिना विज्ञापन',
       '— దేవాలయం: ఉచిత పంచాంగం & భక్తి యాప్, ప్రకటనలు లేవు',
     ),
-    'https://chandrachaan.github.io/devalay',
+    playLink('panchang'),
   ];
-  await SharePlus.instance.share(ShareParams(text: lines.join('\n')));
+  await shareContent(lines.join('\n'));
 }
 
 /// The wishes card for the day's first festival that has one.

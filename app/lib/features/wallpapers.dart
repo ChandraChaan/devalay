@@ -17,6 +17,7 @@ import '../core/native.dart';
 import '../core/providers.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
+import '../core/sharing.dart';
 import '../widgets/common.dart';
 import 'status_maker.dart';
 
@@ -330,9 +331,7 @@ class _WallpaperDetailScreenState extends ConsumerState<WallpaperDetailScreen> {
                         onPressed: _busy
                             ? null
                             : () => _run((p) async {
-                                await SharePlus.instance.share(
-                                  ShareParams(files: [XFile(p)], text: '🙏 ${w.title} · via Devalay'),
-                                );
+                                await shareContent('🙏 ${w.title}\n\n${shareFooter('wallpaper')}', files: [XFile(p)]);
                               }, 'Shared'),
                         icon: const Icon(Icons.share_rounded),
                       ),

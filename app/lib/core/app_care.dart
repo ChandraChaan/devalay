@@ -174,9 +174,10 @@ void recordAppOpen() {
   s.put('first_open', s.get('first_open') ?? DateTime.now().millisecondsSinceEpoch);
 }
 
-/// Shows Play's in-app review card after real use: 6+ opens over 3+ days, at most every 120 days
-/// and three times in all. Play itself may still decide not to show it.
-Future<void> maybeAskForReview() async {
+/// Shows Play's in-app review card after real use: 6+ opens over 3+ days, or, right after a happy
+/// moment ([happy]: a share, a finished japa mala), 3+ opens over a day. At most every 120 days and
+/// three times in all; Play itself may still decide not to show it.
+Future<void> maybeAskForReview({bool happy = false}) async {
   try {
     final s = Boxes.stats;
     final opens = s.get('opens', defaultValue: 0) as int;
@@ -184,7 +185,9 @@ Future<void> maybeAskForReview() async {
     final last = s.get('review_asked') as int?;
     final times = s.get('review_count', defaultValue: 0) as int;
     final now = DateTime.now().millisecondsSinceEpoch;
-    if (opens < 6 || first == null || now - first < const Duration(days: 3).inMilliseconds) return;
+    final minOpens = happy ? 3 : 6;
+    final minAge = happy ? const Duration(days: 1) : const Duration(days: 3);
+    if (opens < minOpens || first == null || now - first < minAge.inMilliseconds) return;
     if (times >= 3 || (last != null && now - last < const Duration(days: 120).inMilliseconds)) return;
     if (!await _fromPlay()) return;
     final review = InAppReview.instance;

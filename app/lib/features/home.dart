@@ -13,11 +13,14 @@ import '../core/models.dart';
 import '../core/muhurta.dart' show lunarMonthNames;
 import '../core/providers.dart';
 import '../core/regional.dart';
+import '../core/sharing.dart';
 import '../core/storage.dart';
 import '../core/telugu.dart';
 import '../core/theme.dart';
 import '../widgets/common.dart';
 import '../widgets/mandala.dart';
+import '../widgets/share_app_card.dart';
+import 'calendar.dart' show shareDay;
 import 'temples.dart';
 import 'thought.dart';
 import 'wishes.dart';
@@ -79,6 +82,7 @@ class _HomeBody extends ConsumerWidget {
           ),
           SliverToBoxAdapter(child: _FestivalStrip(festivals: festivals)),
         ],
+        if (showShareAppCard) const SliverToBoxAdapter(child: ShareAppCard()),
         const SliverToBoxAdapter(child: ThoughtOfDayCard()),
         if (verse != null) SliverToBoxAdapter(child: _VerseCard(verse: verse)),
         SliverToBoxAdapter(
@@ -422,6 +426,13 @@ class _PanchangCard extends ConsumerWidget {
                     const Spacer(),
                     Icon(Icons.place_outlined, size: 16, color: Theme.of(context).colorScheme.outline),
                     Text(city.label(lang), style: Theme.of(context).textTheme.bodySmall),
+                    // Today's Panchang as a WhatsApp-ready message, with the Play link at the end.
+                    IconButton(
+                      tooltip: t3(lang, 'Share', 'शेयर करें', 'షేర్ చేయండి'),
+                      visualDensity: VisualDensity.compact,
+                      onPressed: () => shareDay(ref, DateUtils.dateOnly(DateTime.now())),
+                      icon: Icon(Icons.share_rounded, size: 20, color: Theme.of(context).colorScheme.primary),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 14),

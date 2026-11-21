@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:share_plus/share_plus.dart';
 
 import '../core/app_care.dart';
 import '../core/auth.dart';
 import '../core/config.dart';
 import '../core/i18n.dart';
 import '../core/theme.dart';
+import '../core/sharing.dart';
 import '../widgets/common.dart';
 
 class MoreScreen extends ConsumerWidget {
@@ -286,16 +286,7 @@ class RateCard extends ConsumerWidget {
               action(
                 Icons.share_rounded,
                 t3(lang, 'Share with family', 'परिवार से साझा करें', 'కుటుంబంతో పంచుకోండి'),
-                () => SharePlus.instance.share(
-                  ShareParams(
-                    text: t3(
-                      lang,
-                      'Devalay: free Panchang, aartis and bhakti app in your language, with no ads.\nhttps://play.google.com/store/apps/details?id=$playListingId',
-                      'देवालय: आपकी भाषा में मुफ़्त पंचांग, आरती और भक्ति ऐप, बिना विज्ञापन।\nhttps://play.google.com/store/apps/details?id=$playListingId',
-                      'దేవాలయం: మీ భాషలో ఉచిత పంచాంగం, హారతులు, భక్తి యాప్, ప్రకటనలు లేవు.\nhttps://play.google.com/store/apps/details?id=$playListingId',
-                    ),
-                  ),
-                ),
+                () => shareApp(lang),
               ),
               action(Icons.feedback_rounded, t3(lang, 'Send feedback', 'सुझाव भेजें', 'సూచనలు పంపండి'), sendFeedback),
             ],

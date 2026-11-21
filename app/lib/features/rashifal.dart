@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:share_plus/share_plus.dart';
 
 import '../core/gochara.dart';
 import '../core/i18n.dart';
 import '../core/providers.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
+import '../core/sharing.dart';
 import '../widgets/common.dart';
 import 'rashi_phalalu.dart';
 
@@ -126,9 +126,8 @@ class RashifalScreen extends ConsumerWidget {
                   ),
                 ),
                 IconButton(
-                  onPressed: () => SharePlus.instance.share(
-                    ShareParams(text: '${r['symbol']} ${r['name']} — ${r['overview']}\n\n🪔 Devalay'),
-                  ),
+                  onPressed: () =>
+                      shareContent('${r['symbol']} ${r['name']} — ${r['overview']}\n\n${shareFooter('rashifal')}'),
                   icon: const Icon(Icons.share_rounded),
                 ),
               ],
