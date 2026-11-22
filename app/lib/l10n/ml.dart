@@ -646,7 +646,7 @@ const stringsMl = <String, String>{
   'Language': 'ഭാഷ',
   'Light': 'ലൈറ്റ്',
   'Morning Panchang': 'രാവിലത്തെ പഞ്ചാംഗം',
-  'No ads · No analytics · Open source': 'പരസ്യങ്ങളില്ല · അനലിറ്റിക്സില്ല · ഓപ്പൺ സോഴ്സ്',
+  'No ads · Open source': 'പരസ്യങ്ങളില്ല · ഓപ്പൺ സോഴ്സ്',
   'Panchang city': 'പഞ്ചാംഗ നഗരം',
   'Preferences': 'മുൻഗണനകൾ',
   'Privacy policy': 'സ്വകാര്യതാ നയം',

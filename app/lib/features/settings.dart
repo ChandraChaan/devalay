@@ -284,9 +284,9 @@ class SettingsScreen extends ConsumerWidget {
             subtitle: Text(
               t3(
                 lang,
-                'No ads · No analytics · Open source',
-                'विज्ञापन नहीं · एनालिटिक्स नहीं · ओपन सोर्स',
-                'ప్రకటనలు లేవు · అనలిటిక్స్ లేవు · ఓపెన్ సోర్స్',
+                'No ads · Open source',
+                'विज्ञापन नहीं · ओपन सोर्स',
+                'ప్రకటనలు లేవు · ఓపెన్ సోర్స్',
               ),
             ),
           ),

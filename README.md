@@ -48,7 +48,9 @@ greeting cards with your photo, temple booking guides, a virtual Mandir, japa, R
 dark themes in five colours. It is inspired by apps like
 Sanatan, but Devalay is an **original** app with its own name, design, code and legally sourced content.
 
-- **No ads, no analytics, no sign-up.** It works from the first launch. Only crash reports (Firebase Crashlytics) are collected, to fix bugs.
+- **No ads, no sign-up.** It works from the first launch. Crash reports (Firebase Crashlytics), anonymous usage
+  statistics (Firebase Analytics) and install measurement for our own ads (Meta app events) are collected; see the
+  privacy policy.
 - **No server bill.** The public APK reads a pre-rendered API on GitHub Pages that refreshes daily.
 - **Legal content only.** Every recording, painting and text is public domain or CC-licensed; see
   [CONTENT_LICENSES.md](CONTENT_LICENSES.md).

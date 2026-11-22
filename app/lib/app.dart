@@ -51,7 +51,7 @@ import 'features/wishes.dart';
 final _rootKey = GlobalKey<NavigatorState>();
 
 final routerProvider = Provider<GoRouter>((ref) {
-  return GoRouter(
+  final router = GoRouter(
     navigatorKey: _rootKey,
     initialLocation: Boxes.prefs.get('onboarded', defaultValue: false) == true ? '/home' : '/onboarding',
     // Safety net: a devalay://calendar link that reaches the router maps to /calendar.
@@ -168,6 +168,16 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/credits', builder: (_, _) => const CreditsScreen()),
     ],
   );
+  // Screen views for Firebase Analytics. A delegate listener (rather than a NavigatorObserver) also
+  // sees switches between the bottom tabs, which StatefulShellRoute keeps in one navigator each.
+  void track() {
+    final matches = router.routerDelegate.currentConfiguration;
+    if (matches.isNotEmpty) FirebaseServices.logScreen(matches.fullPath);
+  }
+
+  router.routerDelegate.addListener(track);
+  ref.onDispose(() => router.routerDelegate.removeListener(track));
+  return router;
 });
 
 class DevalayApp extends ConsumerWidget {

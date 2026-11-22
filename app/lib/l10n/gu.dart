@@ -641,7 +641,7 @@ const stringsGu = <String, String>{
   'Language': 'ભાષા',
   'Light': 'લાઇટ',
   'Morning Panchang': 'સવારનું પંચાંગ',
-  'No ads · No analytics · Open source': 'જાહેરાત નહીં · એનાલિટિક્સ નહીં · ઓપન સોર્સ',
+  'No ads · Open source': 'જાહેરાત નહીં · ઓપન સોર્સ',
   'Panchang city': 'પંચાંગ શહેર',
   'Preferences': 'પસંદગીઓ',
   'Privacy policy': 'ગોપનીયતા નીતિ',
