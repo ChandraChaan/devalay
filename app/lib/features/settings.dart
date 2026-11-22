@@ -282,12 +282,7 @@ class SettingsScreen extends ConsumerWidget {
               builder: (_, s) => Text('Devalay ${s.data?.version ?? ''}'),
             ),
             subtitle: Text(
-              t3(
-                lang,
-                'No ads · Open source',
-                'विज्ञापन नहीं · ओपन सोर्स',
-                'ప్రకటనలు లేవు · ఓపెన్ సోర్స్',
-              ),
+              t3(lang, 'No ads · Open source', 'विज्ञापन नहीं · ओपन सोर्स', 'ప్రకటనలు లేవు · ఓపెన్ సోర్స్'),
             ),
           ),
           const SizedBox(height: 24),
