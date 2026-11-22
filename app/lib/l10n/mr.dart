@@ -701,7 +701,7 @@ const stringsMr = <String, String>{
   'Language': 'भाषा',
   'Light': 'लाइट',
   'Morning Panchang': 'सकाळचे पंचांग',
-  'No ads · No analytics · Open source': 'जाहिराती नाहीत · ॲनालिटिक्स नाही · ओपन सोर्स',
+  'No ads · Open source': 'जाहिराती नाहीत · ओपन सोर्स',
   'Panchang city': 'पंचांगाचे शहर',
   'Preferences': 'पसंती',
   'Privacy policy': 'गोपनीयता धोरण',

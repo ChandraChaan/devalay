@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -11,8 +12,8 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'languages.dart';
 import 'notifications.dart';
 
-/// Crash reports, push announcements and force update, all through the Devalay
-/// Firebase project. Firebase is optional: a build without google-services.json
+/// Crash reports, push announcements, force update and usage analytics (daily users, screen
+/// views), all through the Devalay Firebase project. Firebase is optional: a build without google-services.json
 /// (forks, tests) skips all of it and the app works as before.
 class FirebaseServices {
   static bool enabled = false;
@@ -38,6 +39,24 @@ class FirebaseServices {
       final n = m.notification;
       if (n != null) Notifications.announce(n.title ?? 'Devalay', n.body ?? '');
     });
+  }
+
+  static String? _lastScreen;
+
+  /// One screen_view per screen the user lands on, named by its route pattern ('home',
+  /// 'books/slug'), never by the item's id or the user's input. Firebase's automatic
+  /// first_open, session_start and user_engagement events give daily new and active users.
+  static void logScreen(String routePattern) {
+    if (!enabled) return;
+    final name = routePattern.replaceFirst(RegExp('^/'), '').replaceAll(':', '');
+    final screen = name.isEmpty ? 'root' : name;
+    if (screen == _lastScreen) return;
+    _lastScreen = screen;
+    unawaited(
+      FirebaseAnalytics.instance
+          .logScreenView(screenName: screen, screenClass: screen)
+          .catchError((Object e) => debugPrint('screen_view not logged: $e')),
+    );
   }
 
   /// Topics let the Firebase console target everyone, or one language's users.

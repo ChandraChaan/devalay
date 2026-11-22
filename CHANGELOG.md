@@ -3,6 +3,15 @@
 Each milestone is a git tag and a [GitHub release](https://github.com/ChandraChaan/devalay/releases). Releases from
 v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the section below that matches the tag.
 
+## v1.5.1 — 2026-11-22
+
+- Usage statistics and install measurement. Firebase Analytics now counts daily new and active users and logs a
+  screen view for each screen (named by its route, such as `home` or `books/slug`, never by item or user input).
+  Meta's app events SDK (`facebook_app_events`, app 2224409311804637) logs installs and app opens automatically,
+  so Meta app-install ads can see installs; its extra event metadata (screen titles, opening URLs) is turned off.
+  Both collect the Android advertising ID. The Settings line no longer says "No analytics", and the privacy
+  policy, README and website describe what is collected.
+
 ## v1.5.0 — 2026-11-21
 
 - Every share now ends with "🪔 Devalay" and the app's Play link: the day's Panchang, festival wish cards,

@@ -657,7 +657,7 @@ const stringsKn = <String, String>{
   'Language': 'ಭಾಷೆ',
   'Light': 'ಲೈಟ್',
   'Morning Panchang': 'ಬೆಳಗಿನ ಪಂಚಾಂಗ',
-  'No ads · No analytics · Open source': 'ಜಾಹೀರಾತುಗಳಿಲ್ಲ · ಅನಾಲಿಟಿಕ್ಸ್ ಇಲ್ಲ · ಓಪನ್ ಸೋರ್ಸ್',
+  'No ads · Open source': 'ಜಾಹೀರಾತುಗಳಿಲ್ಲ · ಓಪನ್ ಸೋರ್ಸ್',
   'Panchang city': 'ಪಂಚಾಂಗ ನಗರ',
   'Preferences': 'ಆದ್ಯತೆಗಳು',
   'Privacy policy': 'ಗೌಪ್ಯತಾ ನೀತಿ',

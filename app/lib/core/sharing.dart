@@ -2,8 +2,7 @@
 /// bring the next install.
 ///
 /// The link's install referrer (utm_source=devalay_app, utm_medium=share, utm_campaign=<what was
-/// shared>) shows up in Play Console's acquisition reports, so the app needs no analytics SDK to
-/// see which shares bring installs.
+/// shared>) shows up in Play Console's acquisition reports, which show which shares bring installs.
 library;
 
 import 'package:share_plus/share_plus.dart';

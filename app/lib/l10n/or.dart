@@ -704,7 +704,7 @@ const stringsOr = <String, String>{
   'Language': 'ଭାଷା',
   'Light': 'ଲାଇଟ୍',
   'Morning Panchang': 'ସକାଳର ପଞ୍ଜିକା',
-  'No ads · No analytics · Open source': 'ବିଜ୍ଞାପନ ନାହିଁ · ଆନାଲିଟିକ୍ସ ନାହିଁ · ଓପନ୍ ସୋର୍ସ',
+  'No ads · Open source': 'ବିଜ୍ଞାପନ ନାହିଁ · ଓପନ୍ ସୋର୍ସ',
   'Panchang city': 'ପଞ୍ଜିକା ସହର',
   'Preferences': 'ପସନ୍ଦ ସେଟିଂ',
   'Privacy policy': 'ଗୋପନୀୟତା ନୀତି',

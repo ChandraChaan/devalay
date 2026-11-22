@@ -62,6 +62,8 @@ Astrology & horoscope, Music & audio.
 - **Privacy policy:** `https://chandrachaan.github.io/devalay/privacy.html`. Set the `CONTACT_EMAIL` repository
   variable first; the policy shows it, and Play requires a real contact address.
 - **Ads:** No ads.
+- **Advertising ID:** Yes, the app uses the advertising ID (Firebase Analytics and the Meta SDK add the `AD_ID`
+  permission). Purposes: Analytics, Advertising or marketing.
 - **App access:** All functionality is available without special access.
 - **Content rating:** Fill in the questionnaire as a reference/lifestyle app with no violence, no user-to-user
   communication, no gambling and no purchases. The expected result is "Everyone" / 3+.
@@ -74,7 +76,8 @@ Astrology & horoscope, Music & audio.
   |---|---|---|---|---|
   | Crash logs (App info and performance) | Yes | No | Analytics: fixing crashes (Firebase Crashlytics) | No |
   | Diagnostics | Yes | No | Same as above | No |
-  | Device or other IDs (Firebase installation ID, push token) | Yes | No | App functionality: notifications, update checks | No |
+  | Device or other IDs (Firebase installation ID, push token, Android advertising ID) | Yes | Yes (Meta, Google) | Collected: App functionality, Analytics, Advertising or marketing. Shared: Analytics, Advertising or marketing | No |
+  | App interactions (App activity): installs, app opens, screen views | Yes | Yes (Meta, Google) | Collected and shared: Analytics, Advertising or marketing (Firebase Analytics, Meta app events) | No |
 
   Data is encrypted in transit. No account is created, so there is nothing to request deletion of. No location,
   contacts, photos or personal info are collected.

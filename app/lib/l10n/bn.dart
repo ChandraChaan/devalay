@@ -652,7 +652,7 @@ const stringsBn = <String, String>{
   'Language': 'ভাষা',
   'Light': 'লাইট',
   'Morning Panchang': 'সকালের পঞ্জিকা',
-  'No ads · No analytics · Open source': 'বিজ্ঞাপন নেই · অ্যানালিটিক্স নেই · ওপেন সোর্স',
+  'No ads · Open source': 'বিজ্ঞাপন নেই · ওপেন সোর্স',
   'Panchang city': 'পঞ্জিকার শহর',
   'Preferences': 'পছন্দ',
   'Privacy policy': 'গোপনীয়তা নীতি',

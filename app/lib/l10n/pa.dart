@@ -705,7 +705,7 @@ const stringsPa = <String, String>{
   'Language': 'ਭਾਸ਼ਾ',
   'Light': 'ਲਾਈਟ',
   'Morning Panchang': 'ਸਵੇਰ ਦਾ ਪੰਚਾਂਗ',
-  'No ads · No analytics · Open source': 'ਕੋਈ ਇਸ਼ਤਿਹਾਰ ਨਹੀਂ · ਕੋਈ ਐਨਾਲਿਟਿਕਸ ਨਹੀਂ · ਓਪਨ ਸੋਰਸ',
+  'No ads · Open source': 'ਕੋਈ ਇਸ਼ਤਿਹਾਰ ਨਹੀਂ · ਓਪਨ ਸੋਰਸ',
   'Panchang city': 'ਪੰਚਾਂਗ ਸ਼ਹਿਰ',
   'Preferences': 'ਪਸੰਦਾਂ',
   'Privacy policy': 'ਪਰਦੇਦਾਰੀ ਨੀਤੀ',

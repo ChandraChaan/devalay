@@ -707,7 +707,7 @@ const stringsTa = <String, String>{
   'Language': 'மொழி',
   'Light': 'வெளிர்',
   'Morning Panchang': 'காலை பஞ்சாங்கம்',
-  'No ads · No analytics · Open source': 'விளம்பரமில்லை · கண்காணிப்பில்லை · ஓப்பன் சோர்ஸ்',
+  'No ads · Open source': 'விளம்பரமில்லை · ஓப்பன் சோர்ஸ்',
   'Panchang city': 'பஞ்சாங்க நகரம்',
   'Preferences': 'விருப்பங்கள்',
   'Privacy policy': 'தனியுரிமைக் கொள்கை',

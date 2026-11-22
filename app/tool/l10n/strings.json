@@ -6828,9 +6828,9 @@
   "where": "lib/features/settings.dart"
  },
  {
-  "en": "No ads · No analytics · Open source",
-  "hi": "विज्ञापन नहीं · एनालिटिक्स नहीं · ओपन सोर्स",
-  "te": "ప్రకటనలు లేవు · అనలిటిక్స్ లేవు · ఓపెన్ సోర్స్",
+  "en": "No ads · Open source",
+  "hi": "विज्ञापन नहीं · ओपन सोर्स",
+  "te": "ప్రకటనలు లేవు · ఓపెన్ సోర్స్",
   "where": "lib/features/settings.dart"
  },
  {

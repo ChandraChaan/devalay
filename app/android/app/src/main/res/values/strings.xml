@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Meta (Facebook) app events: install and app-open measurement for Meta app-install ads.
+         The client token is a public app identifier (it ships in every APK), not a secret. -->
+    <string name="facebook_app_id" translatable="false">2224409311804637</string>
+    <string name="facebook_client_token" translatable="false">698cb34b4a540a7b863cf5c44d9548bd</string>
     <string name="panchang_widget_description">Today\'s tithi, nakshatra, Rahu Kalam and festival</string>
     <string name="tithi_widget_label">Tithi</string>
     <string name="tithi_widget_description">Today\'s date and tithi, with a mark on festival days</string>
