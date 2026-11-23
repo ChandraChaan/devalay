@@ -3,6 +3,18 @@
 Each milestone is a git tag and a [GitHub release](https://github.com/ChandraChaan/devalay/releases). Releases from
 v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the section below that matches the tag.
 
+## v1.5.2 — 2026-11-23
+
+Crash fixes from Crashlytics (1.5.0 and 1.5.1 had about 75% crash-free users):
+
+- A song that can't be streamed no longer closes the app. Failed loads (offline, a missing file, or Wikimedia
+  Commons answering 429 Too Many Requests) are caught in the player, including when the next song in a queue
+  fails, and show "Could not load. Check your connection." Streams now send a Devalay User-Agent, as
+  Wikimedia's policy asks, so they are rate-limited less.
+- Tapping a language twice in the Settings language sheet no longer crashes after the sheet has closed.
+- Turning on a reminder twice quickly (onboarding, Settings, Calendar) no longer crashes with "Another
+  permission request is already in progress"; both taps share one permission request.
+
 ## v1.5.1 — 2026-11-22
 
 - Usage statistics and install measurement. Firebase Analytics now counts daily new and active users and logs a

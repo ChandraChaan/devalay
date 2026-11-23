@@ -6,10 +6,12 @@ import 'package:go_router/go_router.dart';
 import 'package:home_widget/home_widget.dart';
 
 import '../core/app_care.dart';
+import '../core/audio.dart';
 import '../core/calendar_reminders.dart';
 import '../core/i18n.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
+import '../widgets/common.dart';
 import '../widgets/mini_player.dart';
 
 class AppShell extends ConsumerStatefulWidget {
@@ -38,9 +40,14 @@ class _AppShellState extends ConsumerState<AppShell> {
       WidgetsBinding.instance.addPostFrameCallback((_) => _openFromWidget(uri));
     }, onError: (_) {});
     _widgetTaps = HomeWidget.widgetClicked.listen(_openFromWidget, onError: (_) {});
+    // A track that can't be streamed (offline, server busy) gets a message instead of silence.
+    _audioErrors = ref.read(audioProvider).errors.listen((_) {
+      if (mounted) toast(context, tr(ref, 'error'));
+    });
   }
 
   StreamSubscription<Uri?>? _widgetTaps;
+  StreamSubscription<Object>? _audioErrors;
 
   void _openFromWidget(Uri? uri) {
     final path = widgetRoute(uri);
@@ -51,6 +58,7 @@ class _AppShellState extends ConsumerState<AppShell> {
   @override
   void dispose() {
     _widgetTaps?.cancel();
+    _audioErrors?.cancel();
     super.dispose();
   }
 

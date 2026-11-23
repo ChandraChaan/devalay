@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:timezone/data/latest_all.dart' as tzdata;
@@ -92,9 +94,23 @@ class Notifications {
     notificationDetails: const NotificationDetails(android: _announcement),
   );
 
-  static Future<bool> requestPermission() async {
+  static Future<bool>? _permissionRequest;
+
+  /// Asks for the notification permission. Quick double taps share one request: Android allows
+  /// only one at a time and throws `permissionRequestInProgress` for the second.
+  static Future<bool> requestPermission() =>
+      _permissionRequest ??= _requestPermission().whenComplete(() => _permissionRequest = null);
+
+  static Future<bool> _requestPermission() async {
     final android = _plugin.resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>();
-    return await android?.requestNotificationsPermission() ?? true;
+    if (android == null) return true;
+    try {
+      return await android.requestNotificationsPermission() ?? false;
+    } on PlatformException catch (e) {
+      // Another part of the app (or a plugin) is already asking; answer from the current state.
+      debugPrint('Notification permission request failed: $e');
+      return await android.areNotificationsEnabled() ?? false;
+    }
   }
 
   static tz.TZDateTime _next(int hour, int minute, [DateTime? on]) {
