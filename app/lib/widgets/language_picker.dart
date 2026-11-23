@@ -157,7 +157,8 @@ Future<void> showLanguagePicker(BuildContext context, WidgetRef ref) {
               style: Theme.of(c).textTheme.bodySmall,
             ),
             const SizedBox(height: 16),
-            LanguageGrid(onPicked: () => Navigator.of(c).pop()),
+            // A second tap can land after the first one closed the sheet.
+            LanguageGrid(onPicked: () => c.mounted ? Navigator.of(c).pop() : null),
           ],
         ),
       ),

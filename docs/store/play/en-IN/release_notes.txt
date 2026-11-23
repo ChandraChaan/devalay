@@ -1,1 +1,1 @@
-Small fixes and improvements to keep Devalay running smoothly.
+Fixes crashes when a song can't load and when changing language or turning on reminders.

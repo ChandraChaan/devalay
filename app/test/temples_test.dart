@@ -158,8 +158,9 @@ void main() {
     expect(find.text('Usual booking dates'), findsOneWidget);
     expect(find.text('Show all 9 dates'), findsOneWidget);
 
-    // With the dates list collapsed, the ₹300 ticket appears once, under Darshan.
-    final service = find.text('Special Entry Darshan (₹300)');
+    // The ₹300 ticket is listed under Darshan; in the days before its monthly release it also
+    // appears in the "opens soon" card, so take the first match.
+    final service = find.text('Special Entry Darshan (₹300)').first;
     await tester.scrollUntilVisible(service, 200, scrollable: find.byType(Scrollable).first);
     await tester.ensureVisible(service);
     await tester.pumpAndSettle();
