@@ -11,6 +11,7 @@ import '../core/sfx.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
 import '../widgets/mandala.dart';
+import '../core/usage.dart';
 
 const _mantras = [
   ('ॐ नमः शिवाय', 'Om Namah Shivaya'),
@@ -53,6 +54,7 @@ class _JapaScreenState extends ConsumerState<JapaScreen> with SingleTickerProvid
       if (_count >= 108) {
         _count = 0;
         _rounds++;
+        Usage.record('japa_round');
         HapticFeedback.heavyImpact();
         // A finished mala is a good moment; Play's own limits decide whether the card shows.
         Future.delayed(const Duration(seconds: 3), () => maybeAskForReview(happy: true));

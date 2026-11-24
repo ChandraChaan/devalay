@@ -1,0 +1,93 @@
+rules_version = '2';
+
+// Devalay usage statistics and feedback. Every install signs in anonymously; only the owner's
+// admin account (custom claim `admin`, or an `admins/{uid}` record that no client can write)
+// can read across installs. See docs/ADMIN.md.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return signedIn() && (
+        request.auth.token.get('admin', false) == true ||
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+      );
+    }
+
+    function shortString(v, max) {
+      return v is string && v.size() <= max;
+    }
+
+    // One summary per install, written only by that install.
+    function installShape() {
+      let d = request.resource.data;
+      return d.keys().hasOnly(['firstSeen', 'lastSeen', 'lang', 'v', 'build', 'state', 'src', 'sessions', 'f'])
+        && d.lastSeen == request.time
+        && (!('lang' in d) || shortString(d.lang, 8))
+        && (!('v' in d) || shortString(d.v, 16))
+        && (!('build' in d) || d.build is int)
+        && (!('state' in d) || shortString(d.state, 40))
+        && (!('src' in d) || shortString(d.src, 60))
+        && (!('sessions' in d) || d.sessions is int)
+        && (!('f' in d) || (d.f is map && d.f.size() <= 120));
+    }
+
+    match /installs/{uid} {
+      allow read: if isAdmin() || (signedIn() && request.auth.uid == uid);
+      allow create: if signedIn() && request.auth.uid == uid && installShape()
+        && request.resource.data.get('firstSeen', request.time) == request.time;
+      // firstSeen is written once, as the server time, and never changed afterwards.
+      allow update: if signedIn() && request.auth.uid == uid && installShape()
+        && (
+          !('firstSeen' in resource.data)
+            ? request.resource.data.get('firstSeen', request.time) == request.time
+            : request.resource.data.firstSeen == resource.data.firstSeen
+        );
+      allow delete: if isAdmin() || (signedIn() && request.auth.uid == uid);
+    }
+
+    // A batch of actions (at most one write a minute per install).
+    match /events/{id} {
+      allow create: if signedIn()
+        && request.resource.data.keys().hasOnly(['uid', 'at', 'sid', 'items'])
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.at == request.time
+        && shortString(request.resource.data.sid, 20)
+        && request.resource.data.items is list
+        && request.resource.data.items.size() <= 60;
+      allow read: if isAdmin() || (signedIn() && resource.data.uid == request.auth.uid);
+      allow delete: if isAdmin() || (signedIn() && resource.data.uid == request.auth.uid);
+      allow update: if false;
+    }
+
+    // Feedback: users add notes, only the admin reads them or marks them done.
+    match /feedback/{id} {
+      allow create: if signedIn()
+        && request.resource.data.keys().hasOnly(['uid', 'at', 'kind', 'text', 'lang', 'v', 'done'])
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.at == request.time
+        && request.resource.data.kind in ['idea', 'problem', 'praise']
+        && request.resource.data.text is string
+        && request.resource.data.text.size() > 0
+        && request.resource.data.text.size() <= 2000
+        && shortString(request.resource.data.lang, 8)
+        && shortString(request.resource.data.v, 16)
+        && request.resource.data.done == false;
+      allow read, delete: if isAdmin();
+      allow update: if isAdmin()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['done']);
+    }
+
+    // Who is an admin. Created only in the Firebase console or with the Admin SDK.
+    match /admins/{uid} {
+      allow read: if signedIn() && request.auth.uid == uid;
+      allow write: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

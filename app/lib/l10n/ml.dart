@@ -1,6 +1,29 @@
 /// Malayalam translations of Devalay's English UI strings and Panchang names, keyed by the English text.
 /// Source list: tool/l10n/strings.json. Keys must match the English exactly; {0}, {1} are placeholders.
 const stringsMl = <String, String>{
+  // Feedback and usage statistics (1.5.3).
+  'Could not send. Check your connection and try again.':
+      'അയയ്ക്കാനായില്ല. ഇന്റർനെറ്റ് പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക.',
+  'Idea or feature': 'ആശയം അല്ലെങ്കിൽ പുതിയ സൗകര്യം',
+  'Open GitHub issues': 'GitHub issues തുറക്കുക',
+  'Please do not include phone numbers or other personal details.':
+      'ദയവായി ഫോൺ നമ്പറോ മറ്റ് സ്വകാര്യ വിവരങ്ങളോ എഴുതരുത്.',
+  'Send': 'അയയ്ക്കുക',
+  'Something I like': 'എനിക്ക് ഇഷ്ടപ്പെട്ടത്',
+  'Something is wrong': 'എന്തോ ശരിയല്ല',
+  'Tell us what to add or fix. We read every note.':
+      'എന്ത് ചേർക്കണം അല്ലെങ്കിൽ ശരിയാക്കണം എന്ന് പറയൂ. ഓരോ സന്ദേശവും ഞങ്ങൾ വായിക്കുന്നു.',
+  'Thank you! Your note reached us.': 'നന്ദി! നിങ്ങളുടെ സന്ദേശം ഞങ്ങൾക്ക് ലഭിച്ചു.',
+  'Write here…': 'ഇവിടെ എഴുതുക…',
+  'Delete my usage data': 'എന്റെ ഉപയോഗ ഡാറ്റ ഇല്ലാതാക്കുക',
+  'Delete usage data?': 'ഉപയോഗ ഡാറ്റ ഇല്ലാതാക്കണോ?',
+  'Privacy': 'സ്വകാര്യത',
+  'Share usage statistics': 'ഉപയോഗ സ്ഥിതിവിവരങ്ങൾ പങ്കിടുക',
+  'This removes the usage statistics this phone has sent and turns sharing off. Your saved days, favourites and settings stay.':
+      'ഈ ഫോൺ അയച്ച ഉപയോഗ സ്ഥിതിവിവരങ്ങൾ ഇല്ലാതാകും, പങ്കിടൽ നിർത്തും. നിങ്ങൾ സേവ് ചെയ്ത ദിവസങ്ങളും പ്രിയപ്പെട്ടവയും ക്രമീകരണങ്ങളും അതേപടി ഉണ്ടാകും.',
+  'Usage data deleted': 'ഉപയോഗ ഡാറ്റ ഇല്ലാതാക്കി',
+  'Which screens and features you use, your language and state, so we can improve Devalay. No name, no typed text.':
+      'നിങ്ങൾ ഏതൊക്കെ സ്ക്രീനുകളും സൗകര്യങ്ങളും ഉപയോഗിക്കുന്നു, നിങ്ങളുടെ ഭാഷയും സംസ്ഥാനവും, Devalay മെച്ചപ്പെടുത്താൻ. പേരോ നിങ്ങൾ എഴുതിയ ടെക്സ്റ്റോ ഇല്ല.',
   // Backup, calendar export, contacts import and home-screen widgets.
   'Choghadiya now': 'ഇപ്പോഴത്തെ ചൗഘഡിയ',
   'In {0} days': '{0} ദിവസത്തിനുള്ളിൽ',

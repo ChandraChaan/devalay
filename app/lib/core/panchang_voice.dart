@@ -12,6 +12,7 @@ import 'models.dart';
 import 'muhurta.dart';
 import 'names.dart';
 import 'providers.dart';
+import 'usage.dart';
 
 /// The device text-to-speech locale for each app language.
 const ttsLocales = {
@@ -165,6 +166,7 @@ class PanchangVoice extends Notifier<PanchangVoiceState> {
   /// Reads [day] aloud. [onEnglishFallback] runs before reading when the phone has no voice for the
   /// app language, so the screen can explain how to add one while the English reading plays.
   Future<ReadOutcome> read(WidgetRef ref, DateTime day, {VoidCallback? onEnglishFallback}) async {
+    Usage.record('panchang_listen');
     final session = ++_session;
     await _tts.stop();
     await _configure();

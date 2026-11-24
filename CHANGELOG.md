@@ -3,6 +3,17 @@
 Each milestone is a git tag and a [GitHub release](https://github.com/ChandraChaan/devalay/releases). Releases from
 v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the section below that matches the tag.
 
+## v1.5.3 — 2026-11-24
+
+- Send feedback is now in the app: write an idea, a problem or something you like, and it reaches the Devalay
+  team directly (More and Settings → Send feedback). No GitHub account needed.
+- Anonymous usage statistics, so we know which features to improve: each install gets a random Firebase ID and
+  reports which screens and features it uses (Panchang, Gita audio, japa rounds, shares…), whether the app is open
+  right now, the language, app version and the state of the chosen city. Nothing typed is sent. Settings → Privacy
+  has a switch to turn it off (it also stops Firebase Analytics) and a button to delete everything this phone sent.
+- An owner-only admin screen (Google sign-in, admin rights granted outside the app) shows who is online and on which
+  screen, a live activity feed, most-used features, users, and the feedback inbox. See docs/ADMIN.md.
+
 ## v1.5.2 — 2026-11-23
 
 Crash fixes from Crashlytics (1.5.0 and 1.5.1 had about 75% crash-free users):

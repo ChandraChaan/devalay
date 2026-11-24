@@ -10,6 +10,7 @@ import 'api.dart';
 import 'downloads.dart';
 import 'models.dart';
 import 'storage.dart';
+import 'usage.dart';
 
 /// One shared player with a queue, lock-screen controls (via just_audio_background),
 /// offline playback of downloaded tracks and a sleep timer.
@@ -76,6 +77,7 @@ class AudioController {
   }
 
   Future<void> playQueue(List<Track> tracks, {int index = 0}) async {
+    if (index < tracks.length) Usage.record('audio_play', item: '${tracks[index].kind}:${tracks[index].id}');
     if (tracks.isEmpty) return;
     final same =
         queue.length == tracks.length && Iterable.generate(tracks.length).every((i) => queue[i].id == tracks[i].id);

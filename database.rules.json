@@ -1,0 +1,25 @@
+{
+  "rules": {
+    "status": {
+      ".read": "auth != null && (auth.token.admin === true || root.child('admins').child(auth.uid).val() === true)",
+      ".indexOn": ["t"],
+      "$uid": {
+        ".write": "auth != null && auth.uid === $uid",
+        ".validate": "newData.hasChildren(['s', 't'])",
+        "s": { ".validate": "newData.val() === 'active' || newData.val() === 'offline'" },
+        "t": { ".validate": "newData.isNumber() && newData.val() <= now + 60000" },
+        "scr": { ".validate": "newData.isString() && newData.val().length <= 40" },
+        "lang": { ".validate": "newData.isString() && newData.val().length <= 8" },
+        "v": { ".validate": "newData.isString() && newData.val().length <= 16" },
+        "st": { ".validate": "newData.isString() && newData.val().length <= 40" },
+        "$other": { ".validate": false }
+      }
+    },
+    "admins": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": false
+      }
+    }
+  }
+}

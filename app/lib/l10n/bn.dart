@@ -1,6 +1,27 @@
 /// Bengali translations of Devalay's English UI strings and Panchang names, keyed by the English text.
 /// Source list: tool/l10n/strings.json. Keys must match the English exactly; {0}, {1} are placeholders.
 const stringsBn = <String, String>{
+  // Feedback and usage statistics (1.5.3).
+  'Could not send. Check your connection and try again.': 'পাঠানো যায়নি। ইন্টারনেট সংযোগ দেখে আবার চেষ্টা করুন।',
+  'Idea or feature': 'ভাবনা বা নতুন সুবিধা',
+  'Open GitHub issues': 'GitHub issues খুলুন',
+  'Please do not include phone numbers or other personal details.':
+      'অনুগ্রহ করে ফোন নম্বর বা অন্য ব্যক্তিগত তথ্য লিখবেন না।',
+  'Send': 'পাঠান',
+  'Something I like': 'যা আমার ভালো লাগে',
+  'Something is wrong': 'কিছু ঠিক নেই',
+  'Tell us what to add or fix. We read every note.': 'কী যোগ করব বা ঠিক করব জানান। আমরা প্রতিটি বার্তা পড়ি।',
+  'Thank you! Your note reached us.': 'ধন্যবাদ! আপনার বার্তা আমাদের কাছে পৌঁছেছে।',
+  'Write here…': 'এখানে লিখুন…',
+  'Delete my usage data': 'আমার ব্যবহারের তথ্য মুছুন',
+  'Delete usage data?': 'ব্যবহারের তথ্য মুছবেন?',
+  'Privacy': 'গোপনীয়তা',
+  'Share usage statistics': 'ব্যবহারের পরিসংখ্যান শেয়ার করুন',
+  'This removes the usage statistics this phone has sent and turns sharing off. Your saved days, favourites and settings stay.':
+      'এই ফোন থেকে পাঠানো ব্যবহারের পরিসংখ্যান মুছে যাবে এবং শেয়ার করা বন্ধ হবে। আপনার সংরক্ষিত দিন, প্রিয় ও সেটিংস থাকবে।',
+  'Usage data deleted': 'ব্যবহারের তথ্য মুছে ফেলা হয়েছে',
+  'Which screens and features you use, your language and state, so we can improve Devalay. No name, no typed text.':
+      'আপনি কোন স্ক্রিন ও সুবিধা ব্যবহার করেন, আপনার ভাষা ও রাজ্য, যাতে আমরা Devalay আরও ভালো করতে পারি। নাম বা লেখা টেক্সট নয়।',
   // Backup, calendar export, contacts import and home-screen widgets.
   'Choghadiya now': 'এখনকার চৌঘড়িয়া',
   'In {0} days': '{0} দিন বাকি',

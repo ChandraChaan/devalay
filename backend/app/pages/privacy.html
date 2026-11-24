@@ -10,6 +10,8 @@
   <li>Devalay shows no ads. To understand how the app is used and to measure our own ads for Devalay, it uses
     Google Firebase Analytics and Meta (Facebook) app events, which collect app activity and device identifiers,
     including the Android advertising ID. Crash reports (Firebase Crashlytics) are used to fix bugs.</li>
+  <li>Devalay also keeps its own anonymous usage statistics (which screens and features are used, and when) so we
+    can improve the app. You can turn this off, or delete what was sent, in Settings → Privacy.</li>
   <li>We never sell your personal data. Usage and device data is shared with Google and Meta only for the
     analytics and ad measurement described below.</li>
   <li>You can delete your account and all its data from inside the app at any time.</li>
@@ -33,7 +35,7 @@
 
 <h2>Crash reports, analytics, notifications and updates (Google Firebase)</h2>
 
-<p>The Android app uses four Google Firebase services, run by Google under the
+<p>The Android app uses these Google Firebase services, run by Google under the
 
 <a href="https://firebase.google.com/support/privacy">Firebase privacy terms</a>:</p>
 
@@ -54,6 +56,21 @@
     (derived from the IP address, which is not stored), a random app instance ID and the Android advertising ID. It
     does not include your name, email, contacts, precise location, birth details or anything you type. We use it to
     see how many people use Devalay and to measure our Google Ads campaigns.</li>
+
+  <li><b>Authentication, Firestore and Realtime Database (usage statistics and feedback):</b> each install gets a
+    random anonymous ID (no account, name or email). Under that ID the app reports whether it is open right now and
+    which screen is showing; which screens and features are used and how often (for example Panchang, Gita audio,
+    a finished japa round, a share); the app language, app version, where the app was installed from, and the
+    Indian state of the city you picked for Panchang. Actions are fixed names, sometimes with a short id such as a
+    Gita chapter number or a song id; nothing you type is included, and no precise location, contacts, birth details
+    or device identifiers beyond the anonymous ID. Only the Devalay owner can read this, to decide what to improve.
+    The data is stored by Google in Mumbai (Firestore) and Singapore (Realtime Database).
+    <br>Turn it off any time in <b>Settings → Privacy → Share usage statistics</b> (this also stops Firebase
+    Analytics). <b>Settings → Privacy → Delete my usage data</b> deletes everything this phone sent and turns sharing
+    off.</li>
+
+  <li><b>Feedback:</b> notes you send from <b>Send feedback</b> are stored with the anonymous ID, app language and
+    version so the owner can read them. Please do not include personal details.</li>
 
 </ul>
 
@@ -101,6 +118,7 @@ private storage and are removed if you uninstall the app.</p>
 
 <h2>Retention and deletion</h2>
 <p>Account data is kept until you delete your account (Profile → Delete account), which permanently removes it.
+Usage statistics are kept until you delete them in Settings → Privacy, or until we no longer need them.
 Operational logs are kept for at most 30 days.</p>
 
 <h2>Security</h2>

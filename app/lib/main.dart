@@ -12,6 +12,7 @@ import 'core/firebase.dart';
 import 'core/names.dart';
 import 'core/notifications.dart';
 import 'core/storage.dart';
+import 'core/usage.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,6 +28,7 @@ Future<void> main() async {
   );
   await Notifications.init();
   await FirebaseServices.init();
+  unawaited(Usage.init());
   unawaited(FirebaseServices.subscribe(Prefs.load(Boxes.prefs).language));
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);

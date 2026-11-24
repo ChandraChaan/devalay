@@ -19,6 +19,10 @@ import '../widgets/city_picker.dart';
 import '../widgets/language_picker.dart';
 import '../widgets/common.dart';
 import 'calendar_settings.dart';
+import '../core/usage.dart';
+import '../core/firebase.dart';
+
+int _versionTaps = 0;
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -235,6 +239,33 @@ class SettingsScreen extends ConsumerWidget {
             ),
             onTap: () => context.push('/backup'),
           ),
+          if (FirebaseServices.enabled) ...[
+            _Header(t3(lang, 'Privacy', 'गोपनीयता', 'గోప్యత')),
+            ValueListenableBuilder<bool>(
+              valueListenable: Usage.sharingChanges,
+              builder: (context, sharing, _) => SwitchListTile(
+                secondary: const Icon(Icons.insights_rounded),
+                title: Text(
+                  t3(lang, 'Share usage statistics', 'उपयोग के आँकड़े साझा करें', 'వినియోగ గణాంకాలు పంచుకోండి'),
+                ),
+                subtitle: Text(
+                  l3(
+                    ref,
+                    'Which screens and features you use, your language and state, so we can improve Devalay. No name, no typed text.',
+                    'आप कौन-सी स्क्रीन और सुविधाएँ इस्तेमाल करते हैं, आपकी भाषा और राज्य, ताकि हम देवालय बेहतर बना सकें। नाम या लिखा हुआ टेक्स्ट नहीं।',
+                    'మీరు ఏ స్క్రీన్లు, ఫీచర్లు వాడుతున్నారు, మీ భాష, రాష్ట్రం, దేవాలయాన్ని మెరుగుపరచడానికి. పేరు గానీ, మీరు రాసిన టెక్స్ట్ గానీ కాదు.',
+                  ),
+                ),
+                value: sharing,
+                onChanged: Usage.setSharing,
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.delete_sweep_rounded),
+              title: Text(t3(lang, 'Delete my usage data', 'मेरा उपयोग डेटा हटाएँ', 'నా వినియోగ డేటాను తొలగించండి')),
+              onTap: () => _deleteUsage(context),
+            ),
+          ],
           _Header(t3(lang, 'About', 'जानकारी', 'గురించి')),
           ListTile(
             leading: const Icon(Icons.star_rate_rounded),
@@ -251,7 +282,7 @@ class SettingsScreen extends ConsumerWidget {
           ListTile(
             leading: const Icon(Icons.feedback_rounded),
             title: Text(t3(lang, 'Send feedback', 'सुझाव भेजें', 'సూచనలు పంపండి')),
-            onTap: sendFeedback,
+            onTap: () => context.push('/feedback'),
           ),
           ListTile(
             leading: const Icon(Icons.copyright_rounded),
@@ -277,6 +308,10 @@ class SettingsScreen extends ConsumerWidget {
           ),
           ListTile(
             leading: const Icon(Icons.info_outline_rounded),
+            // Seven taps open the owner console; it still needs an admin Google account.
+            onTap: () {
+              if (++_versionTaps % 7 == 0) context.push('/admin');
+            },
             title: FutureBuilder(
               future: PackageInfo.fromPlatform(),
               builder: (_, s) => Text('Devalay ${s.data?.version ?? ''}'),
@@ -289,6 +324,50 @@ class SettingsScreen extends ConsumerWidget {
         ],
       ),
     );
+  }
+
+  Future<void> _deleteUsage(BuildContext context) async {
+    final lang = appLang;
+    final ok = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(t3(lang, 'Delete usage data?', 'उपयोग डेटा हटाएँ?', 'వినియోగ డేటా తొలగించాలా?')),
+        content: Text(
+          t3(
+            lang,
+            'This removes the usage statistics this phone has sent and turns sharing off. Your saved days, favourites and settings stay.',
+            'इस फ़ोन से भेजे गए उपयोग के आँकड़े हट जाएँगे और साझा करना बंद हो जाएगा। आपके सहेजे दिन, पसंदीदा और सेटिंग्स बने रहेंगे।',
+            'ఈ ఫోన్ పంపిన వినియోగ గణాంకాలు తొలగిపోతాయి, పంచుకోవడం ఆగిపోతుంది. మీరు దాచిన రోజులు, ఇష్టమైనవి, సెట్టింగ్స్ అలాగే ఉంటాయి.',
+          ),
+        ),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(ctx, false), child: Text(t3(lang, 'Cancel', 'रद्द करें', 'రద్దు'))),
+          FilledButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            child: Text(t3(lang, 'Delete', 'हटाएँ', 'తొలగించండి')),
+          ),
+        ],
+      ),
+    );
+    if (ok != true) return;
+    try {
+      await Usage.deleteMyData();
+      if (context.mounted) {
+        toast(context, t3(lang, 'Usage data deleted', 'उपयोग डेटा हटा दिया गया', 'వినియోగ డేటా తొలగించబడింది'));
+      }
+    } catch (_) {
+      if (context.mounted) {
+        toast(
+          context,
+          t3(
+            lang,
+            'Could not send. Check your connection and try again.',
+            'भेजा नहीं जा सका। इंटरनेट जाँचें और फिर कोशिश करें।',
+            'పంపలేకపోయాం. ఇంటర్నెట్ చూసి మళ్ళీ ప్రయత్నించండి.',
+          ),
+        );
+      }
+    }
   }
 
   Future<void> _deleteAccount(BuildContext context, WidgetRef ref) async {

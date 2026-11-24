@@ -1,6 +1,27 @@
 /// Odia translations of Devalay's English UI strings and Panchang names, keyed by the English text.
 /// Source list: tool/l10n/strings.json. Keys must match the English exactly; {0}, {1} are placeholders.
 const stringsOr = <String, String>{
+  // Feedback and usage statistics (1.5.3).
+  'Could not send. Check your connection and try again.': 'ପଠାଇ ହେଲା ନାହିଁ। ଇଣ୍ଟରନେଟ ଯାଞ୍ଚ କରି ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ।',
+  'Idea or feature': 'ଧାରଣା ବା ନୂଆ ସୁବିଧା',
+  'Open GitHub issues': 'GitHub issues ଖୋଲନ୍ତୁ',
+  'Please do not include phone numbers or other personal details.':
+      'ଦୟାକରି ଫୋନ ନମ୍ବର ବା ଅନ୍ୟ ବ୍ୟକ୍ତିଗତ ତଥ୍ୟ ଲେଖନ୍ତୁ ନାହିଁ।',
+  'Send': 'ପଠାନ୍ତୁ',
+  'Something I like': 'ମୋତେ ଯାହା ଭଲ ଲାଗେ',
+  'Something is wrong': 'କିଛି ଠିକ୍ ନାହିଁ',
+  'Tell us what to add or fix. We read every note.': 'କ\'ଣ ଯୋଡ଼ିବୁ ବା ଠିକ୍ କରିବୁ କୁହନ୍ତୁ। ଆମେ ପ୍ରତ୍ୟେକ ବାର୍ତ୍ତା ପଢ଼ୁ।',
+  'Thank you! Your note reached us.': 'ଧନ୍ୟବାଦ! ଆପଣଙ୍କ ବାର୍ତ୍ତା ଆମ ପାଖରେ ପହଞ୍ଚିଲା।',
+  'Write here…': 'ଏଠାରେ ଲେଖନ୍ତୁ…',
+  'Delete my usage data': 'ମୋର ବ୍ୟବହାର ତଥ୍ୟ ଡିଲିଟ୍ କରନ୍ତୁ',
+  'Delete usage data?': 'ବ୍ୟବହାର ତଥ୍ୟ ଡିଲିଟ୍ କରିବେ?',
+  'Privacy': 'ଗୋପନୀୟତା',
+  'Share usage statistics': 'ବ୍ୟବହାର ପରିସଂଖ୍ୟାନ ସେୟାର କରନ୍ତୁ',
+  'This removes the usage statistics this phone has sent and turns sharing off. Your saved days, favourites and settings stay.':
+      'ଏହି ଫୋନରୁ ପଠାଯାଇଥିବା ବ୍ୟବହାର ପରିସଂଖ୍ୟାନ ଡିଲିଟ୍ ହେବ ଏବଂ ସେୟାର ବନ୍ଦ ହେବ। ଆପଣଙ୍କ ସଞ୍ଚିତ ଦିନ, ପସନ୍ଦ ଓ ସେଟିଂସ ରହିବ।',
+  'Usage data deleted': 'ବ୍ୟବହାର ତଥ୍ୟ ଡିଲିଟ୍ ହେଲା',
+  'Which screens and features you use, your language and state, so we can improve Devalay. No name, no typed text.':
+      'ଆପଣ କେଉଁ ସ୍କ୍ରିନ ଓ ସୁବିଧା ବ୍ୟବହାର କରନ୍ତି, ଆପଣଙ୍କ ଭାଷା ଓ ରାଜ୍ୟ, ଯାହାଦ୍ୱାରା ଆମେ Devalayକୁ ଉନ୍ନତ କରିପାରିବୁ। ନାମ ବା ଲେଖା ଟେକ୍ସଟ ନୁହେଁ।',
   // Backup, calendar export, contacts import and home-screen widgets.
   'Choghadiya now': 'ଏବେର ଚୌଘଡ଼ିଆ',
   'In {0} days': '{0} ଦିନ ପରେ',
