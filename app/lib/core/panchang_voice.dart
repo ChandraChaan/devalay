@@ -13,6 +13,7 @@ import 'muhurta.dart';
 import 'names.dart';
 import 'providers.dart';
 import 'usage.dart';
+import 'day_guide.dart';
 
 /// The device text-to-speech locale for each app language.
 const ttsLocales = {
@@ -97,6 +98,16 @@ List<String> daySpeech(
     rahu = _span(lang, a, b);
   }
   if (rahu != null) out.add('${trLang(lang, 'rahu_kaal')}: $rahu');
+  // Disha Shool, the same sentence as the Panchang page's guidance card.
+  final direction = directionLabel(lang, dishaShool(day.weekday));
+  out.add(
+    t3(
+      lang,
+      'Avoid setting out on a journey towards the $direction today.',
+      'आज $direction दिशा की यात्रा शुरू न करें।',
+      'ఈ రోజు $direction దిశగా ప్రయాణం మొదలుపెట్టకండి.',
+    ),
+  );
   if (events.isNotEmpty) {
     final names = events.map((e) => e.title).join(', ');
     out.add(t3(lang, 'Your events: $names', 'आपके दिन: $names', 'మీ రోజులు: $names'));

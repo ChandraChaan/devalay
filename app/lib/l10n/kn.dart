@@ -1,6 +1,60 @@
 /// Kannada translations of Devalay's English UI strings and Panchang names, keyed by the English text.
 /// Source list: tool/l10n/strings.json. Keys must match the English exactly; {0}, {1} are placeholders.
 const stringsKn = <String, String>{
+  // Today's guidance and Disha Shool (1.5.4).
+  'A Rikta tithi (4th, 9th or 14th): better not to start new ventures; good for finishing work':
+      'ರಿಕ್ತ ತಿಥಿ (ಚತುರ್ಥಿ, ನವಮಿ ಅಥವಾ ಚತುರ್ದಶಿ): ಹೊಸ ಕೆಲಸ ಆರಂಭಿಸದಿರುವುದು ಒಳ್ಳೆಯದು; ಬಾಕಿ ಕೆಲಸ ಮುಗಿಸಲು ಒಳ್ಳೆಯದು',
+  'Amavasya: a day for remembering ancestors (tarpan) and quiet prayer, not for new beginnings':
+      'ಅಮಾವಾಸ್ಯೆ: ಪಿತೃ ತರ್ಪಣ ಮತ್ತು ಶಾಂತ ಪ್ರಾರ್ಥನೆಯ ದಿನ, ಹೊಸ ಆರಂಭಗಳಿಗೆ ಅಲ್ಲ',
+  'East': 'ಪೂರ್ವ',
+  'Ekadashi: a day for fasting, Vishnu puja and japa': 'ಏಕಾದಶಿ: ಉಪವಾಸ, ವಿಷ್ಣು ಪೂಜೆ ಮತ್ತು ಜಪದ ದಿನ',
+  'Friday (Venus): music and arts, jewellery, vehicles and Lakshmi puja':
+      'ಶುಕ್ರವಾರ (ಶುಕ್ರ): ಸಂಗೀತ ಮತ್ತು ಕಲೆ, ಆಭರಣ, ವಾಹನ ಮತ್ತು ಲಕ್ಷ್ಮೀ ಪೂಜೆ',
+  'Monday (Moon): travel, new clothes, farming and family visits':
+      'ಸೋಮವಾರ (ಚಂದ್ರ): ಪ್ರಯಾಣ, ಹೊಸ ಬಟ್ಟೆ, ಕೃಷಿ ಮತ್ತು ಬಂಧುಗಳ ಭೇಟಿ',
+  'North': 'ಉತ್ತರ',
+  'Purnima: good for vrat, Satyanarayan puja, charity and holy baths':
+      'ಹುಣ್ಣಿಮೆ: ವ್ರತ, ಸತ್ಯನಾರಾಯಣ ಪೂಜೆ, ದಾನ ಮತ್ತು ಪುಣ್ಯಸ್ನಾನಕ್ಕೆ ಒಳ್ಳೆಯದು',
+  'Saturday (Saturn): service, repairs, charity and Shani puja': 'ಶನಿವಾರ (ಶನಿ): ಸೇವೆ, ದುರಸ್ತಿ, ದಾನ ಮತ್ತು ಶನಿ ಪೂಜೆ',
+  'South': 'ದಕ್ಷಿಣ',
+  'Sunday (Sun): health, government work, meeting elders and Surya puja':
+      'ಭಾನುವಾರ (ಸೂರ್ಯ): ಆರೋಗ್ಯ, ಸರ್ಕಾರಿ ಕೆಲಸ, ಹಿರಿಯರ ಭೇಟಿ ಮತ್ತು ಸೂರ್ಯ ಪೂಜೆ',
+  'The nakshatra is fierce: postpone auspicious beginnings and big purchases':
+      'ನಕ್ಷತ್ರ ಉಗ್ರ: ಶುಭ ಆರಂಭ ಮತ್ತು ದೊಡ್ಡ ಖರೀದಿಗಳನ್ನು ಮುಂದೂಡಿ',
+  'The nakshatra is fixed: good for lasting work such as laying foundations, a new home or planting':
+      'ನಕ್ಷತ್ರ ಸ್ಥಿರ: ಅಡಿಪಾಯ, ಹೊಸ ಮನೆ ಅಥವಾ ಗಿಡ ನೆಡುವಂತಹ ಶಾಶ್ವತ ಕೆಲಸಗಳಿಗೆ ಒಳ್ಳೆಯದು',
+  'The nakshatra is mixed: fine for routine work, less so for new beginnings':
+      'ನಕ್ಷತ್ರ ಮಿಶ್ರ: ದಿನನಿತ್ಯದ ಕೆಲಸಕ್ಕೆ ಸರಿ, ಹೊಸ ಆರಂಭಕ್ಕೆ ಅಷ್ಟಾಗಿ ಅಲ್ಲ',
+  'The nakshatra is movable: good for travel, buying a vehicle and starting a move':
+      'ನಕ್ಷತ್ರ ಚರ: ಪ್ರಯಾಣ, ವಾಹನ ಖರೀದಿ ಮತ್ತು ಮನೆ ಬದಲಾವಣೆ ಆರಂಭಿಸಲು ಒಳ್ಳೆಯದು',
+  'The nakshatra is sharp: not for auspicious beginnings; fine for clearing old matters':
+      'ನಕ್ಷತ್ರ ತೀಕ್ಷ್ಣ: ಶುಭ ಆರಂಭಕ್ಕೆ ಅಲ್ಲ; ಹಳೆಯ ವಿಷಯಗಳನ್ನು ಮುಗಿಸಲು ಸರಿ',
+  'The nakshatra is soft: good for music and arts, friendship, new clothes and celebrations':
+      'ನಕ್ಷತ್ರ ಮೃದು: ಸಂಗೀತ ಮತ್ತು ಕಲೆ, ಸ್ನೇಹ, ಹೊಸ ಬಟ್ಟೆ ಮತ್ತು ಹಬ್ಬಗಳಿಗೆ ಒಳ್ಳೆಯದು',
+  'The nakshatra is swift: good for trade, medicine, learning and quick tasks':
+      'ನಕ್ಷತ್ರ ಕ್ಷಿಪ್ರ: ವ್ಯಾಪಾರ, ಔಷಧ, ವಿದ್ಯೆ ಮತ್ತು ತ್ವರಿತ ಕೆಲಸಗಳಿಗೆ ಒಳ್ಳೆಯದು',
+  'Thursday (Jupiter): learning, guru seva, marriage talks and buying gold':
+      'ಗುರುವಾರ (ಗುರು): ವಿದ್ಯೆ, ಗುರು ಸೇವೆ, ಮದುವೆ ಮಾತುಕತೆ ಮತ್ತು ಚಿನ್ನ ಖರೀದಿ',
+  'Tuesday (Mars): courage, sports, property matters and Hanuman puja':
+      'ಮಂಗಳವಾರ (ಕುಜ): ಧೈರ್ಯ, ಕ್ರೀಡೆ, ಭೂಮಿ-ಆಸ್ತಿ ವ್ಯವಹಾರ ಮತ್ತು ಹನುಮಾನ್ ಪೂಜೆ',
+  'Wednesday (Mercury): study, writing, trade and accounts': 'ಬುಧವಾರ (ಬುಧ): ಓದು, ಬರವಣಿಗೆ, ವ್ಯಾಪಾರ ಮತ್ತು ಲೆಕ್ಕ',
+  'West': 'ಪಶ್ಚಿಮ',
+  'eat a few sesame seeds or coriander': 'ಸ್ವಲ್ಪ ಎಳ್ಳು ಅಥವಾ ಕೊತ್ತಂಬರಿ ತಿನ್ನಿ',
+  'eat a little barley': 'ಸ್ವಲ್ಪ ಬಾರ್ಲಿ ತಿನ್ನಿ',
+  'eat a little ghee or porridge': 'ಸ್ವಲ್ಪ ತುಪ್ಪ ಅಥವಾ ಗಂಜಿ ತಿನ್ನಿ',
+  'eat a little ginger or urad dal': 'ಸ್ವಲ್ಪ ಶುಂಠಿ ಅಥವಾ ಉದ್ದು ತಿನ್ನಿ',
+  'eat a little jaggery': 'ಸ್ವಲ್ಪ ಬೆಲ್ಲ ತಿನ್ನಿ',
+  'eat a spoon of curd': 'ಒಂದು ಚಮಚ ಮೊಸರು ತಿನ್ನಿ',
+  'look into a mirror': 'ಕನ್ನಡಿಯಲ್ಲಿ ನೋಡಿಕೊಳ್ಳಿ',
+  'Abhijit Muhurta {0}, around midday': 'ಅಭಿಜಿತ್ ಮುಹೂರ್ತ {0}, ಮಧ್ಯಾಹ್ನದ ಸುಮಾರಿಗೆ',
+  'Avoid setting out on a journey towards the {0} today.': 'ಇಂದು {0} ದಿಕ್ಕಿಗೆ ಪ್ರಯಾಣ ಆರಂಭಿಸಬೇಡಿ.',
+  'Best time to begin': 'ಆರಂಭಕ್ಕೆ ಉತ್ತಮ ಸಮಯ',
+  'Better to avoid': 'ಇವುಗಳನ್ನು ತಪ್ಪಿಸಿ',
+  'Day direction (Disha Shool)': 'ದಿಕ್ ಶೂಲ (ದಿನದ ದಿಕ್ಕು)',
+  'Good for': 'ಇವುಗಳಿಗೆ ಒಳ್ಳೆಯದು',
+  'If you must go that way: {0} before leaving.': 'ಆ ದಿಕ್ಕಿಗೆ ಹೋಗಲೇಬೇಕಾದರೆ ಹೊರಡುವ ಮೊದಲು: {0}.',
+  'Rahu Kaal {0}: do not start anything important': 'ರಾಹು ಕಾಲ {0}: ಯಾವುದೇ ಮುಖ್ಯ ಕೆಲಸ ಆರಂಭಿಸಬೇಡಿ',
+  'Today\'s guidance': 'ಇಂದಿನ ಮಾರ್ಗದರ್ಶನ',
   // Feedback and usage statistics (1.5.3).
   'Could not send. Check your connection and try again.': 'ಕಳುಹಿಸಲಾಗಲಿಲ್ಲ. ಇಂಟರ್ನೆಟ್ ಪರಿಶೀಲಿಸಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.',
   'Idea or feature': 'ಆಲೋಚನೆ ಅಥವಾ ಹೊಸ ವೈಶಿಷ್ಟ್ಯ',

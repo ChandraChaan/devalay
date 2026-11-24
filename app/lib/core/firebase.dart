@@ -1,4 +1,7 @@
 import 'dart:async';
+import 'dart:io';
+
+import 'package:dio/dio.dart';
 
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -9,6 +12,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
+import 'api.dart';
 import 'languages.dart';
 import 'notifications.dart';
 import 'usage.dart';
@@ -33,8 +37,12 @@ class FirebaseServices {
     final crashlytics = FirebaseCrashlytics.instance;
     await crashlytics.setCrashlyticsCollectionEnabled(!kDebugMode);
     FlutterError.onError = crashlytics.recordFlutterFatalError;
+    // Uncaught async errors land here. The app keeps running (we return true), so only real bugs
+    // are recorded as fatal. A lost connection is expected on Indian mobile data: Riverpod 3 reports
+    // a data provider that failed offline here even though its screen already shows "Try again",
+    // and counting those as crashes hid the real ones.
     PlatformDispatcher.instance.onError = (error, stack) {
-      crashlytics.recordError(error, stack, fatal: true);
+      crashlytics.recordError(error, stack, fatal: !isNetworkFailure(error));
       return true;
     };
     // Notification messages arrive in the system tray by themselves while the app is in
@@ -137,3 +145,16 @@ int versionCodeOf(String version) {
   }
   return p[0] * 10000 + p[1] * 100 + p[2];
 }
+
+/// Whether [error] is a failed or interrupted network request (offline, timeout, connection reset),
+/// as opposed to a bug.
+bool isNetworkFailure(Object error) => switch (error) {
+  ApiException(isOffline: true) => true,
+  SocketException() || HttpException() || HandshakeException() || TimeoutException() => true,
+  DioException(:final type) =>
+    type == DioExceptionType.connectionError ||
+        type == DioExceptionType.connectionTimeout ||
+        type == DioExceptionType.receiveTimeout ||
+        type == DioExceptionType.sendTimeout,
+  _ => false,
+};

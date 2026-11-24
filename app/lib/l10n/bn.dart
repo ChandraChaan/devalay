@@ -1,6 +1,60 @@
 /// Bengali translations of Devalay's English UI strings and Panchang names, keyed by the English text.
 /// Source list: tool/l10n/strings.json. Keys must match the English exactly; {0}, {1} are placeholders.
 const stringsBn = <String, String>{
+  // Today's guidance and Disha Shool (1.5.4).
+  'A Rikta tithi (4th, 9th or 14th): better not to start new ventures; good for finishing work':
+      'রিক্তা তিথি (চতুর্থী, নবমী বা চতুর্দশী): নতুন কাজ শুরু না করাই ভালো; অসমাপ্ত কাজ শেষ করার জন্য ভালো',
+  'Amavasya: a day for remembering ancestors (tarpan) and quiet prayer, not for new beginnings':
+      'অমাবস্যা: পিতৃপুরুষের তর্পণ ও শান্ত প্রার্থনার দিন, নতুন শুরুর নয়',
+  'East': 'পূর্ব',
+  'Ekadashi: a day for fasting, Vishnu puja and japa': 'একাদশী: উপবাস, বিষ্ণু পূজা ও জপের দিন',
+  'Friday (Venus): music and arts, jewellery, vehicles and Lakshmi puja':
+      'শুক্রবার (শুক্র): সংগীত ও শিল্পকলা, গয়না, যানবাহন ও লক্ষ্মী পূজা',
+  'Monday (Moon): travel, new clothes, farming and family visits':
+      'সোমবার (চন্দ্র): ভ্রমণ, নতুন পোশাক, চাষাবাদ ও আত্মীয়দের সঙ্গে দেখা',
+  'North': 'উত্তর',
+  'Purnima: good for vrat, Satyanarayan puja, charity and holy baths':
+      'পূর্ণিমা: ব্রত, সত্যনারায়ণ পূজা, দান ও পুণ্যস্নানের জন্য ভালো',
+  'Saturday (Saturn): service, repairs, charity and Shani puja': 'শনিবার (শনি): সেবা, মেরামত, দান ও শনি পূজা',
+  'South': 'দক্ষিণ',
+  'Sunday (Sun): health, government work, meeting elders and Surya puja':
+      'রবিবার (সূর্য): স্বাস্থ্য, সরকারি কাজ, গুরুজনদের সঙ্গে দেখা ও সূর্য পূজা',
+  'The nakshatra is fierce: postpone auspicious beginnings and big purchases':
+      'নক্ষত্র উগ্র: শুভ সূচনা ও বড় কেনাকাটা পিছিয়ে দিন',
+  'The nakshatra is fixed: good for lasting work such as laying foundations, a new home or planting':
+      'নক্ষত্র স্থির: ভিত্তিপ্রস্তর, নতুন বাড়ি বা গাছ লাগানোর মতো স্থায়ী কাজের জন্য ভালো',
+  'The nakshatra is mixed: fine for routine work, less so for new beginnings':
+      'নক্ষত্র মিশ্র: দৈনন্দিন কাজের জন্য ঠিক, নতুন শুরুর জন্য কম',
+  'The nakshatra is movable: good for travel, buying a vehicle and starting a move':
+      'নক্ষত্র চর: ভ্রমণ, যানবাহন কেনা ও বাসা বদল শুরু করার জন্য ভালো',
+  'The nakshatra is sharp: not for auspicious beginnings; fine for clearing old matters':
+      'নক্ষত্র তীক্ষ্ণ: শুভ সূচনার জন্য নয়; পুরনো কাজ মেটানোর জন্য ঠিক',
+  'The nakshatra is soft: good for music and arts, friendship, new clothes and celebrations':
+      'নক্ষত্র মৃদু: সংগীত ও শিল্পকলা, বন্ধুত্ব, নতুন পোশাক ও উৎসবের জন্য ভালো',
+  'The nakshatra is swift: good for trade, medicine, learning and quick tasks':
+      'নক্ষত্র ক্ষিপ্র: ব্যবসা, ওষুধ, পড়াশোনা ও দ্রুত কাজের জন্য ভালো',
+  'Thursday (Jupiter): learning, guru seva, marriage talks and buying gold':
+      'বৃহস্পতিবার (বৃহস্পতি): বিদ্যা, গুরু সেবা, বিয়ের কথাবার্তা ও সোনা কেনা',
+  'Tuesday (Mars): courage, sports, property matters and Hanuman puja':
+      'মঙ্গলবার (মঙ্গল): সাহস, খেলাধুলা, জমি-সম্পত্তির কাজ ও হনুমান পূজা',
+  'Wednesday (Mercury): study, writing, trade and accounts': 'বুধবার (বুধ): পড়াশোনা, লেখা, ব্যবসা ও হিসাব',
+  'West': 'পশ্চিম',
+  'eat a few sesame seeds or coriander': 'কয়েকটি তিল বা ধনে খান',
+  'eat a little barley': 'একটু যব খান',
+  'eat a little ghee or porridge': 'একটু ঘি বা জাউ খান',
+  'eat a little ginger or urad dal': 'একটু আদা বা কলাই ডাল খান',
+  'eat a little jaggery': 'একটু গুড় খান',
+  'eat a spoon of curd': 'এক চামচ দই খান',
+  'look into a mirror': 'আয়নায় মুখ দেখুন',
+  'Abhijit Muhurta {0}, around midday': 'অভিজিৎ মুহূর্ত {0}, দুপুরের কাছাকাছি',
+  'Avoid setting out on a journey towards the {0} today.': 'আজ {0} দিকে যাত্রা শুরু করবেন না।',
+  'Best time to begin': 'শুরু করার সেরা সময়',
+  'Better to avoid': 'এগুলো এড়িয়ে চলুন',
+  'Day direction (Disha Shool)': 'দিশা শূল (দিনের দিক)',
+  'Good for': 'এর জন্য শুভ',
+  'If you must go that way: {0} before leaving.': 'ওই দিকে যেতেই হলে বেরোনোর আগে: {0}।',
+  'Rahu Kaal {0}: do not start anything important': 'রাহু কাল {0}: কোনো জরুরি কাজ শুরু করবেন না',
+  'Today\'s guidance': 'আজকের নির্দেশনা',
   // Feedback and usage statistics (1.5.3).
   'Could not send. Check your connection and try again.': 'পাঠানো যায়নি। ইন্টারনেট সংযোগ দেখে আবার চেষ্টা করুন।',
   'Idea or feature': 'ভাবনা বা নতুন সুবিধা',

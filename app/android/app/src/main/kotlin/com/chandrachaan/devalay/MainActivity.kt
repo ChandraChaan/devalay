@@ -38,9 +38,11 @@ class MainActivity : AudioServiceActivity() {
 
     // Draw behind the status and navigation bars on every Android version, as Android 15 does by default
     // for apps targeting SDK 35+. Flutter's MediaQuery padding keeps content clear of the bars.
+    // After super.onCreate: FlutterActivity first swaps LaunchTheme for NormalTheme, and creating the
+    // decor view any earlier inflates the launch background in this process.
     override fun onCreate(savedInstanceState: Bundle?) {
-        WindowCompat.enableEdgeToEdge(window)
         super.onCreate(savedInstanceState)
+        WindowCompat.enableEdgeToEdge(window)
     }
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {

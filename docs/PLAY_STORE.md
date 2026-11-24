@@ -79,7 +79,7 @@ Astrology & horoscope, Music & audio.
   | Device or other IDs (Firebase installation ID, push token, Android advertising ID) | Yes | Yes (Meta, Google) | Collected: App functionality, Analytics, Advertising or marketing. Shared: Analytics, Advertising or marketing | No |
   | App interactions (App activity): installs, app opens, screen views | Yes | Yes (Meta, Google) | Collected and shared: Analytics, Advertising or marketing (Firebase Analytics, Meta app events) | No |
   | Approximate location (Location): the Indian state of the city picked for Panchang (1.5.3) | Yes | No | Analytics | Yes (Settings → Privacy) |
-  | Other user-generated content (Messages): feedback notes from "Send feedback" (1.5.3) | Yes | No | App functionality, Analytics | Yes |
+  | Other user-generated content (App activity): feedback notes from "Send feedback" (1.5.3) | Yes | No | App functionality, Analytics | Yes |
 
   From 1.5.3 the app also keeps its own usage statistics in Firestore and the Realtime Database (anonymous Firebase
   ID, screens and features used, live online status), covered by the "App interactions" and "Device or other IDs"
