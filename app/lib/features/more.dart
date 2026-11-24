@@ -288,7 +288,11 @@ class RateCard extends ConsumerWidget {
                 t3(lang, 'Share with family', 'परिवार से साझा करें', 'కుటుంబంతో పంచుకోండి'),
                 () => shareApp(lang),
               ),
-              action(Icons.feedback_rounded, t3(lang, 'Send feedback', 'सुझाव भेजें', 'సూచనలు పంపండి'), sendFeedback),
+              action(
+                Icons.feedback_rounded,
+                t3(lang, 'Send feedback', 'सुझाव भेजें', 'సూచనలు పంపండి'),
+                () => context.push('/feedback'),
+              ),
             ],
           ),
         ],

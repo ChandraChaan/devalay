@@ -11,6 +11,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'app_care.dart';
 import 'i18n.dart';
 import 'storage.dart';
+import 'usage.dart';
 
 /// The Play listing with an install referrer naming what was shared ('panchang', 'wish', ...).
 String playLink(String campaign) {
@@ -42,7 +43,10 @@ Future<void> shareOnWhatsApp(String text) async {
 }
 
 /// "Share Devalay": WhatsApp first, since that is where Panchang and festival wishes travel.
-Future<void> shareApp(String lang) => shareOnWhatsApp(inviteText(lang));
+Future<void> shareApp(String lang) {
+  Usage.record('share_app');
+  return shareOnWhatsApp(inviteText(lang));
+}
 
 /// Shares [text] (and [files]) through the system share sheet; a completed share counts as a
 /// happy moment for [markShared].
@@ -53,6 +57,7 @@ Future<void> shareContent(String text, {List<XFile>? files}) async {
 
 /// Remembers that the user shared something; a share is a good moment for the review card.
 void markShared() {
+  Usage.record('share');
   Boxes.stats.put('shares', (Boxes.stats.get('shares', defaultValue: 0) as int) + 1);
   Future.delayed(const Duration(seconds: 2), () => maybeAskForReview(happy: true));
 }

@@ -11,12 +11,14 @@ import 'core/languages.dart';
 import 'core/models.dart';
 import 'core/storage.dart';
 import 'core/theme.dart';
+import 'features/admin.dart';
 import 'features/ask_gita.dart';
 import 'features/backup.dart';
 import 'features/bhakti_videos.dart';
 import 'features/auth_screens.dart';
 import 'features/books.dart';
 import 'features/credits.dart';
+import 'features/feedback.dart';
 import 'features/gita.dart';
 import 'features/home.dart';
 import 'features/important_days.dart';
@@ -166,6 +168,8 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/login', builder: (_, _) => const LoginScreen()),
       GoRoute(path: '/premium', builder: (_, _) => const PremiumScreen()),
       GoRoute(path: '/credits', builder: (_, _) => const CreditsScreen()),
+      GoRoute(path: '/feedback', builder: (_, _) => const FeedbackScreen()),
+      GoRoute(path: '/admin', builder: (_, _) => const AdminScreen()),
     ],
   );
   // Screen views for Firebase Analytics. A delegate listener (rather than a NavigatorObserver) also

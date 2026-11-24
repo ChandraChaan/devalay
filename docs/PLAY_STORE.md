@@ -78,9 +78,16 @@ Astrology & horoscope, Music & audio.
   | Diagnostics | Yes | No | Same as above | No |
   | Device or other IDs (Firebase installation ID, push token, Android advertising ID) | Yes | Yes (Meta, Google) | Collected: App functionality, Analytics, Advertising or marketing. Shared: Analytics, Advertising or marketing | No |
   | App interactions (App activity): installs, app opens, screen views | Yes | Yes (Meta, Google) | Collected and shared: Analytics, Advertising or marketing (Firebase Analytics, Meta app events) | No |
+  | Approximate location (Location): the Indian state of the city picked for Panchang (1.5.3) | Yes | No | Analytics | Yes (Settings → Privacy) |
+  | Other user-generated content (Messages): feedback notes from "Send feedback" (1.5.3) | Yes | No | App functionality, Analytics | Yes |
 
-  Data is encrypted in transit. No account is created, so there is nothing to request deletion of. No location,
-  contacts, photos or personal info are collected.
+  From 1.5.3 the app also keeps its own usage statistics in Firestore and the Realtime Database (anonymous Firebase
+  ID, screens and features used, live online status), covered by the "App interactions" and "Device or other IDs"
+  rows above (purpose: Analytics). Users can turn them off and delete them in Settings → Privacy, so answer **Yes**
+  to "Can users request that data be deleted?".
+
+  Data is encrypted in transit. No account is created; usage data is deleted from Settings → Privacy → Delete my
+  usage data. No precise location, contacts, photos or personal info are collected.
   Festival wishes let the user add their own photo to a card. The photo is chosen in the Android photo picker, copied
   into the app's private storage and drawn on the card on the phone; it is never uploaded, so under Play's definition
   it is not "collected". Only the finished card leaves the phone, when the user shares it to an app they choose.

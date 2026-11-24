@@ -6,6 +6,7 @@ import 'package:wakelock_plus/wakelock_plus.dart';
 import 'audio.dart';
 import 'models.dart';
 import 'storage.dart';
+import 'usage.dart';
 
 /// What the Gita player reads aloud for each verse.
 enum GitaReadMode { both, sanskrit, translation }
@@ -145,6 +146,7 @@ class GitaVoice extends Notifier<GitaVoiceState> {
     VoidCallback? onDone,
     bool announce = false,
   }) async {
+    Usage.record('gita_listen', item: '${chapter.number}');
     final session = ++_session;
     _owner = owner;
     await _tts.stop();

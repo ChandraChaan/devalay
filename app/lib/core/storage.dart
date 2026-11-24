@@ -6,6 +6,7 @@ import 'package:uuid/uuid.dart';
 import 'firebase.dart';
 import 'languages.dart';
 import 'theme.dart';
+import 'usage.dart';
 
 /// Local, on-device storage. Nothing here leaves the phone unless the user signs in
 /// and syncs favourites.
@@ -113,6 +114,7 @@ class PrefsNotifier extends Notifier<Prefs> {
   }
 
   Future<void> setLanguage(String v) async {
+    Usage.record('language_set', item: v);
     await set('language', v);
     await FirebaseServices.subscribe(v);
   }
@@ -121,7 +123,11 @@ class PrefsNotifier extends Notifier<Prefs> {
   Future<void> setAccent(Accent a) => set('accent', a.name);
   Future<void> setIshta(String? v) => set('ishta', v);
   Future<void> setRashi(String? v) => set('rashi', v);
-  Future<void> setCity(String v) => set('city', v);
+  Future<void> setCity(String v) {
+    Usage.record('city_set', item: v);
+    return set('city', v);
+  }
+
   Future<void> completeOnboarding() => set('onboarded', true);
 }
 

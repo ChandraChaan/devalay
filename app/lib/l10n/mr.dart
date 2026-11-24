@@ -1,6 +1,28 @@
 /// Marathi translations of Devalay's English UI strings and Panchang names, keyed by the English text.
 /// Source list: tool/l10n/strings.json. Keys must match the English exactly; {0}, {1} are placeholders.
 const stringsMr = <String, String>{
+  // Feedback and usage statistics (1.5.3).
+  'Could not send. Check your connection and try again.': 'पाठवता आले नाही. इंटरनेट तपासून पुन्हा प्रयत्न करा.',
+  'Idea or feature': 'कल्पना किंवा नवी सुविधा',
+  'Open GitHub issues': 'GitHub issues उघडा',
+  'Please do not include phone numbers or other personal details.':
+      'कृपया फोन नंबर किंवा इतर वैयक्तिक माहिती लिहू नका.',
+  'Send': 'पाठवा',
+  'Something I like': 'मला आवडलेले',
+  'Something is wrong': 'काहीतरी बरोबर नाही',
+  'Tell us what to add or fix. We read every note.':
+      'काय जोडावे किंवा दुरुस्त करावे ते सांगा. आम्ही प्रत्येक संदेश वाचतो.',
+  'Thank you! Your note reached us.': 'धन्यवाद! तुमचा संदेश आम्हाला मिळाला.',
+  'Write here…': 'इथे लिहा…',
+  'Delete my usage data': 'माझा वापर डेटा हटवा',
+  'Delete usage data?': 'वापर डेटा हटवायचा?',
+  'Privacy': 'गोपनीयता',
+  'Share usage statistics': 'वापराची आकडेवारी शेअर करा',
+  'This removes the usage statistics this phone has sent and turns sharing off. Your saved days, favourites and settings stay.':
+      'या फोनवरून पाठवलेली वापराची आकडेवारी हटवली जाईल आणि शेअर करणे बंद होईल. तुमचे जतन केलेले दिवस, आवडते आणि सेटिंग्ज राहतील.',
+  'Usage data deleted': 'वापर डेटा हटवला',
+  'Which screens and features you use, your language and state, so we can improve Devalay. No name, no typed text.':
+      'तुम्ही कोणत्या स्क्रीन आणि सुविधा वापरता, तुमची भाषा आणि राज्य, जेणेकरून आम्ही Devalay अधिक चांगले करू शकू. नाव किंवा लिहिलेला मजकूर नाही.',
   // Backup, calendar export, contacts import and home-screen widgets.
   'Choghadiya now': 'सध्याचा चौघडिया',
   'In {0} days': '{0} दिवस बाकी',

@@ -4722,6 +4722,72 @@
   "where": "lib/features/credits.dart"
  },
  {
+  "en": "Could not send. Check your connection and try again.",
+  "hi": "भेजा नहीं जा सका। इंटरनेट जाँचें और फिर कोशिश करें।",
+  "te": "పంపలేకపోయాం. ఇంటర్నెట్ చూసి మళ్ళీ ప్రయత్నించండి.",
+  "where": "lib/features/feedback.dart"
+ },
+ {
+  "en": "Idea or feature",
+  "hi": "सुझाव या नई सुविधा",
+  "te": "ఆలోచన లేదా కొత్త ఫీచర్",
+  "where": "lib/features/feedback.dart"
+ },
+ {
+  "en": "Open GitHub issues",
+  "hi": "GitHub issues खोलें",
+  "te": "GitHub issues తెరవండి",
+  "where": "lib/features/feedback.dart"
+ },
+ {
+  "en": "Please do not include phone numbers or other personal details.",
+  "hi": "कृपया फ़ोन नंबर या अन्य निजी जानकारी न लिखें।",
+  "te": "దయచేసి ఫోన్ నంబర్ లేదా ఇతర వ్యక్తిగత వివరాలు రాయవద్దు.",
+  "where": "lib/features/feedback.dart"
+ },
+ {
+  "en": "Send",
+  "hi": "भेजें",
+  "te": "పంపండి",
+  "where": "lib/features/feedback.dart"
+ },
+ {
+  "en": "Send feedback",
+  "hi": "सुझाव भेजें",
+  "te": "సూచనలు పంపండి",
+  "where": "lib/features/feedback.dart"
+ },
+ {
+  "en": "Something I like",
+  "hi": "जो मुझे पसंद है",
+  "te": "నాకు నచ్చింది",
+  "where": "lib/features/feedback.dart"
+ },
+ {
+  "en": "Something is wrong",
+  "hi": "कुछ ठीक नहीं है",
+  "te": "ఏదో సరిగా లేదు",
+  "where": "lib/features/feedback.dart"
+ },
+ {
+  "en": "Tell us what to add or fix. We read every note.",
+  "hi": "बताइए क्या जोड़ें या ठीक करें। हम हर संदेश पढ़ते हैं।",
+  "te": "ఏమి జోడించాలో లేదా సరిచేయాలో చెప్పండి. ప్రతి సందేశాన్నీ చదువుతాం.",
+  "where": "lib/features/feedback.dart"
+ },
+ {
+  "en": "Thank you! Your note reached us.",
+  "hi": "धन्यवाद! आपका संदेश हमें मिल गया।",
+  "te": "ధన్యవాదాలు! మీ సందేశం మాకు చేరింది.",
+  "where": "lib/features/feedback.dart"
+ },
+ {
+  "en": "Write here…",
+  "hi": "यहाँ लिखें…",
+  "te": "ఇక్కడ రాయండి…",
+  "where": "lib/features/feedback.dart"
+ },
+ {
   "en": "Bhagavad Gita {0}",
   "hi": "भगवद गीता {0}",
   "te": "భగవద్గీత {0}",
@@ -5934,12 +6000,6 @@
   "where": "lib/features/more.dart"
  },
  {
-  "en": "Send feedback",
-  "hi": "सुझाव भेजें",
-  "te": "సూచనలు పంపండి",
-  "where": "lib/features/more.dart"
- },
- {
   "en": "Share with family",
   "hi": "परिवार से साझा करें",
   "te": "కుటుంబంతో పంచుకోండి",
@@ -6804,6 +6864,18 @@
   "where": "lib/features/settings.dart"
  },
  {
+  "en": "Delete my usage data",
+  "hi": "मेरा उपयोग डेटा हटाएँ",
+  "te": "నా వినియోగ డేటాను తొలగించండి",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Delete usage data?",
+  "hi": "उपयोग डेटा हटाएँ?",
+  "te": "వినియోగ డేటా తొలగించాలా?",
+  "where": "lib/features/settings.dart"
+ },
+ {
   "en": "Free plan",
   "hi": "मुफ़्त प्लान",
   "te": "ఉచిత ప్లాన్",
@@ -6864,6 +6936,12 @@
   "where": "lib/features/settings.dart"
  },
  {
+  "en": "Privacy",
+  "hi": "गोपनीयता",
+  "te": "గోప్యత",
+  "where": "lib/features/settings.dart"
+ },
+ {
   "en": "Privacy policy",
   "hi": "गोपनीयता नीति",
   "te": "గోప్యతా విధానం",
@@ -6879,6 +6957,12 @@
   "en": "Reminders",
   "hi": "सूचनाएँ",
   "te": "రిమైండర్లు",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Share usage statistics",
+  "hi": "उपयोग के आँकड़े साझा करें",
+  "te": "వినియోగ గణాంకాలు పంచుకోండి",
   "where": "lib/features/settings.dart"
  },
  {
@@ -6912,9 +6996,27 @@
   "where": "lib/features/settings.dart"
  },
  {
+  "en": "This removes the usage statistics this phone has sent and turns sharing off. Your saved days, favourites and settings stay.",
+  "hi": "इस फ़ोन से भेजे गए उपयोग के आँकड़े हट जाएँगे और साझा करना बंद हो जाएगा। आपके सहेजे दिन, पसंदीदा और सेटिंग्स बने रहेंगे।",
+  "te": "ఈ ఫోన్ పంపిన వినియోగ గణాంకాలు తొలగిపోతాయి, పంచుకోవడం ఆగిపోతుంది. మీరు దాచిన రోజులు, ఇష్టమైనవి, సెట్టింగ్స్ అలాగే ఉంటాయి.",
+  "where": "lib/features/settings.dart"
+ },
+ {
   "en": "Tithi, nakshatra, Rahu Kalam and festivals at",
   "hi": "तिथि, नक्षत्र, राहु काल व त्योहार,",
   "te": "తిథి, నక్షత్రం, రాహు కాలం, పండుగలు",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Usage data deleted",
+  "hi": "उपयोग डेटा हटा दिया गया",
+  "te": "వినియోగ డేటా తొలగించబడింది",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Which screens and features you use, your language and state, so we can improve Devalay. No name, no typed text.",
+  "hi": "आप कौन-सी स्क्रीन और सुविधाएँ इस्तेमाल करते हैं, आपकी भाषा और राज्य, ताकि हम देवालय बेहतर बना सकें। नाम या लिखा हुआ टेक्स्ट नहीं।",
+  "te": "మీరు ఏ స్క్రీన్లు, ఫీచర్లు వాడుతున్నారు, మీ భాష, రాష్ట్రం, దేవాలయాన్ని మెరుగుపరచడానికి. పేరు గానీ, మీరు రాసిన టెక్స్ట్ గానీ కాదు.",
   "where": "lib/features/settings.dart"
  },
  {

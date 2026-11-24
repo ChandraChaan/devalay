@@ -1,6 +1,28 @@
 /// Kannada translations of Devalay's English UI strings and Panchang names, keyed by the English text.
 /// Source list: tool/l10n/strings.json. Keys must match the English exactly; {0}, {1} are placeholders.
 const stringsKn = <String, String>{
+  // Feedback and usage statistics (1.5.3).
+  'Could not send. Check your connection and try again.': 'ಕಳುಹಿಸಲಾಗಲಿಲ್ಲ. ಇಂಟರ್ನೆಟ್ ಪರಿಶೀಲಿಸಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.',
+  'Idea or feature': 'ಆಲೋಚನೆ ಅಥವಾ ಹೊಸ ವೈಶಿಷ್ಟ್ಯ',
+  'Open GitHub issues': 'GitHub issues ತೆರೆಯಿರಿ',
+  'Please do not include phone numbers or other personal details.':
+      'ದಯವಿಟ್ಟು ಫೋನ್ ಸಂಖ್ಯೆ ಅಥವಾ ಇತರ ವೈಯಕ್ತಿಕ ವಿವರಗಳನ್ನು ಬರೆಯಬೇಡಿ.',
+  'Send': 'ಕಳುಹಿಸಿ',
+  'Something I like': 'ನನಗೆ ಇಷ್ಟವಾದದ್ದು',
+  'Something is wrong': 'ಏನೋ ಸರಿಯಿಲ್ಲ',
+  'Tell us what to add or fix. We read every note.':
+      'ಏನು ಸೇರಿಸಬೇಕು ಅಥವಾ ಸರಿಪಡಿಸಬೇಕು ಎಂದು ತಿಳಿಸಿ. ನಾವು ಪ್ರತಿಯೊಂದು ಸಂದೇಶವನ್ನೂ ಓದುತ್ತೇವೆ.',
+  'Thank you! Your note reached us.': 'ಧನ್ಯವಾದ! ನಿಮ್ಮ ಸಂದೇಶ ನಮಗೆ ತಲುಪಿದೆ.',
+  'Write here…': 'ಇಲ್ಲಿ ಬರೆಯಿರಿ…',
+  'Delete my usage data': 'ನನ್ನ ಬಳಕೆ ಡೇಟಾ ಅಳಿಸಿ',
+  'Delete usage data?': 'ಬಳಕೆ ಡೇಟಾ ಅಳಿಸಬೇಕೆ?',
+  'Privacy': 'ಗೌಪ್ಯತೆ',
+  'Share usage statistics': 'ಬಳಕೆಯ ಅಂಕಿಅಂಶಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಿ',
+  'This removes the usage statistics this phone has sent and turns sharing off. Your saved days, favourites and settings stay.':
+      'ಈ ಫೋನ್ ಕಳುಹಿಸಿದ ಬಳಕೆಯ ಅಂಕಿಅಂಶಗಳು ಅಳಿಸಲ್ಪಡುತ್ತವೆ ಮತ್ತು ಹಂಚಿಕೆ ನಿಲ್ಲುತ್ತದೆ. ನೀವು ಉಳಿಸಿದ ದಿನಗಳು, ಮೆಚ್ಚಿನವು ಮತ್ತು ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಹಾಗೆಯೇ ಇರುತ್ತವೆ.',
+  'Usage data deleted': 'ಬಳಕೆ ಡೇಟಾ ಅಳಿಸಲಾಗಿದೆ',
+  'Which screens and features you use, your language and state, so we can improve Devalay. No name, no typed text.':
+      'ನೀವು ಯಾವ ಪರದೆಗಳು ಮತ್ತು ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ಬಳಸುತ್ತೀರಿ, ನಿಮ್ಮ ಭಾಷೆ ಮತ್ತು ರಾಜ್ಯ, Devalay ಅನ್ನು ಉತ್ತಮಗೊಳಿಸಲು. ಹೆಸರು ಅಥವಾ ನೀವು ಬರೆದ ಪಠ್ಯ ಇಲ್ಲ.',
   // Backup, calendar export, contacts import and home-screen widgets.
   'Choghadiya now': 'ಈಗಿನ ಚೌಘಡಿಯಾ',
   'In {0} days': '{0} ದಿನಗಳಲ್ಲಿ',

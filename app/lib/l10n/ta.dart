@@ -1,6 +1,29 @@
 /// Tamil translations of Devalay's English UI strings and Panchang names, keyed by the English text.
 /// Source list: tool/l10n/strings.json. Keys must match the English exactly; {0}, {1} are placeholders.
 const stringsTa = <String, String>{
+  // Feedback and usage statistics (1.5.3).
+  'Could not send. Check your connection and try again.':
+      'அனுப்ப முடியவில்லை. இணைய இணைப்பைச் சரிபார்த்து மீண்டும் முயலுங்கள்.',
+  'Idea or feature': 'யோசனை அல்லது புதிய வசதி',
+  'Open GitHub issues': 'GitHub issues-ஐத் திற',
+  'Please do not include phone numbers or other personal details.':
+      'தொலைபேசி எண் அல்லது பிற தனிப்பட்ட விவரங்களை எழுத வேண்டாம்.',
+  'Send': 'அனுப்பு',
+  'Something I like': 'எனக்குப் பிடித்தது',
+  'Something is wrong': 'ஏதோ சரியில்லை',
+  'Tell us what to add or fix. We read every note.':
+      'எதைச் சேர்க்க வேண்டும், எதைச் சரிசெய்ய வேண்டும் என்று சொல்லுங்கள். ஒவ்வொரு செய்தியையும் படிக்கிறோம்.',
+  'Thank you! Your note reached us.': 'நன்றி! உங்கள் செய்தி எங்களை வந்தடைந்தது.',
+  'Write here…': 'இங்கே எழுதுங்கள்…',
+  'Delete my usage data': 'என் பயன்பாட்டுத் தரவை நீக்கு',
+  'Delete usage data?': 'பயன்பாட்டுத் தரவை நீக்கவா?',
+  'Privacy': 'தனியுரிமை',
+  'Share usage statistics': 'பயன்பாட்டுப் புள்ளிவிவரங்களைப் பகிர்',
+  'This removes the usage statistics this phone has sent and turns sharing off. Your saved days, favourites and settings stay.':
+      'இந்த போன் அனுப்பிய பயன்பாட்டுப் புள்ளிவிவரங்கள் நீக்கப்பட்டு, பகிர்வு நிறுத்தப்படும். நீங்கள் சேமித்த நாட்கள், விருப்பங்கள், அமைப்புகள் அப்படியே இருக்கும்.',
+  'Usage data deleted': 'பயன்பாட்டுத் தரவு நீக்கப்பட்டது',
+  'Which screens and features you use, your language and state, so we can improve Devalay. No name, no typed text.':
+      'நீங்கள் எந்தத் திரைகள், வசதிகளைப் பயன்படுத்துகிறீர்கள், உங்கள் மொழி, மாநிலம், Devalay-ஐ மேம்படுத்த. பெயரோ நீங்கள் எழுதிய உரையோ இல்லை.',
   // Backup, calendar export, contacts import and home-screen widgets.
   'Choghadiya now': 'இப்போதைய சௌகடியா',
   'In {0} days': '{0} நாட்களில்',

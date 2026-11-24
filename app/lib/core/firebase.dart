@@ -11,6 +11,7 @@ import 'package:package_info_plus/package_info_plus.dart';
 
 import 'languages.dart';
 import 'notifications.dart';
+import 'usage.dart';
 
 /// Crash reports, push announcements, force update and usage analytics (daily users, screen
 /// views), all through the Devalay Firebase project. Firebase is optional: a build without google-services.json
@@ -25,6 +26,9 @@ class FirebaseServices {
     } catch (e) {
       debugPrint('Firebase not configured: $e');
       return;
+    }
+    if (!Usage.sharing) {
+      unawaited(FirebaseAnalytics.instance.setAnalyticsCollectionEnabled(false).catchError((Object _) {}));
     }
     final crashlytics = FirebaseCrashlytics.instance;
     await crashlytics.setCrashlyticsCollectionEnabled(!kDebugMode);
@@ -52,6 +56,7 @@ class FirebaseServices {
     final screen = name.isEmpty ? 'root' : name;
     if (screen == _lastScreen) return;
     _lastScreen = screen;
+    Usage.screen(screen);
     unawaited(
       FirebaseAnalytics.instance
           .logScreenView(screenName: screen, screenClass: screen)
