@@ -111,8 +111,8 @@ class Usage {
         _uid = null;
         unawaited(_disconnect());
       }
+      // The listener's first event (null on a fresh install) starts the anonymous sign-in.
     });
-    if (sharing && FirebaseAuth.instance.currentUser == null) await _signIn();
   }
 
   static Future<void> _signIn() async {
