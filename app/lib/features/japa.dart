@@ -93,7 +93,7 @@ class _JapaScreenState extends ConsumerState<JapaScreen> with SingleTickerProvid
       backgroundColor: const Color(0xFF1B0D06),
       appBar: AppBar(
         foregroundColor: Colors.white,
-        systemOverlayStyle: SystemUiOverlayStyle.light,
+        systemOverlayStyle: lightBars,
         title: Text(tr(ref, 'japa'), style: const TextStyle(color: Colors.white)),
         actions: [
           IconButton(

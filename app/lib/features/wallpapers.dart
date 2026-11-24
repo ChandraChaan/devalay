@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -265,7 +264,7 @@ class _WallpaperDetailScreenState extends ConsumerState<WallpaperDetailScreen> {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         foregroundColor: Colors.white,
-        systemOverlayStyle: SystemUiOverlayStyle.light,
+        systemOverlayStyle: lightBars,
         actions: [
           FavoriteButton(
             color: Colors.white,

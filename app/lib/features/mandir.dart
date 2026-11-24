@@ -121,7 +121,7 @@ class _MandirScreenState extends ConsumerState<MandirScreen> with TickerProvider
     final deities = ref.watch(deitiesProvider);
     final lang = ref.watch(prefsProvider).language;
     return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle.light,
+      value: lightBars,
       child: Scaffold(
         backgroundColor: const Color(0xFF1A0A04),
         body: deities.when(

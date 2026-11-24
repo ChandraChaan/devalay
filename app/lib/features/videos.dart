@@ -9,6 +9,7 @@ import '../core/i18n.dart';
 import '../core/models.dart';
 import '../core/providers.dart';
 import '../widgets/common.dart';
+import '../core/theme.dart';
 
 class VideosScreen extends ConsumerWidget {
   const VideosScreen({super.key});
@@ -137,7 +138,7 @@ class _VideoPlayerScreenState extends ConsumerState<VideoPlayerScreen> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         foregroundColor: Colors.white,
-        systemOverlayStyle: SystemUiOverlayStyle.light,
+        systemOverlayStyle: lightBars,
         title: Text(widget.video.title, style: const TextStyle(color: Colors.white)),
       ),
       body: Column(

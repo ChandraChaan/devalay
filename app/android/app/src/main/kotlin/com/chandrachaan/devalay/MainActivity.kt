@@ -17,9 +17,11 @@ import android.graphics.BitmapFactory
 import android.media.RingtoneManager
 import android.net.Uri
 import android.os.Build
+import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
 import android.provider.Settings
+import androidx.core.view.WindowCompat
 import com.ryanheise.audioservice.AudioServiceActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
@@ -33,6 +35,13 @@ import java.util.concurrent.atomic.AtomicBoolean
  */
 class MainActivity : AudioServiceActivity() {
     private val io = Executors.newSingleThreadExecutor()
+
+    // Draw behind the status and navigation bars on every Android version, as Android 15 does by default
+    // for apps targeting SDK 35+. Flutter's MediaQuery padding keeps content clear of the bars.
+    override fun onCreate(savedInstanceState: Bundle?) {
+        WindowCompat.enableEdgeToEdge(window)
+        super.onCreate(savedInstanceState)
+    }
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
