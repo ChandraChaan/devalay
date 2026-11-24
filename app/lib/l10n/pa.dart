@@ -1,6 +1,60 @@
 /// Punjabi translations of Devalay's English UI strings and Panchang names, keyed by the English text.
 /// Source list: tool/l10n/strings.json. Keys must match the English exactly; {0}, {1} are placeholders.
 const stringsPa = <String, String>{
+  // Today's guidance and Disha Shool (1.5.4).
+  'A Rikta tithi (4th, 9th or 14th): better not to start new ventures; good for finishing work':
+      'ਰਿਕਤਾ ਤਿਥੀ (ਚਤੁਰਥੀ, ਨੌਮੀ ਜਾਂ ਚਤੁਰਦਸ਼ੀ): ਨਵਾਂ ਕੰਮ ਸ਼ੁਰੂ ਨਾ ਕਰਨਾ ਚੰਗਾ; ਅਧੂਰੇ ਕੰਮ ਪੂਰੇ ਕਰਨ ਲਈ ਚੰਗੀ',
+  'Amavasya: a day for remembering ancestors (tarpan) and quiet prayer, not for new beginnings':
+      'ਮੱਸਿਆ: ਪਿੱਤਰਾਂ ਦੇ ਤਰਪਣ ਅਤੇ ਸ਼ਾਂਤ ਅਰਦਾਸ ਦਾ ਦਿਨ, ਨਵੀਂ ਸ਼ੁਰੂਆਤ ਦਾ ਨਹੀਂ',
+  'East': 'ਪੂਰਬ',
+  'Ekadashi: a day for fasting, Vishnu puja and japa': 'ਇਕਾਦਸ਼ੀ: ਵਰਤ, ਵਿਸ਼ਨੂੰ ਪੂਜਾ ਅਤੇ ਜਾਪ ਦਾ ਦਿਨ',
+  'Friday (Venus): music and arts, jewellery, vehicles and Lakshmi puja':
+      'ਸ਼ੁੱਕਰਵਾਰ (ਸ਼ੁੱਕਰ): ਸੰਗੀਤ ਅਤੇ ਕਲਾ, ਗਹਿਣੇ, ਵਾਹਨ ਅਤੇ ਲਕਸ਼ਮੀ ਪੂਜਾ',
+  'Monday (Moon): travel, new clothes, farming and family visits':
+      'ਸੋਮਵਾਰ (ਚੰਦਰਮਾ): ਯਾਤਰਾ, ਨਵੇਂ ਕੱਪੜੇ, ਖੇਤੀ ਅਤੇ ਰਿਸ਼ਤੇਦਾਰਾਂ ਨੂੰ ਮਿਲਣਾ',
+  'North': 'ਉੱਤਰ',
+  'Purnima: good for vrat, Satyanarayan puja, charity and holy baths':
+      'ਪੂਰਨਮਾਸ਼ੀ: ਵਰਤ, ਸਤਿਆਨਾਰਾਇਣ ਪੂਜਾ, ਦਾਨ ਅਤੇ ਤੀਰਥ ਇਸ਼ਨਾਨ ਲਈ ਚੰਗੀ',
+  'Saturday (Saturn): service, repairs, charity and Shani puja': 'ਸ਼ਨੀਵਾਰ (ਸ਼ਨੀ): ਸੇਵਾ, ਮੁਰੰਮਤ, ਦਾਨ ਅਤੇ ਸ਼ਨੀ ਪੂਜਾ',
+  'South': 'ਦੱਖਣ',
+  'Sunday (Sun): health, government work, meeting elders and Surya puja':
+      'ਐਤਵਾਰ (ਸੂਰਜ): ਸਿਹਤ, ਸਰਕਾਰੀ ਕੰਮ, ਵੱਡਿਆਂ ਨੂੰ ਮਿਲਣਾ ਅਤੇ ਸੂਰਜ ਪੂਜਾ',
+  'The nakshatra is fierce: postpone auspicious beginnings and big purchases':
+      'ਨਛੱਤਰ ਉਗਰ ਹੈ: ਸ਼ੁਭ ਸ਼ੁਰੂਆਤ ਅਤੇ ਵੱਡੀ ਖਰੀਦਦਾਰੀ ਟਾਲੋ',
+  'The nakshatra is fixed: good for lasting work such as laying foundations, a new home or planting':
+      'ਨਛੱਤਰ ਸਥਿਰ ਹੈ: ਨੀਂਹ ਰੱਖਣ, ਨਵੇਂ ਘਰ ਜਾਂ ਰੁੱਖ ਲਗਾਉਣ ਵਰਗੇ ਪੱਕੇ ਕੰਮਾਂ ਲਈ ਚੰਗਾ',
+  'The nakshatra is mixed: fine for routine work, less so for new beginnings':
+      'ਨਛੱਤਰ ਮਿਸ਼ਰ ਹੈ: ਰੋਜ਼ਾਨਾ ਕੰਮਾਂ ਲਈ ਠੀਕ, ਨਵੀਂ ਸ਼ੁਰੂਆਤ ਲਈ ਘੱਟ',
+  'The nakshatra is movable: good for travel, buying a vehicle and starting a move':
+      'ਨਛੱਤਰ ਚਰ ਹੈ: ਯਾਤਰਾ, ਵਾਹਨ ਖਰੀਦਣ ਅਤੇ ਘਰ ਬਦਲਣ ਦੀ ਸ਼ੁਰੂਆਤ ਲਈ ਚੰਗਾ',
+  'The nakshatra is sharp: not for auspicious beginnings; fine for clearing old matters':
+      'ਨਛੱਤਰ ਤੀਖਣ ਹੈ: ਸ਼ੁਭ ਸ਼ੁਰੂਆਤ ਲਈ ਨਹੀਂ; ਪੁਰਾਣੇ ਕੰਮ ਨਿਪਟਾਉਣ ਲਈ ਠੀਕ',
+  'The nakshatra is soft: good for music and arts, friendship, new clothes and celebrations':
+      'ਨਛੱਤਰ ਮ੍ਰਿਦੁ ਹੈ: ਸੰਗੀਤ ਅਤੇ ਕਲਾ, ਦੋਸਤੀ, ਨਵੇਂ ਕੱਪੜੇ ਅਤੇ ਤਿਉਹਾਰਾਂ ਲਈ ਚੰਗਾ',
+  'The nakshatra is swift: good for trade, medicine, learning and quick tasks':
+      'ਨਛੱਤਰ ਖਿਪ੍ਰ ਹੈ: ਵਪਾਰ, ਦਵਾਈ, ਪੜ੍ਹਾਈ ਅਤੇ ਛੇਤੀ ਹੋਣ ਵਾਲੇ ਕੰਮਾਂ ਲਈ ਚੰਗਾ',
+  'Thursday (Jupiter): learning, guru seva, marriage talks and buying gold':
+      'ਵੀਰਵਾਰ (ਬ੍ਰਿਹਸਪਤੀ): ਵਿੱਦਿਆ, ਗੁਰੂ ਸੇਵਾ, ਵਿਆਹ ਦੀ ਗੱਲ ਅਤੇ ਸੋਨਾ ਖਰੀਦਣਾ',
+  'Tuesday (Mars): courage, sports, property matters and Hanuman puja':
+      'ਮੰਗਲਵਾਰ (ਮੰਗਲ): ਹਿੰਮਤ, ਖੇਡਾਂ, ਜ਼ਮੀਨ-ਜਾਇਦਾਦ ਦੇ ਕੰਮ ਅਤੇ ਹਨੂਮਾਨ ਪੂਜਾ',
+  'Wednesday (Mercury): study, writing, trade and accounts': 'ਬੁੱਧਵਾਰ (ਬੁੱਧ): ਪੜ੍ਹਾਈ, ਲਿਖਣਾ, ਵਪਾਰ ਅਤੇ ਹਿਸਾਬ-ਕਿਤਾਬ',
+  'West': 'ਪੱਛਮ',
+  'eat a few sesame seeds or coriander': 'ਥੋੜ੍ਹੇ ਤਿਲ ਜਾਂ ਧਨੀਆ ਖਾਓ',
+  'eat a little barley': 'ਥੋੜ੍ਹੇ ਜੌਂ ਖਾਓ',
+  'eat a little ghee or porridge': 'ਥੋੜ੍ਹਾ ਘਿਓ ਜਾਂ ਦਲੀਆ ਖਾਓ',
+  'eat a little ginger or urad dal': 'ਥੋੜ੍ਹਾ ਅਦਰਕ ਜਾਂ ਮਾਂਹ ਦੀ ਦਾਲ ਖਾਓ',
+  'eat a little jaggery': 'ਥੋੜ੍ਹਾ ਗੁੜ ਖਾਓ',
+  'eat a spoon of curd': 'ਇੱਕ ਚਮਚ ਦਹੀਂ ਖਾਓ',
+  'look into a mirror': 'ਸ਼ੀਸ਼ੇ ਵਿੱਚ ਦੇਖੋ',
+  'Abhijit Muhurta {0}, around midday': 'ਅਭਿਜੀਤ ਮਹੂਰਤ {0}, ਦੁਪਹਿਰ ਦੇ ਨੇੜੇ',
+  'Avoid setting out on a journey towards the {0} today.': 'ਅੱਜ {0} ਦਿਸ਼ਾ ਵੱਲ ਯਾਤਰਾ ਸ਼ੁਰੂ ਨਾ ਕਰੋ।',
+  'Best time to begin': 'ਸ਼ੁਰੂਆਤ ਲਈ ਸਭ ਤੋਂ ਵਧੀਆ ਸਮਾਂ',
+  'Better to avoid': 'ਇਨ੍ਹਾਂ ਤੋਂ ਬਚੋ',
+  'Day direction (Disha Shool)': 'ਦਿਸ਼ਾ ਸ਼ੂਲ (ਦਿਨ ਦੀ ਦਿਸ਼ਾ)',
+  'Good for': 'ਇਨ੍ਹਾਂ ਲਈ ਸ਼ੁਭ',
+  'If you must go that way: {0} before leaving.': 'ਉਸ ਦਿਸ਼ਾ ਵੱਲ ਜਾਣਾ ਜ਼ਰੂਰੀ ਹੋਵੇ ਤਾਂ ਨਿਕਲਣ ਤੋਂ ਪਹਿਲਾਂ: {0}।',
+  'Rahu Kaal {0}: do not start anything important': 'ਰਾਹੂ ਕਾਲ {0}: ਕੋਈ ਜ਼ਰੂਰੀ ਕੰਮ ਸ਼ੁਰੂ ਨਾ ਕਰੋ',
+  'Today\'s guidance': 'ਅੱਜ ਦਾ ਮਾਰਗਦਰਸ਼ਨ',
   // Feedback and usage statistics (1.5.3).
   'Could not send. Check your connection and try again.': 'ਭੇਜਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ। ਇੰਟਰਨੈੱਟ ਜਾਂਚ ਕੇ ਮੁੜ ਕੋਸ਼ਿਸ਼ ਕਰੋ।',
   'Idea or feature': 'ਵਿਚਾਰ ਜਾਂ ਨਵੀਂ ਸਹੂਲਤ',

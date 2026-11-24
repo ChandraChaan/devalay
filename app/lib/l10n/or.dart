@@ -1,6 +1,60 @@
 /// Odia translations of Devalay's English UI strings and Panchang names, keyed by the English text.
 /// Source list: tool/l10n/strings.json. Keys must match the English exactly; {0}, {1} are placeholders.
 const stringsOr = <String, String>{
+  // Today's guidance and Disha Shool (1.5.4).
+  'A Rikta tithi (4th, 9th or 14th): better not to start new ventures; good for finishing work':
+      'ରିକ୍ତା ତିଥି (ଚତୁର୍ଥୀ, ନବମୀ ବା ଚତୁର୍ଦ୍ଦଶୀ): ନୂଆ କାମ ଆରମ୍ଭ ନ କରିବା ଭଲ; ଅଧା କାମ ଶେଷ କରିବା ପାଇଁ ଭଲ',
+  'Amavasya: a day for remembering ancestors (tarpan) and quiet prayer, not for new beginnings':
+      'ଅମାବାସ୍ୟା: ପିତୃ ତର୍ପଣ ଓ ଶାନ୍ତ ପ୍ରାର୍ଥନାର ଦିନ, ନୂଆ ଆରମ୍ଭର ନୁହେଁ',
+  'East': 'ପୂର୍ବ',
+  'Ekadashi: a day for fasting, Vishnu puja and japa': 'ଏକାଦଶୀ: ଉପବାସ, ବିଷ୍ଣୁ ପୂଜା ଓ ଜପର ଦିନ',
+  'Friday (Venus): music and arts, jewellery, vehicles and Lakshmi puja':
+      'ଶୁକ୍ରବାର (ଶୁକ୍ର): ସଙ୍ଗୀତ ଓ କଳା, ଅଳଙ୍କାର, ଗାଡ଼ି ଓ ଲକ୍ଷ୍ମୀ ପୂଜା',
+  'Monday (Moon): travel, new clothes, farming and family visits':
+      'ସୋମବାର (ଚନ୍ଦ୍ର): ଯାତ୍ରା, ନୂଆ ପୋଷାକ, ଚାଷ ଓ ସମ୍ପର୍କୀୟଙ୍କ ସହ ଦେଖା',
+  'North': 'ଉତ୍ତର',
+  'Purnima: good for vrat, Satyanarayan puja, charity and holy baths':
+      'ପୂର୍ଣ୍ଣିମା: ବ୍ରତ, ସତ୍ୟନାରାୟଣ ପୂଜା, ଦାନ ଓ ପବିତ୍ର ସ୍ନାନ ପାଇଁ ଭଲ',
+  'Saturday (Saturn): service, repairs, charity and Shani puja': 'ଶନିବାର (ଶନି): ସେବା, ମରାମତି, ଦାନ ଓ ଶନି ପୂଜା',
+  'South': 'ଦକ୍ଷିଣ',
+  'Sunday (Sun): health, government work, meeting elders and Surya puja':
+      'ରବିବାର (ସୂର୍ଯ୍ୟ): ସ୍ୱାସ୍ଥ୍ୟ, ସରକାରୀ କାମ, ବଡ଼ମାନଙ୍କ ସହ ଦେଖା ଓ ସୂର୍ଯ୍ୟ ପୂଜା',
+  'The nakshatra is fierce: postpone auspicious beginnings and big purchases':
+      'ନକ୍ଷତ୍ର ଉଗ୍ର: ଶୁଭ ଆରମ୍ଭ ଓ ବଡ଼ କିଣାକିଣି ପଛକୁ ଘୁଞ୍ଚାନ୍ତୁ',
+  'The nakshatra is fixed: good for lasting work such as laying foundations, a new home or planting':
+      'ନକ୍ଷତ୍ର ସ୍ଥିର: ମୂଳଦୁଆ, ନୂଆ ଘର ବା ଗଛ ଲଗାଇବା ଭଳି ସ୍ଥାୟୀ କାମ ପାଇଁ ଭଲ',
+  'The nakshatra is mixed: fine for routine work, less so for new beginnings':
+      'ନକ୍ଷତ୍ର ମିଶ୍ର: ଦୈନନ୍ଦିନ କାମ ପାଇଁ ଠିକ୍, ନୂଆ ଆରମ୍ଭ ପାଇଁ କମ୍',
+  'The nakshatra is movable: good for travel, buying a vehicle and starting a move':
+      'ନକ୍ଷତ୍ର ଚର: ଯାତ୍ରା, ଗାଡ଼ି କିଣିବା ଓ ଘର ବଦଳ ଆରମ୍ଭ ପାଇଁ ଭଲ',
+  'The nakshatra is sharp: not for auspicious beginnings; fine for clearing old matters':
+      'ନକ୍ଷତ୍ର ତୀକ୍ଷ୍ଣ: ଶୁଭ ଆରମ୍ଭ ପାଇଁ ନୁହେଁ; ପୁରୁଣା କାମ ତୁଲାଇବା ପାଇଁ ଠିକ୍',
+  'The nakshatra is soft: good for music and arts, friendship, new clothes and celebrations':
+      'ନକ୍ଷତ୍ର ମୃଦୁ: ସଙ୍ଗୀତ ଓ କଳା, ବନ୍ଧୁତା, ନୂଆ ପୋଷାକ ଓ ଉତ୍ସବ ପାଇଁ ଭଲ',
+  'The nakshatra is swift: good for trade, medicine, learning and quick tasks':
+      'ନକ୍ଷତ୍ର କ୍ଷିପ୍ର: ବ୍ୟବସାୟ, ଔଷଧ, ପାଠପଢ଼ା ଓ ଶୀଘ୍ର କାମ ପାଇଁ ଭଲ',
+  'Thursday (Jupiter): learning, guru seva, marriage talks and buying gold':
+      'ଗୁରୁବାର (ବୃହସ୍ପତି): ବିଦ୍ୟା, ଗୁରୁ ସେବା, ବିବାହ କଥାବାର୍ତ୍ତା ଓ ସୁନା କିଣିବା',
+  'Tuesday (Mars): courage, sports, property matters and Hanuman puja':
+      'ମଙ୍ଗଳବାର (ମଙ୍ଗଳ): ସାହସ, ଖେଳ, ଜମି-ସମ୍ପତ୍ତି କାମ ଓ ହନୁମାନ ପୂଜା',
+  'Wednesday (Mercury): study, writing, trade and accounts': 'ବୁଧବାର (ବୁଧ): ପାଠ, ଲେଖା, ବ୍ୟବସାୟ ଓ ହିସାବ',
+  'West': 'ପଶ୍ଚିମ',
+  'eat a few sesame seeds or coriander': 'ଅଳ୍ପ ରାଶି ବା ଧନିଆ ଖାଆନ୍ତୁ',
+  'eat a little barley': 'ଅଳ୍ପ ଯଅ ଖାଆନ୍ତୁ',
+  'eat a little ghee or porridge': 'ଅଳ୍ପ ଘିଅ ବା ଜାଉ ଖାଆନ୍ତୁ',
+  'eat a little ginger or urad dal': 'ଅଳ୍ପ ଅଦା ବା ବିରି ଖାଆନ୍ତୁ',
+  'eat a little jaggery': 'ଅଳ୍ପ ଗୁଡ଼ ଖାଆନ୍ତୁ',
+  'eat a spoon of curd': 'ଏକ ଚାମଚ ଦହି ଖାଆନ୍ତୁ',
+  'look into a mirror': 'ଦର୍ପଣରେ ମୁହଁ ଦେଖନ୍ତୁ',
+  'Abhijit Muhurta {0}, around midday': 'ଅଭିଜିତ୍ ମୁହୂର୍ତ୍ତ {0}, ମଧ୍ୟାହ୍ନ ପାଖାପାଖି',
+  'Avoid setting out on a journey towards the {0} today.': 'ଆଜି {0} ଦିଗକୁ ଯାତ୍ରା ଆରମ୍ଭ କରନ୍ତୁ ନାହିଁ।',
+  'Best time to begin': 'ଆରମ୍ଭ ପାଇଁ ସର୍ବୋତ୍ତମ ସମୟ',
+  'Better to avoid': 'ଏଗୁଡ଼ିକ ଏଡ଼ାନ୍ତୁ',
+  'Day direction (Disha Shool)': 'ଦିଗ ଶୂଳ (ଦିନର ଦିଗ)',
+  'Good for': 'ଏହା ପାଇଁ ଶୁଭ',
+  'If you must go that way: {0} before leaving.': 'ସେହି ଦିଗକୁ ଯିବା ଜରୁରୀ ହେଲେ ବାହାରିବା ପୂର୍ବରୁ: {0}।',
+  'Rahu Kaal {0}: do not start anything important': 'ରାହୁ କାଳ {0}: କୌଣସି ଜରୁରୀ କାମ ଆରମ୍ଭ କରନ୍ତୁ ନାହିଁ',
+  'Today\'s guidance': 'ଆଜିର ମାର୍ଗଦର୍ଶନ',
   // Feedback and usage statistics (1.5.3).
   'Could not send. Check your connection and try again.': 'ପଠାଇ ହେଲା ନାହିଁ। ଇଣ୍ଟରନେଟ ଯାଞ୍ଚ କରି ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ।',
   'Idea or feature': 'ଧାରଣା ବା ନୂଆ ସୁବିଧା',

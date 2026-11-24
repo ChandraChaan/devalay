@@ -3,6 +3,23 @@
 Each milestone is a git tag and a [GitHub release](https://github.com/ChandraChaan/devalay/releases). Releases from
 v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the section below that matches the tag.
 
+## v1.5.4 — 2026-11-24
+
+From Play reviews:
+
+- **Today's guidance** on the Panchang and calendar day pages. It gives a few clear points instead of one line:
+  - what the day suits, from its weekday, tithi and nakshatra
+  - what to avoid: Rikta tithis, Amavasya, sharp or fierce nakshatras, Rahu Kaal with its times
+  - the best time to begin (Abhijit Muhurta, not used on Wednesdays)
+- **Day direction (Disha Shool)**: the direction not to start a journey in today, with the traditional remedy if
+  the trip can't wait. The Panchang read-aloud now says it too.
+- Edge-to-edge on every Android version (Play vitals recommendation): the app draws behind the status and
+  navigation bars, and sets no bar colours. The splash's launcher icon is now a drawable layer: the old <bitmap> pointed
+  at an adaptive icon, which is invalid from Android 8 on.
+- Crash reports: a lost connection (offline, timeout, connection reset) no longer counts as a crash.
+  Riverpod 3 reports a failed data load to the app-wide error handler even though its screen already shows "Try
+  again", and these made up a large share of the crashes on 1.5.0 and 1.5.1. Real errors are still recorded as fatal.
+
 ## v1.5.3 — 2026-11-24
 
 - Send feedback is now in the app: write an idea, a problem or something you like, and it reaches the Devalay

@@ -1,6 +1,60 @@
 /// Gujarati translations of Devalay's English UI strings and Panchang names, keyed by the English text.
 /// Source list: tool/l10n/strings.json. Keys must match the English exactly; {0}, {1} are placeholders.
 const stringsGu = <String, String>{
+  // Today's guidance and Disha Shool (1.5.4).
+  'A Rikta tithi (4th, 9th or 14th): better not to start new ventures; good for finishing work':
+      'રિક્તા તિથિ (ચતુર્થી, નવમી કે ચતુર્દશી): નવું કામ શરૂ ન કરવું સારું; અધૂરાં કામ પૂરાં કરવા સારી',
+  'Amavasya: a day for remembering ancestors (tarpan) and quiet prayer, not for new beginnings':
+      'અમાસ: પિતૃ તર્પણ અને શાંત પ્રાર્થનાનો દિવસ, નવી શરૂઆતનો નહીં',
+  'East': 'પૂર્વ',
+  'Ekadashi: a day for fasting, Vishnu puja and japa': 'એકાદશી: ઉપવાસ, વિષ્ણુ પૂજા અને જપનો દિવસ',
+  'Friday (Venus): music and arts, jewellery, vehicles and Lakshmi puja':
+      'શુક્રવાર (શુક્ર): સંગીત અને કળા, ઘરેણાં, વાહન અને લક્ષ્મી પૂજા',
+  'Monday (Moon): travel, new clothes, farming and family visits':
+      'સોમવાર (ચંદ્ર): પ્રવાસ, નવાં કપડાં, ખેતી અને સગાં-સંબંધીઓને મળવું',
+  'North': 'ઉત્તર',
+  'Purnima: good for vrat, Satyanarayan puja, charity and holy baths':
+      'પૂનમ: વ્રત, સત્યનારાયણ પૂજા, દાન અને પવિત્ર સ્નાન માટે સારી',
+  'Saturday (Saturn): service, repairs, charity and Shani puja': 'શનિવાર (શનિ): સેવા, સમારકામ, દાન અને શનિ પૂજા',
+  'South': 'દક્ષિણ',
+  'Sunday (Sun): health, government work, meeting elders and Surya puja':
+      'રવિવાર (સૂર્ય): આરોગ્ય, સરકારી કામ, વડીલોને મળવું અને સૂર્ય પૂજા',
+  'The nakshatra is fierce: postpone auspicious beginnings and big purchases':
+      'નક્ષત્ર ઉગ્ર છે: શુભ શરૂઆત અને મોટી ખરીદી મુલતવી રાખો',
+  'The nakshatra is fixed: good for lasting work such as laying foundations, a new home or planting':
+      'નક્ષત્ર સ્થિર છે: પાયો નાખવો, નવું ઘર કે વૃક્ષારોપણ જેવાં ટકાઉ કામ માટે સારું',
+  'The nakshatra is mixed: fine for routine work, less so for new beginnings':
+      'નક્ષત્ર મિશ્ર છે: રોજિંદાં કામ માટે ઠીક, નવી શરૂઆત માટે ઓછું',
+  'The nakshatra is movable: good for travel, buying a vehicle and starting a move':
+      'નક્ષત્ર ચર છે: પ્રવાસ, વાહન ખરીદી અને ઘર બદલવાની શરૂઆત માટે સારું',
+  'The nakshatra is sharp: not for auspicious beginnings; fine for clearing old matters':
+      'નક્ષત્ર તીક્ષ્ણ છે: શુભ શરૂઆત માટે નહીં; જૂનાં કામ પતાવવા ઠીક',
+  'The nakshatra is soft: good for music and arts, friendship, new clothes and celebrations':
+      'નક્ષત્ર મૃદુ છે: સંગીત અને કળા, મિત્રતા, નવાં કપડાં અને ઉત્સવો માટે સારું',
+  'The nakshatra is swift: good for trade, medicine, learning and quick tasks':
+      'નક્ષત્ર ક્ષિપ્ર છે: વેપાર, દવા, અભ્યાસ અને ઝડપી કામ માટે સારું',
+  'Thursday (Jupiter): learning, guru seva, marriage talks and buying gold':
+      'ગુરુવાર (ગુરુ): વિદ્યા, ગુરુ સેવા, લગ્નની વાત અને સોનું ખરીદવું',
+  'Tuesday (Mars): courage, sports, property matters and Hanuman puja':
+      'મંગળવાર (મંગળ): સાહસ, રમતગમત, જમીન-મિલકતનાં કામ અને હનુમાન પૂજા',
+  'Wednesday (Mercury): study, writing, trade and accounts': 'બુધવાર (બુધ): અભ્યાસ, લેખન, વેપાર અને હિસાબ',
+  'West': 'પશ્ચિમ',
+  'eat a few sesame seeds or coriander': 'થોડા તલ કે ધાણા ખાઓ',
+  'eat a little barley': 'થોડા જવ ખાઓ',
+  'eat a little ghee or porridge': 'થોડું ઘી કે દલિયા ખાઓ',
+  'eat a little ginger or urad dal': 'થોડું આદુ કે અડદ ખાઓ',
+  'eat a little jaggery': 'થોડો ગોળ ખાઓ',
+  'eat a spoon of curd': 'એક ચમચી દહીં ખાઓ',
+  'look into a mirror': 'અરીસામાં જુઓ',
+  'Abhijit Muhurta {0}, around midday': 'અભિજિત મુહૂર્ત {0}, બપોરની આસપાસ',
+  'Avoid setting out on a journey towards the {0} today.': 'આજે {0} દિશામાં પ્રવાસ શરૂ ન કરો.',
+  'Best time to begin': 'શરૂઆતનો શ્રેષ્ઠ સમય',
+  'Better to avoid': 'આ ટાળો',
+  'Day direction (Disha Shool)': 'દિશા શૂળ (દિવસની દિશા)',
+  'Good for': 'આ માટે શુભ',
+  'If you must go that way: {0} before leaving.': 'એ દિશામાં જવું જ પડે તો નીકળતાં પહેલાં: {0}.',
+  'Rahu Kaal {0}: do not start anything important': 'રાહુ કાળ {0}: કોઈ મહત્ત્વનું કામ શરૂ ન કરો',
+  'Today\'s guidance': 'આજનું માર્ગદર્શન',
   // Feedback and usage statistics (1.5.3).
   'Could not send. Check your connection and try again.': 'મોકલી શકાયું નહીં. ઇન્ટરનેટ તપાસીને ફરી પ્રયાસ કરો.',
   'Idea or feature': 'વિચાર કે નવી સુવિધા',

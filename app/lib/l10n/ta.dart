@@ -1,6 +1,61 @@
 /// Tamil translations of Devalay's English UI strings and Panchang names, keyed by the English text.
 /// Source list: tool/l10n/strings.json. Keys must match the English exactly; {0}, {1} are placeholders.
 const stringsTa = <String, String>{
+  // Today's guidance and Disha Shool (1.5.4).
+  'A Rikta tithi (4th, 9th or 14th): better not to start new ventures; good for finishing work':
+      'ரிக்த திதி (சதுர்த்தி, நவமி அல்லது சதுர்த்தசி): புதிய முயற்சிகளைத் தொடங்க வேண்டாம்; முடிக்காத வேலைகளை முடிக்க நல்லது',
+  'Amavasya: a day for remembering ancestors (tarpan) and quiet prayer, not for new beginnings':
+      'அமாவாசை: முன்னோர் தர்ப்பணம் மற்றும் அமைதியான பிரார்த்தனைக்கான நாள், புதிய தொடக்கங்களுக்கு அல்ல',
+  'East': 'கிழக்கு',
+  'Ekadashi: a day for fasting, Vishnu puja and japa': 'ஏகாதசி: விரதம், விஷ்ணு பூஜை மற்றும் ஜபத்திற்கான நாள்',
+  'Friday (Venus): music and arts, jewellery, vehicles and Lakshmi puja':
+      'வெள்ளிக்கிழமை (சுக்கிரன்): இசை, கலை, நகைகள், வாகனங்கள், லட்சுமி பூஜை',
+  'Monday (Moon): travel, new clothes, farming and family visits':
+      'திங்கட்கிழமை (சந்திரன்): பயணம், புதிய ஆடைகள், விவசாயம், உறவினர்களைச் சந்தித்தல்',
+  'North': 'வடக்கு',
+  'Purnima: good for vrat, Satyanarayan puja, charity and holy baths':
+      'பௌர்ணமி: விரதம், சத்யநாராயண பூஜை, தானம், புனித நீராடலுக்கு நல்லது',
+  'Saturday (Saturn): service, repairs, charity and Shani puja':
+      'சனிக்கிழமை (சனி): சேவை, பழுதுபார்ப்பு, தானம், சனி பூஜை',
+  'South': 'தெற்கு',
+  'Sunday (Sun): health, government work, meeting elders and Surya puja':
+      'ஞாயிற்றுக்கிழமை (சூரியன்): ஆரோக்கியம், அரசு வேலைகள், பெரியோரைச் சந்தித்தல், சூரிய பூஜை',
+  'The nakshatra is fierce: postpone auspicious beginnings and big purchases':
+      'நட்சத்திரம் உக்கிரம்: சுப தொடக்கங்களையும் பெரிய கொள்முதல்களையும் தள்ளிப்போடுங்கள்',
+  'The nakshatra is fixed: good for lasting work such as laying foundations, a new home or planting':
+      'நட்சத்திரம் ஸ்திரம்: அடிக்கல், புதிய வீடு, மரம் நடுதல் போன்ற நிலையான வேலைகளுக்கு நல்லது',
+  'The nakshatra is mixed: fine for routine work, less so for new beginnings':
+      'நட்சத்திரம் மிஸ்ரம்: அன்றாட வேலைகளுக்குச் சரி, புதிய தொடக்கங்களுக்கு அவ்வளவாக இல்லை',
+  'The nakshatra is movable: good for travel, buying a vehicle and starting a move':
+      'நட்சத்திரம் சரம்: பயணம், வாகனம் வாங்குதல், வீடு மாற்றம் தொடங்க நல்லது',
+  'The nakshatra is sharp: not for auspicious beginnings; fine for clearing old matters':
+      'நட்சத்திரம் தீக்ஷ்ணம்: சுப தொடக்கங்களுக்கு அல்ல; பழைய விஷயங்களை முடிக்கச் சரி',
+  'The nakshatra is soft: good for music and arts, friendship, new clothes and celebrations':
+      'நட்சத்திரம் ம்ருது: இசை, கலை, நட்பு, புதிய ஆடைகள், கொண்டாட்டங்களுக்கு நல்லது',
+  'The nakshatra is swift: good for trade, medicine, learning and quick tasks':
+      'நட்சத்திரம் க்ஷிப்ரம்: வியாபாரம், மருத்துவம், கல்வி, விரைவான வேலைகளுக்கு நல்லது',
+  'Thursday (Jupiter): learning, guru seva, marriage talks and buying gold':
+      'வியாழக்கிழமை (குரு): கல்வி, குரு சேவை, திருமணப் பேச்சு, தங்கம் வாங்குதல்',
+  'Tuesday (Mars): courage, sports, property matters and Hanuman puja':
+      'செவ்வாய்க்கிழமை (செவ்வாய்): தைரியம், விளையாட்டு, நில விஷயங்கள், அனுமன் பூஜை',
+  'Wednesday (Mercury): study, writing, trade and accounts': 'புதன்கிழமை (புதன்): படிப்பு, எழுத்து, வியாபாரம், கணக்கு',
+  'West': 'மேற்கு',
+  'eat a few sesame seeds or coriander': 'சிறிது எள் அல்லது கொத்தமல்லி சாப்பிடுங்கள்',
+  'eat a little barley': 'சிறிது பார்லி சாப்பிடுங்கள்',
+  'eat a little ghee or porridge': 'சிறிது நெய் அல்லது கஞ்சி சாப்பிடுங்கள்',
+  'eat a little ginger or urad dal': 'சிறிது இஞ்சி அல்லது உளுந்து சாப்பிடுங்கள்',
+  'eat a little jaggery': 'சிறிது வெல்லம் சாப்பிடுங்கள்',
+  'eat a spoon of curd': 'ஒரு கரண்டி தயிர் சாப்பிடுங்கள்',
+  'look into a mirror': 'கண்ணாடியில் முகம் பாருங்கள்',
+  'Abhijit Muhurta {0}, around midday': 'அபிஜித் முகூர்த்தம் {0}, நண்பகலில்',
+  'Avoid setting out on a journey towards the {0} today.': 'இன்று {0} திசையில் பயணம் தொடங்க வேண்டாம்.',
+  'Best time to begin': 'தொடங்க சிறந்த நேரம்',
+  'Better to avoid': 'தவிர்க்க வேண்டியவை',
+  'Day direction (Disha Shool)': 'திசா சூலம் (நாளின் திசை)',
+  'Good for': 'இவற்றுக்கு நல்லது',
+  'If you must go that way: {0} before leaving.': 'அந்தத் திசையில் போக வேண்டியிருந்தால், புறப்படும் முன்: {0}.',
+  'Rahu Kaal {0}: do not start anything important': 'ராகு காலம் {0}: முக்கியமான வேலை எதையும் தொடங்க வேண்டாம்',
+  'Today\'s guidance': 'இன்றைய வழிகாட்டல்',
   // Feedback and usage statistics (1.5.3).
   'Could not send. Check your connection and try again.':
       'அனுப்ப முடியவில்லை. இணைய இணைப்பைச் சரிபார்த்து மீண்டும் முயலுங்கள்.',

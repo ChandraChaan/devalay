@@ -15,6 +15,7 @@ import '../core/telugu.dart';
 import '../core/theme.dart';
 import '../widgets/common.dart';
 import '../widgets/read_aloud_button.dart';
+import 'day_guide_card.dart';
 import 'muhurta_view.dart';
 import 'personal_day.dart';
 
@@ -335,6 +336,7 @@ class PanchangDetail extends ConsumerWidget {
           ),
         ).animate().fadeIn(),
         PersonalBalam(data: data),
+        DayGuideCard(data: data),
         const SizedBox(height: 12),
         limb('tithi', tithis, tithiName),
         limb('nakshatra', data['nakshatra'] as List, (m) => nakshatraIn(lang, '${m['name']}')),

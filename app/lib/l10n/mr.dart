@@ -1,6 +1,60 @@
 /// Marathi translations of Devalay's English UI strings and Panchang names, keyed by the English text.
 /// Source list: tool/l10n/strings.json. Keys must match the English exactly; {0}, {1} are placeholders.
 const stringsMr = <String, String>{
+  // Today's guidance and Disha Shool (1.5.4).
+  'A Rikta tithi (4th, 9th or 14th): better not to start new ventures; good for finishing work':
+      'रिक्ता तिथी (चतुर्थी, नवमी किंवा चतुर्दशी): नवीन काम सुरू करू नका; अपूर्ण कामे पूर्ण करण्यासाठी चांगली',
+  'Amavasya: a day for remembering ancestors (tarpan) and quiet prayer, not for new beginnings':
+      'अमावस्या: पितरांचे तर्पण आणि शांत प्रार्थनेचा दिवस, नव्या सुरुवातीचा नाही',
+  'East': 'पूर्व',
+  'Ekadashi: a day for fasting, Vishnu puja and japa': 'एकादशी: उपवास, विष्णू पूजा आणि जपाचा दिवस',
+  'Friday (Venus): music and arts, jewellery, vehicles and Lakshmi puja':
+      'शुक्रवार (शुक्र): संगीत व कला, दागिने, वाहने आणि लक्ष्मी पूजा',
+  'Monday (Moon): travel, new clothes, farming and family visits':
+      'सोमवार (चंद्र): प्रवास, नवीन कपडे, शेती आणि नातेवाईकांच्या भेटी',
+  'North': 'उत्तर',
+  'Purnima: good for vrat, Satyanarayan puja, charity and holy baths':
+      'पौर्णिमा: व्रत, सत्यनारायण पूजा, दान आणि पवित्र स्नानासाठी चांगली',
+  'Saturday (Saturn): service, repairs, charity and Shani puja': 'शनिवार (शनी): सेवा, दुरुस्ती, दान आणि शनी पूजा',
+  'South': 'दक्षिण',
+  'Sunday (Sun): health, government work, meeting elders and Surya puja':
+      'रविवार (सूर्य): आरोग्य, सरकारी कामे, वडीलधाऱ्यांची भेट आणि सूर्य पूजा',
+  'The nakshatra is fierce: postpone auspicious beginnings and big purchases':
+      'नक्षत्र उग्र आहे: शुभ आरंभ आणि मोठी खरेदी पुढे ढकला',
+  'The nakshatra is fixed: good for lasting work such as laying foundations, a new home or planting':
+      'नक्षत्र स्थिर आहे: पायाभरणी, नवीन घर किंवा झाडे लावणे अशा टिकाऊ कामांसाठी चांगले',
+  'The nakshatra is mixed: fine for routine work, less so for new beginnings':
+      'नक्षत्र मिश्र आहे: रोजच्या कामांसाठी ठीक, नव्या आरंभासाठी कमी',
+  'The nakshatra is movable: good for travel, buying a vehicle and starting a move':
+      'नक्षत्र चर आहे: प्रवास, वाहन खरेदी आणि घर बदलण्याची सुरुवात यासाठी चांगले',
+  'The nakshatra is sharp: not for auspicious beginnings; fine for clearing old matters':
+      'नक्षत्र तीक्ष्ण आहे: शुभ आरंभासाठी नाही; जुनी कामे निकाली काढण्यासाठी ठीक',
+  'The nakshatra is soft: good for music and arts, friendship, new clothes and celebrations':
+      'नक्षत्र मृदू आहे: संगीत व कला, मैत्री, नवीन कपडे आणि उत्सवांसाठी चांगले',
+  'The nakshatra is swift: good for trade, medicine, learning and quick tasks':
+      'नक्षत्र क्षिप्र आहे: व्यापार, औषध, अभ्यास आणि झटपट कामांसाठी चांगले',
+  'Thursday (Jupiter): learning, guru seva, marriage talks and buying gold':
+      'गुरुवार (गुरू): विद्या, गुरुसेवा, लग्नाची बोलणी आणि सोने खरेदी',
+  'Tuesday (Mars): courage, sports, property matters and Hanuman puja':
+      'मंगळवार (मंगळ): धैर्य, खेळ, जमीन-मालमत्तेची कामे आणि हनुमान पूजा',
+  'Wednesday (Mercury): study, writing, trade and accounts': 'बुधवार (बुध): अभ्यास, लेखन, व्यापार आणि हिशेब',
+  'West': 'पश्चिम',
+  'eat a few sesame seeds or coriander': 'थोडे तीळ किंवा धणे खा',
+  'eat a little barley': 'थोडे जव खा',
+  'eat a little ghee or porridge': 'थोडे तूप किंवा लापशी खा',
+  'eat a little ginger or urad dal': 'थोडे आले किंवा उडीद खा',
+  'eat a little jaggery': 'थोडा गूळ खा',
+  'eat a spoon of curd': 'एक चमचा दही खा',
+  'look into a mirror': 'आरशात पाहा',
+  'Abhijit Muhurta {0}, around midday': 'अभिजित मुहूर्त {0}, दुपारच्या सुमारास',
+  'Avoid setting out on a journey towards the {0} today.': 'आज {0} दिशेला प्रवास सुरू करू नका.',
+  'Best time to begin': 'सुरुवातीसाठी उत्तम वेळ',
+  'Better to avoid': 'हे टाळा',
+  'Day direction (Disha Shool)': 'दिशा शूल (दिवसाची दिशा)',
+  'Good for': 'यासाठी शुभ',
+  'If you must go that way: {0} before leaving.': 'त्या दिशेला जाणे भाग असल्यास निघण्यापूर्वी: {0}.',
+  'Rahu Kaal {0}: do not start anything important': 'राहू काळ {0}: कोणतेही महत्त्वाचे काम सुरू करू नका',
+  'Today\'s guidance': 'आजचे मार्गदर्शन',
   // Feedback and usage statistics (1.5.3).
   'Could not send. Check your connection and try again.': 'पाठवता आले नाही. इंटरनेट तपासून पुन्हा प्रयत्न करा.',
   'Idea or feature': 'कल्पना किंवा नवी सुविधा',
