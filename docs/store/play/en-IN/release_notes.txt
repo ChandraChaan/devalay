@@ -1,1 +1,3 @@
-Fixes crashes when a song can't load and when changing language or turning on reminders.
+• Today's guidance on the Panchang page: the day's direction (Disha Shool) with its remedy, what the day suits, what to avoid and the best time to begin.
+• The Panchang read-aloud now tells the day's direction.
+• Better display on new Android phones and stability fixes.
