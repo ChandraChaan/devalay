@@ -32,7 +32,7 @@ class HomeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final home = ref.watch(homeProvider);
     return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle.light,
+      value: lightBars,
       child: Scaffold(
         body: RefreshIndicator(
           onRefresh: () => ref.refresh(homeProvider.future),

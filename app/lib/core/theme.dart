@@ -84,7 +84,7 @@ ThemeData buildTheme(Brightness brightness, [Accent accent = Accent.saffron]) {
       elevation: 0,
       centerTitle: false,
       foregroundColor: scheme.onSurface,
-      systemOverlayStyle: dark ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark,
+      systemOverlayStyle: dark ? lightBars : darkBars,
       titleTextStyle: ui.copyWith(fontSize: 22, fontWeight: FontWeight.w700, color: scheme.onSurface),
     ),
     cardTheme: CardThemeData(
@@ -154,3 +154,20 @@ abstract final class Breakpoints {
   static const rail = 840.0;
   static const content = 960.0; // reading width for lists on tablets
 }
+
+/// Light status and navigation bar icons, for dark backgrounds. Only icon brightness is set: the bars are
+/// transparent and drawn over the app (MainActivity enables edge-to-edge), and setting bar colours would
+/// call window APIs that Android 15 deprecates. Use these instead of [SystemUiOverlayStyle.light], which
+/// paints the navigation bar black.
+const lightBars = SystemUiOverlayStyle(
+  statusBarIconBrightness: Brightness.light,
+  statusBarBrightness: Brightness.dark,
+  systemNavigationBarIconBrightness: Brightness.light,
+);
+
+/// Dark status and navigation bar icons, for light backgrounds. See [lightBars].
+const darkBars = SystemUiOverlayStyle(
+  statusBarIconBrightness: Brightness.dark,
+  statusBarBrightness: Brightness.light,
+  systemNavigationBarIconBrightness: Brightness.dark,
+);

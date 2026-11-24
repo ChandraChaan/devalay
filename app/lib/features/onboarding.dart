@@ -59,7 +59,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
     final prefs = ref.watch(prefsProvider);
     final lang = prefs.language;
     return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle.light,
+      value: lightBars,
       child: Scaffold(
         body: Container(
           decoration: const BoxDecoration(

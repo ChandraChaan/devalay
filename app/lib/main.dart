@@ -30,7 +30,6 @@ Future<void> main() async {
   await FirebaseServices.init();
   unawaited(Usage.init());
   unawaited(FirebaseServices.subscribe(Prefs.load(Boxes.prefs).language));
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
   runApp(const ProviderScope(child: DevalayApp()));
 }
