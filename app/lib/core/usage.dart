@@ -4,11 +4,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/widgets.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 import 'firebase.dart';
 import 'location.dart';
+import 'native.dart';
 import 'storage.dart';
 
 /// The Realtime Database that holds live presence. Set explicitly so builds whose
@@ -62,6 +64,19 @@ class Usage {
   static StreamSubscription<User?>? _authSub;
   static final String _sessionId = DateTime.now().millisecondsSinceEpoch.toRadixString(36);
 
+  /// Phone model, Android API level and memory (no identifiers), and per-install traits the owner's
+  /// admin screen segments by: the push token (so a message can reach one install or a segment),
+  /// whether the morning Panchang is on, how many widgets are placed and whether a city was chosen.
+  static ({String model, int sdk, int ramMb})? _device;
+  static final _traits = <String, Object>{};
+
+  /// Records a trait for the next write ('t' token, 'np' morning Panchang, 'nw' widgets, 'cc' city chosen).
+  static void trait(String key, Object value) {
+    if (_traits[key] == value) return;
+    _traits[key] = value;
+    _schedule();
+  }
+
   /// The anonymous id this install reports under, once signed in.
   static String? get uid => _uid;
 
@@ -78,6 +93,8 @@ class Usage {
       _build = versionCodeOf(info.version);
       _installer = info.installerStore ?? '';
     } catch (_) {}
+    unawaited(NativeBridge.deviceInfo().then((d) => _device = d));
+    unawaited(_pushToken());
     _lifecycle = AppLifecycleListener(
       onResume: () {
         final away = _pausedAt == null ? Duration.zero : DateTime.now().difference(_pausedAt!);
@@ -113,6 +130,21 @@ class Usage {
       }
       // The listener's first event (null on a fresh install) starts the anonymous sign-in.
     });
+  }
+
+  static Future<void> _pushToken() async {
+    try {
+      final messaging = FirebaseMessaging.instance;
+      // Registration tokens, which FCM HTTP v1 (functions/index.js) sends to. firebase_messaging 17
+      // deprecates them for installation-id "direct send"; move both ends together when that is out of preview.
+      // ignore: deprecated_member_use
+      final token = await messaging.getToken();
+      if (token != null) trait('t', token);
+      // ignore: deprecated_member_use
+      messaging.onTokenRefresh.listen((t) => trait('t', t));
+    } catch (e) {
+      debugPrint('Usage: no push token yet: $e'); // offline; tried again next launch
+    }
   }
 
   static Future<void> _signIn() async {
@@ -185,7 +217,7 @@ class Usage {
   static Future<void> flush() async {
     _timer?.cancel();
     final uid = _uid;
-    if (uid == null || !sharing || (_pending.isEmpty && _counts.isEmpty)) return;
+    if (uid == null || !sharing || (_pending.isEmpty && _counts.isEmpty && _traits.isEmpty)) return;
     final items = List<Map<String, Object?>>.of(_pending);
     final counts = Map<String, int>.of(_counts);
     final newSession = _newSession;
@@ -206,7 +238,11 @@ class Usage {
       'state': _state(),
       'src': _installer,
       if (newSession) 'sessions': FieldValue.increment(1),
-      'f': {for (final e in counts.entries) e.key: FieldValue.increment(e.value)},
+      // Only with counts: merging an empty map would replace the counters with {}.
+      if (counts.isNotEmpty) 'f': {for (final e in counts.entries) e.key: FieldValue.increment(e.value)},
+      if (_device case final d?) ...{'dev': d.model, 'os': d.sdk, 'ram': d.ramMb},
+      'cc': cityChosen,
+      ..._traits,
     }, SetOptions(merge: true));
     if (items.isNotEmpty) {
       batch.set(db.collection('events').doc(), {

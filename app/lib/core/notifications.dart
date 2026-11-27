@@ -105,6 +105,19 @@ class Notifications {
       settings: const InitializationSettings(android: AndroidInitializationSettings('@drawable/ic_notification')),
       onDidReceiveNotificationResponse: (r) => unawaited(_onTap(r)),
     );
+    // Pushes from the admin screen name this channel; it has to exist before the first one arrives.
+    try {
+      await _plugin
+          .resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()
+          ?.createNotificationChannel(
+            AndroidNotificationChannel(
+              _announcement.channelId,
+              _announcement.channelName,
+              description: _announcement.channelDescription,
+              importance: _announcement.importance,
+            ),
+          );
+    } catch (_) {}
     // Read once, now: the plugin replaces the activity's intent on every later tap, after which the
     // "launch details" describe that tap instead of the one that started the app.
     try {
@@ -164,13 +177,16 @@ class Notifications {
     _ => null,
   };
 
-  static Future<void> announce(String title, String body) async {
+  /// Shows a push that arrived while the app is open (Android only puts it in the tray by itself in
+  /// the background). [payload] carries the campaign and link, so a tap is handled like a tray tap.
+  static Future<void> announce(String title, String body, {String? payload}) async {
     await init();
     await _plugin.show(
       id: DateTime.now().millisecondsSinceEpoch ~/ 1000 % 100000 + 2000,
       title: title,
       body: body,
-      notificationDetails: const NotificationDetails(android: _announcement),
+      notificationDetails: _expanded(_announcement, body),
+      payload: payload,
     );
   }
 

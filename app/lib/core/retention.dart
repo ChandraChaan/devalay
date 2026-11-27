@@ -45,7 +45,10 @@ void logNotificationSettings(Prefs p, {required String kind, required bool on, r
     item: '$kind:${on ? 'on' : 'off'}',
     params: {'kind': kind, 'enabled': on ? 1 : 0, 'hour': hour, 'minute': minute, 'source': source},
   );
-  if (kind == 'panchang') Usage.property('morning_panchang', on ? 'on' : 'off');
+  if (kind == 'panchang') {
+    Usage.property('morning_panchang', on ? 'on' : 'off');
+    Usage.trait('np', on ? 'on' : 'off');
+  }
 }
 
 /// Whether the launcher can add a widget from inside the app (Android 8+, most launchers).
@@ -83,9 +86,13 @@ Future<void> pinPanchangWidget({required String source}) async {
 Future<void> reportRetentionProperties(Prefs p) async {
   try {
     final allowed = await Notifications.allowed();
-    Usage.property('morning_panchang', !p.panchangDaily ? 'off' : (allowed ? 'on' : 'blocked'));
+    final morning = !p.panchangDaily ? 'off' : (allowed ? 'on' : 'blocked');
+    Usage.property('morning_panchang', morning);
+    Usage.trait('np', morning);
+    Usage.trait('na', allowed);
     final widgets = await installedWidgetCount();
     Usage.property('home_widgets', widgets >= 2 ? '2+' : '$widgets');
+    Usage.trait('nw', widgets);
   } catch (e) {
     debugPrint('Retention properties not reported: $e');
   }

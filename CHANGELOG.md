@@ -3,6 +3,28 @@
 Each milestone is a git tag and a [GitHub release](https://github.com/ChandraChaan/devalay/releases). Releases from
 v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the section below that matches the tag.
 
+## v1.5.7 — 2026-11-27
+
+Owner's admin screen: clearer numbers and notifications to users.
+
+- **Overview** now answers "are we growing and keeping people?": new and active today / 7 days, back next day (D1)
+  and on day 7, opened-once share; 14-day new · active chart; retention by install day (D1–D7); the funnel from
+  install to the morning-Panchang habit; screens and actions of the week; splits by language, chosen state, version,
+  phone brand, Android version and memory. Worked out by `core/admin_stats.dart` (unit-tested, checked against the
+  live usage log).
+- **Send tab**: write a notification in Telugu, English and Hindi, choose what a tap opens, send it to everyone, a
+  language, a state, an app version, people away for N days, or one install, check the reach first, and see opens
+  per send. Delivered by the new `sendPush` Cloud Function (admin only, quiet hours 9 PM–6 AM, dead tokens removed).
+- **Users**: search and filters (language, state, away 3+ days, morning Panchang, reachable); a user's page shows
+  their phone and reminders and can send them a notification. **Feedback**: new / replied / fixed with a note.
+- The app reports its phone model, Android version and memory (no identifiers), its push token, and whether the
+  morning Panchang, widgets and a chosen city are set, only while "Share usage statistics" is on.
+- Taps on these notifications open their screen and are counted, whether the app was open, in the background or
+  closed. Pushes that arrive while the app is open are shown too.
+- Debug builds can run against the local Firebase emulators (`USE_EMULATORS=true`); see docs/ADMIN.md.
+- **Deploy order:** Firestore rules first (they allow the new fields and `campaigns`), then the function, then ship
+  the app.
+
 ## v1.5.6 — 2026-11-27
 
 Retention: a reason to come back each morning without having to remember to open the app.

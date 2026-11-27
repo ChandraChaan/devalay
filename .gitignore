@@ -30,3 +30,6 @@ google-services.json
 
 # Admin claim script
 tools/admin/node_modules/
+
+# Firebase emulator logs
+*-debug.log

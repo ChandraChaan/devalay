@@ -23,7 +23,8 @@ service cloud.firestore {
     // One summary per install, written only by that install.
     function installShape() {
       let d = request.resource.data;
-      return d.keys().hasOnly(['firstSeen', 'lastSeen', 'lang', 'v', 'build', 'state', 'src', 'sessions', 'f'])
+      return d.keys().hasOnly(['firstSeen', 'lastSeen', 'lang', 'v', 'build', 'state', 'src', 'sessions', 'f',
+          'dev', 'os', 'ram', 'cc', 't', 'np', 'na', 'nw'])
         && d.lastSeen == request.time
         && (!('lang' in d) || shortString(d.lang, 8))
         && (!('v' in d) || shortString(d.v, 16))
@@ -31,7 +32,17 @@ service cloud.firestore {
         && (!('state' in d) || shortString(d.state, 40))
         && (!('src' in d) || shortString(d.src, 60))
         && (!('sessions' in d) || d.sessions is int)
-        && (!('f' in d) || (d.f is map && d.f.size() <= 120));
+        && (!('f' in d) || (d.f is map && d.f.size() <= 120))
+        // 1.5.7+: phone model, Android API level, RAM in MB, city chosen, push token, morning Panchang
+        // (on/off/blocked), notifications allowed, home-screen widgets.
+        && (!('dev' in d) || shortString(d.dev, 40))
+        && (!('os' in d) || d.os is int)
+        && (!('ram' in d) || d.ram is int)
+        && (!('cc' in d) || d.cc is bool)
+        && (!('t' in d) || shortString(d.t, 400))
+        && (!('np' in d) || d.np in ['on', 'off', 'blocked'])
+        && (!('na' in d) || d.na is bool)
+        && (!('nw' in d) || d.nw is int);
     }
 
     match /installs/{uid} {
@@ -77,7 +88,17 @@ service cloud.firestore {
         && request.resource.data.done == false;
       allow read, delete: if isAdmin();
       allow update: if isAdmin()
-        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['done']);
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['done', 'status', 'note']);
+    }
+
+    // Pushes sent from the admin screen. Written only by the sendPush Cloud Function (Admin SDK);
+    // an install that opens one adds 1 to its open count and can change nothing else.
+    match /campaigns/{id} {
+      allow read: if isAdmin();
+      allow update: if signedIn()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['opens'])
+        && request.resource.data.opens == resource.data.get('opens', 0) + 1;
+      allow create, delete: if false;
     }
 
     // Who is an admin. Created only in the Firebase console or with the Admin SDK.
