@@ -7,9 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+import '../core/admin_stats.dart';
+import '../core/dev_emulators.dart';
 import '../core/firebase.dart';
 import '../core/theme.dart';
 import '../core/usage.dart';
+import 'admin_send.dart';
 
 /// Web OAuth client of the devalay-chandra project: Google returns an ID token for it, which
 /// Firebase exchanges for a session. A public identifier, not a secret.
@@ -60,6 +63,27 @@ class _SignInState extends State<_SignIn> {
   bool _busy = false;
   String? _error;
   static Future<void>? _init;
+  final _email = TextEditingController();
+  final _password = TextEditingController();
+
+  @override
+  void dispose() {
+    _email.dispose();
+    _password.dispose();
+    super.dispose();
+  }
+
+  /// Debug builds on the local emulators only (dev_emulators.dart): a test admin made by the seed script.
+  Future<void> _emulatorSignIn() async {
+    setState(() => _busy = true);
+    try {
+      await Usage.flush();
+      await FirebaseAuth.instance.signInWithEmailAndPassword(email: _email.text.trim(), password: _password.text);
+    } catch (e) {
+      _error = 'Emulator sign-in failed: $e';
+    }
+    if (mounted) setState(() => _busy = false);
+  }
 
   Future<void> _signIn() async {
     setState(() {
@@ -106,6 +130,22 @@ class _SignInState extends State<_SignIn> {
                     : const Icon(Icons.login_rounded),
                 label: const Text('Sign in with Google'),
               ),
+              if (useEmulators) ...[
+                const SizedBox(height: 24),
+                const Text('Local emulators (debug build)'),
+                TextField(
+                  key: const ValueKey('emu-email'),
+                  controller: _email,
+                  decoration: const InputDecoration(labelText: 'Email'),
+                ),
+                TextField(
+                  key: const ValueKey('emu-password'),
+                  controller: _password,
+                  obscureText: true,
+                  decoration: const InputDecoration(labelText: 'Password'),
+                ),
+                TextButton(onPressed: _busy ? null : _emulatorSignIn, child: const Text('Sign in to the emulator')),
+              ],
               if (_error != null) ...[
                 const SizedBox(height: 16),
                 Text(
@@ -210,28 +250,11 @@ class Presence {
   final String screen, lang, version, state;
 }
 
-class Install {
-  Install(this.uid, Map<String, dynamic> m)
-    : firstSeen = (m['firstSeen'] as Timestamp?)?.toDate(),
-      lastSeen = (m['lastSeen'] as Timestamp?)?.toDate(),
-      lang = '${m['lang'] ?? ''}',
-      version = '${m['v'] ?? ''}',
-      state = '${m['state'] ?? ''}',
-      source = '${m['src'] ?? ''}',
-      sessions = (m['sessions'] as num?)?.toInt() ?? 0,
-      features = {for (final e in ((m['f'] as Map?) ?? const {}).entries) '${e.key}': (e.value as num?)?.toInt() ?? 0};
-  final String uid;
-  final DateTime? firstSeen, lastSeen;
-  final String lang, version, state, source;
-  final int sessions;
-  final Map<String, int> features;
-
-  List<MapEntry<String, int>> get topFeatures =>
-      features.entries.where((e) => !_ignored.contains(e.key)).toList()..sort((a, b) => b.value.compareTo(a.value));
-}
-
 /// Counters that describe navigation rather than a feature.
 const _ignored = {'app_open', 'root', 'onboarding'};
+
+List<MapEntry<String, int>> _topFeatures(InstallRow u) =>
+    u.features.entries.where((e) => !_ignored.contains(e.key)).toList()..sort((a, b) => b.value.compareTo(a.value));
 
 class Activity {
   Activity(this.uid, Map m)
@@ -254,6 +277,10 @@ class Activity {
     'city_set' => 'set city ${item ?? ''}',
     'language_set' => 'changed language to ${item ?? ''}',
     'feedback_sent' => 'sent feedback (${item ?? ''})',
+    'reminder_open' => 'opened a ${item ?? ''} reminder',
+    'widget_tap' => 'tapped the ${item ?? ''} widget',
+    'push_open' => 'opened a notification you sent',
+    'notification_settings_changed' => 'changed reminders (${item ?? ''})',
     _ => '$kind ${item ?? ''}',
   };
 }
@@ -264,13 +291,31 @@ List<Activity> _flatten(Iterable<QueryDocumentSnapshot<Map<String, dynamic>>> do
       if (i is Map) Activity('${d.data()['uid']}', i),
 ]..sort((a, b) => b.at.compareTo(a.at));
 
-final _installsProvider = FutureProvider.autoDispose<List<Install>>((ref) async {
+final _installsProvider = FutureProvider.autoDispose<List<InstallRow>>((ref) async {
   final snap = await FirebaseFirestore.instance
       .collection('installs')
       .orderBy('lastSeen', descending: true)
-      .limit(3000)
+      .limit(5000)
       .get();
-  return [for (final d in snap.docs) Install(d.id, d.data())];
+  return [for (final d in snap.docs) InstallRow.fromMap(d.id, d.data())];
+});
+
+/// The last 14 days of actions, for daily users, retention and top screens.
+final _activityProvider = FutureProvider.autoDispose<List<ActivityRow>>((ref) async {
+  final since = DateTime.now().subtract(const Duration(days: 15));
+  final snap = await FirebaseFirestore.instance
+      .collection('events')
+      .where('at', isGreaterThanOrEqualTo: Timestamp.fromDate(since))
+      .orderBy('at', descending: true)
+      .limit(12000)
+      .get();
+  return [for (final d in snap.docs) ...ActivityRow.fromBatch(d.data())];
+});
+
+final _statsProvider = FutureProvider.autoDispose<AdminStats>((ref) async {
+  final installs = await ref.watch(_installsProvider.future);
+  final activity = await ref.watch(_activityProvider.future);
+  return AdminStats.compute(installs, activity);
 });
 
 String short(String uid) => uid.length > 6 ? uid.substring(0, 6) : uid;
@@ -287,17 +332,31 @@ String ago(DateTime? t) {
 String clock(DateTime t) =>
     '${t.day}/${t.month} ${t.hour.toString().padLeft(2, '0')}:${t.minute.toString().padLeft(2, '0')}';
 
+String pct(double? v) => v == null ? '—' : '${(v * 100).round()}%';
+
 // ---------------------------------------------------------------------------------------------
 // Dashboard
 
-class _Dashboard extends StatefulWidget {
+/// Opens the Send tab with one install as the audience (from a user's page).
+final _sendTo = NotifierProvider<_SendTo, String?>(_SendTo.new);
+
+class _SendTo extends Notifier<String?> {
+  @override
+  String? build() => null;
+
+  void set(String? uid) => state = uid;
+}
+
+class _Dashboard extends ConsumerStatefulWidget {
   const _Dashboard();
 
   @override
-  State<_Dashboard> createState() => _DashboardState();
+  ConsumerState<_Dashboard> createState() => _DashboardState();
 }
 
-class _DashboardState extends State<_Dashboard> {
+class _DashboardState extends ConsumerState<_Dashboard> with SingleTickerProviderStateMixin {
+  late final _tabs = TabController(length: 5, vsync: this);
+
   @override
   void initState() {
     super.initState();
@@ -305,24 +364,52 @@ class _DashboardState extends State<_Dashboard> {
   }
 
   @override
+  void dispose() {
+    _tabs.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 4,
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Devalay admin'),
-          actions: [IconButton(tooltip: 'Sign out', onPressed: _signOut, icon: const Icon(Icons.logout_rounded))],
-          bottom: const TabBar(
-            isScrollable: true,
-            tabs: [
-              Tab(text: 'Live'),
-              Tab(text: 'Overview'),
-              Tab(text: 'Users'),
-              Tab(text: 'Feedback'),
-            ],
+    ref.listen(_sendTo, (_, uid) {
+      if (uid != null) _tabs.animateTo(3);
+    });
+    final installs = ref.watch(_installsProvider).value ?? const <InstallRow>[];
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Devalay admin'),
+        actions: [
+          IconButton(
+            tooltip: 'Refresh',
+            onPressed: () {
+              ref.invalidate(_installsProvider);
+              ref.invalidate(_activityProvider);
+            },
+            icon: const Icon(Icons.refresh_rounded),
           ),
+          IconButton(tooltip: 'Sign out', onPressed: _signOut, icon: const Icon(Icons.logout_rounded)),
+        ],
+        bottom: TabBar(
+          controller: _tabs,
+          isScrollable: true,
+          tabs: const [
+            Tab(text: 'Live'),
+            Tab(text: 'Overview'),
+            Tab(text: 'Users'),
+            Tab(text: 'Send'),
+            Tab(text: 'Feedback'),
+          ],
         ),
-        body: const TabBarView(children: [_LiveTab(), _OverviewTab(), _UsersTab(), _FeedbackTab()]),
+      ),
+      body: TabBarView(
+        controller: _tabs,
+        children: [
+          const _LiveTab(),
+          const _OverviewTab(),
+          const _UsersTab(),
+          SendTab(key: ValueKey(ref.watch(_sendTo)), installs: installs, initialUser: ref.watch(_sendTo)),
+          const _FeedbackTab(),
+        ],
       ),
     );
   }
@@ -462,11 +549,208 @@ class _ActivityTile extends StatelessWidget {
   }
 }
 
+/// The numbers that say whether Devalay is growing and keeping people, top to bottom: health,
+/// days, retention, funnel, daily habit, what people use, and who they are.
 class _OverviewTab extends ConsumerWidget {
   const _OverviewTab();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final stats = ref.watch(_statsProvider);
+    final installs = ref.watch(_installsProvider).value ?? const <InstallRow>[];
+    return RefreshIndicator(
+      onRefresh: () async {
+        ref.invalidate(_installsProvider);
+        ref.invalidate(_activityProvider);
+        await ref.read(_statsProvider.future);
+      },
+      child: stats.when(
+        loading: () => const Center(child: CircularProgressIndicator()),
+        error: (e, _) => _Problem('$e'),
+        data: (s) => ListView(
+          padding: const EdgeInsets.all(12),
+          children: [
+            Wrap(
+              children: [
+                _Stat('New today', '${s.newToday}'),
+                _Stat('New 7 days', '${s.new7}'),
+                _Stat('Active today', '${s.activeToday}', color: Colors.green),
+                _Stat('Active 7 days', '${s.active7}'),
+                _Stat('Back next day', pct(s.d1), hint: 'D1 retention'),
+                _Stat('Back on day 7', pct(s.d7), hint: 'D7 retention'),
+                _Stat('Opened once', pct(s.oneSession), hint: 'of all installs'),
+                _Stat('Reachable', '${s.reachable}', hint: 'by a push to one person'),
+              ],
+            ),
+            const _Section('Last 14 days (new · active)'),
+            _Daily(s),
+            const _Section('Back on day N, by install day'),
+            _CohortTable(s.cohorts),
+            const _Section('Last 30 days: from install to habit'),
+            for (final f in s.funnel)
+              _Bar(
+                f.label,
+                f.count,
+                s.funnel.first.count,
+                trailing: '${f.count} · ${pct(s.funnel.first.count == 0 ? null : f.count / s.funnel.first.count)}',
+              ),
+            const _Section('Daily habit'),
+            Wrap(
+              children: [
+                _Stat('Morning Panchang', pct(s.morningOn), hint: 'on, of 1.5.7+'),
+                _Stat('Home widget', pct(s.widgetOn), hint: 'placed, of 1.5.7+'),
+                _Stat('Chose a city', pct(s.cityChosen)),
+              ],
+            ),
+            const _Section('Screens this week (people · times)'),
+            if (s.screens.isEmpty) const _Empty('No screens recorded this week.'),
+            for (final u in s.screens.take(15))
+              _Bar(u.name, u.users, s.screens.first.users, trailing: '${u.users} · ${u.times}'),
+            const _Section('Actions this week (people · times)'),
+            for (final u in s.actions.take(15))
+              _Bar(u.name, u.users, s.actions.first.users, trailing: '${u.users} · ${u.times}'),
+            _Split('Language', splitBy(installs, (i) => i.lang)),
+            _Split('State (chosen city)', splitBy(installs.where((i) => i.chose), (i) => i.state)),
+            _Split('App version', splitBy(installs, (i) => i.version)),
+            _Split('Phone brand', splitBy(installs.where((i) => i.device.isNotEmpty), (i) => i.brand)),
+            _Split('Android', splitBy(installs.where((i) => i.sdk > 0), (i) => i.android)),
+            _Split('Memory', splitBy(installs.where((i) => i.ramMb > 0), (i) => i.ram)),
+            _Split('Installed from', splitBy(installs, (i) => i.source)),
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: Text(
+                'Usage starts with 1.5.3; screens other than the five tabs, phones and the daily-habit numbers '
+                'start with 1.5.7. Installs that turned off usage statistics are not counted.',
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _Daily extends StatelessWidget {
+  const _Daily(this.s);
+  final AdminStats s;
+
+  @override
+  Widget build(BuildContext context) {
+    final most = s.daily.fold<int>(1, (m, d) => d.active > m ? d.active : m);
+    return Column(
+      children: [
+        for (final d in s.daily.reversed)
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 4),
+            child: Row(
+              children: [
+                SizedBox(width: 48, child: Text('${d.day.day}/${d.day.month}')),
+                Expanded(
+                  child: Column(
+                    children: [
+                      _Thin(d.added / most, Colors.blue),
+                      const SizedBox(height: 2),
+                      _Thin(d.active / most, Colors.green),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  width: 64,
+                  child: Text(
+                    '${d.added} · ${d.active}',
+                    textAlign: TextAlign.end,
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                ),
+              ],
+            ),
+          ),
+      ],
+    );
+  }
+}
+
+class _Thin extends StatelessWidget {
+  const _Thin(this.value, this.color);
+  final double value;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) => ClipRRect(
+    borderRadius: BorderRadius.circular(3),
+    child: LinearProgressIndicator(
+      value: value.clamp(0, 1),
+      minHeight: 6,
+      color: color,
+      backgroundColor: color.withValues(alpha: 0.1),
+    ),
+  );
+}
+
+class _CohortTable extends StatelessWidget {
+  const _CohortTable(this.cohorts);
+  final List<Cohort> cohorts;
+
+  @override
+  Widget build(BuildContext context) {
+    if (cohorts.isEmpty) return const _Empty('No installs in the last 14 days.');
+    final small = Theme.of(context).textTheme.bodySmall;
+    Widget cell(String text, {Color? color, bool bold = false}) => Container(
+      width: 44,
+      height: 28,
+      alignment: Alignment.center,
+      margin: const EdgeInsets.all(1),
+      decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(4)),
+      child: Text(text, style: small?.copyWith(fontWeight: bold ? FontWeight.w700 : null)),
+    );
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              cell('Day', bold: true),
+              cell('New', bold: true),
+              for (var n = 1; n <= 7; n++) cell('D$n', bold: true),
+            ],
+          ),
+          for (final c in cohorts.reversed)
+            Row(
+              children: [
+                cell('${c.day.day}/${c.day.month}'),
+                cell('${c.size}'),
+                for (var n = 1; n <= 7; n++)
+                  c.rate(n) == null
+                      ? cell('')
+                      : cell(pct(c.rate(n)), color: Colors.green.withValues(alpha: 0.08 + 0.8 * c.rate(n)!)),
+              ],
+            ),
+        ],
+      ),
+    );
+  }
+}
+
+class _UsersTab extends ConsumerStatefulWidget {
+  const _UsersTab();
+
+  @override
+  ConsumerState<_UsersTab> createState() => _UsersTabState();
+}
+
+class _UsersTabState extends ConsumerState<_UsersTab> with AutomaticKeepAliveClientMixin {
+  UserFilter _filter = const UserFilter();
+
+  @override
+  bool get wantKeepAlive => true;
+
+  void _set(UserFilter f) => setState(() => _filter = f);
+
+  @override
+  Widget build(BuildContext context) {
+    super.build(context);
     final data = ref.watch(_installsProvider);
     return RefreshIndicator(
       onRefresh: () => ref.refresh(_installsProvider.future),
@@ -474,52 +758,87 @@ class _OverviewTab extends ConsumerWidget {
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (e, _) => _Problem('$e'),
         data: (all) {
-          final now = DateTime.now();
-          final today = DateTime(now.year, now.month, now.day);
-          bool since(DateTime? t, DateTime from) => t != null && !t.isBefore(from);
-          final week = today.subtract(const Duration(days: 6));
-          final month = today.subtract(const Duration(days: 29));
-          final features = <String, int>{};
-          final usersPer = <String, int>{};
-          for (final i in all) {
-            for (final e in i.features.entries) {
-              if (_ignored.contains(e.key)) continue;
-              features[e.key] = (features[e.key] ?? 0) + e.value;
-              usersPer[e.key] = (usersPer[e.key] ?? 0) + 1;
-            }
-          }
-          final top = features.entries.toList()..sort((a, b) => b.value.compareTo(a.value));
-          Map<String, int> split(String Function(Install) key) {
-            final m = <String, int>{};
-            for (final i in all) {
-              final k = key(i).isEmpty ? '—' : key(i);
-              m[k] = (m[k] ?? 0) + 1;
-            }
-            return m;
-          }
-
-          return ListView(
-            padding: const EdgeInsets.all(12),
-            children: [
-              Wrap(
-                children: [
-                  _Stat('Installs', '${all.length}'),
-                  _Stat('Active today', '${all.where((i) => since(i.lastSeen, today)).length}'),
-                  _Stat('Active 7 d', '${all.where((i) => since(i.lastSeen, week)).length}'),
-                  _Stat('Active 30 d', '${all.where((i) => since(i.lastSeen, month)).length}'),
-                  _Stat('New today', '${all.where((i) => since(i.firstSeen, today)).length}'),
-                  _Stat('New 7 d', '${all.where((i) => since(i.firstSeen, week)).length}'),
-                ],
-              ),
-              const _Section('Most used (times · users)'),
-              if (top.isEmpty) const _Empty('No usage reported yet. Data starts with version 1.5.3.'),
-              for (final e in top.take(30))
-                _Bar(e.key, e.value, top.first.value, trailing: '${e.value} · ${usersPer[e.key]}'),
-              _Split('Language', split((i) => i.lang)),
-              _Split('State', split((i) => i.state)),
-              _Split('Version', split((i) => i.version)),
-              _Split('Installed from', split((i) => i.source)),
-            ],
+          final f = _filter;
+          final shown = f.apply(all);
+          final langs = splitBy(all, (i) => i.lang).map((e) => e.key).where((k) => k != '—').toList();
+          final states = splitBy(all.where((i) => i.chose), (i) => i.state).map((e) => e.key).where((k) => k != '—');
+          UserFilter copy({
+            Object? lang = _keep,
+            Object? state = _keep,
+            Object? inactiveDays = _keep,
+            Object? morningOn = _keep,
+            bool? reachable,
+            String? query,
+          }) => UserFilter(
+            lang: lang == _keep ? f.lang : lang as String?,
+            state: state == _keep ? f.state : state as String?,
+            inactiveDays: inactiveDays == _keep ? f.inactiveDays : inactiveDays as int?,
+            morningOn: morningOn == _keep ? f.morningOn : morningOn as bool?,
+            reachable: reachable ?? f.reachable,
+            query: query ?? f.query,
+          );
+          return ListView.builder(
+            itemCount: shown.length + 1,
+            itemBuilder: (context, i) {
+              if (i == 0) {
+                return Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      TextField(
+                        decoration: const InputDecoration(
+                          prefixIcon: Icon(Icons.search_rounded),
+                          hintText: 'Install id or phone model',
+                        ),
+                        onChanged: (q) => _set(copy(query: q)),
+                      ),
+                      const SizedBox(height: 8),
+                      Wrap(
+                        spacing: 6,
+                        runSpacing: 6,
+                        children: [
+                          _PickChip('Language', f.lang, langs, (v) => _set(copy(lang: v))),
+                          _PickChip('State', f.state, states.toList(), (v) => _set(copy(state: v))),
+                          FilterChip(
+                            label: const Text('Away 3+ days'),
+                            selected: f.inactiveDays != null,
+                            onSelected: (on) => _set(copy(inactiveDays: on ? 3 : null)),
+                          ),
+                          FilterChip(
+                            label: const Text('Morning Panchang on'),
+                            selected: f.morningOn == true,
+                            onSelected: (on) => _set(copy(morningOn: on ? true : null)),
+                          ),
+                          FilterChip(
+                            label: const Text('Reachable by push'),
+                            selected: f.reachable,
+                            onSelected: (on) => _set(copy(reachable: on)),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 8),
+                      Text('${shown.length} of ${all.length} installs', style: Theme.of(context).textTheme.bodySmall),
+                    ],
+                  ),
+                );
+              }
+              final u = shown[i - 1];
+              final top = _topFeatures(u).take(3).map((e) => e.key).join(', ');
+              return ListTile(
+                title: Text(
+                  'User ${short(u.uid)} · ${[u.lang, if (u.chose) u.state, u.device].where((s) => s.isNotEmpty).join(' · ')}',
+                ),
+                subtitle: Text(
+                  '${ago(u.lastSeen)} · ${u.sessions} sessions · v${u.version}'
+                  '${u.morning == 'on' ? ' · 🌅' : ''}${(u.widgets ?? 0) > 0 ? ' · 🧩' : ''}${u.hasToken ? ' · 🔔' : ''}'
+                  '${top.isEmpty ? '' : '\n$top'}',
+                ),
+                isThreeLine: top.isNotEmpty,
+                trailing: const Icon(Icons.chevron_right_rounded),
+                onTap: () => openUser(context, u.uid),
+              );
+            },
           );
         },
       ),
@@ -527,33 +846,26 @@ class _OverviewTab extends ConsumerWidget {
   }
 }
 
-class _UsersTab extends ConsumerWidget {
-  const _UsersTab();
+const _keep = Object();
+
+class _PickChip extends StatelessWidget {
+  const _PickChip(this.label, this.value, this.options, this.onPick);
+  final String label;
+  final String? value;
+  final List<String> options;
+  final ValueChanged<String?> onPick;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final data = ref.watch(_installsProvider);
-    return RefreshIndicator(
-      onRefresh: () => ref.refresh(_installsProvider.future),
-      child: data.when(
-        loading: () => const Center(child: CircularProgressIndicator()),
-        error: (e, _) => _Problem('$e'),
-        data: (all) => ListView.builder(
-          itemCount: all.length,
-          itemBuilder: (context, i) {
-            final u = all[i];
-            final top = u.topFeatures.take(3).map((e) => e.key).join(', ');
-            return ListTile(
-              title: Text('User ${short(u.uid)} · ${[u.lang, u.state].where((s) => s.isNotEmpty).join(' · ')}'),
-              subtitle: Text(
-                '${ago(u.lastSeen)} · ${u.sessions} sessions · v${u.version}${top.isEmpty ? '' : '\n$top'}',
-              ),
-              isThreeLine: top.isNotEmpty,
-              trailing: const Icon(Icons.chevron_right_rounded),
-              onTap: () => openUser(context, u.uid),
-            );
-          },
-        ),
+  Widget build(BuildContext context) {
+    return PopupMenuButton<String?>(
+      onSelected: (v) => onPick(v == '' ? null : v),
+      itemBuilder: (_) => [
+        const PopupMenuItem(value: '', child: Text('Any')),
+        for (final o in options) PopupMenuItem(value: o, child: Text(o)),
+      ],
+      child: Chip(
+        label: Text(value == null ? label : '$label: $value'),
+        avatar: Icon(Icons.arrow_drop_down_rounded, color: value == null ? null : Palette.saffron),
       ),
     );
   }
@@ -566,8 +878,11 @@ class _FeedbackTab extends StatefulWidget {
   State<_FeedbackTab> createState() => _FeedbackTabState();
 }
 
+/// Feedback status: new (to read), replied (answered on Play or by mail), fixed (in a release).
+String _status(Map m) => '${m['status'] ?? (m['done'] == true ? 'fixed' : 'new')}';
+
 class _FeedbackTabState extends State<_FeedbackTab> {
-  bool _openOnly = true;
+  String _show = 'new';
   late final _stream = FirebaseFirestore.instance
       .collection('feedback')
       .orderBy('at', descending: true)
@@ -581,16 +896,24 @@ class _FeedbackTabState extends State<_FeedbackTab> {
       builder: (context, snap) {
         if (snap.hasError) return _Problem('${snap.error}');
         if (!snap.hasData) return const Center(child: CircularProgressIndicator());
-        final docs = snap.data!.docs.where((d) => !_openOnly || d.data()['done'] != true).toList();
+        final all = snap.data!.docs;
+        int count(String s) => all.where((d) => _status(d.data()) == s).length;
+        final docs = all.where((d) => _show == 'all' || _status(d.data()) == _show).toList();
         return ListView(
           padding: const EdgeInsets.all(12),
           children: [
-            SwitchListTile(
-              title: Text('Open only (${docs.length})'),
-              value: _openOnly,
-              onChanged: (v) => setState(() => _openOnly = v),
+            SegmentedButton<String>(
+              segments: [
+                ButtonSegment(value: 'new', label: Text('New ${count('new')}')),
+                ButtonSegment(value: 'replied', label: Text('Replied ${count('replied')}')),
+                ButtonSegment(value: 'fixed', label: Text('Fixed ${count('fixed')}')),
+                ButtonSegment(value: 'all', label: Text('All ${all.length}')),
+              ],
+              selected: {_show},
+              onSelectionChanged: (s) => setState(() => _show = s.first),
             ),
-            if (docs.isEmpty) const _Empty('No feedback.'),
+            const SizedBox(height: 8),
+            if (docs.isEmpty) const _Empty('Nothing here.'),
             for (final d in docs) _FeedbackCard(d),
           ],
         );
@@ -603,11 +926,34 @@ class _FeedbackCard extends StatelessWidget {
   const _FeedbackCard(this.doc);
   final QueryDocumentSnapshot<Map<String, dynamic>> doc;
 
+  Future<void> _note(BuildContext context, String current) async {
+    final c = TextEditingController(text: current);
+    final note = await showDialog<String>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Note'),
+        content: TextField(
+          controller: c,
+          autofocus: true,
+          maxLines: 3,
+          decoration: const InputDecoration(hintText: 'What was done'),
+        ),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(context), child: const Text('Cancel')),
+          FilledButton(onPressed: () => Navigator.pop(context, c.text.trim()), child: const Text('Save')),
+        ],
+      ),
+    );
+    c.dispose();
+    if (note != null) await doc.reference.update({'note': note});
+  }
+
   @override
   Widget build(BuildContext context) {
     final m = doc.data();
     final at = (m['at'] as Timestamp?)?.toDate();
-    final done = m['done'] == true;
+    final status = _status(m);
+    final note = '${m['note'] ?? ''}';
     final emoji = switch (m['kind']) {
       'problem' => '🛠️',
       'praise' => '🙏',
@@ -620,21 +966,32 @@ class _FeedbackCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SelectableText('$emoji ${m['text'] ?? ''}', style: const TextStyle(fontSize: 15)),
+            if (note.isNotEmpty) ...[
+              const SizedBox(height: 6),
+              Text('📝 $note', style: Theme.of(context).textTheme.bodySmall),
+            ],
             const SizedBox(height: 8),
-            Row(
+            InkWell(
+              onTap: () => openUser(context, '${m['uid']}'),
+              child: Text(
+                'User ${short('${m['uid']}')} · ${m['lang'] ?? ''} · v${m['v'] ?? ''} · ${at == null ? '' : clock(at)}',
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+            ),
+            Wrap(
+              spacing: 6,
+              crossAxisAlignment: WrapCrossAlignment.center,
               children: [
-                Expanded(
-                  child: InkWell(
-                    onTap: () => openUser(context, '${m['uid']}'),
-                    child: Text(
-                      'User ${short('${m['uid']}')} · ${m['lang'] ?? ''} · v${m['v'] ?? ''} · ${at == null ? '' : clock(at)}',
-                      style: Theme.of(context).textTheme.bodySmall,
-                    ),
+                for (final s in const ['new', 'replied', 'fixed'])
+                  ChoiceChip(
+                    label: Text(s),
+                    selected: status == s,
+                    onSelected: (_) => doc.reference.update({'status': s, 'done': s != 'new'}),
                   ),
-                ),
-                TextButton(
-                  onPressed: () => doc.reference.update({'done': !done}),
-                  child: Text(done ? 'Reopen' : 'Mark done'),
+                TextButton.icon(
+                  onPressed: () => _note(context, note),
+                  icon: const Icon(Icons.edit_note_rounded),
+                  label: const Text('Note'),
                 ),
               ],
             ),
@@ -651,12 +1008,12 @@ class _FeedbackCard extends StatelessWidget {
 void openUser(BuildContext context, String uid) =>
     Navigator.of(context).push(MaterialPageRoute(builder: (_) => _UserScreen(uid: uid)));
 
-class _UserScreen extends StatelessWidget {
+class _UserScreen extends ConsumerWidget {
   const _UserScreen({required this.uid});
   final String uid;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final db = FirebaseFirestore.instance;
     return Scaffold(
       appBar: AppBar(title: Text('User ${short(uid)}')),
@@ -684,26 +1041,50 @@ class _UserScreen extends StatelessWidget {
               if (snap.hasError) return _Problem('${snap.error}');
               final data = snap.data?.data();
               if (data == null) return const SizedBox.shrink();
-              final u = Install(uid, data);
-              final top = u.topFeatures;
+              final u = InstallRow.fromMap(uid, data);
+              final top = _topFeatures(u);
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Wrap(
                     children: [
                       _Stat('Sessions', '${u.sessions}'),
-                      _Stat('First seen', u.firstSeen == null ? '—' : clock(u.firstSeen!)),
+                      _Stat('First seen', u.firstSeen == null ? '—' : '${u.firstSeen!.day}/${u.firstSeen!.month}'),
                       _Stat('Last seen', ago(u.lastSeen)),
                     ],
                   ),
                   Text(
                     [
                       'Language ${u.lang}',
-                      if (u.state.isNotEmpty) u.state,
+                      if (u.chose && u.state.isNotEmpty) u.state,
                       'v${u.version}',
                       if (u.source.isNotEmpty) u.source,
                     ].join(' · '),
                   ),
+                  if (u.device.isNotEmpty)
+                    Text([u.device, u.android, if (u.ram.isNotEmpty) '${u.ram} RAM'].join(' · ')),
+                  Text(
+                    [
+                      'Morning Panchang ${u.morning.isEmpty ? '—' : u.morning}',
+                      'widgets ${u.widgets ?? '—'}',
+                      if (u.notificationsAllowed == false) 'notifications blocked',
+                    ].join(' · '),
+                  ),
+                  if (u.hasToken)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: FilledButton.tonalIcon(
+                          onPressed: () {
+                            ref.read(_sendTo.notifier).set(uid);
+                            Navigator.of(context).pop();
+                          },
+                          icon: const Icon(Icons.send_rounded),
+                          label: const Text('Send a notification to this install'),
+                        ),
+                      ),
+                    ),
                   const _Section('Uses most'),
                   for (final e in top.take(20)) _Bar(e.key, e.value, top.first.value),
                 ],
@@ -736,9 +1117,10 @@ class _UserScreen extends StatelessWidget {
 // Small pieces
 
 class _Stat extends StatelessWidget {
-  const _Stat(this.label, this.value, {this.color});
+  const _Stat(this.label, this.value, {this.color, this.hint});
   final String label, value;
   final Color? color;
+  final String? hint;
 
   @override
   Widget build(BuildContext context) {
@@ -755,6 +1137,12 @@ class _Stat extends StatelessWidget {
               ),
               const SizedBox(height: 4),
               Text(label, style: Theme.of(context).textTheme.bodySmall, textAlign: TextAlign.center),
+              if (hint != null)
+                Text(
+                  hint!,
+                  style: Theme.of(context).textTheme.labelSmall?.copyWith(color: Colors.grey),
+                  textAlign: TextAlign.center,
+                ),
             ],
           ),
         ),
@@ -786,7 +1174,7 @@ class _Bar extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 4),
       child: Row(
         children: [
-          SizedBox(width: 130, child: Text(label, overflow: TextOverflow.ellipsis)),
+          SizedBox(width: 150, child: Text(label, overflow: TextOverflow.ellipsis)),
           Expanded(
             child: ClipRRect(
               borderRadius: BorderRadius.circular(4),
@@ -809,13 +1197,13 @@ class _Bar extends StatelessWidget {
 }
 
 class _Split extends StatelessWidget {
-  const _Split(this.title, this.counts);
+  const _Split(this.title, this.rows);
   final String title;
-  final Map<String, int> counts;
+  final List<MapEntry<String, int>> rows;
 
   @override
   Widget build(BuildContext context) {
-    final rows = counts.entries.toList()..sort((a, b) => b.value.compareTo(a.value));
+    if (rows.isEmpty) return const SizedBox.shrink();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [_Section(title), for (final e in rows.take(15)) _Bar(e.key, e.value, rows.first.value)],

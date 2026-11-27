@@ -1,0 +1,8 @@
+20:11:55.902 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+20:11:55.980 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
+20:12:05.032 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO com.firebase.core.namespace.NamespaceActor - devalay-chandra-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 282ms, init: 0ms
+20:12:05.178 [NamespaceSystem-blocking-namespace-operation-dispatcher-6] INFO com.firebase.core.namespace.StateManager - Namespace devalay-chandra-default-rtdb status Active to Active
+20:36:13.606 [Thread-0] INFO com.firebase.server.forge.App$ - Attempting graceful shutdown.
+20:36:13.645 [NamespaceSystem-akka.actor.default-dispatcher-69] INFO com.firebase.core.namespace.Terminator$Terminator - 1 actors left to terminate: devalay-chandra-default-rtdb
+20:36:13.659 [NamespaceSystem-akka.actor.default-dispatcher-36] INFO com.firebase.core.namespace.NamespaceActor - stopped namespace actor for devalay-chandra-default-rtdb
+20:36:13.667 [Thread-0] INFO com.firebase.server.forge.App$ - Graceful shutdown complete.

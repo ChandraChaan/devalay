@@ -238,7 +238,8 @@ class Usage {
       'state': _state(),
       'src': _installer,
       if (newSession) 'sessions': FieldValue.increment(1),
-      'f': {for (final e in counts.entries) e.key: FieldValue.increment(e.value)},
+      // Only with counts: merging an empty map would replace the counters with {}.
+      if (counts.isNotEmpty) 'f': {for (final e in counts.entries) e.key: FieldValue.increment(e.value)},
       if (_device case final d?) ...{'dev': d.model, 'os': d.sdk, 'ram': d.ramMb},
       'cc': cityChosen,
       ..._traits,

@@ -13,6 +13,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 import 'api.dart';
+import 'dev_emulators.dart';
 import 'languages.dart';
 import 'notifications.dart';
 import 'push.dart';
@@ -28,6 +29,7 @@ class FirebaseServices {
   static Future<void> init() async {
     try {
       await Firebase.initializeApp();
+      await connectEmulators(databaseUrl: rtdbUrl);
       enabled = true;
     } catch (e) {
       debugPrint('Firebase not configured: $e');

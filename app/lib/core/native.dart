@@ -35,7 +35,11 @@ class NativeBridge {
     try {
       final m = await _ch.invokeMapMethod<String, Object>('deviceInfo');
       if (m == null) return null;
-      return (model: '${m['model'] ?? ''}', sdk: (m['sdk'] as num?)?.toInt() ?? 0, ramMb: (m['ramMb'] as num?)?.toInt() ?? 0);
+      return (
+        model: '${m['model'] ?? ''}',
+        sdk: (m['sdk'] as num?)?.toInt() ?? 0,
+        ramMb: (m['ramMb'] as num?)?.toInt() ?? 0,
+      );
     } catch (_) {
       return null;
     }

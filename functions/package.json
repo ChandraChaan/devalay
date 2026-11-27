@@ -1,0 +1,12 @@
+{
+  "name": "devalay-functions",
+  "private": true,
+  "description": "Devalay Cloud Functions: sendPush for the owner's admin screen.",
+  "main": "index.js",
+  "engines": { "node": "22" },
+  "scripts": { "test": "node --test test/lib.test.js" },
+  "dependencies": {
+    "firebase-admin": "^13.10.0",
+    "firebase-functions": "^7.4.0"
+  }
+}
