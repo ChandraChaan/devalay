@@ -27,6 +27,28 @@ def test_tracks_filter_and_licence_metadata(client):
                                              "CC BY 3.0", "CC BY 4.0"}
 
 
+def test_telugu_singles_keep_existing_ids_and_fit_one_page(client):
+    import json
+
+    from app.seed.loader import DATA, ORIGINAL_AUDIO
+
+    commons = [t["slug"] for t in json.loads((DATA / "commons.json").read_text())["tracks"]]
+    singles = json.loads((DATA / "telugu_audio.json").read_text())["tracks"]
+    every = client.get("/api/v1/tracks", params={"page_size": 100}).json()
+    # The app and the static site fetch one page of 100, and the app keeps track ids (popular_tracks, recents),
+    # so the singles must come after the albums and the original audio.
+    assert every["total"] <= 100
+    by_id = {t["id"]: t["slug"] for t in every["items"]}
+    expected = commons + [a[0] for a in ORIGINAL_AUDIO] + [t["slug"] for t in singles]
+    assert [by_id[i] for i in sorted(by_id)] == expected
+    assert len({t["slug"] for t in singles}) == len(singles)
+    for t in singles:
+        assert t["license"] == "CC BY 3.0" and t["attribution"] and t["source_url"].startswith(
+            "https://commons.wikimedia.org/wiki/File:")
+        assert t["audio_url"] == f"https://github.com/ChandraChaan/devalay/releases/download/media-telugu-v1/{t['slug']}.m4a"
+        assert 60 < t["duration_sec"] < 3600
+
+
 def test_tracks_by_deity_and_unknown_deity(client):
     shiva = client.get("/api/v1/tracks", params={"deity": "shiva"}).json()
     assert shiva["total"] >= 2
