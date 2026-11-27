@@ -3,6 +3,34 @@
 Each milestone is a git tag and a [GitHub release](https://github.com/ChandraChaan/devalay/releases). Releases from
 v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the section below that matches the tag.
 
+## v1.5.6 — 2026-11-27
+
+Retention: a reason to come back each morning without having to remember to open the app.
+
+- **Morning Panchang** (tithi, nakshatra, Rahu Kalam, sunrise and sunset, festivals) is now offered when you set up
+  the app: the switch on the last onboarding page starts on, and the notification permission is asked as you
+  finish. Existing users get a card on Home that turns it on in one tap. The time is 6 AM by default and can be
+  changed or switched off in Settings. Messages are laid out 45 days ahead on the phone and work offline. They use
+  inexact alarms (no exact-alarm permission) and are re-laid after a reboot.
+- Tapping the morning message or a festival reminder opens today's Panchang, whether the app was running or not
+  (and replaces a Panchang already open, so it always shows today). The daily prayer reminder opens Listen, and event
+  reminders open the calendar. A morning message clears itself after 18 hours, so yesterday's never piles up
+  under today's.
+- **Accurate times for people who never pick a city.** 73% of users never changed the default (New Delhi), so
+  Telugu users saw Delhi's sunrise and Rahu Kalam. A city nobody picked now follows the app language (Telugu →
+  Hyderabad, Tamil → Chennai, Kannada → Bengaluru, Malayalam → Kochi, Marathi → Mumbai, Bengali → Kolkata, Gujarati →
+  Ahmedabad, Punjabi → Chandigarh, Odia → Bhubaneswar; Hindi and English stay on New Delhi). The message names the
+  city its times are for, the Home card asks until a city is chosen, and onboarding's city page gains "Use my
+  location". Usage statistics report a state only for a city the user chose.
+- "Use my location" no longer errors when the city sheet is closed (or a city tapped) while the phone is still
+  looking for a fix.
+- The Panchang home-screen widget shows sunrise and sunset and opens today's Panchang. Home and Settings can add it
+  to the home screen directly on launchers that support it.
+- Analytics: `reminder_open` (type, cold start; Firebase reserves `notification_open` for its own pushes), `widget_tap` (which widget), `notification_settings_changed`
+  (kind, on/off, time, where), `widget_pin_request`, `morning_card_shown`/`closed`, and the user properties
+  `morning_panchang` (on/off/blocked) and `home_widgets`. Screen views now name screens opened on top of a tab
+  (`panchang`, `calendar`, `player`, …); until now only the five tabs were recorded.
+
 ## v1.5.5 — 2026-11-27
 
 Stability, from Play vitals and Crashlytics (1.5.4: 98% crash-free users; Play's user-perceived ANR rate 1.85%

@@ -86,6 +86,22 @@ void main() {
     expect(screenPattern(router.routerDelegate.currentConfiguration), '/gita/:chapter');
   });
 
+  test('a city nobody picked follows the language, not New Delhi', () async {
+    await Boxes.prefs.delete('city');
+    await Boxes.prefs.put('language', 'te');
+    expect(Prefs.load(Boxes.prefs).cityId, 'hyderabad');
+    expect(cityChosen, isFalse);
+    await Boxes.prefs.put('language', 'ta');
+    expect(Prefs.load(Boxes.prefs).cityId, 'chennai');
+    await Boxes.prefs.put('language', 'hi');
+    expect(Prefs.load(Boxes.prefs).cityId, 'delhi');
+    await Boxes.prefs.put('city', 'vijayawada');
+    await Boxes.prefs.put('language', 'te');
+    expect(Prefs.load(Boxes.prefs).cityId, 'vijayawada');
+    expect(cityChosen, isTrue);
+    await Boxes.prefs.delete('city');
+  });
+
   group('Home card', () {
     Future<void> pump(WidgetTester tester) async {
       await tester.pumpWidget(
@@ -114,8 +130,14 @@ void main() {
       expect(find.text('Turn on'), findsOneWidget);
     });
 
-    testWidgets('is gone once the morning Panchang is on (no widget pinning in tests)', (tester) async {
-      await Boxes.prefs.put('panchang_daily', true);
+    testWidgets('is gone once the morning Panchang is on and the city chosen (no widget pinning in tests)', (
+      tester,
+    ) async {
+      // Hive writes do real I/O, which a widget test's fake clock never completes.
+      await tester.runAsync(() async {
+        await Boxes.prefs.put('panchang_daily', true);
+        await Boxes.prefs.put('city', 'vijayawada');
+      });
       await pump(tester);
       expect(find.text("Today's Panchang, every morning"), findsNothing);
       expect(find.text('Turn on'), findsNothing);
@@ -123,7 +145,10 @@ void main() {
 
     testWidgets('stays closed after the user closes it', (tester) async {
       await pump(tester);
-      await tester.tap(find.byIcon(Icons.close_rounded));
+      await tester.runAsync(() async {
+        await tester.tap(find.byIcon(Icons.close_rounded));
+        await Future<void>.delayed(const Duration(milliseconds: 200)); // let Hive write
+      });
       await tester.pumpAndSettle();
       expect(find.text('Turn on'), findsNothing);
       expect(Boxes.prefs.get(morningCardClosedKey), isTrue);

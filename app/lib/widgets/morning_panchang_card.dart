@@ -12,7 +12,7 @@ import 'common.dart';
 
 /// Home card offering the two daily touch points: the morning Panchang notification and the
 /// home-screen widget. It names the city the times are for, because most people never change the
-/// default. It goes away once both are set up, or when closed.
+/// default. It goes away once all three are set up, or when closed.
 class MorningPanchangCard extends ConsumerStatefulWidget {
   const MorningPanchangCard({super.key});
 
@@ -90,7 +90,10 @@ class _MorningPanchangCardState extends ConsumerState<MorningPanchangCard> with 
   Widget build(BuildContext context) {
     final prefs = ref.watch(prefsProvider);
     final needsWidget = _canPin && !_hasWidget;
-    if (_closed || !prefs.onboarded || (prefs.panchangDaily && !needsWidget)) return const SizedBox.shrink();
+    // Stays while anything is left to set up: the message, the widget, or a city of the user's own.
+    if (_closed || !prefs.onboarded || (prefs.panchangDaily && !needsWidget && cityChosen)) {
+      return const SizedBox.shrink();
+    }
     if (!_seen) {
       _seen = true;
       Usage.record('morning_card_shown');

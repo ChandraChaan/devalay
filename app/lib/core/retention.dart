@@ -97,7 +97,8 @@ void logWidgetTap(Uri uri, String route) {
   Usage.record('widget_tap', item: widget, params: {'widget': widget, 'screen': route.split('/')[1]});
 }
 
-/// notification_open: which reminder ([kind]) was tapped and whether it started the app.
+/// reminder_open: which on-device reminder ([kind]) was tapped and whether it started the app.
+/// ("notification_open" is reserved by Firebase for its own push messages and is rejected.)
 void logNotificationOpen(String kind, {required bool coldStart}) {
-  Usage.record('notification_open', item: kind, params: {'type': kind, 'cold_start': coldStart ? 1 : 0});
+  Usage.record('reminder_open', item: kind, params: {'type': kind, 'cold_start': coldStart ? 1 : 0});
 }

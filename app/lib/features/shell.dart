@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:home_widget/home_widget.dart';
 
+import '../app.dart';
 import '../core/app_care.dart';
 import '../core/audio.dart';
 import '../core/calendar_reminders.dart';
@@ -64,7 +65,18 @@ class _AppShellState extends ConsumerState<AppShell> {
     final path = widgetRoute(uri);
     if (!mounted || path == null) return;
     logWidgetTap(uri!, path);
-    context.push(path);
+    _show(path);
+  }
+
+  /// Opens [path] on top, or replaces it when it is already the top screen, so a tap on today's
+  /// Panchang while yesterday's is open shows today's instead of stacking a second copy.
+  void _show(String path) {
+    final router = GoRouter.of(context);
+    if (screenPattern(router.routerDelegate.currentConfiguration) == path) {
+      router.pushReplacement(path);
+    } else {
+      router.push(path);
+    }
   }
 
   void _openFromNotification(String? kind, {required bool coldStart}) {
@@ -72,7 +84,7 @@ class _AppShellState extends ConsumerState<AppShell> {
     logNotificationOpen(kind, coldStart: coldStart);
     final path = Notifications.routeFor(kind);
     if (path == null) return;
-    path == '/listen' ? context.go(path) : context.push(path);
+    path == '/listen' ? context.go(path) : _show(path);
   }
 
   @override

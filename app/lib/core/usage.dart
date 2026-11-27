@@ -230,6 +230,8 @@ class Usage {
   }
 
   static String _state() {
+    // A city nobody picked (the language's default) says nothing about where the user is.
+    if (!cityChosen) return '';
     final id = Prefs.load(Boxes.prefs).cityId;
     final city = cities.where((c) => c.id == id).firstOrNull;
     return city?.state ?? '';
