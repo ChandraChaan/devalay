@@ -162,13 +162,23 @@ class SupportAmounts extends ConsumerWidget {
 
 /// The official donation pages of major temples (TTD e-Hundi first). Money given there goes to the
 /// temple itself; Devalay only opens the temple's own site.
-class TempleDonationList extends ConsumerWidget {
-  const TempleDonationList({super.key, this.dark = false, this.source = ''});
+class TempleDonationList extends ConsumerStatefulWidget {
+  const TempleDonationList({super.key, this.dark = false, this.source = '', this.limit});
   final bool dark;
   final String source;
 
+  /// Shows this many temples first, with a button for the rest.
+  final int? limit;
+
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<TempleDonationList> createState() => _TempleDonationListState();
+}
+
+class _TempleDonationListState extends ConsumerState<TempleDonationList> {
+  bool _all = false;
+
+  @override
+  Widget build(BuildContext context) {
     final lang = uiLang(ref);
     final catalog = ref.watch(templeCatalogProvider).value;
     if (catalog == null) return const SizedBox.shrink();
@@ -177,10 +187,13 @@ class TempleDonationList extends ConsumerWidget {
         for (final s in t.services)
           if (s.category == 'donate') (t, s),
     ];
+    final limit = widget.limit;
+    final shown = _all || limit == null || rows.length <= limit + 1 ? rows : rows.take(limit).toList();
+    final dark = widget.dark;
     final fg = dark ? Colors.white : null;
     return Column(
       children: [
-        for (final (t, s) in rows)
+        for (final (t, s) in shown)
           ListTile(
             contentPadding: EdgeInsets.zero,
             leading: Text(s.emoji, style: const TextStyle(fontSize: 26)),
@@ -194,9 +207,18 @@ class TempleDonationList extends ConsumerWidget {
             ),
             trailing: Icon(Icons.open_in_new_rounded, size: 20, color: dark ? Colors.white60 : null),
             onTap: () {
-              Usage.record('temple_donate_open', item: '${t.id}/${s.id}', params: {'source': source});
+              Usage.record('temple_donate_open', item: '${t.id}/${s.id}', params: {'source': widget.source});
               showServiceSheet(context, t, s);
             },
+          ),
+        if (shown.length < rows.length)
+          TextButton.icon(
+            onPressed: () => setState(() => _all = true),
+            icon: Icon(Icons.expand_more_rounded, color: dark ? Palette.gold : null),
+            label: Text(
+              t3(lang, 'More temples', 'और मंदिर', 'మరిన్ని ఆలయాలు'),
+              style: TextStyle(color: dark ? Palette.gold : null),
+            ),
           ),
       ],
     );
@@ -249,7 +271,7 @@ class _DakshinaSheet extends ConsumerWidget {
             ),
             style: const TextStyle(color: Colors.white70),
           ),
-          const TempleDonationList(dark: true, source: 'mandir'),
+          const TempleDonationList(dark: true, source: 'mandir', limit: 4),
           const Divider(color: Colors.white24, height: 32),
           Text(t3(lang, 'To Devalay', 'देवालय को', 'దేవాలయంకు'), style: heading),
           const SizedBox(height: 4),

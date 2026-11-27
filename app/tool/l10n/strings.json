@@ -7674,6 +7674,12 @@
   "where": "lib/features/support.dart"
  },
  {
+  "en": "More temples",
+  "hi": "और मंदिर",
+  "te": "మరిన్ని ఆలయాలు",
+  "where": "lib/features/support.dart"
+ },
+ {
   "en": "No active Premium found for this Google account.",
   "hi": "इस Google खाते पर कोई सक्रिय प्रीमियम नहीं मिला।",
   "te": "ఈ Google ఖాతాలో యాక్టివ్ ప్రీమియం కనిపించలేదు.",

@@ -1344,6 +1344,7 @@ const stringsPa = <String, String>{
   'Set ringtone': 'ਰਿੰਗਟੋਨ ਲਗਾਓ',
   'Telugu keerthanalu': 'ਤੇਲਗੂ ਕੀਰਤਨ',
   // Premium, dakshina and Support Devalay (1.5.9).
+  'More temples': 'ਹੋਰ ਮੰਦਰ',
   'Beads per round': 'ਇੱਕ ਮਾਲਾ ਵਿੱਚ ਮਣਕੇ',
   'Mala': 'ਮਾਲਾ',
   'Mala beads': 'ਮਾਲਾ ਦੇ ਮਣਕੇ',

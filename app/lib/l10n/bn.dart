@@ -1341,6 +1341,7 @@ const stringsBn = <String, String>{
   'Set ringtone': 'রিংটোন সেট করুন',
   'Telugu keerthanalu': 'তেলুগু কীর্তন',
   // Premium, dakshina and Support Devalay (1.5.9).
+  'More temples': 'আরও মন্দির',
   'Beads per round': 'এক মালায় দানা',
   'Mala': 'মালা',
   'Mala beads': 'মালার দানা',

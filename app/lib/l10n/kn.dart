@@ -1346,6 +1346,7 @@ const stringsKn = <String, String>{
   'Set ringtone': 'ರಿಂಗ್‌ಟೋನ್ ಹೊಂದಿಸಿ',
   'Telugu keerthanalu': 'ತೆಲುಗು ಕೀರ್ತನೆಗಳು',
   // Premium, dakshina and Support Devalay (1.5.9).
+  'More temples': 'ಇನ್ನಷ್ಟು ದೇವಸ್ಥಾನಗಳು',
   'Beads per round': 'ಒಂದು ಮಾಲೆಯಲ್ಲಿ ಮಣಿಗಳು',
   'Mala': 'ಮಾಲೆ',
   'Mala beads': 'ಮಾಲೆಯ ಮಣಿಗಳು',

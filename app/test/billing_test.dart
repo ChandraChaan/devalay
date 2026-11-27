@@ -381,6 +381,10 @@ void main() {
       expect(find.text('Offer dakshina'), findsOneWidget);
       expect(find.text('At a temple'), findsOneWidget);
       expect(find.text('TTD · Tirumala · e-Hundi'), findsOneWidget);
+      expect(find.text('Bhadrachalam · Donation and e-Hundi'), findsNothing, reason: 'the first four temples only');
+      await tester.tap(find.text('More temples'));
+      await settle(tester);
+      expect(find.text('Bhadrachalam · Donation and e-Hundi'), findsOneWidget);
       await tester.scrollUntilVisible(find.text('₹101'), 300, scrollable: find.byType(Scrollable).last);
       expect(find.text('₹11'), findsOneWidget);
       expect(find.text('₹251'), findsNothing, reason: 'dakshina offers 11, 51 and 101');

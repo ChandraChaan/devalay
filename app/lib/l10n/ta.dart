@@ -1359,6 +1359,7 @@ const stringsTa = <String, String>{
   'Set ringtone': 'ரிங்டோனாக அமை',
   'Telugu keerthanalu': 'தெலுங்கு கீர்த்தனைகள்',
   // Premium, dakshina and Support Devalay (1.5.9).
+  'More temples': 'மேலும் கோயில்கள்',
   'Beads per round': 'ஒரு மாலையில் மணிகள்',
   'Mala': 'மாலை',
   'Mala beads': 'மாலை மணிகள்',

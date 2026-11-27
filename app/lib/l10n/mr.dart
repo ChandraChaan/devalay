@@ -1422,6 +1422,7 @@ const stringsMr = <String, String>{
   'Set ringtone': 'रिंगटोन लावा',
   'Telugu keerthanalu': 'तेलुगू कीर्तने',
   // Premium, dakshina and Support Devalay (1.5.9).
+  'More temples': 'आणखी मंदिरे',
   'Beads per round': 'एका माळेतील मणी',
   'Mala': 'माळ',
   'Mala beads': 'माळेचे मणी',

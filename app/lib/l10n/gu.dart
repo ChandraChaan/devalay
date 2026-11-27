@@ -1339,6 +1339,7 @@ const stringsGu = <String, String>{
   'Set ringtone': 'રિંગટોન સેટ કરો',
   'Telugu keerthanalu': 'તેલુગુ કીર્તન',
   // Premium, dakshina and Support Devalay (1.5.9).
+  'More temples': 'વધુ મંદિરો',
   'Beads per round': 'એક માળામાં મણકા',
   'Mala': 'માળા',
   'Mala beads': 'માળાના મણકા',

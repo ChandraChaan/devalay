@@ -1342,6 +1342,7 @@ const stringsOr = <String, String>{
   'Set ringtone': 'ରିଙ୍ଗଟୋନ୍ ସେଟ୍ କରନ୍ତୁ',
   'Telugu keerthanalu': 'ତେଲୁଗୁ କୀର୍ତ୍ତନ',
   // Premium, dakshina and Support Devalay (1.5.9).
+  'More temples': 'ଅଧିକ ମନ୍ଦିର',
   'Beads per round': 'ଗୋଟିଏ ମାଳାରେ ମାଳି',
   'Mala': 'ମାଳା',
   'Mala beads': 'ମାଳାର ମାଳି',
