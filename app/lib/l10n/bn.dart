@@ -1,6 +1,16 @@
 /// Bengali translations of Devalay's English UI strings and Panchang names, keyed by the English text.
 /// Source list: tool/l10n/strings.json. Keys must match the English exactly; {0}, {1} are placeholders.
 const stringsBn = <String, String>{
+  // Morning Panchang card, onboarding switch and widget (1.5.6).
+  "Today's Panchang, every morning": 'প্রতিদিন সকালে আজকের পঞ্জিকা',
+  'Tithi, nakshatra, Rahu Kalam and sunrise at {0}, as a notification and on your home screen.':
+      'তিথি, নক্ষত্র, রাহুকাল ও সূর্যোদয় {0}-এ, নোটিফিকেশনে আর হোম স্ক্রিনে।',
+  'Times for {0}': '{0}-এর সময়',
+  'Turn on': 'চালু করুন',
+  'Add widget': 'উইজেট যোগ করুন',
+  'Add Panchang widget to home screen': 'হোম স্ক্রিনে পঞ্জিকা উইজেট যোগ করুন',
+  "Today's Panchang every morning (6 AM)": 'প্রতিদিন সকালে আজকের পঞ্জিকা (সকাল 6টা)',
+  'Tithi, nakshatra, Rahu Kalam and sunrise for your city': 'আপনার শহরের তিথি, নক্ষত্র, রাহুকাল ও সূর্যোদয়',
   // Today's guidance and Disha Shool (1.5.4).
   'A Rikta tithi (4th, 9th or 14th): better not to start new ventures; good for finishing work':
       'রিক্তা তিথি (চতুর্থী, নবমী বা চতুর্দশী): নতুন কাজ শুরু না করাই ভালো; অসমাপ্ত কাজ শেষ করার জন্য ভালো',

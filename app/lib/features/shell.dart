@@ -9,6 +9,8 @@ import '../core/app_care.dart';
 import '../core/audio.dart';
 import '../core/calendar_reminders.dart';
 import '../core/i18n.dart';
+import '../core/notifications.dart';
+import '../core/retention.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
 import '../widgets/common.dart';
@@ -29,7 +31,14 @@ class _AppShellState extends ConsumerState<AppShell> {
     // Calendar alarms are laid a few weeks ahead from cached data; top them up on every start.
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
-      refreshCalendarReminders(ref);
+      refreshCalendarReminders(ref).then((_) {
+        if (mounted) reportRetentionProperties(ref.read(prefsProvider));
+      });
+      // A tap on a reminder that started the app opens its screen once the first route has settled.
+      Notifications.launchKind().then(
+        (kind) => _openFromNotification(kind, coldStart: true),
+        onError: (Object e) => debugPrint('Notification launch not read: $e'),
+      );
       checkForAppUpdate(context, ref);
       // A quiet moment after the first screen settles; Play decides whether to show the card.
       Future.delayed(const Duration(seconds: 20), maybeAskForReview);
@@ -40,6 +49,7 @@ class _AppShellState extends ConsumerState<AppShell> {
       WidgetsBinding.instance.addPostFrameCallback((_) => _openFromWidget(uri));
     }, onError: (_) {});
     _widgetTaps = HomeWidget.widgetClicked.listen(_openFromWidget, onError: (_) {});
+    _notificationTaps = Notifications.taps.listen((kind) => _openFromNotification(kind, coldStart: false));
     // A track that can't be streamed (offline, server busy) gets a message instead of silence.
     _audioErrors = ref.read(audioProvider).errors.listen((_) {
       if (mounted) toast(context, tr(ref, 'error'));
@@ -47,17 +57,28 @@ class _AppShellState extends ConsumerState<AppShell> {
   }
 
   StreamSubscription<Uri?>? _widgetTaps;
+  StreamSubscription<String>? _notificationTaps;
   StreamSubscription<Object>? _audioErrors;
 
   void _openFromWidget(Uri? uri) {
     final path = widgetRoute(uri);
     if (!mounted || path == null) return;
+    logWidgetTap(uri!, path);
     context.push(path);
+  }
+
+  void _openFromNotification(String? kind, {required bool coldStart}) {
+    if (kind == null || !mounted) return;
+    logNotificationOpen(kind, coldStart: coldStart);
+    final path = Notifications.routeFor(kind);
+    if (path == null) return;
+    path == '/listen' ? context.go(path) : context.push(path);
   }
 
   @override
   void dispose() {
     _widgetTaps?.cancel();
+    _notificationTaps?.cancel();
     _audioErrors?.cancel();
     super.dispose();
   }

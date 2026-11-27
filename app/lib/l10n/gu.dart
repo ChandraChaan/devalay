@@ -1,6 +1,16 @@
 /// Gujarati translations of Devalay's English UI strings and Panchang names, keyed by the English text.
 /// Source list: tool/l10n/strings.json. Keys must match the English exactly; {0}, {1} are placeholders.
 const stringsGu = <String, String>{
+  // Morning Panchang card, onboarding switch and widget (1.5.6).
+  "Today's Panchang, every morning": 'દરરોજ સવારે આજનું પંચાંગ',
+  'Tithi, nakshatra, Rahu Kalam and sunrise at {0}, as a notification and on your home screen.':
+      'તિથિ, નક્ષત્ર, રાહુ કાળ અને સૂર્યોદય {0} વાગ્યે, સૂચનામાં અને હોમ સ્ક્રીન પર.',
+  'Times for {0}': '{0} નો સમય',
+  'Turn on': 'ચાલુ કરો',
+  'Add widget': 'વિજેટ ઉમેરો',
+  'Add Panchang widget to home screen': 'હોમ સ્ક્રીન પર પંચાંગ વિજેટ ઉમેરો',
+  "Today's Panchang every morning (6 AM)": 'દરરોજ સવારે આજનું પંચાંગ (સવારે 6 વાગ્યે)',
+  'Tithi, nakshatra, Rahu Kalam and sunrise for your city': 'તમારા શહેર માટે તિથિ, નક્ષત્ર, રાહુ કાળ અને સૂર્યોદય',
   // Today's guidance and Disha Shool (1.5.4).
   'A Rikta tithi (4th, 9th or 14th): better not to start new ventures; good for finishing work':
       'રિક્તા તિથિ (ચતુર્થી, નવમી કે ચતુર્દશી): નવું કામ શરૂ ન કરવું સારું; અધૂરાં કામ પૂરાં કરવા સારી',

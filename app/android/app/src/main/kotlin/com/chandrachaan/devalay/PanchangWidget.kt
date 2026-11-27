@@ -3,10 +3,8 @@ package com.chandrachaan.devalay
 import android.appwidget.AppWidgetManager
 import android.content.Context
 import android.content.SharedPreferences
-import android.net.Uri
 import android.view.View
 import android.widget.RemoteViews
-import es.antonborri.home_widget.HomeWidgetLaunchIntent
 import es.antonborri.home_widget.HomeWidgetProvider
 import org.json.JSONObject
 import java.text.SimpleDateFormat
@@ -33,16 +31,14 @@ class PanchangWidget : HomeWidgetProvider() {
         }
         for (id in appWidgetIds) {
             val views = RemoteViews(context.packageName, R.layout.panchang_widget).apply {
-                setOnClickPendingIntent(
-                    R.id.widget_root,
-                    HomeWidgetLaunchIntent.getActivity(context, MainActivity::class.java, Uri.parse("devalay://calendar")),
-                )
+                // Today's Panchang; "w" names the widget for the app's widget_tap event.
+                setOnClickPendingIntent(R.id.widget_root, WidgetSupport.open(context, "devalay://panchang?w=panchang"))
                 if (day == null) {
                     setTextViewText(R.id.widget_day, "")
                     setTextViewText(R.id.widget_weekday, "Devalay")
                     setTextViewText(R.id.widget_month, "")
                     setTextViewText(R.id.widget_tithi, widgetData.getString("panchang_empty", "Open Devalay to load today's Panchang"))
-                    listOf(R.id.widget_star, R.id.widget_rahu, R.id.widget_festival).forEach { setViewVisibility(it, View.GONE) }
+                    listOf(R.id.widget_star, R.id.widget_rahu, R.id.widget_sun, R.id.widget_festival).forEach { setViewVisibility(it, View.GONE) }
                 } else {
                     setTextViewText(R.id.widget_day, day.optString("day"))
                     setTextViewText(R.id.widget_weekday, day.optString("weekday"))
@@ -50,6 +46,7 @@ class PanchangWidget : HomeWidgetProvider() {
                     setTextViewText(R.id.widget_tithi, day.optString("tithi"))
                     show(this, R.id.widget_star, day.optString("star"))
                     show(this, R.id.widget_rahu, day.optString("rahu"))
+                    show(this, R.id.widget_sun, day.optString("sun"))
                     show(this, R.id.widget_festival, day.optString("festival"))
                 }
             }

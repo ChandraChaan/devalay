@@ -19,6 +19,7 @@ import '../core/telugu.dart';
 import '../core/theme.dart';
 import '../widgets/common.dart';
 import '../widgets/mandala.dart';
+import '../widgets/morning_panchang_card.dart';
 import '../widgets/share_app_card.dart';
 import 'calendar.dart' show shareDay;
 import 'temples.dart';
@@ -67,6 +68,7 @@ class _HomeBody extends ConsumerWidget {
           child: _Hero(deity: deity, panchang: data['panchang'] as Map),
         ),
         SliverToBoxAdapter(child: _QuickActions()),
+        const SliverToBoxAdapter(child: MorningPanchangCard()),
         const SliverToBoxAdapter(child: BookingPromoCard()),
         const SliverToBoxAdapter(child: WishesPromoCard()),
         SliverToBoxAdapter(child: _TodaysSongs(serverDeity: deity)),

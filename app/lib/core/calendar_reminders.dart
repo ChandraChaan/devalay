@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 import 'events.dart';
 import 'home_widget_sync.dart';
 import 'i18n.dart';
+import 'location.dart';
 import 'models.dart';
 import 'muhurta.dart';
 import 'names.dart';
@@ -44,6 +45,7 @@ Future<void> refreshPanchangNotifications(WidgetRef ref) async {
     return;
   }
   final lang = prefs.language;
+  final city = ref.read(cityProvider).label(lang);
   final today = DateUtils.dateOnly(DateTime.now());
   final last = today.add(const Duration(days: Notifications.panchangDays - 1));
 
@@ -68,7 +70,15 @@ Future<void> refreshPanchangNotifications(WidgetRef ref) async {
     final s = summaries[_iso(day)];
     if (s == null) continue;
     items.add(
-      panchangMessage(lang, day, s, festivals[day] ?? const [], events[day] ?? const [], birthStar: prefs.birthStar),
+      panchangMessage(
+        lang,
+        day,
+        s,
+        festivals[day] ?? const [],
+        events[day] ?? const [],
+        birthStar: prefs.birthStar,
+        city: city,
+      ),
     );
   }
   await Notifications.schedulePanchang(items, hour: prefs.panchangHour, minute: prefs.panchangMinute);
@@ -82,6 +92,7 @@ Future<void> refreshPanchangNotifications(WidgetRef ref) async {
   List<Festival> festivals,
   List<UserEvent> events, {
   int? birthStar,
+  String? city,
 }) {
   final weekday = fmtDate(lang, 'EEEE', day);
   final date = fmtDate(lang, 'd MMM', day);
@@ -102,6 +113,9 @@ Future<void> refreshPanchangNotifications(WidgetRef ref) async {
     final (from, to) = rahuKalam(day, wallClock('${s['sunrise']}'), wallClock('${s['sunset']}'));
     lines.add('${t3(lang, 'Rahu Kalam', 'राहु काल', 'రాహు కాలం')}: ${clock(from)} – ${clock(to)}');
   }
+  // The city shows which place the times are for: most people never change the default.
+  final sun = sunLine(lang, s);
+  if (sun.isNotEmpty) lines.add('🌅 $sun${city == null ? '' : ' · 📍 $city'}');
   if (shubhYoga(day, nakshatra) case final y?) lines.add('✨ ${shubhYogaLabel(lang, y)}');
   if (birthStar != null && starIndex >= 0) {
     final t = tarabalam(birthStar, starIndex);

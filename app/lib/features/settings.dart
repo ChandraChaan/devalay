@@ -13,6 +13,7 @@ import '../core/i18n.dart';
 import '../core/languages.dart';
 import '../core/location.dart';
 import '../core/notifications.dart';
+import '../core/retention.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
 import '../widgets/city_picker.dart';
@@ -180,6 +181,7 @@ class SettingsScreen extends ConsumerWidget {
               v
                   ? await Notifications.scheduleDaily(prefs.reminderHour, prefs.reminderMinute, lang: prefs.language)
                   : await Notifications.cancelDaily();
+              logNotificationSettings(ref.read(prefsProvider), kind: 'prayer', on: v, source: 'settings');
             },
           ),
           ListTile(
@@ -195,6 +197,7 @@ class SettingsScreen extends ConsumerWidget {
               await n.set('reminder_hour', t.hour);
               await n.set('reminder_minute', t.minute);
               await Notifications.scheduleDaily(t.hour, t.minute, lang: prefs.language);
+              logNotificationSettings(ref.read(prefsProvider), kind: 'prayer', on: true, source: 'settings_time');
             },
           ),
           SwitchListTile(
@@ -206,9 +209,18 @@ class SettingsScreen extends ConsumerWidget {
             ),
             value: prefs.panchangDaily,
             onChanged: (v) async {
-              if (v && !await Notifications.requestPermission()) return;
-              await n.set('panchang_daily', v);
-              await refreshPanchangNotifications(ref);
+              final on = await setMorningPanchang(ref, v, source: 'settings');
+              if (v && !on && context.mounted) {
+                toast(
+                  context,
+                  t3(
+                    lang,
+                    'Allow notifications for Devalay in your phone settings to get reminders.',
+                    'रिमाइंडर पाने के लिए फ़ोन की सेटिंग में देवालय की सूचनाएँ चालू करें।',
+                    'రిమైండర్ల కోసం ఫోన్ సెట్టింగ్స్‌లో దేవాలయం నోటిఫికేషన్లు అనుమతించండి.',
+                  ),
+                );
+              }
             },
           ),
           ListTile(
@@ -224,7 +236,25 @@ class SettingsScreen extends ConsumerWidget {
               await n.set('panchang_hour', t.hour);
               await n.set('panchang_minute', t.minute);
               await refreshPanchangNotifications(ref);
+              logNotificationSettings(ref.read(prefsProvider), kind: 'panchang', on: true, source: 'settings_time');
             },
+          ),
+          FutureBuilder<bool>(
+            future: _canPinWidget,
+            builder: (context, canPin) => canPin.data != true
+                ? const SizedBox.shrink()
+                : ListTile(
+                    leading: const Icon(Icons.widgets_rounded),
+                    title: Text(
+                      t3(
+                        lang,
+                        'Add Panchang widget to home screen',
+                        'होम स्क्रीन पर पंचांग विजेट जोड़ें',
+                        'హోమ్ స్క్రీన్‌పై పంచాంగం విడ్జెట్ జోడించండి',
+                      ),
+                    ),
+                    onTap: () => pinPanchangWidget(source: 'settings'),
+                  ),
           ),
           ListTile(
             leading: const Icon(Icons.settings_backup_restore_rounded),
@@ -431,3 +461,6 @@ class _Header extends StatelessWidget {
     ),
   );
 }
+
+/// Asked once per run: whether the launcher can add the Panchang widget from inside the app.
+final Future<bool> _canPinWidget = canPinWidget();
