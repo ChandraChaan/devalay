@@ -100,7 +100,7 @@ class _TextReaderScreenState extends ConsumerState<TextReaderScreen> {
                   item: FavoriteItem(type: 'text', id: t.slug, title: t.title, subtitle: t.titleHi),
                 ),
                 IconButton(
-                  onPressed: () => shareContent('${t.titleHi}\n\n${t.body}\n\n${shareFooter('text')}'),
+                  onPressed: () => shareContent('${t.titleHi}\n\n${t.body}\n\n${shareFooter('text')}', what: 'text'),
                   icon: const Icon(Icons.share_rounded),
                 ),
                 IconButton(onPressed: () => _settings(context), icon: const Icon(Icons.text_fields_rounded)),

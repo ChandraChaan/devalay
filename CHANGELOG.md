@@ -3,6 +3,25 @@
 Each milestone is a git tag and a [GitHub release](https://github.com/ChandraChaan/devalay/releases). Releases from
 v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the section below that matches the tag.
 
+## v1.5.8 — 2026-11-27
+
+Songs first: the most used part of the app (104 of 251 installs play audio) is easier to find and nicer to use.
+
+- **New Listen page.** Six big tiles (Aarti, Mantra, Bhajan, Ringtones, Meditation, Favourites), then rows people
+  play from: **Continue listening** (last 12 songs, on this phone), **Most played** (from the usage log; Remote Config
+  `popular_tracks` = "1,5,4" changes it without an update), today's deity's songs, **Telugu keerthanalu**
+  (Annamacharya, Ramadasu, Tyagaraja) and ringtones. Telugu users get the keerthanalu row before ringtones. The old
+  tabbed list is still one tap away ("See all", `/songs?kind=`).
+- **Mantra chanting** (`/chant`): pick Gayatri, Mahamrityunjaya, Om Namah Shivaya and choose 11, 21 or 108 times;
+  the clip repeats with a big counter and stops by itself. The clip is cached first, so 108 rounds don't stream it
+  108 times. The count shows on the mini player on every screen; total chants are kept on the phone.
+- **Home**: today's songs and Most played sit right under the morning card. Shortcuts are ordered by use (Listen,
+  Mandir, Ringtones, Chant, Status, Wishes, Wallpapers, Panchang...) with bigger icons and labels.
+- Song cards show the length, a pause icon for the playing song, and a warm placeholder where a track has no painting.
+- **Usage log**: `play_from` (which row a song was started from), `listen_category`, `home_shortcut`,
+  `chant_start` / `chant_done` / `chant_stop`, `ringtone_set`, and `share_open` / `share` now say what was shared
+  (status, wish, wallpaper, song, day...).
+
 ## v1.5.7 — 2026-11-27
 
 Owner's admin screen: clearer numbers and notifications to users.

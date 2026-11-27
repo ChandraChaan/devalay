@@ -1319,4 +1319,26 @@ const stringsOr = <String, String>{
       'ଦେବାଳୟ: ଆପଣଙ୍କ ଭାଷାରେ ପଞ୍ଜିକା, ପର୍ବପର୍ବାଣି କ୍ୟାଲେଣ୍ଡର, ଆରତୀ ଓ ଭକ୍ତି।',
   'Send Devalay to your family WhatsApp group, so everyone has the day\'s Panchang and festival dates.':
       'ଦେବାଳୟକୁ ପରିବାରର WhatsApp ଗ୍ରୁପ୍‌କୁ ପଠାନ୍ତୁ, ଯେପରି ସମସ୍ତେ ଦିନର ପଞ୍ଜିକା ଓ ପର୍ବ ତାରିଖ ଜାଣିପାରିବେ।',
+  // Listen page rows and mantra chanting (1.5.8).
+  'Mantra chant': 'ମନ୍ତ୍ର ଜପ',
+  'About {0} min': 'ପ୍ରାୟ {0} ମିନିଟ୍',
+  'Chant again': 'ପୁଣି ଜପ କରନ୍ତୁ',
+  'Chant with the mantra': 'ମନ୍ତ୍ର ସହ ଜପ କରନ୍ତୁ',
+  'Choose a mantra': 'ମନ୍ତ୍ର ବାଛନ୍ତୁ',
+  'Choose another mantra': 'ଅନ୍ୟ ମନ୍ତ୍ର ବାଛନ୍ତୁ',
+  'Getting the mantra ready…': 'ମନ୍ତ୍ର ପ୍ରସ୍ତୁତ ହେଉଛି…',
+  'How many times?': 'କେତେ ଥର?',
+  'Keep the phone aside and chant along': 'ଫୋନ୍ ପାଖରେ ରଖି ସାଙ୍ଗରେ ଜପ କରନ୍ତୁ',
+  'Pause': 'ବିରତି',
+  'Resume': 'ପୁଣି ଚଲାନ୍ତୁ',
+  'Start chanting': 'ଜପ ଆରମ୍ଭ କରନ୍ତୁ',
+  'Stop': 'ବନ୍ଦ କରନ୍ତୁ',
+  'You have chanted {0} times with Devalay 🙏': 'ଆପଣ ଦେବାଳୟ ସହ {0} ଥର ଜପ କରିଛନ୍ତି 🙏',
+  '{0} times complete': '{0} ଥର ସମ୍ପୂର୍ଣ୍ଣ',
+  'Most played': 'ସବୁଠୁ ଅଧିକ ଶୁଣାଯାଇଥିବା',
+  'Continue listening': 'ଶୁଣିବା ଜାରି ରଖନ୍ତୁ',
+  'Gayatri, Om Namah Shivaya and more: 11, 21 or 108 times, with a counter':
+      'ଗାୟତ୍ରୀ, ଓଁ ନମଃ ଶିବାୟ ଓ ଅଧିକ: 11, 21 ବା 108 ଥର, ଗଣନା ସହ',
+  'Set ringtone': 'ରିଙ୍ଗଟୋନ୍ ସେଟ୍ କରନ୍ତୁ',
+  'Telugu keerthanalu': 'ତେଲୁଗୁ କୀର୍ତ୍ତନ',
 };

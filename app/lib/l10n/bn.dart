@@ -1318,4 +1318,26 @@ const stringsBn = <String, String>{
       'দেবালয়: আপনার ভাষায় পঞ্জিকা, উৎসবের ক্যালেন্ডার, আরতি ও ভক্তি।',
   'Send Devalay to your family WhatsApp group, so everyone has the day\'s Panchang and festival dates.':
       'দেবালয় পরিবারের WhatsApp গ্রুপে পাঠান, যাতে সবাই দিনের পঞ্জিকা আর উৎসবের তারিখ জানতে পারেন।',
+  // Listen page rows and mantra chanting (1.5.8).
+  'Mantra chant': 'মন্ত্র জপ',
+  'About {0} min': 'প্রায় {0} মিনিট',
+  'Chant again': 'আবার জপ করুন',
+  'Chant with the mantra': 'মন্ত্রের সাথে জপ করুন',
+  'Choose a mantra': 'মন্ত্র বেছে নিন',
+  'Choose another mantra': 'অন্য মন্ত্র বেছে নিন',
+  'Getting the mantra ready…': 'মন্ত্র তৈরি হচ্ছে…',
+  'How many times?': 'কতবার?',
+  'Keep the phone aside and chant along': 'ফোন পাশে রেখে সাথে জপ করুন',
+  'Pause': 'থামান',
+  'Resume': 'আবার চালান',
+  'Start chanting': 'জপ শুরু করুন',
+  'Stop': 'বন্ধ করুন',
+  'You have chanted {0} times with Devalay 🙏': 'আপনি দেবালয়ের সাথে {0} বার জপ করেছেন 🙏',
+  '{0} times complete': '{0} বার সম্পূর্ণ',
+  'Most played': 'সবচেয়ে বেশি শোনা',
+  'Continue listening': 'শোনা চালিয়ে যান',
+  'Gayatri, Om Namah Shivaya and more: 11, 21 or 108 times, with a counter':
+      'গায়ত্রী, ওঁ নমঃ শিবায় ও আরও: ১১, ২১ বা ১০৮ বার, গণনা সহ',
+  'Set ringtone': 'রিংটোন সেট করুন',
+  'Telugu keerthanalu': 'তেলুগু কীর্তন',
 };

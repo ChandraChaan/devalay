@@ -259,7 +259,11 @@ class _StatusComposerState extends ConsumerState<StatusComposer> {
     setState(() => _busy = true);
     try {
       final f = await _render();
-      await shareContent([widget.text, ?widget.footnote, shareFooter('status')].join('\n\n'), files: [XFile(f.path)]);
+      await shareContent(
+        [widget.text, ?widget.footnote, shareFooter('status')].join('\n\n'),
+        files: [XFile(f.path)],
+        what: 'status',
+      );
     } finally {
       if (mounted) setState(() => _busy = false);
     }

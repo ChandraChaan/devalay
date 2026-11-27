@@ -330,7 +330,11 @@ class _WallpaperDetailScreenState extends ConsumerState<WallpaperDetailScreen> {
                         onPressed: _busy
                             ? null
                             : () => _run((p) async {
-                                await shareContent('🙏 ${w.title}\n\n${shareFooter('wallpaper')}', files: [XFile(p)]);
+                                await shareContent(
+                                  '🙏 ${w.title}\n\n${shareFooter('wallpaper')}',
+                                  files: [XFile(p)],
+                                  what: 'wallpaper',
+                                );
                               }, 'Shared'),
                         icon: const Icon(Icons.share_rounded),
                       ),

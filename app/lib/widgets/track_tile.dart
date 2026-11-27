@@ -10,10 +10,13 @@ import '../core/theme.dart';
 import 'common.dart';
 
 class TrackTile extends ConsumerWidget {
-  const TrackTile({super.key, required this.track, required this.queue, required this.index});
+  const TrackTile({super.key, required this.track, required this.queue, required this.index, this.from});
   final Track track;
   final List<Track> queue;
   final int index;
+
+  /// Where the list is, for the usage log.
+  final String? from;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -25,8 +28,9 @@ class TrackTile extends ConsumerWidget {
     return Card(
       clipBehavior: Clip.antiAlias,
       child: InkWell(
-        onTap: () =>
-            isCurrent ? ref.read(audioProvider).toggle() : ref.read(audioProvider).playQueue(queue, index: index),
+        onTap: () => isCurrent
+            ? ref.read(audioProvider).toggle()
+            : ref.read(audioProvider).playQueue(queue, index: index, from: from),
         child: Padding(
           padding: const EdgeInsets.all(10),
           child: Row(

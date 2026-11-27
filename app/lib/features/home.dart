@@ -5,8 +5,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../app.dart';
-import '../core/audio.dart';
 import '../core/i18n.dart';
+import '../core/listening.dart';
 import '../core/names.dart';
 import '../core/location.dart';
 import '../core/models.dart';
@@ -17,10 +17,12 @@ import '../core/sharing.dart';
 import '../core/storage.dart';
 import '../core/telugu.dart';
 import '../core/theme.dart';
+import '../core/usage.dart';
 import '../widgets/common.dart';
 import '../widgets/mandala.dart';
 import '../widgets/morning_panchang_card.dart';
 import '../widgets/share_app_card.dart';
+import '../widgets/track_strip.dart';
 import 'calendar.dart' show shareDay;
 import 'temples.dart';
 import 'thought.dart';
@@ -69,9 +71,20 @@ class _HomeBody extends ConsumerWidget {
         ),
         SliverToBoxAdapter(child: _QuickActions()),
         const SliverToBoxAdapter(child: MorningPanchangCard()),
-        const SliverToBoxAdapter(child: BookingPromoCard()),
+        SliverToBoxAdapter(
+          child: TodaysSongs(serverDeity: deity, from: 'home_today'),
+        ),
+        SliverToBoxAdapter(
+          child: TrackRow(
+            title: l3(ref, 'Most played', 'सबसे ज़्यादा सुने गए', 'ఎక్కువ మంది వింటున్నవి'),
+            tracks: ref.watch(popularTracksProvider),
+            from: 'home_popular',
+            action: tr(ref, 'see_all'),
+            onAction: () => context.go('/listen'),
+          ),
+        ),
         const SliverToBoxAdapter(child: WishesPromoCard()),
-        SliverToBoxAdapter(child: _TodaysSongs(serverDeity: deity)),
+        const SliverToBoxAdapter(child: BookingPromoCard()),
         if (banners.isNotEmpty) SliverToBoxAdapter(child: _Banners(banners: banners)),
         SliverToBoxAdapter(child: _PanchangCard(p: data['panchang'] as Map)),
         if (festivals.isNotEmpty) ...[
@@ -90,7 +103,9 @@ class _HomeBody extends ConsumerWidget {
         SliverToBoxAdapter(
           child: SectionHeader(tr(ref, 'featured'), action: tr(ref, 'see_all'), onAction: () => context.go('/listen')),
         ),
-        SliverToBoxAdapter(child: _TrackStrip(tracks: tracks)),
+        SliverToBoxAdapter(
+          child: TrackStrip(tracks: tracks, from: 'home_featured'),
+        ),
         SliverToBoxAdapter(
           child: SectionHeader(
             tr(ref, 'aartis'),
@@ -274,19 +289,21 @@ class _Hero extends ConsumerWidget {
 class _QuickActions extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // Most used first (usage log, Nov 2026: songs, Mandir, ringtones), then sharing (status,
+    // wishes, wallpapers), then the day's timings. Gita and Ask Gita live in Read and More.
     final actions = [
+      ('🎵', 'listen', '/listen', true),
       ('🪔', 'mandir', '/mandir', true),
-      ('🎟️', 'booking', '/temples', false),
-      ('📿', 'japa', '/japa', false),
-      ('🔮', 'rashifal', '/rashifal', false),
-      ('📖', 'gita', '/gita', false),
-      ('✨', 'ai_status', '/status', false),
       ('🔔', 'ringtones', '/ringtones', false),
-      ('📅', 'calendar', '/calendar', false),
-      ('🙋', 'ask_gita', '/ask', false),
-      ('🎬', 'videos', '/bhakti-videos', false),
-      ('🗓️', 'panchang', '/panchang', false),
+      ('📿', 'chant', '/chant', false),
+      ('✨', 'ai_status', '/status', false),
+      ('💌', 'wishes', '/wishes', false),
       ('🖼️', 'wallpapers', '/wallpapers', false),
+      ('🗓️', 'panchang', '/panchang', false),
+      ('🔮', 'rashifal', '/rashifal', false),
+      ('📅', 'calendar', '/calendar', false),
+      ('🎬', 'videos', '/bhakti-videos', false),
+      ('🎟️', 'booking', '/temples', false),
     ];
     return Padding(
       padding: const EdgeInsets.fromLTRB(12, 16, 12, 0),
@@ -301,24 +318,27 @@ class _QuickActions extends ConsumerWidget {
           for (final (i, (emoji, key, route, tab)) in actions.indexed)
             InkWell(
               borderRadius: BorderRadius.circular(18),
-              onTap: () => tab ? context.go(route) : context.push(route),
+              onTap: () {
+                Usage.record('home_shortcut', item: key);
+                tab ? context.go(route) : context.push(route);
+              },
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    width: 56,
-                    height: 56,
+                    width: 60,
+                    height: 60,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                       color: Palette.marigold.withValues(alpha: 0.14),
                       borderRadius: BorderRadius.circular(18),
                     ),
-                    child: Text(emoji, style: const TextStyle(fontSize: 26)),
+                    child: Text(emoji, style: const TextStyle(fontSize: 28)),
                   ),
                   const SizedBox(height: 6),
                   TileLabel(
                     tr(ref, key),
-                    style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w600, height: 1.15),
+                    style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600, height: 1.15),
                   ),
                 ],
               ),
@@ -578,58 +598,6 @@ class _VerseCard extends ConsumerWidget {
   }
 }
 
-class _TrackStrip extends ConsumerWidget {
-  const _TrackStrip({required this.tracks});
-  final List<Track> tracks;
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return SizedBox(
-      height: 196,
-      child: ListView.separated(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        scrollDirection: Axis.horizontal,
-        itemCount: tracks.length,
-        separatorBuilder: (_, _) => const SizedBox(width: 12),
-        itemBuilder: (_, i) {
-          final t = tracks[i];
-          return GestureDetector(
-            onTap: () => ref.read(audioProvider).playQueue(tracks, index: i),
-            child: SizedBox(
-              width: 140,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Stack(
-                    children: [
-                      SizedBox(width: 140, height: 140, child: NetImage(t.artworkUrl, radius: 20)),
-                      Positioned(
-                        right: 8,
-                        bottom: 8,
-                        child: Container(
-                          decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
-                          padding: const EdgeInsets.all(6),
-                          child: const Icon(Icons.play_arrow_rounded, color: Palette.saffron),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 6),
-                  Text(
-                    t.label(uiLang(ref)),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(fontWeight: FontWeight.w600, height: 1.2),
-                  ),
-                ],
-              ),
-            ),
-          );
-        },
-      ),
-    );
-  }
-}
-
 class _HomeSkeleton extends StatelessWidget {
   const _HomeSkeleton();
   @override
@@ -646,39 +614,4 @@ class _HomeSkeleton extends StatelessWidget {
       SkeletonBox(height: 120),
     ],
   );
-}
-
-/// "Monday: Shiva's songs". Each weekday belongs to a deity; Telugu homes keep Saturday for
-/// Venkateswara, so Telugu users get that map and everyone else gets the server's deity of the day.
-class _TodaysSongs extends ConsumerWidget {
-  const _TodaysSongs({required this.serverDeity});
-  final Deity? serverDeity;
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final lang = ref.watch(prefsProvider).language;
-    final weekday = DateTime.now().weekday - 1;
-    final slug = lang == 'te' ? teluguWeekdayDeity[weekday] : (serverDeity?.slug ?? 'general');
-    final deities = ref.watch(deitiesProvider).value ?? const <Deity>[];
-    final deity = deities.where((d) => d.slug == slug).firstOrNull ?? serverDeity;
-    final tracks = ref.watch(tracksProvider((kind: null, deity: slug))).value ?? const <Track>[];
-    if (tracks.isEmpty || deity == null) return const SizedBox.shrink();
-    final day = fmtDate(lang, 'EEEE', DateTime.now());
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SectionHeader(
-          t3(
-            lang,
-            '$day · ${deity.label(lang)} songs',
-            '$day · ${deity.label(lang)} के भजन',
-            '$day · ${deity.label(lang)} పాటలు',
-          ),
-          action: t3(lang, 'Play all', 'सब चलाएँ', 'అన్నీ ప్లే'),
-          onAction: () => ref.read(audioProvider).playQueue(tracks, index: 0),
-        ),
-        _TrackStrip(tracks: tracks),
-      ],
-    );
-  }
 }

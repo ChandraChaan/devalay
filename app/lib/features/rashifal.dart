@@ -126,8 +126,10 @@ class RashifalScreen extends ConsumerWidget {
                   ),
                 ),
                 IconButton(
-                  onPressed: () =>
-                      shareContent('${r['symbol']} ${r['name']} — ${r['overview']}\n\n${shareFooter('rashifal')}'),
+                  onPressed: () => shareContent(
+                    '${r['symbol']} ${r['name']} — ${r['overview']}\n\n${shareFooter('rashifal')}',
+                    what: 'rashifal',
+                  ),
                   icon: const Icon(Icons.share_rounded),
                 ),
               ],
