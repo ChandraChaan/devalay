@@ -1,8 +1,12 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:devalay/core/audio.dart';
 import 'package:devalay/core/listening.dart';
 import 'package:devalay/core/models.dart';
 import 'package:devalay/core/providers.dart';
 import 'package:devalay/core/storage.dart';
+import 'package:devalay/core/telugu.dart';
 import 'package:devalay/core/theme.dart';
 import 'package:devalay/features/listen.dart';
 import 'package:flutter/material.dart';
@@ -51,6 +55,26 @@ void main() {
       expect(defaultPopularTrackIds.toSet().length, defaultPopularTrackIds.length);
       expect(defaultPopularTrackIds.any((id) => id >= 46), isFalse); // 46–50 are ringtones
     });
+  });
+
+  test('Telugu keerthanalu are real catalogue slugs, listed once, each with a Telugu title', () {
+    List<String> slugsIn(String path, String key) => [
+      for (final t in (jsonDecode(File(path).readAsStringSync()) as Map)[key] as List) (t as Map)['slug'] as String,
+    ];
+    final catalogue = {
+      ...slugsIn('../backend/app/seed/data/commons.json', 'tracks'),
+      ...slugsIn('../backend/app/seed/data/telugu_audio.json', 'tracks'),
+    };
+    expect(teluguKeerthanaSlugs.toSet(), hasLength(teluguKeerthanaSlugs.length));
+    for (final s in teluguKeerthanaSlugs) {
+      expect(catalogue, contains(s));
+      expect(teluguTrackTitles, contains(s));
+    }
+    // Every single song cut from the Telugu/Carnatic albums gets a Telugu title too.
+    for (final s in slugsIn('../backend/app/seed/data/telugu_audio.json', 'tracks')) {
+      expect(teluguTrackTitles, contains(s));
+    }
+    expect(teluguTrackTitles.keys.where((s) => !catalogue.contains(s)), isEmpty);
   });
 
   test('only short mantra clips can be chanted', () {

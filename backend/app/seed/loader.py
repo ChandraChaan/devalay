@@ -113,7 +113,17 @@ def load_all(db: Session, include_books: bool = True) -> dict[str, int]:
             "audio_url": f"{base}/{file}", "duration_sec": seconds, "artwork_url": deities[deity].image_url,
             "artist": "Devalay (synthesised)", "attribution": "Original sound by Devalay · CC0",
             "license": "CC0", "source_url": "https://github.com/ChandraChaan/devalay", "sort": 200 + sort})
-    counts["tracks"] = len(commons["tracks"]) + len(ORIGINAL_AUDIO)
+    # Single songs cut from the CC BY Telugu/Carnatic albums (scripts/cut_telugu_audio.py). Loaded after the
+    # original audio so a fresh database keeps the ids the app already knows (popular_tracks, recents).
+    telugu = json.loads((DATA / "telugu_audio.json").read_text())["tracks"]
+    for sort, tr in enumerate(telugu):
+        deity = deities[tr["deity"]]
+        _upsert(db, Track, "slug", tr["slug"], {
+            "title": tr["title"], "title_hi": tr["title_hi"], "kind": tr["kind"], "deity_id": deity.id,
+            "audio_url": tr["audio_url"], "duration_sec": tr["duration_sec"], "artwork_url": deity.image_url,
+            "artist": tr["attribution"].split(" · ")[0][:200], "attribution": tr["attribution"],
+            "license": tr["license"], "source_url": tr["source_url"], "sort": 50 + sort})
+    counts["tracks"] = len(commons["tracks"]) + len(ORIGINAL_AUDIO) + len(telugu)
 
     for sort, w in enumerate(commons["wallpapers"]):
         deity = deities.get(w["deity"])

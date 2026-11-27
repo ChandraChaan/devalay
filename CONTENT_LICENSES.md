@@ -106,6 +106,50 @@ Saregama published these recordings on its "Saregama Carnatic Classical" YouTube
 | Shiva keerthanas | CC BY 3.0 | M.S. Subbulakshmi · Saregama | [Commons](https://commons.wikimedia.org/wiki/File:Songs_of_Lord_Shiva_by_M_S_Subbulakshmi_-_Jaya_Jaya_Sankara_-_Nagendra_Harya_-_Carnatic_Music.webm) |
 | Vishnu keerthanas | CC BY 3.0 | M.S. Subbulakshmi, Radha Vishwanathan · Saregama | [Commons](https://commons.wikimedia.org/wiki/File:Sacred_Melodies_of_Lord_Vishnu_-_M.S._Subbulakshmi%2C_Radha_Viswanathan_-_Carnatic_Classical_Music.webm) |
 
+### Single songs (trimmed)
+
+`backend/scripts/cut_telugu_audio.py` cuts single songs out of these albums and a few more Saregama uploads, and
+writes `backend/app/seed/data/telugu_audio.json`. Each song is one chapter of the album's Commons description. The
+cut is placed in the silence between songs and gets a fade of under a second. The song is then encoded as AAC at
+96 kbps and nothing else is changed. Whole files (marked below) only get a 2-second fade-out at the end. Every credit in the app says "(trimmed)". The files are assets of the same
+`media-telugu-v1` release.
+
+| Songs | Licence | Credit | Album on Commons |
+|---|---|---|---|
+| Ramadasu: Paluke Bangaramayena, Idigo Bhadradri, Taraka Mantramu, Ee Teeruga Nanu Daya Choochedavo, Ramachandrulu Napai, Nanu Brovamani Cheppave, Ikshvaku Kula Tilaka | CC BY 3.0 | Dr. M. Balamuralikrishna · Saregama | [Popular Shri Ram Bhajans](https://commons.wikimedia.org/wiki/File:Popular_Shri_Ram_Bhajans_-_Dr._M._Balamuralikrishna_-_Sri_Bhadrachala_Ramadasu_-_Carnatic_Music.webm) |
+| Annamacharya: Namo Namo Raghukula Nayaka, Marali Marali Jayamangalamu, Deenuda Nenu Devudavu Neevu, Namo Narayanaya, Nanati Batuku, Kaladinte Mata, Kannuleduta, Idiye Sadhana, Adi Purusha | CC BY 3.0 | M.S. Subbulakshmi · Saregama | [Annamacharya's Greatest Hits](https://commons.wikimedia.org/wiki/File:Annamacharya%27s_Greatest_Hits_Collection_-_M.S._Subblakshmi_-_Namo_Narayanaya_-_Carnatic_Music.webm) |
+| Annamacharya: Bhavamu Lona, Dolayam, Rara Chinnanna | CC BY 3.0 | M.S. Subbulakshmi, Radha Vishwanathan · Saregama | [Sri Annamacharya Samkirtanas](https://commons.wikimedia.org/wiki/File:Sri_Annamacharya_Samkirtanas_-_M.S._Subbulakshmi_-_Radha_Vishwanathan_-_Carnatic_Classical_Music.webm) |
+| Annamacharya: Deva Devam Bhaje, Koluvudee Bhakti Kondala, Cheri Yashodaku Shishuvitadu, Manujudai Putti, Parama Purusha | CC BY 3.0 | M.S. Subbulakshmi · Saregama | [Sri Annamacharya Devotional Songs](https://commons.wikimedia.org/wiki/File:Sri_Annamacharya_Devotional_Songs_-_M.S._Subblakshmi_-_Deva_Devam_Bhaje_-_Carnatic_Classical_Music.webm) |
+| Tyagaraja: Ennaga Manasuku (whole file) | CC BY 3.0 | Semmangudi Srinivasa Iyer, M.S. Subbulakshmi · Saregama | [Commons](https://commons.wikimedia.org/wiki/File:Ennaga_Manasuku_with_Lyrics_by_Semmangudi_%26_M_S_Subbulakshmi.webm) |
+| Tyagaraja: Tatvameruga on mandolin (whole file) | CC BY 3.0 | U. Srinivas · Saregama | [Commons](https://commons.wikimedia.org/wiki/File:Tatvameruga_-_U.Srinivas_(Raga_Garudahwani)_Tyagaraja_Carnatic_classical_music.ogg) |
+| Tyagaraja: Marukelara | CC BY 3.0 | Sudha Raghunathan · Saregama | [Timeless Carnatic Hits](https://commons.wikimedia.org/wiki/File:Sudha_Raghunathan_-_Timeless_Carnatic_Hits_-_Marukelara_-_Kalyana_Gopalam_-_Sri_Sankara_Guruvaram.webm) |
+| Tyagaraja: Jagadananda Karaka, Bantu Reeti, Ninnu Vina Namadendu | CC BY 3.0 | M.S. Subbulakshmi · Saregama | [Divine Melodies of M.S. Subbulakshmi](https://commons.wikimedia.org/wiki/File:Divine_Melodies_of_M.S.Subbulakshmi_-_Srimannarayan_-_Kurai_Onrum_Illai_-_Carnatic_Music.webm) |
+| Hanuman Chalisa, Sri Venkatesa Stotram, Mahalakshmi Ashtakam | CC BY 3.0 | P.B. Sreenivas · Saregama | [Best of P.B. Sreenivas](https://commons.wikimedia.org/wiki/File:Best_of_P.B._Sreenivas_Devotional_Hits_-_Sri_Krishna_Ashtaga_-_Sri_Hanuman_Chalisa_-_Carnatic_Music.webm) |
+| Vishnu Sahasranamam | CC BY 3.0 | M.S. Subbulakshmi, Radha Viswanathan · Saregama | [Sacred Melodies of Lord Vishnu](https://commons.wikimedia.org/wiki/File:Sacred_Melodies_of_Lord_Vishnu_-_M.S._Subbulakshmi%2C_Radha_Viswanathan_-_Carnatic_Classical_Music.webm) |
+| Shiva Panchakshara Stotram, Kashi Vishwanatha Suprabhatam | CC BY 3.0 | M.S. Subbulakshmi · Saregama | [Most Powerful Shivan Song](https://commons.wikimedia.org/wiki/File:Most_Powerful_Shivan_Song_-_M.S._Subbulakshmi_-_Siva_Panchakshara_Stotram_-_Carnatic_Classical_Music.webm) |
+| Ganesha Pancharatnam | CC BY 3.0 | M.S. Subbulakshmi · Saregama | [Ganesh Chaturthi Special](https://commons.wikimedia.org/wiki/File:Ganesh_Chaturthi_Special_Bhajan%2C_M.S._Subbulakshmi%2C_Ganesha_Pancharatnam%2C_Carnatic_Classical_Music.webm) |
+| Durga Pancharatnam, Lakshmi Ashtottaram | CC BY 3.0 | M.S. Subbulakshmi · Saregama | [Top 5 Morning Stotram](https://commons.wikimedia.org/wiki/File:Top_5_Morning_Stotram_-_M.S_Subbulakshmi_-_Ganesa_Pancharatnam_-_Lakshmi_Ashtothram_-_Carnatic_Music.webm) |
+| Bhaja Govindam, Madhurashtakam | CC BY 3.0 | M.S. Subbulakshmi · Saregama | [Popular Shri Krishna Bhajan](https://commons.wikimedia.org/wiki/File:Popular_Shri_Krishna_Bhajan_-_M.S._Subbulakshmi_-_Bhaja_Govindam_-_Sikshashtakam_-_Carnatic_Music.webm) |
+
+## Vedic suktams (CC BY 3.0)
+
+"Mantra Manjusha" by the Commons user VedadhayanaGosthi is the uploader's own work under CC BY 3.0. Devalay
+re-encodes the whole files as AAC with a 2-second fade-out at the end and makes no other change. The files are assets of the `media-telugu-v1` release.
+
+| Title | Licence | Credit | Source |
+|---|---|---|---|
+| Sri Suktam | CC BY 3.0 | VedadhayanaGosthi | [Commons](https://commons.wikimedia.org/wiki/File:06-SREE_SUKTHAM-MANTRA_MANJUSHA.ogg) |
+| Purusha Suktam | CC BY 3.0 | VedadhayanaGosthi | [Commons](https://commons.wikimedia.org/wiki/File:05-PURUSHA_SUKTHAM-MANTRA_MANJUSHA.ogg) |
+| Ganapati Suktam | CC BY 3.0 | VedadhayanaGosthi | [Commons](https://commons.wikimedia.org/wiki/File:03-GANAPATHI_SUKTHA-MANTRA_MANJUSHA.ogg) |
+| Devi Suktam | CC BY 3.0 | VedadhayanaGosthi | [Commons](https://commons.wikimedia.org/wiki/File:04-DEVI_SUKTHAM-MANTRA_MANJUSHA.ogg) |
+| Sri Rudram (Rudra Prashnam) | CC BY 3.0 | VedadhayanaGosthi | [Commons](https://commons.wikimedia.org/wiki/File:07-RUDRA_PRASNAM-MANTRA_MANJUSHA.ogg) |
+
+**Checked and not used:** "Evvare Ramayya" (CC BY-SA 4.0) claims the artist's permission but has no VRT ticket.
+Bangalore Nagaratnamma's 1927 "Mukunda Mala" is public domain in India but still protected in the USA until 2028.
+The CC0 Lingashtakam, Purusha Sukta and Shanti Mantra files are re-uploads from archive.org whose uploaders are not
+shown to be the performers. On archive.org, most devotional items carry a public-domain or CC0 tag that the uploader
+put on commercial recordings, so we use none of them.
+
 ## Images (wallpapers and deity portraits)
 
 | Title | Licence | Credit | Source |
