@@ -62,6 +62,8 @@ class _CitySheetState extends ConsumerState<_CitySheet> {
     String message;
     try {
       final here = await NativeBridge.approxLocation();
+      // The sheet may have closed meanwhile (a city tapped while the phone looked for a fix).
+      if (!mounted) return;
       if (here == null) throw PlatformException(code: 'UNAVAILABLE');
       final (city, km) = nearestCity(here.lat, here.lon);
       await ref.read(prefsProvider.notifier).setCity(city.id);

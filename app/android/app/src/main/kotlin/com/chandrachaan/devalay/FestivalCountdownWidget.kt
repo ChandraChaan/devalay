@@ -37,14 +37,14 @@ class FestivalCountdownWidget : HomeWidgetProvider() {
                     setViewVisibility(R.id.countdown_title, if (compact) View.GONE else View.VISIBLE)
                     setTextViewTextSize(R.id.countdown_emoji, android.util.TypedValue.COMPLEX_UNIT_SP, if (compact) 22f else 32f)
                     if (next == null) {
-                        setOnClickPendingIntent(R.id.countdown_root, WidgetSupport.open(context, "devalay://calendar"))
+                        setOnClickPendingIntent(R.id.countdown_root, WidgetSupport.open(context, "devalay://calendar?w=countdown"))
                         setTextViewText(R.id.countdown_emoji, "🛕")
                         setTextViewText(R.id.countdown_name, WidgetSupport.label(widgetData, "empty", "Open Devalay"))
                         setViewVisibility(R.id.countdown_days, View.GONE)
                         setViewVisibility(R.id.countdown_then, View.GONE)
                     } else {
                         val date = next.optString("date")
-                        setOnClickPendingIntent(R.id.countdown_root, WidgetSupport.open(context, "devalay://calendar/day/$date"))
+                        setOnClickPendingIntent(R.id.countdown_root, WidgetSupport.open(context, "devalay://calendar/day/$date?w=countdown"))
                         setTextViewText(R.id.countdown_emoji, next.optString("emoji", "🪔"))
                         setTextViewText(R.id.countdown_name, next.optString("name"))
                         setViewVisibility(R.id.countdown_days, View.VISIBLE)

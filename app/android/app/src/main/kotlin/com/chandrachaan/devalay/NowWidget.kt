@@ -46,7 +46,7 @@ class NowWidget : HomeWidgetProvider() {
         for (id in appWidgetIds) {
             val views = WidgetSupport.responsive(context, appWidgetManager, id, 100) { compact ->
                 RemoteViews(context.packageName, R.layout.now_widget).apply {
-                    setOnClickPendingIntent(R.id.now_root, WidgetSupport.open(context, "devalay://panchang"))
+                    setOnClickPendingIntent(R.id.now_root, WidgetSupport.open(context, "devalay://panchang?w=now"))
                     setViewVisibility(R.id.now_title, if (compact) View.GONE else View.VISIBLE)
                     when {
                         inRahu -> {

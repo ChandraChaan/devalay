@@ -1,6 +1,16 @@
 /// Malayalam translations of Devalay's English UI strings and Panchang names, keyed by the English text.
 /// Source list: tool/l10n/strings.json. Keys must match the English exactly; {0}, {1} are placeholders.
 const stringsMl = <String, String>{
+  // Morning Panchang card, onboarding switch and widget (1.5.6).
+  "Today's Panchang, every morning": 'എല്ലാ ദിവസവും രാവിലെ ഇന്നത്തെ പഞ്ചാംഗം',
+  'Tithi, nakshatra, Rahu Kalam and sunrise at {0}, as a notification and on your home screen.':
+      'തിഥി, നക്ഷത്രം, രാഹുകാലം, സൂര്യോദയം {0}-ന്, അറിയിപ്പായും ഹോം സ്ക്രീനിലും.',
+  'Times for {0}': '{0} സമയങ്ങൾ',
+  'Turn on': 'ഓണാക്കുക',
+  'Add widget': 'വിജറ്റ് ചേർക്കുക',
+  'Add Panchang widget to home screen': 'ഹോം സ്ക്രീനിൽ പഞ്ചാംഗ വിജറ്റ് ചേർക്കുക',
+  "Today's Panchang every morning (6 AM)": 'എല്ലാ ദിവസവും രാവിലെ ഇന്നത്തെ പഞ്ചാംഗം (രാവിലെ 6)',
+  'Tithi, nakshatra, Rahu Kalam and sunrise for your city': 'നിങ്ങളുടെ നഗരത്തിലെ തിഥി, നക്ഷത്രം, രാഹുകാലം, സൂര്യോദയം',
   // Today's guidance and Disha Shool (1.5.4).
   'A Rikta tithi (4th, 9th or 14th): better not to start new ventures; good for finishing work':
       'രിക്ത തിഥി (ചതുർഥി, നവമി അല്ലെങ്കിൽ ചതുർദശി): പുതിയ സംരംഭങ്ങൾ തുടങ്ങാതിരിക്കുന്നതാണ് നല്ലത്; ബാക്കി ജോലികൾ തീർക്കാൻ നല്ലത്',

@@ -132,18 +132,30 @@ class Usage {
   }
 
   /// A deliberate action: [action] is a fixed snake_case name, [item] an optional short id (a
-  /// chapter number, a track id), never text the user typed.
-  static void record(String action, {String? item}) {
+  /// chapter number, a track id), never text the user typed. [params] go to Analytics only, as
+  /// extra event parameters (fixed names, short values).
+  static void record(String action, {String? item, Map<String, Object>? params}) {
     if (!FirebaseServices.enabled || !sharing) return;
     _count(action);
     _add({'k': action, if (item != null && item.isNotEmpty) 'n': item.length > 40 ? item.substring(0, 40) : item});
     if (action != 'app_open' && action != 'screen') {
       unawaited(
         FirebaseAnalytics.instance
-            .logEvent(name: action, parameters: {'item': ?item})
+            .logEvent(name: action, parameters: {'item': ?item, ...?params})
             .catchError((Object e) => debugPrint('analytics event not logged: $e')),
       );
     }
+  }
+
+  /// An Analytics user property ("morning_panchang" = "on"), so retention can be compared between
+  /// people who use a feature and people who don't. Values are short fixed words.
+  static void property(String name, String value) {
+    if (!FirebaseServices.enabled || !sharing) return;
+    unawaited(
+      FirebaseAnalytics.instance
+          .setUserProperty(name: name, value: value)
+          .catchError((Object e) => debugPrint('analytics property not set: $e')),
+    );
   }
 
   static void _count(String key) {
@@ -218,6 +230,8 @@ class Usage {
   }
 
   static String _state() {
+    // A city nobody picked (the language's default) says nothing about where the user is.
+    if (!cityChosen) return '';
     final id = Prefs.load(Boxes.prefs).cityId;
     final city = cities.where((c) => c.id == id).firstOrNull;
     return city?.state ?? '';

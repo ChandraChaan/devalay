@@ -10,9 +10,12 @@ import '../widgets/language_picker.dart';
 import '../core/location.dart';
 import '../core/models.dart';
 import '../core/notifications.dart';
+import '../core/retention.dart';
 import '../core/storage.dart';
 import '../core/telugu.dart';
 import '../core/theme.dart';
+import '../core/usage.dart';
+import '../widgets/city_picker.dart';
 import '../widgets/mandala.dart';
 
 const _deities = [
@@ -41,6 +44,9 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
   final _page = PageController();
   int _index = 0;
 
+  /// The morning Panchang notification starts on; the permission is asked when onboarding ends.
+  bool _morningPanchang = true;
+
   void _next() {
     if (_index == 3) {
       _finish();
@@ -50,7 +56,17 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
   }
 
   Future<void> _finish() async {
+    // Only someone who reached the last page saw the switch; the rest get the Home card instead.
+    if (_index == 3 && _morningPanchang) {
+      if (await Notifications.requestPermission()) {
+        await ref.read(prefsProvider.notifier).set('panchang_daily', true);
+        logNotificationSettings(ref.read(prefsProvider), kind: 'panchang', on: true, source: 'onboarding');
+      } else {
+        Usage.record('notification_permission_denied', item: 'onboarding');
+      }
+    }
     await ref.read(prefsProvider.notifier).completeOnboarding();
+    // The shell lays out the morning messages as it opens.
     if (mounted) context.go('/home');
   }
 
@@ -81,7 +97,11 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                       _Welcome(lang: lang),
                       _LanguagePage(lang: lang),
                       _DeityPage(lang: lang),
-                      _CityRashiPage(lang: lang),
+                      _CityRashiPage(
+                        lang: lang,
+                        morningPanchang: _morningPanchang,
+                        onMorningPanchang: (v) => setState(() => _morningPanchang = v),
+                      ),
                     ],
                   ),
                 ),
@@ -236,8 +256,10 @@ class _DeityPage extends ConsumerWidget {
 }
 
 class _CityRashiPage extends ConsumerWidget {
-  const _CityRashiPage({required this.lang});
+  const _CityRashiPage({required this.lang, required this.morningPanchang, required this.onMorningPanchang});
   final String lang;
+  final bool morningPanchang;
+  final ValueChanged<bool> onMorningPanchang;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final prefs = ref.watch(prefsProvider);
@@ -265,6 +287,15 @@ class _CityRashiPage extends ConsumerWidget {
               items: [for (final c in cities) DropdownMenuItem(value: c.id, child: Text(c.label(lang)))],
               onChanged: (v) => ref.read(prefsProvider.notifier).setCity(v!),
             ),
+          ),
+        ),
+        Align(
+          alignment: AlignmentDirectional.centerStart,
+          child: TextButton.icon(
+            style: TextButton.styleFrom(foregroundColor: Palette.gold),
+            onPressed: () => showCityPicker(context, ref),
+            icon: const Icon(Icons.my_location_rounded, size: 18),
+            label: Text(t3(lang, 'Use my location', 'मेरी लोकेशन इस्तेमाल करें', 'నా లొకేషన్ వాడండి')),
           ),
         ),
         const SizedBox(height: 16),
@@ -301,6 +332,29 @@ class _CityRashiPage extends ConsumerWidget {
         ),
         const SizedBox(height: 16),
         SwitchListTile(
+          value: morningPanchang,
+          activeThumbColor: Palette.gold,
+          title: Text(
+            t3(
+              lang,
+              "Today's Panchang every morning (6 AM)",
+              'हर सुबह आज का पंचांग (सुबह 6 बजे)',
+              'ప్రతి ఉదయం నేటి పంచాంగం (ఉదయం 6)',
+            ),
+            style: const TextStyle(color: Colors.white),
+          ),
+          subtitle: Text(
+            t3(
+              lang,
+              'Tithi, nakshatra, Rahu Kalam and sunrise for your city',
+              'आपके शहर के लिए तिथि, नक्षत्र, राहु काल और सूर्योदय',
+              'మీ నగరానికి తిథి, నక్షత్రం, రాహు కాలం, సూర్యోదయం',
+            ),
+            style: const TextStyle(color: Colors.white70),
+          ),
+          onChanged: onMorningPanchang,
+        ),
+        SwitchListTile(
           value: prefs.dailyReminder,
           activeThumbColor: Palette.gold,
           title: Text(
@@ -316,6 +370,7 @@ class _CityRashiPage extends ConsumerWidget {
             if (v && !await Notifications.requestPermission()) return;
             await ref.read(prefsProvider.notifier).set('daily_reminder', v);
             v ? await Notifications.scheduleDaily(6, 30, lang: prefs.language) : await Notifications.cancelDaily();
+            logNotificationSettings(ref.read(prefsProvider), kind: 'prayer', on: v, source: 'onboarding');
           },
         ),
       ],

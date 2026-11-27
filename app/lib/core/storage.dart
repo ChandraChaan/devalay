@@ -78,27 +78,49 @@ class Prefs {
   final bool showMeaning;
   final Accent accent;
 
-  static Prefs load(Box box) => Prefs(
-    language: box.get('language', defaultValue: _deviceLanguage()) as String,
-    themeMode: ThemeMode.values[box.get('theme', defaultValue: 0) as int],
-    onboarded: box.get('onboarded', defaultValue: false) as bool,
-    ishtaDevta: box.get('ishta') as String?,
-    rashi: box.get('rashi') as String?,
-    birthStar: box.get('birth_star') as int?,
-    cityId: box.get('city', defaultValue: 'delhi') as String,
-    dailyReminder: box.get('daily_reminder', defaultValue: false) as bool,
-    reminderHour: box.get('reminder_hour', defaultValue: 6) as int,
-    reminderMinute: box.get('reminder_minute', defaultValue: 30) as int,
-    festivalReminders: box.get('festival_reminders', defaultValue: false) as bool,
-    panchangDaily: box.get('panchang_daily', defaultValue: false) as bool,
-    panchangHour: box.get('panchang_hour', defaultValue: 6) as int,
-    panchangMinute: box.get('panchang_minute', defaultValue: 0) as int,
-    textScale: (box.get('text_scale', defaultValue: 1.0) as num).toDouble(),
-    showTransliteration: box.get('show_translit', defaultValue: false) as bool,
-    showMeaning: box.get('show_meaning', defaultValue: true) as bool,
-    accent: Accent.byName(box.get('accent') as String?),
-  );
+  static Prefs load(Box box) {
+    final language = box.get('language', defaultValue: _deviceLanguage()) as String;
+    return Prefs(
+      language: language,
+      themeMode: ThemeMode.values[box.get('theme', defaultValue: 0) as int],
+      onboarded: box.get('onboarded', defaultValue: false) as bool,
+      ishtaDevta: box.get('ishta') as String?,
+      rashi: box.get('rashi') as String?,
+      birthStar: box.get('birth_star') as int?,
+      cityId: box.get('city', defaultValue: defaultCityFor(language)) as String,
+      dailyReminder: box.get('daily_reminder', defaultValue: false) as bool,
+      reminderHour: box.get('reminder_hour', defaultValue: 6) as int,
+      reminderMinute: box.get('reminder_minute', defaultValue: 30) as int,
+      festivalReminders: box.get('festival_reminders', defaultValue: false) as bool,
+      panchangDaily: box.get('panchang_daily', defaultValue: false) as bool,
+      panchangHour: box.get('panchang_hour', defaultValue: 6) as int,
+      panchangMinute: box.get('panchang_minute', defaultValue: 0) as int,
+      textScale: (box.get('text_scale', defaultValue: 1.0) as num).toDouble(),
+      showTransliteration: box.get('show_translit', defaultValue: false) as bool,
+      showMeaning: box.get('show_meaning', defaultValue: true) as bool,
+      accent: Accent.byName(box.get('accent') as String?),
+    );
+  }
 }
+
+/// The city a language's speakers most likely want until they pick one. Until 1.5.6 everyone started
+/// on New Delhi, and 73% never changed it, so Telugu users saw Rahu Kalam and sunrise for Delhi.
+const languageCities = {
+  'te': 'hyderabad',
+  'ta': 'chennai',
+  'kn': 'bengaluru',
+  'ml': 'kochi',
+  'mr': 'mumbai',
+  'bn': 'kolkata',
+  'gu': 'ahmedabad',
+  'pa': 'chandigarh',
+  'or': 'bhubaneswar',
+};
+
+String defaultCityFor(String language) => languageCities[language] ?? 'delhi';
+
+/// Whether the user picked the Panchang city (from the list or "Use my location").
+bool get cityChosen => Boxes.prefs.containsKey('city');
 
 class PrefsNotifier extends Notifier<Prefs> {
   @override

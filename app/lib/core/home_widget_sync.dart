@@ -18,6 +18,16 @@ import 'storage.dart';
 /// Days written ahead for the home-screen widget, so it keeps turning over offline.
 const widgetDays = 30;
 
+/// "Sunrise 6:41 AM · Sunset 5:28 PM" on the city's clock, or '' when the day has no times.
+/// [compact] gives "🌅 6:41 AM · 🌇 5:28 PM" for the widget's narrow line.
+String sunLine(String lang, Map s, {bool compact = false}) {
+  if (s['sunrise'] == null || s['sunset'] == null) return '';
+  final rise = clock(wallClock('${s['sunrise']}'));
+  final set = clock(wallClock('${s['sunset']}'));
+  if (compact) return '🌅 $rise · 🌇 $set';
+  return '${t3(lang, 'Sunrise', 'सूर्योदय', 'సూర్యోదయం')} $rise · ${t3(lang, 'Sunset', 'सूर्यास्त', 'సూర్యాస్తమయం')} $set';
+}
+
 /// The widget's text for one day, already in the user's language.
 Map<String, String> widgetDay(String lang, DateTime day, Map s, List<Festival> festivals, List<UserEvent> events) {
   final month = shownMonthOf(monthSystemFor(lang), s);
@@ -44,6 +54,7 @@ Map<String, String> widgetDay(String lang, DateTime day, Map s, List<Festival> f
     'tithi': tithi == null ? '' : tithiName(lang, tithi),
     'star': star < 0 ? '' : '${t3(lang, 'Nakshatra', 'नक्षत्र', 'నక్షత్రం')}: ${nakshatraLabel(lang, star)}',
     'rahu': rahu ?? '',
+    'sun': sunLine(lang, s, compact: true),
     'festival': [...mine, ...major, ...minor, if (yoga != null) '✨ ${shubhYogaLabel(lang, yoga)}'].take(2).join('  '),
     // The small tithi widget: a short date and one mark for the day's first event or festival.
     'date_short': fmtDate(lang, 'EEE, d MMM', day),

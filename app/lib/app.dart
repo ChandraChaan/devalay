@@ -176,7 +176,7 @@ final routerProvider = Provider<GoRouter>((ref) {
   // sees switches between the bottom tabs, which StatefulShellRoute keeps in one navigator each.
   void track() {
     final matches = router.routerDelegate.currentConfiguration;
-    if (matches.isNotEmpty) FirebaseServices.logScreen(matches.fullPath);
+    if (matches.isNotEmpty) FirebaseServices.logScreen(screenPattern(matches));
   }
 
   router.routerDelegate.addListener(track);
@@ -209,6 +209,14 @@ class DevalayApp extends ConsumerWidget {
       ),
     );
   }
+}
+
+/// The route pattern of the screen on top. A pushed screen (context.push('/panchang')) sits in an
+/// [ImperativeRouteMatch]; the list's own fullPath still names the tab underneath it, which is why
+/// only the five tabs used to be logged.
+String screenPattern(RouteMatchList matches) {
+  final top = matches.matches.isEmpty ? null : matches.matches.last;
+  return top is ImperativeRouteMatch ? screenPattern(top.matches) : matches.fullPath;
 }
 
 /// Opens an in-app deep link such as `devalay://mandir` or `devalay://text/hanuman-chalisa`.

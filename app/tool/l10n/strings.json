@@ -2622,12 +2622,6 @@
   "where": "i18n"
  },
  {
-  "en": "Sunset",
-  "hi": "सूर्यास्त",
-  "te": "సూర్యాస్తమయం",
-  "where": "i18n"
- },
- {
   "en": "Suprabhat",
   "hi": "सुप्रभात",
   "te": "శుభోదయం",
@@ -3555,6 +3549,18 @@
   "en": "Rahu Kalam now",
   "hi": "अभी राहु काल",
   "te": "ఇప్పుడు రాహు కాలం",
+  "where": "lib/core/home_widget_sync.dart"
+ },
+ {
+  "en": "Sunrise",
+  "hi": "सूर्योदय",
+  "te": "సూర్యోదయం",
+  "where": "lib/core/home_widget_sync.dart"
+ },
+ {
+  "en": "Sunset",
+  "hi": "सूर्यास्त",
+  "te": "సూర్యాస్తమయం",
   "where": "lib/core/home_widget_sync.dart"
  },
  {
@@ -4731,12 +4737,6 @@
   "en": "State holiday",
   "hi": "राज्य अवकाश",
   "te": "రాష్ట్ర సెలవు",
-  "where": "lib/features/calendar.dart"
- },
- {
-  "en": "Sunrise",
-  "hi": "सूर्योदय",
-  "te": "సూర్యోదయం",
   "where": "lib/features/calendar.dart"
  },
  {
@@ -6540,6 +6540,24 @@
   "where": "lib/features/onboarding.dart"
  },
  {
+  "en": "Tithi, nakshatra, Rahu Kalam and sunrise for your city",
+  "hi": "आपके शहर के लिए तिथि, नक्षत्र, राहु काल और सूर्योदय",
+  "te": "మీ నగరానికి తిథి, నక్షత్రం, రాహు కాలం, సూర్యోదయం",
+  "where": "lib/features/onboarding.dart"
+ },
+ {
+  "en": "Today's Panchang every morning (6 AM)",
+  "hi": "हर सुबह आज का पंचांग (सुबह 6 बजे)",
+  "te": "ప్రతి ఉదయం నేటి పంచాంగం (ఉదయం 6)",
+  "where": "lib/features/onboarding.dart"
+ },
+ {
+  "en": "Use my location",
+  "hi": "मेरी लोकेशन इस्तेमाल करें",
+  "te": "నా లొకేషన్ వాడండి",
+  "where": "lib/features/onboarding.dart"
+ },
+ {
   "en": "Your Ishta Devta",
   "hi": "आपके इष्ट देव",
   "te": "మీ ఇష్ట దైవం",
@@ -7044,6 +7062,18 @@
   "where": "lib/features/settings.dart"
  },
  {
+  "en": "Add Panchang widget to home screen",
+  "hi": "होम स्क्रीन पर पंचांग विजेट जोड़ें",
+  "te": "హోమ్ స్క్రీన్‌పై పంచాంగం విడ్జెట్ జోడించండి",
+  "where": "lib/features/settings.dart"
+ },
+ {
+  "en": "Allow notifications for Devalay in your phone settings to get reminders.",
+  "hi": "रिमाइंडर पाने के लिए फ़ोन की सेटिंग में देवालय की सूचनाएँ चालू करें।",
+  "te": "రిమైండర్ల కోసం ఫోన్ సెట్టింగ్స్‌లో దేవాలయం నోటిఫికేషన్లు అనుమతించండి.",
+  "where": "lib/features/settings.dart"
+ },
+ {
   "en": "App colour",
   "hi": "ऐप का रंग",
   "te": "యాప్ రంగు",
@@ -7413,12 +7443,6 @@
   "en": ", for visits {0} months later",
   "hi": ", {0} महीने बाद की यात्रा के लिए",
   "te": ", {0} నెలల తర్వాతి దర్శనానికి",
-  "where": "lib/features/temples.dart"
- },
- {
-  "en": "Allow notifications for Devalay in your phone settings to get reminders.",
-  "hi": "रिमाइंडर के लिए फोन की सेटिंग में देवालय की सूचनाएँ चालू करें।",
-  "te": "రిమైండర్ల కోసం ఫోన్ సెట్టింగ్స్‌లో దేవాలయం నోటిఫికేషన్లను అనుమతించండి.",
   "where": "lib/features/temples.dart"
  },
  {
@@ -7986,12 +8010,6 @@
   "where": "lib/widgets/city_picker.dart"
  },
  {
-  "en": "Use my location",
-  "hi": "मेरी लोकेशन इस्तेमाल करें",
-  "te": "నా లొకేషన్ వాడండి",
-  "where": "lib/widgets/city_picker.dart"
- },
- {
   "en": "Use my location?",
   "hi": "मेरी लोकेशन इस्तेमाल करें?",
   "te": "నా లొకేషన్ వాడాలా?",
@@ -8008,6 +8026,36 @@
   "hi": "पूरा ऐप, पंचांग और त्योहारों के नाम आपकी भाषा में।",
   "te": "యాప్ మొత్తం, పంచాంగం, పండుగల పేర్లు మీ భాషలో.",
   "where": "lib/widgets/language_picker.dart"
+ },
+ {
+  "en": "Add widget",
+  "hi": "विजेट जोड़ें",
+  "te": "విడ్జెట్ జోడించండి",
+  "where": "lib/widgets/morning_panchang_card.dart"
+ },
+ {
+  "en": "Times for {0}",
+  "hi": "{0} का समय",
+  "te": "{0} సమయాలు",
+  "where": "lib/widgets/morning_panchang_card.dart"
+ },
+ {
+  "en": "Tithi, nakshatra, Rahu Kalam and sunrise at {0}, as a notification and on your home screen.",
+  "hi": "तिथि, नक्षत्र, राहु काल और सूर्योदय, सुबह {0} बजे सूचना में और होम स्क्रीन पर।",
+  "te": "తిథి, నక్షత్రం, రాహు కాలం, సూర్యోదయం ఉదయం {0}కు నోటిఫికేషన్‌గా, హోమ్ స్క్రీన్‌పై కూడా.",
+  "where": "lib/widgets/morning_panchang_card.dart"
+ },
+ {
+  "en": "Today's Panchang, every morning",
+  "hi": "हर सुबह आज का पंचांग",
+  "te": "ప్రతి ఉదయం నేటి పంచాంగం",
+  "where": "lib/widgets/morning_panchang_card.dart"
+ },
+ {
+  "en": "Turn on",
+  "hi": "चालू करें",
+  "te": "ఆన్ చేయండి",
+  "where": "lib/widgets/morning_panchang_card.dart"
  },
  {
   "en": "Could not read aloud on this phone.",

@@ -7,7 +7,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 
-import '../core/calendar_reminders.dart';
 import '../core/events.dart';
 import '../core/holidays.dart';
 import '../core/i18n.dart';
@@ -17,6 +16,7 @@ import '../core/models.dart';
 import '../core/muhurta.dart';
 import '../core/names.dart';
 import '../core/notifications.dart';
+import '../core/retention.dart';
 import '../core/panchang_voice.dart';
 import '../core/pooja.dart';
 import '../core/providers.dart';
@@ -253,6 +253,7 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
     } else {
       await Notifications.cancelFestivals();
     }
+    logNotificationSettings(ref.read(prefsProvider), kind: 'festival', on: on, source: 'calendar');
     if (!mounted) return;
     toast(
       context,
@@ -271,9 +272,7 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
     final prefs = ref.read(prefsProvider);
     final lang = prefs.language;
     final on = !prefs.panchangDaily;
-    if (on && !await Notifications.requestPermission()) return;
-    await ref.read(prefsProvider.notifier).set('panchang_daily', on);
-    await refreshPanchangNotifications(ref);
+    if (on != await setMorningPanchang(ref, on, source: 'calendar')) return;
     if (!mounted) return;
     toast(
       context,

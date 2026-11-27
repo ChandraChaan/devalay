@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -52,16 +54,23 @@ class Notifications {
     importance: Importance.high,
   );
 
-  /// The channel's details with the whole body shown when the notification is expanded.
-  static NotificationDetails _expanded(AndroidNotificationDetails c, String body) => NotificationDetails(
-    android: AndroidNotificationDetails(
-      c.channelId,
-      c.channelName,
-      channelDescription: c.channelDescription,
-      importance: c.importance,
-      styleInformation: BigTextStyleInformation(body),
-    ),
-  );
+  /// The channel's details with the whole body shown when the notification is expanded. [timeout]
+  /// removes it from the shade after that long.
+  static NotificationDetails _expanded(AndroidNotificationDetails c, String body, {Duration? timeout}) =>
+      NotificationDetails(
+        android: AndroidNotificationDetails(
+          c.channelId,
+          c.channelName,
+          channelDescription: c.channelDescription,
+          importance: c.importance,
+          styleInformation: BigTextStyleInformation(body),
+          timeoutAfter: timeout?.inMilliseconds,
+        ),
+      );
+
+  /// A morning Panchang is stale by the next morning; left in the shade, yesterday's and today's would
+  /// be bundled by Android under a summary that only opens the app.
+  static const _panchangLifetime = Duration(hours: 18);
 
   // One id per calendar day (days since 1970, mod 1000), so a day keeps its id as the window moves.
   static const _panchangBase = 410000;
@@ -94,8 +103,66 @@ class Notifications {
     }
     await _plugin.initialize(
       settings: const InitializationSettings(android: AndroidInitializationSettings('@drawable/ic_notification')),
+      onDidReceiveNotificationResponse: (r) => unawaited(_onTap(r)),
     );
+    // Read once, now: the plugin replaces the activity's intent on every later tap, after which the
+    // "launch details" describe that tap instead of the one that started the app.
+    try {
+      final details = await _plugin.getNotificationAppLaunchDetails();
+      if (details?.didNotificationLaunchApp == true) _launch = details?.notificationResponse;
+    } catch (_) {}
   }
+
+  /// The tap that started the app, if a notification did, and whether its echo in the tap callback
+  /// was already skipped.
+  static NotificationResponse? _launch;
+  static bool _launchEchoSkipped = false;
+
+  static Future<void> _onTap(NotificationResponse r) async {
+    final kind = r.payload;
+    if (kind == null || kind.isEmpty) return;
+    // On a cold start the plugin reports the tap that started the app here as well as in the launch
+    // details; [launchKind] answers for that one, so it is opened (and logged) once.
+    await init();
+    if (!_launchEchoSkipped && _launch?.id == r.id && _launch?.payload == kind) {
+      _launchEchoSkipped = true;
+      return;
+    }
+    _taps.add(kind);
+  }
+
+  // What a tap opens. Each reminder carries its kind as the payload; the shell turns it into a
+  // screen with [routeFor] and logs reminder_open.
+  static const panchangKind = 'panchang';
+  static const festivalKind = 'festival';
+  static const prayerKind = 'prayer';
+  static const eventKind = 'event';
+  static const quotaKind = 'quota';
+
+  static final _taps = StreamController<String>.broadcast();
+
+  /// Kinds of the notifications the user taps while the app is running.
+  static Stream<String> get taps => _taps.stream;
+
+  static bool _launchRead = false;
+
+  /// The kind of the notification whose tap started the app, the first time it is asked only.
+  static Future<String?> launchKind() async {
+    if (_launchRead) return null;
+    _launchRead = true;
+    await init();
+    final kind = _launch?.payload;
+    return kind == null || kind.isEmpty ? null : kind;
+  }
+
+  /// The screen a tapped notification opens: today's Panchang for the morning message and festivals.
+  static String? routeFor(String kind) => switch (kind) {
+    panchangKind || festivalKind => '/panchang',
+    prayerKind => '/listen',
+    eventKind => '/calendar',
+    quotaKind => '/temples',
+    _ => null,
+  };
 
   static Future<void> announce(String title, String body) async {
     await init();
@@ -127,6 +194,18 @@ class Notifications {
     }
   }
 
+  /// Whether Android will show this app's notifications (the permission, or the app's system switch).
+  static Future<bool> allowed() async {
+    await init();
+    final android = _plugin.resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>();
+    if (android == null) return true;
+    try {
+      return await android.areNotificationsEnabled() ?? false;
+    } on PlatformException {
+      return false;
+    }
+  }
+
   static tz.TZDateTime _next(int hour, int minute, [DateTime? on]) {
     final now = tz.TZDateTime.now(tz.local);
     if (on != null) return tz.TZDateTime(tz.local, on.year, on.month, on.day, hour, minute);
@@ -155,6 +234,7 @@ class Notifications {
         androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
         title: title,
         body: body,
+        payload: prayerKind,
         matchDateTimeComponents: DateTimeComponents.dayOfWeekAndTime,
       );
     }
@@ -231,6 +311,7 @@ class Notifications {
         body: f.description.isNotEmpty && lang == 'en'
             ? f.description
             : t3(lang, 'Wishing you a blessed festival!', 'आज का पर्व मंगलमय हो!', 'పండుగ శుభాకాంక్షలు!'),
+        payload: festivalKind,
       );
     }
   }
@@ -263,10 +344,11 @@ class Notifications {
       await _plugin.zonedSchedule(
         id: id,
         scheduledDate: when,
-        notificationDetails: _expanded(_panchang, item.body),
+        notificationDetails: _expanded(_panchang, item.body, timeout: _panchangLifetime),
         androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
         title: item.title,
         body: item.body,
+        payload: panchangKind,
       );
     }
     for (final id in ledger.futureIdsExcept(wanted, now)) {
@@ -318,6 +400,7 @@ class Notifications {
         androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
         title: title,
         body: body,
+        payload: eventKind,
       );
     }
     final mine = {_eventId(id), _eventId(id) + 1};
@@ -430,6 +513,7 @@ class Notifications {
         androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
         title: title,
         body: body,
+        payload: quotaKind,
         matchDateTimeComponents: DateTimeComponents.dayOfMonthAndTime,
       );
     }

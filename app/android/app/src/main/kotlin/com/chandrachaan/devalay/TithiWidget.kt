@@ -21,7 +21,7 @@ class TithiWidget : HomeWidgetProvider() {
         for (id in appWidgetIds) {
             val views = WidgetSupport.responsive(context, appWidgetManager, id, 90) { compact ->
                 RemoteViews(context.packageName, R.layout.tithi_widget).apply {
-                    setOnClickPendingIntent(R.id.tithi_root, WidgetSupport.open(context, "devalay://calendar/day/$key"))
+                    setOnClickPendingIntent(R.id.tithi_root, WidgetSupport.open(context, "devalay://calendar/day/$key?w=tithi"))
                     if (day == null) {
                         setTextViewText(R.id.tithi_date, "Devalay")
                         setTextViewText(R.id.tithi_mark, "🛕")
