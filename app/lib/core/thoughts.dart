@@ -1,7 +1,6 @@
-import 'dart:convert';
-
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'json_asset.dart';
 
 /// One verse for the thought of the day: the original text exactly as its source prints it, with a
 /// short meaning in the reader's language and in English. assets/data/thoughts.json is built by
@@ -51,7 +50,6 @@ class Thoughts {
       DateTime.utc(day.year, day.month, day.day).difference(DateTime.utc(2024)).inDays;
 }
 
-Future<Thoughts> loadThoughts() async =>
-    Thoughts(jsonDecode(await rootBundle.loadString('assets/data/thoughts.json')) as Map);
+Future<Thoughts> loadThoughts() async => Thoughts(await loadJsonAsset('assets/data/thoughts.json'));
 
 final thoughtsProvider = FutureProvider<Thoughts>((ref) => loadThoughts());

@@ -3,6 +3,32 @@
 Each milestone is a git tag and a [GitHub release](https://github.com/ChandraChaan/devalay/releases). Releases from
 v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the section below that matches the tag.
 
+## v1.5.5 — 2026-11-27
+
+Stability, from Play vitals and Crashlytics (1.5.4: 98% crash-free users; Play's user-perceived ANR rate 1.85%
+against a 0.47% bad-behaviour threshold):
+
+- Faster start and fewer "app isn't responding" freezes. Since Flutter 3.29 the app's Dart code runs on Android's
+  main thread, so anything slow there holds up touches. Now:
+  - the bundled data files (Thought of the day, pooja guides, holidays, temples, wishes) are parsed on a background
+    isolate; Thought of the day alone is 690 KB and was parsed on every launch for Home
+  - the time-zone database and the notification plugin are set up after the first screen, not before it
+  - the public build no longer reads the Keystore at start (it has no accounts to keep tokens for)
+  - push topics are renewed when the language changes and once a week, not with 12 calls at every launch
+  - cached answers for single days older than a week are cleared, so the cache Hive loads at every start
+    stops growing with each day of use
+- Chandrabalam and Tarabalam follow the Moon through the day (from in-app feedback). They were worked out from
+  the Moon's sign and nakshatra at sunrise, so once the Moon moved on, often within hours, the card was wrong for
+  the rest of the day: on 26 Nov the Moon entered Mithuna at 7:11 AM, yet Vrishabha rashi still read "1st house"
+  that night. Today's card now counts from where the Moon is now, and every day says when a value changes
+  ("Until 7:15 AM: 1st house (Good)"). The Panchang data gains a `moon_rashis` timeline; data without it still
+  shows the sunrise value.
+- Mandir no longer crashes when it opens on your ishta devata before its shrine carousel is laid out
+  (Crashlytics db0eff88).
+- The admin screen's live activity feed no longer crashes with "Stream has already been listened to" when someone
+  comes online (Crashlytics 0c9897d8).
+- Picking a date or time and then leaving the screen (calendar, Panchang, Jatakam) can no longer crash.
+
 ## v1.5.4 — 2026-11-24
 
 From Play reviews:

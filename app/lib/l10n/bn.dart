@@ -1104,6 +1104,8 @@ const stringsBn = <String, String>{
   'Fortune and faith rise: pilgrimage, elders\' blessings and progress.':
       'ভাগ্য ও বিশ্বাস বাড়বে: তীর্থযাত্রা, গুরুজনের আশীর্বাদ ও উন্নতি।',
   'From {0} it moves into {1}: {2}': '{0} থেকে {1} রাশিতে: {2}',
+  'From {0}: {1}': '{0} থেকে: {1}',
+  'Until {0}: {1}': '{0} পর্যন্ত: {1}',
   'Gains from many sides. Wishes are fulfilled and friends help.':
       'নানা দিক থেকে লাভ। মনোবাঞ্ছা পূর্ণ হবে এবং বন্ধুরা সাহায্য করবেন।',
   'Gains, honour and good news. Wishes come true.': 'লাভ, সম্মান ও শুভ সংবাদ। মনোবাঞ্ছা পূর্ণ হবে।',

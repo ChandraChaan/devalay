@@ -1,10 +1,8 @@
-import 'dart:convert';
-
 import '../l10n/l10n.dart';
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'api.dart';
+import 'json_asset.dart';
 import 'notifications.dart';
 import 'storage.dart';
 
@@ -166,8 +164,7 @@ bool isSafeBookingUrl(String url) {
   return uri != null && uri.scheme == 'https' && uri.host.contains('.');
 }
 
-Future<TempleCatalog> loadBundledTemples() async =>
-    TempleCatalog(jsonDecode(await rootBundle.loadString('assets/data/temples.json')) as Map);
+Future<TempleCatalog> loadBundledTemples() async => TempleCatalog(await loadJsonAsset('assets/data/temples.json'));
 
 /// The bundled catalogue at once, then the published one if it is newer.
 final templeCatalogProvider = StreamProvider<TempleCatalog>((ref) async* {

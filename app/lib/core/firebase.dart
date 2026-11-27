@@ -15,6 +15,7 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'api.dart';
 import 'languages.dart';
 import 'notifications.dart';
+import 'storage.dart';
 import 'usage.dart';
 
 /// Crash reports, push announcements, force update and usage analytics (daily users, screen
@@ -53,6 +54,8 @@ class FirebaseServices {
     });
   }
 
+  static const _topicsKey = 'fcm_topics';
+
   static String? _lastScreen;
 
   /// One screen_view per screen the user lands on, named by its route pattern ('home',
@@ -72,9 +75,13 @@ class FirebaseServices {
     );
   }
 
-  /// Topics let the Firebase console target everyone, or one language's users.
-  static Future<void> subscribe(String language) async {
+  /// Topics let the Firebase console target everyone, or one language's users. The twelve topic
+  /// calls go out when the language changes and once a week after that, not on every launch.
+  static Future<void> subscribe(String language, {bool force = true}) async {
     if (!enabled) return;
+    final done = Boxes.stats.get(_topicsKey);
+    final today = DateTime.now().millisecondsSinceEpoch ~/ Duration.millisecondsPerDay;
+    if (!force && done is Map && done['lang'] == language && today - ((done['day'] as num?) ?? 0) < 7) return;
     final messaging = FirebaseMessaging.instance;
     try {
       await messaging.subscribeToTopic('all');
@@ -85,6 +92,7 @@ class FirebaseServices {
           await messaging.unsubscribeFromTopic('lang_$lang');
         }
       }
+      await Boxes.stats.put(_topicsKey, {'lang': language, 'day': today});
     } catch (e) {
       debugPrint('FCM topic subscription failed: $e'); // offline; retried on next launch
     }

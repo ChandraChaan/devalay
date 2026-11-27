@@ -158,10 +158,15 @@ void main() {
     expect(find.text('Usual booking dates'), findsOneWidget);
     expect(find.text('Show all 9 dates'), findsOneWidget);
 
-    // The ₹300 ticket is listed under Darshan; in the days before its monthly release it also
-    // appears in the "opens soon" card, so take the first match.
-    final service = find.text('Special Entry Darshan (₹300)').first;
-    await tester.scrollUntilVisible(service, 200, scrollable: find.byType(Scrollable).first);
+    // The ₹300 ticket is listed under Darshan, further down the lazy list; in the days before its
+    // monthly release it also appears in the "opens soon" card. Scroll until one is built (a
+    // `.first` finder throws while there is none), then take the first match.
+    final matches = find.text('Special Entry Darshan (₹300)');
+    for (var i = 0; i < 40 && matches.evaluate().isEmpty; i++) {
+      await tester.drag(find.byType(Scrollable).first, const Offset(0, -200));
+      await tester.pump();
+    }
+    final service = matches.first;
     await tester.ensureVisible(service);
     await tester.pumpAndSettle();
     await tester.tap(service);

@@ -1104,6 +1104,8 @@ const stringsGu = <String, String>{
   'Fortune and faith rise: pilgrimage, elders\' blessings and progress.':
       'ભાગ્ય અને શ્રદ્ધા વધશે: તીર્થયાત્રા, વડીલોના આશીર્વાદ અને પ્રગતિ.',
   'From {0} it moves into {1}: {2}': '{0} થી {1} રાશિમાં: {2}',
+  'From {0}: {1}': '{0} થી: {1}',
+  'Until {0}: {1}': '{0} સુધી: {1}',
   'Gains from many sides. Wishes are fulfilled and friends help.':
       'અનેક બાજુથી લાભ. મનોકામનાઓ પૂરી થશે અને મિત્રો મદદ કરશે.',
   'Gains, honour and good news. Wishes come true.': 'લાભ, માન અને શુભ સમાચાર. મનોકામનાઓ પૂરી થશે.',

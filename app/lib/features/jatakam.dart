@@ -144,7 +144,7 @@ class _JatakamScreenState extends ConsumerState<JatakamScreen> {
                         initialDate: _date ?? DateTime(1990, 1, 1),
                         initialEntryMode: DatePickerEntryMode.input,
                       );
-                      if (d != null) setState(() => _date = d);
+                      if (d != null && mounted) setState(() => _date = d);
                     },
                   ),
                 ),
@@ -159,7 +159,7 @@ class _JatakamScreenState extends ConsumerState<JatakamScreen> {
                         initialTime: _time ?? const TimeOfDay(hour: 6, minute: 0),
                         initialEntryMode: TimePickerEntryMode.input,
                       );
-                      if (t != null) setState(() => _time = t);
+                      if (t != null && mounted) setState(() => _time = t);
                     },
                   ),
                 ),

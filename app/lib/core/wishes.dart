@@ -1,7 +1,5 @@
-import 'dart:convert';
 import 'dart:io';
 
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter/material.dart' show DateUtils;
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -10,6 +8,7 @@ import 'package:path_provider/path_provider.dart';
 
 import 'api.dart';
 import 'i18n.dart';
+import 'json_asset.dart';
 import 'models.dart';
 import 'providers.dart';
 import 'storage.dart';
@@ -234,8 +233,7 @@ List<DatedWish> upcomingWishes(WishCatalog catalog, Iterable<Festival> calendar,
 /// Days from [today] until [date]; zero or less while the festival is on.
 int daysUntil(DateTime date, DateTime today) => DateUtils.dateOnly(date).difference(DateUtils.dateOnly(today)).inDays;
 
-Future<WishCatalog> loadBundledWishes() async =>
-    WishCatalog(jsonDecode(await rootBundle.loadString('assets/data/wishes.json')) as Map);
+Future<WishCatalog> loadBundledWishes() async => WishCatalog(await loadJsonAsset('assets/data/wishes.json'));
 
 /// The bundled catalogue at once, then the published one if it is newer.
 final wishCatalogProvider = StreamProvider<WishCatalog>((ref) async* {

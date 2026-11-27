@@ -1109,6 +1109,8 @@ const stringsKn = <String, String>{
   'Fortune and faith rise: pilgrimage, elders\' blessings and progress.':
       'ಭಾಗ್ಯ ಮತ್ತು ಶ್ರದ್ಧೆ ಹೆಚ್ಚುತ್ತವೆ: ತೀರ್ಥಯಾತ್ರೆ, ಹಿರಿಯರ ಆಶೀರ್ವಾದ ಮತ್ತು ಪ್ರಗತಿ.',
   'From {0} it moves into {1}: {2}': '{0} ರಿಂದ {1} ರಾಶಿಗೆ: {2}',
+  'From {0}: {1}': '{0} ರಿಂದ: {1}',
+  'Until {0}: {1}': '{0} ರವರೆಗೆ: {1}',
   'Gains from many sides. Wishes are fulfilled and friends help.':
       'ಹಲವು ಕಡೆಗಳಿಂದ ಲಾಭ. ಇಷ್ಟಾರ್ಥಗಳು ನೆರವೇರುತ್ತವೆ, ಸ್ನೇಹಿತರು ನೆರವಾಗುತ್ತಾರೆ.',
   'Gains, honour and good news. Wishes come true.': 'ಲಾಭ, ಗೌರವ ಮತ್ತು ಶುಭ ಸುದ್ದಿ. ಇಷ್ಟಾರ್ಥಗಳು ನೆರವೇರುತ್ತವೆ.',

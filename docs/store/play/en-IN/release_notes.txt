@@ -1,3 +1,3 @@
-• Today's guidance on the Panchang page: the day's direction (Disha Shool) with its remedy, what the day suits, what to avoid and the best time to begin.
-• The Panchang read-aloud now tells the day's direction.
-• Better display on new Android phones and stability fixes.
+• Chandrabalam and Tarabalam now follow the Moon through the day and show when they change.
+• Opens faster and responds sooner, especially on budget phones.
+• Fixed a rare crash when opening My Mandir.

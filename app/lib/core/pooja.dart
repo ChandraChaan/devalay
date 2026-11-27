@@ -1,8 +1,6 @@
-import 'dart:convert';
-
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'json_asset.dart';
 import 'models.dart';
 import 'storage.dart';
 import 'temples.dart' show loc;
@@ -62,7 +60,7 @@ class PoojaGuides {
 }
 
 final poojaGuidesProvider = FutureProvider<PoojaGuides>(
-  (ref) async => PoojaGuides(jsonDecode(await rootBundle.loadString('assets/data/pooja_guides.json')) as Map),
+  (ref) async => PoojaGuides(await loadJsonAsset('assets/data/pooja_guides.json')),
 );
 
 /// Which samagri items are ticked, per guide, kept on the phone.

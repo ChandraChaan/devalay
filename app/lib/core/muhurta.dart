@@ -373,6 +373,41 @@ String taraLabel(String lang, String key) => switch (key) {
   _ => t3(lang, 'Parama Mitra', 'परम मित्र', 'పరమ మిత్ర'),
 };
 
+/// One value of a Panchang day's timeline (sunrise to next sunrise), as the API sends nakshatras
+/// and Moon signs: `{index, starts, ends}`, with `starts`/`ends` null at the day's edges.
+typedef DaySpan = ({int index, String? starts, String? ends});
+
+/// The spans of an API list; malformed entries are skipped.
+List<DaySpan> daySpans(Object? list) => [
+  if (list is List)
+    for (final m in list)
+      if (m is Map && m['index'] is int)
+        (
+          index: m['index'] as int,
+          starts: m['starts'] is String ? m['starts'] as String : null,
+          ends: m['ends'] is String ? m['ends'] as String : null,
+        ),
+];
+
+/// Position in [spans] of the one in force at [at]; at sunrise (null) the first.
+int spanAt(List<DaySpan> spans, DateTime? at) {
+  if (at == null) return 0;
+  for (var i = 0; i < spans.length; i++) {
+    final ends = DateTime.tryParse(spans[i].ends ?? '');
+    if (ends == null || at.isBefore(ends)) return i;
+  }
+  return spans.isEmpty ? 0 : spans.length - 1;
+}
+
+/// The Moon's signs through a Panchang day, as 1–12 indexes. Data from before 1.5.5 has only the
+/// sign at sunrise (`moon_rashi`), which is wrong after the Moon moves on, often within hours.
+List<DaySpan> moonSignSpans(Map data) {
+  final spans = daySpans(data['moon_rashis']).where((s) => s.index >= 1 && s.index <= 12).toList();
+  if (spans.isNotEmpty) return spans;
+  final sunrise = rashiNames.indexOf('${data['moon_rashi']}');
+  return sunrise < 0 ? const [] : [(index: sunrise + 1, starts: null, ends: null)];
+}
+
 /// The house (1–12) the Moon is in from the user's moon sign, both rashi indexes 0–11.
 ({int house, Quality quality}) chandrabalam(int birthRashi, int moonRashi) {
   final house = (moonRashi - birthRashi) % 12 + 1;

@@ -234,11 +234,15 @@ def _limb_timeline(t0, t1, kind: str, tz: ZoneInfo):
     def karana_fn(t):
         return (_elongation(t) // 6.0).astype(int)
 
+    def moon_rashi_fn(t):
+        return (_sidereal(t)[1] // 30.0).astype(int)
+
     fn, step = {
         "tithi": (tithi_fn, 0.2),
         "nakshatra": (nak_fn, 0.2),
         "yoga": (yoga_fn, 0.2),
         "karana": (karana_fn, 0.1),
+        "moon_rashi": (moon_rashi_fn, 0.2),
     }[kind]
     first = int(fn(_ts().tt_jd(np.array([t0.tt])))[0])
     segments = [[first, None, None]]
@@ -285,6 +289,8 @@ def daily_panchang(loc: Location, day: date) -> dict:
                 label = {"index": value + 1, "name": NAKSHATRA_NAMES[value]}
             elif kind == "yoga":
                 label = {"index": value + 1, "name": YOGA_NAMES[value]}
+            elif kind == "moon_rashi":
+                label = {"index": value + 1, "name": RASHI_NAMES[value]}
             else:
                 label = {"index": value + 1, "name": karana_name(value)}
             label["starts"] = begin.isoformat() if begin else None
@@ -338,7 +344,9 @@ def daily_panchang(loc: Location, day: date) -> dict:
         "yoga": describe("yoga"),
         "karana": describe("karana"),
         "sun_rashi": RASHI_NAMES[int(sun_sid // 30)],
-        "moon_rashi": RASHI_NAMES[int(moon_sid // 30)],
+        "moon_rashi": RASHI_NAMES[int(moon_sid // 30)],  # at sunrise; kept for apps before 1.5.5
+        # The Moon changes sign every 2-3 days, often mid-day: Chandrabalam needs the sign at the hour.
+        "moon_rashis": describe("moon_rashi"),
         "lunar_month": month,
         "vikram_samvat": samvat,
         "shaka_samvat": samvat - 135,

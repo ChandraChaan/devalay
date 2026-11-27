@@ -1117,6 +1117,8 @@ const stringsTa = <String, String>{
   'Fortune and faith rise: pilgrimage, elders\' blessings and progress.':
       'அதிர்ஷ்டமும் நம்பிக்கையும் உயரும்: தீர்த்த யாத்திரை, பெரியோர் ஆசி, முன்னேற்றம்.',
   'From {0} it moves into {1}: {2}': '{0} முதல் {1} ராசியில்: {2}',
+  'From {0}: {1}': '{0} முதல்: {1}',
+  'Until {0}: {1}': '{0} வரை: {1}',
   'Gains from many sides. Wishes are fulfilled and friends help.':
       'பல வழிகளில் லாபம். விருப்பங்கள் நிறைவேறும், நண்பர்கள் உதவுவார்கள்.',
   'Gains, honour and good news. Wishes come true.': 'லாபம், கௌரவம், நல்ல செய்திகள். விருப்பங்கள் நிறைவேறும்.',

@@ -166,3 +166,18 @@ class Api {
 }
 
 final apiProvider = Provider<Api>((ref) => Api());
+
+/// Drops cached answers for single days more than a week old. Each day's Home, Panchang and
+/// Rashifal is its own file (Home is about 18 KB), so the cache grew with every day of use, and Hive
+/// reads the whole box into memory on the main thread at every start.
+Future<void> pruneHttpCache({DateTime? now}) async {
+  final today = now ?? DateTime.now();
+  final cutoff = DateTime(today.year, today.month, today.day - 7);
+  final stale = [
+    for (final key in Boxes.cache.keys)
+      if (_dayInKey.firstMatch('$key') case final m? when DateTime.tryParse(m[0]!)?.isBefore(cutoff) ?? false) key,
+  ];
+  if (stale.isNotEmpty) await Boxes.cache.deleteAll(stale);
+}
+
+final _dayInKey = RegExp(r'\d{4}-\d{2}-\d{2}');

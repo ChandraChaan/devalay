@@ -1120,6 +1120,8 @@ const stringsMl = <String, String>{
   'Fortune and faith rise: pilgrimage, elders\' blessings and progress.':
       'ഭാഗ്യവും വിശ്വാസവും വർധിക്കും: തീർത്ഥയാത്ര, മുതിർന്നവരുടെ അനുഗ്രഹം, പുരോഗതി.',
   'From {0} it moves into {1}: {2}': '{0} മുതൽ {1} രാശിയിൽ: {2}',
+  'From {0}: {1}': '{0} മുതൽ: {1}',
+  'Until {0}: {1}': '{0} വരെ: {1}',
   'Gains from many sides. Wishes are fulfilled and friends help.':
       'പല വഴികളിൽ നിന്നും നേട്ടങ്ങൾ. ആഗ്രഹങ്ങൾ സഫലമാകും, സുഹൃത്തുക്കൾ സഹായിക്കും.',
   'Gains, honour and good news. Wishes come true.': 'നേട്ടങ്ങൾ, ബഹുമതി, സന്തോഷവാർത്തകൾ. ആഗ്രഹങ്ങൾ സഫലമാകും.',

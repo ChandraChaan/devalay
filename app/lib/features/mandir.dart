@@ -42,11 +42,19 @@ class _MandirScreenState extends ConsumerState<MandirScreen> with TickerProvider
     ref.read(deitiesProvider.future).then((all) {
       final list = _shrineDeities(all);
       final i = list.indexWhere((d) => d.slug == ishta);
-      if (i > 0 && mounted) {
-        setState(() => _index = i);
-        _page.jumpToPage(i);
-      }
-    });
+      if (i <= 0 || !mounted) return;
+      // The list arrives before the PageView is built (the screen shows a spinner until then), and
+      // jumping a controller with no page attached throws. Jump once the next frame has laid it out.
+      setState(() => _index = i);
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted) return;
+        if (_page.hasClients) {
+          _page.jumpToPage(i);
+        } else {
+          setState(() => _index = 0); // keep the title in step with the shrine on screen
+        }
+      });
+    }, onError: (Object _) {}); // offline: the screen itself shows the error and "Try again"
   }
 
   /// Counts consecutive days with a darshan, stored only on the device.

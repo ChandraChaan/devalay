@@ -1106,6 +1106,8 @@ const stringsPa = <String, String>{
   'Fortune and faith rise: pilgrimage, elders\' blessings and progress.':
       'ਭਾਗ ਅਤੇ ਸ਼ਰਧਾ ਵਧੇਗੀ: ਤੀਰਥ ਯਾਤਰਾ, ਵੱਡਿਆਂ ਦਾ ਅਸ਼ੀਰਵਾਦ ਅਤੇ ਤਰੱਕੀ।',
   'From {0} it moves into {1}: {2}': '{0} ਤੋਂ {1} ਵਿੱਚ: {2}',
+  'From {0}: {1}': '{0} ਤੋਂ: {1}',
+  'Until {0}: {1}': '{0} ਤੱਕ: {1}',
   'Gains from many sides. Wishes are fulfilled and friends help.':
       'ਕਈ ਪਾਸਿਆਂ ਤੋਂ ਲਾਭ। ਮਨੋਕਾਮਨਾਵਾਂ ਪੂਰੀਆਂ ਹੋਣਗੀਆਂ ਅਤੇ ਦੋਸਤ ਮਦਦ ਕਰਨਗੇ।',
   'Gains, honour and good news. Wishes come true.': 'ਲਾਭ, ਮਾਣ-ਸਤਿਕਾਰ ਅਤੇ ਚੰਗੀ ਖ਼ਬਰ। ਮਨੋਕਾਮਨਾਵਾਂ ਪੂਰੀਆਂ ਹੋਣਗੀਆਂ।',
