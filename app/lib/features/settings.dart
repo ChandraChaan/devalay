@@ -6,6 +6,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../core/api.dart';
 import '../core/auth.dart';
+import '../core/billing.dart';
 import '../core/config.dart';
 import '../core/calendar_reminders.dart';
 import '../core/app_care.dart';
@@ -13,6 +14,7 @@ import '../core/i18n.dart';
 import '../core/languages.dart';
 import '../core/location.dart';
 import '../core/notifications.dart';
+import '../core/perks.dart';
 import '../core/retention.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
@@ -35,6 +37,8 @@ class SettingsScreen extends ConsumerWidget {
     final auth = ref.watch(authProvider);
     final lang = prefs.language;
     final city = ref.watch(cityProvider);
+    final premium = ref.watch(premiumProvider);
+    final accent = unlocked(prefs.accent, isPremiumItem: prefs.accent.premium, premium: premium, free: Accent.saffron);
     return Scaffold(
       appBar: AppBar(title: Text(tr(ref, 'settings'))),
       body: ListView(
@@ -93,12 +97,13 @@ class SettingsScreen extends ConsumerWidget {
                 ),
                 onTap: () => context.push('/login'),
               ),
-            ListTile(
-              leading: const Icon(Icons.workspace_premium_rounded),
-              title: Text(tr(ref, 'premium')),
-              onTap: () => context.push('/premium'),
-            ),
           ],
+          ListTile(
+            leading: const Icon(Icons.workspace_premium_rounded),
+            title: Text(tr(ref, 'premium')),
+            trailing: ref.watch(premiumProvider) ? const Text('👑', style: TextStyle(fontSize: 20)) : null,
+            onTap: () => context.push('/premium?from=settings'),
+          ),
           _Header(t3(lang, 'Preferences', 'पसंद', 'ప్రాధాన్యతలు')),
           ListTile(
             leading: const Icon(Icons.language_rounded),
@@ -135,7 +140,13 @@ class SettingsScreen extends ConsumerWidget {
                       message: t3(lang, a.en, a.hi, a.te),
                       child: InkWell(
                         customBorder: const CircleBorder(),
-                        onTap: () => n.setAccent(a),
+                        onTap: () {
+                          if (a.premium && !premium) {
+                            context.push('/premium?from=accent');
+                          } else {
+                            n.setAccent(a);
+                          }
+                        },
                         child: Container(
                           width: 40,
                           height: 40,
@@ -143,11 +154,15 @@ class SettingsScreen extends ConsumerWidget {
                             color: context.isDark ? a.dark : a.light,
                             shape: BoxShape.circle,
                             border: Border.all(
-                              color: prefs.accent == a ? Theme.of(context).colorScheme.onSurface : Colors.transparent,
+                              color: accent == a ? Theme.of(context).colorScheme.onSurface : Colors.transparent,
                               width: 3,
                             ),
                           ),
-                          child: prefs.accent == a ? const Icon(Icons.check_rounded, color: Colors.white) : null,
+                          child: accent == a
+                              ? const Icon(Icons.check_rounded, color: Colors.white)
+                              : a.premium && !premium
+                              ? const Text('👑', style: TextStyle(fontSize: 16))
+                              : null,
                         ),
                       ),
                     ),

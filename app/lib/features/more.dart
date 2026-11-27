@@ -5,11 +5,13 @@ import 'package:go_router/go_router.dart';
 
 import '../core/app_care.dart';
 import '../core/auth.dart';
+import '../core/billing.dart';
 import '../core/config.dart';
 import '../core/i18n.dart';
 import '../core/theme.dart';
 import '../core/sharing.dart';
 import '../widgets/common.dart';
+import 'support.dart';
 
 class MoreScreen extends ConsumerWidget {
   const MoreScreen({super.key});
@@ -42,7 +44,7 @@ class MoreScreen extends ConsumerWidget {
       body: ListView(
         padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
         children: [
-          // Static (serverless) builds have no accounts or billing.
+          // Static (serverless) builds have no accounts; Premium comes from Google Play in every build.
           if (!AppConfig.staticApi) ...[
             Card(
               child: ListTile(
@@ -74,30 +76,8 @@ class MoreScreen extends ConsumerWidget {
               ),
             ),
             const SizedBox(height: 12),
-            if (!auth.isPremium)
-              GradientCard(
-                colors: const [Color(0xFFFFB300), Color(0xFFE65100)],
-                padding: 16,
-                onTap: () => context.push('/premium'),
-                child: Row(
-                  children: [
-                    const Text('👑', style: TextStyle(fontSize: 30)),
-                    const SizedBox(width: 12),
-                    Expanded(
-                      child: Text(
-                        l3(
-                          ref,
-                          'Premium: unlimited downloads, more AI. Core devotion stays free.',
-                          'प्रीमियम: असीमित डाउनलोड, अधिक AI। मूल भक्ति हमेशा निःशुल्क।',
-                          'ప్రీమియం: అపరిమిత డౌన్‌లోడ్‌లు, మరింత AI. ప్రధాన భక్తి ఎప్పుడూ ఉచితమే.',
-                        ),
-                        style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
           ],
+          const _PremiumCard(),
           const SizedBox(height: 16),
           GradientCard(
             colors: const [Color(0xFFFF8F00), Color(0xFFE65100), Color(0xFF8E1B1B)],
@@ -200,6 +180,73 @@ class MoreScreen extends ConsumerWidget {
           ),
           const SizedBox(height: 16),
           const RateCard(),
+          const SizedBox(height: 12),
+          Card(
+            child: ListTile(
+              leading: const Text('🙏', style: TextStyle(fontSize: 26)),
+              title: Text(
+                l3(ref, 'Support Devalay', 'देवालय का साथ दें', 'దేవాలయంకు అండగా నిలవండి'),
+                style: const TextStyle(fontWeight: FontWeight.w700),
+              ),
+              subtitle: Text(
+                l3(
+                  ref,
+                  'A small gift to the developer, or give to a temple',
+                  'डेवलपर को छोटा सा उपहार, या मंदिर को दान',
+                  'డెవలపర్‌కు చిన్న కానుక, లేదా ఆలయానికి విరాళం',
+                ),
+              ),
+              trailing: const Icon(Icons.chevron_right_rounded),
+              onTap: () => context.push('/support?from=more'),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// Premium: an invitation for free users, a thank-you badge for members.
+class _PremiumCard extends ConsumerWidget {
+  const _PremiumCard();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final lang = uiLang(ref);
+    final premium = ref.watch(premiumProvider);
+    return GradientCard(
+      colors: const [Color(0xFFFFB300), Color(0xFFE65100)],
+      padding: 16,
+      onTap: () => context.push('/premium?from=more'),
+      child: Row(
+        children: [
+          const Text('👑', style: TextStyle(fontSize: 30)),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  premium
+                      ? t3(lang, 'Premium member', 'प्रीमियम सदस्य', 'ప్రీమియం సభ్యులు')
+                      : t3(lang, 'Devalay Premium', 'देवालय प्रीमियम', 'దేవాలయం ప్రీమియం'),
+                  style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w700),
+                ),
+                Text(
+                  premium
+                      ? t3(
+                          lang,
+                          'Thank you for keeping Devalay free for every devotee 🙏',
+                          'देवालय को हर भक्त के लिए मुफ़्त रखने के लिए धन्यवाद 🙏',
+                          'దేవాలయంను ప్రతి భక్తునికీ ఉచితంగా ఉంచుతున్నందుకు ధన్యవాదాలు 🙏',
+                        )
+                      : premiumPitch(lang),
+                  style: const TextStyle(color: Colors.white, height: 1.25),
+                ),
+              ],
+            ),
+          ),
+          const Icon(Icons.chevron_right_rounded, color: Colors.white),
         ],
       ),
     );

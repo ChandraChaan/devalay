@@ -5,10 +5,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import 'core/app_care.dart';
+import 'core/billing.dart';
 import 'core/firebase.dart';
 import 'core/i18n.dart';
 import 'core/languages.dart';
 import 'core/models.dart';
+import 'core/perks.dart';
 import 'core/storage.dart';
 import 'core/theme.dart';
 import 'features/admin.dart';
@@ -36,6 +38,7 @@ import 'features/panchang.dart';
 import 'features/player.dart';
 import 'features/pooja.dart';
 import 'features/premium.dart';
+import 'features/support.dart';
 import 'features/jatakam.dart';
 import 'features/rashifal.dart';
 import 'features/shubha_muhurtham.dart';
@@ -172,7 +175,14 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/settings', builder: (_, _) => const SettingsScreen()),
       GoRoute(path: '/backup', builder: (_, _) => const BackupScreen()),
       GoRoute(path: '/login', builder: (_, _) => const LoginScreen()),
-      GoRoute(path: '/premium', builder: (_, _) => const PremiumScreen()),
+      GoRoute(
+        path: '/premium',
+        builder: (_, s) => PremiumScreen(source: s.uri.queryParameters['from'] ?? ''),
+      ),
+      GoRoute(
+        path: '/support',
+        builder: (_, s) => SupportScreen(source: s.uri.queryParameters['from'] ?? 'more'),
+      ),
       GoRoute(path: '/credits', builder: (_, _) => const CreditsScreen()),
       GoRoute(path: '/feedback', builder: (_, _) => const FeedbackScreen()),
       GoRoute(path: '/admin', builder: (_, _) => const AdminScreen()),
@@ -196,11 +206,18 @@ class DevalayApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final prefs = ref.watch(prefsProvider);
+    // Watching billing here also connects to Google Play once, shortly after start.
+    final accent = unlocked(
+      prefs.accent,
+      isPremiumItem: prefs.accent.premium,
+      premium: ref.watch(premiumProvider),
+      free: Accent.saffron,
+    );
     return MaterialApp.router(
       title: 'Devalay',
       debugShowCheckedModeBanner: false,
-      theme: buildTheme(Brightness.light, prefs.accent),
-      darkTheme: buildTheme(Brightness.dark, prefs.accent),
+      theme: buildTheme(Brightness.light, accent),
+      darkTheme: buildTheme(Brightness.dark, accent),
       themeMode: prefs.themeMode,
       // Material's own text (date and time pickers, tooltips) follows the app language.
       locale: languageOf(prefs.language).locale,

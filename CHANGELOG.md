@@ -3,6 +3,31 @@
 Each milestone is a git tag and a [GitHub release](https://github.com/ChandraChaan/devalay/releases). Releases from
 v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the section below that matches the tag.
 
+## v1.5.9 — 2026-11-28
+
+Premium, dakshina and Support Devalay, all through Google Play Billing with no server.
+
+- **Premium** now works in the public (static) build. Google Play's own purchase records on the phone decide it: the
+  app asks Play at start which subscriptions are active, acknowledges new ones, and keeps the answer for 30 days
+  while Play can't be reached. Plans: `devalay_premium_yearly` (₹299/yr) and `devalay_premium_monthly` (₹49/mo).
+  Everything devotional stays free. Premium adds: no ads ever, Mandir decorations (Swarna, jasmine and rose,
+  Tulasi, Deepotsava with a row of lamps), japa malas (tulsi, sphatik, sandalwood) and 27/54-bead rounds, three
+  app colours (Swarna, Neelakantha, Chandan) and a Premium badge on More. A lapsed plan quietly returns to the free
+  look.
+- **Dakshina in the Mandir**: a 🪙 button (it glows for a few seconds after aarti) opens two clearly separate
+  choices: give at a real temple through its official site (TTD e-Hundi and donations, Shirdi, Vaishno Devi, Kashi,
+  Ayodhya, Mahakal, Srisailam), or offer ₹11 / ₹51 / ₹101 dakshina to Devalay through Google Play, labelled as a
+  payment to the developer, not a temple donation and not tax-deductible.
+- **Support Devalay** (More → Support Devalay): ₹11 / ₹51 / ₹101 / ₹251 one-time gifts, free ways to help, and
+  temple donation links. After a 7-day Mandir streak one small, dismissible card mentions it, at most once every
+  60 days, never to Premium members or within 180 days of a gift.
+- Usage events for the purchase funnel: `premium_view`, `premium_buy_tap`, `support_view`, `support_tap`,
+  `dakshina_open`, `temple_donate_open`, `purchase_ok` / `purchase_pending` / `purchase_cancel` / `purchase_fail`,
+  `premium_restore_tap`, `support_prompt_shown` / `_tap` / `_dismiss`, `decor_set`, `mala_set`, `mala_size_set`,
+  and the Analytics user property `premium`.
+- **Play Console (owner):** create the two subscriptions and four in-app products `devalay_support_11`, `_51`,
+  `_101`, `_251` (consumable); until then the screens say "coming soon on Google Play". TTD has no public donation
+  API, so temple giving always opens the temple's own site.
 ## v1.5.8 — 2026-11-27
 
 Songs first: the most used part of the app (104 of 251 installs play audio) is easier to find and nicer to use.
