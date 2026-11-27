@@ -3,14 +3,18 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:home_widget/home_widget.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../app.dart';
 import '../core/app_care.dart';
 import '../core/audio.dart';
 import '../core/calendar_reminders.dart';
+import '../core/firebase.dart';
 import '../core/i18n.dart';
 import '../core/notifications.dart';
+import '../core/push.dart';
 import '../core/retention.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
@@ -51,6 +55,13 @@ class _AppShellState extends ConsumerState<AppShell> {
     }, onError: (_) {});
     _widgetTaps = HomeWidget.widgetClicked.listen(_openFromWidget, onError: (_) {});
     _notificationTaps = Notifications.taps.listen((kind) => _openFromNotification(kind, coldStart: false));
+    // Pushes from the admin screen, tapped in the tray while the app was closed or in the background.
+    if (FirebaseServices.enabled) {
+      FirebaseMessaging.instance.getInitialMessage().then((m) {
+        if (m != null) WidgetsBinding.instance.addPostFrameCallback((_) => _openFromPush(m.data, coldStart: true));
+      }, onError: (Object _) {});
+      _pushTaps = FirebaseMessaging.onMessageOpenedApp.listen((m) => _openFromPush(m.data, coldStart: false));
+    }
     // A track that can't be streamed (offline, server busy) gets a message instead of silence.
     _audioErrors = ref.read(audioProvider).errors.listen((_) {
       if (mounted) toast(context, tr(ref, 'error'));
@@ -59,6 +70,7 @@ class _AppShellState extends ConsumerState<AppShell> {
 
   StreamSubscription<Uri?>? _widgetTaps;
   StreamSubscription<String>? _notificationTaps;
+  StreamSubscription<RemoteMessage>? _pushTaps;
   StreamSubscription<Object>? _audioErrors;
 
   void _openFromWidget(Uri? uri) {
@@ -79,8 +91,32 @@ class _AppShellState extends ConsumerState<AppShell> {
     }
   }
 
+  void _openFromPush(Map<String, dynamic> data, {required bool coldStart}) {
+    if (!mounted) return;
+    logPushOpen('${data['c'] ?? ''}', coldStart: coldStart);
+    _openLink('${data['link'] ?? ''}');
+  }
+
+  /// A push's link: an app screen (devalay://panchang), or a web page opened in the browser.
+  void _openLink(String link) {
+    if (link.startsWith('https://')) {
+      unawaited(launchUrl(Uri.parse(link), mode: LaunchMode.externalApplication));
+      return;
+    }
+    final path = pushRoute(link);
+    if (path == null) return;
+    const tabs = {'/home', '/listen', '/mandir', '/read', '/more'};
+    tabs.contains(path) ? context.go(path) : _show(path);
+  }
+
   void _openFromNotification(String? kind, {required bool coldStart}) {
     if (kind == null || !mounted) return;
+    // A push shown while the app was open, then tapped.
+    if (parsePushPayload(kind) case final push?) {
+      logPushOpen(push.campaign, coldStart: coldStart);
+      _openLink(push.link);
+      return;
+    }
     logNotificationOpen(kind, coldStart: coldStart);
     final path = Notifications.routeFor(kind);
     if (path == null) return;
@@ -91,6 +127,7 @@ class _AppShellState extends ConsumerState<AppShell> {
   void dispose() {
     _widgetTaps?.cancel();
     _notificationTaps?.cancel();
+    _pushTaps?.cancel();
     _audioErrors?.cancel();
     super.dispose();
   }

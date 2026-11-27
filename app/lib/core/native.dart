@@ -29,4 +29,15 @@ class NativeBridge {
     if (m == null || m['lat'] == null || m['lon'] == null) return null;
     return (lat: m['lat']!, lon: m['lon']!);
   }
+
+  /// Phone model, Android API level and memory, for usage statistics. Null off Android.
+  static Future<({String model, int sdk, int ramMb})?> deviceInfo() async {
+    try {
+      final m = await _ch.invokeMapMethod<String, Object>('deviceInfo');
+      if (m == null) return null;
+      return (model: '${m['model'] ?? ''}', sdk: (m['sdk'] as num?)?.toInt() ?? 0, ramMb: (m['ramMb'] as num?)?.toInt() ?? 0);
+    } catch (_) {
+      return null;
+    }
+  }
 }

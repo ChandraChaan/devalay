@@ -15,6 +15,7 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'api.dart';
 import 'languages.dart';
 import 'notifications.dart';
+import 'push.dart';
 import 'storage.dart';
 import 'usage.dart';
 
@@ -50,7 +51,7 @@ class FirebaseServices {
     // the background; in the foreground Android shows nothing, so mirror them locally.
     FirebaseMessaging.onMessage.listen((m) {
       final n = m.notification;
-      if (n != null) Notifications.announce(n.title ?? 'Devalay', n.body ?? '');
+      if (n != null) Notifications.announce(n.title ?? 'Devalay', n.body ?? '', payload: pushPayload(m.data));
     });
   }
 

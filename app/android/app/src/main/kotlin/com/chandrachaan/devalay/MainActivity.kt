@@ -69,9 +69,19 @@ class MainActivity : AudioServiceActivity() {
                     null
                 }
                 "approxLocation" -> approxLocation(result)
+                "deviceInfo" -> result.success(deviceInfo())
                 else -> result.notImplemented()
             }
         }
+    }
+
+    // For the owner's usage statistics: which phones Devalay runs on (no identifiers).
+    private fun deviceInfo(): Map<String, Any> {
+        val memory = android.app.ActivityManager.MemoryInfo()
+        (getSystemService(Context.ACTIVITY_SERVICE) as android.app.ActivityManager).getMemoryInfo(memory)
+        val maker = Build.MANUFACTURER.replaceFirstChar { it.uppercase() }
+        val model = if (Build.MODEL.startsWith(Build.MANUFACTURER, ignoreCase = true)) Build.MODEL else "$maker ${Build.MODEL}"
+        return mapOf("model" to model.take(40), "sdk" to Build.VERSION.SDK_INT, "ramMb" to (memory.totalMem / 1048576L).toInt())
     }
 
     // "Use my location": coarse, foreground-only, asked for when the user taps it. The position is
