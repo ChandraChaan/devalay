@@ -337,11 +337,6 @@ class _LiveTab extends StatefulWidget {
 
 class _LiveTabState extends State<_LiveTab> with AutomaticKeepAliveClientMixin {
   late final Stream<DatabaseEvent> _presence = Usage.rtdb.ref('status').orderByChild('t').limitToLast(200).onValue;
-  late final Stream<QuerySnapshot<Map<String, dynamic>>> _events = FirebaseFirestore.instance
-      .collection('events')
-      .orderBy('at', descending: true)
-      .limit(40)
-      .snapshots();
   Timer? _tick;
 
   @override
@@ -391,20 +386,43 @@ class _LiveTabState extends State<_LiveTab> with AutomaticKeepAliveClientMixin {
             if (snap.hasData && online.isEmpty) const _Empty('Nobody has the app open right now.'),
             for (final p in online) _PresenceTile(p),
             const _Section('Live activity'),
-            StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
-              stream: _events,
-              builder: (context, ev) {
-                if (ev.hasError) return _Problem('${ev.error}');
-                if (!ev.hasData) return const LinearProgressIndicator();
-                final items = _flatten(ev.data!.docs).take(80).toList();
-                if (items.isEmpty) return const _Empty('No activity yet.');
-                return Column(children: [for (final a in items) _ActivityTile(a, showUser: true)]);
-              },
-            ),
+            const _LiveActivity(key: ValueKey('live-activity')),
             const _Section('Recently seen'),
             for (final p in people.where((p) => !p.online).take(30)) _PresenceTile(p),
           ],
         );
+      },
+    );
+  }
+}
+
+/// The newest activity across all installs. It owns its Firestore stream: as a list child it is
+/// rebuilt whenever the list above it changes length (someone comes online), and a stream kept by
+/// the tab would then be listened to a second time ("Stream has already been listened to").
+class _LiveActivity extends StatefulWidget {
+  const _LiveActivity({super.key});
+
+  @override
+  State<_LiveActivity> createState() => _LiveActivityState();
+}
+
+class _LiveActivityState extends State<_LiveActivity> {
+  late final Stream<QuerySnapshot<Map<String, dynamic>>> _events = FirebaseFirestore.instance
+      .collection('events')
+      .orderBy('at', descending: true)
+      .limit(40)
+      .snapshots();
+
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
+      stream: _events,
+      builder: (context, ev) {
+        if (ev.hasError) return _Problem('${ev.error}');
+        if (!ev.hasData) return const LinearProgressIndicator();
+        final items = _flatten(ev.data!.docs).take(80).toList();
+        if (items.isEmpty) return const _Empty('No activity yet.');
+        return Column(children: [for (final a in items) _ActivityTile(a, showUser: true)]);
       },
     );
   }

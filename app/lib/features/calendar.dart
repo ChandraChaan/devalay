@@ -193,6 +193,7 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
   }
 
   void _goToMonth(DateTime m, {bool animate = true}) {
+    if (!_pages.hasClients) return; // after a date picker closes on a screen that has since gone
     final i = _monthIndex(m).clamp(0, _monthCount - 1);
     if (animate && (i - (_pages.page ?? i)).abs() <= 2) {
       _pages.animateToPage(i, duration: const Duration(milliseconds: 350), curve: Curves.easeOutCubic);
@@ -214,7 +215,7 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
       lastDate: _lastDay,
       initialDatePickerMode: DatePickerMode.year,
     );
-    if (picked == null) return;
+    if (picked == null || !mounted) return;
     setState(() => _selected = picked);
     _goToMonth(DateTime(picked.year, picked.month), animate: false);
   }
@@ -1274,7 +1275,7 @@ class _CalendarDayScreenState extends ConsumerState<CalendarDayScreen> {
                 firstDate: _firstDay,
                 lastDate: _lastDay,
               );
-              if (picked != null) _pages.jumpToPage(_dayIndex(picked));
+              if (picked != null && _pages.hasClients) _pages.jumpToPage(_dayIndex(picked));
             },
             icon: const Icon(Icons.edit_calendar_rounded),
           ),

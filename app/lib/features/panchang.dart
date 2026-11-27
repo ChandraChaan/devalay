@@ -59,7 +59,7 @@ class _PanchangScreenState extends ConsumerState<PanchangScreen> {
                 firstDate: DateTime(1950),
                 lastDate: DateTime(2049, 12, 31),
               );
-              if (picked != null) setState(() => _day = picked);
+              if (picked != null && mounted) setState(() => _day = picked);
             },
             icon: const Icon(Icons.calendar_month_rounded),
           ),

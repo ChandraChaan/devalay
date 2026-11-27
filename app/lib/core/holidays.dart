@@ -1,11 +1,9 @@
-import 'dart:convert';
-
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../l10n/l10n.dart';
 import 'api.dart';
 import 'i18n.dart';
+import 'json_asset.dart';
 import 'location.dart';
 import 'storage.dart';
 
@@ -94,8 +92,7 @@ class HolidayCatalog {
   ];
 }
 
-Future<HolidayCatalog> loadBundledHolidays() async =>
-    HolidayCatalog(jsonDecode(await rootBundle.loadString('assets/data/holidays.json')) as Map);
+Future<HolidayCatalog> loadBundledHolidays() async => HolidayCatalog(await loadJsonAsset('assets/data/holidays.json'));
 
 /// The bundled lists at once, then the published ones if they are newer.
 final holidayCatalogProvider = StreamProvider<HolidayCatalog>((ref) async* {

@@ -75,7 +75,17 @@ class Notifications {
     importance: Importance.high,
   );
 
-  static Future<void> init() async {
+  static Future<void>? _ready;
+
+  /// Loads the time-zone database and sets up the plugin, once. main() starts it after the first
+  /// frame rather than before it: parsing every zone's rules on the main thread delayed the first
+  /// screen. Every method here waits for it, so nothing can schedule against an unset zone.
+  static Future<void> init() => _ready ??= _init().catchError((Object e, StackTrace stack) {
+    _ready = null; // let the next call try again
+    Error.throwWithStackTrace(e, stack);
+  });
+
+  static Future<void> _init() async {
     tzdata.initializeTimeZones();
     try {
       tz.setLocalLocation(tz.getLocation((await FlutterTimezone.getLocalTimezone()).identifier));
@@ -87,12 +97,15 @@ class Notifications {
     );
   }
 
-  static Future<void> announce(String title, String body) => _plugin.show(
-    id: DateTime.now().millisecondsSinceEpoch ~/ 1000 % 100000 + 2000,
-    title: title,
-    body: body,
-    notificationDetails: const NotificationDetails(android: _announcement),
-  );
+  static Future<void> announce(String title, String body) async {
+    await init();
+    await _plugin.show(
+      id: DateTime.now().millisecondsSinceEpoch ~/ 1000 % 100000 + 2000,
+      title: title,
+      body: body,
+      notificationDetails: const NotificationDetails(android: _announcement),
+    );
+  }
 
   static Future<bool>? _permissionRequest;
 
@@ -102,6 +115,7 @@ class Notifications {
       _permissionRequest ??= _requestPermission().whenComplete(() => _permissionRequest = null);
 
   static Future<bool> _requestPermission() async {
+    await init();
     final android = _plugin.resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>();
     if (android == null) return true;
     try {
@@ -124,6 +138,7 @@ class Notifications {
   /// One reminder per weekday at the chosen time, naming that day's deity
   /// ("Monday: Shiva's songs"); Telugu homes keep Saturday for Venkateswara.
   static Future<void> scheduleDaily(int hour, int minute, {required String lang}) async {
+    await init();
     await cancelDaily();
     final now = tz.TZDateTime.now(tz.local);
     for (var wd = 0; wd < 7; wd++) {
@@ -192,12 +207,14 @@ class Notifications {
   }
 
   static Future<void> cancelDaily() async {
+    await init();
     for (var wd = 0; wd < 7; wd++) {
       await _plugin.cancel(id: _dailyId + wd);
     }
   }
 
   static Future<void> scheduleFestivals(List<Festival> festivals, {required String lang}) async {
+    await init();
     await cancelFestivals();
     final now = DateTime.now();
     final upcoming = festivals.where((f) => f.major && f.date.isAfter(now.subtract(const Duration(days: 1)))).take(30);
@@ -219,6 +236,7 @@ class Notifications {
   }
 
   static Future<void> cancelFestivals() async {
+    await init();
     for (var i = 0; i < 30; i++) {
       await _plugin.cancel(id: _festivalBase + i);
     }
@@ -231,6 +249,7 @@ class Notifications {
     required int hour,
     required int minute,
   }) async {
+    await init();
     final ledger = _Ledger('notif_panchang');
     if (!ledger.exists) await _cancelLegacyPanchang();
     final now = tz.TZDateTime.now(tz.local);
@@ -257,6 +276,7 @@ class Notifications {
   }
 
   static Future<void> cancelPanchang() async {
+    await init();
     final ledger = _Ledger('notif_panchang');
     if (!ledger.exists) await _cancelLegacyPanchang();
     for (final id in ledger.futureIdsExcept(const {}, tz.TZDateTime.now(tz.local))) {
@@ -281,6 +301,7 @@ class Notifications {
     required (String, String) eve,
     required (String, String) morning,
   }) async {
+    await init();
     final ledger = _Ledger('notif_events');
     final now = tz.TZDateTime.now(tz.local);
     final slots = [(_next(19, 0, on.subtract(const Duration(days: 1))), eve), (_next(7, 0, on), morning)];
@@ -307,6 +328,7 @@ class Notifications {
   }
 
   static Future<void> cancelEvent(String id) async {
+    await init();
     final ledger = _Ledger('notif_events');
     final mine = {_eventId(id), _eventId(id) + 1};
     // Before 1.4 nothing was recorded, so cancel both slots once; after that only what is pending.
@@ -347,6 +369,7 @@ class Notifications {
     required String service,
     required String lang,
   }) async {
+    await init();
     await cancelQuota(key);
     final india = tz.getLocation('Asia/Kolkata');
     final now = tz.TZDateTime.now(india);
@@ -413,6 +436,7 @@ class Notifications {
   }
 
   static Future<void> cancelQuota(String key) async {
+    await init();
     await _plugin.cancel(id: _quotaId(key));
     await _plugin.cancel(id: _quotaId(key) + 1);
   }
