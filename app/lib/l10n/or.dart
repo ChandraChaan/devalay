@@ -1106,6 +1106,8 @@ const stringsOr = <String, String>{
   'Fortune and faith rise: pilgrimage, elders\' blessings and progress.':
       'ଭାଗ୍ୟ ଓ ବିଶ୍ୱାସ ବଢ଼ିବ: ତୀର୍ଥଯାତ୍ରା, ବଡ଼ମାନଙ୍କ ଆଶୀର୍ବାଦ ଓ ଉନ୍ନତି।',
   'From {0} it moves into {1}: {2}': '{0}ରୁ {1} ରାଶିରେ: {2}',
+  'From {0}: {1}': '{0} ରୁ: {1}',
+  'Until {0}: {1}': '{0} ପର୍ଯ୍ୟନ୍ତ: {1}',
   'Gains from many sides. Wishes are fulfilled and friends help.':
       'ଅନେକ ଦିଗରୁ ଲାଭ। ମନସ୍କାମନା ପୂରଣ ହେବ ଓ ବନ୍ଧୁମାନେ ସାହାଯ୍ୟ କରିବେ।',
   'Gains, honour and good news. Wishes come true.': 'ଲାଭ, ସମ୍ମାନ ଓ ଶୁଭ ଖବର। ମନସ୍କାମନା ପୂରଣ ହେବ।',

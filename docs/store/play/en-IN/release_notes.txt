@@ -1,2 +1,3 @@
+• Chandrabalam and Tarabalam now follow the Moon through the day and show when they change.
 • Opens faster and responds sooner, especially on budget phones.
 • Fixed a rare crash when opening My Mandir.

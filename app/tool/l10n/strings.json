@@ -6684,6 +6684,12 @@
   "where": "lib/features/personal_day.dart"
  },
  {
+  "en": "From {0}: {1}",
+  "hi": "{0} से: {1}",
+  "te": "{0} నుండి: {1}",
+  "where": "lib/features/personal_day.dart"
+ },
+ {
   "en": "Is today good for you?",
   "hi": "क्या आज आपके लिए शुभ है?",
   "te": "ఈ రోజు మీకు మంచిదేనా?",
@@ -6705,6 +6711,12 @@
   "en": "Tarabalam",
   "hi": "तारा बल",
   "te": "తారాబలం",
+  "where": "lib/features/personal_day.dart"
+ },
+ {
+  "en": "Until {0}: {1}",
+  "hi": "{0} तक: {1}",
+  "te": "{0} వరకు: {1}",
   "where": "lib/features/personal_day.dart"
  },
  {

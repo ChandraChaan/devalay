@@ -11,10 +11,13 @@ import 'muhurta_view.dart';
 
 /// "Is today good for me?": Tarabalam from the birth star and Chandrabalam from the moon sign.
 class PersonalBalam extends ConsumerWidget {
-  const PersonalBalam({super.key, required this.data});
+  const PersonalBalam({super.key, required this.data, this.now});
 
-  /// The day's panchang (nakshatra list and moon_rashi).
+  /// The day's panchang (nakshatra list and the Moon's signs).
   final Map data;
+
+  /// The clock, for tests.
+  final DateTime? now;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -49,12 +52,50 @@ class PersonalBalam extends ConsumerWidget {
       );
     }
 
-    final stars = (data['nakshatra'] as List?)?.cast<Map>() ?? const <Map>[];
-    final today = stars.isEmpty ? -1 : (stars.first['index'] as int) - 1;
-    final moon = rashiNames.indexOf('${data['moon_rashi']}');
-    if (today < 0) return const SizedBox.shrink();
-    final tara = tarabalam(star, today);
-    final chandra = rashi >= 0 && moon >= 0 ? chandrabalam(rashi, moon) : null;
+    // The nakshatra and the Moon's sign can change during the day. Today shows what is in force
+    // now (a sign read at sunrise was wrong all evening once the Moon had moved on); other days
+    // show sunrise. Either way the card says when the value changes.
+    final stars = daySpans(data['nakshatra']).where((s) => s.index >= 1 && s.index <= 27).toList();
+    if (stars.isEmpty) return const SizedBox.shrink();
+    final moons = moonSignSpans(data);
+    final clockNow = now ?? DateTime.now();
+    final at = '${data['date']}' == _isoDay(clockNow) ? clockNow : null;
+    final starAt = spanAt(stars, at);
+    final moonAt = spanAt(moons, at);
+    final tara = tarabalam(star, stars[starAt].index - 1);
+    final chandra = rashi >= 0 && moons.isNotEmpty ? chandrabalam(rashi, moons[moonAt].index - 1) : null;
+    String house(int h) => '${ordinal(lang, h)} ${t3(lang, 'house', 'भाव', 'స్థానం')}';
+
+    /// "Until 7:15 AM: 1st house (Good)" / "From 5:47 PM: Sampat (Good)" for the day's other spans.
+    List<(String, Quality)> changes(
+      List<DaySpan> spans,
+      int current,
+      ({String text, Quality quality}) Function(DaySpan) describe,
+    ) {
+      final out = <(String, Quality)>[];
+      for (var j = 0; j < spans.length; j++) {
+        final iso = j < current ? spans[j].ends : spans[j].starts;
+        if (j == current || iso == null) continue;
+        final d = describe(spans[j]);
+        final template = j < current
+            ? t3(lang, 'Until {0}: {1}', '{0} तक: {1}', '{0} వరకు: {1}')
+            : t3(lang, 'From {0}: {1}', '{0} से: {1}', '{0} నుండి: {1}');
+        final value = '${d.text} (${qualityLabel(lang, d.quality)})';
+        out.add((template.replaceAll('{0}', clock(wallClock(iso))).replaceAll('{1}', value), d.quality));
+      }
+      return out;
+    }
+
+    final taraChanges = changes(stars, starAt, (s) {
+      final t = tarabalam(star, s.index - 1);
+      return (text: taraLabel(lang, t.key), quality: t.quality);
+    });
+    final chandraChanges = rashi < 0
+        ? const <(String, Quality)>[]
+        : changes(moons, moonAt, (s) {
+            final c = chandrabalam(rashi, s.index - 1);
+            return (text: house(c.house), quality: c.quality);
+          });
 
     Color tone(Quality q) => qualityColor(q, dark: dark, neutral: scheme.outline);
     final good = tara.quality != Quality.bad && (chandra == null || chandra.quality == Quality.good);
@@ -70,26 +111,43 @@ class PersonalBalam extends ConsumerWidget {
             'మిశ్రమ రోజు: పెద్ద పనులు జాగ్రత్తగా',
           );
 
-    Widget row(String term, String label, String value, Quality q) => Padding(
+    Widget row(String term, String label, String value, Quality q, List<(String, Quality)> changes) => Padding(
       padding: const EdgeInsets.symmetric(vertical: 4),
-      child: Row(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          Text(label, style: const TextStyle(fontWeight: FontWeight.w600)),
-          MeaningButton(term, lang: lang),
-          const Spacer(),
-          Text(
-            value,
-            style: TextStyle(fontWeight: FontWeight.w800, color: tone(q)),
+          Row(
+            children: [
+              Text(label, style: const TextStyle(fontWeight: FontWeight.w600)),
+              MeaningButton(term, lang: lang),
+              const Spacer(),
+              Flexible(
+                child: Text(
+                  value,
+                  textAlign: TextAlign.end,
+                  style: TextStyle(fontWeight: FontWeight.w800, color: tone(q)),
+                ),
+              ),
+              const SizedBox(width: 8),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                decoration: BoxDecoration(
+                  color: tone(q).withValues(alpha: 0.14),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Text(
+                  qualityLabel(lang, q),
+                  style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: tone(q)),
+                ),
+              ),
+            ],
           ),
-          const SizedBox(width: 8),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-            decoration: BoxDecoration(color: tone(q).withValues(alpha: 0.14), borderRadius: BorderRadius.circular(10)),
-            child: Text(
-              qualityLabel(lang, q),
-              style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: tone(q)),
+          for (final (text, quality) in changes)
+            Text(
+              text,
+              textAlign: TextAlign.end,
+              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: tone(quality)),
             ),
-          ),
         ],
       ),
     );
@@ -134,13 +192,15 @@ class PersonalBalam extends ConsumerWidget {
                     t3(lang, 'Tarabalam', 'तारा बल', 'తారాబలం'),
                     taraLabel(lang, tara.key),
                     tara.quality,
+                    taraChanges,
                   ),
                   if (chandra != null)
                     row(
                       'chandrabalam',
                       t3(lang, 'Chandrabalam', 'चंद्र बल', 'చంద్రబలం'),
-                      '${ordinal(lang, chandra.house)} ${t3(lang, 'house', 'भाव', 'స్థానం')}',
+                      house(chandra.house),
                       chandra.quality,
+                      chandraChanges,
                     ),
                   const SizedBox(height: 6),
                   Container(
@@ -253,3 +313,5 @@ class _BirthStarSheetState extends ConsumerState<_BirthStarSheet> {
     );
   }
 }
+
+String _isoDay(DateTime d) => '${d.year}-${d.month.toString().padLeft(2, '0')}-${d.day.toString().padLeft(2, '0')}';

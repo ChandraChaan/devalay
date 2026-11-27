@@ -195,3 +195,21 @@ def test_sankranti_moments_match_swiss_ephemeris_2026():
     for sign, want in expected.items():
         w = datetime.strptime(f"2026-{want}", "%Y-%m-%d %H:%M").replace(tzinfo=ist)
         assert abs((got[sign] - w).total_seconds()) <= 120, (sign, got[sign])
+
+
+def test_moon_sign_timeline_changes_mid_day():
+    # 26 Nov 2026, Hyderabad: sunrise 06:27 with the Moon in Vrishabha; it enters Mithuna about 07:15
+    # (in Mrigashira, which straddles the two signs). Chandrabalam read at night must use Mithuna.
+    p = panchang.daily_panchang(Location(17.385, 78.4867, "Asia/Kolkata"), date(2026, 11, 26))
+    signs = p["moon_rashis"]
+    assert p["moon_rashi"] == "Vrishabha"
+    assert [s["name"] for s in signs] == ["Vrishabha", "Mithuna"]
+    assert [s["index"] for s in signs] == [2, 3]
+    assert signs[0]["starts"] is None and signs[-1]["ends"] is None
+    assert signs[0]["ends"] == signs[1]["starts"]
+    assert "2026-11-26T07:05" <= signs[0]["ends"][:16] <= "2026-11-26T07:25"
+
+
+def test_moon_sign_timeline_has_one_entry_on_a_steady_day():
+    p = panchang.daily_panchang(Location(17.385, 78.4867, "Asia/Kolkata"), date(2026, 11, 27))
+    assert [s["name"] for s in p["moon_rashis"]] == ["Mithuna"]

@@ -1186,6 +1186,8 @@ const stringsMr = <String, String>{
   'Fortune and faith rise: pilgrimage, elders\' blessings and progress.':
       'भाग्य आणि श्रद्धा वाढतील: तीर्थयात्रा, वडीलधाऱ्यांचे आशीर्वाद आणि प्रगती.',
   'From {0} it moves into {1}: {2}': '{0} पासून {1} राशीत: {2}',
+  'From {0}: {1}': '{0} पासून: {1}',
+  'Until {0}: {1}': '{0} पर्यंत: {1}',
   'Gains from many sides. Wishes are fulfilled and friends help.':
       'अनेक बाजूंनी लाभ. इच्छा पूर्ण होतील आणि मित्र मदत करतील.',
   'Gains, honour and good news. Wishes come true.': 'लाभ, सन्मान आणि शुभवार्ता. इच्छा पूर्ण होतील.',

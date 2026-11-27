@@ -17,6 +17,12 @@ against a 0.47% bad-behaviour threshold):
   - push topics are renewed when the language changes and once a week, not with 12 calls at every launch
   - cached answers for single days older than a week are cleared, so the cache Hive loads at every start
     stops growing with each day of use
+- Chandrabalam and Tarabalam follow the Moon through the day (from in-app feedback). They were worked out from
+  the Moon's sign and nakshatra at sunrise, so once the Moon moved on, often within hours, the card was wrong for
+  the rest of the day: on 26 Nov the Moon entered Mithuna at 7:11 AM, yet Vrishabha rashi still read "1st house"
+  that night. Today's card now counts from where the Moon is now, and every day says when a value changes
+  ("Until 7:15 AM: 1st house (Good)"). The Panchang data gains a `moon_rashis` timeline; data without it still
+  shows the sunrise value.
 - Mandir no longer crashes when it opens on your ishta devata before its shrine carousel is laid out
   (Crashlytics db0eff88).
 - The admin screen's live activity feed no longer crashes with "Stream has already been listened to" when someone
