@@ -50,14 +50,17 @@ Future<void> shareApp(String lang) {
 
 /// Shares [text] (and [files]) through the system share sheet; a completed share counts as a
 /// happy moment for [markShared].
-Future<void> shareContent(String text, {List<XFile>? files}) async {
+///
+/// [what] names the thing shared ("status", "wish", "song") in the usage log.
+Future<void> shareContent(String text, {List<XFile>? files, String? what}) async {
+  if (what != null) Usage.record('share_open', item: what);
   final result = await SharePlus.instance.share(ShareParams(text: text, files: files));
-  if (result.status == ShareResultStatus.success) markShared();
+  if (result.status == ShareResultStatus.success) markShared(what);
 }
 
 /// Remembers that the user shared something; a share is a good moment for the review card.
-void markShared() {
-  Usage.record('share');
+void markShared([String? what]) {
+  Usage.record('share', item: what);
   Boxes.stats.put('shares', (Boxes.stats.get('shares', defaultValue: 0) as int) + 1);
   Future.delayed(const Duration(seconds: 2), () => maybeAskForReview(happy: true));
 }

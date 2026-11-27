@@ -1336,4 +1336,26 @@ const stringsTa = <String, String>{
       'Devalay: உங்கள் மொழியில் பஞ்சாங்கம், பண்டிகை நாட்காட்டி, ஆரத்தி, பக்தி.',
   'Send Devalay to your family WhatsApp group, so everyone has the day\'s Panchang and festival dates.':
       'Devalay-ஐ குடும்ப WhatsApp குழுவுக்கு அனுப்புங்கள்; அனைவருக்கும் அன்றைய பஞ்சாங்கமும் பண்டிகை நாட்களும் தெரியும்.',
+  // Listen page rows and mantra chanting (1.5.8).
+  'Mantra chant': 'மந்திர ஜபம்',
+  'About {0} min': 'சுமார் {0} நிமிடம்',
+  'Chant again': 'மீண்டும் ஜபிக்கவும்',
+  'Chant with the mantra': 'மந்திரத்துடன் ஜபியுங்கள்',
+  'Choose a mantra': 'மந்திரத்தைத் தேர்ந்தெடுக்கவும்',
+  'Choose another mantra': 'வேறு மந்திரத்தைத் தேர்ந்தெடுக்கவும்',
+  'Getting the mantra ready…': 'மந்திரம் தயாராகிறது…',
+  'How many times?': 'எத்தனை முறை?',
+  'Keep the phone aside and chant along': 'போனை ஒதுக்கி வைத்து உடன் ஜபியுங்கள்',
+  'Pause': 'இடைநிறுத்து',
+  'Resume': 'தொடரவும்',
+  'Start chanting': 'ஜபம் தொடங்கு',
+  'Stop': 'நிறுத்து',
+  'You have chanted {0} times with Devalay 🙏': 'Devalay-உடன் {0} முறை ஜபித்துள்ளீர்கள் 🙏',
+  '{0} times complete': '{0} முறை நிறைவு',
+  'Most played': 'அதிகம் கேட்கப்பட்டவை',
+  'Continue listening': 'தொடர்ந்து கேளுங்கள்',
+  'Gayatri, Om Namah Shivaya and more: 11, 21 or 108 times, with a counter':
+      'காயத்ரி, ஓம் நமசிவாய மற்றும் பல: 11, 21 அல்லது 108 முறை, எண்ணிக்கையுடன்',
+  'Set ringtone': 'ரிங்டோனாக அமை',
+  'Telugu keerthanalu': 'தெலுங்கு கீர்த்தனைகள்',
 };

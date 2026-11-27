@@ -12,6 +12,7 @@ import 'telugu.dart';
 const _strings = <String, Map<String, String>>{
   'home': {'en': 'Home', 'hi': 'होम', 'te': 'హోమ్'},
   'listen': {'en': 'Listen', 'hi': 'सुनें', 'te': 'వినండి'},
+  'chant': {'en': 'Mantra chant', 'hi': 'मंत्र जाप', 'te': 'మంత్ర జపం'},
   'mandir': {'en': 'Mandir', 'hi': 'मंदिर', 'te': 'మందిరం'},
   'read': {'en': 'Read', 'hi': 'पढ़ें', 'te': 'చదవండి'},
   'more': {'en': 'More', 'hi': 'और', 'te': 'మరిన్ని'},

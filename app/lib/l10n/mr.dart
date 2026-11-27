@@ -1399,4 +1399,26 @@ const stringsMr = <String, String>{
       'देवालय: तुमच्या भाषेत पंचांग, सणांचे कॅलेंडर, आरत्या आणि भक्ती.',
   'Send Devalay to your family WhatsApp group, so everyone has the day\'s Panchang and festival dates.':
       'देवालय कुटुंबाच्या WhatsApp ग्रुपवर पाठवा, म्हणजे सर्वांकडे आजचे पंचांग आणि सणांच्या तारखा असतील.',
+  // Listen page rows and mantra chanting (1.5.8).
+  'Mantra chant': 'मंत्र जप',
+  'About {0} min': 'सुमारे {0} मिनिटे',
+  'Chant again': 'पुन्हा जप करा',
+  'Chant with the mantra': 'मंत्रासोबत जप करा',
+  'Choose a mantra': 'मंत्र निवडा',
+  'Choose another mantra': 'दुसरा मंत्र निवडा',
+  'Getting the mantra ready…': 'मंत्र तयार होत आहे…',
+  'How many times?': 'किती वेळा?',
+  'Keep the phone aside and chant along': 'फोन बाजूला ठेवा आणि सोबत जप करा',
+  'Pause': 'थांबवा',
+  'Resume': 'पुन्हा सुरू करा',
+  'Start chanting': 'जप सुरू करा',
+  'Stop': 'बंद करा',
+  'You have chanted {0} times with Devalay 🙏': 'तुम्ही देवालयसोबत {0} वेळा जप केला 🙏',
+  '{0} times complete': '{0} वेळा पूर्ण',
+  'Most played': 'सर्वाधिक ऐकलेले',
+  'Continue listening': 'ऐकणे सुरू ठेवा',
+  'Gayatri, Om Namah Shivaya and more: 11, 21 or 108 times, with a counter':
+      'गायत्री, ॐ नमः शिवाय आणि इतर: ११, २१ किंवा १०८ वेळा, मोजणीसह',
+  'Set ringtone': 'रिंगटोन लावा',
+  'Telugu keerthanalu': 'तेलुगू कीर्तने',
 };

@@ -49,6 +49,19 @@ class MiniPlayer extends ConsumerWidget {
                           style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
                         ),
                       ),
+                      // The japa count while a chant runs, so it shows on every screen.
+                      ValueListenableBuilder(
+                        valueListenable: audio.chant,
+                        builder: (_, c, _) => c == null || c.preparing
+                            ? const SizedBox.shrink()
+                            : Padding(
+                                padding: const EdgeInsets.only(left: 6),
+                                child: Text(
+                                  '📿 ${c.done}/${c.target}',
+                                  style: const TextStyle(color: Palette.gold, fontWeight: FontWeight.w800),
+                                ),
+                              ),
+                      ),
                       IconButton(
                         onPressed: audio.toggle,
                         icon: Icon(

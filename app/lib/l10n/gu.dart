@@ -1316,4 +1316,26 @@ const stringsGu = <String, String>{
       'દેવાલય: તમારી ભાષામાં પંચાંગ, તહેવારોનું કેલેન્ડર, આરતી અને ભક્તિ.',
   'Send Devalay to your family WhatsApp group, so everyone has the day\'s Panchang and festival dates.':
       'દેવાલય કુટુંબના WhatsApp ગ્રુપમાં મોકલો, જેથી બધાને આજનું પંચાંગ અને તહેવારોની તારીખો મળે.',
+  // Listen page rows and mantra chanting (1.5.8).
+  'Mantra chant': 'મંત્ર જાપ',
+  'About {0} min': 'લગભગ {0} મિનિટ',
+  'Chant again': 'ફરી જાપ કરો',
+  'Chant with the mantra': 'મંત્ર સાથે જાપ કરો',
+  'Choose a mantra': 'મંત્ર પસંદ કરો',
+  'Choose another mantra': 'બીજો મંત્ર પસંદ કરો',
+  'Getting the mantra ready…': 'મંત્ર તૈયાર થઈ રહ્યો છે…',
+  'How many times?': 'કેટલી વાર?',
+  'Keep the phone aside and chant along': 'ફોન બાજુમાં મૂકો અને સાથે જાપ કરો',
+  'Pause': 'થોભો',
+  'Resume': 'ફરી શરૂ કરો',
+  'Start chanting': 'જાપ શરૂ કરો',
+  'Stop': 'બંધ કરો',
+  'You have chanted {0} times with Devalay 🙏': 'તમે દેવાલય સાથે {0} વાર જાપ કર્યો 🙏',
+  '{0} times complete': '{0} વાર પૂર્ણ',
+  'Most played': 'સૌથી વધુ સાંભળેલા',
+  'Continue listening': 'સાંભળવાનું ચાલુ રાખો',
+  'Gayatri, Om Namah Shivaya and more: 11, 21 or 108 times, with a counter':
+      'ગાયત્રી, ૐ નમઃ શિવાય અને વધુ: 11, 21 કે 108 વાર, ગણતરી સાથે',
+  'Set ringtone': 'રિંગટોન સેટ કરો',
+  'Telugu keerthanalu': 'તેલુગુ કીર્તન',
 };

@@ -2496,6 +2496,12 @@
   "where": "i18n"
  },
  {
+  "en": "Mantra chant",
+  "hi": "मंत्र जाप",
+  "te": "మంత్ర జపం",
+  "where": "i18n"
+ },
+ {
   "en": "Marriage matching",
   "hi": "विवाह मिलान",
   "te": "వివాహ పొంతన",
@@ -4884,6 +4890,96 @@
   "where": "lib/features/calendar_settings.dart"
  },
  {
+  "en": "About {0} min",
+  "hi": "लगभग {0} मिनट",
+  "te": "సుమారు {0} నిమిషాలు",
+  "where": "lib/features/chant.dart"
+ },
+ {
+  "en": "Chant again",
+  "hi": "फिर से जाप करें",
+  "te": "మళ్ళీ జపించండి",
+  "where": "lib/features/chant.dart"
+ },
+ {
+  "en": "Chant with the mantra",
+  "hi": "मंत्र के साथ जाप करें",
+  "te": "మంత్రంతో జపం చేయండి",
+  "where": "lib/features/chant.dart"
+ },
+ {
+  "en": "Choose a mantra",
+  "hi": "मंत्र चुनें",
+  "te": "మంత్రం ఎంచుకోండి",
+  "where": "lib/features/chant.dart"
+ },
+ {
+  "en": "Choose another mantra",
+  "hi": "दूसरा मंत्र चुनें",
+  "te": "మరో మంత్రం ఎంచుకోండి",
+  "where": "lib/features/chant.dart"
+ },
+ {
+  "en": "Getting the mantra ready…",
+  "hi": "मंत्र तैयार हो रहा है…",
+  "te": "మంత్రం సిద్ధమవుతోంది…",
+  "where": "lib/features/chant.dart"
+ },
+ {
+  "en": "How many times?",
+  "hi": "कितनी बार?",
+  "te": "ఎన్ని సార్లు?",
+  "where": "lib/features/chant.dart"
+ },
+ {
+  "en": "Keep the phone aside and chant along",
+  "hi": "फ़ोन रख दें और साथ में जाप करें",
+  "te": "ఫోన్ పక్కన పెట్టి కలిసి జపించండి",
+  "where": "lib/features/chant.dart"
+ },
+ {
+  "en": "Nothing here yet",
+  "hi": "अभी यहाँ कुछ नहीं",
+  "te": "ఇక్కడ ఇంకా ఏమీ లేదు",
+  "where": "lib/features/chant.dart"
+ },
+ {
+  "en": "Pause",
+  "hi": "रोकें",
+  "te": "ఆపు",
+  "where": "lib/features/chant.dart"
+ },
+ {
+  "en": "Resume",
+  "hi": "जारी रखें",
+  "te": "కొనసాగించు",
+  "where": "lib/features/chant.dart"
+ },
+ {
+  "en": "Start chanting",
+  "hi": "जाप शुरू करें",
+  "te": "జపం ప్రారంభించండి",
+  "where": "lib/features/chant.dart"
+ },
+ {
+  "en": "Stop",
+  "hi": "बंद करें",
+  "te": "ఆపివేయండి",
+  "where": "lib/features/chant.dart"
+ },
+ {
+  "en": "You have chanted {0} times with Devalay 🙏",
+  "hi": "आपने Devalay के साथ {0} बार जाप किया 🙏",
+  "te": "మీరు Devalay తో {0} సార్లు జపించారు 🙏",
+  "where": "lib/features/chant.dart"
+ },
+ {
+  "en": "{0} times complete",
+  "hi": "{0} बार पूरा हुआ",
+  "te": "{0} సార్లు పూర్తయింది",
+  "where": "lib/features/chant.dart"
+ },
+ {
   "en": "Credits & licences",
   "hi": "श्रेय और लाइसेंस",
   "te": "క్రెడిట్స్ & లైసెన్సులు",
@@ -5172,15 +5268,9 @@
   "where": "lib/features/home.dart"
  },
  {
-  "en": "Play all",
-  "hi": "सब चलाएँ",
-  "te": "అన్నీ ప్లే",
-  "where": "lib/features/home.dart"
- },
- {
-  "en": "{0} · {1} songs",
-  "hi": "{0} · {1} के भजन",
-  "te": "{0} · {1} పాటలు",
+  "en": "Most played",
+  "hi": "सबसे ज़्यादा सुने गए",
+  "te": "ఎక్కువ మంది వింటున్నవి",
   "where": "lib/features/home.dart"
  },
  {
@@ -5592,15 +5682,33 @@
   "where": "lib/features/library.dart"
  },
  {
+  "en": "Continue listening",
+  "hi": "सुनना जारी रखें",
+  "te": "వినడం కొనసాగించండి",
+  "where": "lib/features/listen.dart"
+ },
+ {
+  "en": "Gayatri, Om Namah Shivaya and more: 11, 21 or 108 times, with a counter",
+  "hi": "गायत्री, ॐ नमः शिवाय और अन्य: 11, 21 या 108 बार, गिनती के साथ",
+  "te": "గాయత్రి, ఓం నమః శివాయ మొదలైనవి: 11, 21 లేదా 108 సార్లు, లెక్కతో",
+  "where": "lib/features/listen.dart"
+ },
+ {
   "en": "More recordings are added as licensed content becomes available.",
   "hi": "लाइसेंस वाली सामग्री मिलते ही और रिकॉर्डिंग जोड़ी जाएँगी।",
   "te": "లైసెన్స్ ఉన్న కంటెంట్ దొరికినప్పుడల్లా మరిన్ని రికార్డింగ్‌లు జోడిస్తాం.",
   "where": "lib/features/listen.dart"
  },
  {
-  "en": "Nothing here yet",
-  "hi": "अभी यहाँ कुछ नहीं",
-  "te": "ఇక్కడ ఇంకా ఏమీ లేదు",
+  "en": "Set ringtone",
+  "hi": "रिंगटोन लगाएँ",
+  "te": "రింగ్‌టోన్ పెట్టండి",
+  "where": "lib/features/listen.dart"
+ },
+ {
+  "en": "Telugu keerthanalu",
+  "hi": "तेलुगु कीर्तन",
+  "te": "తెలుగు కీర్తనలు",
   "where": "lib/features/listen.dart"
  },
  {
@@ -8116,6 +8224,18 @@
   "hi": "देवालय को परिवार के WhatsApp ग्रुप में भेजें, ताकि सबके पास आज का पंचांग और त्योहार की तिथियाँ रहें।",
   "te": "దేవాలయం యాప్‌ను కుటుంబ WhatsApp గ్రూప్‌కు పంపండి, అందరికీ నేటి పంచాంగం, పండుగ తేదీలు తెలుస్తాయి.",
   "where": "lib/widgets/share_app_card.dart"
+ },
+ {
+  "en": "Play all",
+  "hi": "सब चलाएँ",
+  "te": "అన్నీ ప్లే",
+  "where": "lib/widgets/track_strip.dart"
+ },
+ {
+  "en": "{0} · {1} songs",
+  "hi": "{0} · {1} के भजन",
+  "te": "{0} · {1} పాటలు",
+  "where": "lib/widgets/track_strip.dart"
  },
  {
   "en": "Ashadha",

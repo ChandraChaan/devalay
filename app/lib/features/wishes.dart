@@ -433,7 +433,11 @@ class _WishEditorScreenState extends ConsumerState<WishEditorScreen> {
     try {
       final file = await _render();
       if (file != null) {
-        await shareContent(shareFooter('wish'), files: [XFile(file.path, mimeType: 'image/png')]);
+        await shareContent(
+          shareFooter('wish'),
+          files: [XFile(file.path, mimeType: 'image/png')],
+          what: 'wish',
+        );
       }
     } catch (e) {
       if (mounted) toast(context, t3(appLang, 'Could not share: $e', 'शेयर नहीं हो सका: $e', 'షేర్ కాలేదు: $e'));

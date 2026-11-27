@@ -11,6 +11,7 @@ import '../core/models.dart';
 import '../core/native.dart';
 import '../core/providers.dart';
 import '../core/theme.dart';
+import '../core/usage.dart';
 import '../widgets/common.dart';
 
 class RingtonesScreen extends ConsumerWidget {
@@ -142,6 +143,7 @@ class RingtonesScreen extends ConsumerWidget {
       final path = '${dir.path}/${t.slug}.m4a';
       if (!await File(path).exists()) await Dio().download(t.audioUrl, path);
       await NativeBridge.setRingtone(path, 'Devalay - ${t.title}', type);
+      Usage.record('ringtone_set', item: '${t.id}:$type');
       if (context.mounted) toast(context, '${t.title} set as $type 🙏');
     } catch (e) {
       if (context.mounted) {

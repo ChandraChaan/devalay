@@ -1321,4 +1321,26 @@ const stringsPa = <String, String>{
       'ਦੇਵਾਲਯ: ਤੁਹਾਡੀ ਭਾਸ਼ਾ ਵਿੱਚ ਪੰਚਾਂਗ, ਤਿਉਹਾਰਾਂ ਦਾ ਕੈਲੰਡਰ, ਆਰਤੀਆਂ ਤੇ ਭਗਤੀ।',
   'Send Devalay to your family WhatsApp group, so everyone has the day\'s Panchang and festival dates.':
       'ਦੇਵਾਲਯ ਪਰਿਵਾਰ ਦੇ WhatsApp ਗਰੁੱਪ ਵਿੱਚ ਭੇਜੋ, ਤਾਂ ਜੋ ਸਭ ਕੋਲ ਅੱਜ ਦਾ ਪੰਚਾਂਗ ਤੇ ਤਿਉਹਾਰਾਂ ਦੀਆਂ ਤਾਰੀਖਾਂ ਹੋਣ।',
+  // Listen page rows and mantra chanting (1.5.8).
+  'Mantra chant': 'ਮੰਤਰ ਜਾਪ',
+  'About {0} min': 'ਲਗਭਗ {0} ਮਿੰਟ',
+  'Chant again': 'ਫਿਰ ਜਾਪ ਕਰੋ',
+  'Chant with the mantra': 'ਮੰਤਰ ਨਾਲ ਜਾਪ ਕਰੋ',
+  'Choose a mantra': 'ਮੰਤਰ ਚੁਣੋ',
+  'Choose another mantra': 'ਹੋਰ ਮੰਤਰ ਚੁਣੋ',
+  'Getting the mantra ready…': 'ਮੰਤਰ ਤਿਆਰ ਹੋ ਰਿਹਾ ਹੈ…',
+  'How many times?': 'ਕਿੰਨੀ ਵਾਰ?',
+  'Keep the phone aside and chant along': 'ਫ਼ੋਨ ਪਾਸੇ ਰੱਖੋ ਤੇ ਨਾਲ ਜਾਪ ਕਰੋ',
+  'Pause': 'ਰੋਕੋ',
+  'Resume': 'ਜਾਰੀ ਰੱਖੋ',
+  'Start chanting': 'ਜਾਪ ਸ਼ੁਰੂ ਕਰੋ',
+  'Stop': 'ਬੰਦ ਕਰੋ',
+  'You have chanted {0} times with Devalay 🙏': 'ਤੁਸੀਂ ਦੇਵਾਲਯ ਨਾਲ {0} ਵਾਰ ਜਾਪ ਕੀਤਾ 🙏',
+  '{0} times complete': '{0} ਵਾਰ ਪੂਰਾ',
+  'Most played': 'ਸਭ ਤੋਂ ਵੱਧ ਸੁਣੇ ਗਏ',
+  'Continue listening': 'ਸੁਣਨਾ ਜਾਰੀ ਰੱਖੋ',
+  'Gayatri, Om Namah Shivaya and more: 11, 21 or 108 times, with a counter':
+      'ਗਾਇਤ੍ਰੀ, ਓਮ ਨਮਃ ਸ਼ਿਵਾਯ ਅਤੇ ਹੋਰ: 11, 21 ਜਾਂ 108 ਵਾਰ, ਗਿਣਤੀ ਨਾਲ',
+  'Set ringtone': 'ਰਿੰਗਟੋਨ ਲਗਾਓ',
+  'Telugu keerthanalu': 'ਤੇਲਗੂ ਕੀਰਤਨ',
 };

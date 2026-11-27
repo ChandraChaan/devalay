@@ -56,7 +56,8 @@ class PlayerScreen extends ConsumerWidget {
                     const Spacer(),
                     _SleepButton(audio: audio),
                     IconButton(
-                      onPressed: () => shareContent('🙏 ${track.title} — listen on Devalay\n${playLink('song')}'),
+                      onPressed: () =>
+                          shareContent('🙏 ${track.title} — listen on Devalay\n${playLink('song')}', what: 'song'),
                       icon: const Icon(Icons.share_rounded, color: Colors.white),
                     ),
                   ],

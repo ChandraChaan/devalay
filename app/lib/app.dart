@@ -24,6 +24,7 @@ import 'features/home.dart';
 import 'features/important_days.dart';
 import 'features/japa.dart';
 import 'features/library.dart';
+import 'features/chant.dart';
 import 'features/listen.dart';
 import 'features/mandir.dart';
 import 'features/matching.dart';
@@ -120,6 +121,11 @@ final routerProvider = Provider<GoRouter>((ref) {
         builder: (_, s) => WallpaperDetailScreen(wallpaper: s.extra! as Wallpaper),
       ),
       GoRoute(path: '/ringtones', builder: (_, _) => const RingtonesScreen()),
+      GoRoute(
+        path: '/songs',
+        builder: (_, s) => ListenBrowseScreen(kind: s.uri.queryParameters['kind']),
+      ),
+      GoRoute(path: '/chant', builder: (_, _) => const ChantScreen()),
       GoRoute(path: '/status', builder: (_, _) => const StatusMakerScreen()),
       GoRoute(path: '/rashifal', builder: (_, _) => const RashifalScreen()),
       GoRoute(path: '/panchang', builder: (_, _) => const PanchangScreen()),

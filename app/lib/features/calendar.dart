@@ -147,7 +147,7 @@ Future<void> shareDay(WidgetRef ref, DateTime day) async {
     ),
     playLink('panchang'),
   ];
-  await shareContent(lines.join('\n'));
+  await shareContent(lines.join('\n'), what: 'day');
 }
 
 /// The wishes card for the day's first festival that has one.
