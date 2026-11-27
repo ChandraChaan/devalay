@@ -35,11 +35,18 @@ enum Accent {
   kumkum('Kumkum', 'कुमकुम', 'కుంకుమ', Color(0xFFB3261E), Color(0xFFFF8A80)),
   tulsi('Tulsi', 'तुलसी', 'తులసి', Color(0xFF2E7D32), Color(0xFF81C784)),
   peacock('Peacock', 'मोरपंखी', 'నెమలి నీలం', Color(0xFF00658F), Color(0xFF7FD0FF)),
-  lotus('Lotus', 'कमल', 'తామర', Color(0xFFAD1457), Color(0xFFFF8BC4));
+  lotus('Lotus', 'कमल', 'తామర', Color(0xFFAD1457), Color(0xFFFF8BC4)),
+  // Premium colours.
+  swarna('Swarna', 'स्वर्ण', 'స్వర్ణ', Color(0xFF9A6B00), Color(0xFFFFD54F), premium: true),
+  neelakantha('Neelakantha', 'नीलकंठ', 'నీలకంఠ', Color(0xFF283593), Color(0xFF9FA8DA), premium: true),
+  chandan('Chandan', 'चंदन', 'చందనం', Color(0xFF795548), Color(0xFFD7B899), premium: true);
 
-  const Accent(this.en, this.hi, this.te, this.light, this.dark);
+  const Accent(this.en, this.hi, this.te, this.light, this.dark, {this.premium = false});
   final String en, hi, te;
   final Color light, dark;
+
+  /// Comes with Premium; without it the app shows saffron.
+  final bool premium;
 
   static Accent byName(String? name) => Accent.values.where((a) => a.name == name).firstOrNull ?? Accent.saffron;
 }

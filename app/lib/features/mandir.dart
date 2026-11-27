@@ -1,18 +1,24 @@
+import 'dart:async';
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
+import '../core/billing.dart';
 import '../core/i18n.dart';
 import '../core/models.dart';
+import '../core/perks.dart';
 import '../core/providers.dart';
 import '../core/sfx.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
+import '../core/usage.dart';
 import '../widgets/common.dart';
 import '../widgets/mandala.dart';
+import 'support.dart';
 
 /// Virtual Mandir: light a diya, offer flowers, ring the bell, blow the shankh
 /// and perform aarti. Works fully offline once deity images are cached.
@@ -33,11 +39,24 @@ class _MandirScreenState extends ConsumerState<MandirScreen> with TickerProvider
   int _index = 0;
   List<_Petal> _petals = const [];
   int _streak = 0;
+  MandirDecor _decorChoice = Perks.decor;
+
+  /// After an aarti the dakshina button glows for a few seconds, then quietly settles.
+  bool _dakshinaHint = false;
+  Timer? _hintTimer;
+
+  /// The one gentle "support Devalay" card after a week of daily darshan.
+  bool _showSupportPrompt = false;
 
   @override
   void initState() {
     super.initState();
     _streak = _recordVisit();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted || !SupportPrompt.due(streak: _streak, premium: ref.read(premiumProvider))) return;
+      SupportPrompt.shown();
+      setState(() => _showSupportPrompt = true);
+    });
     final ishta = ref.read(prefsProvider).ishtaDevta;
     ref.read(deitiesProvider.future).then((all) {
       final list = _shrineDeities(all);
@@ -77,6 +96,7 @@ class _MandirScreenState extends ConsumerState<MandirScreen> with TickerProvider
 
   @override
   void dispose() {
+    _hintTimer?.cancel();
     for (final c in [_flame, _bell, _flowers, _aarti, _shankh]) {
       c.dispose();
     }
@@ -121,13 +141,57 @@ class _MandirScreenState extends ConsumerState<MandirScreen> with TickerProvider
     await _aarti.repeat(count: 3);
     await Sfx.stop('ghanti');
     _ringBell();
-    if (mounted) setState(() {});
+    if (!mounted) return;
+    setState(() => _dakshinaHint = true);
+    _hintTimer?.cancel();
+    _hintTimer = Timer(const Duration(seconds: 8), () {
+      if (mounted) setState(() => _dakshinaHint = false);
+    });
+  }
+
+  void _openDakshina() {
+    HapticFeedback.lightImpact();
+    setState(() => _dakshinaHint = false);
+    showDakshinaSheet(context);
+  }
+
+  Future<void> _openDecor(bool premium) async {
+    HapticFeedback.lightImpact();
+    final picked = await showModalBottomSheet<MandirDecor>(
+      context: context,
+      showDragHandle: true,
+      backgroundColor: const Color(0xFF24110A),
+      builder: (_) => _DecorSheet(
+        current: unlocked(
+          _decorChoice,
+          isPremiumItem: _decorChoice.premium,
+          premium: premium,
+          free: MandirDecor.classic,
+        ),
+        premium: premium,
+      ),
+    );
+    if (picked == null || !mounted) return;
+    if (picked.premium && !premium) {
+      context.push('/premium?from=mandir_decor');
+      return;
+    }
+    Usage.record('decor_set', item: picked.name);
+    setState(() => _decorChoice = picked);
+    unawaited(Perks.setDecor(picked));
   }
 
   @override
   Widget build(BuildContext context) {
     final deities = ref.watch(deitiesProvider);
     final lang = ref.watch(prefsProvider).language;
+    final premium = ref.watch(premiumProvider);
+    final decor = unlocked(
+      _decorChoice,
+      isPremiumItem: _decorChoice.premium,
+      premium: premium,
+      free: MandirDecor.classic,
+    );
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: lightBars,
       child: Scaffold(
@@ -142,7 +206,9 @@ class _MandirScreenState extends ConsumerState<MandirScreen> with TickerProvider
             final glow = Palette.hex(deity.color);
             return Stack(
               children: [
-                Positioned.fill(child: _TempleBackdrop(glow: glow)),
+                Positioned.fill(
+                  child: _TempleBackdrop(glow: glow, decor: decor),
+                ),
                 SafeArea(
                   child: Column(
                     children: [
@@ -213,12 +279,40 @@ class _MandirScreenState extends ConsumerState<MandirScreen> with TickerProvider
                               right: 24,
                               child: _Bell(controller: _bell, onTap: _ringBell, mirror: true),
                             ),
+                            if (decor.lamps)
+                              Positioned(
+                                bottom: 0,
+                                left: 64,
+                                right: 64,
+                                child: IgnorePointer(
+                                  child: _LampRow(flame: _flame, bowl: decor.bowl),
+                                ),
+                              ),
                             Positioned(
                               bottom: 6,
-                              child: _Diya(lit: _diyaLit, flame: _flame),
+                              child: _Diya(lit: _diyaLit, flame: _flame, bowl: decor.bowl),
+                            ),
+                            Positioned(
+                              bottom: 8,
+                              left: 14,
+                              child: _CornerButton(
+                                emoji: '✨',
+                                label: t3(lang, 'Decorate', 'सजाएँ', 'అలంకరించండి'),
+                                onTap: () => _openDecor(premium),
+                              ),
+                            ),
+                            Positioned(
+                              bottom: 8,
+                              right: 14,
+                              child: _CornerButton(
+                                emoji: '🪙',
+                                label: t3(lang, 'Dakshina', 'दक्षिणा', 'దక్షిణ'),
+                                glow: _dakshinaHint,
+                                onTap: _openDakshina,
+                              ),
                             ),
                             IgnorePointer(
-                              child: _AartiFlame(controller: _aarti, flame: _flame),
+                              child: _AartiFlame(controller: _aarti, flame: _flame, bowl: decor.bowl),
                             ),
                             IgnorePointer(child: _ShankhWaves(controller: _shankh)),
                             Positioned.fill(
@@ -229,6 +323,19 @@ class _MandirScreenState extends ConsumerState<MandirScreen> with TickerProvider
                           ],
                         ),
                       ),
+                      if (_showSupportPrompt)
+                        _SupportPromptCard(
+                          streak: _streak,
+                          onSupport: () {
+                            Usage.record('support_prompt_tap');
+                            setState(() => _showSupportPrompt = false);
+                            context.push('/support?from=prompt');
+                          },
+                          onClose: () {
+                            Usage.record('support_prompt_dismiss');
+                            setState(() => _showSupportPrompt = false);
+                          },
+                        ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(12, 8, 12, 16),
                         child: Row(
@@ -260,8 +367,9 @@ class _MandirScreenState extends ConsumerState<MandirScreen> with TickerProvider
 }
 
 class _TempleBackdrop extends StatelessWidget {
-  const _TempleBackdrop({required this.glow});
+  const _TempleBackdrop({required this.glow, required this.decor});
   final Color glow;
+  final MandirDecor decor;
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
@@ -270,16 +378,19 @@ class _TempleBackdrop extends StatelessWidget {
         gradient: RadialGradient(
           center: const Alignment(0, -0.1),
           radius: 1.1,
-          colors: [glow.withValues(alpha: 0.55), const Color(0xFF2A0F06), const Color(0xFF120603)],
+          colors: [glow.withValues(alpha: 0.55), ...decor.backdrop],
         ),
       ),
-      child: CustomPaint(painter: _ToranPainter()),
+      child: CustomPaint(painter: _ToranPainter(decor)),
     );
   }
 }
 
 /// Marigold garland (toran) and temple arch outline.
 class _ToranPainter extends CustomPainter {
+  _ToranPainter(this.decor);
+  final MandirDecor decor;
+
   @override
   void paint(Canvas canvas, Size size) {
     // Sits just below the header row (title and streak).
@@ -294,7 +405,7 @@ class _ToranPainter extends CustomPainter {
       ..quadraticBezierTo(size.width * 0.5, top - 40, size.width * 0.92, top + 60)
       ..lineTo(size.width * 0.92, size.height * 0.8);
     canvas.drawPath(path, arch);
-    final colors = [const Color(0xFFFF9800), const Color(0xFFFFC107), const Color(0xFFE65100)];
+    final colors = decor.flowers;
     for (var swag = 0; swag < 4; swag++) {
       final x0 = size.width * swag / 4;
       final x1 = size.width * (swag + 1) / 4;
@@ -304,13 +415,13 @@ class _ToranPainter extends CustomPainter {
         final y = top - 50 + math.sin(t * math.pi) * 28;
         canvas.drawCircle(Offset(x, y), 7, Paint()..color = colors[(i + swag) % 3]);
       }
-      final leaf = Paint()..color = const Color(0xFF2E7D32);
+      final leaf = Paint()..color = decor.leaf;
       canvas.drawOval(Rect.fromCenter(center: Offset(x1, top - 42), width: 10, height: 22), leaf);
     }
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+  bool shouldRepaint(_ToranPainter oldDelegate) => oldDelegate.decor != decor;
 }
 
 class _Shrine extends StatelessWidget {
@@ -374,9 +485,10 @@ class _Bell extends StatelessWidget {
 }
 
 class _Diya extends StatelessWidget {
-  const _Diya({required this.lit, required this.flame});
+  const _Diya({required this.lit, required this.flame, required this.bowl});
   final bool lit;
   final AnimationController flame;
+  final List<Color> bowl;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -385,7 +497,7 @@ class _Diya extends StatelessWidget {
       child: AnimatedBuilder(
         animation: flame,
         builder: (_, _) => CustomPaint(
-          painter: _DiyaPainter(lit: lit, t: flame.value),
+          painter: _DiyaPainter(lit: lit, t: flame.value, bowl: bowl),
         ),
       ),
     );
@@ -393,9 +505,10 @@ class _Diya extends StatelessWidget {
 }
 
 class _DiyaPainter extends CustomPainter {
-  _DiyaPainter({required this.lit, required this.t});
+  _DiyaPainter({required this.lit, required this.t, this.bowl = const [Color(0xFFBF5B04), Color(0xFF8D3B00)]});
   final bool lit;
   final double t;
+  final List<Color> bowl;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -423,7 +536,7 @@ class _DiyaPainter extends CustomPainter {
           ).createShader(Rect.fromLTWH(0, base.dy - fh, w, fh)),
       );
     }
-    final bowl = Path()
+    final shape = Path()
       ..moveTo(w * 0.1, h * 0.62)
       ..quadraticBezierTo(w * 0.5, h * 1.05, w * 0.9, h * 0.62)
       ..quadraticBezierTo(w * 0.78, h * 0.58, w * 0.62, h * 0.66)
@@ -431,11 +544,8 @@ class _DiyaPainter extends CustomPainter {
       ..quadraticBezierTo(w * 0.22, h * 0.58, w * 0.1, h * 0.62)
       ..close();
     canvas.drawPath(
-      bowl,
-      Paint()
-        ..shader = const LinearGradient(
-          colors: [Color(0xFFBF5B04), Color(0xFF8D3B00)],
-        ).createShader(Rect.fromLTWH(0, h * 0.55, w, h * 0.45)),
+      shape,
+      Paint()..shader = LinearGradient(colors: bowl).createShader(Rect.fromLTWH(0, h * 0.55, w, h * 0.45)),
     );
     canvas.drawLine(
       Offset(w * 0.5, h * 0.66),
@@ -447,13 +557,14 @@ class _DiyaPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(_DiyaPainter old) => old.lit != lit || old.t != t;
+  bool shouldRepaint(_DiyaPainter old) => old.lit != lit || old.t != t || old.bowl != bowl;
 }
 
 class _AartiFlame extends StatelessWidget {
-  const _AartiFlame({required this.controller, required this.flame});
+  const _AartiFlame({required this.controller, required this.flame, required this.bowl});
   final AnimationController controller;
   final AnimationController flame;
+  final List<Color> bowl;
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
@@ -466,7 +577,9 @@ class _AartiFlame extends StatelessWidget {
           child: SizedBox(
             width: 70,
             height: 64,
-            child: CustomPaint(painter: _DiyaPainter(lit: true, t: flame.value)),
+            child: CustomPaint(
+              painter: _DiyaPainter(lit: true, t: flame.value, bowl: bowl),
+            ),
           ),
         );
       },
@@ -599,5 +712,227 @@ class _Action extends StatelessWidget {
         ],
       ),
     ).animate(target: active ? 1 : 0).scaleXY(end: 1.06, duration: 200.ms);
+  }
+}
+
+/// Deepotsava: small lamps along the floor on both sides of the main diya.
+class _LampRow extends StatelessWidget {
+  const _LampRow({required this.flame, required this.bowl});
+  final AnimationController flame;
+  final List<Color> bowl;
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: flame,
+      builder: (_, _) => Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          for (var i = 0; i < 6; i++)
+            if (i == 3)
+              const SizedBox(width: 110)
+            else
+              SizedBox(
+                width: 30,
+                height: 30,
+                child: CustomPaint(
+                  painter: _DiyaPainter(lit: true, t: (flame.value + i * 0.17) % 1, bowl: bowl),
+                ),
+              ),
+        ],
+      ),
+    );
+  }
+}
+
+/// A small round button in a lower corner of the shrine (decorate, dakshina).
+class _CornerButton extends StatelessWidget {
+  const _CornerButton({required this.emoji, required this.label, required this.onTap, this.glow = false});
+  final String emoji, label;
+  final VoidCallback onTap;
+  final bool glow;
+
+  @override
+  Widget build(BuildContext context) {
+    return Semantics(
+      button: true,
+      label: label,
+      child: GestureDetector(
+        onTap: onTap,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            AnimatedContainer(
+              duration: const Duration(milliseconds: 400),
+              width: 44,
+              height: 44,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: glow ? Palette.gold.withValues(alpha: 0.35) : Colors.black26,
+                border: Border.all(color: glow ? Palette.gold : Colors.white24, width: 1.5),
+                boxShadow: glow ? [BoxShadow(color: Palette.gold.withValues(alpha: 0.6), blurRadius: 16)] : null,
+              ),
+              child: Text(emoji, style: const TextStyle(fontSize: 20)),
+            ),
+            const SizedBox(height: 3),
+            SizedBox(
+              width: 64,
+              child: Text(
+                label,
+                textAlign: TextAlign.center,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(color: Colors.white70, fontSize: 11),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Mandir decorations; Premium ones carry a crown and lead to the Premium screen.
+class _DecorSheet extends ConsumerWidget {
+  const _DecorSheet({required this.current, required this.premium});
+  final MandirDecor current;
+  final bool premium;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final lang = uiLang(ref);
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(16, 0, 16, 20),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              t3(lang, 'Decorate your Mandir', 'अपना मंदिर सजाएँ', 'మీ మందిరాన్ని అలంకరించండి'),
+              style: const TextStyle(color: Palette.gold, fontSize: 20, fontWeight: FontWeight.w700),
+            ),
+            const SizedBox(height: 16),
+            Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 14,
+              runSpacing: 14,
+              children: [
+                for (final d in MandirDecor.values)
+                  GestureDetector(
+                    onTap: () => Navigator.pop(context, d),
+                    child: SizedBox(
+                      width: 92,
+                      child: Column(
+                        children: [
+                          Container(
+                            width: 72,
+                            height: 72,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              gradient: RadialGradient(
+                                colors: [d.backdrop.first.withValues(alpha: 0.6), ...d.backdrop],
+                              ),
+                              border: Border.all(
+                                color: d == current ? Palette.gold : Colors.white24,
+                                width: d == current ? 3 : 1.5,
+                              ),
+                            ),
+                            child: Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    for (final c in d.flowers)
+                                      Container(
+                                        width: 13,
+                                        height: 13,
+                                        margin: const EdgeInsets.all(1.5),
+                                        decoration: BoxDecoration(color: c, shape: BoxShape.circle),
+                                      ),
+                                  ],
+                                ),
+                                if (d.premium && !premium)
+                                  const Positioned(top: 4, right: 6, child: Text('👑', style: TextStyle(fontSize: 14))),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(height: 6),
+                          Text(
+                            t3(lang, d.en, d.hi, d.te),
+                            textAlign: TextAlign.center,
+                            maxLines: 2,
+                            style: const TextStyle(color: Colors.white, fontSize: 12.5, height: 1.15),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+            if (!premium) ...[
+              const SizedBox(height: 14),
+              Text(
+                t3(
+                  lang,
+                  '👑 decorations come with Premium.',
+                  '👑 वाली सजावट प्रीमियम के साथ मिलती है।',
+                  '👑 ఉన్న అలంకరణలు ప్రీమియంతో వస్తాయి.',
+                ),
+                style: const TextStyle(color: Colors.white60),
+              ),
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// The one gentle request for support, after a week of daily darshan. Closing it is one tap.
+class _SupportPromptCard extends ConsumerWidget {
+  const _SupportPromptCard({required this.streak, required this.onSupport, required this.onClose});
+  final int streak;
+  final VoidCallback onSupport, onClose;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final lang = uiLang(ref);
+    return Container(
+      margin: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+      padding: const EdgeInsets.fromLTRB(14, 10, 4, 10),
+      decoration: BoxDecoration(
+        color: Colors.white10,
+        borderRadius: BorderRadius.circular(18),
+        border: Border.all(color: Palette.gold.withValues(alpha: 0.5)),
+      ),
+      child: Row(
+        children: [
+          const Text('🙏', style: TextStyle(fontSize: 24)),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Text(
+              t3(
+                lang,
+                '$streak days of darshan in a row. If Devalay is part of your prayer, you can support it.',
+                'लगातार $streak दिन दर्शन। अगर देवालय आपकी पूजा का हिस्सा है, तो आप इसका साथ दे सकते हैं।',
+                'వరుసగా $streak రోజులు దర్శనం. దేవాలయం మీ పూజలో భాగమైతే, మీరు దానికి అండగా నిలవవచ్చు.',
+              ),
+              style: const TextStyle(color: Colors.white, height: 1.3),
+            ),
+          ),
+          TextButton(
+            onPressed: onSupport,
+            child: Text(t3(lang, 'Support', 'साथ दें', 'అండగా'), style: const TextStyle(color: Palette.gold)),
+          ),
+          IconButton(
+            onPressed: onClose,
+            tooltip: t3(lang, 'Close', 'बंद करें', 'మూసివేయండి'),
+            icon: const Icon(Icons.close_rounded, color: Colors.white54, size: 20),
+          ),
+        ],
+      ),
+    ).animate().fadeIn(duration: 400.ms).slideY(begin: 0.2);
   }
 }

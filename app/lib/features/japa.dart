@@ -1,11 +1,16 @@
+import 'dart:async';
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'package:go_router/go_router.dart';
+
 import '../core/app_care.dart';
+import '../core/billing.dart';
 import '../core/i18n.dart';
+import '../core/perks.dart';
 import '../core/telugu.dart';
 import '../core/sfx.dart';
 import '../core/storage.dart';
@@ -38,6 +43,13 @@ class _JapaScreenState extends ConsumerState<JapaScreen> with SingleTickerProvid
   int _count = Boxes.stats.get('japa_count', defaultValue: 0) as int;
   int _rounds = Boxes.stats.get('japa_rounds', defaultValue: 0) as int;
   bool _sound = Boxes.stats.get('japa_sound', defaultValue: true) as bool;
+  MalaStyle _malaChoice = Perks.mala;
+  int _sizeChoice = Perks.malaSize;
+
+  bool get _premium => ref.read(premiumProvider);
+  MalaStyle get _mala =>
+      unlocked(_malaChoice, isPremiumItem: _malaChoice.premium, premium: _premium, free: MalaStyle.rudraksha);
+  int get _size => unlocked(_sizeChoice, isPremiumItem: malaSizePremium(_sizeChoice), premium: _premium, free: 108);
 
   String get _todayKey {
     final now = DateTime.now();
@@ -51,7 +63,7 @@ class _JapaScreenState extends ConsumerState<JapaScreen> with SingleTickerProvid
     _pulse.forward(from: 0);
     setState(() {
       _count++;
-      if (_count >= 108) {
+      if (_count >= _size) {
         _count = 0;
         _rounds++;
         Usage.record('japa_round');
@@ -79,6 +91,41 @@ class _JapaScreenState extends ConsumerState<JapaScreen> with SingleTickerProvid
     Boxes.stats.putAll({'japa_count': 0, 'japa_rounds': 0});
   }
 
+  Future<void> _openMalaSheet() async {
+    final premium = _premium;
+    final lang = ref.read(prefsProvider).language;
+    final picked = await showModalBottomSheet<Object>(
+      context: context,
+      showDragHandle: true,
+      backgroundColor: const Color(0xFF24110A),
+      builder: (_) => _MalaSheet(lang: lang, premium: premium, mala: _mala, size: _size),
+    );
+    if (picked == null || !mounted) return;
+    final locked = switch (picked) {
+      MalaStyle m => m.premium,
+      int n => malaSizePremium(n),
+      _ => false,
+    };
+    if (locked && !premium) {
+      context.push('/premium?from=japa');
+      return;
+    }
+    if (picked is MalaStyle) {
+      Usage.record('mala_set', item: picked.name);
+      setState(() => _malaChoice = picked);
+      unawaited(Perks.setMala(picked));
+    } else if (picked is int) {
+      Usage.record('mala_size_set', item: '$picked');
+      unawaited(Perks.setMalaSize(picked));
+      // A shorter round starts afresh rather than finishing at once.
+      setState(() {
+        _sizeChoice = picked;
+        if (_count >= picked) _count = 0;
+      });
+      Boxes.stats.put('japa_count', _count);
+    }
+  }
+
   @override
   void dispose() {
     _pulse.dispose();
@@ -88,7 +135,10 @@ class _JapaScreenState extends ConsumerState<JapaScreen> with SingleTickerProvid
   @override
   Widget build(BuildContext context) {
     final lang = ref.watch(prefsProvider).language;
+    ref.watch(premiumProvider);
     final (mantraHi, mantraEn) = _mantras[_mantra];
+    final mala = _mala;
+    final size = _size;
     return Scaffold(
       backgroundColor: const Color(0xFF1B0D06),
       appBar: AppBar(
@@ -96,6 +146,11 @@ class _JapaScreenState extends ConsumerState<JapaScreen> with SingleTickerProvid
         systemOverlayStyle: lightBars,
         title: Text(tr(ref, 'japa'), style: const TextStyle(color: Colors.white)),
         actions: [
+          IconButton(
+            onPressed: _openMalaSheet,
+            tooltip: t3(lang, 'Mala', 'माला', 'మాల'),
+            icon: const Icon(Icons.blur_circular_rounded),
+          ),
           IconButton(
             onPressed: () {
               setState(() => _sound = !_sound);
@@ -134,7 +189,7 @@ class _JapaScreenState extends ConsumerState<JapaScreen> with SingleTickerProvid
                   alignment: Alignment.center,
                   children: [
                     const Mandala(size: 340, color: Palette.gold, opacity: 0.12),
-                    SizedBox(width: 320, height: 320, child: CustomPaint(painter: _MalaPainter(_count))),
+                    SizedBox(width: 320, height: 320, child: CustomPaint(painter: _MalaPainter(_count, size, mala))),
                     ScaleTransition(
                       scale: Tween(
                         begin: 1.0,
@@ -153,7 +208,7 @@ class _JapaScreenState extends ConsumerState<JapaScreen> with SingleTickerProvid
                             '$_count',
                             style: const TextStyle(color: Colors.white, fontSize: 72, fontWeight: FontWeight.w700),
                           ),
-                          Text('/ 108', style: const TextStyle(color: Colors.white54)),
+                          Text('/ $size', style: const TextStyle(color: Colors.white54)),
                           const SizedBox(height: 4),
                           Text(
                             t3(lang, 'Rounds: $_rounds', 'माला: $_rounds', 'మాలలు: $_rounds'),
@@ -214,14 +269,15 @@ class _Stat extends StatelessWidget {
 }
 
 class _MalaPainter extends CustomPainter {
-  _MalaPainter(this.count);
-  final int count;
+  _MalaPainter(this.count, this.beads, this.style);
+  final int count, beads;
+  final MalaStyle style;
 
   @override
   void paint(Canvas canvas, Size size) {
     final c = size.center(Offset.zero);
     final r = size.shortestSide / 2 - 10;
-    const beads = 108;
+    final radius = beads > 60 ? 4.5 : 6.5;
     for (var i = 0; i < beads; i++) {
       final a = -math.pi / 2 + i * 2 * math.pi / beads;
       final p = c + Offset(math.cos(a), math.sin(a)) * r;
@@ -229,13 +285,13 @@ class _MalaPainter extends CustomPainter {
       final current = i == count;
       canvas.drawCircle(
         p,
-        current ? 6.5 : 4.5,
+        current ? radius + 2 : radius,
         Paint()
           ..color = current
               ? Palette.gold
               : done
-              ? const Color(0xFFFF8F00)
-              : const Color(0xFF6D4C41),
+              ? style.done
+              : style.bead,
       );
     }
     // Meru (guru) bead at the top.
@@ -243,5 +299,80 @@ class _MalaPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(_MalaPainter old) => old.count != count;
+  bool shouldRepaint(_MalaPainter old) => old.count != count || old.beads != beads || old.style != style;
+}
+
+/// Mala beads and round length; Premium ones carry a crown.
+class _MalaSheet extends StatelessWidget {
+  const _MalaSheet({required this.lang, required this.premium, required this.mala, required this.size});
+  final String lang;
+  final bool premium;
+  final MalaStyle mala;
+  final int size;
+
+  @override
+  Widget build(BuildContext context) {
+    Widget crown(bool locked) => locked && !premium ? const Text(' 👑') : const SizedBox.shrink();
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(16, 0, 16, 20),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              t3(lang, 'Mala beads', 'माला के मनके', 'మాల పూసలు'),
+              style: const TextStyle(color: Palette.gold, fontSize: 18, fontWeight: FontWeight.w700),
+            ),
+            const SizedBox(height: 10),
+            Wrap(
+              spacing: 8,
+              runSpacing: 8,
+              children: [
+                for (final m in MalaStyle.values)
+                  ChoiceChip(
+                    avatar: CircleAvatar(backgroundColor: m.done, radius: 8),
+                    label: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [Text(t3(lang, m.en, m.hi, m.te)), crown(m.premium)],
+                    ),
+                    selected: m == mala,
+                    onSelected: (_) => Navigator.pop(context, m),
+                  ),
+              ],
+            ),
+            const SizedBox(height: 18),
+            Text(
+              t3(lang, 'Beads per round', 'एक माला में मनके', 'ఒక మాలలో పూసలు'),
+              style: const TextStyle(color: Palette.gold, fontSize: 18, fontWeight: FontWeight.w700),
+            ),
+            const SizedBox(height: 10),
+            Wrap(
+              spacing: 8,
+              children: [
+                for (final n in malaSizes)
+                  ChoiceChip(
+                    label: Row(mainAxisSize: MainAxisSize.min, children: [Text('$n'), crown(malaSizePremium(n))]),
+                    selected: n == size,
+                    onSelected: (_) => Navigator.pop(context, n),
+                  ),
+              ],
+            ),
+            if (!premium) ...[
+              const SizedBox(height: 14),
+              Text(
+                t3(
+                  lang,
+                  '👑 malas and shorter rounds come with Premium.',
+                  '👑 वाली मालाएँ और छोटी माला प्रीमियम के साथ मिलती हैं।',
+                  '👑 ఉన్న మాలలు, చిన్న మాలలు ప్రీమియంతో వస్తాయి.',
+                ),
+                style: const TextStyle(color: Colors.white60),
+              ),
+            ],
+          ],
+        ),
+      ),
+    );
+  }
 }
