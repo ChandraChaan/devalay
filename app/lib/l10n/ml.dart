@@ -1359,4 +1359,81 @@ const stringsMl = <String, String>{
       'ഗായത്രി, ഓം നമഃ ശിവായ എന്നിവയും മറ്റും: 11, 21 അല്ലെങ്കിൽ 108 തവണ, എണ്ണത്തോടെ',
   'Set ringtone': 'റിംഗ്ടോൺ ആക്കുക',
   'Telugu keerthanalu': 'തെലുങ്ക് കീർത്തനങ്ങൾ',
+  // Premium, dakshina and Support Devalay (1.5.9).
+  'More temples': 'കൂടുതൽ ക്ഷേത്രങ്ങൾ',
+  'Beads per round': 'ഒരു മാലയിലെ മണികൾ',
+  'Mala': 'മാല',
+  'Mala beads': 'മാലയിലെ മണികൾ',
+  '👑 malas and shorter rounds come with Premium.': '👑 ഉള്ള മാലകളും ചെറിയ മാലകളും പ്രീമിയത്തോടൊപ്പം ലഭിക്കും.',
+  'Close': 'അടയ്ക്കുക',
+  'Dakshina': 'ദക്ഷിണ',
+  'Decorate': 'അലങ്കരിക്കൂ',
+  'Decorate your Mandir': 'നിങ്ങളുടെ പൂജാമുറി അലങ്കരിക്കൂ',
+  'Support': 'പിന്തുണയ്ക്കൂ',
+  '{0} days of darshan in a row. If Devalay is part of your prayer, you can support it.':
+      'തുടർച്ചയായി {0} ദിവസം ദർശനം. ദേവാലയ് നിങ്ങളുടെ പ്രാർത്ഥനയുടെ ഭാഗമാണെങ്കിൽ, നിങ്ങൾക്ക് അതിനെ പിന്തുണയ്ക്കാം.',
+  '👑 decorations come with Premium.': '👑 ഉള്ള അലങ്കാരങ്ങൾ പ്രീമിയത്തോടൊപ്പം ലഭിക്കും.',
+  'A small gift to the developer, or give to a temple':
+      'ഡെവലപ്പർക്ക് ഒരു ചെറിയ കാണിക്ക, അല്ലെങ്കിൽ ക്ഷേത്രത്തിന് സംഭാവന',
+  'Premium member': 'പ്രീമിയം അംഗം',
+  'Support Devalay': 'ദേവാലയിനെ പിന്തുണയ്ക്കൂ',
+  'Thank you for keeping Devalay free for every devotee 🙏':
+      'ദേവാലയിനെ എല്ലാ ഭക്തർക്കും സൗജന്യമായി നിലനിർത്തുന്നതിന് നന്ദി 🙏',
+  'A Premium badge, and you keep Devalay growing':
+      'പ്രീമിയം ബാഡ്ജ്, ഒപ്പം ദേവാലയിന്റെ വളർച്ചയ്ക്ക് നിങ്ങളുടെ കൈത്താങ്ങ്',
+  'Best value: about {0} a month': 'ഏറ്റവും ലാഭകരം: മാസം ഏകദേശം {0}',
+  'Billed by Google Play and renews automatically. Cancel anytime in Play Store > Payments & subscriptions.':
+      'പണം Google Play വഴി ഈടാക്കും, സ്വയം പുതുക്കപ്പെടും. Play Store > Payments & subscriptions-ൽ എപ്പോൾ വേണമെങ്കിലും റദ്ദാക്കാം.',
+  'Every aarti, mantra, scripture, Panchang and the Mandir are free forever. Premium adds a few beautiful extras and keeps the app ad-free.':
+      'എല്ലാ ആരതിയും മന്ത്രവും ഗ്രന്ഥവും പഞ്ചാംഗവും പൂജാമുറിയും എന്നും സൗജന്യം. പ്രീമിയം ചില മനോഹരമായ അധിക സൗകര്യങ്ങൾ ചേർക്കുകയും ആപ്പിനെ പരസ്യരഹിതമായി നിലനിർത്തുകയും ചെയ്യുന്നു.',
+  'Google Play payments are not available on this phone.': 'ഈ ഫോണിൽ Google Play പേയ്‌മെന്റുകൾ ലഭ്യമല്ല.',
+  'Japa malas: tulsi, sphatik and sandalwood, plus 27 and 54 bead rounds':
+      'ജപമാലകൾ: തുളസി, സ്ഫടികം, ചന്ദനം, ഒപ്പം 27, 54 മണികളുള്ള മാലകൾ',
+  'Manage subscription': 'സബ്‌സ്‌ക്രിപ്‌ഷൻ നിയന്ത്രിക്കുക',
+  'Mandir decorations: gold, jasmine, tulasi and Deepotsava':
+      'പൂജാമുറി അലങ്കാരങ്ങൾ: സ്വർണം, മുല്ലപ്പൂ, തുളസി, ദീപോത്സവം',
+  'No ads, now or ever': 'ഇപ്പോഴും എപ്പോഴും പരസ്യങ്ങളില്ല',
+  'Prefer a one-time gift? Support Devalay': 'ഒറ്റത്തവണ കാണിക്ക നൽകാനാണോ ഇഷ്ടം? ദേവാലയിനെ പിന്തുണയ്ക്കൂ',
+  'Premium is coming soon on Google Play.': 'പ്രീമിയം ഉടൻ Google Play-ൽ.',
+  'Three more app colours: Swarna, Neelakantha and Chandan': 'മൂന്ന് പുതിയ ആപ്പ് നിറങ്ങൾ: സ്വർണം, നീലകണ്ഠം, ചന്ദനം',
+  'A one-time payment through Google Play to the Devalay developer. It is not a donation to any temple and is not tax-deductible.':
+      'Google Play വഴി ദേവാലയിന്റെ ഡെവലപ്പർക്കുള്ള ഒറ്റത്തവണ പേയ്‌മെന്റ്. ഇത് ഒരു ക്ഷേത്രത്തിനുമുള്ള സംഭാവനയല്ല, ഇതിന് നികുതിയിളവും ലഭിക്കില്ല.',
+  'At a temple': 'ക്ഷേത്രത്തിൽ',
+  'Coming soon on Google Play.': 'ഉടൻ Google Play-ൽ.',
+  'Devalay is made by one developer, free for every devotee. If it helps your daily prayer, a small gift pays for new features, more bhajans and the servers.':
+      'ദേവാലയ് ഒരൊറ്റ ഡെവലപ്പർ നിർമ്മിച്ചതാണ്, എല്ലാ ഭക്തർക്കും സൗജന്യം. നിങ്ങളുടെ ദിവസേനയുള്ള പ്രാർത്ഥനയ്ക്ക് ഇത് സഹായകമെങ്കിൽ, ഒരു ചെറിയ കാണിക്ക പുതിയ സൗകര്യങ്ങൾക്കും കൂടുതൽ ഭജനകൾക്കും സെർവറുകൾക്കുമുള്ള ചെലവ് വഹിക്കും.',
+  'Free ways to help': 'സൗജന്യമായി സഹായിക്കാനുള്ള വഴികൾ',
+  'Give directly to the temple on its official site. The money goes to the temple; Devalay never handles it.':
+      'ക്ഷേത്രത്തിന്റെ ഔദ്യോഗിക സൈറ്റിൽ നേരിട്ട് ക്ഷേത്രത്തിന് നൽകൂ. പണം ക്ഷേത്രത്തിലേക്കാണ് പോകുന്നത്; ദേവാലയ് ഒരിക്കലും അത് കൈകാര്യം ചെയ്യുന്നില്ല.',
+  'Give to a temple': 'ക്ഷേത്രത്തിന് സംഭാവന നൽകൂ',
+  'If this Mandir is part of your daily prayer, a small dakshina keeps Devalay free and growing.':
+      'ഈ പൂജാമുറി നിങ്ങളുടെ ദിവസേനയുള്ള പ്രാർത്ഥനയുടെ ഭാഗമാണെങ്കിൽ, ഒരു ചെറിയ ദക്ഷിണ ദേവാലയിനെ സൗജന്യമായും വളർന്നുകൊണ്ടും നിലനിർത്തും.',
+  'No active Premium found for this Google account.': 'ഈ Google അക്കൗണ്ടിൽ സജീവമായ പ്രീമിയം കണ്ടെത്തിയില്ല.',
+  'No ads ever, Mandir decorations, japa malas and extra app colours.':
+      'ഒരിക്കലും പരസ്യങ്ങളില്ല, പൂജാമുറി അലങ്കാരങ്ങൾ, ജപമാലകൾ, അധിക ആപ്പ് നിറങ്ങൾ.',
+  'Offer dakshina': 'ദക്ഷിണ സമർപ്പിക്കൂ',
+  'Payment pending. It completes once Google Play confirms it.':
+      'പേയ്‌മെന്റ് തീർപ്പാകാനുണ്ട്. Google Play സ്ഥിരീകരിച്ചാലുടൻ പൂർത്തിയാകും.',
+  'Premium is on. Thank you for supporting Devalay 🙏': 'പ്രീമിയം സജീവമായി. ദേവാലയിനെ പിന്തുണച്ചതിന് നന്ദി 🙏',
+  'Premium restored 👑': 'പ്രീമിയം പുനഃസ്ഥാപിച്ചു 👑',
+  'Share with family and friends': 'കുടുംബവുമായും സുഹൃത്തുക്കളുമായും പങ്കിടൂ',
+  'Thank you': 'നന്ദി',
+  'The payment did not go through. No money was taken.': 'പേയ്‌മെന്റ് നടന്നില്ല. പണമൊന്നും ഈടാക്കിയിട്ടില്ല.',
+  'These open the temple\'s own official site. The money goes to the temple.':
+      'ഇവ ക്ഷേത്രത്തിന്റെ സ്വന്തം ഔദ്യോഗിക സൈറ്റ് തുറക്കുന്നു. പണം ക്ഷേത്രത്തിലേക്കാണ് പോകുന്നത്.',
+  'To Devalay': 'ദേവാലയിന്',
+  'Your offering keeps Devalay free for every devotee. May the divine bless you and your family.':
+      'നിങ്ങളുടെ കാണിക്ക ദേവാലയിനെ എല്ലാ ഭക്തർക്കും സൗജന്യമായി നിലനിർത്തുന്നു. ഭഗവാൻ നിങ്ങളെയും കുടുംബത്തെയും അനുഗ്രഹിക്കട്ടെ.',
+  'Swarna': 'സ്വർണം',
+  'Neelakantha': 'നീലകണ്ഠം',
+  'Chandan': 'ചന്ദനം',
+  'Classic': 'പരമ്പരാഗതം',
+  'Swarna (gold)': 'സ്വർണം',
+  'Jasmine and rose': 'മുല്ലയും റോസാപ്പൂവും',
+  'Tulasi': 'തുളസി',
+  'Deepotsava': 'ദീപോത്സവം',
+  'Rudraksha': 'രുദ്രാക്ഷം',
+  'Tulsi': 'തുളസി',
+  'Sphatik (crystal)': 'സ്ഫടികം',
+  'Sandalwood': 'ചന്ദനം',
 };

@@ -5376,9 +5376,27 @@
   "where": "lib/features/important_days.dart"
  },
  {
+  "en": "Beads per round",
+  "hi": "एक माला में मनके",
+  "te": "ఒక మాలలో పూసలు",
+  "where": "lib/features/japa.dart"
+ },
+ {
   "en": "Lifetime",
   "hi": "कुल",
   "te": "మొత్తం",
+  "where": "lib/features/japa.dart"
+ },
+ {
+  "en": "Mala",
+  "hi": "माला",
+  "te": "మాల",
+  "where": "lib/features/japa.dart"
+ },
+ {
+  "en": "Mala beads",
+  "hi": "माला के मनके",
+  "te": "మాల పూసలు",
   "where": "lib/features/japa.dart"
  },
  {
@@ -5397,6 +5415,12 @@
   "en": "Tap anywhere for each chant of \"{0}\"",
   "hi": "जाप करते हुए स्क्रीन पर कहीं भी टैप करें",
   "te": "ప్రతి జపానికి స్క్రీన్‌పై ఎక్కడైనా తాకండి",
+  "where": "lib/features/japa.dart"
+ },
+ {
+  "en": "👑 malas and shorter rounds come with Premium.",
+  "hi": "👑 वाली मालाएँ और छोटी माला प्रीमियम के साथ मिलती हैं।",
+  "te": "👑 ఉన్న మాలలు, చిన్న మాలలు ప్రీమియంతో వస్తాయి.",
   "where": "lib/features/japa.dart"
  },
  {
@@ -5712,15 +5736,57 @@
   "where": "lib/features/listen.dart"
  },
  {
+  "en": "Close",
+  "hi": "बंद करें",
+  "te": "మూసివేయండి",
+  "where": "lib/features/mandir.dart"
+ },
+ {
+  "en": "Dakshina",
+  "hi": "दक्षिणा",
+  "te": "దక్షిణ",
+  "where": "lib/features/mandir.dart"
+ },
+ {
+  "en": "Decorate",
+  "hi": "सजाएँ",
+  "te": "అలంకరించండి",
+  "where": "lib/features/mandir.dart"
+ },
+ {
+  "en": "Decorate your Mandir",
+  "hi": "अपना मंदिर सजाएँ",
+  "te": "మీ మందిరాన్ని అలంకరించండి",
+  "where": "lib/features/mandir.dart"
+ },
+ {
   "en": "My Mandir",
   "hi": "मेरा मंदिर",
   "te": "నా మందిరం",
   "where": "lib/features/mandir.dart"
  },
  {
+  "en": "Support",
+  "hi": "साथ दें",
+  "te": "అండగా",
+  "where": "lib/features/mandir.dart"
+ },
+ {
   "en": "day streak",
   "hi": "दिन",
   "te": "రోజుల వరుస",
+  "where": "lib/features/mandir.dart"
+ },
+ {
+  "en": "{0} days of darshan in a row. If Devalay is part of your prayer, you can support it.",
+  "hi": "लगातार {0} दिन दर्शन। अगर देवालय आपकी पूजा का हिस्सा है, तो आप इसका साथ दे सकते हैं।",
+  "te": "వరుసగా {0} రోజులు దర్శనం. దేవాలయం మీ పూజలో భాగమైతే, మీరు దానికి అండగా నిలవవచ్చు.",
+  "where": "lib/features/mandir.dart"
+ },
+ {
+  "en": "👑 decorations come with Premium.",
+  "hi": "👑 वाली सजावट प्रीमियम के साथ मिलती है।",
+  "te": "👑 ఉన్న అలంకరణలు ప్రీమియంతో వస్తాయి.",
   "where": "lib/features/mandir.dart"
  },
  {
@@ -6306,9 +6372,21 @@
   "where": "lib/features/more.dart"
  },
  {
+  "en": "A small gift to the developer, or give to a temple",
+  "hi": "डेवलपर को छोटा सा उपहार, या मंदिर को दान",
+  "te": "డెవలపర్‌కు చిన్న కానుక, లేదా ఆలయానికి విరాళం",
+  "where": "lib/features/more.dart"
+ },
+ {
   "en": "Cards with your photo and name for every festival and every morning",
   "hi": "हर त्योहार और हर सुबह के लिए आपकी फ़ोटो और नाम वाले कार्ड",
   "te": "ప్రతి పండుగకు, ప్రతి ఉదయానికి మీ ఫోటో, పేరుతో కార్డులు",
+  "where": "lib/features/more.dart"
+ },
+ {
+  "en": "Devalay Premium",
+  "hi": "देवालय प्रीमियम",
+  "te": "దేవాలయం ప్రీమియం",
   "where": "lib/features/more.dart"
  },
  {
@@ -6324,9 +6402,9 @@
   "where": "lib/features/more.dart"
  },
  {
-  "en": "Premium: unlimited downloads, more AI. Core devotion stays free.",
-  "hi": "प्रीमियम: असीमित डाउनलोड, अधिक AI। मूल भक्ति हमेशा निःशुल्क।",
-  "te": "ప్రీమియం: అపరిమిత డౌన్‌లోడ్‌లు, మరింత AI. ప్రధాన భక్తి ఎప్పుడూ ఉచితమే.",
+  "en": "Premium member",
+  "hi": "प्रीमियम सदस्य",
+  "te": "ప్రీమియం సభ్యులు",
   "where": "lib/features/more.dart"
  },
  {
@@ -6348,9 +6426,21 @@
   "where": "lib/features/more.dart"
  },
  {
+  "en": "Support Devalay",
+  "hi": "देवालय का साथ दें",
+  "te": "దేవాలయంకు అండగా నిలవండి",
+  "where": "lib/features/more.dart"
+ },
+ {
   "en": "TTD darshan tickets, sevas, rooms and more temples",
   "hi": "टीटीडी दर्शन टिकट, सेवा, कमरे और अन्य मंदिर",
   "te": "టీటీడీ దర్శన టికెట్లు, సేవలు, గదులు, మరిన్ని ఆలయాలు",
+  "where": "lib/features/more.dart"
+ },
+ {
+  "en": "Thank you for keeping Devalay free for every devotee 🙏",
+  "hi": "देवालय को हर भक्त के लिए मुफ़्त रखने के लिए धन्यवाद 🙏",
+  "te": "దేవాలయంను ప్రతి భక్తునికీ ఉచితంగా ఉంచుతున్నందుకు ధన్యవాదాలు 🙏",
   "where": "lib/features/more.dart"
  },
  {
@@ -6942,57 +7032,75 @@
   "where": "lib/features/pooja.dart"
  },
  {
-  "en": "100 AI status and Gita answers a day",
-  "hi": "रोज़ 100 AI स्टेटस और गीता के उत्तर",
-  "te": "రోజుకు 100 AI స్టేటస్‌లు, గీతా సమాధానాలు",
+  "en": "A Premium badge, and you keep Devalay growing",
+  "hi": "प्रीमियम बैज, और देवालय आगे बढ़ता रहे",
+  "te": "ప్రీమియం బ్యాడ్జ్, దేవాలయం ఎదుగుదలకు మీ తోడ్పాటు",
   "where": "lib/features/premium.dart"
  },
  {
-  "en": "Billed by Google Play. Cancel anytime in Play Store > Subscriptions.",
-  "hi": "भुगतान Google Play से होता है। Play Store > Subscriptions में जाकर कभी भी रद्द करें।",
-  "te": "చెల్లింపు Google Play ద్వారా జరుగుతుంది. Play Store > Subscriptionsలో ఎప్పుడైనా రద్దు చేయవచ్చు.",
+  "en": "Best value: about {0} a month",
+  "hi": "सबसे किफ़ायती: लगभग {0} महीना",
+  "te": "అత్యంత లాభం: నెలకు సుమారు {0}",
   "where": "lib/features/premium.dart"
  },
  {
-  "en": "Devalay Premium",
-  "hi": "देवालय प्रीमियम",
-  "te": "దేవాలయం ప్రీమియం",
+  "en": "Billed by Google Play and renews automatically. Cancel anytime in Play Store > Payments & subscriptions.",
+  "hi": "भुगतान Google Play से होता है और अपने-आप नवीनीकृत होता है। Play Store > Payments & subscriptions में कभी भी रद्द करें।",
+  "te": "చెల్లింపు Google Play ద్వారా, ఆటోమేటిక్‌గా రెన్యూ అవుతుంది. Play Store > Payments & subscriptionsలో ఎప్పుడైనా రద్దు చేయవచ్చు.",
   "where": "lib/features/premium.dart"
  },
  {
-  "en": "Every aarti, mantra, scripture, Panchang and the Mandir are free forever. Premium adds conveniences and keeps the app ad-free.",
-  "hi": "हर आरती, मंत्र, शास्त्र, पंचांग और मंदिर हमेशा मुफ़्त हैं। प्रीमियम कुछ सुविधाएँ जोड़ता है और ऐप को विज्ञापन-मुक्त रखता है।",
-  "te": "ప్రతి హారతి, మంత్రం, గ్రంథం, పంచాంగం, మందిరం ఎప్పటికీ ఉచితమే. ప్రీమియం కొన్ని సౌకర్యాలు జోడిస్తుంది, యాప్‌ను ప్రకటనలు లేకుండా ఉంచుతుంది.",
+  "en": "Every aarti, mantra, scripture, Panchang and the Mandir are free forever. Premium adds a few beautiful extras and keeps the app ad-free.",
+  "hi": "हर आरती, मंत्र, शास्त्र, पंचांग और मंदिर हमेशा मुफ़्त हैं। प्रीमियम कुछ सुंदर अतिरिक्त चीज़ें जोड़ता है और ऐप को विज्ञापन-मुक्त रखता है।",
+  "te": "ప్రతి హారతి, మంత్రం, గ్రంథం, పంచాంగం, మందిరం ఎప్పటికీ ఉచితమే. ప్రీమియం కొన్ని అందమైన అదనపు సౌకర్యాలు జోడిస్తుంది, యాప్‌ను ప్రకటనలు లేకుండా ఉంచుతుంది.",
   "where": "lib/features/premium.dart"
  },
  {
-  "en": "Google Play billing is not available on this device.",
+  "en": "Google Play payments are not available on this phone.",
   "hi": "इस फ़ोन पर Google Play से भुगतान उपलब्ध नहीं है।",
-  "te": "ఈ ఫోన్‌లో Google Play బిల్లింగ్ అందుబాటులో లేదు.",
+  "te": "ఈ ఫోన్‌లో Google Play చెల్లింపులు అందుబాటులో లేవు.",
   "where": "lib/features/premium.dart"
  },
  {
-  "en": "Payment pending. Premium unlocks once Google Play confirms.",
-  "hi": "भुगतान बाकी है। Google Play की पुष्टि होते ही प्रीमियम खुल जाएगा।",
-  "te": "చెల్లింపు పెండింగ్‌లో ఉంది. Google Play నిర్ధారించగానే ప్రీమియం మొదలవుతుంది.",
+  "en": "Japa malas: tulsi, sphatik and sandalwood, plus 27 and 54 bead rounds",
+  "hi": "जप मालाएँ: तुलसी, स्फटिक और चंदन, साथ में 27 और 54 मनकों की माला",
+  "te": "జప మాలలు: తులసి, స్ఫటికం, చందనం, ఇంకా 27, 54 పూసల మాలలు",
   "where": "lib/features/premium.dart"
  },
  {
-  "en": "Please sign in first so Premium is linked to your account.",
-  "hi": "पहले साइन इन करें, ताकि प्रीमियम आपके खाते से जुड़ जाए।",
-  "te": "ముందుగా సైన్ ఇన్ చేయండి, అప్పుడు ప్రీమియం మీ ఖాతాకు జతవుతుంది.",
+  "en": "Manage subscription",
+  "hi": "सदस्यता प्रबंधित करें",
+  "te": "సబ్‌స్క్రిప్షన్ నిర్వహించండి",
   "where": "lib/features/premium.dart"
  },
  {
-  "en": "Premium unlocked. Thank you for supporting Devalay 🙏",
-  "hi": "प्रीमियम शुरू हो गया। देवालय का साथ देने के लिए धन्यवाद 🙏",
-  "te": "ప్రీమియం మొదలైంది. దేవాలయంకు అండగా నిలిచినందుకు ధన్యవాదాలు 🙏",
+  "en": "Mandir decorations: gold, jasmine, tulasi and Deepotsava",
+  "hi": "मंदिर की सजावट: स्वर्ण, चमेली, तुलसी और दीपोत्सव",
+  "te": "మందిర అలంకరణలు: స్వర్ణ, మల్లెలు, తులసి, దీపోత్సవం",
   "where": "lib/features/premium.dart"
  },
  {
-  "en": "Purchase failed",
-  "hi": "खरीद नहीं हो सकी",
-  "te": "కొనుగోలు విఫలమైంది",
+  "en": "Monthly",
+  "hi": "मासिक",
+  "te": "నెలకు",
+  "where": "lib/features/premium.dart"
+ },
+ {
+  "en": "No ads, now or ever",
+  "hi": "कभी कोई विज्ञापन नहीं",
+  "te": "ఎప్పుడూ ప్రకటనలు ఉండవు",
+  "where": "lib/features/premium.dart"
+ },
+ {
+  "en": "Prefer a one-time gift? Support Devalay",
+  "hi": "एक बार का उपहार देना चाहते हैं? देवालय का साथ दें",
+  "te": "ఒకసారి కానుక ఇవ్వాలనుకుంటున్నారా? దేవాలయంకు అండగా నిలవండి",
+  "where": "lib/features/premium.dart"
+ },
+ {
+  "en": "Premium is coming soon on Google Play.",
+  "hi": "प्रीमियम जल्द ही Google Play पर।",
+  "te": "ప్రీమియం త్వరలో Google Playలో.",
   "where": "lib/features/premium.dart"
  },
  {
@@ -7002,33 +7110,15 @@
   "where": "lib/features/premium.dart"
  },
  {
-  "en": "Subscriptions are not yet published on Google Play for this build.",
-  "hi": "इस संस्करण के लिए सदस्यताएँ अभी Google Play पर उपलब्ध नहीं हैं।",
-  "te": "ఈ వెర్షన్‌కు సబ్‌స్క్రిప్షన్లు ఇంకా Google Playలో అందుబాటులో లేవు.",
-  "where": "lib/features/premium.dart"
- },
- {
-  "en": "Support an ad-free devotional app",
-  "hi": "विज्ञापन-मुक्त भक्ति ऐप का साथ दें",
-  "te": "ప్రకటనలు లేని భక్తి యాప్‌కు అండగా నిలవండి",
-  "where": "lib/features/premium.dart"
- },
- {
-  "en": "Unlimited offline downloads",
-  "hi": "असीमित ऑफ़लाइन डाउनलोड",
-  "te": "అపరిమిత ఆఫ్‌లైన్ డౌన్‌లోడ్లు",
+  "en": "Three more app colours: Swarna, Neelakantha and Chandan",
+  "hi": "ऐप के तीन और रंग: स्वर्ण, नीलकंठ और चंदन",
+  "te": "యాప్‌కు మరో మూడు రంగులు: స్వర్ణ, నీలకంఠ, చందనం",
   "where": "lib/features/premium.dart"
  },
  {
   "en": "You are Premium",
   "hi": "आप प्रीमियम सदस्य हैं",
   "te": "మీరు ప్రీమియం సభ్యులు",
-  "where": "lib/features/premium.dart"
- },
- {
-  "en": "{0} (indicative)",
-  "hi": "{0} (अनुमानित)",
-  "te": "{0} (సుమారుగా)",
   "where": "lib/features/premium.dart"
  },
  {
@@ -7059,12 +7149,6 @@
   "en": "Lucky number",
   "hi": "शुभ अंक",
   "te": "అదృష్ట సంఖ్య",
-  "where": "lib/features/rashifal.dart"
- },
- {
-  "en": "Monthly",
-  "hi": "मासिक",
-  "te": "మాసఫలం",
   "where": "lib/features/rashifal.dart"
  },
  {
@@ -7540,6 +7624,132 @@
   "hi": "आज शेष",
   "te": "ఈ రోజు మిగిలినవి",
   "where": "lib/features/status_maker.dart"
+ },
+ {
+  "en": "A one-time payment through Google Play to the Devalay developer. It is not a donation to any temple and is not tax-deductible.",
+  "hi": "Google Play से देवालय के डेवलपर को एक बार का भुगतान। यह किसी मंदिर को दान नहीं है और इस पर कर छूट नहीं मिलती।",
+  "te": "Google Play ద్వారా దేవాలయం డెవలపర్‌కు ఒకసారి చెల్లింపు. ఇది ఏ ఆలయానికీ విరాళం కాదు, దీనికి పన్ను మినహాయింపు ఉండదు.",
+  "where": "lib/features/support.dart"
+ },
+ {
+  "en": "At a temple",
+  "hi": "मंदिर में",
+  "te": "ఆలయంలో",
+  "where": "lib/features/support.dart"
+ },
+ {
+  "en": "Coming soon on Google Play.",
+  "hi": "जल्द ही Google Play पर।",
+  "te": "త్వరలో Google Playలో.",
+  "where": "lib/features/support.dart"
+ },
+ {
+  "en": "Devalay is made by one developer, free for every devotee. If it helps your daily prayer, a small gift pays for new features, more bhajans and the servers.",
+  "hi": "देवालय एक डेवलपर ने बनाया है, हर भक्त के लिए मुफ़्त। अगर यह आपकी रोज़ की पूजा में काम आता है, तो एक छोटा सा उपहार नई सुविधाओं, और भजनों और सर्वर का खर्च उठाता है।",
+  "te": "దేవాలయంను ఒక్క డెవలపర్ తయారు చేశారు, ప్రతి భక్తునికీ ఉచితం. మీ రోజువారీ పూజకు ఇది ఉపయోగపడితే, చిన్న కానుక కొత్త ఫీచర్లు, మరిన్ని భజనలు, సర్వర్ ఖర్చులకు సహాయపడుతుంది.",
+  "where": "lib/features/support.dart"
+ },
+ {
+  "en": "Free ways to help",
+  "hi": "मदद के मुफ़्त तरीके",
+  "te": "ఉచితంగా సహాయపడే మార్గాలు",
+  "where": "lib/features/support.dart"
+ },
+ {
+  "en": "Give directly to the temple on its official site. The money goes to the temple; Devalay never handles it.",
+  "hi": "मंदिर की आधिकारिक साइट पर सीधे मंदिर को दें। पैसा मंदिर को जाता है; देवालय उसे कभी नहीं छूता।",
+  "te": "ఆలయ అధికారిక సైట్‌లో నేరుగా ఆలయానికే ఇవ్వండి. డబ్బు ఆలయానికే చేరుతుంది; దేవాలయం దాన్ని ఎప్పుడూ తాకదు.",
+  "where": "lib/features/support.dart"
+ },
+ {
+  "en": "Give to a temple",
+  "hi": "मंदिर को दान दें",
+  "te": "ఆలయానికి విరాళం ఇవ్వండి",
+  "where": "lib/features/support.dart"
+ },
+ {
+  "en": "If this Mandir is part of your daily prayer, a small dakshina keeps Devalay free and growing.",
+  "hi": "अगर यह मंदिर आपकी रोज़ की पूजा का हिस्सा है, तो छोटी सी दक्षिणा देवालय को मुफ़्त और आगे बढ़ता रखती है।",
+  "te": "ఈ మందిరం మీ రోజువారీ పూజలో భాగమైతే, చిన్న దక్షిణ దేవాలయంను ఉచితంగా, ఎదుగుతూ ఉంచుతుంది.",
+  "where": "lib/features/support.dart"
+ },
+ {
+  "en": "More temples",
+  "hi": "और मंदिर",
+  "te": "మరిన్ని ఆలయాలు",
+  "where": "lib/features/support.dart"
+ },
+ {
+  "en": "No active Premium found for this Google account.",
+  "hi": "इस Google खाते पर कोई सक्रिय प्रीमियम नहीं मिला।",
+  "te": "ఈ Google ఖాతాలో యాక్టివ్ ప్రీమియం కనిపించలేదు.",
+  "where": "lib/features/support.dart"
+ },
+ {
+  "en": "No ads ever, Mandir decorations, japa malas and extra app colours.",
+  "hi": "कभी विज्ञापन नहीं, मंदिर की सजावट, जप मालाएँ और ऐप के नए रंग।",
+  "te": "ఎప్పుడూ ప్రకటనలు లేవు, మందిర అలంకరణలు, జప మాలలు, యాప్‌కు అదనపు రంగులు.",
+  "where": "lib/features/support.dart"
+ },
+ {
+  "en": "Offer dakshina",
+  "hi": "दक्षिणा अर्पित करें",
+  "te": "దక్షిణ సమర్పించండి",
+  "where": "lib/features/support.dart"
+ },
+ {
+  "en": "Payment pending. It completes once Google Play confirms it.",
+  "hi": "भुगतान बाकी है। Google Play की पुष्टि होते ही पूरा हो जाएगा।",
+  "te": "చెల్లింపు పెండింగ్‌లో ఉంది. Google Play నిర్ధారించగానే పూర్తవుతుంది.",
+  "where": "lib/features/support.dart"
+ },
+ {
+  "en": "Premium is on. Thank you for supporting Devalay 🙏",
+  "hi": "प्रीमियम शुरू हो गया। देवालय का साथ देने के लिए धन्यवाद 🙏",
+  "te": "ప్రీమియం మొదలైంది. దేవాలయంకు అండగా నిలిచినందుకు ధన్యవాదాలు 🙏",
+  "where": "lib/features/support.dart"
+ },
+ {
+  "en": "Premium restored 👑",
+  "hi": "प्रीमियम वापस आ गया 👑",
+  "te": "ప్రీమియం తిరిగి వచ్చింది 👑",
+  "where": "lib/features/support.dart"
+ },
+ {
+  "en": "Share with family and friends",
+  "hi": "परिवार और दोस्तों से साझा करें",
+  "te": "కుటుంబం, స్నేహితులతో పంచుకోండి",
+  "where": "lib/features/support.dart"
+ },
+ {
+  "en": "Thank you",
+  "hi": "धन्यवाद",
+  "te": "ధన్యవాదాలు",
+  "where": "lib/features/support.dart"
+ },
+ {
+  "en": "The payment did not go through. No money was taken.",
+  "hi": "भुगतान नहीं हो पाया। कोई पैसा नहीं कटा।",
+  "te": "చెల్లింపు జరగలేదు. డబ్బు ఏమీ కట్ కాలేదు.",
+  "where": "lib/features/support.dart"
+ },
+ {
+  "en": "These open the temple's own official site. The money goes to the temple.",
+  "hi": "ये मंदिर की अपनी आधिकारिक साइट खोलते हैं। पैसा मंदिर को जाता है।",
+  "te": "ఇవి ఆలయపు సొంత అధికారిక సైట్‌ను తెరుస్తాయి. డబ్బు ఆలయానికే చేరుతుంది.",
+  "where": "lib/features/support.dart"
+ },
+ {
+  "en": "To Devalay",
+  "hi": "देवालय को",
+  "te": "దేవాలయంకు",
+  "where": "lib/features/support.dart"
+ },
+ {
+  "en": "Your offering keeps Devalay free for every devotee. May the divine bless you and your family.",
+  "hi": "आपकी भेंट देवालय को हर भक्त के लिए मुफ़्त रखती है। ईश्वर आपको और आपके परिवार को आशीर्वाद दें।",
+  "te": "మీ కానుక దేవాలయంను ప్రతి భక్తునికీ ఉచితంగా ఉంచుతుంది. భగవంతుడు మిమ్మల్ని, మీ కుటుంబాన్ని ఆశీర్వదించుగాక.",
+  "where": "lib/features/support.dart"
  },
  {
   "en": ", for visits in the next month",
