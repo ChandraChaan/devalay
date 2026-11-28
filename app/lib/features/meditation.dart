@@ -371,119 +371,124 @@ class _MeditationSessionState extends ConsumerState<MeditationSession> with Sing
     final (_, colors) = _soundLooks[widget.sound.id] ?? ('', Palette.dusk);
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: RadialGradient(
-            center: const Alignment(0, -0.2),
-            radius: 1.2,
-            colors: [colors.first.withValues(alpha: 0.85), Colors.black],
+      body: AnnotatedRegion<SystemUiOverlayStyle>(
+        value: lightBars,
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: RadialGradient(
+              center: const Alignment(0, -0.2),
+              radius: 1.2,
+              colors: [colors.first.withValues(alpha: 0.85), Colors.black],
+            ),
           ),
-        ),
-        child: SafeArea(
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  IconButton(
-                    onPressed: () => Navigator.pop(context),
-                    icon: const Icon(Icons.close_rounded, color: Colors.white70),
-                  ),
-                  const Spacer(),
-                  Text(widget.sound.title.of(lang), style: const TextStyle(color: Colors.white70)),
-                  const SizedBox(width: 16),
-                ],
-              ),
-              const Spacer(),
-              if (_finished) ...[
-                const Text('🙏', style: TextStyle(fontSize: 64)),
-                const SizedBox(height: 12),
-                Text(
-                  t3(lang, 'Om Shanti Shanti Shantihi', 'ॐ शान्तिः शान्तिः शान्तिः', 'ఓం శాంతిః శాంతిః శాంతిః'),
-                  style: const TextStyle(color: Palette.gold, fontSize: 24, fontWeight: FontWeight.w700),
+          child: SafeArea(
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    IconButton(
+                      onPressed: () => Navigator.pop(context),
+                      icon: const Icon(Icons.close_rounded, color: Colors.white70),
+                    ),
+                    const Spacer(),
+                    Text(widget.sound.title.of(lang), style: const TextStyle(color: Colors.white70)),
+                    const SizedBox(width: 16),
+                  ],
                 ),
-                const SizedBox(height: 8),
-                Text(
-                  t3(
-                    lang,
-                    '${widget.minutes} minutes of stillness',
-                    '${widget.minutes} मिनट की शांति',
-                    '${widget.minutes} నిమిషాల ప్రశాంతత',
+                const Spacer(),
+                if (_finished) ...[
+                  const Text('🙏', style: TextStyle(fontSize: 64)),
+                  const SizedBox(height: 12),
+                  Text(
+                    t3(lang, 'Om Shanti Shanti Shantihi', 'ॐ शान्तिः शान्तिः शान्तिः', 'ఓం శాంతిః శాంతిః శాంతిః'),
+                    style: const TextStyle(color: Palette.gold, fontSize: 24, fontWeight: FontWeight.w700),
                   ),
-                  style: const TextStyle(color: Colors.white70),
-                ),
-              ] else
-                SizedBox(
-                  width: 300,
-                  height: 300,
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Container(
-                        width: 140 + 150 * grow,
-                        height: 140 + 150 * grow,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          gradient: RadialGradient(
-                            colors: [Colors.white.withValues(alpha: 0.35), colors.last.withValues(alpha: 0.15)],
-                          ),
-                          boxShadow: [BoxShadow(color: colors.last.withValues(alpha: 0.5), blurRadius: 40 + 40 * grow)],
-                        ),
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            cue,
-                            style: const TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w700),
-                          ),
-                          Text(formatDuration(left), style: const TextStyle(color: Colors.white70, fontSize: 18)),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              const Spacer(),
-              if (_error != null)
-                Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Text(
+                  const SizedBox(height: 8),
+                  Text(
                     t3(
                       lang,
-                      'The soundscape needs the internet the first time. The timer and breath still work.',
-                      'पहली बार ध्वनि के लिए इंटरनेट चाहिए। टाइमर और श्वास फिर भी चलेंगे।',
-                      'మొదటిసారి శబ్దం కోసం ఇంటర్నెట్ కావాలి. టైమర్, శ్వాస పనిచేస్తాయి.',
+                      '${widget.minutes} minutes of stillness',
+                      '${widget.minutes} मिनट की शांति',
+                      '${widget.minutes} నిమిషాల ప్రశాంతత',
                     ),
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(color: Colors.white54),
+                    style: const TextStyle(color: Colors.white70),
                   ),
-                ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 24),
-                child: _finished
-                    ? FilledButton(
-                        onPressed: () => Navigator.pop(context),
-                        child: Text(t3(lang, 'Done', 'पूर्ण', 'పూర్తి')),
-                      )
-                    : Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          IconButton.filledTonal(
-                            iconSize: 32,
-                            onPressed: _togglePause,
-                            icon: Icon(_paused ? Icons.play_arrow_rounded : Icons.pause_rounded),
-                          ),
-                          const SizedBox(width: 16),
-                          TextButton(
-                            onPressed: _finish,
-                            child: Text(
-                              t3(lang, 'End now', 'अभी समाप्त करें', 'ఇప్పుడే ముగించండి'),
-                              style: const TextStyle(color: Colors.white70),
+                ] else
+                  SizedBox(
+                    width: 300,
+                    height: 300,
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Container(
+                          width: 140 + 150 * grow,
+                          height: 140 + 150 * grow,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            gradient: RadialGradient(
+                              colors: [Colors.white.withValues(alpha: 0.35), colors.last.withValues(alpha: 0.15)],
                             ),
+                            boxShadow: [
+                              BoxShadow(color: colors.last.withValues(alpha: 0.5), blurRadius: 40 + 40 * grow),
+                            ],
                           ),
-                        ],
+                        ),
+                        Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              cue,
+                              style: const TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w700),
+                            ),
+                            Text(formatDuration(left), style: const TextStyle(color: Colors.white70, fontSize: 18)),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                const Spacer(),
+                if (_error != null)
+                  Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Text(
+                      t3(
+                        lang,
+                        'The soundscape needs the internet the first time. The timer and breath still work.',
+                        'पहली बार ध्वनि के लिए इंटरनेट चाहिए। टाइमर और श्वास फिर भी चलेंगे।',
+                        'మొదటిసారి శబ్దం కోసం ఇంటర్నెట్ కావాలి. టైమర్, శ్వాస పనిచేస్తాయి.',
                       ),
-              ),
-            ],
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(color: Colors.white54),
+                    ),
+                  ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 24),
+                  child: _finished
+                      ? FilledButton(
+                          onPressed: () => Navigator.pop(context),
+                          child: Text(t3(lang, 'Done', 'पूर्ण', 'పూర్తి')),
+                        )
+                      : Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            IconButton.filledTonal(
+                              iconSize: 32,
+                              onPressed: _togglePause,
+                              icon: Icon(_paused ? Icons.play_arrow_rounded : Icons.pause_rounded),
+                            ),
+                            const SizedBox(width: 16),
+                            TextButton(
+                              onPressed: _finish,
+                              child: Text(
+                                t3(lang, 'End now', 'अभी समाप्त करें', 'ఇప్పుడే ముగించండి'),
+                                style: const TextStyle(color: Colors.white70),
+                              ),
+                            ),
+                          ],
+                        ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
