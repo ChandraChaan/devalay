@@ -48,6 +48,7 @@ from app.services import ai, eclipses, gita_search, muhurtham, temple_updates  #
 TEMPLES = ROOT.parent / "app" / "assets" / "data" / "temples.json"
 WISHES = ROOT.parent / "app" / "assets" / "data" / "wishes.json"
 HOLIDAYS = ROOT.parent / "app" / "assets" / "data" / "holidays.json"
+SECTIONS = ROOT.parent / "app" / "assets" / "data" / "sections.json"
 CITY = re.compile(r"City\('([\w-]+)', '[^']*', '[^']*', (-?[\d.]+), (-?[\d.]+), '([^']+)'(?:, '[A-Z]*')?\)")
 TRACK_KINDS = [None, "ringtone", "aarti", "mantra", "bhajan", "dhun", "ambient", "aarti,mantra,bhajan,chalisa,dhun,ambient"]
 HOME_DAYS = range(-2, 11)
@@ -220,6 +221,9 @@ def main() -> None:
     ex.save(static_file("/wishes"), json.loads(WISHES.read_text()))
     # State public and RBI bank holidays, each list with its official source. Same rule: raise "version".
     ex.save(static_file("/holidays"), json.loads(HOLIDAYS.read_text()))
+    # Ringtones, wallpapers, WhatsApp status and meditation (scripts/build_sections_media.py). Same rule: the
+    # app prefers this copy when its "version" is higher than the bundled one.
+    ex.save(static_file("/sections"), json.loads(SECTIONS.read_text()))
     # TTD's public announcements, read once here so phones do not call the temple's servers.
     ttd_updates = static_file("/temples/ttd/updates")
     updates = temple_updates.fetch_ttd_updates(previous_url=f"{BASE_URL}/api/v1/{ttd_updates}")

@@ -204,7 +204,7 @@ put on commercial recordings, so we use none of them.
 
 ## Fonts and data
 
-- Mukta (Ek Type), Tiro Devanagari Sanskrit and Tiro Telugu (Tiro Typeworks), and Noto Sans Telugu (Google): SIL Open Font License 1.1 (`app/assets/fonts/OFL-*.txt`).
+- Mukta (Ek Type), Tiro Devanagari Sanskrit and Tiro Telugu (Tiro Typeworks), Noto Sans Telugu (Google), and Ramabhadra and Suranna (Silicon Andhra): SIL Open Font License 1.1 (`app/assets/fonts/OFL-*.txt`).
 - NASA JPL DE421 planetary ephemeris: public domain (US Government work). Skyfield: MIT.
 
 ## Trademarks

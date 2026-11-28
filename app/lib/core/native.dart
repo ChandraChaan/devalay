@@ -20,6 +20,10 @@ class NativeBridge {
   static Future<void> setRingtone(String path, String title, String type) =>
       _ch.invokeMethod('setRingtone', {'path': path, 'title': title, 'type': type});
 
+  /// Opens WhatsApp (or WhatsApp Business) with the file at [path]; false when neither is installed.
+  static Future<bool> shareToWhatsApp(String path, {required String mime, String? text}) async =>
+      await _ch.invokeMethod<bool>('shareToWhatsApp', {'path': path, 'mime': mime, 'text': text}) ?? false;
+
   static Future<int> sdkInt() async => await _ch.invokeMethod<int>('sdkInt') ?? 0;
 
   /// The phone's approximate position for "Use my location", asking for coarse location permission

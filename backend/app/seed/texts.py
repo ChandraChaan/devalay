@@ -363,6 +363,143 @@ TEXTS = [
 या ब्रह्माच्युतशङ्करप्रभृतिभिर्देवैः सदा वन्दिता।
 सा मां पातु सरस्वती भगवती निःशेषजाड्यापहा॥""",
     },
+    # Lyrics for recordings in the Listen section (traditional texts, public domain). Telugu keerthanas are
+    # written in Devanagari with ॆ/ॊ for the short e/o, so the app shows them in Telugu script exactly.
+    {
+        "slug": "madhurashtakam",
+        "kind": "stotra",
+        "deity": "krishna",
+        "lang": "sa",
+        "title": "Madhurashtakam",
+        "title_hi": "मधुराष्टकम्",
+        "attribution": "Sri Vallabhacharya (15th century)",
+        "meaning": "Eight verses on the sweetness of Krishna, Lord of Madhura: his lips, face, eyes, smile, words, "
+        "walk, flute, dance, friends, the Yamuna and the cows are all sweet; everything about him is sweet.",
+        "benefits": "Sung in the evening and on Krishna Janmashtami.",
+        "body": """अधरं मधुरं वदनं मधुरं नयनं मधुरं हसितं मधुरम् ।
+हृदयं मधुरं गमनं मधुरं मधुराधिपतेरखिलं मधुरम् ॥१॥
+
+वचनं मधुरं चरितं मधुरं वसनं मधुरं वलितं मधुरम् ।
+चलितं मधुरं भ्रमितं मधुरं मधुराधिपतेरखिलं मधुरम् ॥२॥
+
+वेणुर्मधुरो रेणुर्मधुरः पाणिर्मधुरः पादौ मधुरौ ।
+नृत्यं मधुरं सख्यं मधुरं मधुराधिपतेरखिलं मधुरम् ॥३॥
+
+गीतं मधुरं पीतं मधुरं भुक्तं मधुरं सुप्तं मधुरम् ।
+रूपं मधुरं तिलकं मधुरं मधुराधिपतेरखिलं मधुरम् ॥४॥
+
+करणं मधुरं तरणं मधुरं हरणं मधुरं रमणं मधुरम् ।
+वमितं मधुरं शमितं मधुरं मधुराधिपतेरखिलं मधुरम् ॥५॥
+
+गुञ्जा मधुरा माला मधुरा यमुना मधुरा वीची मधुरा ।
+सलिलं मधुरं कमलं मधुरं मधुराधिपतेरखिलं मधुरम् ॥६॥
+
+गोपी मधुरा लीला मधुरा युक्तं मधुरं मुक्तं मधुरम् ।
+दृष्टं मधुरं शिष्टं मधुरं मधुराधिपतेरखिलं मधुरम् ॥७॥
+
+गोपा मधुरा गावो मधुरा यष्टिर्मधुरा सृष्टिर्मधुरा ।
+दलितं मधुरं फलितं मधुरं मधुराधिपतेरखिलं मधुरम् ॥८॥""",
+    },
+    {
+        "slug": "shiva-panchakshara-stotram",
+        "kind": "stotra",
+        "deity": "shiva",
+        "lang": "sa",
+        "title": "Shiva Panchakshara Stotram",
+        "title_hi": "शिव पञ्चाक्षर स्तोत्रम्",
+        "attribution": "Adi Shankaracharya",
+        "meaning": "Five verses, one for each syllable of Na-Ma-Shi-Va-Ya, praising Shiva: garlanded with the serpent "
+        "king, three-eyed, smeared with ash, worshipped with Ganga's water and mandara flowers, the blue-throated "
+        "Lord whose eyes are the moon, sun and fire.",
+        "benefits": "Chanted on Mondays, in Karthika and on Maha Shivaratri.",
+        "body": """नागेन्द्रहाराय त्रिलोचनाय भस्माङ्गरागाय महेश्वराय ।
+नित्याय शुद्धाय दिगम्बराय तस्मै नकाराय नमः शिवाय ॥१॥
+
+मन्दाकिनीसलिलचन्दनचर्चिताय नन्दीश्वरप्रमथनाथमहेश्वराय ।
+मन्दारपुष्पबहुपुष्पसुपूजिताय तस्मै मकाराय नमः शिवाय ॥२॥
+
+शिवाय गौरीवदनाब्जवृन्दसूर्याय दक्षाध्वरनाशकाय ।
+श्रीनीलकण्ठाय वृषध्वजाय तस्मै शिकाराय नमः शिवाय ॥३॥
+
+वसिष्ठकुम्भोद्भवगौतमार्यमुनीन्द्रदेवार्चितशेखराय ।
+चन्द्रार्कवैश्वानरलोचनाय तस्मै वकाराय नमः शिवाय ॥४॥
+
+यक्षस्वरूपाय जटाधराय पिनाकहस्ताय सनातनाय ।
+दिव्याय देवाय दिगम्बराय तस्मै यकाराय नमः शिवाय ॥५॥
+
+पञ्चाक्षरमिदं पुण्यं यः पठेच्छिवसन्निधौ ।
+शिवलोकमवाप्नोति शिवेन सह मोदते ॥""",
+    },
+    {
+        "slug": "mahalakshmi-ashtakam",
+        "kind": "stotra",
+        "deity": "lakshmi",
+        "lang": "sa",
+        "title": "Mahalakshmi Ashtakam",
+        "title_hi": "महालक्ष्म्यष्टकम्",
+        "attribution": "Padma Purana (Indra's prayer)",
+        "meaning": "Indra's eight verses to Mahalakshmi: the great Maya on the throne of prosperity, riding Garuda, "
+        "who removes every sin and sorrow, grants success and liberation, without beginning or end, seated on the "
+        "lotus, the Mother of the world.",
+        "benefits": "Recited on Fridays, at Diwali and during Varalakshmi Vratam.",
+        "body": """नमस्तेऽस्तु महामाये श्रीपीठे सुरपूजिते ।
+शङ्खचक्रगदाहस्ते महालक्ष्मि नमोऽस्तु ते ॥१॥
+
+नमस्ते गरुडारूढे कोलासुरभयङ्करि ।
+सर्वपापहरे देवि महालक्ष्मि नमोऽस्तु ते ॥२॥
+
+सर्वज्ञे सर्ववरदे सर्वदुष्टभयङ्करि ।
+सर्वदुःखहरे देवि महालक्ष्मि नमोऽस्तु ते ॥३॥
+
+सिद्धिबुद्धिप्रदे देवि भुक्तिमुक्तिप्रदायिनि ।
+मन्त्रमूर्ते सदा देवि महालक्ष्मि नमोऽस्तु ते ॥४॥
+
+आद्यन्तरहिते देवि आद्यशक्ति महेश्वरि ।
+योगजे योगसम्भूते महालक्ष्मि नमोऽस्तु ते ॥५॥
+
+स्थूलसूक्ष्ममहारौद्रे महाशक्ति महोदरे ।
+महापापहरे देवि महालक्ष्मि नमोऽस्तु ते ॥६॥
+
+पद्मासनस्थिते देवि परब्रह्मस्वरूपिणि ।
+परमेशि जगन्मातर्महालक्ष्मि नमोऽस्तु ते ॥७॥
+
+श्वेताम्बरधरे देवि नानालङ्कारभूषिते ।
+जगत्स्थिते जगन्मातर्महालक्ष्मि नमोऽस्तु ते ॥८॥
+
+महालक्ष्म्यष्टकं स्तोत्रं यः पठेद्भक्तिमान्नरः ।
+सर्वसिद्धिमवाप्नोति राज्यं प्राप्नोति सर्वदा ॥""",
+    },
+    {
+        "slug": "brahma-kadigina-padamu",
+        "kind": "stotra",
+        "deity": "venkateswara",
+        "lang": "sa",
+        "title": "Brahma Kadigina Padamu (Annamacharya)",
+        "title_hi": "ब्रह्म कडिगिन पादमु",
+        "attribution": "Tallapaka Annamacharya (15th century)",
+        "meaning": "The foot Brahma washed, the foot that is Brahman itself: the foot that measured the earth and was "
+        "placed on Bali's head, that kicked the sky, that freed Ahalya and danced on the serpent, that Lakshmi "
+        "presses lovingly; to the great yogis it gives the highest state, and on Tirumala it shows itself as "
+        "the supreme abode.",
+        "benefits": "A favourite at Tirumala, sung on Saturdays and Vaikuntha Ekadashi.",
+        "body": """ब्रह्म कडिगिन पादमु
+ब्रह्ममु तानॆनि पादमु ॥
+
+चॆलगि वसुध कॊलिचिन नी पादमु
+बलि तल मोपिन पादमु ।
+तलकक गगनमु तन्निन पादमु
+बलरिपु गाचिन पादमु ॥
+
+कामिनि पापमु कडिगिन पादमु
+पामु तल निडिन पादमु ।
+प्रेमपु श्रीसति पिसिकॆडि पादमु
+पामिडि तुरगपु पादमु ॥
+
+परम योगुलकु परिपरि विधमुल
+परमॊसगॆडि नी पादमु ।
+तिरु वेंकटगिरि तिरमनि चूपिन
+परम पदमु नी पादमु ॥""",
+    },
 ]
 
 # Short mantras: (slug, deity, title, title_hi, sanskrit, meaning)

@@ -49,11 +49,15 @@ import 'features/ringtones.dart';
 import 'features/search.dart';
 import 'features/settings.dart';
 import 'features/shell.dart';
-import 'features/status_maker.dart';
+import 'features/ai_status.dart';
 import 'features/temples.dart';
 import 'features/text_reader.dart';
 import 'features/videos.dart';
+import 'features/wallpaper_gallery.dart';
 import 'features/wallpapers.dart';
+import 'features/meditation.dart';
+import 'features/movie_songs.dart';
+import 'features/whatsapp_status.dart';
 import 'features/wishes.dart';
 
 final _rootKey = GlobalKey<NavigatorState>();
@@ -120,7 +124,10 @@ final routerProvider = Provider<GoRouter>((ref) {
         builder: (_, s) =>
             BookChapterScreen(slug: s.pathParameters['slug']!, number: int.parse(s.pathParameters['n']!)),
       ),
-      GoRoute(path: '/wallpapers', builder: (_, _) => const WallpapersScreen()),
+      GoRoute(
+        path: '/wallpapers',
+        builder: (_, s) => WallpaperGalleryScreen(openId: s.uri.queryParameters['id']),
+      ),
       GoRoute(
         path: '/wallpaper',
         builder: (_, s) => WallpaperDetailScreen(wallpaper: s.extra! as Wallpaper),
@@ -131,7 +138,19 @@ final routerProvider = Provider<GoRouter>((ref) {
         builder: (_, s) => ListenBrowseScreen(kind: s.uri.queryParameters['kind']),
       ),
       GoRoute(path: '/chant', builder: (_, _) => const ChantScreen()),
-      GoRoute(path: '/status', builder: (_, _) => const StatusMakerScreen()),
+      GoRoute(
+        path: '/status',
+        builder: (_, s) => StatusMakerScreen(
+          template: s.uri.queryParameters['template'],
+          variant: int.tryParse(s.uri.queryParameters['variant'] ?? '') ?? 0,
+        ),
+      ),
+      GoRoute(path: '/movie-songs', builder: (_, _) => const MovieSongsScreen()),
+      GoRoute(path: '/meditation', builder: (_, _) => const MeditationScreen()),
+      GoRoute(
+        path: '/whatsapp-status',
+        builder: (_, s) => WhatsAppStatusScreen(openId: s.uri.queryParameters['id']),
+      ),
       GoRoute(path: '/rashifal', builder: (_, _) => const RashifalScreen()),
       GoRoute(path: '/panchang', builder: (_, _) => const PanchangScreen()),
       GoRoute(path: '/calendar', builder: (_, _) => const CalendarScreen()),

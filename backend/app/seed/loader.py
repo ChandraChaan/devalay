@@ -97,7 +97,12 @@ def load_all(db: Session, include_books: bool = True) -> dict[str, int]:
 
     text_for = {"gayatri-mantra-chant": "gayatri-mantra", "gayatri-mantra-recitation": "gayatri-mantra",
                 "mahamrityunjaya-chant": "mahamrityunjaya-mantra", "om-namah-shivaya-khajuraho": "om-namah-shivaya",
-                "aarti-lakshmi": "om-jai-lakshmi-mata", "aarti-ganpati-vandana": "jai-ganesh-deva"}
+                "aarti-lakshmi": "om-jai-lakshmi-mata", "aarti-ganpati-vandana": "jai-ganesh-deva",
+                "annamacharya-brahma-kadigina-paadamu": "brahma-kadigina-padamu",
+                # Lyrics shown in the player for the CC BY recordings (telugu_audio.json).
+                "madhurashtakam": "madhurashtakam", "shiva-panchakshara-stotram": "shiva-panchakshara-stotram",
+                "mahalakshmi-ashtakam-pb-sreenivas": "mahalakshmi-ashtakam",
+                "hanuman-chalisa-pb-sreenivas": "hanuman-chalisa"}
     for sort, tr in enumerate(commons["tracks"]):
         deity = deities.get(tr["deity"])
         _upsert(db, Track, "slug", tr["slug"], {
@@ -122,7 +127,8 @@ def load_all(db: Session, include_books: bool = True) -> dict[str, int]:
             "title": tr["title"], "title_hi": tr["title_hi"], "kind": tr["kind"], "deity_id": deity.id,
             "audio_url": tr["audio_url"], "duration_sec": tr["duration_sec"], "artwork_url": deity.image_url,
             "artist": tr["attribution"].split(" · ")[0][:200], "attribution": tr["attribution"],
-            "license": tr["license"], "source_url": tr["source_url"], "sort": 50 + sort})
+            "license": tr["license"], "source_url": tr["source_url"], "text_slug": text_for.get(tr["slug"]),
+            "sort": 50 + sort})
     counts["tracks"] = len(commons["tracks"]) + len(ORIGINAL_AUDIO) + len(telugu)
 
     for sort, w in enumerate(commons["wallpapers"]):

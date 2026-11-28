@@ -6,6 +6,7 @@
 #  - Keeps every OpenType layout feature, so conjuncts, matras and reph still shape.
 #  - NotoSansTelugu and TiroTelugu are fallbacks behind Mukta and Tiro Devanagari (see lib/core/theme.dart),
 #    so they only keep the Telugu block, the dandas, the Vedic tone marks, ZWJ/ZWNJ and the dotted circle.
+#  - Ramabhadra and Suranna are the display faces of the Telugu status cards: the same Telugu set plus basic Latin.
 #
 # Needs fontTools: pip install fonttools
 # Run from app/: sh tool/slim_fonts.sh
@@ -26,4 +27,5 @@ slim() {
 
 for font in Mukta-*.ttf TiroDevanagariSanskrit-*.ttf; do slim "$font" '*'; done
 for font in NotoSansTelugu-*.ttf TiroTelugu-*.ttf; do slim "$font" "$TELUGU"; done
+for font in Ramabhadra-*.ttf Suranna-*.ttf; do slim "$font" "$TELUGU,U+0021-007E,U+2013-2014,U+2018-201D"; done
 ls -l ./*.ttf

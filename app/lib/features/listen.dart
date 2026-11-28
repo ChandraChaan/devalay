@@ -77,6 +77,44 @@ class ListenScreen extends ConsumerWidget {
               action: tr(ref, 'see_all'),
               onAction: () => _browse(context, null),
             ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
+              child: GradientCard(
+                colors: const [Color(0xFF311B92), Color(0xFFC2185B)],
+                padding: 14,
+                onTap: () {
+                  Usage.record('listen_category', item: 'movie');
+                  context.push('/movie-songs');
+                },
+                child: Row(
+                  children: [
+                    const Text('🎬', style: TextStyle(fontSize: 30)),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            t3(lang, 'Movie bhakti songs', 'फ़िल्मी भक्ति गीत', 'సినిమా భక్తి పాటలు'),
+                            style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w800, fontSize: 17),
+                          ),
+                          Text(
+                            t3(
+                              lang,
+                              'Annamayya, Sri Ramadasu, Shirdi Sai and more, from the official labels',
+                              'अन्नमय्या, श्री रामदासु, शिरडी साई और भी, आधिकारिक चैनलों से',
+                              'అన్నమయ్య, శ్రీ రామదాసు, షిరిడి సాయి ఇంకా, అధికారిక ఛానెళ్ల నుండి',
+                            ),
+                            style: const TextStyle(color: Colors.white70, fontSize: 13),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const Icon(Icons.chevron_right_rounded, color: Colors.white),
+                  ],
+                ),
+              ),
+            ),
             const TodaysSongs(from: 'today'),
             if (lang == 'te') ...[telugu, ringtones] else ...[ringtones, telugu],
           ],
@@ -92,6 +130,7 @@ void _browse(BuildContext context, String? kind) {
     null => '/songs',
     'ringtones' => '/ringtones',
     'favorites' => '/favorites',
+    'ambient' => '/meditation',
     _ => '/songs?kind=$kind',
   });
 }

@@ -5,10 +5,12 @@ import 'package:in_app_purchase/in_app_purchase.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../core/billing.dart';
+import '../core/sections.dart';
 import '../core/i18n.dart';
 import '../core/theme.dart';
 import '../core/usage.dart';
 import '../widgets/common.dart';
+import '../widgets/status_templates.dart';
 import 'support.dart';
 import 'support_chat.dart';
 
@@ -44,6 +46,33 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
     final premium = ref.watch(premiumProvider);
     final theme = Theme.of(context);
     final perks = [
+      (
+        '👑',
+        t3(
+          lang,
+          'The Premium collection: the 5 finest wallpapers, ringtones, WhatsApp status videos, status designs and meditation sounds',
+          'प्रीमियम संग्रह: 5 सबसे सुंदर वॉलपेपर, रिंगटोन, व्हाट्सऐप स्टेटस वीडियो, स्टेटस डिज़ाइन और ध्यान ध्वनियाँ',
+          'ప్రీమియం కలెక్షన్: అత్యుత్తమ 5 వాల్‌పేపర్లు, రింగ్‌టోన్లు, వాట్సాప్ స్టేటస్ వీడియోలు, స్టేటస్ డిజైన్లు, ధ్యాన శబ్దాలు',
+        ),
+      ),
+      (
+        '🖼️',
+        t3(
+          lang,
+          'QHD+ (1440×3200) downloads of every wallpaper, no watermark',
+          'हर वॉलपेपर QHD+ (1440×3200) में, बिना वॉटरमार्क',
+          'ప్రతి వాల్‌పేపర్ QHD+ (1440×3200)లో, వాటర్‌మార్క్ లేకుండా',
+        ),
+      ),
+      (
+        '✨',
+        t3(
+          lang,
+          'AI Status: Swarna gold, Gopuram, Pattu silk, Padma and Royal art designs, and a personal blessing from your birth star',
+          'AI स्टेटस: स्वर्ण, गोपुरम, रेशमी, पद्म और राजसी डिज़ाइन, और आपके जन्म नक्षत्र से व्यक्तिगत आशीर्वाद',
+          'భక్తి స్టేటస్: స్వర్ణ, గోపురం, పట్టు, పద్మం, రాజస డిజైన్లు, మీ జన్మ నక్షత్రం ఆధారంగా వ్యక్తిగత ఆశీర్వాదం',
+        ),
+      ),
       ('🚫', t3(lang, 'No ads, now or ever', 'कभी कोई विज्ञापन नहीं', 'ఎప్పుడూ ప్రకటనలు ఉండవు')),
       (
         '🛕',
@@ -126,6 +155,7 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
               ],
             ),
           ),
+          if (!premium) _UnlockContext(source: widget.source),
           const SizedBox(height: 12),
           for (final (emoji, text) in perks)
             ListTile(
@@ -245,6 +275,85 @@ class _PlanCard extends ConsumerWidget {
           trailing: FilledButton(
             onPressed: busy ? null : () => ref.read(billingProvider.notifier).buy(product, source: 'premium'),
             child: Text(product.price),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// When Premium was opened from a locked item, that item at the top: "Unlock Maha Lakshmi".
+class _UnlockContext extends ConsumerWidget {
+  const _UnlockContext({required this.source});
+  final String source;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final parsed = parsePremiumSource(source);
+    if (parsed == null) return const SizedBox.shrink();
+    final (section, id) = parsed;
+    final lang = uiLang(ref);
+    String? title;
+    String? image;
+    if (section == 'status_template') {
+      title = id == 'personal'
+          ? t3(lang, 'Personal blessing', 'व्यक्तिगत आशीर्वाद', 'వ్యక్తిగత ఆశీర్వాదం')
+          : StatusTemplate.values.where((t) => t.name == id).firstOrNull?.label(lang);
+    } else {
+      final item = ref.watch(sectionsProvider).value?.find(section, id);
+      title = item?.title.of(lang);
+      image = switch (item) {
+        HdWallpaper w => w.thumb,
+        StatusVideo v => v.poster,
+        _ => null,
+      };
+    }
+    if (title == null) return const SizedBox.shrink();
+    final kind = switch (section) {
+      'wallpaper' => t3(lang, 'Premium wallpaper', 'प्रीमियम वॉलपेपर', 'ప్రీమియం వాల్‌పేపర్'),
+      'ringtone' => t3(lang, 'Premium ringtone', 'प्रीमियम रिंगटोन', 'ప్రీమియం రింగ్‌టోన్'),
+      'status_video' => t3(lang, 'Premium status video', 'प्रीमियम स्टेटस वीडियो', 'ప్రీమియం స్టేటస్ వీడియో'),
+      'meditation' => t3(lang, 'Premium meditation sound', 'प्रीमियम ध्यान ध्वनि', 'ప్రీమియం ధ్యాన శబ్దం'),
+      _ => t3(lang, 'Premium status design', 'प्रीमियम स्टेटस डिज़ाइन', 'ప్రీమియం స్టేటస్ డిజైన్'),
+    };
+    return Padding(
+      padding: const EdgeInsets.only(top: 12),
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+          side: const BorderSide(color: Palette.marigold, width: 1.5),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: Row(
+            children: [
+              if (image != null)
+                SizedBox(width: 54, height: 96, child: NetImage(image, radius: 10))
+              else
+                Icon(section == 'ringtone' ? Icons.music_note_rounded : Icons.auto_awesome_rounded, size: 40),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(kind, style: Theme.of(context).textTheme.labelMedium),
+                    Text(
+                      t3(lang, 'Unlock $title', '$title अनलॉक करें', '$title అన్‌లాక్ చేయండి'),
+                      style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 17),
+                    ),
+                    Text(
+                      t3(
+                        lang,
+                        'and the whole Premium collection, with QHD+ downloads and no watermark.',
+                        'और पूरा प्रीमियम संग्रह, QHD+ डाउनलोड के साथ, बिना वॉटरमार्क।',
+                        'దానితో పాటు పూర్తి ప్రీమియం కలెక్షన్, QHD+ డౌన్‌లోడ్‌లు, వాటర్‌మార్క్ లేకుండా.',
+                      ),
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
       ),
