@@ -3,6 +3,19 @@
 Each milestone is a git tag and a [GitHub release](https://github.com/ChandraChaan/devalay/releases). Releases from
 v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the section below that matches the tag.
 
+## Unreleased
+
+- **Edge-to-edge (Play Console recommendations on 1.5.10).** Play listed one source of deprecated
+  `Window.setStatusBarColor`/`setNavigationBarColor` calls: androidx.core's `WindowCompat.enableEdgeToEdge`, which
+  makes them on every Android version. MainActivity now does the same steps itself, and every API that Android 15
+  deprecates (bar colours, `setDecorFitsSystemWindows`, status-bar contrast, `SHORT_EDGES` cutout mode) runs only
+  below Android 15, where it still has an effect. Flutter's own calls were already guarded like this, and Play does
+  not flag them.
+- Screens opened above the bottom tabs, and bottom sheets, now keep their last rows and buttons clear of the
+  navigation bar (most visible with 3-button navigation): lists with their own padding add the system inset through
+  `EdgeInsets.withSystemInsets` (core/theme.dart). The video player's controls sit above the bar, and the mini player
+  in the tablet/landscape layout does too.
+
 ## v1.5.10 — 2026-11-28
 
 Premium chat with the developer, and one less false crash.

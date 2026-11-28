@@ -82,7 +82,7 @@ class _Picker extends ConsumerWidget {
     final track = mantras.firstWhere((t) => t.id == selected, orElse: () => mantras.first);
     final minutes = (track.durationSec * times / 60).ceil();
     return ListView(
-      padding: const EdgeInsets.fromLTRB(16, 8, 16, 120),
+      padding: const EdgeInsets.fromLTRB(16, 8, 16, 120).withSystemInsets(context),
       children: [
         Text(
           t3(lang, 'Choose a mantra', 'मंत्र चुनें', 'మంత్రం ఎంచుకోండి'),
@@ -187,7 +187,7 @@ class _Counter extends ConsumerWidget {
     final p = progress;
     final scheme = Theme.of(context).colorScheme;
     return ListView(
-      padding: const EdgeInsets.fromLTRB(16, 24, 16, 120),
+      padding: const EdgeInsets.fromLTRB(16, 24, 16, 120).withSystemInsets(context),
       children: [
         Center(
           child: SizedBox(

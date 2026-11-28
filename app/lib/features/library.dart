@@ -9,6 +9,7 @@ import '../core/favorites.dart';
 import '../core/i18n.dart';
 import '../core/models.dart';
 import '../widgets/common.dart';
+import '../core/theme.dart';
 
 class FavoritesScreen extends ConsumerWidget {
   const FavoritesScreen({super.key});
@@ -31,7 +32,7 @@ class FavoritesScreen extends ConsumerWidget {
               ),
             )
           : ListView.separated(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16).withSystemInsets(context),
               itemCount: favs.length,
               separatorBuilder: (_, _) => const SizedBox(height: 8),
               itemBuilder: (_, i) {
@@ -111,7 +112,7 @@ class DownloadsScreen extends ConsumerWidget {
               ),
             )
           : ListView(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16).withSystemInsets(context),
               children: [
                 Text('${tracks.length} tracks · $mb MB on this device', style: Theme.of(context).textTheme.bodySmall),
                 const SizedBox(height: 8),

@@ -8,6 +8,7 @@ import '../core/location.dart';
 import '../core/names.dart';
 import '../widgets/city_picker.dart';
 import '../widgets/common.dart';
+import '../core/theme.dart';
 import 'grahanam.dart';
 import 'matching.dart' show nakshatraName;
 
@@ -31,7 +32,7 @@ class _ShubhaMuhurthamScreenState extends ConsumerState<ShubhaMuhurthamScreen> {
     return Scaffold(
       appBar: AppBar(title: Text(t3(lang, 'Shubha Muhurtham', 'शुभ मुहूर्त', 'శుభ ముహూర్తాలు'))),
       body: ListView(
-        padding: const EdgeInsets.fromLTRB(16, 4, 16, 32),
+        padding: const EdgeInsets.fromLTRB(16, 4, 16, 32).withSystemInsets(context),
         children: [
           Wrap(
             spacing: 8,

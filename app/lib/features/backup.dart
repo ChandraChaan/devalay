@@ -129,7 +129,7 @@ class _BackupScreenState extends ConsumerState<BackupScreen> {
     return Scaffold(
       appBar: AppBar(title: Text(t3(lang, 'Backup & export', 'बैकअप और एक्सपोर्ट', 'బ్యాకప్ & ఎక్స్‌పోర్ట్'))),
       body: ListView(
-        padding: const EdgeInsets.only(bottom: 32),
+        padding: const EdgeInsets.only(bottom: 32).withSystemInsets(context),
         children: [
           if (_busy) const LinearProgressIndicator(),
           Padding(
@@ -298,7 +298,7 @@ class _IcsSheetState extends ConsumerState<_IcsSheet> {
     final lang = ref.watch(prefsProvider.select((p) => p.language));
     final now = DateTime.now().year;
     return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+      padding: const EdgeInsets.fromLTRB(16, 0, 16, 16).withSystemInsets(context),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,

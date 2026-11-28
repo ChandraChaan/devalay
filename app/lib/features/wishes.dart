@@ -72,7 +72,7 @@ class WishesScreen extends ConsumerWidget {
           final first = festivals.where((w) => w.date != null).firstOrNull;
           final daily = catalog.daily;
           return ListView(
-            padding: const EdgeInsets.fromLTRB(16, 0, 16, 32),
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 32).withSystemInsets(context),
             children: [
               if (first != null) _FeaturedWish(wish: first, now: now),
               if (daily != null) ...[const SizedBox(height: 12), _DailyTile(festival: daily, now: now)],

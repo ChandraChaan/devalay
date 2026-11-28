@@ -55,7 +55,7 @@ class _PeriodRashifalState extends ConsumerState<PeriodRashifal> with AutomaticK
 
         final (slug, _, _, symbol) = rashiList[_rashi];
         return ListView(
-          padding: const EdgeInsets.fromLTRB(16, 12, 16, 32),
+          padding: const EdgeInsets.fromLTRB(16, 12, 16, 32).withSystemInsets(context),
           children: [
             SizedBox(
               height: 44,

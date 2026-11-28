@@ -8,6 +8,7 @@ import '../core/i18n.dart';
 import '../core/providers.dart';
 import '../core/storage.dart';
 import '../widgets/common.dart';
+import '../core/theme.dart';
 
 class BooksScreen extends ConsumerWidget {
   const BooksScreen({super.key});
@@ -20,7 +21,7 @@ class BooksScreen extends ConsumerWidget {
         loading: () => const LoadingList(),
         error: (e, _) => ErrorRetry(error: e, onRetry: () => ref.invalidate(booksProvider)),
         data: (list) => ListView(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16).withSystemInsets(context),
           children: [
             for (final b in list)
               Card(
@@ -110,7 +111,7 @@ class _BookScreenState extends ConsumerState<BookScreen> {
                   onTap: () => context.push('/books/${b.slug}/${chapters[i].number}'),
                 ),
               ),
-              const SliverToBoxAdapter(child: SizedBox(height: 32)),
+              SliverToBoxAdapter(child: SizedBox(height: 32 + MediaQuery.paddingOf(context).bottom)),
             ],
           );
         },
@@ -152,7 +153,7 @@ class _BookChapterScreenState extends ConsumerState<BookChapterScreen> {
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (e, _) => ErrorRetry(error: e, onRetry: () => ref.invalidate(bookChapterProvider(q))),
         data: (c) => ListView(
-          padding: const EdgeInsets.fromLTRB(20, 8, 20, 32),
+          padding: const EdgeInsets.fromLTRB(20, 8, 20, 32).withSystemInsets(context),
           children: [
             Text(
               '${c['title']}',

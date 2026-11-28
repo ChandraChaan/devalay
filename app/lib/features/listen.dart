@@ -51,7 +51,7 @@ class ListenScreen extends ConsumerWidget {
       body: RefreshIndicator(
         onRefresh: () => ref.refresh(tracksProvider((kind: null, deity: null)).future),
         child: ListView(
-          padding: const EdgeInsets.only(bottom: 120),
+          padding: const EdgeInsets.only(bottom: 120).withSystemInsets(context),
           children: [
             const _KindTiles(),
             const _ChantCard(),
@@ -301,7 +301,7 @@ class _TrackList extends ConsumerWidget {
           : RefreshIndicator(
               onRefresh: () => ref.refresh(tracksProvider(query).future),
               child: ListView.separated(
-                padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
+                padding: const EdgeInsets.fromLTRB(16, 12, 16, 24).withSystemInsets(context),
                 itemCount: list.length,
                 separatorBuilder: (_, _) => const SizedBox(height: 10),
                 itemBuilder: (_, i) => TrackTile(

@@ -254,7 +254,7 @@ class _BirthStarSheetState extends ConsumerState<_BirthStarSheet> {
   Widget build(BuildContext context) {
     final lang = ref.watch(prefsProvider.select((p) => p.language));
     return Padding(
-      padding: EdgeInsets.fromLTRB(20, 0, 20, 20 + MediaQuery.viewInsetsOf(context).bottom),
+      padding: EdgeInsets.fromLTRB(20, 0, 20, 20 + MediaQuery.viewInsetsOf(context).bottom).withSystemInsets(context),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,

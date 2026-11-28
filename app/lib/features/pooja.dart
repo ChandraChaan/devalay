@@ -23,7 +23,7 @@ class PoojaGuidesScreen extends ConsumerWidget {
         loading: () => const LoadingList(),
         error: (e, _) => ErrorRetry(error: e, onRetry: () => ref.invalidate(poojaGuidesProvider)),
         data: (all) => ListView(
-          padding: const EdgeInsets.fromLTRB(16, 4, 16, 24),
+          padding: const EdgeInsets.fromLTRB(16, 4, 16, 24).withSystemInsets(context),
           children: [
             Padding(
               padding: const EdgeInsets.only(bottom: 12),
@@ -86,7 +86,7 @@ class PoojaGuideScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(title: Text(guide.title(lang))),
       body: ListView(
-        padding: const EdgeInsets.fromLTRB(16, 4, 16, 32),
+        padding: const EdgeInsets.fromLTRB(16, 4, 16, 32).withSystemInsets(context),
         children: [
           GradientCard(
             colors: Palette.sunrise,

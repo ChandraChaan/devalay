@@ -95,7 +95,7 @@ class GitaScreen extends ConsumerWidget {
               ),
             ),
             SliverPadding(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16).withSystemInsets(context),
               sliver: SliverList.separated(
                 itemCount: list.length,
                 separatorBuilder: (_, _) => const SizedBox(height: 10),

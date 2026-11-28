@@ -224,42 +224,46 @@ class _VideoPageState extends State<_VideoPage> {
   @override
   Widget build(BuildContext context) {
     final thumb = 'https://i.ytimg.com/vi/${widget.video.id}/hqdefault.jpg';
-    return Column(
-      children: [
-        Expanded(
-          // Fill the space: YouTube fits both upright Shorts and wide videos inside it.
-          child: LayoutBuilder(
-            builder: (_, c) => _controller != null
-                ? YoutubePlayer(
-                    controller: _controller!,
-                    aspectRatio: c.maxWidth / c.maxHeight,
-                    enableFullScreenOnVerticalDrag: false,
-                  )
-                : NetImage(thumb, fit: BoxFit.contain),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(20, 12, 20, 8),
-          child: Text(
-            widget.video.title,
-            maxLines: 3,
-            overflow: TextOverflow.ellipsis,
-            style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w700, height: 1.35),
-          ),
-        ),
-        Text(widget.channelName, style: const TextStyle(color: Colors.white60, fontSize: 15)),
-        const SizedBox(height: 16),
-        if (widget.hint != null)
-          Padding(
-            padding: const EdgeInsets.only(bottom: 20),
-            child: Column(
-              children: [
-                const Icon(Icons.keyboard_double_arrow_up_rounded, color: Palette.gold, size: 32),
-                Text(widget.hint!, style: const TextStyle(color: Palette.gold, fontSize: 15)),
-              ],
+    // The title and swipe hint sit at the bottom: keep them above the navigation bar.
+    return SafeArea(
+      top: false,
+      child: Column(
+        children: [
+          Expanded(
+            // Fill the space: YouTube fits both upright Shorts and wide videos inside it.
+            child: LayoutBuilder(
+              builder: (_, c) => _controller != null
+                  ? YoutubePlayer(
+                      controller: _controller!,
+                      aspectRatio: c.maxWidth / c.maxHeight,
+                      enableFullScreenOnVerticalDrag: false,
+                    )
+                  : NetImage(thumb, fit: BoxFit.contain),
             ),
           ),
-      ],
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 12, 20, 8),
+            child: Text(
+              widget.video.title,
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w700, height: 1.35),
+            ),
+          ),
+          Text(widget.channelName, style: const TextStyle(color: Colors.white60, fontSize: 15)),
+          const SizedBox(height: 16),
+          if (widget.hint != null)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 20),
+              child: Column(
+                children: [
+                  const Icon(Icons.keyboard_double_arrow_up_rounded, color: Palette.gold, size: 32),
+                  Text(widget.hint!, style: const TextStyle(color: Palette.gold, fontSize: 15)),
+                ],
+              ),
+            ),
+        ],
+      ),
     );
   }
 }

@@ -230,7 +230,7 @@ class _EventEditorState extends ConsumerState<_EventEditor> {
     return Padding(
       padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(context).bottom),
       child: SingleChildScrollView(
-        padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 20).withSystemInsets(context),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -559,7 +559,7 @@ class MyEventsScreen extends ConsumerWidget {
               label: Text(t3(lang, 'Add', 'जोड़ें', 'జోడించు')),
             ),
       body: ListView(
-        padding: const EdgeInsets.fromLTRB(16, 8, 16, 96),
+        padding: const EdgeInsets.fromLTRB(16, 8, 16, 96).withSystemInsets(context),
         children: [
           if (rows.isEmpty) intro,
           if (rows.isNotEmpty && rows.first.$2 != null)

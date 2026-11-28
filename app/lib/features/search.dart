@@ -12,6 +12,7 @@ import '../core/models.dart';
 import '../core/names.dart';
 import '../core/providers.dart';
 import '../widgets/common.dart';
+import '../core/theme.dart';
 
 class SearchScreen extends ConsumerStatefulWidget {
   const SearchScreen({super.key});
@@ -126,7 +127,7 @@ class _SearchScreenState extends ConsumerState<SearchScreen> {
           : empty
           ? EmptyState(icon: Icons.search_off_rounded, title: t3(lang, 'No results', 'कुछ नहीं मिला', 'ఏమీ దొరకలేదు'))
           : ListView(
-              padding: const EdgeInsets.all(12),
+              padding: const EdgeInsets.all(12).withSystemInsets(context),
               children: [
                 if (festivals.isNotEmpty) SectionHeader(t3(lang, 'Festivals', 'त्योहार', 'పండుగలు')),
                 for (final f in festivals)

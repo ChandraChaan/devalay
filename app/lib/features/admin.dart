@@ -116,7 +116,7 @@ class _SignInState extends State<_SignIn> {
       // Scrolls, so the sign-in fields stay usable with the keyboard open.
       body: Center(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.all(32),
+          padding: const EdgeInsets.all(32).withSystemInsets(context),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -466,7 +466,7 @@ class _LiveTabState extends State<_LiveTab> with AutomaticKeepAliveClientMixin {
         final hour = people.where((p) => DateTime.now().difference(p.at) < const Duration(hours: 1)).length;
         final today = people.where((p) => DateTime.now().difference(p.at) < const Duration(hours: 24)).length;
         return ListView(
-          padding: const EdgeInsets.all(12),
+          padding: const EdgeInsets.all(12).withSystemInsets(context),
           children: [
             Row(
               children: [
@@ -575,7 +575,7 @@ class _OverviewTab extends ConsumerWidget {
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (e, _) => _Problem('$e'),
         data: (s) => ListView(
-          padding: const EdgeInsets.all(12),
+          padding: const EdgeInsets.all(12).withSystemInsets(context),
           children: [
             Wrap(
               children: [
@@ -907,7 +907,7 @@ class _FeedbackTabState extends State<_FeedbackTab> {
         int count(String s) => all.where((d) => _status(d.data()) == s).length;
         final docs = all.where((d) => _show == 'all' || _status(d.data()) == _show).toList();
         return ListView(
-          padding: const EdgeInsets.all(12),
+          padding: const EdgeInsets.all(12).withSystemInsets(context),
           children: [
             SegmentedButton<String>(
               segments: [
@@ -1025,7 +1025,7 @@ class _UserScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(title: Text('User ${short(uid)}')),
       body: ListView(
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.all(12).withSystemInsets(context),
         children: [
           StreamBuilder<DatabaseEvent>(
             stream: Usage.rtdb.ref('status/$uid').onValue,

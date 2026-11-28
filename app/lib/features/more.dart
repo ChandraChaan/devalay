@@ -42,7 +42,7 @@ class MoreScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(title: Text(tr(ref, 'more'))),
       body: ListView(
-        padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
+        padding: const EdgeInsets.fromLTRB(16, 0, 16, 24).withSystemInsets(context),
         children: [
           // Static (serverless) builds have no accounts; Premium comes from Google Play in every build.
           if (!AppConfig.staticApi) ...[

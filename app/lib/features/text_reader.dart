@@ -33,7 +33,7 @@ class TextListScreen extends ConsumerWidget {
                 title: t3(appLang, 'Coming soon', 'जल्द आ रहा है', 'త్వరలో వస్తుంది'),
               )
             : ListView.separated(
-                padding: const EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16).withSystemInsets(context),
                 itemCount: list.length,
                 separatorBuilder: (_, _) => const SizedBox(height: 10),
                 itemBuilder: (_, i) {
@@ -108,7 +108,7 @@ class _TextReaderScreenState extends ConsumerState<TextReaderScreen> {
             ),
             SliverToBoxAdapter(child: _AudioForText(slug: t.slug)),
             SliverPadding(
-              padding: const EdgeInsets.fromLTRB(20, 8, 20, 40),
+              padding: const EdgeInsets.fromLTRB(20, 8, 20, 40).withSystemInsets(context),
               sliver: SliverList.list(
                 children: [
                   Container(
@@ -177,7 +177,7 @@ class _TextReaderScreenState extends ConsumerState<TextReaderScreen> {
           final prefs = ref.watch(prefsProvider);
           final n = ref.read(prefsProvider.notifier);
           return Padding(
-            padding: const EdgeInsets.fromLTRB(20, 0, 20, 32),
+            padding: const EdgeInsets.fromLTRB(20, 0, 20, 32).withSystemInsets(context),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [

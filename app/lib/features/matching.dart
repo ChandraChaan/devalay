@@ -54,7 +54,7 @@ class _MatchingScreenState extends ConsumerState<MatchingScreen> {
     return Scaffold(
       appBar: AppBar(title: Text(tr(ref, 'matching'))),
       body: ListView(
-        padding: const EdgeInsets.fromLTRB(16, 4, 16, 32),
+        padding: const EdgeInsets.fromLTRB(16, 4, 16, 32).withSystemInsets(context),
         children: [
           Text(
             t3(

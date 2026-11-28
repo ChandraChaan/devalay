@@ -95,7 +95,7 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
     return Scaffold(
       appBar: AppBar(title: Text(tr(ref, 'premium'))),
       body: ListView(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20).withSystemInsets(context),
         children: [
           GradientCard(
             colors: const [Color(0xFFFFB300), Color(0xFFE65100), Palette.maroon],

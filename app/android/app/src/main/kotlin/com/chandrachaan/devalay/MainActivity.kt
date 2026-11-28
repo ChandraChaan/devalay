@@ -14,6 +14,8 @@ import android.os.Looper
 import android.content.ContentValues
 import android.content.Intent
 import android.graphics.BitmapFactory
+import android.graphics.Color
+import android.view.WindowManager
 import android.media.RingtoneManager
 import android.net.Uri
 import android.os.Build
@@ -42,7 +44,50 @@ class MainActivity : AudioServiceActivity() {
     // decor view any earlier inflates the launch background in this process.
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        WindowCompat.enableEdgeToEdge(window)
+        enableEdgeToEdge()
+    }
+
+    /**
+     * Same steps as androidx.core's WindowCompat.enableEdgeToEdge, but every call Android 15 deprecates runs
+     * only below Android 15. From Android 15 an app targeting SDK 35+ is always edge-to-edge with
+     * transparent bars, so those calls do nothing there, and Play Console flags any unguarded call to them
+     * ("Your app uses deprecated APIs or parameters for edge-to-edge"). androidx.core makes the bar-colour
+     * calls unguarded, which is why the app does this itself (Flutter's own calls are already guarded).
+     * Display-cutout mode uses ALWAYS from Android 11, and the deprecated SHORT_EDGES only on Android 9
+     * and 10, where ALWAYS does not exist.
+     */
+    private fun enableEdgeToEdge() {
+        val window = window
+        window.decorView
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.VANILLA_ICE_CREAM) {
+            WindowCompat.setDecorFitsSystemWindows(window, false)
+            @Suppress("DEPRECATION")
+            window.statusBarColor = Color.TRANSPARENT
+            @Suppress("DEPRECATION")
+            window.navigationBarColor = Color.TRANSPARENT
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                @Suppress("DEPRECATION")
+                window.isStatusBarContrastEnforced = false
+            }
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            window.isNavigationBarContrastEnforced = false
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            setCutoutMode(WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS)
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            @Suppress("DEPRECATION")
+            setCutoutMode(WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES)
+        }
+    }
+
+    @androidx.annotation.RequiresApi(Build.VERSION_CODES.P)
+    private fun setCutoutMode(mode: Int) {
+        val attributes = window.attributes
+        if (attributes.layoutInDisplayCutoutMode != mode) {
+            attributes.layoutInDisplayCutoutMode = mode
+            window.attributes = attributes
+        }
     }
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {

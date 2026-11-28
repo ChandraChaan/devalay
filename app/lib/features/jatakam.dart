@@ -82,7 +82,7 @@ class _JatakamScreenState extends ConsumerState<JatakamScreen> {
     return Scaffold(
       appBar: AppBar(title: Text(t3(lang, 'Jatakam (birth chart)', 'जन्म कुंडली', 'జాతకం'))),
       body: ListView(
-        padding: const EdgeInsets.fromLTRB(16, 4, 16, 32),
+        padding: const EdgeInsets.fromLTRB(16, 4, 16, 32).withSystemInsets(context),
         children: [
           Text(
             t3(

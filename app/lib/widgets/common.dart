@@ -97,7 +97,7 @@ class LoadingList extends StatelessWidget {
   final double height;
   @override
   Widget build(BuildContext context) => ListView.separated(
-    padding: const EdgeInsets.all(16),
+    padding: const EdgeInsets.all(16).withSystemInsets(context),
     itemCount: count,
     separatorBuilder: (_, _) => const SizedBox(height: 12),
     itemBuilder: (_, _) => SkeletonBox(height: height),

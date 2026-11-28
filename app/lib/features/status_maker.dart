@@ -111,7 +111,7 @@ class _StatusMakerScreenState extends ConsumerState<StatusMakerScreen> {
     return Scaffold(
       appBar: AppBar(title: Text(tr(ref, 'ai_status'))),
       body: ListView(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16).withSystemInsets(context),
         children: [
           Text(t3(lang, 'Deity', 'देवता', 'దైవం'), style: Theme.of(context).textTheme.titleMedium),
           const SizedBox(height: 8),
@@ -474,7 +474,7 @@ class _StatusComposerState extends ConsumerState<StatusComposer> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 16).withSystemInsets(context),
             child: Row(
               children: [
                 Expanded(
