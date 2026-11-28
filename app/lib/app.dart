@@ -55,6 +55,8 @@ import 'features/text_reader.dart';
 import 'features/videos.dart';
 import 'features/wallpaper_gallery.dart';
 import 'features/wallpapers.dart';
+import 'features/audiobooks.dart';
+import 'features/for_you.dart';
 import 'features/meditation.dart';
 import 'features/movie_songs.dart';
 import 'features/whatsapp_status.dart';
@@ -147,6 +149,8 @@ final routerProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(path: '/movie-songs', builder: (_, _) => const MovieSongsScreen()),
       GoRoute(path: '/meditation', builder: (_, _) => const MeditationScreen()),
+      GoRoute(path: '/for-you', builder: (_, _) => const ForYouScreen()),
+      GoRoute(path: '/audiobooks', builder: (_, _) => const AudiobooksScreen()),
       GoRoute(
         path: '/whatsapp-status',
         builder: (_, s) => WhatsAppStatusScreen(openId: s.uri.queryParameters['id']),

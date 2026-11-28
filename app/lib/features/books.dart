@@ -7,6 +7,8 @@ import '../core/favorites.dart';
 import '../core/i18n.dart';
 import '../core/providers.dart';
 import '../core/storage.dart';
+import '../widgets/translatable.dart';
+import 'audiobooks.dart' show BookListenCard;
 import '../widgets/common.dart';
 import '../core/theme.dart';
 
@@ -72,7 +74,9 @@ class _BookScreenState extends ConsumerState<BookScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 sliver: SliverList.list(
                   children: [
-                    Text(b.description, style: const TextStyle(fontSize: 16, height: 1.5)),
+                    TranslatedText(b.description, style: const TextStyle(fontSize: 16, height: 1.5)),
+                    const SizedBox(height: 8),
+                    BookListenCard(slug: b.slug),
                     Attribution(b),
                     const SizedBox(height: 8),
                     if (last != null)
@@ -148,7 +152,7 @@ class _BookChapterScreenState extends ConsumerState<BookChapterScreen> {
     final chapter = ref.watch(bookChapterProvider(q));
     final scale = ref.watch(prefsProvider.select((p) => p.textScale));
     return Scaffold(
-      appBar: AppBar(title: Text('${widget.number}')),
+      appBar: AppBar(title: Text('${widget.number}'), actions: const [TranslateAction()]),
       body: chapter.when(
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (e, _) => ErrorRetry(error: e, onRetry: () => ref.invalidate(bookChapterProvider(q))),
@@ -160,7 +164,7 @@ class _BookChapterScreenState extends ConsumerState<BookChapterScreen> {
               style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.w700),
             ),
             const SizedBox(height: 16),
-            SelectableText('${c['body']}', style: TextStyle(fontSize: 17 * scale, height: 1.65)),
+            TranslatedText('${c['body']}', style: TextStyle(fontSize: 17 * scale, height: 1.65), selectable: true),
             const SizedBox(height: 24),
             Row(
               children: [

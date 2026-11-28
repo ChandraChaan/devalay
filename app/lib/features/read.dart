@@ -48,7 +48,7 @@ class ReadScreen extends ConsumerWidget {
                         style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w700),
                       ),
                       const Text(
-                        '18 chapters · 701 verses · Sanskrit, transliteration, English',
+                        '18 chapters · 701 verses · Sanskrit, English, human voices, translate',
                         style: TextStyle(color: Colors.white70),
                       ),
                     ],
@@ -58,6 +58,39 @@ class ReadScreen extends ConsumerWidget {
               ],
             ),
           ).animate().fadeIn().slideY(begin: 0.1),
+          const SizedBox(height: 12),
+          GradientCard(
+            colors: const [Color(0xFF3E2723), Color(0xFF6D4C41), Color(0xFFBF8F00)],
+            onTap: () => context.push('/audiobooks'),
+            padding: 16,
+            child: Row(
+              children: [
+                const Text('🎧', style: TextStyle(fontSize: 30)),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        t3(appLang, 'Audiobooks', 'ऑडियोबुक', 'ఆడియో పుస్తకాలు'),
+                        style: const TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.w700),
+                      ),
+                      Text(
+                        t3(
+                          appLang,
+                          'Gita, Ramayana, Mahabharata, Upanishads: 30 books read aloud',
+                          'गीता, रामायण, महाभारत, उपनिषद: 30 पुस्तकें सुनें',
+                          'గీత, రామాయణం, మహాభారతం, ఉపనిషత్తులు: 30 పుస్తకాలు వినండి',
+                        ),
+                        style: const TextStyle(color: Colors.white70),
+                      ),
+                    ],
+                  ),
+                ),
+                const Icon(Icons.chevron_right_rounded, color: Colors.white),
+              ],
+            ),
+          ),
           const SizedBox(height: 12),
           GradientCard(
             colors: const [Color(0xFF0D47A1), Color(0xFF4A148C)],

@@ -311,7 +311,7 @@ class WishCard extends StatelessWidget {
   TextStyle _style(double size, Color color, {bool serif = false, FontWeight? weight, double height = 1.25}) =>
       TextStyle(
         fontFamily: serif ? scriptureFont : 'Mukta',
-        fontFamilyFallback: serif ? scriptureFontFallback : uiFontFallback,
+        fontFamilyFallback: serif ? const ['Suranna', ...scriptureFontFallback] : uiFontFallback,
         fontSize: size,
         height: height,
         fontWeight: weight ?? (serif ? FontWeight.w400 : FontWeight.w600),
