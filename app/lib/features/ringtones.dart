@@ -29,7 +29,7 @@ class RingtonesScreen extends ConsumerWidget {
         loading: () => const LoadingList(),
         error: (e, _) => ErrorRetry(error: e, onRetry: () => ref.invalidate(tracksProvider(q))),
         data: (list) => ListView(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16).withSystemInsets(context),
           children: [
             GradientCard(
               colors: Palette.dusk,

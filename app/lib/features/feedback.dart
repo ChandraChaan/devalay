@@ -10,6 +10,7 @@ import '../core/i18n.dart';
 import '../core/storage.dart';
 import '../core/usage.dart';
 import '../widgets/common.dart';
+import '../core/theme.dart';
 
 /// Ideas, problems and kind words, straight to the owner's admin inbox (Firestore `feedback`).
 /// Users can only add a note, never read anyone's. Without Firebase it opens GitHub issues instead.
@@ -95,7 +96,7 @@ class _FeedbackScreenState extends ConsumerState<FeedbackScreen> {
               ),
             )
           : ListView(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16).withSystemInsets(context),
               children: [
                 Text(
                   t3(

@@ -301,7 +301,7 @@ class _ImportantDaysScreenState extends ConsumerState<ImportantDaysScreen> {
             child: items == null
                 ? const LoadingList()
                 : ListView(
-                    padding: const EdgeInsets.fromLTRB(16, 0, 16, 96),
+                    padding: const EdgeInsets.fromLTRB(16, 0, 16, 96).withSystemInsets(context),
                     children: [
                       if (hidden > 0)
                         Align(

@@ -6,6 +6,7 @@ import '../core/i18n.dart';
 import '../core/location.dart';
 import '../core/regional.dart';
 import '../core/storage.dart';
+import '../core/theme.dart';
 
 /// Calendar choices: Amanta or Purnimanta months, an extra solar calendar, and whose state holidays
 /// to show. Each is kept in the prefs box; "auto" (no value) follows the language or the city.
@@ -65,7 +66,7 @@ class _CalendarSettingsSheet extends ConsumerWidget {
       maxChildSize: 0.95,
       builder: (_, scroll) => ListView(
         controller: scroll,
-        padding: const EdgeInsets.fromLTRB(16, 0, 16, 32),
+        padding: const EdgeInsets.fromLTRB(16, 0, 16, 32).withSystemInsets(context),
         children: [
           Text(t3(lang, 'Lunar month names', 'चंद्र मास के नाम', 'చాంద్రమాన మాసాల పేర్లు'), style: title),
           Text(

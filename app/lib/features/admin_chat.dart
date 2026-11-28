@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/support_chat.dart';
+import '../core/theme.dart';
 import 'support_chat.dart';
 
 /// The owner's side of the Premium chat: every thread, newest first, with unread counts. Opening
@@ -36,7 +37,7 @@ class _AdminChatTabState extends ConsumerState<AdminChatTab> with AutomaticKeepA
           return const Center(child: Text('No chats yet. Premium members can write from Support or Premium.'));
         }
         return ListView.separated(
-          padding: const EdgeInsets.symmetric(vertical: 8),
+          padding: const EdgeInsets.symmetric(vertical: 8).withSystemInsets(context),
           itemCount: threads.length,
           separatorBuilder: (_, _) => const Divider(height: 1),
           itemBuilder: (_, i) {

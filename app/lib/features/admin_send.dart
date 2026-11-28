@@ -200,7 +200,7 @@ class _SendTabState extends State<SendTab> with AutomaticKeepAliveClientMixin {
     final versions = splitBy(widget.installs, (i) => i.version).map((e) => e.key).where((v) => v != '—').toList();
     final quiet = _audience != 'user' && quietHoursNow();
     return ListView(
-      padding: const EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12).withSystemInsets(context),
       children: [
         TextField(
           controller: _name,

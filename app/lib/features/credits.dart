@@ -4,6 +4,7 @@ import '../core/i18n.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../core/config.dart';
+import '../core/theme.dart';
 
 class CreditsScreen extends StatelessWidget {
   const CreditsScreen({super.key});
@@ -59,7 +60,7 @@ class CreditsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text(t3(appLang, 'Credits & licences', 'श्रेय और लाइसेंस', 'క్రెడిట్స్ & లైసెన్సులు'))),
       body: ListView(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20).withSystemInsets(context),
         children: [
           for (final (title, lines) in _sections) ...[
             Text(title, style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w700)),

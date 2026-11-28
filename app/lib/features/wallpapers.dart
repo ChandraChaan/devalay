@@ -70,7 +70,7 @@ class _WallpapersScreenState extends ConsumerState<WallpapersScreen> {
       body: walls.when(
         loading: () => GridView.count(
           crossAxisCount: 2,
-          padding: const EdgeInsets.all(12),
+          padding: const EdgeInsets.all(12).withSystemInsets(context),
           mainAxisSpacing: 12,
           crossAxisSpacing: 12,
           childAspectRatio: 0.62,
@@ -78,7 +78,7 @@ class _WallpapersScreenState extends ConsumerState<WallpapersScreen> {
         ),
         error: (e, _) => ErrorRetry(error: e, onRetry: () => ref.invalidate(wallpapersProvider(_deity))),
         data: (list) => GridView.builder(
-          padding: const EdgeInsets.all(12),
+          padding: const EdgeInsets.all(12).withSystemInsets(context),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             mainAxisSpacing: 12,
@@ -221,7 +221,7 @@ class _WallpaperDetailScreenState extends ConsumerState<WallpaperDetailScreen> {
       showDragHandle: true,
       isScrollControlled: true,
       builder: (ctx) => Padding(
-        padding: EdgeInsets.fromLTRB(16, 0, 16, 16 + MediaQuery.viewInsetsOf(ctx).bottom),
+        padding: EdgeInsets.fromLTRB(16, 0, 16, 16 + MediaQuery.viewInsetsOf(ctx).bottom).withSystemInsets(ctx),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,

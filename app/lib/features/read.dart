@@ -27,7 +27,7 @@ class ReadScreen extends ConsumerWidget {
         actions: [IconButton(onPressed: () => context.push('/search'), icon: const Icon(Icons.search_rounded))],
       ),
       body: ListView(
-        padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
+        padding: const EdgeInsets.fromLTRB(16, 0, 16, 24).withSystemInsets(context),
         children: [
           GradientCard(
             colors: const [Color(0xFF3E2723), Palette.maroon, Color(0xFFBF360C)],

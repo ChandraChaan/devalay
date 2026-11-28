@@ -444,7 +444,7 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
                   _MonthFestivals(month: _month, onTap: (d) => setState(() => _selected = d)),
                   SliverToBoxAdapter(
                     child: Padding(
-                      padding: const EdgeInsets.fromLTRB(24, 8, 24, 96),
+                      padding: const EdgeInsets.fromLTRB(24, 8, 24, 96).withSystemInsets(context),
                       child: Text(
                         t3(
                           lang,
@@ -1550,7 +1550,7 @@ class _DayPage extends ConsumerWidget {
     return panchang.when(
       data: (d) => PanchangDetail(data: d, leading: [hero, ...festivalCards, ...extras], padding: pad),
       loading: () => ListView(
-        padding: pad,
+        padding: pad.withSystemInsets(context),
         children: [
           hero,
           ...festivalCards,
@@ -1561,7 +1561,7 @@ class _DayPage extends ConsumerWidget {
         ],
       ),
       error: (e, _) => ListView(
-        padding: pad,
+        padding: pad.withSystemInsets(context),
         children: [
           hero,
           ...festivalCards,

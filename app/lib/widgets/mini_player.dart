@@ -8,7 +8,11 @@ import '../core/theme.dart';
 import 'common.dart';
 
 class MiniPlayer extends ConsumerWidget {
-  const MiniPlayer({super.key});
+  const MiniPlayer({super.key, this.safeBottom = false});
+
+  /// Adds the bottom system inset below the card. Only for the side-rail layout: in the bottom-tab
+  /// layout the NavigationBar under the mini player already sits above the navigation bar.
+  final bool safeBottom;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -17,7 +21,7 @@ class MiniPlayer extends ConsumerWidget {
     final playing = ref.watch(playingProvider).value ?? false;
     final audio = ref.read(audioProvider);
     return Padding(
-      padding: const EdgeInsets.fromLTRB(10, 0, 10, 8),
+      padding: EdgeInsets.fromLTRB(10, 0, 10, 8 + (safeBottom ? MediaQuery.paddingOf(context).bottom : 0)),
       child: GestureDetector(
         onTap: () => context.push('/player'),
         onVerticalDragEnd: (d) {

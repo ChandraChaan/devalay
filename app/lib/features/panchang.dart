@@ -275,7 +275,7 @@ class PanchangDetail extends ConsumerWidget {
     };
 
     return ListView(
-      padding: padding ?? const EdgeInsets.fromLTRB(16, 4, 16, 24),
+      padding: (padding ?? const EdgeInsets.fromLTRB(16, 4, 16, 24)).withSystemInsets(context),
       children: [
         ...leading,
         GradientCard(

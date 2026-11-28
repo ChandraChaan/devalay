@@ -24,7 +24,7 @@ class RashifalScreen extends ConsumerWidget {
       data: (list) {
         final ordered = [...list.where((r) => r['rashi'] == mine), ...list.where((r) => r['rashi'] != mine)];
         return GridView.builder(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16).withSystemInsets(context),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
             mainAxisSpacing: 12,
@@ -107,7 +107,7 @@ class RashifalScreen extends ConsumerWidget {
         maxChildSize: 0.95,
         builder: (_, scroll) => ListView(
           controller: scroll,
-          padding: const EdgeInsets.fromLTRB(20, 0, 20, 32),
+          padding: const EdgeInsets.fromLTRB(20, 0, 20, 32).withSystemInsets(ctx),
           children: [
             Row(
               children: [

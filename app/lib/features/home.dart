@@ -602,7 +602,7 @@ class _HomeSkeleton extends StatelessWidget {
   const _HomeSkeleton();
   @override
   Widget build(BuildContext context) => ListView(
-    padding: const EdgeInsets.all(16),
+    padding: const EdgeInsets.all(16).withSystemInsets(context),
     children: const [
       SizedBox(height: 40),
       SkeletonBox(height: 180),

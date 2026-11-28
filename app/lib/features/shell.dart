@@ -179,7 +179,7 @@ class _AppShellState extends ConsumerState<AppShell> {
                       ),
                     ),
                   ),
-                  const MiniPlayer(),
+                  const MiniPlayer(safeBottom: true),
                 ],
               ),
             ),

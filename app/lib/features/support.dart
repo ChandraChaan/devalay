@@ -256,7 +256,7 @@ class _DakshinaSheet extends ConsumerWidget {
       constraints: BoxConstraints(maxHeight: MediaQuery.sizeOf(context).height * 0.88),
       child: ListView(
         shrinkWrap: true,
-        padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 24).withSystemInsets(context),
         children: [
           const Text('🪙', textAlign: TextAlign.center, style: TextStyle(fontSize: 40)),
           Text(
@@ -327,7 +327,7 @@ class _SupportScreenState extends ConsumerState<SupportScreen> {
     return Scaffold(
       appBar: AppBar(title: Text(t3(lang, 'Support Devalay', 'देवालय का साथ दें', 'దేవాలయంకు అండగా నిలవండి'))),
       body: ListView(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20).withSystemInsets(context),
         children: [
           GradientCard(
             colors: Palette.sunrise,

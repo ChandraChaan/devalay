@@ -149,7 +149,7 @@ class _TemplesScreenState extends ConsumerState<TemplesScreen> {
           final featured = filtering ? const <Temple>[] : shown.where((t) => t.featured).toList();
           final rest = shown.where((t) => !featured.contains(t)).toList();
           return ListView(
-            padding: const EdgeInsets.only(bottom: 32),
+            padding: const EdgeInsets.only(bottom: 32).withSystemInsets(context),
             children: [
               for (final t in featured)
                 Padding(
@@ -475,7 +475,7 @@ class _TempleBody extends ConsumerWidget {
       ),
     );
     return ListView(
-      padding: const EdgeInsets.only(bottom: 32),
+      padding: const EdgeInsets.only(bottom: 32).withSystemInsets(context),
       children: [
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 4, 16, 12),
@@ -933,7 +933,7 @@ class _ServiceSheet extends ConsumerWidget {
     return ConstrainedBox(
       constraints: BoxConstraints(maxHeight: MediaQuery.sizeOf(context).height * 0.88),
       child: SingleChildScrollView(
-        padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 20).withSystemInsets(context),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,

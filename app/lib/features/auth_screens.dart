@@ -92,7 +92,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
       body: Form(
         key: _form,
         child: ListView(
-          padding: const EdgeInsets.all(24),
+          padding: const EdgeInsets.all(24).withSystemInsets(context),
           children: [
             const Center(
               child: Stack(

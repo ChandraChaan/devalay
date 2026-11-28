@@ -162,6 +162,18 @@ abstract final class Breakpoints {
   static const content = 960.0; // reading width for lists on tablets
 }
 
+/// Edge-to-edge: the app draws behind the navigation bar (and, in landscape, the display cutout), and a
+/// scroll view given its own `padding` no longer adds those system insets itself. Use
+/// `padding: const EdgeInsets.fromLTRB(16, 4, 16, 32).withSystemInsets(context)` on vertical lists so
+/// their last item scrolls clear of the navigation bar. Inside the bottom tabs and above the keyboard the
+/// inset is already used up, so this adds nothing there.
+extension SystemInsets on EdgeInsets {
+  EdgeInsets withSystemInsets(BuildContext context) {
+    final system = MediaQuery.paddingOf(context);
+    return EdgeInsets.fromLTRB(left + system.left, top, right + system.right, bottom + system.bottom);
+  }
+}
+
 /// Light status and navigation bar icons, for dark backgrounds. Only icon brightness is set: the bars are
 /// transparent and drawn over the app (MainActivity enables edge-to-edge), and setting bar colours would
 /// call window APIs that Android 15 deprecates. Use these instead of [SystemUiOverlayStyle.light], which

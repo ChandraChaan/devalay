@@ -22,7 +22,7 @@ class VideosScreen extends ConsumerWidget {
         loading: () => const LoadingList(height: 200),
         error: (e, _) => ErrorRetry(error: e, onRetry: () => ref.invalidate(videosProvider)),
         data: (list) => ListView(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16).withSystemInsets(context),
           children: [
             Text(
               l3(
@@ -141,53 +141,56 @@ class _VideoPlayerScreenState extends ConsumerState<VideoPlayerScreen> {
         systemOverlayStyle: lightBars,
         title: Text(widget.video.title, style: const TextStyle(color: Colors.white)),
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: Center(
-              child: _error != null
-                  ? const Text(
-                      'This film could not be played. Check your connection.',
-                      style: TextStyle(color: Colors.white),
-                    )
-                  : !ready
-                  ? const CircularProgressIndicator()
-                  : GestureDetector(
-                      onTap: () => _c.value.isPlaying ? _c.pause() : _c.play(),
-                      child: AspectRatio(aspectRatio: _c.value.aspectRatio, child: VideoPlayer(_c)),
-                    ),
+      body: SafeArea(
+        top: false,
+        child: Column(
+          children: [
+            Expanded(
+              child: Center(
+                child: _error != null
+                    ? const Text(
+                        'This film could not be played. Check your connection.',
+                        style: TextStyle(color: Colors.white),
+                      )
+                    : !ready
+                    ? const CircularProgressIndicator()
+                    : GestureDetector(
+                        onTap: () => _c.value.isPlaying ? _c.pause() : _c.play(),
+                        child: AspectRatio(aspectRatio: _c.value.aspectRatio, child: VideoPlayer(_c)),
+                      ),
+              ),
             ),
-          ),
-          if (ready) ...[
-            VideoProgressIndicator(_c, allowScrubbing: true, padding: const EdgeInsets.all(16)),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                IconButton(
-                  onPressed: () => _c.seekTo(_c.value.position - const Duration(seconds: 10)),
-                  icon: const Icon(Icons.replay_10_rounded, color: Colors.white),
-                ),
-                IconButton(
-                  iconSize: 48,
-                  onPressed: () => _c.value.isPlaying ? _c.pause() : _c.play(),
-                  icon: Icon(
-                    _c.value.isPlaying ? Icons.pause_circle_filled_rounded : Icons.play_circle_fill_rounded,
-                    color: Colors.white,
+            if (ready) ...[
+              VideoProgressIndicator(_c, allowScrubbing: true, padding: const EdgeInsets.all(16)),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    onPressed: () => _c.seekTo(_c.value.position - const Duration(seconds: 10)),
+                    icon: const Icon(Icons.replay_10_rounded, color: Colors.white),
                   ),
-                ),
-                IconButton(
-                  onPressed: () => _c.seekTo(_c.value.position + const Duration(seconds: 10)),
-                  icon: const Icon(Icons.forward_10_rounded, color: Colors.white),
-                ),
-              ],
-            ),
-            Text(
-              '${formatDuration(_c.value.position)} / ${formatDuration(_c.value.duration)}',
-              style: const TextStyle(color: Colors.white70),
-            ),
+                  IconButton(
+                    iconSize: 48,
+                    onPressed: () => _c.value.isPlaying ? _c.pause() : _c.play(),
+                    icon: Icon(
+                      _c.value.isPlaying ? Icons.pause_circle_filled_rounded : Icons.play_circle_fill_rounded,
+                      color: Colors.white,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () => _c.seekTo(_c.value.position + const Duration(seconds: 10)),
+                    icon: const Icon(Icons.forward_10_rounded, color: Colors.white),
+                  ),
+                ],
+              ),
+              Text(
+                '${formatDuration(_c.value.position)} / ${formatDuration(_c.value.duration)}',
+                style: const TextStyle(color: Colors.white70),
+              ),
+            ],
+            Padding(padding: const EdgeInsets.all(16), child: Attribution(widget.video, light: true)),
           ],
-          Padding(padding: const EdgeInsets.all(16), child: Attribution(widget.video, light: true)),
-        ],
+        ),
       ),
     );
   }
