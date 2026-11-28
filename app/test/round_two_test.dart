@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:devalay/core/audiobooks.dart';
 import 'package:devalay/core/nakshatra_info.dart';
 import 'package:devalay/core/translate.dart';
 import 'package:devalay/core/wishes.dart';
@@ -42,5 +43,24 @@ void main() {
     final bathukamma = catalog.festivals.firstWhere((f) => f.id == 'bathukamma');
     expect(bathukamma.match, containsAll(['engili-pula-bathukamma', 'saddula-bathukamma']));
     expect(bathukamma.days, 9);
+  });
+
+  test('audiobooks: every part is an https stream, the Gita has 18 English chapters and Sanskrit 1-3', () {
+    final lib = AudioLibrary(jsonDecode(File('assets/data/audiobooks.json').readAsStringSync()) as Map);
+    expect(lib.books.length, greaterThanOrEqualTo(20));
+    for (final b in lib.books) {
+      expect(b.sections, isNotEmpty, reason: b.id);
+      for (final s in b.sections) {
+        expect(s.url, startsWith('https://'), reason: '${b.id} ${s.title}');
+      }
+    }
+    for (var c = 1; c <= 18; c++) {
+      expect(lib.gitaEnglish[c], isNotNull, reason: 'English chapter $c');
+    }
+    expect(lib.gitaSanskrit.keys.toSet(), {1, 2, 3});
+    expect(lib.gitaSanskrit[2]!.length, 72);
+    expect(lib.forBook('ramayan-griffith'), hasLength(6));
+    expect(audioTrackId('lv-9324', 3), audioTrackId('lv-9324', 3));
+    expect(audioTrackId('lv-9324', 3), isNot(audioTrackId('lv-1497', 3)));
   });
 }

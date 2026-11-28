@@ -54,6 +54,26 @@ collection in each; lyrics in the player and movie bhakti songs.
   Pandurangadu and Sri Manjunatha, played from the labels' official YouTube uploads (Aditya Music, Mango Music,
   T-Series, Rajshri, Saregama) in YouTube's embedded player; a New songs tab from official devotional channels. The
   list can be changed from `/config` (`movie_albums`). Devalay hosts no film audio.
+- **Your day (For You):** the personal card now opens a full day: Tarabalam and Chandrabalam, good times (Brahma
+  Muhurta, Abhijit, Amrit Kalam) and times to avoid (Rahu Kalam, Yamagandam, Gulika, Durmuhurtam, Varjyam) with
+  "NOW" on the one in force, the user's rashi today (love, work, health, remedy, lucky colour and number), their
+  birth star's deity, ruling planet, symbol and gana with the planet's mantra, a Janma Nakshatra note, the
+  birthday countdown, and "Make my status for today".
+- **Gita and audiobooks with human voices:** the whole Gita read in English (Edwin Arnold's Song Celestial, read by
+  Jothi Tharavant for LibriVox, public domain), chapter by chapter, and Sanskrit chanting of chapters 1-3 (Soorya
+  Hebbar, NehalDaveND; CC BY-SA 4.0, Wikimedia Commons), in the Gita and on each chapter's first page. A new
+  Audiobooks library (Read > Audiobooks) with 30 LibriVox books: the Gita, Griffith's Ramayan books 1-6, Dutt's
+  Mahabharata, twelve Upanishads (Max Müller tr.), Kabir, Gitanjali, Tiruppavai, Yoga Sutras and more; each Read
+  book shows "Listen to this book". They play in the main player (lock-screen controls, sleep timer, speed). No
+  Telugu or Hindi Gita recording under an open licence exists yet, so none is included
+  (backend/scripts/build_audiobooks.py, app/assets/data/audiobooks.json).
+- **Translate in Read:** a Translate button in the text reader, books and the Gita translates the English
+  meanings, chapter summaries, Gita translation and book chapters into Telugu, Hindi, Tamil, Kannada, Marathi,
+  Bengali or Gujarati on the phone with Google ML Kit: private, free and offline after a one-time ~30 MB download
+  per language, cached once translated, and marked as a machine translation.
+- **Festival wishes:** eight more festivals (Bathukamma over nine days, Atla Taddi, Vasant Panchami, Ratha Saptami,
+  Akshaya Tritiya, Guru Purnima, Dhanteras, Vivah Panchami), HD backgrounds (recent photos and modern designs
+  first, then paintings), Telugu captions in Suranna, and one-tap WhatsApp status from the card editor.
 - **Offline:** the catalogue is bundled (`app/assets/data/sections.json`, version 2+) and refreshed from the static
   API (`/sections`) when newer; downloaded wallpapers, tones, videos and soundscapes are kept in app storage.
 - **Pipeline:** `backend/scripts/build_sections_media.py` (fetch, compose, master, render, catalogue),

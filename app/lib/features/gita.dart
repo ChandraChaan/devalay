@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 
 import '../core/favorites.dart';
 import '../core/gita_voice.dart';
+import 'audiobooks.dart' show GitaHumanVoices;
 import '../core/i18n.dart';
 import '../core/models.dart';
 import '../core/providers.dart';
@@ -58,6 +59,9 @@ class GitaScreen extends ConsumerWidget {
                   ),
                 ),
               ),
+            ),
+            const SliverToBoxAdapter(
+              child: Padding(padding: EdgeInsets.fromLTRB(16, 8, 16, 0), child: GitaHumanVoices()),
             ),
             SliverToBoxAdapter(
               child: Padding(
@@ -474,8 +478,10 @@ class _ChapterIntro extends StatelessWidget {
         const SizedBox(height: 8),
         Center(child: Text(chapter.nameEn, style: Theme.of(context).textTheme.headlineSmall)),
         const SizedBox(height: 24),
-        Text(chapter.summary, style: const TextStyle(fontSize: 17, height: 1.6)),
-        const SizedBox(height: 24),
+        TranslatedText(chapter.summary, style: const TextStyle(fontSize: 17, height: 1.6)),
+        const SizedBox(height: 12),
+        GitaHumanVoices(chapter: chapter.number),
+        const SizedBox(height: 12),
         Center(
           child: Text(
             t3(appLang, 'Swipe to begin →', 'शुरू करने के लिए स्वाइप करें →', 'మొదలుపెట్టడానికి స్వైప్ చేయండి →'),

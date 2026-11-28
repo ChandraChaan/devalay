@@ -1,0 +1,4084 @@
+{
+ "schema": 1,
+ "version": 1,
+ "gita": {
+  "english": {
+   "title": "The Song Celestial (tr. Sir Edwin Arnold)",
+   "reader": "Jothi Tharavant",
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/the-bhagavad-gita/",
+   "chapters": {
+    "0": {
+     "title": "Preface",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_00__64kb.mp3",
+     "seconds": 392
+    },
+    "1": {
+     "title": "Chapter 1 -  The Book of the Distress of Arjuna",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_01__64kb.mp3",
+     "seconds": 569
+    },
+    "2": {
+     "title": "Chapter 2 - The Book of Doctrines",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_02__64kb.mp3",
+     "seconds": 1097
+    },
+    "3": {
+     "title": "Chapter 3 - The Book of Virtue in Work",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_03__64kb.mp3",
+     "seconds": 572
+    },
+    "4": {
+     "title": "Chapter 4 - The Book of the Religion of Knowledge",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_04__64kb.mp3",
+     "seconds": 622
+    },
+    "5": {
+     "title": "Chapter 5 - The Book of Religion by Renouncing Fruit of Works",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_05__64kb.mp3",
+     "seconds": 461
+    },
+    "6": {
+     "title": "Chapter 6 - The Book of Religion by Self-Restraint",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_06__64kb.mp3",
+     "seconds": 634
+    },
+    "7": {
+     "title": "Chapter 7 - The Book of Religion by Discernment",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_07__64kb.mp3",
+     "seconds": 464
+    },
+    "8": {
+     "title": "Chapter 8 - The book of Religion by Devotion to the One Supreme God",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_08__64kb.mp3",
+     "seconds": 433
+    },
+    "9": {
+     "title": "Chapter 9 - The Book of Religion by the Kingly Knowledge and the Kingly Mystery",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_09__64kb.mp3",
+     "seconds": 594
+    },
+    "10": {
+     "title": "Chapter 10 - The Book of Religion by the Heavenly Perfections",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_10__64kb.mp3",
+     "seconds": 624
+    },
+    "11": {
+     "title": "Chapter 11 - The Book of the Manifesting of the One and Manifold",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_11__64kb.mp3",
+     "seconds": 1486
+    },
+    "12": {
+     "title": "Chapter 12 - The Book of the Religion of Faith",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_12__64kb.mp3",
+     "seconds": 342
+    },
+    "13": {
+     "title": "Chapter13 - The Book of Religion by Separation of Matter and Spirit",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_13__64kb.mp3",
+     "seconds": 596
+    },
+    "14": {
+     "title": "Chapter 14 - The Book of Religion by Separation from the Qualities",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_14__64kb.mp3",
+     "seconds": 419
+    },
+    "15": {
+     "title": "Chapter 15 - The Book of Religion by attaining the Supreme",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_15__64kb.mp3",
+     "seconds": 390
+    },
+    "16": {
+     "title": "Chapter 16 - The Book of the Separateness of the Divine and Undivine",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_16__64kb.mp3",
+     "seconds": 423
+    },
+    "17": {
+     "title": "Chapter 17 - The Book of Religion by the Threefold Kinds of Faith",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_17__64kb.mp3",
+     "seconds": 426
+    },
+    "18": {
+     "title": "Chpter 18 - The Book of Religion by Deliverance and Renunciation",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_18__64kb.mp3",
+     "seconds": 1218
+    }
+   }
+  },
+  "sanskrit": {
+   "license": "CC BY-SA 4.0",
+   "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "performers": [
+    "NehalDaveND",
+    "Soorya Hebbar"
+   ],
+   "chapters": {
+    "1": [
+     {
+      "verse": null,
+      "title": "Bhagavad Gita Chapter 1 (Arjuna Vishada Yoga), complete, Sanskrit",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/93/Bhagavadgita-1st_Chapter.wav/Bhagavadgita-1st_Chapter.wav.mp3",
+      "seconds": 351,
+      "performer": "Soorya Hebbar",
+      "source": "https://commons.wikimedia.org/wiki/File:Bhagavadgita-1st_Chapter.wav"
+     }
+    ],
+    "2": [
+     {
+      "verse": 1,
+      "title": "Bhagavad Gita 2.1 (तं तथा कृपयाविष्टम्)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/80/%E0%A4%A4%E0%A4%82_%E0%A4%A4%E0%A4%A5%E0%A4%BE_%E0%A4%95%E0%A5%83%E0%A4%AA%E0%A4%AF%E0%A4%BE%E0%A4%B5%E0%A4%BF%E0%A4%B7%E0%A5%8D%E0%A4%9F%E0%A4%AE%E0%A5%8D.wav/%E0%A4%A4%E0%A4%82_%E0%A4%A4%E0%A4%A5%E0%A4%BE_%E0%A4%95%E0%A5%83%E0%A4%AA%E0%A4%AF%E0%A4%BE%E0%A4%B5%E0%A4%BF%E0%A4%B7%E0%A5%8D%E0%A4%9F%E0%A4%AE%E0%A5%8D.wav.mp3",
+      "seconds": 20,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%A4%E0%A4%82_%E0%A4%A4%E0%A4%A5%E0%A4%BE_%E0%A4%95%E0%A5%83%E0%A4%AA%E0%A4%AF%E0%A4%BE%E0%A4%B5%E0%A4%BF%E0%A4%B7%E0%A5%8D%E0%A4%9F%E0%A4%AE%E0%A5%8D.wav"
+     },
+     {
+      "verse": 2,
+      "title": "Bhagavad Gita 2.2 (कुतस्त्वा कश्मलमिदं)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/10/%E0%A4%95%E0%A5%81%E0%A4%A4%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%8D%E0%A4%B5%E0%A4%BE_%E0%A4%95%E0%A4%B6%E0%A5%8D%E0%A4%AE%E0%A4%B2%E0%A4%AE%E0%A4%BF%E0%A4%A6%E0%A4%82.wav/%E0%A4%95%E0%A5%81%E0%A4%A4%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%8D%E0%A4%B5%E0%A4%BE_%E0%A4%95%E0%A4%B6%E0%A5%8D%E0%A4%AE%E0%A4%B2%E0%A4%AE%E0%A4%BF%E0%A4%A6%E0%A4%82.wav.mp3",
+      "seconds": 20,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%95%E0%A5%81%E0%A4%A4%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%8D%E0%A4%B5%E0%A4%BE_%E0%A4%95%E0%A4%B6%E0%A5%8D%E0%A4%AE%E0%A4%B2%E0%A4%AE%E0%A4%BF%E0%A4%A6%E0%A4%82.wav"
+     },
+     {
+      "verse": 3,
+      "title": "Bhagavad Gita 2.3 (क्लैब्यं मा स्म गमः पार्थ)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/dd/%E0%A4%95%E0%A5%8D%E0%A4%B2%E0%A5%88%E0%A4%AC%E0%A5%8D%E0%A4%AF%E0%A4%82_%E0%A4%AE%E0%A4%BE_%E0%A4%B8%E0%A5%8D%E0%A4%AE_%E0%A4%97%E0%A4%AE%E0%A4%83_%E0%A4%AA%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%A5.wav/%E0%A4%95%E0%A5%8D%E0%A4%B2%E0%A5%88%E0%A4%AC%E0%A5%8D%E0%A4%AF%E0%A4%82_%E0%A4%AE%E0%A4%BE_%E0%A4%B8%E0%A5%8D%E0%A4%AE_%E0%A4%97%E0%A4%AE%E0%A4%83_%E0%A4%AA%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%A5.wav.mp3",
+      "seconds": 19,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%95%E0%A5%8D%E0%A4%B2%E0%A5%88%E0%A4%AC%E0%A5%8D%E0%A4%AF%E0%A4%82_%E0%A4%AE%E0%A4%BE_%E0%A4%B8%E0%A5%8D%E0%A4%AE_%E0%A4%97%E0%A4%AE%E0%A4%83_%E0%A4%AA%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%A5.wav"
+     },
+     {
+      "verse": 4,
+      "title": "Bhagavad Gita 2.4 (कथं भीष्ममहं सङ्ख्ये)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/5/55/%E0%A4%95%E0%A4%A5%E0%A4%82_%E0%A4%AD%E0%A5%80%E0%A4%B7%E0%A5%8D%E0%A4%AE%E0%A4%AE%E0%A4%B9%E0%A4%82_%E0%A4%B8%E0%A4%99%E0%A5%8D%E0%A4%96%E0%A5%8D%E0%A4%AF%E0%A5%87.wav/%E0%A4%95%E0%A4%A5%E0%A4%82_%E0%A4%AD%E0%A5%80%E0%A4%B7%E0%A5%8D%E0%A4%AE%E0%A4%AE%E0%A4%B9%E0%A4%82_%E0%A4%B8%E0%A4%99%E0%A5%8D%E0%A4%96%E0%A5%8D%E0%A4%AF%E0%A5%87.wav.mp3",
+      "seconds": 20,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%95%E0%A4%A5%E0%A4%82_%E0%A4%AD%E0%A5%80%E0%A4%B7%E0%A5%8D%E0%A4%AE%E0%A4%AE%E0%A4%B9%E0%A4%82_%E0%A4%B8%E0%A4%99%E0%A5%8D%E0%A4%96%E0%A5%8D%E0%A4%AF%E0%A5%87.wav"
+     },
+     {
+      "verse": 5,
+      "title": "Bhagavad Gita 2.5 (गुरूनहत्वा हि)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/cf/%E0%A4%97%E0%A5%81%E0%A4%B0%E0%A5%82%E0%A4%A8%E0%A4%B9%E0%A4%A4%E0%A5%8D%E0%A4%B5%E0%A4%BE_%E0%A4%B9%E0%A4%BF.wav/%E0%A4%97%E0%A5%81%E0%A4%B0%E0%A5%82%E0%A4%A8%E0%A4%B9%E0%A4%A4%E0%A5%8D%E0%A4%B5%E0%A4%BE_%E0%A4%B9%E0%A4%BF.wav.mp3",
+      "seconds": 20,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%97%E0%A5%81%E0%A4%B0%E0%A5%82%E0%A4%A8%E0%A4%B9%E0%A4%A4%E0%A5%8D%E0%A4%B5%E0%A4%BE_%E0%A4%B9%E0%A4%BF.wav"
+     },
+     {
+      "verse": 6,
+      "title": "Bhagavad Gita 2.6 (न चैतद्विद्मः कतरन्नो)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/dc/%E0%A4%A8_%E0%A4%9A%E0%A5%88%E0%A4%A4%E0%A4%A6%E0%A5%8D%E0%A4%B5%E0%A4%BF%E0%A4%A6%E0%A5%8D%E0%A4%AE%E0%A4%83_%E0%A4%95%E0%A4%A4%E0%A4%B0%E0%A4%A8%E0%A5%8D%E0%A4%A8%E0%A5%8B.wav/%E0%A4%A8_%E0%A4%9A%E0%A5%88%E0%A4%A4%E0%A4%A6%E0%A5%8D%E0%A4%B5%E0%A4%BF%E0%A4%A6%E0%A5%8D%E0%A4%AE%E0%A4%83_%E0%A4%95%E0%A4%A4%E0%A4%B0%E0%A4%A8%E0%A5%8D%E0%A4%A8%E0%A5%8B.wav.mp3",
+      "seconds": 21,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%A8_%E0%A4%9A%E0%A5%88%E0%A4%A4%E0%A4%A6%E0%A5%8D%E0%A4%B5%E0%A4%BF%E0%A4%A6%E0%A5%8D%E0%A4%AE%E0%A4%83_%E0%A4%95%E0%A4%A4%E0%A4%B0%E0%A4%A8%E0%A5%8D%E0%A4%A8%E0%A5%8B.wav"
+     },
+     {
+      "verse": 7,
+      "title": "Bhagavad Gita 2.7 (कार्पण्यदोषोपहत)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/3/34/%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%AA%E0%A4%A3%E0%A5%8D%E0%A4%AF%E0%A4%A6%E0%A5%8B%E0%A4%B7%E0%A5%8B%E0%A4%AA%E0%A4%B9%E0%A4%A4.wav/%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%AA%E0%A4%A3%E0%A5%8D%E0%A4%AF%E0%A4%A6%E0%A5%8B%E0%A4%B7%E0%A5%8B%E0%A4%AA%E0%A4%B9%E0%A4%A4.wav.mp3",
+      "seconds": 22,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%AA%E0%A4%A3%E0%A5%8D%E0%A4%AF%E0%A4%A6%E0%A5%8B%E0%A4%B7%E0%A5%8B%E0%A4%AA%E0%A4%B9%E0%A4%A4.wav"
+     },
+     {
+      "verse": 8,
+      "title": "Bhagavad Gita 2.8 (नहि प्रपश्यामि)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/7a/%E0%A4%A8%E0%A4%B9%E0%A4%BF_%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%AA%E0%A4%B6%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%AE%E0%A4%BF.wav/%E0%A4%A8%E0%A4%B9%E0%A4%BF_%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%AA%E0%A4%B6%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%AE%E0%A4%BF.wav.mp3",
+      "seconds": 20,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%A8%E0%A4%B9%E0%A4%BF_%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%AA%E0%A4%B6%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%AE%E0%A4%BF.wav"
+     },
+     {
+      "verse": 9,
+      "title": "Bhagavad Gita 2.9 (एवमुक्त्वा हृषीकेशं)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/5/53/%E0%A4%8F%E0%A4%B5%E0%A4%AE%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A5%8D%E0%A4%B5%E0%A4%BE_%E0%A4%B9%E0%A5%83%E0%A4%B7%E0%A5%80%E0%A4%95%E0%A5%87%E0%A4%B6%E0%A4%82.wav/%E0%A4%8F%E0%A4%B5%E0%A4%AE%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A5%8D%E0%A4%B5%E0%A4%BE_%E0%A4%B9%E0%A5%83%E0%A4%B7%E0%A5%80%E0%A4%95%E0%A5%87%E0%A4%B6%E0%A4%82.wav.mp3",
+      "seconds": 19,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%8F%E0%A4%B5%E0%A4%AE%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A5%8D%E0%A4%B5%E0%A4%BE_%E0%A4%B9%E0%A5%83%E0%A4%B7%E0%A5%80%E0%A4%95%E0%A5%87%E0%A4%B6%E0%A4%82.wav"
+     },
+     {
+      "verse": 10,
+      "title": "Bhagavad Gita 2.10 (तमुवाच हृषीकेशः)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/4b/%E0%A4%A4%E0%A4%AE%E0%A5%81%E0%A4%B5%E0%A4%BE%E0%A4%9A_%E0%A4%B9%E0%A5%83%E0%A4%B7%E0%A5%80%E0%A4%95%E0%A5%87%E0%A4%B6%E0%A4%83.wav/%E0%A4%A4%E0%A4%AE%E0%A5%81%E0%A4%B5%E0%A4%BE%E0%A4%9A_%E0%A4%B9%E0%A5%83%E0%A4%B7%E0%A5%80%E0%A4%95%E0%A5%87%E0%A4%B6%E0%A4%83.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%A4%E0%A4%AE%E0%A5%81%E0%A4%B5%E0%A4%BE%E0%A4%9A_%E0%A4%B9%E0%A5%83%E0%A4%B7%E0%A5%80%E0%A4%95%E0%A5%87%E0%A4%B6%E0%A4%83.wav"
+     },
+     {
+      "verse": 11,
+      "title": "Bhagavad Gita 2.11 (अशोच्यानन्वशोचस्त्वं)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/90/%E0%A4%85%E0%A4%B6%E0%A5%8B%E0%A4%9A%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%A8%E0%A4%A8%E0%A5%8D%E0%A4%B5%E0%A4%B6%E0%A5%8B%E0%A4%9A%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%8D%E0%A4%B5%E0%A4%82.wav/%E0%A4%85%E0%A4%B6%E0%A5%8B%E0%A4%9A%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%A8%E0%A4%A8%E0%A5%8D%E0%A4%B5%E0%A4%B6%E0%A5%8B%E0%A4%9A%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%8D%E0%A4%B5%E0%A4%82.wav.mp3",
+      "seconds": 22,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%85%E0%A4%B6%E0%A5%8B%E0%A4%9A%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%A8%E0%A4%A8%E0%A5%8D%E0%A4%B5%E0%A4%B6%E0%A5%8B%E0%A4%9A%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%8D%E0%A4%B5%E0%A4%82.wav"
+     },
+     {
+      "verse": 12,
+      "title": "Bhagavad Gita 2.12 (न त्वेवाहं जातु नासं)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/0/02/%E0%A4%A8_%E0%A4%A4%E0%A5%8D%E0%A4%B5%E0%A5%87%E0%A4%B5%E0%A4%BE%E0%A4%B9%E0%A4%82_%E0%A4%9C%E0%A4%BE%E0%A4%A4%E0%A5%81_%E0%A4%A8%E0%A4%BE%E0%A4%B8%E0%A4%82.wav/%E0%A4%A8_%E0%A4%A4%E0%A5%8D%E0%A4%B5%E0%A5%87%E0%A4%B5%E0%A4%BE%E0%A4%B9%E0%A4%82_%E0%A4%9C%E0%A4%BE%E0%A4%A4%E0%A5%81_%E0%A4%A8%E0%A4%BE%E0%A4%B8%E0%A4%82.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%A8_%E0%A4%A4%E0%A5%8D%E0%A4%B5%E0%A5%87%E0%A4%B5%E0%A4%BE%E0%A4%B9%E0%A4%82_%E0%A4%9C%E0%A4%BE%E0%A4%A4%E0%A5%81_%E0%A4%A8%E0%A4%BE%E0%A4%B8%E0%A4%82.wav"
+     },
+     {
+      "verse": 13,
+      "title": "Bhagavad Gita 2.13 (देहिनोऽस्मिन्यथा देहे)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/6/68/%E0%A4%A6%E0%A5%87%E0%A4%B9%E0%A4%BF%E0%A4%A8%E0%A5%8B%E0%A4%BD%E0%A4%B8%E0%A5%8D%E0%A4%AE%E0%A4%BF%E0%A4%A8%E0%A5%8D%E0%A4%AF%E0%A4%A5%E0%A4%BE_%E0%A4%A6%E0%A5%87%E0%A4%B9%E0%A5%87.wav/%E0%A4%A6%E0%A5%87%E0%A4%B9%E0%A4%BF%E0%A4%A8%E0%A5%8B%E0%A4%BD%E0%A4%B8%E0%A5%8D%E0%A4%AE%E0%A4%BF%E0%A4%A8%E0%A5%8D%E0%A4%AF%E0%A4%A5%E0%A4%BE_%E0%A4%A6%E0%A5%87%E0%A4%B9%E0%A5%87.wav.mp3",
+      "seconds": 17,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%A6%E0%A5%87%E0%A4%B9%E0%A4%BF%E0%A4%A8%E0%A5%8B%E0%A4%BD%E0%A4%B8%E0%A5%8D%E0%A4%AE%E0%A4%BF%E0%A4%A8%E0%A5%8D%E0%A4%AF%E0%A4%A5%E0%A4%BE_%E0%A4%A6%E0%A5%87%E0%A4%B9%E0%A5%87.wav"
+     },
+     {
+      "verse": 14,
+      "title": "Bhagavad Gita 2.14 (मात्रास्पर्शास्तु कौन्तेय)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f7/%E0%A4%AE%E0%A4%BE%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A4%BE%E0%A4%B8%E0%A5%8D%E0%A4%AA%E0%A4%B0%E0%A5%8D%E0%A4%B6%E0%A4%BE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%81_%E0%A4%95%E0%A5%8C%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A5%87%E0%A4%AF.wav/%E0%A4%AE%E0%A4%BE%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A4%BE%E0%A4%B8%E0%A5%8D%E0%A4%AA%E0%A4%B0%E0%A5%8D%E0%A4%B6%E0%A4%BE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%81_%E0%A4%95%E0%A5%8C%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A5%87%E0%A4%AF.wav.mp3",
+      "seconds": 18,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%AE%E0%A4%BE%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A4%BE%E0%A4%B8%E0%A5%8D%E0%A4%AA%E0%A4%B0%E0%A5%8D%E0%A4%B6%E0%A4%BE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%81_%E0%A4%95%E0%A5%8C%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A5%87%E0%A4%AF.wav"
+     },
+     {
+      "verse": 15,
+      "title": "Bhagavad Gita 2.15 (यं हि न व्यथयन्त्येते)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f8/%E0%A4%AF%E0%A4%82_%E0%A4%B9%E0%A4%BF_%E0%A4%A8_%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%A5%E0%A4%AF%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A5%8D%E0%A4%AF%E0%A5%87%E0%A4%A4%E0%A5%87.wav/%E0%A4%AF%E0%A4%82_%E0%A4%B9%E0%A4%BF_%E0%A4%A8_%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%A5%E0%A4%AF%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A5%8D%E0%A4%AF%E0%A5%87%E0%A4%A4%E0%A5%87.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%AF%E0%A4%82_%E0%A4%B9%E0%A4%BF_%E0%A4%A8_%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%A5%E0%A4%AF%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A5%8D%E0%A4%AF%E0%A5%87%E0%A4%A4%E0%A5%87.wav"
+     },
+     {
+      "verse": 16,
+      "title": "Bhagavad Gita 2.16 (नासतो विद्यते भावो)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/a/ae/%E0%A4%A8%E0%A4%BE%E0%A4%B8%E0%A4%A4%E0%A5%8B_%E0%A4%B5%E0%A4%BF%E0%A4%A6%E0%A5%8D%E0%A4%AF%E0%A4%A4%E0%A5%87_%E0%A4%AD%E0%A4%BE%E0%A4%B5%E0%A5%8B.wav/%E0%A4%A8%E0%A4%BE%E0%A4%B8%E0%A4%A4%E0%A5%8B_%E0%A4%B5%E0%A4%BF%E0%A4%A6%E0%A5%8D%E0%A4%AF%E0%A4%A4%E0%A5%87_%E0%A4%AD%E0%A4%BE%E0%A4%B5%E0%A5%8B.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%A8%E0%A4%BE%E0%A4%B8%E0%A4%A4%E0%A5%8B_%E0%A4%B5%E0%A4%BF%E0%A4%A6%E0%A5%8D%E0%A4%AF%E0%A4%A4%E0%A5%87_%E0%A4%AD%E0%A4%BE%E0%A4%B5%E0%A5%8B.wav"
+     },
+     {
+      "verse": 17,
+      "title": "Bhagavad Gita 2.17 (अविनाशि तु तद्विद्धि)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/e3/%E0%A4%85%E0%A4%B5%E0%A4%BF%E0%A4%A8%E0%A4%BE%E0%A4%B6%E0%A4%BF_%E0%A4%A4%E0%A5%81_%E0%A4%A4%E0%A4%A6%E0%A5%8D%E0%A4%B5%E0%A4%BF%E0%A4%A6%E0%A5%8D%E0%A4%A7%E0%A4%BF.wav/%E0%A4%85%E0%A4%B5%E0%A4%BF%E0%A4%A8%E0%A4%BE%E0%A4%B6%E0%A4%BF_%E0%A4%A4%E0%A5%81_%E0%A4%A4%E0%A4%A6%E0%A5%8D%E0%A4%B5%E0%A4%BF%E0%A4%A6%E0%A5%8D%E0%A4%A7%E0%A4%BF.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%85%E0%A4%B5%E0%A4%BF%E0%A4%A8%E0%A4%BE%E0%A4%B6%E0%A4%BF_%E0%A4%A4%E0%A5%81_%E0%A4%A4%E0%A4%A6%E0%A5%8D%E0%A4%B5%E0%A4%BF%E0%A4%A6%E0%A5%8D%E0%A4%A7%E0%A4%BF.wav"
+     },
+     {
+      "verse": 18,
+      "title": "Bhagavad Gita 2.18 (अन्तवन्त इमे देहा)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/a/a8/%E0%A4%85%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A4%B5%E0%A4%A8%E0%A5%8D%E0%A4%A4_%E0%A4%87%E0%A4%AE%E0%A5%87_%E0%A4%A6%E0%A5%87%E0%A4%B9%E0%A4%BE.wav/%E0%A4%85%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A4%B5%E0%A4%A8%E0%A5%8D%E0%A4%A4_%E0%A4%87%E0%A4%AE%E0%A5%87_%E0%A4%A6%E0%A5%87%E0%A4%B9%E0%A4%BE.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%85%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A4%B5%E0%A4%A8%E0%A5%8D%E0%A4%A4_%E0%A4%87%E0%A4%AE%E0%A5%87_%E0%A4%A6%E0%A5%87%E0%A4%B9%E0%A4%BE.wav"
+     },
+     {
+      "verse": 19,
+      "title": "Bhagavad Gita 2.19 (य एनं वेत्ति हन्तारं)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/25/%E0%A4%AF_%E0%A4%8F%E0%A4%A8%E0%A4%82_%E0%A4%B5%E0%A5%87%E0%A4%A4%E0%A5%8D%E0%A4%A4%E0%A4%BF_%E0%A4%B9%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A4%82.wav/%E0%A4%AF_%E0%A4%8F%E0%A4%A8%E0%A4%82_%E0%A4%B5%E0%A5%87%E0%A4%A4%E0%A5%8D%E0%A4%A4%E0%A4%BF_%E0%A4%B9%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A4%82.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%AF_%E0%A4%8F%E0%A4%A8%E0%A4%82_%E0%A4%B5%E0%A5%87%E0%A4%A4%E0%A5%8D%E0%A4%A4%E0%A4%BF_%E0%A4%B9%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A4%BE%E0%A4%B0%E0%A4%82.wav"
+     },
+     {
+      "verse": 20,
+      "title": "Bhagavad Gita 2.20 (न जायते म्रियते वा)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/0/0d/%E0%A4%A8_%E0%A4%9C%E0%A4%BE%E0%A4%AF%E0%A4%A4%E0%A5%87_%E0%A4%AE%E0%A5%8D%E0%A4%B0%E0%A4%BF%E0%A4%AF%E0%A4%A4%E0%A5%87_%E0%A4%B5%E0%A4%BE.wav/%E0%A4%A8_%E0%A4%9C%E0%A4%BE%E0%A4%AF%E0%A4%A4%E0%A5%87_%E0%A4%AE%E0%A5%8D%E0%A4%B0%E0%A4%BF%E0%A4%AF%E0%A4%A4%E0%A5%87_%E0%A4%B5%E0%A4%BE.wav.mp3",
+      "seconds": 19,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%A8_%E0%A4%9C%E0%A4%BE%E0%A4%AF%E0%A4%A4%E0%A5%87_%E0%A4%AE%E0%A5%8D%E0%A4%B0%E0%A4%BF%E0%A4%AF%E0%A4%A4%E0%A5%87_%E0%A4%B5%E0%A4%BE.wav"
+     },
+     {
+      "verse": 21,
+      "title": "Bhagavad Gita 2.21 (वेदाविनाशिनं नित्यं)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/9a/%E0%A4%B5%E0%A5%87%E0%A4%A6%E0%A4%BE%E0%A4%B5%E0%A4%BF%E0%A4%A8%E0%A4%BE%E0%A4%B6%E0%A4%BF%E0%A4%A8%E0%A4%82_%E0%A4%A8%E0%A4%BF%E0%A4%A4%E0%A5%8D%E0%A4%AF%E0%A4%82.wav/%E0%A4%B5%E0%A5%87%E0%A4%A6%E0%A4%BE%E0%A4%B5%E0%A4%BF%E0%A4%A8%E0%A4%BE%E0%A4%B6%E0%A4%BF%E0%A4%A8%E0%A4%82_%E0%A4%A8%E0%A4%BF%E0%A4%A4%E0%A5%8D%E0%A4%AF%E0%A4%82.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%B5%E0%A5%87%E0%A4%A6%E0%A4%BE%E0%A4%B5%E0%A4%BF%E0%A4%A8%E0%A4%BE%E0%A4%B6%E0%A4%BF%E0%A4%A8%E0%A4%82_%E0%A4%A8%E0%A4%BF%E0%A4%A4%E0%A5%8D%E0%A4%AF%E0%A4%82.wav"
+     },
+     {
+      "verse": 22,
+      "title": "Bhagavad Gita 2.22 (वासांसि जीर्णानि यथा)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/d6/%E0%A4%B5%E0%A4%BE%E0%A4%B8%E0%A4%BE%E0%A4%82%E0%A4%B8%E0%A4%BF_%E0%A4%9C%E0%A5%80%E0%A4%B0%E0%A5%8D%E0%A4%A3%E0%A4%BE%E0%A4%A8%E0%A4%BF_%E0%A4%AF%E0%A4%A5%E0%A4%BE.wav/%E0%A4%B5%E0%A4%BE%E0%A4%B8%E0%A4%BE%E0%A4%82%E0%A4%B8%E0%A4%BF_%E0%A4%9C%E0%A5%80%E0%A4%B0%E0%A5%8D%E0%A4%A3%E0%A4%BE%E0%A4%A8%E0%A4%BF_%E0%A4%AF%E0%A4%A5%E0%A4%BE.wav.mp3",
+      "seconds": 18,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%B5%E0%A4%BE%E0%A4%B8%E0%A4%BE%E0%A4%82%E0%A4%B8%E0%A4%BF_%E0%A4%9C%E0%A5%80%E0%A4%B0%E0%A5%8D%E0%A4%A3%E0%A4%BE%E0%A4%A8%E0%A4%BF_%E0%A4%AF%E0%A4%A5%E0%A4%BE.wav"
+     },
+     {
+      "verse": 23,
+      "title": "Bhagavad Gita 2.23 (नैनं छिन्दन्ति शस्त्राणि)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/a/af/%E0%A4%A8%E0%A5%88%E0%A4%A8%E0%A4%82_%E0%A4%9B%E0%A4%BF%E0%A4%A8%E0%A5%8D%E0%A4%A6%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A4%BF_%E0%A4%B6%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A4%BE%E0%A4%A3%E0%A4%BF.wav/%E0%A4%A8%E0%A5%88%E0%A4%A8%E0%A4%82_%E0%A4%9B%E0%A4%BF%E0%A4%A8%E0%A5%8D%E0%A4%A6%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A4%BF_%E0%A4%B6%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A4%BE%E0%A4%A3%E0%A4%BF.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%A8%E0%A5%88%E0%A4%A8%E0%A4%82_%E0%A4%9B%E0%A4%BF%E0%A4%A8%E0%A5%8D%E0%A4%A6%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A4%BF_%E0%A4%B6%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A4%BE%E0%A4%A3%E0%A4%BF.wav"
+     },
+     {
+      "verse": 24,
+      "title": "Bhagavad Gita 2.24 (अच्छेद्योऽयमदाह्योऽयम्)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b2/%E0%A4%85%E0%A4%9A%E0%A5%8D%E0%A4%9B%E0%A5%87%E0%A4%A6%E0%A5%8D%E0%A4%AF%E0%A5%8B%E0%A4%BD%E0%A4%AF%E0%A4%AE%E0%A4%A6%E0%A4%BE%E0%A4%B9%E0%A5%8D%E0%A4%AF%E0%A5%8B%E0%A4%BD%E0%A4%AF%E0%A4%AE%E0%A5%8D.wav/%E0%A4%85%E0%A4%9A%E0%A5%8D%E0%A4%9B%E0%A5%87%E0%A4%A6%E0%A5%8D%E0%A4%AF%E0%A5%8B%E0%A4%BD%E0%A4%AF%E0%A4%AE%E0%A4%A6%E0%A4%BE%E0%A4%B9%E0%A5%8D%E0%A4%AF%E0%A5%8B%E0%A4%BD%E0%A4%AF%E0%A4%AE%E0%A5%8D.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%85%E0%A4%9A%E0%A5%8D%E0%A4%9B%E0%A5%87%E0%A4%A6%E0%A5%8D%E0%A4%AF%E0%A5%8B%E0%A4%BD%E0%A4%AF%E0%A4%AE%E0%A4%A6%E0%A4%BE%E0%A4%B9%E0%A5%8D%E0%A4%AF%E0%A5%8B%E0%A4%BD%E0%A4%AF%E0%A4%AE%E0%A5%8D.wav"
+     },
+     {
+      "verse": 25,
+      "title": "Bhagavad Gita 2.25 (अव्यक्तोऽयमचिन्त्योऽयम्)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/3/3e/%E0%A4%85%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A5%8B%E0%A4%BD%E0%A4%AF%E0%A4%AE%E0%A4%9A%E0%A4%BF%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A5%8D%E0%A4%AF%E0%A5%8B%E0%A4%BD%E0%A4%AF%E0%A4%AE%E0%A5%8D.wav/%E0%A4%85%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A5%8B%E0%A4%BD%E0%A4%AF%E0%A4%AE%E0%A4%9A%E0%A4%BF%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A5%8D%E0%A4%AF%E0%A5%8B%E0%A4%BD%E0%A4%AF%E0%A4%AE%E0%A5%8D.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%85%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A5%8B%E0%A4%BD%E0%A4%AF%E0%A4%AE%E0%A4%9A%E0%A4%BF%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A5%8D%E0%A4%AF%E0%A5%8B%E0%A4%BD%E0%A4%AF%E0%A4%AE%E0%A5%8D.wav"
+     },
+     {
+      "verse": 26,
+      "title": "Bhagavad Gita 2.26 (अथ चैनं नित्यजातं)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/e5/%E0%A4%85%E0%A4%A5_%E0%A4%9A%E0%A5%88%E0%A4%A8%E0%A4%82_%E0%A4%A8%E0%A4%BF%E0%A4%A4%E0%A5%8D%E0%A4%AF%E0%A4%9C%E0%A4%BE%E0%A4%A4%E0%A4%82.wav/%E0%A4%85%E0%A4%A5_%E0%A4%9A%E0%A5%88%E0%A4%A8%E0%A4%82_%E0%A4%A8%E0%A4%BF%E0%A4%A4%E0%A5%8D%E0%A4%AF%E0%A4%9C%E0%A4%BE%E0%A4%A4%E0%A4%82.wav.mp3",
+      "seconds": 17,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%85%E0%A4%A5_%E0%A4%9A%E0%A5%88%E0%A4%A8%E0%A4%82_%E0%A4%A8%E0%A4%BF%E0%A4%A4%E0%A5%8D%E0%A4%AF%E0%A4%9C%E0%A4%BE%E0%A4%A4%E0%A4%82.wav"
+     },
+     {
+      "verse": 27,
+      "title": "Bhagavad Gita 2.27 (जातस्य हि ध्रुवो मृत्युः)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/1c/%E0%A4%9C%E0%A4%BE%E0%A4%A4%E0%A4%B8%E0%A5%8D%E0%A4%AF_%E0%A4%B9%E0%A4%BF_%E0%A4%A7%E0%A5%8D%E0%A4%B0%E0%A5%81%E0%A4%B5%E0%A5%8B_%E0%A4%AE%E0%A5%83%E0%A4%A4%E0%A5%8D%E0%A4%AF%E0%A5%81%E0%A4%83.wav/%E0%A4%9C%E0%A4%BE%E0%A4%A4%E0%A4%B8%E0%A5%8D%E0%A4%AF_%E0%A4%B9%E0%A4%BF_%E0%A4%A7%E0%A5%8D%E0%A4%B0%E0%A5%81%E0%A4%B5%E0%A5%8B_%E0%A4%AE%E0%A5%83%E0%A4%A4%E0%A5%8D%E0%A4%AF%E0%A5%81%E0%A4%83.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%9C%E0%A4%BE%E0%A4%A4%E0%A4%B8%E0%A5%8D%E0%A4%AF_%E0%A4%B9%E0%A4%BF_%E0%A4%A7%E0%A5%8D%E0%A4%B0%E0%A5%81%E0%A4%B5%E0%A5%8B_%E0%A4%AE%E0%A5%83%E0%A4%A4%E0%A5%8D%E0%A4%AF%E0%A5%81%E0%A4%83.wav"
+     },
+     {
+      "verse": 28,
+      "title": "Bhagavad Gita 2.28 (अव्यक्तादीनि भूतानि)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c3/%E0%A4%85%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%BE%E0%A4%A6%E0%A5%80%E0%A4%A8%E0%A4%BF_%E0%A4%AD%E0%A5%82%E0%A4%A4%E0%A4%BE%E0%A4%A8%E0%A4%BF.wav/%E0%A4%85%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%BE%E0%A4%A6%E0%A5%80%E0%A4%A8%E0%A4%BF_%E0%A4%AD%E0%A5%82%E0%A4%A4%E0%A4%BE%E0%A4%A8%E0%A4%BF.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%85%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%BE%E0%A4%A6%E0%A5%80%E0%A4%A8%E0%A4%BF_%E0%A4%AD%E0%A5%82%E0%A4%A4%E0%A4%BE%E0%A4%A8%E0%A4%BF.wav"
+     },
+     {
+      "verse": 29,
+      "title": "Bhagavad Gita 2.29 (आश्चर्यवत्पश्यति)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/15/%E0%A4%86%E0%A4%B6%E0%A5%8D%E0%A4%9A%E0%A4%B0%E0%A5%8D%E0%A4%AF%E0%A4%B5%E0%A4%A4%E0%A5%8D%E0%A4%AA%E0%A4%B6%E0%A5%8D%E0%A4%AF%E0%A4%A4%E0%A4%BF.wav/%E0%A4%86%E0%A4%B6%E0%A5%8D%E0%A4%9A%E0%A4%B0%E0%A5%8D%E0%A4%AF%E0%A4%B5%E0%A4%A4%E0%A5%8D%E0%A4%AA%E0%A4%B6%E0%A5%8D%E0%A4%AF%E0%A4%A4%E0%A4%BF.wav.mp3",
+      "seconds": 19,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%86%E0%A4%B6%E0%A5%8D%E0%A4%9A%E0%A4%B0%E0%A5%8D%E0%A4%AF%E0%A4%B5%E0%A4%A4%E0%A5%8D%E0%A4%AA%E0%A4%B6%E0%A5%8D%E0%A4%AF%E0%A4%A4%E0%A4%BF.wav"
+     },
+     {
+      "verse": 30,
+      "title": "Bhagavad Gita 2.30 (देही नित्यमवध्योऽयं)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/5/5f/%E0%A4%A6%E0%A5%87%E0%A4%B9%E0%A5%80_%E0%A4%A8%E0%A4%BF%E0%A4%A4%E0%A5%8D%E0%A4%AF%E0%A4%AE%E0%A4%B5%E0%A4%A7%E0%A5%8D%E0%A4%AF%E0%A5%8B%E0%A4%BD%E0%A4%AF%E0%A4%82.wav/%E0%A4%A6%E0%A5%87%E0%A4%B9%E0%A5%80_%E0%A4%A8%E0%A4%BF%E0%A4%A4%E0%A5%8D%E0%A4%AF%E0%A4%AE%E0%A4%B5%E0%A4%A7%E0%A5%8D%E0%A4%AF%E0%A5%8B%E0%A4%BD%E0%A4%AF%E0%A4%82.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%A6%E0%A5%87%E0%A4%B9%E0%A5%80_%E0%A4%A8%E0%A4%BF%E0%A4%A4%E0%A5%8D%E0%A4%AF%E0%A4%AE%E0%A4%B5%E0%A4%A7%E0%A5%8D%E0%A4%AF%E0%A5%8B%E0%A4%BD%E0%A4%AF%E0%A4%82.wav"
+     },
+     {
+      "verse": 31,
+      "title": "Bhagavad Gita 2.31 (स्वधर्ममपि चावेक्ष्य)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/81/%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%A7%E0%A4%B0%E0%A5%8D%E0%A4%AE%E0%A4%AE%E0%A4%AA%E0%A4%BF_%E0%A4%9A%E0%A4%BE%E0%A4%B5%E0%A5%87%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A5%8D%E0%A4%AF.wav/%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%A7%E0%A4%B0%E0%A5%8D%E0%A4%AE%E0%A4%AE%E0%A4%AA%E0%A4%BF_%E0%A4%9A%E0%A4%BE%E0%A4%B5%E0%A5%87%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A5%8D%E0%A4%AF.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%A7%E0%A4%B0%E0%A5%8D%E0%A4%AE%E0%A4%AE%E0%A4%AA%E0%A4%BF_%E0%A4%9A%E0%A4%BE%E0%A4%B5%E0%A5%87%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A5%8D%E0%A4%AF.wav"
+     },
+     {
+      "verse": 32,
+      "title": "Bhagavad Gita 2.32 (यदृच्छया चोपपन्नं)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/0/04/%E0%A4%AF%E0%A4%A6%E0%A5%83%E0%A4%9A%E0%A5%8D%E0%A4%9B%E0%A4%AF%E0%A4%BE_%E0%A4%9A%E0%A5%8B%E0%A4%AA%E0%A4%AA%E0%A4%A8%E0%A5%8D%E0%A4%A8%E0%A4%82.wav/%E0%A4%AF%E0%A4%A6%E0%A5%83%E0%A4%9A%E0%A5%8D%E0%A4%9B%E0%A4%AF%E0%A4%BE_%E0%A4%9A%E0%A5%8B%E0%A4%AA%E0%A4%AA%E0%A4%A8%E0%A5%8D%E0%A4%A8%E0%A4%82.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%AF%E0%A4%A6%E0%A5%83%E0%A4%9A%E0%A5%8D%E0%A4%9B%E0%A4%AF%E0%A4%BE_%E0%A4%9A%E0%A5%8B%E0%A4%AA%E0%A4%AA%E0%A4%A8%E0%A5%8D%E0%A4%A8%E0%A4%82.wav"
+     },
+     {
+      "verse": 33,
+      "title": "Bhagavad Gita 2.33 (अथ चेत्त्वमिमं धर्म्यं)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/9d/%E0%A4%85%E0%A4%A5_%E0%A4%9A%E0%A5%87%E0%A4%A4%E0%A5%8D%E0%A4%A4%E0%A5%8D%E0%A4%B5%E0%A4%AE%E0%A4%BF%E0%A4%AE%E0%A4%82_%E0%A4%A7%E0%A4%B0%E0%A5%8D%E0%A4%AE%E0%A5%8D%E0%A4%AF%E0%A4%82.wav/%E0%A4%85%E0%A4%A5_%E0%A4%9A%E0%A5%87%E0%A4%A4%E0%A5%8D%E0%A4%A4%E0%A5%8D%E0%A4%B5%E0%A4%AE%E0%A4%BF%E0%A4%AE%E0%A4%82_%E0%A4%A7%E0%A4%B0%E0%A5%8D%E0%A4%AE%E0%A5%8D%E0%A4%AF%E0%A4%82.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%85%E0%A4%A5_%E0%A4%9A%E0%A5%87%E0%A4%A4%E0%A5%8D%E0%A4%A4%E0%A5%8D%E0%A4%B5%E0%A4%AE%E0%A4%BF%E0%A4%AE%E0%A4%82_%E0%A4%A7%E0%A4%B0%E0%A5%8D%E0%A4%AE%E0%A5%8D%E0%A4%AF%E0%A4%82.wav"
+     },
+     {
+      "verse": 34,
+      "title": "Bhagavad Gita 2.34 (अकीर्तिं चापि भूतानि)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/74/%E0%A4%85%E0%A4%95%E0%A5%80%E0%A4%B0%E0%A5%8D%E0%A4%A4%E0%A4%BF%E0%A4%82_%E0%A4%9A%E0%A4%BE%E0%A4%AA%E0%A4%BF_%E0%A4%AD%E0%A5%82%E0%A4%A4%E0%A4%BE%E0%A4%A8%E0%A4%BF.wav/%E0%A4%85%E0%A4%95%E0%A5%80%E0%A4%B0%E0%A5%8D%E0%A4%A4%E0%A4%BF%E0%A4%82_%E0%A4%9A%E0%A4%BE%E0%A4%AA%E0%A4%BF_%E0%A4%AD%E0%A5%82%E0%A4%A4%E0%A4%BE%E0%A4%A8%E0%A4%BF.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%85%E0%A4%95%E0%A5%80%E0%A4%B0%E0%A5%8D%E0%A4%A4%E0%A4%BF%E0%A4%82_%E0%A4%9A%E0%A4%BE%E0%A4%AA%E0%A4%BF_%E0%A4%AD%E0%A5%82%E0%A4%A4%E0%A4%BE%E0%A4%A8%E0%A4%BF.wav"
+     },
+     {
+      "verse": 35,
+      "title": "Bhagavad Gita 2.35 (भयाद्रणादुपरतं)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/6/60/%E0%A4%AD%E0%A4%AF%E0%A4%BE%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A4%A3%E0%A4%BE%E0%A4%A6%E0%A5%81%E0%A4%AA%E0%A4%B0%E0%A4%A4%E0%A4%82.wav/%E0%A4%AD%E0%A4%AF%E0%A4%BE%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A4%A3%E0%A4%BE%E0%A4%A6%E0%A5%81%E0%A4%AA%E0%A4%B0%E0%A4%A4%E0%A4%82.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%AD%E0%A4%AF%E0%A4%BE%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A4%A3%E0%A4%BE%E0%A4%A6%E0%A5%81%E0%A4%AA%E0%A4%B0%E0%A4%A4%E0%A4%82.wav"
+     },
+     {
+      "verse": 36,
+      "title": "Bhagavad Gita 2.36 (अवाच्यवादांश्च)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/2d/%E0%A4%85%E0%A4%B5%E0%A4%BE%E0%A4%9A%E0%A5%8D%E0%A4%AF%E0%A4%B5%E0%A4%BE%E0%A4%A6%E0%A4%BE%E0%A4%82%E0%A4%B6%E0%A5%8D%E0%A4%9A.wav/%E0%A4%85%E0%A4%B5%E0%A4%BE%E0%A4%9A%E0%A5%8D%E0%A4%AF%E0%A4%B5%E0%A4%BE%E0%A4%A6%E0%A4%BE%E0%A4%82%E0%A4%B6%E0%A5%8D%E0%A4%9A.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%85%E0%A4%B5%E0%A4%BE%E0%A4%9A%E0%A5%8D%E0%A4%AF%E0%A4%B5%E0%A4%BE%E0%A4%A6%E0%A4%BE%E0%A4%82%E0%A4%B6%E0%A5%8D%E0%A4%9A.wav"
+     },
+     {
+      "verse": 37,
+      "title": "Bhagavad Gita 2.37 (हतो वा प्राप्स्यसि स्वर्गं)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/%E0%A4%B9%E0%A4%A4%E0%A5%8B_%E0%A4%B5%E0%A4%BE_%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%BE%E0%A4%AA%E0%A5%8D%E0%A4%B8%E0%A5%8D%E0%A4%AF%E0%A4%B8%E0%A4%BF_%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%B0%E0%A5%8D%E0%A4%97%E0%A4%82.wav/%E0%A4%B9%E0%A4%A4%E0%A5%8B_%E0%A4%B5%E0%A4%BE_%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%BE%E0%A4%AA%E0%A5%8D%E0%A4%B8%E0%A5%8D%E0%A4%AF%E0%A4%B8%E0%A4%BF_%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%B0%E0%A5%8D%E0%A4%97%E0%A4%82.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%B9%E0%A4%A4%E0%A5%8B_%E0%A4%B5%E0%A4%BE_%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%BE%E0%A4%AA%E0%A5%8D%E0%A4%B8%E0%A5%8D%E0%A4%AF%E0%A4%B8%E0%A4%BF_%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%B0%E0%A5%8D%E0%A4%97%E0%A4%82.wav"
+     },
+     {
+      "verse": 38,
+      "title": "Bhagavad Gita 2.38 (सुखदुःखे समे कृत्वा)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/77/%E0%A4%B8%E0%A5%81%E0%A4%96%E0%A4%A6%E0%A5%81%E0%A4%83%E0%A4%96%E0%A5%87_%E0%A4%B8%E0%A4%AE%E0%A5%87_%E0%A4%95%E0%A5%83%E0%A4%A4%E0%A5%8D%E0%A4%B5%E0%A4%BE.wav/%E0%A4%B8%E0%A5%81%E0%A4%96%E0%A4%A6%E0%A5%81%E0%A4%83%E0%A4%96%E0%A5%87_%E0%A4%B8%E0%A4%AE%E0%A5%87_%E0%A4%95%E0%A5%83%E0%A4%A4%E0%A5%8D%E0%A4%B5%E0%A4%BE.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%B8%E0%A5%81%E0%A4%96%E0%A4%A6%E0%A5%81%E0%A4%83%E0%A4%96%E0%A5%87_%E0%A4%B8%E0%A4%AE%E0%A5%87_%E0%A4%95%E0%A5%83%E0%A4%A4%E0%A5%8D%E0%A4%B5%E0%A4%BE.wav"
+     },
+     {
+      "verse": 39,
+      "title": "Bhagavad Gita 2.39 (एषा तेऽभिहिता साङ्ख्ये)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f6/%E0%A4%8F%E0%A4%B7%E0%A4%BE_%E0%A4%A4%E0%A5%87%E0%A4%BD%E0%A4%AD%E0%A4%BF%E0%A4%B9%E0%A4%BF%E0%A4%A4%E0%A4%BE_%E0%A4%B8%E0%A4%BE%E0%A4%99%E0%A5%8D%E0%A4%96%E0%A5%8D%E0%A4%AF%E0%A5%87.wav/%E0%A4%8F%E0%A4%B7%E0%A4%BE_%E0%A4%A4%E0%A5%87%E0%A4%BD%E0%A4%AD%E0%A4%BF%E0%A4%B9%E0%A4%BF%E0%A4%A4%E0%A4%BE_%E0%A4%B8%E0%A4%BE%E0%A4%99%E0%A5%8D%E0%A4%96%E0%A5%8D%E0%A4%AF%E0%A5%87.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%8F%E0%A4%B7%E0%A4%BE_%E0%A4%A4%E0%A5%87%E0%A4%BD%E0%A4%AD%E0%A4%BF%E0%A4%B9%E0%A4%BF%E0%A4%A4%E0%A4%BE_%E0%A4%B8%E0%A4%BE%E0%A4%99%E0%A5%8D%E0%A4%96%E0%A5%8D%E0%A4%AF%E0%A5%87.wav"
+     },
+     {
+      "verse": 40,
+      "title": "Bhagavad Gita 2.40 (नेहाभिक्रमनाशोऽस्ति)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/3/32/%E0%A4%A8%E0%A5%87%E0%A4%B9%E0%A4%BE%E0%A4%AD%E0%A4%BF%E0%A4%95%E0%A5%8D%E0%A4%B0%E0%A4%AE%E0%A4%A8%E0%A4%BE%E0%A4%B6%E0%A5%8B%E0%A4%BD%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A4%BF.wav/%E0%A4%A8%E0%A5%87%E0%A4%B9%E0%A4%BE%E0%A4%AD%E0%A4%BF%E0%A4%95%E0%A5%8D%E0%A4%B0%E0%A4%AE%E0%A4%A8%E0%A4%BE%E0%A4%B6%E0%A5%8B%E0%A4%BD%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A4%BF.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%A8%E0%A5%87%E0%A4%B9%E0%A4%BE%E0%A4%AD%E0%A4%BF%E0%A4%95%E0%A5%8D%E0%A4%B0%E0%A4%AE%E0%A4%A8%E0%A4%BE%E0%A4%B6%E0%A5%8B%E0%A4%BD%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A4%BF.wav"
+     },
+     {
+      "verse": 41,
+      "title": "Bhagavad Gita 2.41 (व्यवसायात्मिका बुद्धिः)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/4d/%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%B5%E0%A4%B8%E0%A4%BE%E0%A4%AF%E0%A4%BE%E0%A4%A4%E0%A5%8D%E0%A4%AE%E0%A4%BF%E0%A4%95%E0%A4%BE_%E0%A4%AC%E0%A5%81%E0%A4%A6%E0%A5%8D%E0%A4%A7%E0%A4%BF%E0%A4%83.wav/%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%B5%E0%A4%B8%E0%A4%BE%E0%A4%AF%E0%A4%BE%E0%A4%A4%E0%A5%8D%E0%A4%AE%E0%A4%BF%E0%A4%95%E0%A4%BE_%E0%A4%AC%E0%A5%81%E0%A4%A6%E0%A5%8D%E0%A4%A7%E0%A4%BF%E0%A4%83.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%B5%E0%A5%8D%E0%A4%AF%E0%A4%B5%E0%A4%B8%E0%A4%BE%E0%A4%AF%E0%A4%BE%E0%A4%A4%E0%A5%8D%E0%A4%AE%E0%A4%BF%E0%A4%95%E0%A4%BE_%E0%A4%AC%E0%A5%81%E0%A4%A6%E0%A5%8D%E0%A4%A7%E0%A4%BF%E0%A4%83.wav"
+     },
+     {
+      "verse": 42,
+      "title": "Bhagavad Gita 2.42 (यामिमां पुष्पितां वाचं…)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/9b/%E0%A4%AF%E0%A4%BE%E0%A4%AE%E0%A4%BF%E0%A4%AE%E0%A4%BE%E0%A4%82_%E0%A4%AA%E0%A5%81%E0%A4%B7%E0%A5%8D%E0%A4%AA%E0%A4%BF%E0%A4%A4%E0%A4%BE%E0%A4%82_%E0%A4%B5%E0%A4%BE%E0%A4%9A%E0%A4%82%E2%80%A6.wav/%E0%A4%AF%E0%A4%BE%E0%A4%AE%E0%A4%BF%E0%A4%AE%E0%A4%BE%E0%A4%82_%E0%A4%AA%E0%A5%81%E0%A4%B7%E0%A5%8D%E0%A4%AA%E0%A4%BF%E0%A4%A4%E0%A4%BE%E0%A4%82_%E0%A4%B5%E0%A4%BE%E0%A4%9A%E0%A4%82%E2%80%A6.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%AF%E0%A4%BE%E0%A4%AE%E0%A4%BF%E0%A4%AE%E0%A4%BE%E0%A4%82_%E0%A4%AA%E0%A5%81%E0%A4%B7%E0%A5%8D%E0%A4%AA%E0%A4%BF%E0%A4%A4%E0%A4%BE%E0%A4%82_%E0%A4%B5%E0%A4%BE%E0%A4%9A%E0%A4%82%E2%80%A6.wav"
+     },
+     {
+      "verse": 43,
+      "title": "Bhagavad Gita 2.43 (कामात्मानः स्वर्गपरा…)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/47/%E0%A4%95%E0%A4%BE%E0%A4%AE%E0%A4%BE%E0%A4%A4%E0%A5%8D%E0%A4%AE%E0%A4%BE%E0%A4%A8%E0%A4%83_%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%B0%E0%A5%8D%E0%A4%97%E0%A4%AA%E0%A4%B0%E0%A4%BE%E2%80%A6.wav/%E0%A4%95%E0%A4%BE%E0%A4%AE%E0%A4%BE%E0%A4%A4%E0%A5%8D%E0%A4%AE%E0%A4%BE%E0%A4%A8%E0%A4%83_%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%B0%E0%A5%8D%E0%A4%97%E0%A4%AA%E0%A4%B0%E0%A4%BE%E2%80%A6.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%95%E0%A4%BE%E0%A4%AE%E0%A4%BE%E0%A4%A4%E0%A5%8D%E0%A4%AE%E0%A4%BE%E0%A4%A8%E0%A4%83_%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%B0%E0%A5%8D%E0%A4%97%E0%A4%AA%E0%A4%B0%E0%A4%BE%E2%80%A6.wav"
+     },
+     {
+      "verse": 44,
+      "title": "Bhagavad Gita 2.44 (भोगैश्वर्यप्रसक्तानां)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c3/%E0%A4%AD%E0%A5%8B%E0%A4%97%E0%A5%88%E0%A4%B6%E0%A5%8D%E0%A4%B5%E0%A4%B0%E0%A5%8D%E0%A4%AF%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%B8%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%BE%E0%A4%A8%E0%A4%BE%E0%A4%82.wav/%E0%A4%AD%E0%A5%8B%E0%A4%97%E0%A5%88%E0%A4%B6%E0%A5%8D%E0%A4%B5%E0%A4%B0%E0%A5%8D%E0%A4%AF%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%B8%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%BE%E0%A4%A8%E0%A4%BE%E0%A4%82.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%AD%E0%A5%8B%E0%A4%97%E0%A5%88%E0%A4%B6%E0%A5%8D%E0%A4%B5%E0%A4%B0%E0%A5%8D%E0%A4%AF%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%B8%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%BE%E0%A4%A8%E0%A4%BE%E0%A4%82.wav"
+     },
+     {
+      "verse": 45,
+      "title": "Bhagavad Gita 2.45 (त्रैगुण्यविषया वेदा)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/21/%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A5%88%E0%A4%97%E0%A5%81%E0%A4%A3%E0%A5%8D%E0%A4%AF%E0%A4%B5%E0%A4%BF%E0%A4%B7%E0%A4%AF%E0%A4%BE_%E0%A4%B5%E0%A5%87%E0%A4%A6%E0%A4%BE.wav/%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A5%88%E0%A4%97%E0%A5%81%E0%A4%A3%E0%A5%8D%E0%A4%AF%E0%A4%B5%E0%A4%BF%E0%A4%B7%E0%A4%AF%E0%A4%BE_%E0%A4%B5%E0%A5%87%E0%A4%A6%E0%A4%BE.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A5%88%E0%A4%97%E0%A5%81%E0%A4%A3%E0%A5%8D%E0%A4%AF%E0%A4%B5%E0%A4%BF%E0%A4%B7%E0%A4%AF%E0%A4%BE_%E0%A4%B5%E0%A5%87%E0%A4%A6%E0%A4%BE.wav"
+     },
+     {
+      "verse": 46,
+      "title": "Bhagavad Gita 2.46 (यावानर्थ उदपाने)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/5/5e/%E0%A4%AF%E0%A4%BE%E0%A4%B5%E0%A4%BE%E0%A4%A8%E0%A4%B0%E0%A5%8D%E0%A4%A5_%E0%A4%89%E0%A4%A6%E0%A4%AA%E0%A4%BE%E0%A4%A8%E0%A5%87.wav/%E0%A4%AF%E0%A4%BE%E0%A4%B5%E0%A4%BE%E0%A4%A8%E0%A4%B0%E0%A5%8D%E0%A4%A5_%E0%A4%89%E0%A4%A6%E0%A4%AA%E0%A4%BE%E0%A4%A8%E0%A5%87.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%AF%E0%A4%BE%E0%A4%B5%E0%A4%BE%E0%A4%A8%E0%A4%B0%E0%A5%8D%E0%A4%A5_%E0%A4%89%E0%A4%A6%E0%A4%AA%E0%A4%BE%E0%A4%A8%E0%A5%87.wav"
+     },
+     {
+      "verse": 47,
+      "title": "Bhagavad Gita 2.47 (कर्मण्येवाधिकारस्ते)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/1e/%E0%A4%95%E0%A4%B0%E0%A5%8D%E0%A4%AE%E0%A4%A3%E0%A5%8D%E0%A4%AF%E0%A5%87%E0%A4%B5%E0%A4%BE%E0%A4%A7%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87.wav/%E0%A4%95%E0%A4%B0%E0%A5%8D%E0%A4%AE%E0%A4%A3%E0%A5%8D%E0%A4%AF%E0%A5%87%E0%A4%B5%E0%A4%BE%E0%A4%A7%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%95%E0%A4%B0%E0%A5%8D%E0%A4%AE%E0%A4%A3%E0%A5%8D%E0%A4%AF%E0%A5%87%E0%A4%B5%E0%A4%BE%E0%A4%A7%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87.wav"
+     },
+     {
+      "verse": 48,
+      "title": "Bhagavad Gita 2.48 (योगस्थः कुरु कर्माणि)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/e2/%E0%A4%AF%E0%A5%8B%E0%A4%97%E0%A4%B8%E0%A5%8D%E0%A4%A5%E0%A4%83_%E0%A4%95%E0%A5%81%E0%A4%B0%E0%A5%81_%E0%A4%95%E0%A4%B0%E0%A5%8D%E0%A4%AE%E0%A4%BE%E0%A4%A3%E0%A4%BF.wav/%E0%A4%AF%E0%A5%8B%E0%A4%97%E0%A4%B8%E0%A5%8D%E0%A4%A5%E0%A4%83_%E0%A4%95%E0%A5%81%E0%A4%B0%E0%A5%81_%E0%A4%95%E0%A4%B0%E0%A5%8D%E0%A4%AE%E0%A4%BE%E0%A4%A3%E0%A4%BF.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%AF%E0%A5%8B%E0%A4%97%E0%A4%B8%E0%A5%8D%E0%A4%A5%E0%A4%83_%E0%A4%95%E0%A5%81%E0%A4%B0%E0%A5%81_%E0%A4%95%E0%A4%B0%E0%A5%8D%E0%A4%AE%E0%A4%BE%E0%A4%A3%E0%A4%BF.wav"
+     },
+     {
+      "verse": 49,
+      "title": "Bhagavad Gita 2.49 (दूरेण ह्यवरं कर्म)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/0/0d/%E0%A4%A6%E0%A5%82%E0%A4%B0%E0%A5%87%E0%A4%A3_%E0%A4%B9%E0%A5%8D%E0%A4%AF%E0%A4%B5%E0%A4%B0%E0%A4%82_%E0%A4%95%E0%A4%B0%E0%A5%8D%E0%A4%AE.wav/%E0%A4%A6%E0%A5%82%E0%A4%B0%E0%A5%87%E0%A4%A3_%E0%A4%B9%E0%A5%8D%E0%A4%AF%E0%A4%B5%E0%A4%B0%E0%A4%82_%E0%A4%95%E0%A4%B0%E0%A5%8D%E0%A4%AE.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%A6%E0%A5%82%E0%A4%B0%E0%A5%87%E0%A4%A3_%E0%A4%B9%E0%A5%8D%E0%A4%AF%E0%A4%B5%E0%A4%B0%E0%A4%82_%E0%A4%95%E0%A4%B0%E0%A5%8D%E0%A4%AE.wav"
+     },
+     {
+      "verse": 50,
+      "title": "Bhagavad Gita 2.50 (बुद्धियुक्तो जहातीह)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f6/%E0%A4%AC%E0%A5%81%E0%A4%A6%E0%A5%8D%E0%A4%A7%E0%A4%BF%E0%A4%AF%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A5%8B_%E0%A4%9C%E0%A4%B9%E0%A4%BE%E0%A4%A4%E0%A5%80%E0%A4%B9.wav/%E0%A4%AC%E0%A5%81%E0%A4%A6%E0%A5%8D%E0%A4%A7%E0%A4%BF%E0%A4%AF%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A5%8B_%E0%A4%9C%E0%A4%B9%E0%A4%BE%E0%A4%A4%E0%A5%80%E0%A4%B9.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%AC%E0%A5%81%E0%A4%A6%E0%A5%8D%E0%A4%A7%E0%A4%BF%E0%A4%AF%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A5%8B_%E0%A4%9C%E0%A4%B9%E0%A4%BE%E0%A4%A4%E0%A5%80%E0%A4%B9.wav"
+     },
+     {
+      "verse": 51,
+      "title": "Bhagavad Gita 2.51 (कर्मजं बुद्धियुक्ता हि)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/b/ba/%E0%A4%95%E0%A4%B0%E0%A5%8D%E0%A4%AE%E0%A4%9C%E0%A4%82_%E0%A4%AC%E0%A5%81%E0%A4%A6%E0%A5%8D%E0%A4%A7%E0%A4%BF%E0%A4%AF%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%BE_%E0%A4%B9%E0%A4%BF.wav/%E0%A4%95%E0%A4%B0%E0%A5%8D%E0%A4%AE%E0%A4%9C%E0%A4%82_%E0%A4%AC%E0%A5%81%E0%A4%A6%E0%A5%8D%E0%A4%A7%E0%A4%BF%E0%A4%AF%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%BE_%E0%A4%B9%E0%A4%BF.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%95%E0%A4%B0%E0%A5%8D%E0%A4%AE%E0%A4%9C%E0%A4%82_%E0%A4%AC%E0%A5%81%E0%A4%A6%E0%A5%8D%E0%A4%A7%E0%A4%BF%E0%A4%AF%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%BE_%E0%A4%B9%E0%A4%BF.wav"
+     },
+     {
+      "verse": 52,
+      "title": "Bhagavad Gita 2.52 (यदा ते मोहकलिलं)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/8c/%E0%A4%AF%E0%A4%A6%E0%A4%BE_%E0%A4%A4%E0%A5%87_%E0%A4%AE%E0%A5%8B%E0%A4%B9%E0%A4%95%E0%A4%B2%E0%A4%BF%E0%A4%B2%E0%A4%82.wav/%E0%A4%AF%E0%A4%A6%E0%A4%BE_%E0%A4%A4%E0%A5%87_%E0%A4%AE%E0%A5%8B%E0%A4%B9%E0%A4%95%E0%A4%B2%E0%A4%BF%E0%A4%B2%E0%A4%82.wav.mp3",
+      "seconds": 14,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%AF%E0%A4%A6%E0%A4%BE_%E0%A4%A4%E0%A5%87_%E0%A4%AE%E0%A5%8B%E0%A4%B9%E0%A4%95%E0%A4%B2%E0%A4%BF%E0%A4%B2%E0%A4%82.wav"
+     },
+     {
+      "verse": 53,
+      "title": "Bhagavad Gita 2.53 (श्रुतिविप्रतिपन्ना ते)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/6/63/%E0%A4%B6%E0%A5%8D%E0%A4%B0%E0%A5%81%E0%A4%A4%E0%A4%BF%E0%A4%B5%E0%A4%BF%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%A4%E0%A4%BF%E0%A4%AA%E0%A4%A8%E0%A5%8D%E0%A4%A8%E0%A4%BE_%E0%A4%A4%E0%A5%87.wav/%E0%A4%B6%E0%A5%8D%E0%A4%B0%E0%A5%81%E0%A4%A4%E0%A4%BF%E0%A4%B5%E0%A4%BF%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%A4%E0%A4%BF%E0%A4%AA%E0%A4%A8%E0%A5%8D%E0%A4%A8%E0%A4%BE_%E0%A4%A4%E0%A5%87.wav.mp3",
+      "seconds": 14,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%B6%E0%A5%8D%E0%A4%B0%E0%A5%81%E0%A4%A4%E0%A4%BF%E0%A4%B5%E0%A4%BF%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%A4%E0%A4%BF%E0%A4%AA%E0%A4%A8%E0%A5%8D%E0%A4%A8%E0%A4%BE_%E0%A4%A4%E0%A5%87.wav"
+     },
+     {
+      "verse": 54,
+      "title": "Bhagavad Gita 2.54 (स्थितप्रज्ञस्य का भाषा)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/6/64/%E0%A4%B8%E0%A5%8D%E0%A4%A5%E0%A4%BF%E0%A4%A4%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%9C%E0%A5%8D%E0%A4%9E%E0%A4%B8%E0%A5%8D%E0%A4%AF_%E0%A4%95%E0%A4%BE_%E0%A4%AD%E0%A4%BE%E0%A4%B7%E0%A4%BE.wav/%E0%A4%B8%E0%A5%8D%E0%A4%A5%E0%A4%BF%E0%A4%A4%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%9C%E0%A5%8D%E0%A4%9E%E0%A4%B8%E0%A5%8D%E0%A4%AF_%E0%A4%95%E0%A4%BE_%E0%A4%AD%E0%A4%BE%E0%A4%B7%E0%A4%BE.wav.mp3",
+      "seconds": 17,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%B8%E0%A5%8D%E0%A4%A5%E0%A4%BF%E0%A4%A4%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%9C%E0%A5%8D%E0%A4%9E%E0%A4%B8%E0%A5%8D%E0%A4%AF_%E0%A4%95%E0%A4%BE_%E0%A4%AD%E0%A4%BE%E0%A4%B7%E0%A4%BE.wav"
+     },
+     {
+      "verse": 55,
+      "title": "Bhagavad Gita 2.55 (प्रजहाति यदा कामान्)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/d3/%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%9C%E0%A4%B9%E0%A4%BE%E0%A4%A4%E0%A4%BF_%E0%A4%AF%E0%A4%A6%E0%A4%BE_%E0%A4%95%E0%A4%BE%E0%A4%AE%E0%A4%BE%E0%A4%A8%E0%A5%8D.wav/%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%9C%E0%A4%B9%E0%A4%BE%E0%A4%A4%E0%A4%BF_%E0%A4%AF%E0%A4%A6%E0%A4%BE_%E0%A4%95%E0%A4%BE%E0%A4%AE%E0%A4%BE%E0%A4%A8%E0%A5%8D.wav.mp3",
+      "seconds": 19,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%9C%E0%A4%B9%E0%A4%BE%E0%A4%A4%E0%A4%BF_%E0%A4%AF%E0%A4%A6%E0%A4%BE_%E0%A4%95%E0%A4%BE%E0%A4%AE%E0%A4%BE%E0%A4%A8%E0%A5%8D.wav"
+     },
+     {
+      "verse": 56,
+      "title": "Bhagavad Gita 2.56 (दुःखेष्वनुद्विग्नमनाः)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/cd/%E0%A4%A6%E0%A5%81%E0%A4%83%E0%A4%96%E0%A5%87%E0%A4%B7%E0%A5%8D%E0%A4%B5%E0%A4%A8%E0%A5%81%E0%A4%A6%E0%A5%8D%E0%A4%B5%E0%A4%BF%E0%A4%97%E0%A5%8D%E0%A4%A8%E0%A4%AE%E0%A4%A8%E0%A4%BE%E0%A4%83.wav/%E0%A4%A6%E0%A5%81%E0%A4%83%E0%A4%96%E0%A5%87%E0%A4%B7%E0%A5%8D%E0%A4%B5%E0%A4%A8%E0%A5%81%E0%A4%A6%E0%A5%8D%E0%A4%B5%E0%A4%BF%E0%A4%97%E0%A5%8D%E0%A4%A8%E0%A4%AE%E0%A4%A8%E0%A4%BE%E0%A4%83.wav.mp3",
+      "seconds": 14,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%A6%E0%A5%81%E0%A4%83%E0%A4%96%E0%A5%87%E0%A4%B7%E0%A5%8D%E0%A4%B5%E0%A4%A8%E0%A5%81%E0%A4%A6%E0%A5%8D%E0%A4%B5%E0%A4%BF%E0%A4%97%E0%A5%8D%E0%A4%A8%E0%A4%AE%E0%A4%A8%E0%A4%BE%E0%A4%83.wav"
+     },
+     {
+      "verse": 57,
+      "title": "Bhagavad Gita 2.57 (यः सर्वत्रानभिस्नेहः)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/23/%E0%A4%AF%E0%A4%83_%E0%A4%B8%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A4%BE%E0%A4%A8%E0%A4%AD%E0%A4%BF%E0%A4%B8%E0%A5%8D%E0%A4%A8%E0%A5%87%E0%A4%B9%E0%A4%83.wav/%E0%A4%AF%E0%A4%83_%E0%A4%B8%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A4%BE%E0%A4%A8%E0%A4%AD%E0%A4%BF%E0%A4%B8%E0%A5%8D%E0%A4%A8%E0%A5%87%E0%A4%B9%E0%A4%83.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%AF%E0%A4%83_%E0%A4%B8%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A4%BE%E0%A4%A8%E0%A4%AD%E0%A4%BF%E0%A4%B8%E0%A5%8D%E0%A4%A8%E0%A5%87%E0%A4%B9%E0%A4%83.wav"
+     },
+     {
+      "verse": 58,
+      "title": "Bhagavad Gita 2.58 (यदा संहरते चायं)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/d8/%E0%A4%AF%E0%A4%A6%E0%A4%BE_%E0%A4%B8%E0%A4%82%E0%A4%B9%E0%A4%B0%E0%A4%A4%E0%A5%87_%E0%A4%9A%E0%A4%BE%E0%A4%AF%E0%A4%82.wav/%E0%A4%AF%E0%A4%A6%E0%A4%BE_%E0%A4%B8%E0%A4%82%E0%A4%B9%E0%A4%B0%E0%A4%A4%E0%A5%87_%E0%A4%9A%E0%A4%BE%E0%A4%AF%E0%A4%82.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%AF%E0%A4%A6%E0%A4%BE_%E0%A4%B8%E0%A4%82%E0%A4%B9%E0%A4%B0%E0%A4%A4%E0%A5%87_%E0%A4%9A%E0%A4%BE%E0%A4%AF%E0%A4%82.wav"
+     },
+     {
+      "verse": 59,
+      "title": "Bhagavad Gita 2.59 (विषया विनिवर्तन्ते)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/1c/%E0%A4%B5%E0%A4%BF%E0%A4%B7%E0%A4%AF%E0%A4%BE_%E0%A4%B5%E0%A4%BF%E0%A4%A8%E0%A4%BF%E0%A4%B5%E0%A4%B0%E0%A5%8D%E0%A4%A4%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A5%87.wav/%E0%A4%B5%E0%A4%BF%E0%A4%B7%E0%A4%AF%E0%A4%BE_%E0%A4%B5%E0%A4%BF%E0%A4%A8%E0%A4%BF%E0%A4%B5%E0%A4%B0%E0%A5%8D%E0%A4%A4%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A5%87.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%B5%E0%A4%BF%E0%A4%B7%E0%A4%AF%E0%A4%BE_%E0%A4%B5%E0%A4%BF%E0%A4%A8%E0%A4%BF%E0%A4%B5%E0%A4%B0%E0%A5%8D%E0%A4%A4%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A5%87.wav"
+     },
+     {
+      "verse": 60,
+      "title": "Bhagavad Gita 2.60 (यततो ह्यपि कौन्तेय)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/b/bd/%E0%A4%AF%E0%A4%A4%E0%A4%A4%E0%A5%8B_%E0%A4%B9%E0%A5%8D%E0%A4%AF%E0%A4%AA%E0%A4%BF_%E0%A4%95%E0%A5%8C%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A5%87%E0%A4%AF.wav/%E0%A4%AF%E0%A4%A4%E0%A4%A4%E0%A5%8B_%E0%A4%B9%E0%A5%8D%E0%A4%AF%E0%A4%AA%E0%A4%BF_%E0%A4%95%E0%A5%8C%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A5%87%E0%A4%AF.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%AF%E0%A4%A4%E0%A4%A4%E0%A5%8B_%E0%A4%B9%E0%A5%8D%E0%A4%AF%E0%A4%AA%E0%A4%BF_%E0%A4%95%E0%A5%8C%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A5%87%E0%A4%AF.wav"
+     },
+     {
+      "verse": 61,
+      "title": "Bhagavad Gita 2.61 (तानि सर्वाणि संयम्य)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/e1/%E0%A4%A4%E0%A4%BE%E0%A4%A8%E0%A4%BF_%E0%A4%B8%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%BE%E0%A4%A3%E0%A4%BF_%E0%A4%B8%E0%A4%82%E0%A4%AF%E0%A4%AE%E0%A5%8D%E0%A4%AF.wav/%E0%A4%A4%E0%A4%BE%E0%A4%A8%E0%A4%BF_%E0%A4%B8%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%BE%E0%A4%A3%E0%A4%BF_%E0%A4%B8%E0%A4%82%E0%A4%AF%E0%A4%AE%E0%A5%8D%E0%A4%AF.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%A4%E0%A4%BE%E0%A4%A8%E0%A4%BF_%E0%A4%B8%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%BE%E0%A4%A3%E0%A4%BF_%E0%A4%B8%E0%A4%82%E0%A4%AF%E0%A4%AE%E0%A5%8D%E0%A4%AF.wav"
+     },
+     {
+      "verse": 62,
+      "title": "Bhagavad Gita 2.62 (ध्यायतो विषयान्पुंसः)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/6/67/%E0%A4%A7%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%AF%E0%A4%A4%E0%A5%8B_%E0%A4%B5%E0%A4%BF%E0%A4%B7%E0%A4%AF%E0%A4%BE%E0%A4%A8%E0%A5%8D%E0%A4%AA%E0%A5%81%E0%A4%82%E0%A4%B8%E0%A4%83.wav/%E0%A4%A7%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%AF%E0%A4%A4%E0%A5%8B_%E0%A4%B5%E0%A4%BF%E0%A4%B7%E0%A4%AF%E0%A4%BE%E0%A4%A8%E0%A5%8D%E0%A4%AA%E0%A5%81%E0%A4%82%E0%A4%B8%E0%A4%83.wav.mp3",
+      "seconds": 17,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%A7%E0%A5%8D%E0%A4%AF%E0%A4%BE%E0%A4%AF%E0%A4%A4%E0%A5%8B_%E0%A4%B5%E0%A4%BF%E0%A4%B7%E0%A4%AF%E0%A4%BE%E0%A4%A8%E0%A5%8D%E0%A4%AA%E0%A5%81%E0%A4%82%E0%A4%B8%E0%A4%83.wav"
+     },
+     {
+      "verse": 63,
+      "title": "Bhagavad Gita 2.63 (क्रोधाद्भवति सम्मोहः)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/5/56/%E0%A4%95%E0%A5%8D%E0%A4%B0%E0%A5%8B%E0%A4%A7%E0%A4%BE%E0%A4%A6%E0%A5%8D%E0%A4%AD%E0%A4%B5%E0%A4%A4%E0%A4%BF_%E0%A4%B8%E0%A4%AE%E0%A5%8D%E0%A4%AE%E0%A5%8B%E0%A4%B9%E0%A4%83.wav/%E0%A4%95%E0%A5%8D%E0%A4%B0%E0%A5%8B%E0%A4%A7%E0%A4%BE%E0%A4%A6%E0%A5%8D%E0%A4%AD%E0%A4%B5%E0%A4%A4%E0%A4%BF_%E0%A4%B8%E0%A4%AE%E0%A5%8D%E0%A4%AE%E0%A5%8B%E0%A4%B9%E0%A4%83.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%95%E0%A5%8D%E0%A4%B0%E0%A5%8B%E0%A4%A7%E0%A4%BE%E0%A4%A6%E0%A5%8D%E0%A4%AD%E0%A4%B5%E0%A4%A4%E0%A4%BF_%E0%A4%B8%E0%A4%AE%E0%A5%8D%E0%A4%AE%E0%A5%8B%E0%A4%B9%E0%A4%83.wav"
+     },
+     {
+      "verse": 64,
+      "title": "Bhagavad Gita 2.64 (रागद्वेषवियुक्तैस्तु)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/8b/%E0%A4%B0%E0%A4%BE%E0%A4%97%E0%A4%A6%E0%A5%8D%E0%A4%B5%E0%A5%87%E0%A4%B7%E0%A4%B5%E0%A4%BF%E0%A4%AF%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A5%88%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%81.wav/%E0%A4%B0%E0%A4%BE%E0%A4%97%E0%A4%A6%E0%A5%8D%E0%A4%B5%E0%A5%87%E0%A4%B7%E0%A4%B5%E0%A4%BF%E0%A4%AF%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A5%88%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%81.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%B0%E0%A4%BE%E0%A4%97%E0%A4%A6%E0%A5%8D%E0%A4%B5%E0%A5%87%E0%A4%B7%E0%A4%B5%E0%A4%BF%E0%A4%AF%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A5%88%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%81.wav"
+     },
+     {
+      "verse": 65,
+      "title": "Bhagavad Gita 2.65 (प्रसादे सर्वदुःखानां)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/94/%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%B8%E0%A4%BE%E0%A4%A6%E0%A5%87_%E0%A4%B8%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%A6%E0%A5%81%E0%A4%83%E0%A4%96%E0%A4%BE%E0%A4%A8%E0%A4%BE%E0%A4%82.wav/%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%B8%E0%A4%BE%E0%A4%A6%E0%A5%87_%E0%A4%B8%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%A6%E0%A5%81%E0%A4%83%E0%A4%96%E0%A4%BE%E0%A4%A8%E0%A4%BE%E0%A4%82.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%B8%E0%A4%BE%E0%A4%A6%E0%A5%87_%E0%A4%B8%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%A6%E0%A5%81%E0%A4%83%E0%A4%96%E0%A4%BE%E0%A4%A8%E0%A4%BE%E0%A4%82.wav"
+     },
+     {
+      "verse": 66,
+      "title": "Bhagavad Gita 2.66 (नास्ति बुद्धिरयुक्तस्य)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/5/5e/%E0%A4%A8%E0%A4%BE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A4%BF_%E0%A4%AC%E0%A5%81%E0%A4%A6%E0%A5%8D%E0%A4%A7%E0%A4%BF%E0%A4%B0%E0%A4%AF%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%B8%E0%A5%8D%E0%A4%AF.wav/%E0%A4%A8%E0%A4%BE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A4%BF_%E0%A4%AC%E0%A5%81%E0%A4%A6%E0%A5%8D%E0%A4%A7%E0%A4%BF%E0%A4%B0%E0%A4%AF%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%B8%E0%A5%8D%E0%A4%AF.wav.mp3",
+      "seconds": 14,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%A8%E0%A4%BE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A4%BF_%E0%A4%AC%E0%A5%81%E0%A4%A6%E0%A5%8D%E0%A4%A7%E0%A4%BF%E0%A4%B0%E0%A4%AF%E0%A5%81%E0%A4%95%E0%A5%8D%E0%A4%A4%E0%A4%B8%E0%A5%8D%E0%A4%AF.wav"
+     },
+     {
+      "verse": 67,
+      "title": "Bhagavad Gita 2.67 (इन्द्रियाणां हि चरतां)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/87/%E0%A4%87%E0%A4%A8%E0%A5%8D%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A4%BF%E0%A4%AF%E0%A4%BE%E0%A4%A3%E0%A4%BE%E0%A4%82_%E0%A4%B9%E0%A4%BF_%E0%A4%9A%E0%A4%B0%E0%A4%A4%E0%A4%BE%E0%A4%82.wav/%E0%A4%87%E0%A4%A8%E0%A5%8D%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A4%BF%E0%A4%AF%E0%A4%BE%E0%A4%A3%E0%A4%BE%E0%A4%82_%E0%A4%B9%E0%A4%BF_%E0%A4%9A%E0%A4%B0%E0%A4%A4%E0%A4%BE%E0%A4%82.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%87%E0%A4%A8%E0%A5%8D%E0%A4%A6%E0%A5%8D%E0%A4%B0%E0%A4%BF%E0%A4%AF%E0%A4%BE%E0%A4%A3%E0%A4%BE%E0%A4%82_%E0%A4%B9%E0%A4%BF_%E0%A4%9A%E0%A4%B0%E0%A4%A4%E0%A4%BE%E0%A4%82.wav"
+     },
+     {
+      "verse": 68,
+      "title": "Bhagavad Gita 2.68 (तस्माद्यस्य महाबाहो)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/a/a6/%E0%A4%A4%E0%A4%B8%E0%A5%8D%E0%A4%AE%E0%A4%BE%E0%A4%A6%E0%A5%8D%E0%A4%AF%E0%A4%B8%E0%A5%8D%E0%A4%AF_%E0%A4%AE%E0%A4%B9%E0%A4%BE%E0%A4%AC%E0%A4%BE%E0%A4%B9%E0%A5%8B.wav/%E0%A4%A4%E0%A4%B8%E0%A5%8D%E0%A4%AE%E0%A4%BE%E0%A4%A6%E0%A5%8D%E0%A4%AF%E0%A4%B8%E0%A5%8D%E0%A4%AF_%E0%A4%AE%E0%A4%B9%E0%A4%BE%E0%A4%AC%E0%A4%BE%E0%A4%B9%E0%A5%8B.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%A4%E0%A4%B8%E0%A5%8D%E0%A4%AE%E0%A4%BE%E0%A4%A6%E0%A5%8D%E0%A4%AF%E0%A4%B8%E0%A5%8D%E0%A4%AF_%E0%A4%AE%E0%A4%B9%E0%A4%BE%E0%A4%AC%E0%A4%BE%E0%A4%B9%E0%A5%8B.wav"
+     },
+     {
+      "verse": 69,
+      "title": "Bhagavad Gita 2.69 (या निशा सर्वभूतानां)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/2a/%E0%A4%AF%E0%A4%BE_%E0%A4%A8%E0%A4%BF%E0%A4%B6%E0%A4%BE_%E0%A4%B8%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%AD%E0%A5%82%E0%A4%A4%E0%A4%BE%E0%A4%A8%E0%A4%BE%E0%A4%82.wav/%E0%A4%AF%E0%A4%BE_%E0%A4%A8%E0%A4%BF%E0%A4%B6%E0%A4%BE_%E0%A4%B8%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%AD%E0%A5%82%E0%A4%A4%E0%A4%BE%E0%A4%A8%E0%A4%BE%E0%A4%82.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%AF%E0%A4%BE_%E0%A4%A8%E0%A4%BF%E0%A4%B6%E0%A4%BE_%E0%A4%B8%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%AD%E0%A5%82%E0%A4%A4%E0%A4%BE%E0%A4%A8%E0%A4%BE%E0%A4%82.wav"
+     },
+     {
+      "verse": 70,
+      "title": "Bhagavad Gita 2.70 (आपूर्यमाणमचल)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f9/%E0%A4%86%E0%A4%AA%E0%A5%82%E0%A4%B0%E0%A5%8D%E0%A4%AF%E0%A4%AE%E0%A4%BE%E0%A4%A3%E0%A4%AE%E0%A4%9A%E0%A4%B2.wav/%E0%A4%86%E0%A4%AA%E0%A5%82%E0%A4%B0%E0%A5%8D%E0%A4%AF%E0%A4%AE%E0%A4%BE%E0%A4%A3%E0%A4%AE%E0%A4%9A%E0%A4%B2.wav.mp3",
+      "seconds": 18,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%86%E0%A4%AA%E0%A5%82%E0%A4%B0%E0%A5%8D%E0%A4%AF%E0%A4%AE%E0%A4%BE%E0%A4%A3%E0%A4%AE%E0%A4%9A%E0%A4%B2.wav"
+     },
+     {
+      "verse": 71,
+      "title": "Bhagavad Gita 2.71 (विहाय कामान्यः सर्वान्)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/29/%E0%A4%B5%E0%A4%BF%E0%A4%B9%E0%A4%BE%E0%A4%AF_%E0%A4%95%E0%A4%BE%E0%A4%AE%E0%A4%BE%E0%A4%A8%E0%A5%8D%E0%A4%AF%E0%A4%83_%E0%A4%B8%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%BE%E0%A4%A8%E0%A5%8D.wav/%E0%A4%B5%E0%A4%BF%E0%A4%B9%E0%A4%BE%E0%A4%AF_%E0%A4%95%E0%A4%BE%E0%A4%AE%E0%A4%BE%E0%A4%A8%E0%A5%8D%E0%A4%AF%E0%A4%83_%E0%A4%B8%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%BE%E0%A4%A8%E0%A5%8D.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%B5%E0%A4%BF%E0%A4%B9%E0%A4%BE%E0%A4%AF_%E0%A4%95%E0%A4%BE%E0%A4%AE%E0%A4%BE%E0%A4%A8%E0%A5%8D%E0%A4%AF%E0%A4%83_%E0%A4%B8%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%BE%E0%A4%A8%E0%A5%8D.wav"
+     },
+     {
+      "verse": 72,
+      "title": "Bhagavad Gita 2.72 (एषा ब्राह्मी स्थितिः पार्थ)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c1/%E0%A4%8F%E0%A4%B7%E0%A4%BE_%E0%A4%AC%E0%A5%8D%E0%A4%B0%E0%A4%BE%E0%A4%B9%E0%A5%8D%E0%A4%AE%E0%A5%80_%E0%A4%B8%E0%A5%8D%E0%A4%A5%E0%A4%BF%E0%A4%A4%E0%A4%BF%E0%A4%83_%E0%A4%AA%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%A5.wav/%E0%A4%8F%E0%A4%B7%E0%A4%BE_%E0%A4%AC%E0%A5%8D%E0%A4%B0%E0%A4%BE%E0%A4%B9%E0%A5%8D%E0%A4%AE%E0%A5%80_%E0%A4%B8%E0%A5%8D%E0%A4%A5%E0%A4%BF%E0%A4%A4%E0%A4%BF%E0%A4%83_%E0%A4%AA%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%A5.wav.mp3",
+      "seconds": 17,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:%E0%A4%8F%E0%A4%B7%E0%A4%BE_%E0%A4%AC%E0%A5%8D%E0%A4%B0%E0%A4%BE%E0%A4%B9%E0%A5%8D%E0%A4%AE%E0%A5%80_%E0%A4%B8%E0%A5%8D%E0%A4%A5%E0%A4%BF%E0%A4%A4%E0%A4%BF%E0%A4%83_%E0%A4%AA%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%A5.wav"
+     }
+    ],
+    "3": [
+     {
+      "verse": 1,
+      "title": "Bhagavad Gita 3.1",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/4e/Gita_c_3_1.wav/Gita_c_3_1.wav.mp3",
+      "seconds": 20,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_1.wav"
+     },
+     {
+      "verse": 2,
+      "title": "Bhagavad Gita 3.2",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/20/Gita_c_3_2.wav/Gita_c_3_2.wav.mp3",
+      "seconds": 17,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_2.wav"
+     },
+     {
+      "verse": 3,
+      "title": "Bhagavad Gita 3.3",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/d8/Gita_c_3_3.wav/Gita_c_3_3.wav.mp3",
+      "seconds": 22,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_3.wav"
+     },
+     {
+      "verse": 4,
+      "title": "Bhagavad Gita 3.4",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/95/Gita_c_3_4.wav/Gita_c_3_4.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_4.wav"
+     },
+     {
+      "verse": 5,
+      "title": "Bhagavad Gita 3.5",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/9c/Gita_c_3_5.wav/Gita_c_3_5.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_5.wav"
+     },
+     {
+      "verse": 6,
+      "title": "Bhagavad Gita 3.6",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/db/Gita_c_3_6.wav/Gita_c_3_6.wav.mp3",
+      "seconds": 17,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_6.wav"
+     },
+     {
+      "verse": 7,
+      "title": "Bhagavad Gita 3.7",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/10/Gita_c_3_7.wav/Gita_c_3_7.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_7.wav"
+     },
+     {
+      "verse": 8,
+      "title": "Bhagavad Gita 3.8",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/80/Gita_c_3_8.wav/Gita_c_3_8.wav.mp3",
+      "seconds": 17,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_8.wav"
+     },
+     {
+      "verse": 9,
+      "title": "Bhagavad Gita 3.9",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/13/Gita_c_3_9.wav/Gita_c_3_9.wav.mp3",
+      "seconds": 17,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_9.wav"
+     },
+     {
+      "verse": 10,
+      "title": "Bhagavad Gita 3.10",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/9f/Gita_c_3_10.wav/Gita_c_3_10.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_10.wav"
+     },
+     {
+      "verse": 11,
+      "title": "Bhagavad Gita 3.11",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/1a/Gita_c_3_11.wav/Gita_c_3_11.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_11.wav"
+     },
+     {
+      "verse": 12,
+      "title": "Bhagavad Gita 3.12",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/29/Gita_c_3_12.wav/Gita_c_3_12.wav.mp3",
+      "seconds": 18,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_12.wav"
+     },
+     {
+      "verse": 13,
+      "title": "Bhagavad Gita 3.13",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/e2/Gita_c_3_13.wav/Gita_c_3_13.wav.mp3",
+      "seconds": 18,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_13.wav"
+     },
+     {
+      "verse": 14,
+      "title": "Bhagavad Gita 3.14",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/9e/Gita_c_3_14.wav/Gita_c_3_14.wav.mp3",
+      "seconds": 17,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_14.wav"
+     },
+     {
+      "verse": 15,
+      "title": "Bhagavad Gita 3.15",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/a/a5/Gita_c_3_15.wav/Gita_c_3_15.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_15.wav"
+     },
+     {
+      "verse": 16,
+      "title": "Bhagavad Gita 3.16",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/3/3e/Gita_c_3_16.wav/Gita_c_3_16.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_16.wav"
+     },
+     {
+      "verse": 17,
+      "title": "Bhagavad Gita 3.17",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/86/Gita_c_3_17.wav/Gita_c_3_17.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_17.wav"
+     },
+     {
+      "verse": 18,
+      "title": "Bhagavad Gita 3.18",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f4/Gita_c_3_18.wav/Gita_c_3_18.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_18.wav"
+     },
+     {
+      "verse": 19,
+      "title": "Bhagavad Gita 3.19",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/a/a8/Gita_c_3_19.wav/Gita_c_3_19.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_19.wav"
+     },
+     {
+      "verse": 20,
+      "title": "Bhagavad Gita 3.20",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/0/03/Gita_c_3_20.wav/Gita_c_3_20.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_20.wav"
+     },
+     {
+      "verse": 21,
+      "title": "Bhagavad Gita 3.21",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/5/56/Gita_c_3_21.wav/Gita_c_3_21.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_21.wav"
+     },
+     {
+      "verse": 22,
+      "title": "Bhagavad Gita 3.22",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/0/09/Gita_c_3_22.wav/Gita_c_3_22.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_22.wav"
+     },
+     {
+      "verse": 23,
+      "title": "Bhagavad Gita 3.23",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/3/33/Gita_c_3_23.wav/Gita_c_3_23.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_23.wav"
+     },
+     {
+      "verse": 24,
+      "title": "Bhagavad Gita 3.24",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/ee/Gita_c_3_24.wav/Gita_c_3_24.wav.mp3",
+      "seconds": 17,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_24.wav"
+     },
+     {
+      "verse": 25,
+      "title": "Bhagavad Gita 3.25",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/90/Gita_c_3_25.wav/Gita_c_3_25.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_25.wav"
+     },
+     {
+      "verse": 26,
+      "title": "Bhagavad Gita 3.26",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/80/Gita_c_3_26.wav/Gita_c_3_26.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_26.wav"
+     },
+     {
+      "verse": 27,
+      "title": "Bhagavad Gita 3.27",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/97/Gita_c_3_27.wav/Gita_c_3_27.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_27.wav"
+     },
+     {
+      "verse": 28,
+      "title": "Bhagavad Gita 3.28",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/7e/Gita_c_3_28.wav/Gita_c_3_28.wav.mp3",
+      "seconds": 15,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_28.wav"
+     },
+     {
+      "verse": 29,
+      "title": "Bhagavad Gita 3.29",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/ed/Gita_c_3_29.wav/Gita_c_3_29.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_29.wav"
+     },
+     {
+      "verse": 30,
+      "title": "Bhagavad Gita 3.30",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/9f/Gita_c_3_30.wav/Gita_c_3_30.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_30.wav"
+     },
+     {
+      "verse": 31,
+      "title": "Bhagavad Gita 3.31",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/b/bc/Gita_c_3_31.wav/Gita_c_3_31.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_31.wav"
+     },
+     {
+      "verse": 32,
+      "title": "Bhagavad Gita 3.32",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/28/Gita_c_3_32.wav/Gita_c_3_32.wav.mp3",
+      "seconds": 17,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_32.wav"
+     },
+     {
+      "verse": 33,
+      "title": "Bhagavad Gita 3.33",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/45/Gita_c_3_33.wav/Gita_c_3_33.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_33.wav"
+     },
+     {
+      "verse": 34,
+      "title": "Bhagavad Gita 3.34",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/10/Gita_c_3_34.wav/Gita_c_3_34.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_34.wav"
+     },
+     {
+      "verse": 35,
+      "title": "Bhagavad Gita 3.35",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/3/37/Gita_c_3_35.wav/Gita_c_3_35.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_35.wav"
+     },
+     {
+      "verse": 36,
+      "title": "Bhagavad Gita 3.36",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/16/Gita_c_3_36.wav/Gita_c_3_36.wav.mp3",
+      "seconds": 19,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_36.wav"
+     },
+     {
+      "verse": 37,
+      "title": "Bhagavad Gita 3.37",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/0/00/Gita_c_3_37.wav/Gita_c_3_37.wav.mp3",
+      "seconds": 20,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_37.wav"
+     },
+     {
+      "verse": 38,
+      "title": "Bhagavad Gita 3.38",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/2f/Gita_c_3_38.wav/Gita_c_3_38.wav.mp3",
+      "seconds": 17,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_38.wav"
+     },
+     {
+      "verse": 39,
+      "title": "Bhagavad Gita 3.39",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/41/Gita_c_3_39.wav/Gita_c_3_39.wav.mp3",
+      "seconds": 18,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_39.wav"
+     },
+     {
+      "verse": 40,
+      "title": "Bhagavad Gita 3.40",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/fe/Gita_c_3_40.wav/Gita_c_3_40.wav.mp3",
+      "seconds": 18,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_40.wav"
+     },
+     {
+      "verse": 41,
+      "title": "Bhagavad Gita 3.41",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/e/e1/Gita_c_3_41.wav/Gita_c_3_41.wav.mp3",
+      "seconds": 17,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_41.wav"
+     },
+     {
+      "verse": 42,
+      "title": "Bhagavad Gita 3.42",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/a/a6/Gita_c_3_42.wav/Gita_c_3_42.wav.mp3",
+      "seconds": 18,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_42.wav"
+     },
+     {
+      "verse": 43,
+      "title": "Bhagavad Gita 3.43",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/6/66/Gita_c_3_43.wav/Gita_c_3_43.wav.mp3",
+      "seconds": 16,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_43.wav"
+     },
+     {
+      "verse": null,
+      "title": "Bhagavad Gita Chapter 3 colophon (iti)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/5/5a/Gita_c_3_iti.wav/Gita_c_3_iti.wav.mp3",
+      "seconds": 28,
+      "performer": "NehalDaveND",
+      "source": "https://commons.wikimedia.org/wiki/File:Gita_c_3_iti.wav"
+     }
+    ]
+   }
+  }
+ },
+ "books": [
+  {
+   "id": "lv-9324",
+   "group": "gita",
+   "app_book": "song-celestial",
+   "title": "Song Celestial; Or, Bhagavad-Gîtâ",
+   "author": "Unknown",
+   "translator": "Sir Edwin Arnold",
+   "readers": [
+    "Jothi Tharavant"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/the-bhagavad-gita/",
+   "seconds": 11762,
+   "language": "English",
+   "sections": [
+    {
+     "title": "Preface",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_00__64kb.mp3",
+     "seconds": 392,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Chapter 1 -  The Book of the Distress of Arjuna",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_01__64kb.mp3",
+     "seconds": 569,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Chapter 2 - The Book of Doctrines",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_02__64kb.mp3",
+     "seconds": 1097,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Chapter 3 - The Book of Virtue in Work",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_03__64kb.mp3",
+     "seconds": 572,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Chapter 4 - The Book of the Religion of Knowledge",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_04__64kb.mp3",
+     "seconds": 622,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Chapter 5 - The Book of Religion by Renouncing Fruit of Works",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_05__64kb.mp3",
+     "seconds": 461,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Chapter 6 - The Book of Religion by Self-Restraint",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_06__64kb.mp3",
+     "seconds": 634,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Chapter 7 - The Book of Religion by Discernment",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_07__64kb.mp3",
+     "seconds": 464,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Chapter 8 - The book of Religion by Devotion to the One Supreme God",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_08__64kb.mp3",
+     "seconds": 433,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Chapter 9 - The Book of Religion by the Kingly Knowledge and the Kingly Mystery",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_09__64kb.mp3",
+     "seconds": 594,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Chapter 10 - The Book of Religion by the Heavenly Perfections",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_10__64kb.mp3",
+     "seconds": 624,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Chapter 11 - The Book of the Manifesting of the One and Manifold",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_11__64kb.mp3",
+     "seconds": 1486,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Chapter 12 - The Book of the Religion of Faith",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_12__64kb.mp3",
+     "seconds": 342,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Chapter13 - The Book of Religion by Separation of Matter and Spirit",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_13__64kb.mp3",
+     "seconds": 596,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Chapter 14 - The Book of Religion by Separation from the Qualities",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_14__64kb.mp3",
+     "seconds": 419,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Chapter 15 - The Book of Religion by attaining the Supreme",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_15__64kb.mp3",
+     "seconds": 390,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Chapter 16 - The Book of the Separateness of the Divine and Undivine",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_16__64kb.mp3",
+     "seconds": 423,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Chapter 17 - The Book of Religion by the Threefold Kinds of Faith",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_17__64kb.mp3",
+     "seconds": 426,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Chpter 18 - The Book of Religion by Deliverance and Renunciation",
+     "url": "https://archive.org/download/bhagavad-gita_1502_librivox/songcelestialorbhagavadgita_18__64kb.mp3",
+     "seconds": 1218,
+     "reader": "Jothi Tharavant"
+    }
+   ]
+  },
+  {
+   "id": "lv-1497",
+   "group": "gita",
+   "app_book": "song-celestial",
+   "title": "Bhagavad Gita",
+   "author": "Unknown",
+   "translator": "Sir Edwin Arnold",
+   "readers": [
+    "Carl Manchester",
+    "Chris Masterson",
+    "Leon Mire",
+    "Nicholas James Bridgewater",
+    "Peter Eastman",
+    "Priya, India",
+    "Raju Venkateswaran",
+    "Shubda",
+    "shweta.marda"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/bhagavad-gita-by-sir-edwin-arnold/",
+   "seconds": 10493,
+   "language": "English",
+   "sections": [
+    {
+     "title": "Introduction",
+     "url": "https://archive.org/download/bhagavad_gita_0803_librivox/bhagavadgita_00_64kb.mp3",
+     "seconds": 183,
+     "reader": "Chris Masterson"
+    },
+    {
+     "title": "Chapter 1: Of the Distress of Arjuna",
+     "url": "https://archive.org/download/bhagavad_gita_0803_librivox/bhagavadgita_01_64kb.mp3",
+     "seconds": 580,
+     "reader": "Chris Masterson"
+    },
+    {
+     "title": "Chapter 2: Of Doctrines",
+     "url": "https://archive.org/download/bhagavad_gita_0803_librivox/bhagavadgita_02_64kb.mp3",
+     "seconds": 1076,
+     "reader": "Peter Eastman"
+    },
+    {
+     "title": "Chapter 3: Virtue in Work",
+     "url": "https://archive.org/download/bhagavad_gita_0803_librivox/bhagavadgita_03_64kb.mp3",
+     "seconds": 539,
+     "reader": "Priya, India"
+    },
+    {
+     "title": "Chapter 4: Of the Religion of Knowledge",
+     "url": "https://archive.org/download/bhagavad_gita_0803_librivox/bhagavadgita_04_64kb.mp3",
+     "seconds": 582,
+     "reader": "shweta.marda"
+    },
+    {
+     "title": "Chapter 5: Of Religion by Renouncing Fruit of Works",
+     "url": "https://archive.org/download/bhagavad_gita_0803_librivox/bhagavadgita_05_64kb.mp3",
+     "seconds": 456,
+     "reader": "Carl Manchester"
+    },
+    {
+     "title": "Chapter 6: Of Religion of Self-Restraint",
+     "url": "https://archive.org/download/bhagavad_gita_0803_librivox/bhagavadgita_06_64kb.mp3",
+     "seconds": 597,
+     "reader": "Leon Mire"
+    },
+    {
+     "title": "Chapter 7: Of Religion by Discernment",
+     "url": "https://archive.org/download/bhagavad_gita_0803_librivox/bhagavadgita_07_64kb.mp3",
+     "seconds": 390,
+     "reader": "Raju Venkateswaran"
+    },
+    {
+     "title": "Chapter 8: Of Religion by Devotion to the One Supreme God",
+     "url": "https://archive.org/download/bhagavad_gita_0803_librivox/bhagavadgita_08_64kb.mp3",
+     "seconds": 352,
+     "reader": "Raju Venkateswaran"
+    },
+    {
+     "title": "Chapter 9: Of Religion by the Kingly Knowledge and the Kingly Mystery",
+     "url": "https://archive.org/download/bhagavad_gita_0803_librivox/bhagavadgita_09_64kb.mp3",
+     "seconds": 578,
+     "reader": "Shubda"
+    },
+    {
+     "title": "Chapter 10: Of Religion by the Heavenly Perfections",
+     "url": "https://archive.org/download/bhagavad_gita_0803_librivox/bhagavadgita_10_64kb.mp3",
+     "seconds": 610,
+     "reader": "Shubda"
+    },
+    {
+     "title": "Chapter 11: Of the Manifesting of the One and Manifold",
+     "url": "https://archive.org/download/bhagavad_gita_0803_librivox/bhagavadgita_11_64kb.mp3",
+     "seconds": 1238,
+     "reader": "Shubda"
+    },
+    {
+     "title": "Chapter 12: Of the Religion of Faith",
+     "url": "https://archive.org/download/bhagavad_gita_0803_librivox/bhagavadgita_12_64kb.mp3",
+     "seconds": 299,
+     "reader": "Nicholas James Bridgewater"
+    },
+    {
+     "title": "Chapter 13: Of Religion by Separation of Matter and Spirit",
+     "url": "https://archive.org/download/bhagavad_gita_0803_librivox/bhagavadgita_13_64kb.mp3",
+     "seconds": 466,
+     "reader": "Raju Venkateswaran"
+    },
+    {
+     "title": "Chapter 14: Of Religion by Separation from the Qualities",
+     "url": "https://archive.org/download/bhagavad_gita_0803_librivox/bhagavadgita_14_64kb.mp3",
+     "seconds": 358,
+     "reader": "Raju Venkateswaran"
+    },
+    {
+     "title": "Chapter 15: Of Religion by Attaining the Supreme",
+     "url": "https://archive.org/download/bhagavad_gita_0803_librivox/bhagavadgita_15_64kb.mp3",
+     "seconds": 382,
+     "reader": "Shubda"
+    },
+    {
+     "title": "Chapter 16: Of the Separateness of the Divine and the Undivine",
+     "url": "https://archive.org/download/bhagavad_gita_0803_librivox/bhagavadgita_16_64kb.mp3",
+     "seconds": 355,
+     "reader": "Raju Venkateswaran"
+    },
+    {
+     "title": "Chapter 17: Of Religion by the Threefold Kinds of Faith",
+     "url": "https://archive.org/download/bhagavad_gita_0803_librivox/bhagavadgita_17_64kb.mp3",
+     "seconds": 345,
+     "reader": "Raju Venkateswaran"
+    },
+    {
+     "title": "Chapter 18: Of Religion by Deliverance and Renunciation",
+     "url": "https://archive.org/download/bhagavad_gita_0803_librivox/bhagavadgita_18_64kb.mp3",
+     "seconds": 1107,
+     "reader": "Leon Mire"
+    }
+   ]
+  },
+  {
+   "id": "lv-2731",
+   "group": "ramayana",
+   "app_book": "ramayan-griffith",
+   "title": "Ramayan, Book 1",
+   "author": "Valmiki",
+   "translator": "Ralph T. H Griffith",
+   "readers": [
+    "Corinna Schultz",
+    "Katie Riley",
+    "Nicholas James Bridgewater",
+    "Raju Venkateswaran",
+    "SuD",
+    "oneiros81",
+    "valli"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/the-ramayana-book-1-by-valmiki/",
+   "seconds": 24692,
+   "language": "English",
+   "sections": [
+    {
+     "title": "01 - Bk 1 Invocation & Cantos 1-2",
+     "url": "https://archive.org/download/ramayana_book1_0211_librivox/ramayana_bk1_01_griffith_64kb.mp3",
+     "seconds": 1331,
+     "reader": "Raju Venkateswaran"
+    },
+    {
+     "title": "02 - Bk1 Cantos 3-7",
+     "url": "https://archive.org/download/ramayana_book1_0211_librivox/ramayana_bk1_02_griffith_64kb.mp3",
+     "seconds": 1417,
+     "reader": "Raju Venkateswaran"
+    },
+    {
+     "title": "03 - Bk1 Cantos 8-11",
+     "url": "https://archive.org/download/ramayana_book1_0211_librivox/ramayana_bk1_03_griffith_64kb.mp3",
+     "seconds": 1449,
+     "reader": "Raju Venkateswaran"
+    },
+    {
+     "title": "04 - Bk1 Cantos 12-15",
+     "url": "https://archive.org/download/ramayana_book1_0211_librivox/ramayana_bk1_04_griffith_64kb.mp3",
+     "seconds": 1601,
+     "reader": "Raju Venkateswaran"
+    },
+    {
+     "title": "05 - Bk1 Cantos 16-20",
+     "url": "https://archive.org/download/ramayana_book1_0211_librivox/ramayana_bk1_05_griffith_64kb.mp3",
+     "seconds": 1447,
+     "reader": "Raju Venkateswaran"
+    },
+    {
+     "title": "06 - Bk1 Cantos 21-26",
+     "url": "https://archive.org/download/ramayana_book1_0211_librivox/ramayana_bk1_06_griffith_64kb.mp3",
+     "seconds": 2055,
+     "reader": "valli"
+    },
+    {
+     "title": "07 - Bk1 Cantos 27-32",
+     "url": "https://archive.org/download/ramayana_book1_0211_librivox/ramayana_bk1_07_griffith_64kb.mp3",
+     "seconds": 2135,
+     "reader": "valli"
+    },
+    {
+     "title": "08 - Bk1 Cantos 33-37",
+     "url": "https://archive.org/download/ramayana_book1_0211_librivox/ramayana_bk1_08_griffith_64kb.mp3",
+     "seconds": 1180,
+     "reader": "Corinna Schultz"
+    },
+    {
+     "title": "09 - Bk1 Cantos 38-42",
+     "url": "https://archive.org/download/ramayana_book1_0211_librivox/ramayana_bk1_09_griffith_64kb.mp3",
+     "seconds": 1484,
+     "reader": "valli"
+    },
+    {
+     "title": "10 - Bk1 Cantos 43-46",
+     "url": "https://archive.org/download/ramayana_book1_0211_librivox/ramayana_bk1_10_griffith_64kb.mp3",
+     "seconds": 2094,
+     "reader": "valli"
+    },
+    {
+     "title": "11 - Bk1 Cantos 47-53",
+     "url": "https://archive.org/download/ramayana_book1_0211_librivox/ramayana_bk1_11_griffith_64kb.mp3",
+     "seconds": 1710,
+     "reader": "oneiros81"
+    },
+    {
+     "title": "12 - Bk1 Cantos 54-59",
+     "url": "https://archive.org/download/ramayana_book1_0211_librivox/ramayana_bk1_12_griffith_64kb.mp3",
+     "seconds": 1426,
+     "reader": "SuD"
+    },
+    {
+     "title": "13 - Bk1 Cantos 60-65",
+     "url": "https://archive.org/download/ramayana_book1_0211_librivox/ramayana_bk1_13_griffith_64kb.mp3",
+     "seconds": 1831,
+     "reader": "oneiros81"
+    },
+    {
+     "title": "14 - Bk1 Cantos 66-71",
+     "url": "https://archive.org/download/ramayana_book1_0211_librivox/ramayana_bk1_14_griffith_64kb.mp3",
+     "seconds": 1729,
+     "reader": "Katie Riley"
+    },
+    {
+     "title": "15 - Bk1 Cantos 72-77",
+     "url": "https://archive.org/download/ramayana_book1_0211_librivox/ramayana_bk1_15_griffith_64kb.mp3",
+     "seconds": 1803,
+     "reader": "Nicholas James Bridgewater"
+    }
+   ]
+  },
+  {
+   "id": "lv-5427",
+   "group": "ramayana",
+   "app_book": "ramayan-griffith",
+   "title": "Ramayan, Book 2",
+   "author": "Valmiki",
+   "translator": "Ralph T. H Griffith",
+   "readers": [
+    "om123"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/the-ramayana-book-2-by-valmiki/",
+   "seconds": 42285,
+   "language": "English",
+   "sections": [
+    {
+     "title": "01 Book 2 : Canto 1 - 3 ",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_01_valmiki_64kb.mp3",
+     "seconds": 1232,
+     "reader": "om123"
+    },
+    {
+     "title": "02 Book 2 : Canto 4 - 6",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_02_valmiki_64kb.mp3",
+     "seconds": 1037,
+     "reader": "om123"
+    },
+    {
+     "title": "03 Book 2 : Canto 7 - 9",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_03_valmiki_64kb.mp3",
+     "seconds": 1322,
+     "reader": "om123"
+    },
+    {
+     "title": "04 Book 2 : Canto 10 - 12",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_04_valmiki_64kb.mp3",
+     "seconds": 1792,
+     "reader": "om123"
+    },
+    {
+     "title": "05 Book 2 : Canto 13 - 15",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_05_valmiki_64kb.mp3",
+     "seconds": 1282,
+     "reader": "om123"
+    },
+    {
+     "title": "06 Book 2 : Canto 16 - 18",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_06_valmiki_64kb.mp3",
+     "seconds": 1081,
+     "reader": "om123"
+    },
+    {
+     "title": "07 Book 2 : Canto 19 - 21",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_07_valmiki_64kb.mp3",
+     "seconds": 1583,
+     "reader": "om123"
+    },
+    {
+     "title": "08 Book 2 : Canto 22 - 24",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_08_valmiki_64kb.mp3",
+     "seconds": 1245,
+     "reader": "om123"
+    },
+    {
+     "title": "09 Book 2 : Canto 25 - 27",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_09_valmiki_64kb.mp3",
+     "seconds": 1053,
+     "reader": "om123"
+    },
+    {
+     "title": "10 Book 2 : Canto 28 - 30",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_10_valmiki_64kb.mp3",
+     "seconds": 968,
+     "reader": "om123"
+    },
+    {
+     "title": "11 Book 2 : Canto 31 - 33",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_11_valmiki_64kb.mp3",
+     "seconds": 1081,
+     "reader": "om123"
+    },
+    {
+     "title": "12 Book 2 : Canto 34 - 36",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_12_valmiki_64kb.mp3",
+     "seconds": 1181,
+     "reader": "om123"
+    },
+    {
+     "title": "13 Book 2 : Canto 37 - 39",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_13_valmiki_64kb.mp3",
+     "seconds": 957,
+     "reader": "om123"
+    },
+    {
+     "title": "14 Book 2 : Canto 40 - 42",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_14_valmiki_64kb.mp3",
+     "seconds": 1048,
+     "reader": "om123"
+    },
+    {
+     "title": "15 Book 2 : Canto 43 - 45",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_15_valmiki_64kb.mp3",
+     "seconds": 851,
+     "reader": "om123"
+    },
+    {
+     "title": "16 Book 2 : Canto 46 - 48",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_16_valmiki_64kb.mp3",
+     "seconds": 854,
+     "reader": "om123"
+    },
+    {
+     "title": "17 Book 2 : Canto 49 - 51",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_17_valmiki_64kb.mp3",
+     "seconds": 784,
+     "reader": "om123"
+    },
+    {
+     "title": "18 Book 2 : Canto 52 - 54",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_18_valmiki_64kb.mp3",
+     "seconds": 1818,
+     "reader": "om123"
+    },
+    {
+     "title": "19 Book 2 : Canto 55 - 57",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_19_valmiki_64kb.mp3",
+     "seconds": 1028,
+     "reader": "om123"
+    },
+    {
+     "title": "20 Book 2 : Canto 58 - 60",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_20_valmiki_64kb.mp3",
+     "seconds": 987,
+     "reader": "om123"
+    },
+    {
+     "title": "21 Book 2 : Canto 61 - 63",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_21_valmiki_64kb.mp3",
+     "seconds": 1051,
+     "reader": "om123"
+    },
+    {
+     "title": "22 Book 2 : Canto 64 - 66",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_22_valmiki_64kb.mp3",
+     "seconds": 1268,
+     "reader": "om123"
+    },
+    {
+     "title": "23 Book 2 : Canto 67 - 69",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_23_valmiki_64kb.mp3",
+     "seconds": 811,
+     "reader": "om123"
+    },
+    {
+     "title": "24 Book 2 : Canto 70 - 72",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_24_valmiki_64kb.mp3",
+     "seconds": 1281,
+     "reader": "om123"
+    },
+    {
+     "title": "25 Book 2 : Canto 73 - 75",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_25_valmiki_64kb.mp3",
+     "seconds": 1035,
+     "reader": "om123"
+    },
+    {
+     "title": "26 Book 2 : Canto 76 - 78",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_26_valmiki_64kb.mp3",
+     "seconds": 819,
+     "reader": "om123"
+    },
+    {
+     "title": "27 Book 2 : Canto 79 - 81",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_27_valmiki_64kb.mp3",
+     "seconds": 596,
+     "reader": "om123"
+    },
+    {
+     "title": "28 Book 2 : Canto 82 - 84",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_28_valmiki_64kb.mp3",
+     "seconds": 832,
+     "reader": "om123"
+    },
+    {
+     "title": "29 Book 2 : Canto 85 - 87",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_29_valmiki_64kb.mp3",
+     "seconds": 724,
+     "reader": "om123"
+    },
+    {
+     "title": "30 Book 2 : Canto 88 - 90",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_30_valmiki_64kb.mp3",
+     "seconds": 778,
+     "reader": "om123"
+    },
+    {
+     "title": "31 Book 2 : Canto 91 - 93",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_31_valmiki_64kb.mp3",
+     "seconds": 1413,
+     "reader": "om123"
+    },
+    {
+     "title": "32 Book 2 : Canto 94 - 96",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_32_valmiki_64kb.mp3",
+     "seconds": 1158,
+     "reader": "om123"
+    },
+    {
+     "title": "33 Book 2 : Canto 97 - 99",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_33_valmiki_64kb.mp3",
+     "seconds": 784,
+     "reader": "om123"
+    },
+    {
+     "title": "34 Book 2 : Canto 100 - 102",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_34_valmiki_64kb.mp3",
+     "seconds": 809,
+     "reader": "om123"
+    },
+    {
+     "title": "35 Book 2 : Canto 103 - 105",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_35_valmiki_64kb.mp3",
+     "seconds": 1175,
+     "reader": "om123"
+    },
+    {
+     "title": "36 Book 2 : Canto 106 - 108",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_36_valmiki_64kb.mp3",
+     "seconds": 809,
+     "reader": "om123"
+    },
+    {
+     "title": "37 Book 2 : Canto 109 - 111",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_37_valmiki_64kb.mp3",
+     "seconds": 1253,
+     "reader": "om123"
+    },
+    {
+     "title": "38 Book 2 : Canto 112 - 114",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_38_valmiki_64kb.mp3",
+     "seconds": 795,
+     "reader": "om123"
+    },
+    {
+     "title": "39 Book 2 : Canto 115 - 117",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_39_valmiki_64kb.mp3",
+     "seconds": 849,
+     "reader": "om123"
+    },
+    {
+     "title": "40 Book 2 : Canto 118 - 119",
+     "url": "https://archive.org/download/ramayana_2_om_librivox/ramayan2_40_valmiki_64kb.mp3",
+     "seconds": 861,
+     "reader": "om123"
+    }
+   ]
+  },
+  {
+   "id": "lv-6515",
+   "group": "ramayana",
+   "app_book": "ramayan-griffith",
+   "title": "Ramayan, Book 3",
+   "author": "Valmiki",
+   "translator": "Ralph T. H Griffith",
+   "readers": [
+    "om123"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/the-ramayan-book-3-by-valmiki/",
+   "seconds": 31565,
+   "language": "English",
+   "sections": [
+    {
+     "title": "Cantos 1 - 3",
+     "url": "https://archive.org/download/ramayan3_om_librivox/ramayan3_01_valmiki_64kb.mp3",
+     "seconds": 938,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 4 - 6",
+     "url": "https://archive.org/download/ramayan3_om_librivox/ramayan3_02_valmiki_64kb.mp3",
+     "seconds": 1319,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 7 - 9",
+     "url": "https://archive.org/download/ramayan3_om_librivox/ramayan3_03_valmiki_64kb.mp3",
+     "seconds": 979,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 10 - 12",
+     "url": "https://archive.org/download/ramayan3_om_librivox/ramayan3_04_valmiki_64kb.mp3",
+     "seconds": 1934,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 13 - 15",
+     "url": "https://archive.org/download/ramayan3_om_librivox/ramayan3_05_valmiki_64kb.mp3",
+     "seconds": 1164,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 16 - 18",
+     "url": "https://archive.org/download/ramayan3_om_librivox/ramayan3_06_valmiki_64kb.mp3",
+     "seconds": 1280,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 19 - 21",
+     "url": "https://archive.org/download/ramayan3_om_librivox/ramayan3_07_valmiki_64kb.mp3",
+     "seconds": 908,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 22 - 24",
+     "url": "https://archive.org/download/ramayan3_om_librivox/ramayan3_08_valmiki_64kb.mp3",
+     "seconds": 1167,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos  25 - 27",
+     "url": "https://archive.org/download/ramayan3_om_librivox/ramayan3_09_valmiki_64kb.mp3",
+     "seconds": 1257,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 28 - 30",
+     "url": "https://archive.org/download/ramayan3_om_librivox/ramayan3_10_valmiki_64kb.mp3",
+     "seconds": 1444,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos  31 - 33",
+     "url": "https://archive.org/download/ramayan3_om_librivox/ramayan3_11_valmiki_64kb.mp3",
+     "seconds": 1300,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 34 - 36",
+     "url": "https://archive.org/download/ramayan3_om_librivox/ramayan3_12_valmiki_64kb.mp3",
+     "seconds": 1182,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 37 - 39",
+     "url": "https://archive.org/download/ramayan3_om_librivox/ramayan3_13_valmiki_64kb.mp3",
+     "seconds": 1052,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos  40 - 42",
+     "url": "https://archive.org/download/ramayan3_om_librivox/ramayan3_14_valmiki_64kb.mp3",
+     "seconds": 1071,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 43 - 45",
+     "url": "https://archive.org/download/ramayan3_om_librivox/ramayan3_15_valmiki_64kb.mp3",
+     "seconds": 1489,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos  46 - 48",
+     "url": "https://archive.org/download/ramayan3_om_librivox/ramayan3_16_valmiki_64kb.mp3",
+     "seconds": 1475,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos  49 - 51",
+     "url": "https://archive.org/download/ramayan3_om_librivox/ramayan3_17_valmiki_64kb.mp3",
+     "seconds": 1465,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos  52 - 54",
+     "url": "https://archive.org/download/ramayan3_om_librivox/ramayan3_18_valmiki_64kb.mp3",
+     "seconds": 1321,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos  55 - 57",
+     "url": "https://archive.org/download/ramayan3_om_librivox/ramayan3_19_valmiki_64kb.mp3",
+     "seconds": 1267,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos  58 - 60",
+     "url": "https://archive.org/download/ramayan3_om_librivox/ramayan3_20_valmiki_64kb.mp3",
+     "seconds": 917,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 61 - 63",
+     "url": "https://archive.org/download/ramayan3_om_librivox/ramayan3_21_valmiki_64kb.mp3",
+     "seconds": 1064,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos  64 - 66",
+     "url": "https://archive.org/download/ramayan3_om_librivox/ramayan3_22_valmiki_64kb.mp3",
+     "seconds": 1423,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos  67 - 69",
+     "url": "https://archive.org/download/ramayan3_om_librivox/ramayan3_23_valmiki_64kb.mp3",
+     "seconds": 1131,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos  70 - 72",
+     "url": "https://archive.org/download/ramayan3_om_librivox/ramayan3_24_valmiki_64kb.mp3",
+     "seconds": 1349,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos  73 - 76",
+     "url": "https://archive.org/download/ramayan3_om_librivox/ramayan3_25_valmiki_64kb.mp3",
+     "seconds": 1669,
+     "reader": "om123"
+    }
+   ]
+  },
+  {
+   "id": "lv-7336",
+   "group": "ramayana",
+   "app_book": "ramayan-griffith",
+   "title": "Ramayan, Book 4",
+   "author": "Valmiki",
+   "translator": "Ralph T. H Griffith",
+   "readers": [
+    "om123"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/the-ramayan-book-4-by-valmiki/",
+   "seconds": 24383,
+   "language": "English",
+   "sections": [
+    {
+     "title": "01 - Canto 1",
+     "url": "https://archive.org/download/ramayan4_1304_librivox/ramayan4_01_valmiki_64kb.mp3",
+     "seconds": 1721,
+     "reader": "om123"
+    },
+    {
+     "title": "02 - Cantos 2 - 3",
+     "url": "https://archive.org/download/ramayan4_1304_librivox/ramayan4_02_valmiki_64kb.mp3",
+     "seconds": 852,
+     "reader": "om123"
+    },
+    {
+     "title": "03 - Cantos 04 - 06",
+     "url": "https://archive.org/download/ramayan4_1304_librivox/ramayan4_03_valmiki_64kb.mp3",
+     "seconds": 1168,
+     "reader": "om123"
+    },
+    {
+     "title": "04 - Cantos 07 - 09",
+     "url": "https://archive.org/download/ramayan4_1304_librivox/ramayan4_04_valmiki_64kb.mp3",
+     "seconds": 1093,
+     "reader": "om123"
+    },
+    {
+     "title": "05 - Cantos 10 - 12",
+     "url": "https://archive.org/download/ramayan4_1304_librivox/ramayan4_05_valmiki_64kb.mp3",
+     "seconds": 1903,
+     "reader": "om123"
+    },
+    {
+     "title": "06 - Cantos 13 - 15",
+     "url": "https://archive.org/download/ramayan4_1304_librivox/ramayan4_06_valmiki_64kb.mp3",
+     "seconds": 916,
+     "reader": "om123"
+    },
+    {
+     "title": "07 - Cantos 16 - 18",
+     "url": "https://archive.org/download/ramayan4_1304_librivox/ramayan4_07_valmiki_64kb.mp3",
+     "seconds": 1831,
+     "reader": "om123"
+    },
+    {
+     "title": "08 - Cantos 19 - 21",
+     "url": "https://archive.org/download/ramayan4_1304_librivox/ramayan4_08_valmiki_64kb.mp3",
+     "seconds": 815,
+     "reader": "om123"
+    },
+    {
+     "title": "09 - Cantos 22 - 24",
+     "url": "https://archive.org/download/ramayan4_1304_librivox/ramayan4_09_valmiki_64kb.mp3",
+     "seconds": 1058,
+     "reader": "om123"
+    },
+    {
+     "title": "10 - Cantos 25 - 27",
+     "url": "https://archive.org/download/ramayan4_1304_librivox/ramayan4_10_valmiki_64kb.mp3",
+     "seconds": 1747,
+     "reader": "om123"
+    },
+    {
+     "title": "11 - Cantos 28 - 30",
+     "url": "https://archive.org/download/ramayan4_1304_librivox/ramayan4_11_valmiki_64kb.mp3",
+     "seconds": 1260,
+     "reader": "om123"
+    },
+    {
+     "title": "12 - Cantos 31 - 33",
+     "url": "https://archive.org/download/ramayan4_1304_librivox/ramayan4_12_valmiki_64kb.mp3",
+     "seconds": 1507,
+     "reader": "om123"
+    },
+    {
+     "title": "13 - Cantos 34 - 36",
+     "url": "https://archive.org/download/ramayan4_1304_librivox/ramayan4_13_valmiki_64kb.mp3",
+     "seconds": 723,
+     "reader": "om123"
+    },
+    {
+     "title": "14 - Cantos 37 - 39",
+     "url": "https://archive.org/download/ramayan4_1304_librivox/ramayan4_14_valmiki_64kb.mp3",
+     "seconds": 1042,
+     "reader": "om123"
+    },
+    {
+     "title": "15 - Cantos 40 - 42",
+     "url": "https://archive.org/download/ramayan4_1304_librivox/ramayan4_15_valmiki_64kb.mp3",
+     "seconds": 1498,
+     "reader": "om123"
+    },
+    {
+     "title": "16 - Cantos 43 - 45",
+     "url": "https://archive.org/download/ramayan4_1304_librivox/ramayan4_16_valmiki_64kb.mp3",
+     "seconds": 570,
+     "reader": "om123"
+    },
+    {
+     "title": "17 - Cantos 46 - 48",
+     "url": "https://archive.org/download/ramayan4_1304_librivox/ramayan4_17_valmiki_64kb.mp3",
+     "seconds": 539,
+     "reader": "om123"
+    },
+    {
+     "title": "18 - Cantos 49 - 51",
+     "url": "https://archive.org/download/ramayan4_1304_librivox/ramayan4_18_valmiki_64kb.mp3",
+     "seconds": 560,
+     "reader": "om123"
+    },
+    {
+     "title": "19 - Cantos 52 - 54",
+     "url": "https://archive.org/download/ramayan4_1304_librivox/ramayan4_19_valmiki_64kb.mp3",
+     "seconds": 718,
+     "reader": "om123"
+    },
+    {
+     "title": "20 - Cantos 55 - 57",
+     "url": "https://archive.org/download/ramayan4_1304_librivox/ramayan4_20_valmiki_64kb.mp3",
+     "seconds": 642,
+     "reader": "om123"
+    },
+    {
+     "title": "21 - Cantos 58 - 60",
+     "url": "https://archive.org/download/ramayan4_1304_librivox/ramayan4_21_valmiki_64kb.mp3",
+     "seconds": 743,
+     "reader": "om123"
+    },
+    {
+     "title": "22 - Cantos 61 - 63",
+     "url": "https://archive.org/download/ramayan4_1304_librivox/ramayan4_22_valmiki_64kb.mp3",
+     "seconds": 479,
+     "reader": "om123"
+    },
+    {
+     "title": "23 - Cantos 64 - 67",
+     "url": "https://archive.org/download/ramayan4_1304_librivox/ramayan4_23_valmiki_64kb.mp3",
+     "seconds": 998,
+     "reader": "om123"
+    }
+   ]
+  },
+  {
+   "id": "lv-7905",
+   "group": "ramayana",
+   "app_book": "ramayan-griffith",
+   "title": "Ramayan, Book 5",
+   "author": "Valmiki",
+   "translator": "Ralph T. H Griffith",
+   "readers": [
+    "om123"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/the-ramayan-book-5-by-valmiki/",
+   "seconds": 10568,
+   "language": "English",
+   "sections": [
+    {
+     "title": "01 - Cantos 01 - 03",
+     "url": "https://archive.org/download/ramayan5_1306_librivox/book5oframayan_01_valmiki_64kb.mp3",
+     "seconds": 1451,
+     "reader": "om123"
+    },
+    {
+     "title": "02 - Cantos 04 - 09",
+     "url": "https://archive.org/download/ramayan5_1306_librivox/book5oframayan_02_valmiki_64kb.mp3",
+     "seconds": 1067,
+     "reader": "om123"
+    },
+    {
+     "title": "03 - Cantos 10 - 13",
+     "url": "https://archive.org/download/ramayan5_1306_librivox/book5oframayan_03_valmiki_64kb.mp3",
+     "seconds": 738,
+     "reader": "om123"
+    },
+    {
+     "title": "04 - Cantos 14 - 20",
+     "url": "https://archive.org/download/ramayan5_1306_librivox/book5oframayan_04_valmiki_64kb.mp3",
+     "seconds": 1082,
+     "reader": "om123"
+    },
+    {
+     "title": "05 - Cantos 21 - 26 ",
+     "url": "https://archive.org/download/ramayan5_1306_librivox/book5oframayan_05_valmiki_64kb.mp3",
+     "seconds": 949,
+     "reader": "om123"
+    },
+    {
+     "title": "06 - Cantos 27 - 35",
+     "url": "https://archive.org/download/ramayan5_1306_librivox/book5oframayan_06_valmiki_64kb.mp3",
+     "seconds": 1269,
+     "reader": "om123"
+    },
+    {
+     "title": "07 - Cantos 36 - 41",
+     "url": "https://archive.org/download/ramayan5_1306_librivox/book5oframayan_07_valmiki_64kb.mp3",
+     "seconds": 894,
+     "reader": "om123"
+    },
+    {
+     "title": " 08 - Cantos 42 - 46",
+     "url": "https://archive.org/download/ramayan5_1306_librivox/book5oframayan_08_valmiki_64kb.mp3",
+     "seconds": 895,
+     "reader": "om123"
+    },
+    {
+     "title": "09 - Cantos 47 - 50",
+     "url": "https://archive.org/download/ramayan5_1306_librivox/book5oframayan_09_valmiki_64kb.mp3",
+     "seconds": 616,
+     "reader": "om123"
+    },
+    {
+     "title": "10 - Cantos 51 - 56",
+     "url": "https://archive.org/download/ramayan5_1306_librivox/book5oframayan_10_valmiki_64kb.mp3",
+     "seconds": 968,
+     "reader": "om123"
+    },
+    {
+     "title": "11 - Cantos 57 - 66",
+     "url": "https://archive.org/download/ramayan5_1306_librivox/book5oframayan_11_valmiki_64kb.mp3",
+     "seconds": 639,
+     "reader": "om123"
+    }
+   ]
+  },
+  {
+   "id": "lv-7988",
+   "group": "ramayana",
+   "app_book": "ramayan-griffith",
+   "title": "Ramayan, Book 6",
+   "author": "Valmiki",
+   "translator": "Ralph T. H Griffith",
+   "readers": [
+    "om123"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/the-ramayan-book-6-by-valmiki/",
+   "seconds": 27919,
+   "language": "English",
+   "sections": [
+    {
+     "title": "Cantos 01 - 04",
+     "url": "https://archive.org/download/the_ramayan_book_6_1403_librivox/the_ramayan_book_6_01_valmiki_64kb.mp3",
+     "seconds": 1091,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 05 - 10",
+     "url": "https://archive.org/download/the_ramayan_book_6_1403_librivox/the_ramayan_book_6_02_valmiki_64kb.mp3",
+     "seconds": 1272,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 11 - 14",
+     "url": "https://archive.org/download/the_ramayan_book_6_1403_librivox/the_ramayan_book_6_03_valmiki_64kb.mp3",
+     "seconds": 1021,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 15 - 17",
+     "url": "https://archive.org/download/the_ramayan_book_6_1403_librivox/the_ramayan_book_6_04_valmiki_64kb.mp3",
+     "seconds": 983,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 18 - 20",
+     "url": "https://archive.org/download/the_ramayan_book_6_1403_librivox/the_ramayan_book_6_05_valmiki_64kb.mp3",
+     "seconds": 910,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 21 - 23",
+     "url": "https://archive.org/download/the_ramayan_book_6_1403_librivox/the_ramayan_book_6_06_valmiki_64kb.mp3",
+     "seconds": 1054,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 24 - 28",
+     "url": "https://archive.org/download/the_ramayan_book_6_1403_librivox/the_ramayan_book_6_07_valmiki_64kb.mp3",
+     "seconds": 1498,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 29 - 33",
+     "url": "https://archive.org/download/the_ramayan_book_6_1403_librivox/the_ramayan_book_6_08_valmiki_64kb.mp3",
+     "seconds": 1381,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 34 - 40",
+     "url": "https://archive.org/download/the_ramayan_book_6_1403_librivox/the_ramayan_book_6_09_valmiki_64kb.mp3",
+     "seconds": 1572,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 41 - 44",
+     "url": "https://archive.org/download/the_ramayan_book_6_1403_librivox/the_ramayan_book_6_10_valmiki_64kb.mp3",
+     "seconds": 1019,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 45 - 48",
+     "url": "https://archive.org/download/the_ramayan_book_6_1403_librivox/the_ramayan_book_6_11_valmiki_64kb.mp3",
+     "seconds": 938,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 49 - 52",
+     "url": "https://archive.org/download/the_ramayan_book_6_1403_librivox/the_ramayan_book_6_12_valmiki_64kb.mp3",
+     "seconds": 1068,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 53 - 58",
+     "url": "https://archive.org/download/the_ramayan_book_6_1403_librivox/the_ramayan_book_6_13_valmiki_64kb.mp3",
+     "seconds": 515,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 59 - 60",
+     "url": "https://archive.org/download/the_ramayan_book_6_1403_librivox/the_ramayan_book_6_14_valmiki_64kb.mp3",
+     "seconds": 1482,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 61 - 65",
+     "url": "https://archive.org/download/the_ramayan_book_6_1403_librivox/the_ramayan_book_6_15_valmiki_64kb.mp3",
+     "seconds": 978,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 66 - 68",
+     "url": "https://archive.org/download/the_ramayan_book_6_1403_librivox/the_ramayan_book_6_16_valmiki_64kb.mp3",
+     "seconds": 1325,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 69 - 71",
+     "url": "https://archive.org/download/the_ramayan_book_6_1403_librivox/the_ramayan_book_6_17_valmiki_64kb.mp3",
+     "seconds": 1025,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 72 - 75",
+     "url": "https://archive.org/download/the_ramayan_book_6_1403_librivox/the_ramayan_book_6_18_valmiki_64kb.mp3",
+     "seconds": 1229,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 93 - 100",
+     "url": "https://archive.org/download/the_ramayan_book_6_1403_librivox/the_ramayan_book_6_19_valmiki_64kb.mp3",
+     "seconds": 864,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 101 - 103",
+     "url": "https://archive.org/download/the_ramayan_book_6_1403_librivox/the_ramayan_book_6_20_valmiki_64kb.mp3",
+     "seconds": 663,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 106 - 110",
+     "url": "https://archive.org/download/the_ramayan_book_6_1403_librivox/the_ramayan_book_6_21_valmiki_64kb.mp3",
+     "seconds": 725,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 111 - 114",
+     "url": "https://archive.org/download/the_ramayan_book_6_1403_librivox/the_ramayan_book_6_22_valmiki_64kb.mp3",
+     "seconds": 888,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 115 - 118",
+     "url": "https://archive.org/download/the_ramayan_book_6_1403_librivox/the_ramayan_book_6_23_valmiki_64kb.mp3",
+     "seconds": 951,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 119 - 123",
+     "url": "https://archive.org/download/the_ramayan_book_6_1403_librivox/the_ramayan_book_6_24_valmiki_64kb.mp3",
+     "seconds": 1123,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 124 - 127",
+     "url": "https://archive.org/download/the_ramayan_book_6_1403_librivox/the_ramayan_book_6_25_valmiki_64kb.mp3",
+     "seconds": 1095,
+     "reader": "om123"
+    },
+    {
+     "title": "Cantos 128 - 130",
+     "url": "https://archive.org/download/the_ramayan_book_6_1403_librivox/the_ramayan_book_6_26_valmiki_64kb.mp3",
+     "seconds": 1249,
+     "reader": "om123"
+    }
+   ]
+  },
+  {
+   "id": "lv-5143",
+   "group": "mahabharata",
+   "app_book": "mahabharata-dutt",
+   "title": "Mahabharata by Vyasa: The epic of ancient India condensed into English verse",
+   "author": "Romesh C. Dutt",
+   "translator": "",
+   "readers": [
+    "om123"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/the-mahabharata-by-vyasa-the-epic-of-ancient-india-condensed-into-english-verse-by-romesh-c-dutt/",
+   "seconds": 23142,
+   "language": "English",
+   "sections": [
+    {
+     "title": "01 Book I. Astra Darsana (The Tournament)",
+     "url": "https://archive.org/download/mahabharata_condensed_om_librivox/mahabharata_01_romeshdutt_64kb.mp3",
+     "seconds": 1658,
+     "reader": "om123"
+    },
+    {
+     "title": "02 Book II. Swayamvara (The Bride's Choice)",
+     "url": "https://archive.org/download/mahabharata_condensed_om_librivox/mahabharata_02_romeshdutt_64kb.mp3",
+     "seconds": 1678,
+     "reader": "om123"
+    },
+    {
+     "title": "03 Book III. Rajasuya (The Imperial Sacrifice)",
+     "url": "https://archive.org/download/mahabharata_condensed_om_librivox/mahabharata_03_romeshdutt_64kb.mp3",
+     "seconds": 1779,
+     "reader": "om123"
+    },
+    {
+     "title": "04 Book IV. Dyuta (The Fatal Dice)",
+     "url": "https://archive.org/download/mahabharata_condensed_om_librivox/mahabharata_04_romeshdutt_64kb.mp3",
+     "seconds": 1570,
+     "reader": "om123"
+    },
+    {
+     "title": "05 Book V. Pativrata-Mahatmya (Woman's Love)",
+     "url": "https://archive.org/download/mahabharata_condensed_om_librivox/mahabharata_05_romeshdutt_64kb.mp3",
+     "seconds": 2228,
+     "reader": "om123"
+    },
+    {
+     "title": "06 Book VI. Go-Harana (Cattle-Lifting)",
+     "url": "https://archive.org/download/mahabharata_condensed_om_librivox/mahabharata_06_romeshdutt_64kb.mp3",
+     "seconds": 1609,
+     "reader": "om123"
+    },
+    {
+     "title": "07 Book VII. Udyoga (The Preparation)",
+     "url": "https://archive.org/download/mahabharata_condensed_om_librivox/mahabharata_07_romeshdutt_64kb.mp3",
+     "seconds": 1708,
+     "reader": "om123"
+    },
+    {
+     "title": "08 Book VIII. Bhishma-Badha (Fall of Bhishma)",
+     "url": "https://archive.org/download/mahabharata_condensed_om_librivox/mahabharata_08_romeshdutt_64kb.mp3",
+     "seconds": 2342,
+     "reader": "om123"
+    },
+    {
+     "title": "09 Book IX. Drona-Badha (Fall of Drona)",
+     "url": "https://archive.org/download/mahabharata_condensed_om_librivox/mahabharata_09_romeshdutt_64kb.mp3",
+     "seconds": 2204,
+     "reader": "om123"
+    },
+    {
+     "title": "10 Book X. Karna-Badha (Fall of Karna)",
+     "url": "https://archive.org/download/mahabharata_condensed_om_librivox/mahabharata_10_romeshdutt_64kb.mp3",
+     "seconds": 1905,
+     "reader": "om123"
+    },
+    {
+     "title": "11 Book XI. Sraddha (Funeral Rites)",
+     "url": "https://archive.org/download/mahabharata_condensed_om_librivox/mahabharata_11_romeshdutt_64kb.mp3",
+     "seconds": 1218,
+     "reader": "om123"
+    },
+    {
+     "title": "12 Book XII. Aswa-Medha (Sacrifice of the Horse)",
+     "url": "https://archive.org/download/mahabharata_condensed_om_librivox/mahabharata_12_romeshdutt_64kb.mp3",
+     "seconds": 1123,
+     "reader": "om123"
+    },
+    {
+     "title": "13 Conclusion",
+     "url": "https://archive.org/download/mahabharata_condensed_om_librivox/mahabharata_13_romeshdutt_64kb.mp3",
+     "seconds": 301,
+     "reader": "om123"
+    },
+    {
+     "title": "14 Translator's epilogue",
+     "url": "https://archive.org/download/mahabharata_condensed_om_librivox/mahabharata_14_romeshdutt_64kb.mp3",
+     "seconds": 1551,
+     "reader": "om123"
+    },
+    {
+     "title": "15 Glossary of Sanscrit words",
+     "url": "https://archive.org/download/mahabharata_condensed_om_librivox/mahabharata_15_romeshdutt_64kb.mp3",
+     "seconds": 268,
+     "reader": "om123"
+    }
+   ]
+  },
+  {
+   "id": "lv-9766",
+   "group": "upanishads",
+   "app_book": "upanishads-paramananda",
+   "title": "Isha Upanishad",
+   "author": "Unknown",
+   "translator": "F. Max Müller",
+   "readers": [
+    "Jothi Tharavant"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/isha-upanishad-by-unknown/",
+   "seconds": 364,
+   "language": "English",
+   "sections": [
+    {
+     "title": "Isha Upanishad",
+     "url": "https://archive.org/download/ishaupanishad_1503_librivox/ishaupanishad_01_unknown_64kb.mp3",
+     "seconds": 364,
+     "reader": "Jothi Tharavant"
+    }
+   ]
+  },
+  {
+   "id": "lv-9770",
+   "group": "upanishads",
+   "app_book": "upanishads-paramananda",
+   "title": "Kena Upanishad",
+   "author": "Unknown",
+   "translator": "F. Max Müller",
+   "readers": [
+    "Jothi Tharavant"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/kena-upanishad-by-unknown/",
+   "seconds": 648,
+   "language": "English",
+   "sections": [
+    {
+     "title": "Kena Upanishad",
+     "url": "https://archive.org/download/kenaupanishad_1504_librivox/kenaupanishad_01_unknown_64kb.mp3",
+     "seconds": 648,
+     "reader": "Jothi Tharavant"
+    }
+   ]
+  },
+  {
+   "id": "lv-9718",
+   "group": "upanishads",
+   "app_book": "upanishads-paramananda",
+   "title": "Katha Upanishad",
+   "author": "Unknown",
+   "translator": "F. Max Müller",
+   "readers": [
+    "Jothi Tharavant"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/katha-upanishad-by-unknown/",
+   "seconds": 2533,
+   "language": "English",
+   "sections": [
+    {
+     "title": "First Adhyaya - First Valli",
+     "url": "https://archive.org/download/kathaupanishad_1503_librivox/kathaupanishad_01_unknown_64kb.mp3",
+     "seconds": 673,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Second Valli",
+     "url": "https://archive.org/download/kathaupanishad_1503_librivox/kathaupanishad_02_unknown_64kb.mp3",
+     "seconds": 509,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Third Vailli",
+     "url": "https://archive.org/download/kathaupanishad_1503_librivox/kathaupanishad_03_unknown_64kb.mp3",
+     "seconds": 326,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Second Adhyaya - Fourth Valli",
+     "url": "https://archive.org/download/kathaupanishad_1503_librivox/kathaupanishad_04_unknown_64kb.mp3",
+     "seconds": 284,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Fifth Valli",
+     "url": "https://archive.org/download/kathaupanishad_1503_librivox/kathaupanishad_05_unknown_64kb.mp3",
+     "seconds": 328,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Sixth Valli",
+     "url": "https://archive.org/download/kathaupanishad_1503_librivox/kathaupanishad_06_unknown_64kb.mp3",
+     "seconds": 413,
+     "reader": "Jothi Tharavant"
+    }
+   ]
+  },
+  {
+   "id": "lv-9701",
+   "group": "upanishads",
+   "app_book": "upanishads-paramananda",
+   "title": "Prasna Upanishad",
+   "author": "Unknown",
+   "translator": "F. Max Müller",
+   "readers": [
+    "Jothi Tharavant"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/prasna-upanishad-by-unknown/",
+   "seconds": 1764,
+   "language": "English",
+   "sections": [
+    {
+     "title": "First Question",
+     "url": "https://archive.org/download/prasnaupanishad_1503_librivox/prasnaupanishad_01_unknown_64kb.mp3",
+     "seconds": 363,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Second Question",
+     "url": "https://archive.org/download/prasnaupanishad_1503_librivox/prasnaupanishad_02_unknown_64kb.mp3",
+     "seconds": 266,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Third Question",
+     "url": "https://archive.org/download/prasnaupanishad_1503_librivox/prasnaupanishad_03_unknown_64kb.mp3",
+     "seconds": 255,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Fourth Question",
+     "url": "https://archive.org/download/prasnaupanishad_1503_librivox/prasnaupanishad_04_unknown_64kb.mp3",
+     "seconds": 407,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Fifth Question",
+     "url": "https://archive.org/download/prasnaupanishad_1503_librivox/prasnaupanishad_05_unknown_64kb.mp3",
+     "seconds": 223,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Sixth Question",
+     "url": "https://archive.org/download/prasnaupanishad_1503_librivox/prasnaupanishad_06_unknown_64kb.mp3",
+     "seconds": 250,
+     "reader": "Jothi Tharavant"
+    }
+   ]
+  },
+  {
+   "id": "lv-9742",
+   "group": "upanishads",
+   "app_book": "upanishads-paramananda",
+   "title": "Mundaka Upanishad",
+   "author": "Unknown",
+   "translator": "F. Max Müller",
+   "readers": [
+    "Jothi Tharavant"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/mundaka-upanishad-by-unknown/",
+   "seconds": 1646,
+   "language": "English",
+   "sections": [
+    {
+     "title": "First Mundaka - First Khanda",
+     "url": "https://archive.org/download/mandakaupanishad_1503_librivox/mandukaupanishad_01_unknown_64kb.mp3",
+     "seconds": 253,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "First Mundaka - Second Khanda",
+     "url": "https://archive.org/download/mandakaupanishad_1503_librivox/mandukaupanishad_02_unknown_64kb.mp3",
+     "seconds": 353,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Second Mundaka - First Khanda",
+     "url": "https://archive.org/download/mandakaupanishad_1503_librivox/mandukaupanishad_03_unknown_64kb.mp3",
+     "seconds": 252,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Second Mundaka - Second Khanda",
+     "url": "https://archive.org/download/mandakaupanishad_1503_librivox/mandukaupanishad_04_unknown_64kb.mp3",
+     "seconds": 289,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Third Mundaka - First Khanda",
+     "url": "https://archive.org/download/mandakaupanishad_1503_librivox/mandukaupanishad_05_unknown_64kb.mp3",
+     "seconds": 227,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Third Mundaka - Second Khanda",
+     "url": "https://archive.org/download/mandakaupanishad_1503_librivox/mandukaupanishad_06_unknown_64kb.mp3",
+     "seconds": 272,
+     "reader": "Jothi Tharavant"
+    }
+   ]
+  },
+  {
+   "id": "lv-9777",
+   "group": "upanishads",
+   "app_book": "upanishads-paramananda",
+   "title": "Taittriyaka Upanishad",
+   "author": "Unknown",
+   "translator": "F. Max Müller",
+   "readers": [
+    "Jothi Tharavant"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/taittriyaka-upanishad-by-unknown/",
+   "seconds": 2901,
+   "language": "English",
+   "sections": [
+    {
+     "title": "First Valli or the chapter on Siksha (pronounciation)",
+     "url": "https://archive.org/download/taittriyakaupanishad_1504_librivox/taittriyakaupanishad_01_unknown_64kb.mp3",
+     "seconds": 1133,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Second Valli or the chapter on Ananda (bliss)",
+     "url": "https://archive.org/download/taittriyakaupanishad_1504_librivox/taittriyakaupanishad_02_unknown_64kb.mp3",
+     "seconds": 966,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Third Valli or the chapter on Bhrigu (son of Varuna)",
+     "url": "https://archive.org/download/taittriyakaupanishad_1504_librivox/taittriyakaupanishad_03_unknown_64kb.mp3",
+     "seconds": 802,
+     "reader": "Jothi Tharavant"
+    }
+   ]
+  },
+  {
+   "id": "lv-9787",
+   "group": "upanishads",
+   "app_book": "upanishads-paramananda",
+   "title": "Kaushitaki Upanishad",
+   "author": "Unknown",
+   "translator": "F. Max Müller",
+   "readers": [
+    "Jothi Tharavant"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/kaushitaki-upanisha-by-unknown/",
+   "seconds": 4295,
+   "language": "English",
+   "sections": [
+    {
+     "title": "First Adhyaya",
+     "url": "https://archive.org/download/kaushitakiupanisha_1504_librivox/kaushitakiupanishad_01_unknown_64kb.mp3",
+     "seconds": 868,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Second Adhyaya",
+     "url": "https://archive.org/download/kaushitakiupanisha_1504_librivox/kaushitakiupanishad_02_unknown_64kb.mp3",
+     "seconds": 1610,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Third Adhyaya",
+     "url": "https://archive.org/download/kaushitakiupanisha_1504_librivox/kaushitakiupanishad_03_unknown_64kb.mp3",
+     "seconds": 1028,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Fourth Adhyaya",
+     "url": "https://archive.org/download/kaushitakiupanisha_1504_librivox/kaushitakiupanishad_04_unknown_64kb.mp3",
+     "seconds": 789,
+     "reader": "Jothi Tharavant"
+    }
+   ]
+  },
+  {
+   "id": "lv-9811",
+   "group": "upanishads",
+   "app_book": "upanishads-paramananda",
+   "title": "Svetasvatara Upanishad",
+   "author": "Unknown",
+   "translator": "F. Max Müller",
+   "readers": [
+    "Jothi Tharavant"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/svetasvatara-upanishad-by-unknown/",
+   "seconds": 2483,
+   "language": "English",
+   "sections": [
+    {
+     "title": "First Adhyaya",
+     "url": "https://archive.org/download/svetasvataraupanishad_1504_librivox/svetasvataraupanishad_01_unknown_64kb.mp3",
+     "seconds": 455,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Second Adhyay",
+     "url": "https://archive.org/download/svetasvataraupanishad_1504_librivox/svetasvataraupanishad_02_unknown_64kb.mp3",
+     "seconds": 353,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Fourth Adhyaya",
+     "url": "https://archive.org/download/svetasvataraupanishad_1504_librivox/svetasvataraupanishad_03_unknown_64kb.mp3",
+     "seconds": 478,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Third Adhyaya",
+     "url": "https://archive.org/download/svetasvataraupanishad_1504_librivox/svetasvataraupanishad_04_unknown_64kb.mp3",
+     "seconds": 411,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Fifth Adhyaya",
+     "url": "https://archive.org/download/svetasvataraupanishad_1504_librivox/svetasvataraupanishad_05_unknown_64kb.mp3",
+     "seconds": 305,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Sixth Adhyaya",
+     "url": "https://archive.org/download/svetasvataraupanishad_1504_librivox/svetasvataraupanishad_06_unknown_64kb.mp3",
+     "seconds": 481,
+     "reader": "Jothi Tharavant"
+    }
+   ]
+  },
+  {
+   "id": "lv-9839",
+   "group": "upanishads",
+   "app_book": "upanishads-paramananda",
+   "title": "Maitrayana Upanishad",
+   "author": "Unknown",
+   "translator": "F. Max Müller",
+   "readers": [
+    "Jothi Tharavant"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/maitrayana-upanishad-by-unknown/",
+   "seconds": 7819,
+   "language": "English",
+   "sections": [
+    {
+     "title": "First Prapathaka",
+     "url": "https://archive.org/download/maitrayanaupanishad_1504_librivox/maitrayanaupanishad_01_unknown_64kb.mp3",
+     "seconds": 359,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Second Prapathaka",
+     "url": "https://archive.org/download/maitrayanaupanishad_1504_librivox/maitrayanaupanishad_02_unknown_64kb.mp3",
+     "seconds": 676,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Third Prapathaka",
+     "url": "https://archive.org/download/maitrayanaupanishad_1504_librivox/maitrayanaupanishad_03_unknown_64kb.mp3",
+     "seconds": 435,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Fourth Prapathaka",
+     "url": "https://archive.org/download/maitrayanaupanishad_1504_librivox/maitrayanaupanishad_04_unknown_64kb.mp3",
+     "seconds": 456,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Fifth Prapathaka",
+     "url": "https://archive.org/download/maitrayanaupanishad_1504_librivox/maitrayanaupanishad_05_unknown_64kb.mp3",
+     "seconds": 272,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Sixth Prapathka (Stanzazs 1 to 21)",
+     "url": "https://archive.org/download/maitrayanaupanishad_1504_librivox/maitrayanaupanishad_06_unknown_64kb.mp3",
+     "seconds": 2283,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Sixth Prapathka (Stanzazs 22 to 38)",
+     "url": "https://archive.org/download/maitrayanaupanishad_1504_librivox/maitrayanaupanishad_07_unknown_64kb.mp3",
+     "seconds": 2435,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Seventh Prapthaka",
+     "url": "https://archive.org/download/maitrayanaupanishad_1504_librivox/maitrayanaupanishad_08_unknown_64kb.mp3",
+     "seconds": 903,
+     "reader": "Jothi Tharavant"
+    }
+   ]
+  },
+  {
+   "id": "lv-9862",
+   "group": "upanishads",
+   "app_book": "upanishads-paramananda",
+   "title": "Aitreya-Aranyaka Upanishad",
+   "author": "Unknown",
+   "translator": "F. Max Müller",
+   "readers": [
+    "Jothi Tharavant"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/aitreya-aranyaka-upanishad-by-unknown/",
+   "seconds": 11094,
+   "language": "English",
+   "sections": [
+    {
+     "title": "First Aranyaka",
+     "url": "https://archive.org/download/aitreyaaranyakaupanishad_1505_librivox/aitreyaaranyakaupanishad_01_unknown_64kb.mp3",
+     "seconds": 4431,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Second Aranyaka - First, Second, and Third Adhyayas",
+     "url": "https://archive.org/download/aitreyaaranyakaupanishad_1505_librivox/aitreyaaranyakaupanishad_02_unknown_64kb.mp3",
+     "seconds": 3527,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Second Aranyaka - Fourth, Fifth, Sixth Adhyayas (Aitareya Upanishad), and the Seventh Adhyaya",
+     "url": "https://archive.org/download/aitreyaaranyakaupanishad_1505_librivox/aitreyaaranyakaupanishad_03_unknown_64kb.mp3",
+     "seconds": 1138,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Third Aranyaka",
+     "url": "https://archive.org/download/aitreyaaranyakaupanishad_1505_librivox/aitreyaaranyakaupanishad_04_unknown_64kb.mp3",
+     "seconds": 1998,
+     "reader": "Jothi Tharavant"
+    }
+   ]
+  },
+  {
+   "id": "lv-9660",
+   "group": "upanishads",
+   "app_book": "upanishads-paramananda",
+   "title": "Chandogya Upanishad",
+   "author": "Unknown",
+   "translator": "F. Max Müller",
+   "readers": [
+    "Jothi Tharavant"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/the-chandogya-upanishad/",
+   "seconds": 14554,
+   "language": "English",
+   "sections": [
+    {
+     "title": "First Prapathaka",
+     "url": "https://archive.org/download/chandogya_upanishad_1503_librivox/chandogyaupanishad_01__64kb.mp3",
+     "seconds": 1831,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Second Prapathaka",
+     "url": "https://archive.org/download/chandogya_upanishad_1503_librivox/chandogyaupanishad_02__64kb.mp3",
+     "seconds": 1667,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Third Prapathaka",
+     "url": "https://archive.org/download/chandogya_upanishad_1503_librivox/chandogyaupanishad_03__64kb.mp3",
+     "seconds": 1662,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Fourth Prapathaka",
+     "url": "https://archive.org/download/chandogya_upanishad_1503_librivox/chandogyaupanishad_04__64kb.mp3",
+     "seconds": 1664,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Fifth Prapathaka",
+     "url": "https://archive.org/download/chandogya_upanishad_1503_librivox/chandogyaupanishad_05__64kb.mp3",
+     "seconds": 1903,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Sixth Prapathaka",
+     "url": "https://archive.org/download/chandogya_upanishad_1503_librivox/chandogyaupanishad_06__64kb.mp3",
+     "seconds": 1621,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Seventh Prapathaka",
+     "url": "https://archive.org/download/chandogya_upanishad_1503_librivox/chandogyaupanishad_07__64kb.mp3",
+     "seconds": 2009,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Eighth Prapathaka",
+     "url": "https://archive.org/download/chandogya_upanishad_1503_librivox/chandogyaupanishad_08__64kb.mp3",
+     "seconds": 2197,
+     "reader": "Jothi Tharavant"
+    }
+   ]
+  },
+  {
+   "id": "lv-9885",
+   "group": "upanishads",
+   "app_book": "upanishads-paramananda",
+   "title": "Brihadaranyaka Upanishad",
+   "author": "Unknown",
+   "translator": "F. Max Müller",
+   "readers": [
+    "Jothi Tharavant"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/brihadaranyaka-upanishad-by-unknown/",
+   "seconds": 17436,
+   "language": "English",
+   "sections": [
+    {
+     "title": "First Adhyaya",
+     "url": "https://archive.org/download/brihadaranyakaupanishad_1505_librivox/brihadaranyakaupanishad_01_unknown_64kb.mp3",
+     "seconds": 3522,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Second Adhyaya",
+     "url": "https://archive.org/download/brihadaranyakaupanishad_1505_librivox/brihadaranyakaupanishad_02_unknown_64kb.mp3",
+     "seconds": 2242,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Third Adyyaya",
+     "url": "https://archive.org/download/brihadaranyakaupanishad_1505_librivox/brihadaranyakaupanishad_03_unknown_64kb.mp3",
+     "seconds": 3565,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Fourth Adhyaya",
+     "url": "https://archive.org/download/brihadaranyakaupanishad_1505_librivox/brihadaranyakaupanishad_04_unknown_64kb.mp3",
+     "seconds": 3841,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Fifth Adhyaya",
+     "url": "https://archive.org/download/brihadaranyakaupanishad_1505_librivox/brihadaranyakaupanishad_05_unknown_64kb.mp3",
+     "seconds": 1289,
+     "reader": "Jothi Tharavant"
+    },
+    {
+     "title": "Sixth Adhyaya",
+     "url": "https://archive.org/download/brihadaranyakaupanishad_1505_librivox/brihadaranyakaupanishad_06_unknown_64kb.mp3",
+     "seconds": 2977,
+     "reader": "Jothi Tharavant"
+    }
+   ]
+  },
+  {
+   "id": "lv-4340",
+   "group": "more",
+   "app_book": null,
+   "title": "Songs of Kabir",
+   "author": "Kabir",
+   "translator": "Rabindranath Tagore",
+   "readers": [
+    "Algy Pug"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/songs-of-kabir-by-kabir/",
+   "seconds": 6670,
+   "language": "English",
+   "sections": [
+    {
+     "title": "1 - Introduction by Evelyn Underhill",
+     "url": "https://archive.org/download/songs_kabir_1006_librivox/songs_0_kabir_64kb.mp3",
+     "seconds": 2354,
+     "reader": "Algy Pug"
+    },
+    {
+     "title": "2  -  Poems 1 - 50",
+     "url": "https://archive.org/download/songs_kabir_1006_librivox/songs_1_kabir_64kb.mp3",
+     "seconds": 2311,
+     "reader": "Algy Pug"
+    },
+    {
+     "title": "3  -  Poems 51 - 100",
+     "url": "https://archive.org/download/songs_kabir_1006_librivox/songs_2_kabir_64kb.mp3",
+     "seconds": 2005,
+     "reader": "Algy Pug"
+    }
+   ]
+  },
+  {
+   "id": "lv-3745",
+   "group": "more",
+   "app_book": null,
+   "title": "Gitanjali",
+   "author": "Rabindranath Tagore",
+   "translator": "",
+   "readers": [
+    "Carl Manchester",
+    "Elli",
+    "Hilara",
+    "Neeru Iyer",
+    "Patti Cunningham",
+    "Sean Michael Hogan",
+    "lonely trotter"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/gitanjali-by-rabindranath-tagore/",
+   "seconds": 6033,
+   "language": "English",
+   "sections": [
+    {
+     "title": "01 - Introduction",
+     "url": "https://archive.org/download/gitanjali_1002_librivox/gitanjali_01_tagore_64kb.mp3",
+     "seconds": 871,
+     "reader": "Neeru Iyer"
+    },
+    {
+     "title": "02 - Verses 1 to 10",
+     "url": "https://archive.org/download/gitanjali_1002_librivox/gitanjali_02_tagore_64kb.mp3",
+     "seconds": 430,
+     "reader": "Neeru Iyer"
+    },
+    {
+     "title": "03 - Verses 11 to 20",
+     "url": "https://archive.org/download/gitanjali_1002_librivox/gitanjali_03_tagore_64kb.mp3",
+     "seconds": 480,
+     "reader": "Hilara"
+    },
+    {
+     "title": "04 - Verses 21 to 30",
+     "url": "https://archive.org/download/gitanjali_1002_librivox/gitanjali_04_tagore_64kb.mp3",
+     "seconds": 416,
+     "reader": "Hilara"
+    },
+    {
+     "title": "05 - Verses 31 to 40",
+     "url": "https://archive.org/download/gitanjali_1002_librivox/gitanjali_05_tagore_64kb.mp3",
+     "seconds": 413,
+     "reader": "Elli"
+    },
+    {
+     "title": "06 - Verses 41 to 50",
+     "url": "https://archive.org/download/gitanjali_1002_librivox/gitanjali_06_tagore_64kb.mp3",
+     "seconds": 638,
+     "reader": "lonely trotter"
+    },
+    {
+     "title": "07 - Verses 51 to 60",
+     "url": "https://archive.org/download/gitanjali_1002_librivox/gitanjali_07_tagore_64kb.mp3",
+     "seconds": 709,
+     "reader": "Patti Cunningham"
+    },
+    {
+     "title": "08 - Verses 61 to 70",
+     "url": "https://archive.org/download/gitanjali_1002_librivox/gitanjali_08_tagore_64kb.mp3",
+     "seconds": 575,
+     "reader": "Patti Cunningham"
+    },
+    {
+     "title": "09 - Verses 71 to 80",
+     "url": "https://archive.org/download/gitanjali_1002_librivox/gitanjali_09_tagore_64kb.mp3",
+     "seconds": 512,
+     "reader": "Carl Manchester"
+    },
+    {
+     "title": "10 - Verses 81 to 90",
+     "url": "https://archive.org/download/gitanjali_1002_librivox/gitanjali_10_tagore_64kb.mp3",
+     "seconds": 428,
+     "reader": "Sean Michael Hogan"
+    },
+    {
+     "title": "11 - Verses 91 to 103",
+     "url": "https://archive.org/download/gitanjali_1002_librivox/gitanjali_11_tagore_64kb.mp3",
+     "seconds": 561,
+     "reader": "Sean Michael Hogan"
+    }
+   ]
+  },
+  {
+   "id": "lv-3860",
+   "group": "more",
+   "app_book": null,
+   "title": "Tiruppavai",
+   "author": "Andal",
+   "translator": "",
+   "readers": [
+    "Neeru Iyer"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/tiruppavai-by-andal/",
+   "seconds": 964,
+   "language": "Tamil",
+   "sections": [
+    {
+     "title": "01 - Paasurangal 1-5",
+     "url": "https://archive.org/download/tiruppavai_nr_librivox/tiruppavai_1_andal_64kb.mp3",
+     "seconds": 167,
+     "reader": "Neeru Iyer"
+    },
+    {
+     "title": "02 - Paasurangal 6-10",
+     "url": "https://archive.org/download/tiruppavai_nr_librivox/tiruppavai_2_andal_64kb.mp3",
+     "seconds": 154,
+     "reader": "Neeru Iyer"
+    },
+    {
+     "title": "03 - Paasurangal 11-15",
+     "url": "https://archive.org/download/tiruppavai_nr_librivox/tiruppavai_3_andal_64kb.mp3",
+     "seconds": 163,
+     "reader": "Neeru Iyer"
+    },
+    {
+     "title": "04 - Paasurangal 16-20",
+     "url": "https://archive.org/download/tiruppavai_nr_librivox/tiruppavai_4_andal_64kb.mp3",
+     "seconds": 156,
+     "reader": "Neeru Iyer"
+    },
+    {
+     "title": "05 - Paasurangal 21-25",
+     "url": "https://archive.org/download/tiruppavai_nr_librivox/tiruppavai_5_andal_64kb.mp3",
+     "seconds": 156,
+     "reader": "Neeru Iyer"
+    },
+    {
+     "title": "06 - Paasurangal 26-30",
+     "url": "https://archive.org/download/tiruppavai_nr_librivox/tiruppavai_6_andal_64kb.mp3",
+     "seconds": 168,
+     "reader": "Neeru Iyer"
+    }
+   ]
+  },
+  {
+   "id": "lv-17732",
+   "group": "more",
+   "app_book": null,
+   "title": "Sree Krishna, The Lord of Love",
+   "author": "Baba Premanand Bharati",
+   "translator": "",
+   "readers": [
+    "Jim Locke"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/sree-krishna-by-baba-premanand-bharati/",
+   "seconds": 35476,
+   "language": "English",
+   "sections": [
+    {
+     "title": "Preface and Introductory",
+     "url": "https://archive.org/download/sree_krishna_2204_librivox/sreekrishna_01_bharati_64kb.mp3",
+     "seconds": 1987,
+     "reader": "Jim Locke"
+    },
+    {
+     "title": "Sections 1, 2, 3",
+     "url": "https://archive.org/download/sree_krishna_2204_librivox/sreekrishna_02_bharati_64kb.mp3",
+     "seconds": 1916,
+     "reader": "Jim Locke"
+    },
+    {
+     "title": "Sections 4, 5",
+     "url": "https://archive.org/download/sree_krishna_2204_librivox/sreekrishna_03_bharati_64kb.mp3",
+     "seconds": 2210,
+     "reader": "Jim Locke"
+    },
+    {
+     "title": "Sections 6, 7",
+     "url": "https://archive.org/download/sree_krishna_2204_librivox/sreekrishna_04_bharati_64kb.mp3",
+     "seconds": 2218,
+     "reader": "Jim Locke"
+    },
+    {
+     "title": "Sections 8, 9",
+     "url": "https://archive.org/download/sree_krishna_2204_librivox/sreekrishna_05_bharati_64kb.mp3",
+     "seconds": 1584,
+     "reader": "Jim Locke"
+    },
+    {
+     "title": "Sections 10, 11",
+     "url": "https://archive.org/download/sree_krishna_2204_librivox/sreekrishna_06_bharati_64kb.mp3",
+     "seconds": 2412,
+     "reader": "Jim Locke"
+    },
+    {
+     "title": "Sections 12, 13, 14",
+     "url": "https://archive.org/download/sree_krishna_2204_librivox/sreekrishna_07_bharati_64kb.mp3",
+     "seconds": 2092,
+     "reader": "Jim Locke"
+    },
+    {
+     "title": "Sections 15, 16, 17, 18",
+     "url": "https://archive.org/download/sree_krishna_2204_librivox/sreekrishna_08_bharati_64kb.mp3",
+     "seconds": 2603,
+     "reader": "Jim Locke"
+    },
+    {
+     "title": "Sections 19, 20, 21, 22",
+     "url": "https://archive.org/download/sree_krishna_2204_librivox/sreekrishna_09_bharati_64kb.mp3",
+     "seconds": 2286,
+     "reader": "Jim Locke"
+    },
+    {
+     "title": "Sections 23, 24",
+     "url": "https://archive.org/download/sree_krishna_2204_librivox/sreekrishna_10_bharati_64kb.mp3",
+     "seconds": 1730,
+     "reader": "Jim Locke"
+    },
+    {
+     "title": "Proem and Chapters 1, 2, 3",
+     "url": "https://archive.org/download/sree_krishna_2204_librivox/sreekrishna_11_bharati_64kb.mp3",
+     "seconds": 1182,
+     "reader": "Jim Locke"
+    },
+    {
+     "title": "Chapters, 4, 5, 6",
+     "url": "https://archive.org/download/sree_krishna_2204_librivox/sreekrishna_12_bharati_64kb.mp3",
+     "seconds": 756,
+     "reader": "Jim Locke"
+    },
+    {
+     "title": "Chapters 7, 8, 9",
+     "url": "https://archive.org/download/sree_krishna_2204_librivox/sreekrishna_13_bharati_64kb.mp3",
+     "seconds": 731,
+     "reader": "Jim Locke"
+    },
+    {
+     "title": "Chapters 10, 11, 12",
+     "url": "https://archive.org/download/sree_krishna_2204_librivox/sreekrishna_14_bharati_64kb.mp3",
+     "seconds": 751,
+     "reader": "Jim Locke"
+    },
+    {
+     "title": "Chapters 13, 14, 15",
+     "url": "https://archive.org/download/sree_krishna_2204_librivox/sreekrishna_15_bharati_64kb.mp3",
+     "seconds": 634,
+     "reader": "Jim Locke"
+    },
+    {
+     "title": "Chapters 16, 17, 18",
+     "url": "https://archive.org/download/sree_krishna_2204_librivox/sreekrishna_16_bharati_64kb.mp3",
+     "seconds": 655,
+     "reader": "Jim Locke"
+    },
+    {
+     "title": "Chapters 19, 20, 21",
+     "url": "https://archive.org/download/sree_krishna_2204_librivox/sreekrishna_17_bharati_64kb.mp3",
+     "seconds": 963,
+     "reader": "Jim Locke"
+    },
+    {
+     "title": "Chapters 22, 23, 24",
+     "url": "https://archive.org/download/sree_krishna_2204_librivox/sreekrishna_18_bharati_64kb.mp3",
+     "seconds": 1140,
+     "reader": "Jim Locke"
+    },
+    {
+     "title": "Chapters 25, 26, 27",
+     "url": "https://archive.org/download/sree_krishna_2204_librivox/sreekrishna_19_bharati_64kb.mp3",
+     "seconds": 784,
+     "reader": "Jim Locke"
+    },
+    {
+     "title": "Chapters 28, 29, 30",
+     "url": "https://archive.org/download/sree_krishna_2204_librivox/sreekrishna_20_bharati_64kb.mp3",
+     "seconds": 527,
+     "reader": "Jim Locke"
+    },
+    {
+     "title": "Chapters 31, 32, 33",
+     "url": "https://archive.org/download/sree_krishna_2204_librivox/sreekrishna_21_bharati_64kb.mp3",
+     "seconds": 984,
+     "reader": "Jim Locke"
+    },
+    {
+     "title": "Messages and Revelations",
+     "url": "https://archive.org/download/sree_krishna_2204_librivox/sreekrishna_22_bharati_64kb.mp3",
+     "seconds": 565,
+     "reader": "Jim Locke"
+    },
+    {
+     "title": "Holy Man's Prayer, 1",
+     "url": "https://archive.org/download/sree_krishna_2204_librivox/sreekrishna_23_bharati_64kb.mp3",
+     "seconds": 1290,
+     "reader": "Jim Locke"
+    },
+    {
+     "title": "Holy Man's Prayer, 2",
+     "url": "https://archive.org/download/sree_krishna_2204_librivox/sreekrishna_24_bharati_64kb.mp3",
+     "seconds": 1311,
+     "reader": "Jim Locke"
+    },
+    {
+     "title": "Holy Man's Prayer, 3",
+     "url": "https://archive.org/download/sree_krishna_2204_librivox/sreekrishna_25_bharati_64kb.mp3",
+     "seconds": 1519,
+     "reader": "Jim Locke"
+    },
+    {
+     "title": "The Soul and its Beloved and The Fair One and Her Soul",
+     "url": "https://archive.org/download/sree_krishna_2204_librivox/sreekrishna_26_bharati_64kb.mp3",
+     "seconds": 646,
+     "reader": "Jim Locke"
+    }
+   ]
+  },
+  {
+   "id": "lv-18036",
+   "group": "more",
+   "app_book": null,
+   "title": "Shri Dnyaneshwar - A Sketch Of His Life And Teachings",
+   "author": "Anonymous",
+   "translator": "",
+   "readers": [
+    "czandra"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/shri-dnyaneshwar-a-sketch-of-his-life-and-teachings-by-anonymous/",
+   "seconds": 3491,
+   "language": "English",
+   "sections": [
+    {
+     "title": "Parents",
+     "url": "https://archive.org/download/shri_dnyaneshwar_2206_librivox/dnyaneshwar_01_anon_64kb.mp3",
+     "seconds": 802,
+     "reader": "czandra"
+    },
+    {
+     "title": "Brother",
+     "url": "https://archive.org/download/shri_dnyaneshwar_2206_librivox/dnyaneshwar_02_anon_64kb.mp3",
+     "seconds": 557,
+     "reader": "czandra"
+    },
+    {
+     "title": "Dnyaneshwar",
+     "url": "https://archive.org/download/shri_dnyaneshwar_2206_librivox/dnyaneshwar_03_anon_64kb.mp3",
+     "seconds": 897,
+     "reader": "czandra"
+    },
+    {
+     "title": "His influence",
+     "url": "https://archive.org/download/shri_dnyaneshwar_2206_librivox/dnyaneshwar_04_anon_64kb.mp3",
+     "seconds": 1235,
+     "reader": "czandra"
+    }
+   ]
+  },
+  {
+   "id": "lv-8909",
+   "group": "more",
+   "app_book": null,
+   "title": "Ancient Ballads and Legends of Hindustan",
+   "author": "Toru Dutt",
+   "translator": "",
+   "readers": [
+    "Anusha Iyer",
+    "Ken Masters",
+    "Lucretia B.",
+    "Rosslyn Carlyle",
+    "Zeeshan Reshamwala"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/ancient-ballads-and-legends-of-hindustan-by-toru-dutt/",
+   "seconds": 10904,
+   "language": "English",
+   "sections": [
+    {
+     "title": "Introductory Memoir by Edmund W. Gosse",
+     "url": "https://archive.org/download/ancient_ballads_legends_hindustan_1501_librivox/balladslegendshindustan_00_dutt_64kb.mp3",
+     "seconds": 1438,
+     "reader": "Zeeshan Reshamwala"
+    },
+    {
+     "title": "Savitri, Part I",
+     "url": "https://archive.org/download/ancient_ballads_legends_hindustan_1501_librivox/balladslegendshindustan_01_dutt_64kb.mp3",
+     "seconds": 884,
+     "reader": "Zeeshan Reshamwala"
+    },
+    {
+     "title": "Savitri, Part II",
+     "url": "https://archive.org/download/ancient_ballads_legends_hindustan_1501_librivox/balladslegendshindustan_02_dutt_64kb.mp3",
+     "seconds": 766,
+     "reader": "Rosslyn Carlyle"
+    },
+    {
+     "title": "Savitri, Part III",
+     "url": "https://archive.org/download/ancient_ballads_legends_hindustan_1501_librivox/balladslegendshindustan_03_dutt_64kb.mp3",
+     "seconds": 131,
+     "reader": "Rosslyn Carlyle"
+    },
+    {
+     "title": "Savitri, Part IV",
+     "url": "https://archive.org/download/ancient_ballads_legends_hindustan_1501_librivox/balladslegendshindustan_04_dutt_64kb.mp3",
+     "seconds": 735,
+     "reader": "Rosslyn Carlyle"
+    },
+    {
+     "title": "Savitri, Part V",
+     "url": "https://archive.org/download/ancient_ballads_legends_hindustan_1501_librivox/balladslegendshindustan_05_dutt_64kb.mp3",
+     "seconds": 420,
+     "reader": "Rosslyn Carlyle"
+    },
+    {
+     "title": "Lakshman",
+     "url": "https://archive.org/download/ancient_ballads_legends_hindustan_1501_librivox/balladslegendshindustan_06_dutt_64kb.mp3",
+     "seconds": 699,
+     "reader": "Lucretia B."
+    },
+    {
+     "title": "Jogadhya Uma",
+     "url": "https://archive.org/download/ancient_ballads_legends_hindustan_1501_librivox/balladslegendshindustan_07_dutt_64kb.mp3",
+     "seconds": 676,
+     "reader": "Rosslyn Carlyle"
+    },
+    {
+     "title": "The Royal Ascetic and The Hind",
+     "url": "https://archive.org/download/ancient_ballads_legends_hindustan_1501_librivox/balladslegendshindustan_08_dutt_64kb.mp3",
+     "seconds": 621,
+     "reader": "Lucretia B."
+    },
+    {
+     "title": "The Legend of Dhruva",
+     "url": "https://archive.org/download/ancient_ballads_legends_hindustan_1501_librivox/balladslegendshindustan_09_dutt_64kb.mp3",
+     "seconds": 520,
+     "reader": "Anusha Iyer"
+    },
+    {
+     "title": "Buttoo",
+     "url": "https://archive.org/download/ancient_ballads_legends_hindustan_1501_librivox/balladslegendshindustan_10_dutt_64kb.mp3",
+     "seconds": 1010,
+     "reader": "Ken Masters"
+    },
+    {
+     "title": "Sindhu",
+     "url": "https://archive.org/download/ancient_ballads_legends_hindustan_1501_librivox/balladslegendshindustan_11_dutt_64kb.mp3",
+     "seconds": 884,
+     "reader": "Rosslyn Carlyle"
+    },
+    {
+     "title": "Prehlad",
+     "url": "https://archive.org/download/ancient_ballads_legends_hindustan_1501_librivox/balladslegendshindustan_12_dutt_64kb.mp3",
+     "seconds": 1040,
+     "reader": "Rosslyn Carlyle"
+    },
+    {
+     "title": "Sîta",
+     "url": "https://archive.org/download/ancient_ballads_legends_hindustan_1501_librivox/balladslegendshindustan_13_dutt_64kb.mp3",
+     "seconds": 125,
+     "reader": "Rosslyn Carlyle"
+    },
+    {
+     "title": "Near Hastings",
+     "url": "https://archive.org/download/ancient_ballads_legends_hindustan_1501_librivox/balladslegendshindustan_14_dutt_64kb.mp3",
+     "seconds": 141,
+     "reader": "Rosslyn Carlyle"
+    },
+    {
+     "title": "France—1870",
+     "url": "https://archive.org/download/ancient_ballads_legends_hindustan_1501_librivox/balladslegendshindustan_15_dutt_64kb.mp3",
+     "seconds": 121,
+     "reader": "Rosslyn Carlyle"
+    },
+    {
+     "title": "The Tree of Life",
+     "url": "https://archive.org/download/ancient_ballads_legends_hindustan_1501_librivox/balladslegendshindustan_16_dutt_64kb.mp3",
+     "seconds": 170,
+     "reader": "Rosslyn Carlyle"
+    },
+    {
+     "title": "On the Fly Leaf of Erckmann-Chatrian's       novel entitled Madame Thérèse",
+     "url": "https://archive.org/download/ancient_ballads_legends_hindustan_1501_librivox/balladslegendshindustan_17_dutt_64kb.mp3",
+     "seconds": 123,
+     "reader": "Rosslyn Carlyle"
+    },
+    {
+     "title": "Sonnet—Baugmaree",
+     "url": "https://archive.org/download/ancient_ballads_legends_hindustan_1501_librivox/balladslegendshindustan_18_dutt_64kb.mp3",
+     "seconds": 83,
+     "reader": "Rosslyn Carlyle"
+    },
+    {
+     "title": "Sonnet—The Lotus",
+     "url": "https://archive.org/download/ancient_ballads_legends_hindustan_1501_librivox/balladslegendshindustan_19_dutt_64kb.mp3",
+     "seconds": 83,
+     "reader": "Rosslyn Carlyle"
+    },
+    {
+     "title": "Our Casuarina Tree",
+     "url": "https://archive.org/download/ancient_ballads_legends_hindustan_1501_librivox/balladslegendshindustan_20_dutt_64kb.mp3",
+     "seconds": 234,
+     "reader": "Rosslyn Carlyle"
+    }
+   ]
+  },
+  {
+   "id": "lv-10395",
+   "group": "more",
+   "app_book": null,
+   "title": "Indian Story Book",
+   "author": "Richard Wilson",
+   "translator": "",
+   "readers": [
+    "Anusha Iyer",
+    "Kate Follis",
+    "MacKenzie Nikol Greenwood",
+    "SK",
+    "Siva Shashank"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/the-indian-story-book-by-richard-wilson/",
+   "seconds": 24159,
+   "language": "English",
+   "sections": [
+    {
+     "title": "Preface",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_00_wilson_64kb.mp3",
+     "seconds": 175,
+     "reader": "Anusha Iyer"
+    },
+    {
+     "title": "Rama's Quest-Parts 1-2",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_01_wilson_64kb.mp3",
+     "seconds": 564,
+     "reader": "SK"
+    },
+    {
+     "title": "Rama's Quest-Parts 3-4",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_02_wilson_64kb.mp3",
+     "seconds": 612,
+     "reader": "SK"
+    },
+    {
+     "title": "Rama's Quest-Parts 5-6",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_03_wilson_64kb.mp3",
+     "seconds": 802,
+     "reader": "SK"
+    },
+    {
+     "title": "Rama's Quest-Parts 7-8",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_04_wilson_64kb.mp3",
+     "seconds": 618,
+     "reader": "SK"
+    },
+    {
+     "title": "Rama's Quest-Parts 9-10",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_05_wilson_64kb.mp3",
+     "seconds": 656,
+     "reader": "SK"
+    },
+    {
+     "title": "Rama's Quest-Parts 11-12",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_06_wilson_64kb.mp3",
+     "seconds": 635,
+     "reader": "SK"
+    },
+    {
+     "title": "Rama's Quest-Part 13",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_07_wilson_64kb.mp3",
+     "seconds": 321,
+     "reader": "SK"
+    },
+    {
+     "title": "The Gentle Conquerer",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_08_wilson_64kb.mp3",
+     "seconds": 868,
+     "reader": "SK"
+    },
+    {
+     "title": "The Five Tall Sons of Pandu- Part 1",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_09_wilson_64kb.mp3",
+     "seconds": 666,
+     "reader": "SK"
+    },
+    {
+     "title": "The Five Tall Sons of Pandu- Parts 2-3",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_10_wilson_64kb.mp3",
+     "seconds": 883,
+     "reader": "SK"
+    },
+    {
+     "title": "The Five Tall Sons of Pandu- Parts 4-5",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_11_wilson_64kb.mp3",
+     "seconds": 900,
+     "reader": "SK"
+    },
+    {
+     "title": "The Five Tall Sons of Pandu- Parts 6-7",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_12_wilson_64kb.mp3",
+     "seconds": 780,
+     "reader": "SK"
+    },
+    {
+     "title": "The Five Tall Sons of Pandu- Parts 8-9",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_13_wilson_64kb.mp3",
+     "seconds": 819,
+     "reader": "SK"
+    },
+    {
+     "title": "The Five Tall Sons of Pandu- Parts 10-12",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_14_wilson_64kb.mp3",
+     "seconds": 896,
+     "reader": "SK"
+    },
+    {
+     "title": "Nala The Gamester-Parts 1-2",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_15_wilson_64kb.mp3",
+     "seconds": 482,
+     "reader": "SK"
+    },
+    {
+     "title": "Nala The Gamester-Parts 3-4",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_16_wilson_64kb.mp3",
+     "seconds": 523,
+     "reader": "SK"
+    },
+    {
+     "title": "Nala The Gamester-Parts 5-6",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_17_wilson_64kb.mp3",
+     "seconds": 616,
+     "reader": "SK"
+    },
+    {
+     "title": "Nala The Gamester-Parts 7-8",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_18_wilson_64kb.mp3",
+     "seconds": 840,
+     "reader": "SK"
+    },
+    {
+     "title": "The Pool of Enchantment",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_19_wilson_64kb.mp3",
+     "seconds": 759,
+     "reader": "Kate Follis"
+    },
+    {
+     "title": "The Prince Wonderful-Part 1",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_20_wilson_64kb.mp3",
+     "seconds": 668,
+     "reader": "Siva Shashank"
+    },
+    {
+     "title": "The Prince Wonderful-Parts 2-3",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_21_wilson_64kb.mp3",
+     "seconds": 1188,
+     "reader": "SK"
+    },
+    {
+     "title": "The Prince Wonderful-Parts 4-5",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_22_wilson_64kb.mp3",
+     "seconds": 886,
+     "reader": "SK"
+    },
+    {
+     "title": "The Prince Wonderful-Parts 6- 7",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_23_wilson_64kb.mp3",
+     "seconds": 1099,
+     "reader": "SK"
+    },
+    {
+     "title": "Sabala, the Sacred Cow-Parts 1-2",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_24_wilson_64kb.mp3",
+     "seconds": 738,
+     "reader": "SK"
+    },
+    {
+     "title": "Sabala, the Sacred Cow-Part 3",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_25_wilson_64kb.mp3",
+     "seconds": 418,
+     "reader": "SK"
+    },
+    {
+     "title": "Sabala, the Sacred Cow-Parts 4-5",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_26_wilson_64kb.mp3",
+     "seconds": 611,
+     "reader": "SK"
+    },
+    {
+     "title": "Sakuntala and Dushyanta-Parts 1-2",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_27_wilson_64kb.mp3",
+     "seconds": 1086,
+     "reader": "MacKenzie Nikol Greenwood"
+    },
+    {
+     "title": "Sakuntala and Dushyanta-Parts 3-4",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_28_wilson_64kb.mp3",
+     "seconds": 798,
+     "reader": "MacKenzie Nikol Greenwood"
+    },
+    {
+     "title": "Sakuntala and Dushyanta-Parts 5-6",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_29_wilson_64kb.mp3",
+     "seconds": 1144,
+     "reader": "MacKenzie Nikol Greenwood"
+    },
+    {
+     "title": "Sakuntala and Dushyanta-Parts 7-8",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_30_wilson_64kb.mp3",
+     "seconds": 549,
+     "reader": "MacKenzie Nikol Greenwood"
+    },
+    {
+     "title": "The Great Drought-Parts 1-2",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_31_wilson_64kb.mp3",
+     "seconds": 892,
+     "reader": "SK"
+    },
+    {
+     "title": "The Great Drought-Parts 3-4",
+     "url": "https://archive.org/download/indian_story_book_1702_librivox/indianstorybook_32_wilson_64kb.mp3",
+     "seconds": 667,
+     "reader": "SK"
+    }
+   ]
+  },
+  {
+   "id": "lv-6622",
+   "group": "more",
+   "app_book": null,
+   "title": "Yoga Sutras of Patanjali",
+   "author": "Patanjali",
+   "translator": "Charles Johnston",
+   "readers": [
+    "April Gonzales",
+    "Chiquito Crasto",
+    "David Lawrence",
+    "KirksVoice",
+    "Uday Sagar",
+    "sid"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/the-yoga-sutras-of-patanjali/",
+   "seconds": 13053,
+   "language": "English",
+   "sections": [
+    {
+     "title": "Introduction to Book 1",
+     "url": "https://archive.org/download/yogasutras_1207_librivox/yogasutras_01_patanjali_64kb.mp3",
+     "seconds": 358,
+     "reader": "sid"
+    },
+    {
+     "title": "Book 1",
+     "url": "https://archive.org/download/yogasutras_1207_librivox/yogasutras_02_patanjali_64kb.mp3",
+     "seconds": 2286,
+     "reader": "Chiquito Crasto"
+    },
+    {
+     "title": "Introduction to Book 2",
+     "url": "https://archive.org/download/yogasutras_1207_librivox/yogasutras_03_patanjali_64kb.mp3",
+     "seconds": 194,
+     "reader": "David Lawrence"
+    },
+    {
+     "title": "Book 2 from 1 to 28",
+     "url": "https://archive.org/download/yogasutras_1207_librivox/yogasutras_04_patanjali_64kb.mp3",
+     "seconds": 1393,
+     "reader": "Uday Sagar"
+    },
+    {
+     "title": "Book 2 from 29th to the end",
+     "url": "https://archive.org/download/yogasutras_1207_librivox/yogasutras_05_patanjali_64kb.mp3",
+     "seconds": 1466,
+     "reader": "Uday Sagar"
+    },
+    {
+     "title": "Introduction to Book 3",
+     "url": "https://archive.org/download/yogasutras_1207_librivox/yogasutras_06_patanjali_64kb.mp3",
+     "seconds": 361,
+     "reader": "April Gonzales"
+    },
+    {
+     "title": "Book 3 from 1 to 28",
+     "url": "https://archive.org/download/yogasutras_1207_librivox/yogasutras_07_patanjali_64kb.mp3",
+     "seconds": 1726,
+     "reader": "KirksVoice"
+    },
+    {
+     "title": "Book 3 from 29th to the end",
+     "url": "https://archive.org/download/yogasutras_1207_librivox/yogasutras_08_patanjali_64kb.mp3",
+     "seconds": 2190,
+     "reader": "KirksVoice"
+    },
+    {
+     "title": "Introduction to Book 4",
+     "url": "https://archive.org/download/yogasutras_1207_librivox/yogasutras_09_patanjali_64kb.mp3",
+     "seconds": 169,
+     "reader": "Chiquito Crasto"
+    },
+    {
+     "title": "Book 4",
+     "url": "https://archive.org/download/yogasutras_1207_librivox/yogasutras_10_patanjali_64kb.mp3",
+     "seconds": 2910,
+     "reader": "Chiquito Crasto"
+    }
+   ]
+  },
+  {
+   "id": "lv-18231",
+   "group": "more",
+   "app_book": null,
+   "title": "Vedanta-Sutras with the Commentary by Sankaracarya, Volume 1",
+   "author": "Bādarāyaṇa, Adi Shankara",
+   "translator": "George Thibaut",
+   "readers": [
+    "Jeffrey Allen Stumpf"
+   ],
+   "license": "Public domain (LibriVox)",
+   "source": "https://librivox.org/the-vedanta-sutras-volume-1-by-badarayana/",
+   "seconds": 75235,
+   "language": "English",
+   "sections": [
+    {
+     "title": "Introduction Part 1",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_01_badarayana_64kb.mp3",
+     "seconds": 1586,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Introduction Part 2",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_02_badarayana_64kb.mp3",
+     "seconds": 1557,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Introduction Part 3",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_03_badarayana_64kb.mp3",
+     "seconds": 1635,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Introduction Part 4",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_04_badarayana_64kb.mp3",
+     "seconds": 1493,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Introduction Part 5",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_05_badarayana_64kb.mp3",
+     "seconds": 1509,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Introduction Part 6",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_06_badarayana_64kb.mp3",
+     "seconds": 1486,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Introduction Part 7",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_07_badarayana_64kb.mp3",
+     "seconds": 1489,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Introduction Part 8",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_08_badarayana_64kb.mp3",
+     "seconds": 1468,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Introduction Part 9",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_09_badarayana_64kb.mp3",
+     "seconds": 1621,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Introduction Part 10",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_10_badarayana_64kb.mp3",
+     "seconds": 1668,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Introduction Part 11",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_11_badarayana_64kb.mp3",
+     "seconds": 632,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Sankaracarya's Introduction",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_12_badarayana_64kb.mp3",
+     "seconds": 601,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 1, Pâda 1 Part 1",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_13_badarayana_64kb.mp3",
+     "seconds": 2497,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 1, Pâda 1 Part 2",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_14_badarayana_64kb.mp3",
+     "seconds": 1839,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 1, Pâda 1 Part 3",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_15_badarayana_64kb.mp3",
+     "seconds": 1464,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 1, Pâda 1 Part 4",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_16_badarayana_64kb.mp3",
+     "seconds": 1651,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 1, Pâda 1 Part 5",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_17_badarayana_64kb.mp3",
+     "seconds": 1992,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 1, Pâda 1 Part 6",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_18_badarayana_64kb.mp3",
+     "seconds": 1818,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 1, Pâda 1 Part 7",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_19_badarayana_64kb.mp3",
+     "seconds": 1873,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 1, Pâda 2 Part 1",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_20_badarayana_64kb.mp3",
+     "seconds": 1384,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 1, Pâda 2 Part 2",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_21_badarayana_64kb.mp3",
+     "seconds": 1701,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 1, Pâda 2 Part 3",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_22_badarayana_64kb.mp3",
+     "seconds": 1615,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 1, Pâda 2 Part 4",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_23_badarayana_64kb.mp3",
+     "seconds": 2063,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 1, Pâda 3 Part 1",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_24_badarayana_64kb.mp3",
+     "seconds": 2019,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 1, Pâda 3 Part 2",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_25_badarayana_64kb.mp3",
+     "seconds": 1604,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 1, Pâda 3 Part 3",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_26_badarayana_64kb.mp3",
+     "seconds": 1709,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 1, Pâda 3 Part 4",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_27_badarayana_64kb.mp3",
+     "seconds": 1308,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 1, Pâda 3 Part 5",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_28_badarayana_64kb.mp3",
+     "seconds": 1907,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 1, Pâda 3 Part 6",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_29_badarayana_64kb.mp3",
+     "seconds": 1689,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 1, Pâda 3 Part 7",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_30_badarayana_64kb.mp3",
+     "seconds": 1074,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 1, Pâda 4 Part 1",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_31_badarayana_64kb.mp3",
+     "seconds": 2140,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 1, Pâda 4 Part 2",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_32_badarayana_64kb.mp3",
+     "seconds": 1896,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 1, Pâda 4 Part 3",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_33_badarayana_64kb.mp3",
+     "seconds": 1616,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 1, Pâda 4 Part 4",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_34_badarayana_64kb.mp3",
+     "seconds": 1628,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 2, Pâda 1 Part 1",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_35_badarayana_64kb.mp3",
+     "seconds": 1854,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 2, Pâda 1 Part 2",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_36_badarayana_64kb.mp3",
+     "seconds": 1889,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 2, Pâda 1 Part 3",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_37_badarayana_64kb.mp3",
+     "seconds": 1818,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 2, Pâda 1 Part 4",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_38_badarayana_64kb.mp3",
+     "seconds": 1687,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 2, Pâda 1 Part 5",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_39_badarayana_64kb.mp3",
+     "seconds": 1660,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 2, Pâda 1 Part 6",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_40_badarayana_64kb.mp3",
+     "seconds": 1020,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 2, Pâda 2 Part 1",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_41_badarayana_64kb.mp3",
+     "seconds": 1566,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 2, Pâda 2 Part 2",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_42_badarayana_64kb.mp3",
+     "seconds": 1802,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 2, Pâda 2 Part 3",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_43_badarayana_64kb.mp3",
+     "seconds": 1492,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 2, Pâda 2 Part 4",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_44_badarayana_64kb.mp3",
+     "seconds": 1536,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 2, Pâda 2 Part 5",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_45_badarayana_64kb.mp3",
+     "seconds": 1584,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 2, Pâda 2 Part 6",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_46_badarayana_64kb.mp3",
+     "seconds": 1099,
+     "reader": "Jeffrey Allen Stumpf"
+    },
+    {
+     "title": "Adhyâya 2, Pâda 2 Part 7",
+     "url": "https://archive.org/download/vedantasutras1_2307_librivox/vedantasutras1_47_badarayana_64kb.mp3",
+     "seconds": 996,
+     "reader": "Jeffrey Allen Stumpf"
+    }
+   ]
+  }
+ ]
+}

@@ -193,6 +193,16 @@ put on commercial recordings, so we use none of them.
 | Surya Narayan | Public domain | Ravi Varma Press | [Commons](https://commons.wikimedia.org/wiki/File:Surya_Narayana.jpg) |
 | Surya in his chariot | CC BY 4.0 | Unknown | [Commons](https://commons.wikimedia.org/wiki/File:Surya_the_sun_deity_driving_in_his_chariot._Gouache_drawing._Wellcome_V0045217.jpg) |
 
+## Audiobooks and Gita voices (`app/assets/data/audiobooks.json`)
+
+- 30 LibriVox audiobooks (public domain: LibriVox volunteers dedicate their recordings to the public domain, and every
+  translation is out of copyright), streamed from archive.org. Each book lists its readers and LibriVox page in the
+  app. The Gita reading is LibriVox 9324, *Song Celestial* (tr. Sir Edwin Arnold), read by Jothi Tharavant.
+- Sanskrit chanting of Bhagavad Gita chapters 1-3 from Wikimedia Commons, "own work" by Soorya Hebbar (chapter 1)
+  and NehalDaveND (chapters 2 and 3, verse by verse), CC BY-SA 4.0
+  (https://creativecommons.org/licenses/by-sa/4.0/), streamed as Wikimedia's MP3 transcodes, unchanged.
+- Built by `backend/scripts/build_audiobooks.py` from a research file of verified URLs and licences.
+
 <!-- sections:start -->
 
 ## Ringtones, wallpapers, WhatsApp status and meditation (`media-sections-v1`)

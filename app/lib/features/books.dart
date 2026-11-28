@@ -8,6 +8,7 @@ import '../core/i18n.dart';
 import '../core/providers.dart';
 import '../core/storage.dart';
 import '../widgets/translatable.dart';
+import 'audiobooks.dart' show BookListenCard;
 import '../widgets/common.dart';
 import '../core/theme.dart';
 
@@ -73,7 +74,9 @@ class _BookScreenState extends ConsumerState<BookScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 sliver: SliverList.list(
                   children: [
-                    Text(b.description, style: const TextStyle(fontSize: 16, height: 1.5)),
+                    TranslatedText(b.description, style: const TextStyle(fontSize: 16, height: 1.5)),
+                    const SizedBox(height: 8),
+                    BookListenCard(slug: b.slug),
                     Attribution(b),
                     const SizedBox(height: 8),
                     if (last != null)
