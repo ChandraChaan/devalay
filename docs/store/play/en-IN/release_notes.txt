@@ -1,3 +1,4 @@
-• Chandrabalam and Tarabalam now follow the Moon through the day and show when they change.
-• Opens faster and responds sooner, especially on budget phones.
-• Fixed a rare crash when opening My Mandir.
+• About you: add your name and birth details once for your own Tarabalam, Chandrabalam and Jatakam, and a birthday wish.
+• Optional Google sign-in keeps your details when you reinstall or change phones.
+• The morning Panchang now greets you by name and says how the day looks for you.
+• Screens fit better on Android 15 and on phones with on-screen buttons.
