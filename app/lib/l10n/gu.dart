@@ -1384,8 +1384,6 @@ const stringsGu = <String, String>{
   'If this Mandir is part of your daily prayer, a small dakshina keeps Devalay free and growing.':
       'જો આ મંદિર તમારી રોજની પૂજાનો ભાગ હોય, તો નાની દક્ષિણા દેવાલયને મફત અને આગળ વધતું રાખે છે.',
   'No active Premium found for this Google account.': 'આ Google એકાઉન્ટ પર કોઈ સક્રિય પ્રીમિયમ મળ્યું નથી.',
-  'No ads ever, Mandir decorations, japa malas and extra app colours.':
-      'ક્યારેય જાહેરાત નહીં, મંદિર સજાવટ, જપ માળાઓ અને ઍપના વધારાના રંગ.',
   'Offer dakshina': 'દક્ષિણા અર્પણ કરો',
   'Payment pending. It completes once Google Play confirms it.':
       'ચુકવણી બાકી છે. Google Play પુષ્ટિ કરે એટલે પૂર્ણ થશે.',
@@ -1411,4 +1409,21 @@ const stringsGu = <String, String>{
   'Tulsi': 'તુલસી',
   'Sphatik (crystal)': 'સ્ફટિક',
   'Sandalwood': 'ચંદન',
+  // Premium chat with the developer (1.5.10).
+  'Chat directly with the developer for help and ideas': 'મદદ અને સૂચનો માટે ડેવલપર સાથે સીધી ચેટ કરો',
+  'No ads ever, chat with the developer, Mandir decorations, japa malas and extra app colours.':
+      'ક્યારેય જાહેરાત નહીં, ડેવલપર સાથે ચેટ, મંદિરની સજાવટ, જપમાળા અને એપના વધારાના રંગો.',
+  'Ask anything; replies usually within a day': 'કંઈ પણ પૂછો; જવાબ સામાન્ય રીતે એક દિવસમાં',
+  'Chat needs an internet connection. Please try again in a moment.':
+      'ચેટ માટે ઇન્ટરનેટ જરૂરી છે. થોડી વારમાં ફરી પ્રયાસ કરો.',
+  'Chat with the developer': 'ડેવલપર સાથે ચેટ',
+  'Comes with Premium 👑': 'પ્રીમિયમ સાથે 👑',
+  'Could not send. Check your internet connection and try again.':
+      'મોકલી શકાયું નહીં. ઇન્ટરનેટ તપાસીને ફરી પ્રયાસ કરો.',
+  'Premium members can chat with the developer directly. Everyone can still send ideas and problems from Send feedback.':
+      'પ્રીમિયમ સભ્યો ડેવલપર સાથે સીધી ચેટ કરી શકે છે. બાકી બધા "પ્રતિસાદ મોકલો"માંથી સૂચનો અને સમસ્યાઓ મોકલી શકે છે.',
+  'See Premium': 'પ્રીમિયમ જુઓ',
+  'Write a message': 'સંદેશ લખો',
+  'Write to the developer about anything in Devalay: a question, a problem or an idea. You will get a reply here, usually within a day 🙏':
+      'દેવાલય વિશે કંઈ પણ ડેવલપરને લખો: પ્રશ્ન, સમસ્યા કે વિચાર. જવાબ અહીં જ મળશે, સામાન્ય રીતે એક દિવસમાં 🙏',
 };

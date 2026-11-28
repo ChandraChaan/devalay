@@ -3,6 +3,20 @@
 Each milestone is a git tag and a [GitHub release](https://github.com/ChandraChaan/devalay/releases). Releases from
 v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the section below that matches the tag.
 
+## v1.5.10 — 2026-11-28
+
+Premium chat with the developer, and one less false crash.
+
+- **Chat with the developer** (Premium): from Support Devalay or the Premium screen, members write to the
+  owner and read replies in the app. Messages live in Firestore `support/{uid}/messages`; firestore.rules let a member
+  write only as 'user' and the admin only as 'admin'. The owner's admin screen has a new **Chat** tab (threads newest
+  first, unread counts) and each reply reaches the member's phone (sendPush, one install). The new `supportNotify`
+  Cloud Function tells the owner's phone (topic `admin`) when a member writes. Everyone else keeps Send feedback.
+- A dropped connection while the image cache downloads (package:http ClientException, seen on 1.5.4) is no longer
+  reported as a crash. Play vitals' only ANRs (1.5.2/1.5.4, idle main thread, no app frames) were addressed by the
+  1.5.5 startup work.
+- **Deploy order:** Firestore rules and the `supportNotify` function before this build goes out.
+
 ## v1.5.9 — 2026-11-28
 
 Premium, dakshina and Support Devalay, all through Google Play Billing with no server.

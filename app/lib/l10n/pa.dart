@@ -1389,8 +1389,6 @@ const stringsPa = <String, String>{
   'If this Mandir is part of your daily prayer, a small dakshina keeps Devalay free and growing.':
       'ਜੇ ਇਹ ਮੰਦਰ ਤੁਹਾਡੀ ਰੋਜ਼ਾਨਾ ਪੂਜਾ ਦਾ ਹਿੱਸਾ ਹੈ, ਤਾਂ ਥੋੜ੍ਹੀ ਜਿਹੀ ਦਕਸ਼ਿਣਾ ਦੇਵਾਲਯ ਨੂੰ ਮੁਫ਼ਤ ਅਤੇ ਅੱਗੇ ਵਧਦਾ ਰੱਖਦੀ ਹੈ।',
   'No active Premium found for this Google account.': 'ਇਸ Google ਖਾਤੇ \'ਤੇ ਕੋਈ ਸਰਗਰਮ ਪ੍ਰੀਮੀਅਮ ਨਹੀਂ ਮਿਲਿਆ।',
-  'No ads ever, Mandir decorations, japa malas and extra app colours.':
-      'ਕਦੇ ਇਸ਼ਤਿਹਾਰ ਨਹੀਂ, ਮੰਦਰ ਦੀ ਸਜਾਵਟ, ਜਾਪ ਮਾਲਾਵਾਂ ਅਤੇ ਐਪ ਦੇ ਵਾਧੂ ਰੰਗ।',
   'Offer dakshina': 'ਦਕਸ਼ਿਣਾ ਭੇਟ ਕਰੋ',
   'Payment pending. It completes once Google Play confirms it.':
       'ਭੁਗਤਾਨ ਬਾਕੀ ਹੈ। Google Play ਦੀ ਪੁਸ਼ਟੀ ਹੁੰਦੇ ਹੀ ਪੂਰਾ ਹੋ ਜਾਵੇਗਾ।',
@@ -1416,4 +1414,21 @@ const stringsPa = <String, String>{
   'Tulsi': 'ਤੁਲਸੀ',
   'Sphatik (crystal)': 'ਸਫਟਿਕ',
   'Sandalwood': 'ਚੰਦਨ',
+  // Premium chat with the developer (1.5.10).
+  'Chat directly with the developer for help and ideas': 'ਮਦਦ ਅਤੇ ਸੁਝਾਵਾਂ ਲਈ ਡਿਵੈਲਪਰ ਨਾਲ ਸਿੱਧੀ ਚੈਟ ਕਰੋ',
+  'No ads ever, chat with the developer, Mandir decorations, japa malas and extra app colours.':
+      'ਕਦੇ ਵੀ ਇਸ਼ਤਿਹਾਰ ਨਹੀਂ, ਡਿਵੈਲਪਰ ਨਾਲ ਚੈਟ, ਮੰਦਰ ਦੀ ਸਜਾਵਟ, ਜਪ ਮਾਲਾਵਾਂ ਅਤੇ ਐਪ ਦੇ ਵਾਧੂ ਰੰਗ।',
+  'Ask anything; replies usually within a day': 'ਕੁਝ ਵੀ ਪੁੱਛੋ; ਜਵਾਬ ਆਮ ਤੌਰ ਤੇ ਇੱਕ ਦਿਨ ਵਿੱਚ',
+  'Chat needs an internet connection. Please try again in a moment.':
+      'ਚੈਟ ਲਈ ਇੰਟਰਨੈੱਟ ਚਾਹੀਦਾ ਹੈ। ਥੋੜ੍ਹੀ ਦੇਰ ਬਾਅਦ ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ।',
+  'Chat with the developer': 'ਡਿਵੈਲਪਰ ਨਾਲ ਚੈਟ',
+  'Comes with Premium 👑': 'ਪ੍ਰੀਮੀਅਮ ਨਾਲ 👑',
+  'Could not send. Check your internet connection and try again.':
+      'ਭੇਜਿਆ ਨਹੀਂ ਜਾ ਸਕਿਆ। ਇੰਟਰਨੈੱਟ ਦੇਖ ਕੇ ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ।',
+  'Premium members can chat with the developer directly. Everyone can still send ideas and problems from Send feedback.':
+      'ਪ੍ਰੀਮੀਅਮ ਮੈਂਬਰ ਡਿਵੈਲਪਰ ਨਾਲ ਸਿੱਧੀ ਚੈਟ ਕਰ ਸਕਦੇ ਹਨ। ਬਾਕੀ ਸਾਰੇ "ਫੀਡਬੈਕ ਭੇਜੋ" ਤੋਂ ਸੁਝਾਅ ਅਤੇ ਸਮੱਸਿਆਵਾਂ ਭੇਜ ਸਕਦੇ ਹਨ।',
+  'See Premium': 'ਪ੍ਰੀਮੀਅਮ ਦੇਖੋ',
+  'Write a message': 'ਸੁਨੇਹਾ ਲਿਖੋ',
+  'Write to the developer about anything in Devalay: a question, a problem or an idea. You will get a reply here, usually within a day 🙏':
+      'ਦੇਵਾਲਯ ਬਾਰੇ ਕੁਝ ਵੀ ਡਿਵੈਲਪਰ ਨੂੰ ਲਿਖੋ: ਸਵਾਲ, ਸਮੱਸਿਆ ਜਾਂ ਸੁਝਾਅ। ਜਵਾਬ ਇੱਥੇ ਹੀ ਮਿਲੇਗਾ, ਆਮ ਤੌਰ ਤੇ ਇੱਕ ਦਿਨ ਵਿੱਚ 🙏',
 };

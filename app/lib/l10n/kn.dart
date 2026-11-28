@@ -1392,8 +1392,6 @@ const stringsKn = <String, String>{
   'If this Mandir is part of your daily prayer, a small dakshina keeps Devalay free and growing.':
       'ಈ ಮಂದಿರ ನಿಮ್ಮ ದಿನನಿತ್ಯದ ಪೂಜೆಯ ಭಾಗವಾಗಿದ್ದರೆ, ಒಂದು ಸಣ್ಣ ದಕ್ಷಿಣೆ ದೇವಾಲಯವನ್ನು ಉಚಿತವಾಗಿ ಮತ್ತು ಬೆಳೆಯುತ್ತಿರುವಂತೆ ಇರಿಸುತ್ತದೆ.',
   'No active Premium found for this Google account.': 'ಈ Google ಖಾತೆಯಲ್ಲಿ ಸಕ್ರಿಯ ಪ್ರೀಮಿಯಂ ಕಂಡುಬಂದಿಲ್ಲ.',
-  'No ads ever, Mandir decorations, japa malas and extra app colours.':
-      'ಎಂದಿಗೂ ಜಾಹೀರಾತುಗಳಿಲ್ಲ, ಮಂದಿರ ಅಲಂಕಾರಗಳು, ಜಪಮಾಲೆಗಳು ಮತ್ತು ಹೆಚ್ಚುವರಿ ಆ್ಯಪ್ ಬಣ್ಣಗಳು.',
   'Offer dakshina': 'ದಕ್ಷಿಣೆ ಸಮರ್ಪಿಸಿ',
   'Payment pending. It completes once Google Play confirms it.':
       'ಪಾವತಿ ಬಾಕಿ ಇದೆ. Google Play ದೃಢೀಕರಿಸಿದ ಕೂಡಲೇ ಪೂರ್ಣಗೊಳ್ಳುತ್ತದೆ.',
@@ -1420,4 +1418,21 @@ const stringsKn = <String, String>{
   'Tulsi': 'ತುಳಸಿ',
   'Sphatik (crystal)': 'ಸ್ಫಟಿಕ',
   'Sandalwood': 'ಶ್ರೀಗಂಧ',
+  // Premium chat with the developer (1.5.10).
+  'Chat directly with the developer for help and ideas': 'ಸಹಾಯ ಮತ್ತು ಸಲಹೆಗಳಿಗಾಗಿ ಡೆವಲಪರ್ ಜೊತೆ ನೇರವಾಗಿ ಚಾಟ್ ಮಾಡಿ',
+  'No ads ever, chat with the developer, Mandir decorations, japa malas and extra app colours.':
+      'ಎಂದಿಗೂ ಜಾಹೀರಾತುಗಳಿಲ್ಲ, ಡೆವಲಪರ್ ಜೊತೆ ಚಾಟ್, ಮಂದಿರ ಅಲಂಕಾರಗಳು, ಜಪಮಾಲೆಗಳು ಮತ್ತು ಆ್ಯಪ್‌ಗೆ ಹೆಚ್ಚುವರಿ ಬಣ್ಣಗಳು.',
+  'Ask anything; replies usually within a day': 'ಏನನ್ನಾದರೂ ಕೇಳಿ; ಉತ್ತರ ಸಾಮಾನ್ಯವಾಗಿ ಒಂದು ದಿನದೊಳಗೆ',
+  'Chat needs an internet connection. Please try again in a moment.':
+      'ಚಾಟ್‌ಗೆ ಇಂಟರ್ನೆಟ್ ಬೇಕು. ಸ್ವಲ್ಪ ಸಮಯದ ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.',
+  'Chat with the developer': 'ಡೆವಲಪರ್ ಜೊತೆ ಚಾಟ್',
+  'Comes with Premium 👑': 'ಪ್ರೀಮಿಯಂ ಜೊತೆ 👑',
+  'Could not send. Check your internet connection and try again.':
+      'ಕಳುಹಿಸಲಾಗಲಿಲ್ಲ. ಇಂಟರ್ನೆಟ್ ಪರಿಶೀಲಿಸಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.',
+  'Premium members can chat with the developer directly. Everyone can still send ideas and problems from Send feedback.':
+      'ಪ್ರೀಮಿಯಂ ಸದಸ್ಯರು ಡೆವಲಪರ್ ಜೊತೆ ನೇರವಾಗಿ ಚಾಟ್ ಮಾಡಬಹುದು. ಉಳಿದವರೆಲ್ಲರೂ "ಪ್ರತಿಕ್ರಿಯೆ ಕಳುಹಿಸಿ" ಮೂಲಕ ಸಲಹೆಗಳು ಮತ್ತು ಸಮಸ್ಯೆಗಳನ್ನು ಕಳುಹಿಸಬಹುದು.',
+  'See Premium': 'ಪ್ರೀಮಿಯಂ ನೋಡಿ',
+  'Write a message': 'ಸಂದೇಶ ಬರೆಯಿರಿ',
+  'Write to the developer about anything in Devalay: a question, a problem or an idea. You will get a reply here, usually within a day 🙏':
+      'ದೇವಾಲಯದ ಬಗ್ಗೆ ಏನನ್ನಾದರೂ ಡೆವಲಪರ್‌ಗೆ ಬರೆಯಿರಿ: ಪ್ರಶ್ನೆ, ಸಮಸ್ಯೆ ಅಥವಾ ಸಲಹೆ. ಉತ್ತರ ಇಲ್ಲೇ ಸಿಗುತ್ತದೆ, ಸಾಮಾನ್ಯವಾಗಿ ಒಂದು ದಿನದೊಳಗೆ 🙏',
 };

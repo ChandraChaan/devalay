@@ -71,6 +71,16 @@ void main() {
     await tester.pumpWidget(const SizedBox());
   });
 
+  testWidgets('Deepotsava lamps fit a narrow phone without overflow', (tester) async {
+    tester.view.physicalSize = const Size(960, 1920); // 320 x 640 dp
+    tester.view.devicePixelRatio = 3;
+    addTearDown(tester.view.reset);
+    Boxes.prefs.put('mandir_decor', MandirDecor.deepotsava.name);
+    await open(tester, FakeStore(owned: [purchase(Products.premiumYearly, PurchaseStatus.purchased)]), cachedPremium());
+    expect(tester.takeException(), isNull);
+    await tester.pumpWidget(const SizedBox());
+  });
+
   testWidgets('the dakshina button opens both ways to give', (tester) async {
     await open(tester, FakeStore());
     await tester.tap(find.text('Dakshina'));

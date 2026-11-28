@@ -10,6 +10,7 @@ import '../core/theme.dart';
 import '../core/usage.dart';
 import '../widgets/common.dart';
 import 'support.dart';
+import 'support_chat.dart';
 
 /// Optional Google Play subscription. Prices come from Play itself, the plan is cancellable anytime
 /// in Play, and every devotional feature stays free.
@@ -72,6 +73,15 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
         ),
       ),
       (
+        '💬',
+        t3(
+          lang,
+          'Chat directly with the developer for help and ideas',
+          'मदद और सुझावों के लिए डेवलपर से सीधे बात करें',
+          'సహాయం, సూచనల కోసం డెవలపర్‌తో నేరుగా మాట్లాడండి',
+        ),
+      ),
+      (
         '👑',
         t3(
           lang,
@@ -123,6 +133,7 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
               title: Text(text),
             ),
           const SizedBox(height: 12),
+          if (premium) ...[const ChatEntryTile(), const SizedBox(height: 8)],
           if (premium)
             OutlinedButton.icon(
               onPressed: () => launchUrl(

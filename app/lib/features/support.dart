@@ -12,6 +12,7 @@ import '../core/temples.dart';
 import '../core/theme.dart';
 import '../core/usage.dart';
 import '../widgets/common.dart';
+import 'support_chat.dart';
 import 'temples.dart';
 
 /// Shows what happened to a purchase started on this screen: thanks, pending or failed.
@@ -115,6 +116,10 @@ class SupportAmounts extends ConsumerWidget {
     final s = ref.watch(billingProvider);
     final lang = uiLang(ref);
     final products = s.supportProducts(ids);
+    // Opened in the first seconds after launch: connect to Play now instead of waiting.
+    if (!s.ready && ref.read(billingSupportedProvider)) {
+      Future.microtask(() => ref.read(billingProvider.notifier).start());
+    }
     final muted = TextStyle(color: dark ? Colors.white70 : null);
     if (!s.ready) {
       return const Padding(
@@ -364,6 +369,7 @@ class _SupportScreenState extends ConsumerState<SupportScreen> {
                 onTap: () => context.push('/premium?from=support'),
               ),
             ),
+          const ChatEntryTile(),
           SectionHeader(t3(lang, 'Free ways to help', 'मदद के मुफ़्त तरीके', 'ఉచితంగా సహాయపడే మార్గాలు')),
           Card(
             child: Column(
@@ -421,9 +427,9 @@ class _SupportScreenState extends ConsumerState<SupportScreen> {
 /// One line on what Premium adds, for cards that link to it.
 String premiumPitch(String lang) => t3(
   lang,
-  'No ads ever, Mandir decorations, japa malas and extra app colours.',
-  'कभी विज्ञापन नहीं, मंदिर की सजावट, जप मालाएँ और ऐप के नए रंग।',
-  'ఎప్పుడూ ప్రకటనలు లేవు, మందిర అలంకరణలు, జప మాలలు, యాప్‌కు అదనపు రంగులు.',
+  'No ads ever, chat with the developer, Mandir decorations, japa malas and extra app colours.',
+  'कभी विज्ञापन नहीं, डेवलपर से बातचीत, मंदिर की सजावट, जप मालाएँ और ऐप के नए रंग।',
+  'ఎప్పుడూ ప్రకటనలు లేవు, డెవలపర్‌తో చాట్, మందిర అలంకరణలు, జప మాలలు, యాప్‌కు అదనపు రంగులు.',
 );
 
 /// Whether to show the one gentle "support Devalay" card: after a 7-day Mandir streak (or longer),
