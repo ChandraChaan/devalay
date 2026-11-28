@@ -392,7 +392,14 @@ class BillingController extends Notifier<BillingState> {
 
 final billingProvider = NotifierProvider<BillingController, BillingState>(BillingController.new);
 
+/// Debug builds started with `--dart-define=DEBUG_PREMIUM=true` act as Premium, to try the member
+/// features on an emulator without Google Play. Release builds ignore it ([kDebugMode] is false).
+const debugPremium = kDebugMode && bool.fromEnvironment('DEBUG_PREMIUM');
+
 /// Premium from Google Play, or from the account on server builds.
 final premiumProvider = Provider<bool>(
-  (ref) => ref.watch(billingProvider.select((s) => s.premium)) || ref.watch(authProvider.select((a) => a.isPremium)),
+  (ref) =>
+      debugPremium ||
+      ref.watch(billingProvider.select((s) => s.premium)) ||
+      ref.watch(authProvider.select((a) => a.isPremium)),
 );

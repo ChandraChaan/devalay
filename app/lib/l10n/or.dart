@@ -1388,8 +1388,6 @@ const stringsOr = <String, String>{
   'If this Mandir is part of your daily prayer, a small dakshina keeps Devalay free and growing.':
       'ଏହି ମନ୍ଦିର ଯଦି ଆପଣଙ୍କ ଦୈନିକ ପୂଜାର ଅଂଶ, ଛୋଟ ଦକ୍ଷିଣାଟିଏ ଦେବାଳୟକୁ ମାଗଣା ଓ ଆଗକୁ ବଢ଼ୁଥିବା ଅବସ୍ଥାରେ ରଖେ।',
   'No active Premium found for this Google account.': 'ଏହି Google ଆକାଉଣ୍ଟରେ କୌଣସି ସକ୍ରିୟ ପ୍ରିମିୟମ୍ ମିଳିଲା ନାହିଁ।',
-  'No ads ever, Mandir decorations, japa malas and extra app colours.':
-      'କେବେ ବି ବିଜ୍ଞାପନ ନାହିଁ, ମନ୍ଦିର ସାଜସଜ୍ଜା, ଜପମାଳା ଓ ଅତିରିକ୍ତ ଆପ୍ ରଙ୍ଗ।',
   'Offer dakshina': 'ଦକ୍ଷିଣା ଅର୍ପଣ କରନ୍ତୁ',
   'Payment pending. It completes once Google Play confirms it.':
       'ପେମେଣ୍ଟ ବାକି ଅଛି। Google Play ନିଶ୍ଚିତ କଲା ପରେ ସମ୍ପୂର୍ଣ୍ଣ ହେବ।',
@@ -1415,4 +1413,21 @@ const stringsOr = <String, String>{
   'Tulsi': 'ତୁଳସୀ',
   'Sphatik (crystal)': 'ସ୍ଫଟିକ',
   'Sandalwood': 'ଚନ୍ଦନ',
+  // Premium chat with the developer (1.5.10).
+  'Chat directly with the developer for help and ideas': 'ସାହାଯ୍ୟ ଓ ପରାମର୍ଶ ପାଇଁ ଡେଭେଲପରଙ୍କ ସହ ସିଧାସଳଖ ଚାଟ୍ କରନ୍ତୁ',
+  'No ads ever, chat with the developer, Mandir decorations, japa malas and extra app colours.':
+      'କେବେ ବି ବିଜ୍ଞାପନ ନାହିଁ, ଡେଭେଲପରଙ୍କ ସହ ଚାଟ୍, ମନ୍ଦିର ସାଜସଜ୍ଜା, ଜପମାଳା ଓ ଆପ୍‌ର ଅତିରିକ୍ତ ରଙ୍ଗ।',
+  'Ask anything; replies usually within a day': 'ଯାହା ବି ପଚାରନ୍ତୁ; ଉତ୍ତର ସାଧାରଣତଃ ଗୋଟିଏ ଦିନ ଭିତରେ',
+  'Chat needs an internet connection. Please try again in a moment.':
+      'ଚାଟ୍ ପାଇଁ ଇଣ୍ଟରନେଟ୍ ଦରକାର। ଟିକେ ପରେ ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ।',
+  'Chat with the developer': 'ଡେଭେଲପରଙ୍କ ସହ ଚାଟ୍',
+  'Comes with Premium 👑': 'ପ୍ରିମିୟମ୍ ସହ 👑',
+  'Could not send. Check your internet connection and try again.':
+      'ପଠାଯାଇପାରିଲା ନାହିଁ। ଇଣ୍ଟରନେଟ୍ ଦେଖି ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ।',
+  'Premium members can chat with the developer directly. Everyone can still send ideas and problems from Send feedback.':
+      'ପ୍ରିମିୟମ୍ ସଦସ୍ୟମାନେ ଡେଭେଲପରଙ୍କ ସହ ସିଧାସଳଖ ଚାଟ୍ କରିପାରିବେ। ଅନ୍ୟ ସମସ୍ତେ "ମତାମତ ପଠାନ୍ତୁ"ରୁ ପରାମର୍ଶ ଓ ସମସ୍ୟା ପଠାଇପାରିବେ।',
+  'See Premium': 'ପ୍ରିମିୟମ୍ ଦେଖନ୍ତୁ',
+  'Write a message': 'ବାର୍ତ୍ତା ଲେଖନ୍ତୁ',
+  'Write to the developer about anything in Devalay: a question, a problem or an idea. You will get a reply here, usually within a day 🙏':
+      'ଦେବାଳୟ ବିଷୟରେ ଯାହା ବି ଡେଭେଲପରଙ୍କୁ ଲେଖନ୍ତୁ: ପ୍ରଶ୍ନ, ସମସ୍ୟା କିମ୍ବା ପରାମର୍ଶ। ଉତ୍ତର ଏଠାରେ ମିଳିବ, ସାଧାରଣତଃ ଗୋଟିଏ ଦିନ ଭିତରେ 🙏',
 };

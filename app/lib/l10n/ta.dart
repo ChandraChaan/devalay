@@ -1406,8 +1406,6 @@ const stringsTa = <String, String>{
   'If this Mandir is part of your daily prayer, a small dakshina keeps Devalay free and growing.':
       'இந்தக் கோயில் உங்கள் தினசரி வழிபாட்டின் ஒரு பகுதி என்றால், ஒரு சிறு தட்சிணை Devalay-ஐ இலவசமாகவும் வளர்ச்சியுடனும் வைக்கும்.',
   'No active Premium found for this Google account.': 'இந்த Google கணக்கில் செயலில் உள்ள பிரீமியம் எதுவும் இல்லை.',
-  'No ads ever, Mandir decorations, japa malas and extra app colours.':
-      'எப்போதும் விளம்பரமில்லை, கோயில் அலங்காரங்கள், ஜபமாலைகள், கூடுதல் ஆப் வண்ணங்கள்.',
   'Offer dakshina': 'தட்சிணை சமர்ப்பியுங்கள்',
   'Payment pending. It completes once Google Play confirms it.':
       'கட்டணம் நிலுவையில் உள்ளது. Google Play உறுதிசெய்ததும் நிறைவடையும்.',
@@ -1433,4 +1431,22 @@ const stringsTa = <String, String>{
   'Tulsi': 'துளசி',
   'Sphatik (crystal)': 'ஸ்படிகம்',
   'Sandalwood': 'சந்தனம்',
+  // Premium chat with the developer (1.5.10).
+  'Chat directly with the developer for help and ideas':
+      'உதவி மற்றும் யோசனைகளுக்கு டெவலப்பருடன் நேரடியாக அரட்டையடிக்கவும்',
+  'No ads ever, chat with the developer, Mandir decorations, japa malas and extra app colours.':
+      'எப்போதும் விளம்பரம் இல்லை, டெவலப்பருடன் அரட்டை, கோயில் அலங்காரங்கள், ஜப மாலைகள், கூடுதல் ஆப் நிறங்கள்.',
+  'Ask anything; replies usually within a day': 'எதையும் கேளுங்கள்; பதில் பொதுவாக ஒரு நாளுக்குள்',
+  'Chat needs an internet connection. Please try again in a moment.':
+      'அரட்டைக்கு இணையம் தேவை. சிறிது நேரம் கழித்து மீண்டும் முயலவும்.',
+  'Chat with the developer': 'டெவலப்பருடன் அரட்டை',
+  'Comes with Premium 👑': 'பிரீமியத்துடன் 👑',
+  'Could not send. Check your internet connection and try again.':
+      'அனுப்ப முடியவில்லை. இணையத்தைச் சரிபார்த்து மீண்டும் முயலவும்.',
+  'Premium members can chat with the developer directly. Everyone can still send ideas and problems from Send feedback.':
+      'பிரீமியம் உறுப்பினர்கள் டெவலப்பருடன் நேரடியாக அரட்டையடிக்கலாம். மற்ற அனைவரும் "கருத்து அனுப்பு" மூலம் யோசனைகளையும் சிக்கல்களையும் அனுப்பலாம்.',
+  'See Premium': 'பிரீமியத்தைப் பார்க்கவும்',
+  'Write a message': 'செய்தி எழுதுங்கள்',
+  'Write to the developer about anything in Devalay: a question, a problem or an idea. You will get a reply here, usually within a day 🙏':
+      'Devalay பற்றி எதையும் டெவலப்பருக்கு எழுதுங்கள்: கேள்வி, சிக்கல் அல்லது யோசனை. பதில் இங்கேயே, பொதுவாக ஒரு நாளுக்குள் கிடைக்கும் 🙏',
 };

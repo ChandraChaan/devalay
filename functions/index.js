@@ -4,6 +4,7 @@
 // campaigns/{id}; installs add their opens to it (firestore.rules), so the admin sees an open rate.
 
 const { onCall, HttpsError } = require('firebase-functions/v2/https');
+const { onDocumentCreated } = require('firebase-functions/v2/firestore');
 const { setGlobalOptions, logger } = require('firebase-functions/v2');
 const { initializeApp } = require('firebase-admin/app');
 const { getFirestore, FieldValue } = require('firebase-admin/firestore');
@@ -95,4 +96,22 @@ exports.sendPush = onCall(async (request) => {
   await ref.update({ status: 'sent', sent, failed });
   logger.info('sendPush', { id: ref.id, audience: req.audience, reach: estimate, sent, failed });
   return { id: ref.id, reach: estimate, sent, failed };
+});
+
+// Premium support chat: a member's message reaches the owner's phone. The admin screen subscribes
+// that phone to the 'admin' topic, so no install ids or tokens are needed here.
+exports.supportNotify = onDocumentCreated('support/{uid}/messages/{id}', async (event) => {
+  const m = event.data && event.data.data();
+  if (!m || m.from !== 'user' || typeof m.text !== 'string') return;
+  const body = m.text.length > 120 ? `${m.text.slice(0, 117)}…` : m.text;
+  try {
+    await getMessaging().send({
+      topic: 'admin',
+      notification: { title: 'New Premium chat message', body },
+      data: { c: '', link: 'devalay://admin' },
+      android: { priority: 'high', notification: { channelId: 'announcements', icon: 'ic_notification' } },
+    });
+  } catch (e) {
+    logger.warn('supportNotify failed', event.params.uid, e.message);
+  }
 });

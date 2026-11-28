@@ -281,9 +281,10 @@ class _MandirScreenState extends ConsumerState<MandirScreen> with TickerProvider
                             ),
                             if (decor.lamps)
                               Positioned(
-                                bottom: 0,
-                                left: 64,
-                                right: 64,
+                                // Above the corner buttons, at the outer edges, clear of the main diya.
+                                bottom: 84,
+                                left: 16,
+                                right: 16,
                                 child: IgnorePointer(
                                   child: _LampRow(flame: _flame, bowl: decor.bowl),
                                 ),
@@ -682,36 +683,39 @@ class _Action extends StatelessWidget {
   final bool active;
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          AnimatedContainer(
-            duration: const Duration(milliseconds: 250),
-            width: 58,
-            height: 58,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: active ? Palette.gold.withValues(alpha: 0.3) : Colors.white10,
-              border: Border.all(color: active ? Palette.gold : Colors.white24, width: 1.5),
+    // Each action takes an equal share of the row, so five fit on a 320 dp phone.
+    return Expanded(
+      child: GestureDetector(
+        onTap: onTap,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            AnimatedContainer(
+              duration: const Duration(milliseconds: 250),
+              width: 58,
+              height: 58,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: active ? Palette.gold.withValues(alpha: 0.3) : Colors.white10,
+                border: Border.all(color: active ? Palette.gold : Colors.white24, width: 1.5),
+              ),
+              child: Text(emoji, style: const TextStyle(fontSize: 26)),
             ),
-            child: Text(emoji, style: const TextStyle(fontSize: 26)),
-          ),
-          const SizedBox(height: 6),
-          SizedBox(
-            width: 70,
-            child: Text(
-              label,
-              textAlign: TextAlign.center,
-              maxLines: 2,
-              style: const TextStyle(color: Colors.white, fontSize: 11.5, height: 1.1),
+            const SizedBox(height: 6),
+            SizedBox(
+              width: double.infinity,
+              child: Text(
+                label,
+                textAlign: TextAlign.center,
+                maxLines: 2,
+                style: const TextStyle(color: Colors.white, fontSize: 11.5, height: 1.1),
+              ),
             ),
-          ),
-        ],
-      ),
-    ).animate(target: active ? 1 : 0).scaleXY(end: 1.06, duration: 200.ms);
+          ],
+        ),
+      ).animate(target: active ? 1 : 0).scaleXY(end: 1.06, duration: 200.ms),
+    );
   }
 }
 
@@ -726,11 +730,11 @@ class _LampRow extends StatelessWidget {
     return AnimatedBuilder(
       animation: flame,
       builder: (_, _) => Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          for (var i = 0; i < 6; i++)
-            if (i == 3)
-              const SizedBox(width: 110)
+          // Two small lamps on each side; the gap between them stretches with the screen.
+          for (var i = 0; i < 5; i++)
+            if (i == 2)
+              const Spacer()
             else
               SizedBox(
                 width: 30,

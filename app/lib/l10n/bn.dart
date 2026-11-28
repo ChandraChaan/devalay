@@ -1387,8 +1387,6 @@ const stringsBn = <String, String>{
   'If this Mandir is part of your daily prayer, a small dakshina keeps Devalay free and growing.':
       'এই মন্দির যদি আপনার দৈনিক পূজার অংশ হয়, তবে একটু দক্ষিণা দেবালয়কে বিনামূল্যে রাখে ও এগিয়ে নিয়ে যায়।',
   'No active Premium found for this Google account.': 'এই Google অ্যাকাউন্টে কোনো সক্রিয় প্রিমিয়াম পাওয়া যায়নি।',
-  'No ads ever, Mandir decorations, japa malas and extra app colours.':
-      'কখনো বিজ্ঞাপন নেই, মন্দিরের সাজসজ্জা, জপমালা ও অ্যাপের বাড়তি রং।',
   'Offer dakshina': 'দক্ষিণা অর্পণ করুন',
   'Payment pending. It completes once Google Play confirms it.':
       'পেমেন্ট বাকি আছে। Google Play নিশ্চিত করলেই সম্পূর্ণ হবে।',
@@ -1414,4 +1412,20 @@ const stringsBn = <String, String>{
   'Tulsi': 'তুলসী',
   'Sphatik (crystal)': 'স্ফটিক',
   'Sandalwood': 'চন্দন',
+  // Premium chat with the developer (1.5.10).
+  'Chat directly with the developer for help and ideas': 'সাহায্য ও পরামর্শের জন্য ডেভেলপারের সঙ্গে সরাসরি চ্যাট করুন',
+  'No ads ever, chat with the developer, Mandir decorations, japa malas and extra app colours.':
+      'কখনও বিজ্ঞাপন নেই, ডেভেলপারের সঙ্গে চ্যাট, মন্দিরের সাজ, জপমালা এবং অ্যাপের বাড়তি রং।',
+  'Ask anything; replies usually within a day': 'যা খুশি জিজ্ঞাসা করুন; সাধারণত এক দিনের মধ্যে উত্তর',
+  'Chat needs an internet connection. Please try again in a moment.':
+      'চ্যাটের জন্য ইন্টারনেট দরকার। একটু পরে আবার চেষ্টা করুন।',
+  'Chat with the developer': 'ডেভেলপারের সঙ্গে চ্যাট',
+  'Comes with Premium 👑': 'প্রিমিয়ামের সঙ্গে 👑',
+  'Could not send. Check your internet connection and try again.': 'পাঠানো যায়নি। ইন্টারনেট দেখে আবার চেষ্টা করুন।',
+  'Premium members can chat with the developer directly. Everyone can still send ideas and problems from Send feedback.':
+      'প্রিমিয়াম সদস্যরা ডেভেলপারের সঙ্গে সরাসরি চ্যাট করতে পারেন। অন্য সবাই "মতামত পাঠান" থেকে পরামর্শ ও সমস্যা পাঠাতে পারেন।',
+  'See Premium': 'প্রিমিয়াম দেখুন',
+  'Write a message': 'বার্তা লিখুন',
+  'Write to the developer about anything in Devalay: a question, a problem or an idea. You will get a reply here, usually within a day 🙏':
+      'দেবালয় নিয়ে যা খুশি ডেভেলপারকে লিখুন: প্রশ্ন, সমস্যা বা পরামর্শ। উত্তর এখানেই পাবেন, সাধারণত এক দিনের মধ্যে 🙏',
 };

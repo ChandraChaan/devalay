@@ -39,6 +39,7 @@ import 'features/player.dart';
 import 'features/pooja.dart';
 import 'features/premium.dart';
 import 'features/support.dart';
+import 'features/support_chat.dart';
 import 'features/jatakam.dart';
 import 'features/rashifal.dart';
 import 'features/shubha_muhurtham.dart';
@@ -179,6 +180,7 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: '/premium',
         builder: (_, s) => PremiumScreen(source: s.uri.queryParameters['from'] ?? ''),
       ),
+      GoRoute(path: '/support/chat', builder: (_, _) => const SupportChatScreen()),
       GoRoute(
         path: '/support',
         builder: (_, s) => SupportScreen(source: s.uri.queryParameters['from'] ?? 'more'),

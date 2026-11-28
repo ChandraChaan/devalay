@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:http/http.dart' as http;
 
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -162,6 +163,8 @@ int versionCodeOf(String version) {
 bool isNetworkFailure(Object error) => switch (error) {
   ApiException(isOffline: true) => true,
   SocketException() || HttpException() || HandshakeException() || TimeoutException() => true,
+  // package:http (used by the image cache) wraps a failed lookup or dropped connection in ClientException.
+  http.ClientException() => true,
   DioException(:final type) =>
     type == DioExceptionType.connectionError ||
         type == DioExceptionType.connectionTimeout ||

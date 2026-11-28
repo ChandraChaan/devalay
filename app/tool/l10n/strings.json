@@ -7050,6 +7050,12 @@
   "where": "lib/features/premium.dart"
  },
  {
+  "en": "Chat directly with the developer for help and ideas",
+  "hi": "मदद और सुझावों के लिए डेवलपर से सीधे बात करें",
+  "te": "సహాయం, సూచనల కోసం డెవలపర్‌తో నేరుగా మాట్లాడండి",
+  "where": "lib/features/premium.dart"
+ },
+ {
   "en": "Every aarti, mantra, scripture, Panchang and the Mandir are free forever. Premium adds a few beautiful extras and keeps the app ad-free.",
   "hi": "हर आरती, मंत्र, शास्त्र, पंचांग और मंदिर हमेशा मुफ़्त हैं। प्रीमियम कुछ सुंदर अतिरिक्त चीज़ें जोड़ता है और ऐप को विज्ञापन-मुक्त रखता है।",
   "te": "ప్రతి హారతి, మంత్రం, గ్రంథం, పంచాంగం, మందిరం ఎప్పటికీ ఉచితమే. ప్రీమియం కొన్ని అందమైన అదనపు సౌకర్యాలు జోడిస్తుంది, యాప్‌ను ప్రకటనలు లేకుండా ఉంచుతుంది.",
@@ -7686,9 +7692,9 @@
   "where": "lib/features/support.dart"
  },
  {
-  "en": "No ads ever, Mandir decorations, japa malas and extra app colours.",
-  "hi": "कभी विज्ञापन नहीं, मंदिर की सजावट, जप मालाएँ और ऐप के नए रंग।",
-  "te": "ఎప్పుడూ ప్రకటనలు లేవు, మందిర అలంకరణలు, జప మాలలు, యాప్‌కు అదనపు రంగులు.",
+  "en": "No ads ever, chat with the developer, Mandir decorations, japa malas and extra app colours.",
+  "hi": "कभी विज्ञापन नहीं, डेवलपर से बातचीत, मंदिर की सजावट, जप मालाएँ और ऐप के नए रंग।",
+  "te": "ఎప్పుడూ ప్రకటనలు లేవు, డెవలపర్‌తో చాట్, మందిర అలంకరణలు, జప మాలలు, యాప్‌కు అదనపు రంగులు.",
   "where": "lib/features/support.dart"
  },
  {
@@ -7750,6 +7756,60 @@
   "hi": "आपकी भेंट देवालय को हर भक्त के लिए मुफ़्त रखती है। ईश्वर आपको और आपके परिवार को आशीर्वाद दें।",
   "te": "మీ కానుక దేవాలయంను ప్రతి భక్తునికీ ఉచితంగా ఉంచుతుంది. భగవంతుడు మిమ్మల్ని, మీ కుటుంబాన్ని ఆశీర్వదించుగాక.",
   "where": "lib/features/support.dart"
+ },
+ {
+  "en": "Ask anything; replies usually within a day",
+  "hi": "कुछ भी पूछें; जवाब आमतौर पर एक दिन में",
+  "te": "ఏదైనా అడగండి; సమాధానం సాధారణంగా ఒక రోజులో",
+  "where": "lib/features/support_chat.dart"
+ },
+ {
+  "en": "Chat needs an internet connection. Please try again in a moment.",
+  "hi": "चैट के लिए इंटरनेट चाहिए। थोड़ी देर बाद फिर कोशिश करें।",
+  "te": "చాట్‌కు ఇంటర్నెట్ అవసరం. కాసేపటి తర్వాత మళ్లీ ప్రయత్నించండి.",
+  "where": "lib/features/support_chat.dart"
+ },
+ {
+  "en": "Chat with the developer",
+  "hi": "डेवलपर से बात करें",
+  "te": "డెవలపర్‌తో మాట్లాడండి",
+  "where": "lib/features/support_chat.dart"
+ },
+ {
+  "en": "Comes with Premium 👑",
+  "hi": "प्रीमियम के साथ 👑",
+  "te": "ప్రీమియంతో 👑",
+  "where": "lib/features/support_chat.dart"
+ },
+ {
+  "en": "Could not send. Check your internet connection and try again.",
+  "hi": "भेजा नहीं जा सका। इंटरनेट जाँचकर फिर कोशिश करें।",
+  "te": "పంపలేకపోయాం. ఇంటర్నెట్ చూసి మళ్లీ ప్రయత్నించండి.",
+  "where": "lib/features/support_chat.dart"
+ },
+ {
+  "en": "Premium members can chat with the developer directly. Everyone can still send ideas and problems from Send feedback.",
+  "hi": "प्रीमियम सदस्य डेवलपर से सीधे बात कर सकते हैं। बाकी सभी \"सुझाव भेजें\" से अपने सुझाव और समस्याएँ भेज सकते हैं।",
+  "te": "ప్రీమియం సభ్యులు డెవలపర్‌తో నేరుగా మాట్లాడవచ్చు. మిగతా అందరూ \"సూచనలు పంపండి\" ద్వారా సూచనలు, సమస్యలు పంపవచ్చు.",
+  "where": "lib/features/support_chat.dart"
+ },
+ {
+  "en": "See Premium",
+  "hi": "प्रीमियम देखें",
+  "te": "ప్రీమియం చూడండి",
+  "where": "lib/features/support_chat.dart"
+ },
+ {
+  "en": "Write a message",
+  "hi": "संदेश लिखें",
+  "te": "సందేశం రాయండి",
+  "where": "lib/features/support_chat.dart"
+ },
+ {
+  "en": "Write to the developer about anything in Devalay: a question, a problem or an idea. You will get a reply here, usually within a day 🙏",
+  "hi": "देवालय के बारे में कुछ भी लिखें: सवाल, समस्या या सुझाव। जवाब यहीं मिलेगा, आमतौर पर एक दिन में 🙏",
+  "te": "దేవాలయం గురించి ఏదైనా రాయండి: ప్రశ్న, సమస్య లేదా సూచన. సమాధానం ఇక్కడే వస్తుంది, సాధారణంగా ఒక రోజులో 🙏",
+  "where": "lib/features/support_chat.dart"
  },
  {
   "en": ", for visits in the next month",

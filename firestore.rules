@@ -45,6 +45,19 @@ service cloud.firestore {
         && (!('nw' in d) || d.nw is int);
     }
 
+    // The member's own summary of their chat thread: either a message they just sent, or marking
+    // the owner's replies as read.
+    function memberThread() {
+      let d = request.resource.data;
+      return d.keys().hasOnly(['uid', 'lang', 'v', 'premium', 'updated', 'last', 'lastFrom', 'unreadAdmin', 'unreadUser'])
+        && d.get('uid', request.auth.uid) == request.auth.uid
+        && (
+          (d.lastFrom == 'user' && d.last is string && d.last.size() <= 120 && d.updated == request.time
+            && d.unreadUser == 0 && d.unreadAdmin is int)
+          || (resource != null && d.diff(resource.data).affectedKeys().hasOnly(['unreadUser']) && d.unreadUser == 0)
+        );
+    }
+
     match /installs/{uid} {
       allow read: if isAdmin() || (signedIn() && request.auth.uid == uid);
       allow create: if signedIn() && request.auth.uid == uid && installShape()
@@ -89,6 +102,27 @@ service cloud.firestore {
       allow read, delete: if isAdmin();
       allow update: if isAdmin()
         && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['done', 'status', 'note']);
+    }
+
+    // Premium support chat: one thread per install. The member writes as 'user', the owner's admin
+    // screen as 'admin'; each side can only add messages in its own role. Messages are never edited.
+    match /support/{uid} {
+      allow read: if isAdmin() || (signedIn() && request.auth.uid == uid);
+      allow create, update: if isAdmin() || (signedIn() && request.auth.uid == uid && memberThread());
+      allow delete: if isAdmin() || (signedIn() && request.auth.uid == uid);
+
+      match /messages/{id} {
+        allow read: if isAdmin() || (signedIn() && request.auth.uid == uid);
+        allow create: if request.resource.data.keys().hasOnly(['from', 'text', 'at'])
+          && request.resource.data.at == request.time
+          && request.resource.data.text is string
+          && request.resource.data.text.size() > 0
+          && request.resource.data.text.size() <= 1000
+          && ((signedIn() && request.auth.uid == uid && request.resource.data.from == 'user')
+            || (isAdmin() && request.resource.data.from == 'admin'));
+        allow update: if false;
+        allow delete: if isAdmin() || (signedIn() && request.auth.uid == uid);
+      }
     }
 
     // Pushes sent from the admin screen. Written only by the sendPush Cloud Function (Admin SDK);

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -12,6 +13,7 @@ import '../core/dev_emulators.dart';
 import '../core/firebase.dart';
 import '../core/theme.dart';
 import '../core/usage.dart';
+import 'admin_chat.dart';
 import 'admin_send.dart';
 
 /// Web OAuth client of the devalay-chandra project: Google returns an ID token for it, which
@@ -111,8 +113,9 @@ class _SignInState extends State<_SignIn> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Admin')),
+      // Scrolls, so the sign-in fields stay usable with the keyboard open.
       body: Center(
-        child: Padding(
+        child: SingleChildScrollView(
           padding: const EdgeInsets.all(32),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -355,12 +358,14 @@ class _Dashboard extends ConsumerStatefulWidget {
 }
 
 class _DashboardState extends ConsumerState<_Dashboard> with SingleTickerProviderStateMixin {
-  late final _tabs = TabController(length: 5, vsync: this);
+  late final _tabs = TabController(length: 6, vsync: this);
 
   @override
   void initState() {
     super.initState();
     Usage.rtdb.goOnline();
+    // Premium chat messages reach this phone (functions/index.js supportNotify).
+    unawaited(FirebaseMessaging.instance.subscribeToTopic('admin').catchError((Object _) {}));
   }
 
   @override
@@ -398,6 +403,7 @@ class _DashboardState extends ConsumerState<_Dashboard> with SingleTickerProvide
             Tab(text: 'Users'),
             Tab(text: 'Send'),
             Tab(text: 'Feedback'),
+            Tab(text: 'Chat'),
           ],
         ),
       ),
@@ -409,6 +415,7 @@ class _DashboardState extends ConsumerState<_Dashboard> with SingleTickerProvide
           const _UsersTab(),
           SendTab(key: ValueKey(ref.watch(_sendTo)), installs: installs, initialUser: ref.watch(_sendTo)),
           const _FeedbackTab(),
+          const AdminChatTab(),
         ],
       ),
     );
