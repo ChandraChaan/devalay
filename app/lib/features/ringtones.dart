@@ -327,7 +327,7 @@ class _RingtonesScreenState extends ConsumerState<RingtonesScreen> {
                           ],
                         ),
                         Text(
-                          '${r.seconds.round()}s · ${deityName(r.deity, lang)} · ${r.credit.author.split(' · ').first}',
+                          '${r.seconds.round()}s · ${deityName(r.deity, lang)}',
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: Theme.of(context).textTheme.bodySmall,

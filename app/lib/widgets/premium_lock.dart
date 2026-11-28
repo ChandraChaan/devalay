@@ -73,7 +73,7 @@ class _WatermarkPainter extends CustomPainter {
       text: TextSpan(
         text: '👑 DEVALAY PREMIUM   ',
         style: TextStyle(
-          color: Colors.white.withValues(alpha: 0.28),
+          color: Colors.white.withValues(alpha: 0.2),
           fontSize: math.max(12, size.width / 22),
           fontWeight: FontWeight.w800,
           letterSpacing: 2,

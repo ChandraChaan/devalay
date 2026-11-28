@@ -368,74 +368,70 @@ class _VideoPageState extends ConsumerState<_VideoPage> {
     final locked = isLocked(v, premium: ref.watch(premiumProvider));
     final c = _c;
     final ready = c != null && c.value.isInitialized;
-    return Stack(
-      fit: StackFit.expand,
+    // The video whole on top (its verse is part of the picture), the actions below it, never over it.
+    return Column(
       children: [
-        GestureDetector(
-          onTap: () => ready ? (c.value.isPlaying ? c.pause() : c.play()) : null,
-          child: PremiumWatermark(
-            enabled: locked,
-            child: Center(
-              child: AspectRatio(aspectRatio: 9 / 16, child: ready ? VideoPlayer(c) : NetImage(v.poster)),
-            ),
+        SizedBox(height: MediaQuery.paddingOf(context).top + kToolbarHeight),
+        Expanded(
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+              GestureDetector(
+                onTap: () => ready ? (c.value.isPlaying ? c.pause() : c.play()) : null,
+                child: PremiumWatermark(
+                  enabled: locked,
+                  child: Center(
+                    child: AspectRatio(aspectRatio: 9 / 16, child: ready ? VideoPlayer(c) : NetImage(v.poster)),
+                  ),
+                ),
+              ),
+              if (!ready) const Center(child: CircularProgressIndicator(color: Colors.white)),
+            ],
           ),
         ),
-        if (!ready) const Center(child: CircularProgressIndicator(color: Colors.white)),
-        Positioned(
-          left: 0,
-          right: 0,
-          bottom: 0,
-          child: Container(
-            padding: EdgeInsets.fromLTRB(16, 40, 16, 16 + MediaQuery.paddingOf(context).bottom),
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [Colors.transparent, Color(0xDD000000)],
+        Container(
+          padding: EdgeInsets.fromLTRB(16, 8, 16, 12 + MediaQuery.paddingOf(context).bottom),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              if (ready) VideoProgressIndicator(c, allowScrubbing: false, padding: const EdgeInsets.only(bottom: 8)),
+              Text(
+                v.title.of(lang),
+                style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w700),
               ),
-            ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (ready) VideoProgressIndicator(c, allowScrubbing: false, padding: const EdgeInsets.only(bottom: 8)),
-                Text(
-                  v.title.of(lang),
-                  style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w700),
-                ),
-                CreditLine(v.artCredit, light: true, prefix: t3(lang, 'Art: ', 'चित्र: ', 'చిత్రం: ')),
-                CreditLine(v.audioCredit, light: true, prefix: t3(lang, 'Audio: ', 'ऑडियो: ', 'ఆడియో: ')),
-                const SizedBox(height: 10),
-                if (_busy) ...[LinearProgressIndicator(value: _progress), const SizedBox(height: 8)],
-                if (locked)
-                  UnlockButton(item: v)
-                else
-                  Row(
-                    children: [
-                      Expanded(
-                        child: FilledButton.icon(
-                          style: FilledButton.styleFrom(
-                            backgroundColor: const Color(0xFF25D366),
-                            foregroundColor: Colors.white,
-                            padding: const EdgeInsets.symmetric(vertical: 14),
-                          ),
-                          onPressed: _busy ? null : _whatsApp,
-                          icon: const Icon(Icons.send_rounded),
-                          label: Text(
-                            t3(lang, 'Share to WhatsApp', 'व्हाट्सऐप पर भेजें', 'వాట్సాప్‌లో పెట్టండి'),
-                            style: const TextStyle(fontWeight: FontWeight.w800),
-                          ),
+              CreditLine(v.artCredit, light: true, prefix: t3(lang, 'Art: ', 'चित्र: ', 'చిత్రం: ')),
+              CreditLine(v.audioCredit, light: true, prefix: t3(lang, 'Audio: ', 'ऑडियो: ', 'ఆడియో: ')),
+              const SizedBox(height: 10),
+              if (_busy) ...[LinearProgressIndicator(value: _progress), const SizedBox(height: 8)],
+              if (locked)
+                UnlockButton(item: v)
+              else
+                Row(
+                  children: [
+                    Expanded(
+                      child: FilledButton.icon(
+                        style: FilledButton.styleFrom(
+                          backgroundColor: const Color(0xFF25D366),
+                          foregroundColor: Colors.white,
+                          padding: const EdgeInsets.symmetric(vertical: 14),
+                        ),
+                        onPressed: _busy ? null : _whatsApp,
+                        icon: const Icon(Icons.send_rounded),
+                        label: Text(
+                          t3(lang, 'Share to WhatsApp', 'व्हाट्सऐप पर भेजें', 'వాట్సాప్‌లో పెట్టండి'),
+                          style: const TextStyle(fontWeight: FontWeight.w800),
                         ),
                       ),
-                      const SizedBox(width: 8),
-                      IconButton.filledTonal(
-                        tooltip: t3(lang, 'More apps', 'अन्य ऐप', 'ఇతర యాప్‌లు'),
-                        onPressed: _busy ? null : _more,
-                        icon: const Icon(Icons.share_rounded),
-                      ),
-                    ],
-                  ),
-              ],
-            ),
+                    ),
+                    const SizedBox(width: 8),
+                    IconButton.filledTonal(
+                      tooltip: t3(lang, 'More apps', 'अन्य ऐप', 'ఇతర యాప్‌లు'),
+                      onPressed: _busy ? null : _more,
+                      icon: const Icon(Icons.share_rounded),
+                    ),
+                  ],
+                ),
+            ],
           ),
         ),
       ],

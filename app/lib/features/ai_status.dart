@@ -329,7 +329,7 @@ class _StatusMakerScreenState extends ConsumerState<StatusMakerScreen> {
                   padding: const EdgeInsets.only(right: 6),
                   child: ChoiceChip(
                     avatar: const Icon(Icons.wb_sunny_rounded, size: 16),
-                    label: Text(t3(ui, 'Today', 'आज', 'ఈ రోజు')),
+                    label: Text(t3(ui, "Today's deity", 'आज के देवता', 'ఈ రోజు దైవం')),
                     selected: _deity == null,
                     onSelected: (_) => setState(() => _deity = null),
                   ),
@@ -349,6 +349,19 @@ class _StatusMakerScreenState extends ConsumerState<StatusMakerScreen> {
               ],
             ),
           ),
+          if (!premium)
+            Padding(
+              padding: const EdgeInsets.only(bottom: 4),
+              child: Text(
+                t3(
+                  ui,
+                  'Swipe for ${StatusTemplate.values.length} designs · the first 5 are Premium',
+                  '${StatusTemplate.values.length} डिज़ाइन के लिए स्वाइप करें · पहले 5 प्रीमियम',
+                  '${StatusTemplate.values.length} డిజైన్ల కోసం స్వైప్ చేయండి · మొదటి 5 ప్రీమియం',
+                ),
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Palette.marigold),
+              ),
+            ),
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 4, 16, 12).withSystemInsets(context),
             child: locked
@@ -423,19 +436,6 @@ class _StatusMakerScreenState extends ConsumerState<StatusMakerScreen> {
                     ],
                   ),
           ),
-          if (!premium)
-            Padding(
-              padding: const EdgeInsets.only(bottom: 4),
-              child: Text(
-                t3(
-                  ui,
-                  'Swipe for 12 designs · the first 5 are Premium',
-                  '12 डिज़ाइन के लिए स्वाइप करें · पहले 5 प्रीमियम',
-                  '12 డిజైన్ల కోసం స్వైప్ చేయండి · మొదటి 5 ప్రీమియం',
-                ),
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Palette.marigold),
-              ),
-            ),
         ],
       ),
     );

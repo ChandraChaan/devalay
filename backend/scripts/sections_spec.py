@@ -210,14 +210,23 @@ AUDIO = {
 # slug, audio key, deity, (en, te, hi), start second (None: the loudest phrase-aligned window in the first 2.5
 # minutes), seconds, premium rank. Each also gets a notification cut (its first 3.5 seconds).
 RINGTONES = [
-    ("mandolin-rama", "tatvameruga", "rama", ("Mandolin Rama", "మాండొలిన్ రామ", "मैंडोलिन राम"), None, 28, 1),
+    # Trending: Devalay's own synthesis (scripts/synth_tones.py), and two chant remixes over new beats.
+    ("lofi-krishna-flute", "s-lofi-krishna-flute", "krishna",
+     ("Lo-fi Krishna Flute", "లో-ఫై కృష్ణ మురళి", "लो-फ़ाई कृष्ण बाँसुरी"), 0, 0, 1),
+    ("mandolin-rama", "tatvameruga", "rama", ("Mandolin Rama", "మాండొలిన్ రామ", "मैंडोलिन राम"), None, 28, 2),
+    ("shankh-drop", "s-shankh-drop", "vishnu", ("Shankh Drop", "శంఖ డ్రాప్", "शंख ड्रॉप"), 0, 0, 3),
     ("brahma-kadigina", "brahma-kadigina", "venkateswara",
-     ("Brahma Kadigina Padamu", "బ్రహ్మ కడిగిన పాదము", "ब्रह्म कडिगिन पादमु"), None, 28, 2),
-    ("madhurashtakam", "madhurashtakam", "krishna", ("Adharam Madhuram", "అధరం మధురం", "अधरं मधुरं"), None, 28, 3),
-    ("shriman-narayana", "shriman-narayana", "vishnu", ("Shriman Narayana", "శ్రీమన్నారాయణ", "श्रीमन्नारायण"),
-     None, 28, 4),
-    ("bhaja-govindam", "bhaja-govindam", "krishna", ("Bhaja Govindam", "భజ గోవిందం", "भज गोविन्दम्"), None, 28, 5),
+     ("Brahma Kadigina Padamu", "బ్రహ్మ కడిగిన పాదము", "ब्रह्म कडिगिन पादमु"), None, 28, 4),
+    ("temple-bells-pop", "s-temple-bells-pop", "general", ("Temple Bells Pop", "ఆలయ గంటల పాప్", "मंदिर घंटी पॉप"), 0, 0, 5),
     # Free
+    ("veena-dhun", "s-veena-dhun", "saraswati", ("Veena Dhun", "వీణ ధున్", "वीणा धुन"), 0, 0, None),
+    ("om-namah-shivaya-beat", "s-om-namah-shivaya-beat", "shiva",
+     ("Om Namah Shivaya Beat", "ఓం నమః శివాయ బీట్", "ॐ नमः शिवाय बीट"), 0, 0, None),
+    ("gayatri-lofi", "s-gayatri-lofi", "surya", ("Gayatri Lo-fi", "గాయత్రీ లో-ఫై", "गायत्री लो-फ़ाई"), 0, 0, None),
+    ("madhurashtakam", "madhurashtakam", "krishna", ("Adharam Madhuram", "అధరం మధురం", "अधरं मधुरं"), None, 28, None),
+    ("shriman-narayana", "shriman-narayana", "vishnu", ("Shriman Narayana", "శ్రీమన్నారాయణ", "श्रीमन्नारायण"),
+     None, 28, None),
+    ("bhaja-govindam", "bhaja-govindam", "krishna", ("Bhaja Govindam", "భజ గోవిందం", "भज गोविन्दम्"), None, 28, None),
     ("temple-bells", "temple-bells", "general", ("Temple Bells", "ఆలయ గంటలు", "मंदिर घंटियाँ"), 0, 24, None),
     ("shankh-naad", "shankh", "vishnu", ("Shankh Naad", "శంఖనాదం", "शंख नाद"), 0, 20, None),
     ("gayatri-mantra", "gayatri", "surya", ("Gayatri Mantra", "గాయత్రీ మంత్రం", "गायत्री मंत्र"), 0, 21, None),
@@ -251,7 +260,24 @@ RINGTONES = [
     ("krishna-bansuri", "bansuri", "krishna", ("Krishna Bansuri", "కృష్ణ మురళి", "कृष्ण बाँसुरी"), 0, 14, None),
     ("om-shanti", "om-shanti", "shiva", ("Om Shanti", "ఓం శాంతి", "ॐ शांति"), 0, 24, None),
     ("puja-ghanti", "ghanti", "general", ("Puja Ghanti", "పూజ గంట", "पूजा घंटी"), 0, 2, None),
+    ("bell-ting", "s-notify-bell-ting", "general", ("Bell Ting", "గంట టింగ్", "घंटी टिंग"), 0, 2, None),
+    ("flute-call", "s-notify-flute-call", "krishna", ("Flute Call", "మురళి పిలుపు", "बाँसुरी पुकार"), 0, 2, None),
 ]
+# Seconds 0 above: the whole synthesised file (it is already a loopable phrase).
+for _key, _file, _lic, _src in [
+    ("s-lofi-krishna-flute", "lofi-krishna-flute.wav", "CC0", None),
+    ("s-shankh-drop", "shankh-drop.wav", "CC0", None),
+    ("s-temple-bells-pop", "temple-bells-pop.wav", "CC0", None),
+    ("s-veena-dhun", "veena-dhun.wav", "CC0", None),
+    ("s-gayatri-lofi", "gayatri-lofi.wav", "CC0", None),
+    ("s-om-namah-shivaya-beat", "om-namah-shivaya-beat.wav", "CC BY-SA 4.0",
+     "https://commons.wikimedia.org/wiki/File:Om_Namah_Shivaya_Performance_at_Khajuraho_-_2026.ogg"),
+    ("s-notify-bell-ting", "notify-bell-ting.wav", "CC0", None),
+    ("s-notify-flute-call", "notify-flute-call.wav", "CC0", None),
+]:
+    _author = {"s-gayatri-lofi": "Devalay, with the chant by Wilfredor",
+               "s-om-namah-shivaya-beat": "Devalay, with the chant by Sachin Patel 78"}.get(_key, "Devalay (synthesised)")
+    AUDIO[_key] = ("synth", _file, _author, _lic, _src)
 
 # --- WhatsApp status videos (9:16, 1080x1920) ---------------------------------------------------------------------
 # Each: slug, lang, title, headline, verse (two short lines), art (a wallpaper slug), audio key, start second

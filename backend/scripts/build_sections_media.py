@@ -343,7 +343,10 @@ def ringtones(work: Path) -> None:
     windows = {}
     for slug, key, _deity, _title, start, seconds, _rank in RINGTONES:
         src = audio_source(work, key)
-        if seconds <= 3:
+        if seconds == 0:  # a whole synthesised phrase
+            begin = 0.0
+            end = float(run("ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(src)))
+        elif seconds <= 3:
             begin, end = 0.0, float(seconds) + 0.5
         else:
             begin, end = pick_window(src, seconds, start)
@@ -532,7 +535,7 @@ def _audio_credit(key: str) -> dict:
                     source = t["source_url"]
     if where == "commons":
         source = "https://commons.wikimedia.org/wiki/" + urllib.parse.quote(file.replace(" ", "_"))
-    if where in ("seed", "synth"):
+    if where in ("seed", "synth") and not source:
         source = "https://github.com/ChandraChaan/devalay"
     return {"author": author, "license": lic, "license_url": LICENSE_URLS.get(lic, ""), "source": source or ""}
 

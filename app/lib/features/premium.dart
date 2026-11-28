@@ -5,6 +5,7 @@ import 'package:in_app_purchase/in_app_purchase.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../core/billing.dart';
+import '../core/offers.dart';
 import '../core/sections.dart';
 import '../core/i18n.dart';
 import '../core/theme.dart';
@@ -179,7 +180,7 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
           else if (!s.ready)
             const Center(child: CircularProgressIndicator())
           else ...[
-            for (final p in plans) _PlanCard(product: p, busy: s.busy),
+            for (final p in plans) _PlanCard(product: p, busy: s.busy, monthly: s.products[Products.premiumMonthly]),
             if (plans.isEmpty)
               Padding(
                 padding: const EdgeInsets.all(8),
@@ -209,9 +210,12 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
           Text(
             t3(
               lang,
-              'Billed by Google Play and renews automatically. Cancel anytime in Play Store > Payments & subscriptions.',
-              'भुगतान Google Play से होता है और अपने-आप नवीनीकृत होता है। Play Store > Payments & subscriptions में कभी भी रद्द करें।',
-              'చెల్లింపు Google Play ద్వారా, ఆటోమేటిక్‌గా రెన్యూ అవుతుంది. Play Store > Payments & subscriptionsలో ఎప్పుడైనా రద్దు చేయవచ్చు.',
+              'Billed by Google Play and renews automatically. Cancel anytime in Play Store > Payments & subscriptions. '
+                  'With a free trial, cancel before it ends and you pay nothing; otherwise the plan starts when the trial ends.',
+              'भुगतान Google Play से होता है और अपने-आप नवीनीकृत होता है। Play Store > Payments & subscriptions में कभी भी रद्द करें। '
+                  'मुफ़्त ट्रायल खत्म होने से पहले रद्द करें तो कोई भुगतान नहीं; नहीं तो ट्रायल के बाद प्लान शुरू होता है।',
+              'చెల్లింపు Google Play ద్వారా, ఆటోమేటిక్‌గా రెన్యూ అవుతుంది. Play Store > Payments & subscriptionsలో ఎప్పుడైనా రద్దు చేయవచ్చు. '
+                  'ఉచిత ట్రయల్ ముగిసేలోపు రద్దు చేస్తే ఏమీ చెల్లించనవసరం లేదు; లేకపోతే ట్రయల్ తర్వాత ప్లాన్ మొదలవుతుంది.',
             ),
             textAlign: TextAlign.center,
             style: theme.textTheme.bodySmall,
@@ -236,46 +240,149 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
 }
 
 class _PlanCard extends ConsumerWidget {
-  const _PlanCard({required this.product, required this.busy});
+  const _PlanCard({required this.product, required this.busy, this.monthly});
   final ProductDetails product;
   final bool busy;
+
+  /// The monthly plan, to show what the yearly one saves.
+  final ProductDetails? monthly;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final lang = uiLang(ref);
+    final theme = Theme.of(context);
     final yearly = product.id == Products.premiumYearly;
-    final perMonth = yearly && product.rawPrice > 0
-        ? '${product.currencySymbol}${(product.rawPrice / 12).ceil()}'
-        : null;
+    final o = describeOffer(product);
+    final m = monthly == null ? null : describeOffer(monthly!);
+    final symbol = product.currencySymbol;
+    // The struck-through price is a real one: the renewal price after an intro offer, or a year of monthly.
+    final yearOfMonthly = yearly && m != null && m.baseRaw > 0 ? m.baseRaw * 12 : null;
+    final original = o.hasIntro
+        ? o.basePrice
+        : (yearOfMonthly != null && yearOfMonthly > o.baseRaw ? '$symbol${yearOfMonthly.round()}' : null);
+    final percent = o.hasIntro
+        ? o.introPercentOff
+        : (yearOfMonthly != null && yearOfMonthly > o.baseRaw ? ((1 - o.baseRaw / yearOfMonthly) * 100).round() : null);
+    final perMonth = yearly && o.payNowRaw > 0 ? '$symbol${(o.payNowRaw / 12).ceil()}' : null;
+    final period = yearly ? t3(lang, 'year', 'साल', 'సంవత్సరం') : t3(lang, 'month', 'महीना', 'నెల');
+    final first = yearly
+        ? t3(lang, 'first year', 'पहला साल', 'మొదటి సంవత్సరం')
+        : t3(lang, 'first month', 'पहला महीना', 'మొదటి నెల');
     return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
+      padding: const EdgeInsets.only(bottom: 12),
       child: Card(
-        shape: yearly
-            ? RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-                side: const BorderSide(color: Palette.marigold, width: 2),
-              )
-            : null,
-        child: ListTile(
-          contentPadding: const EdgeInsets.all(14),
-          title: Text(
-            yearly ? t3(lang, 'Yearly', 'सालाना', 'సంవత్సరానికి') : t3(lang, 'Monthly', 'मासिक', 'నెలకు'),
-            style: const TextStyle(fontWeight: FontWeight.w700),
-          ),
-          subtitle: perMonth == null
-              ? null
-              : Text(
-                  t3(
-                    lang,
-                    'Best value: about $perMonth a month',
-                    'सबसे किफ़ायती: लगभग $perMonth महीना',
-                    'అత్యంత లాభం: నెలకు సుమారు $perMonth',
-                  ),
+        clipBehavior: Clip.antiAlias,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(18),
+          side: BorderSide(color: yearly ? Palette.marigold : theme.dividerColor, width: yearly ? 2 : 1),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            if (yearly || o.hasTrial)
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(colors: [Color(0xFFFFB300), Color(0xFFE65100)]),
                 ),
-          trailing: FilledButton(
-            onPressed: busy ? null : () => ref.read(billingProvider.notifier).buy(product, source: 'premium'),
-            child: Text(product.price),
-          ),
+                child: Row(
+                  children: [
+                    if (yearly)
+                      Text(
+                        t3(lang, 'MOST POPULAR', 'सबसे लोकप्रिय', 'ఎక్కువ మంది ఎంచుకునేది'),
+                        style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w800, fontSize: 12),
+                      ),
+                    const Spacer(),
+                    if (percent != null && percent > 0)
+                      Text(
+                        t3(lang, '$percent% OFF', '$percent% छूट', '$percent% తగ్గింపు'),
+                        style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w800, fontSize: 12),
+                      ),
+                  ],
+                ),
+              ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 12, 12, 14),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          yearly ? t3(lang, 'Yearly', 'सालाना', 'సంవత్సరానికి') : t3(lang, 'Monthly', 'मासिक', 'నెలకు'),
+                          style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 17),
+                        ),
+                        if (o.hasTrial)
+                          Padding(
+                            padding: const EdgeInsets.only(top: 4),
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                              decoration: BoxDecoration(
+                                color: const Color(0xFF2E7D32),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Text(
+                                t3(
+                                  lang,
+                                  '${o.trialDays} days free',
+                                  '${o.trialDays} दिन मुफ़्त',
+                                  '${o.trialDays} రోజులు ఉచితం',
+                                ),
+                                style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: 12),
+                              ),
+                            ),
+                          ),
+                        const SizedBox(height: 6),
+                        Wrap(
+                          crossAxisAlignment: WrapCrossAlignment.end,
+                          spacing: 8,
+                          children: [
+                            Text(o.payNow, style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 22)),
+                            if (original != null)
+                              Text(
+                                original,
+                                style: theme.textTheme.bodyMedium?.copyWith(
+                                  decoration: TextDecoration.lineThrough,
+                                  color: theme.hintColor,
+                                ),
+                              ),
+                            Text('/ ${o.hasIntro ? first : period}', style: theme.textTheme.bodySmall),
+                          ],
+                        ),
+                        if (o.hasIntro)
+                          Text(
+                            t3(
+                              lang,
+                              'then ${o.basePrice} / $period',
+                              'फिर ${o.basePrice} / $period',
+                              'తర్వాత ${o.basePrice} / $period',
+                            ),
+                            style: theme.textTheme.bodySmall,
+                          ),
+                        if (perMonth != null)
+                          Text(
+                            t3(lang, 'Just $perMonth a month', 'बस $perMonth महीना', 'నెలకు కేవలం $perMonth'),
+                            style: theme.textTheme.bodySmall?.copyWith(
+                              color: Palette.marigold,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
+                  FilledButton(
+                    onPressed: busy ? null : () => ref.read(billingProvider.notifier).buy(product, source: 'premium'),
+                    child: Text(
+                      o.hasTrial
+                          ? t3(lang, 'Start free trial', 'मुफ़्त ट्रायल', 'ఉచిత ట్రయల్')
+                          : t3(lang, 'Subscribe', 'सदस्य बनें', 'సభ్యత్వం'),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

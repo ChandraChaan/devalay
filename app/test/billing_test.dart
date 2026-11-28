@@ -313,9 +313,12 @@ void main() {
       await settle(tester);
       expect(find.text('₹299'), findsOneWidget);
       expect(find.text('₹49'), findsOneWidget);
-      expect(find.text('Best value: about ₹25 a month'), findsOneWidget);
+      // The yearly card shows a real anchor: twelve months of the monthly plan, struck through.
+      expect(find.text('₹588'), findsOneWidget);
+      expect(find.text('49% OFF'), findsOneWidget);
+      expect(find.text('Just ₹25 a month'), findsOneWidget);
       expect(find.text('No ads, now or ever'), findsOneWidget);
-      await tester.tap(find.text('₹299'));
+      await tester.tap(find.text('Subscribe').first);
       await tester.pump();
       expect(store.bought, [(Products.premiumYearly, false)]);
       store.stream.add([purchase(Products.premiumYearly, PurchaseStatus.purchased)]);

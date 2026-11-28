@@ -17,9 +17,9 @@ collection in each; lyrics in the player and movie bhakti songs.
   cropped clear of paper margins and printed captions, and composed for 20:9 phones (full-width art over a soft
   blurred extension, clock area kept calm). Filters for Today, Modern, Photos, Classic art, favourites, downloads and
   each deity; FHD+ downloads free, QHD+ with Premium. Set as home/lock screen, save, or send to WhatsApp in one tap.
-- **Ringtones:** cuts of the CC BY Saregama recordings (M.S. Subbulakshmi, U. Srinivas' mandolin, P.B. Sreenivas,
+- **Ringtones (34):** cuts of the CC BY Saregama recordings (M.S. Subbulakshmi, U. Srinivas' mandolin, P.B. Sreenivas,
   Balamuralikrishna) and CC0/CC BY-SA chants, plus new trending-style tones (lo-fi flute, veena dhun, temple-bell pop,
-  shankh drop, Gayatri lo-fi and an Om Namah Shivaya beat) synthesised for Devalay. Every tone is trimmed on a
+  shankh drop, Gayatri lo-fi and an Om Namah Shivaya beat) and two notification sounds synthesised for Devalay. Every tone is trimmed on a
   breath, loudness-normalised (−13 LUFS, peaks ≤ −1 dBTP) and faded, and has a 3.5-second notification cut. Previews
   play on their own player (they don't interrupt the bhakti queue) and from storage once downloaded.
 - **WhatsApp Status (new section):** 19 status videos, 9:16 1080×1920, 15 s, slow zoom on the art with typeset
@@ -41,6 +41,12 @@ collection in each; lyrics in the player and movie bhakti songs.
   see and hear; "Unlock with Premium" opens Premium with that item shown at the top). Everything else stays free.
   `premium_lock_tap` (with `section:id`) is logged, followed by `premium_view` from that item, so the funnel shows in
   admin. Premium perks list the collections, QHD+ downloads and the AI Status extras.
+- **Premium plans: free trial and discounts.** The Premium screen reads every base plan and offer Play lists and
+  keeps the best one the user can get (a free trial, then an intro discount, then the base plan), so a trial or
+  launch offer set up in Play Console shows by itself: "7 days free", the offer price with the real renewal price
+  struck through and the % off, "then ₹X / year", and a "Start free trial" button that buys that offer (its offer
+  token). Without an offer, the yearly card is anchored against twelve months of the monthly plan (a real price).
+  The terms say plainly that cancelling before the trial ends costs nothing (core/offers.dart).
 - **Player:** lyrics inside the player that follow the song (current line lit, in the reader's script), playback
   speed (0.75×–1.5×), and lyrics for Madhurashtakam, Shiva Panchakshara Stotram, Mahalakshmi Ashtakam, Brahma
   Kadigina Padamu and Hanuman Chalisa recordings (traditional texts, public domain).

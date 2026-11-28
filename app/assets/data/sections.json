@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "version": 3,
+ "version": 4,
  "wallpapers": [
   {
    "id": "om-glow",
@@ -1767,6 +1767,26 @@
  ],
  "ringtones": [
   {
+   "id": "lofi-krishna-flute",
+   "deity": "krishna",
+   "title": {
+    "en": "Lo-fi Krishna Flute",
+    "te": "లో-ఫై కృష్ణ మురళి",
+    "hi": "लो-फ़ाई कृष्ण बाँसुरी"
+   },
+   "premium": 1,
+   "seconds": 25.6,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-lofi-krishna-flute.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-lofi-krishna-flute.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
    "id": "mandolin-rama",
    "deity": "rama",
    "title": {
@@ -1774,7 +1794,7 @@
     "te": "మాండొలిన్ రామ",
     "hi": "मैंडोलिन राम"
    },
-   "premium": 1,
+   "premium": 2,
    "seconds": 29.2,
    "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-mandolin-rama.m4a",
    "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-mandolin-rama.m4a",
@@ -1787,6 +1807,26 @@
    }
   },
   {
+   "id": "shankh-drop",
+   "deity": "vishnu",
+   "title": {
+    "en": "Shankh Drop",
+    "te": "శంఖ డ్రాప్",
+    "hi": "शंख ड्रॉप"
+   },
+   "premium": 3,
+   "seconds": 24.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-shankh-drop.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-shankh-drop.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
    "id": "brahma-kadigina",
    "deity": "venkateswara",
    "title": {
@@ -1794,7 +1834,7 @@
     "te": "బ్రహ్మ కడిగిన పాదము",
     "hi": "ब्रह्म कडिगिन पादमु"
    },
-   "premium": 2,
+   "premium": 4,
    "seconds": 29.3,
    "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-brahma-kadigina.m4a",
    "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-brahma-kadigina.m4a",
@@ -1807,6 +1847,86 @@
    }
   },
   {
+   "id": "temple-bells-pop",
+   "deity": "general",
+   "title": {
+    "en": "Temple Bells Pop",
+    "te": "ఆలయ గంటల పాప్",
+    "hi": "मंदिर घंटी पॉप"
+   },
+   "premium": 5,
+   "seconds": 26.7,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-temple-bells-pop.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-temple-bells-pop.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "veena-dhun",
+   "deity": "saraswati",
+   "title": {
+    "en": "Veena Dhun",
+    "te": "వీణ ధున్",
+    "hi": "वीणा धुन"
+   },
+   "premium": null,
+   "seconds": 27.7,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-veena-dhun.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-veena-dhun.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "om-namah-shivaya-beat",
+   "deity": "shiva",
+   "title": {
+    "en": "Om Namah Shivaya Beat",
+    "te": "ఓం నమః శివాయ బీట్",
+    "hi": "ॐ नमः शिवाय बीट"
+   },
+   "premium": null,
+   "seconds": 24.3,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-om-namah-shivaya-beat.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-om-namah-shivaya-beat.m4a",
+   "credit": {
+    "author": "Devalay, with the chant by Sachin Patel 78",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Om_Namah_Shivaya_Performance_at_Khajuraho_-_2026.ogg",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "gayatri-lofi",
+   "deity": "surya",
+   "title": {
+    "en": "Gayatri Lo-fi",
+    "te": "గాయత్రీ లో-ఫై",
+    "hi": "गायत्री लो-फ़ाई"
+   },
+   "premium": null,
+   "seconds": 26.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-gayatri-lofi.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-gayatri-lofi.m4a",
+   "credit": {
+    "author": "Devalay, with the chant by Wilfredor",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
    "id": "madhurashtakam",
    "deity": "krishna",
    "title": {
@@ -1814,7 +1934,7 @@
     "te": "అధరం మధురం",
     "hi": "अधरं मधुरं"
    },
-   "premium": 3,
+   "premium": null,
    "seconds": 28.6,
    "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-madhurashtakam.m4a",
    "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-madhurashtakam.m4a",
@@ -1834,7 +1954,7 @@
     "te": "శ్రీమన్నారాయణ",
     "hi": "श्रीमन्नारायण"
    },
-   "premium": 4,
+   "premium": null,
    "seconds": 28.9,
    "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-shriman-narayana.m4a",
    "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-shriman-narayana.m4a",
@@ -1854,7 +1974,7 @@
     "te": "భజ గోవిందం",
     "hi": "भज गोविन्दम्"
    },
-   "premium": 5,
+   "premium": null,
    "seconds": 27.0,
    "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-bhaja-govindam.m4a",
    "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-bhaja-govindam.m4a",
@@ -2278,6 +2398,46 @@
    "seconds": 1.6,
    "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-puja-ghanti.m4a",
    "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-puja-ghanti.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "bell-ting",
+   "deity": "general",
+   "title": {
+    "en": "Bell Ting",
+    "te": "గంట టింగ్",
+    "hi": "घंटी टिंग"
+   },
+   "premium": null,
+   "seconds": 2.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-bell-ting.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-bell-ting.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "flute-call",
+   "deity": "krishna",
+   "title": {
+    "en": "Flute Call",
+    "te": "మురళి పిలుపు",
+    "hi": "बाँसुरी पुकार"
+   },
+   "premium": null,
+   "seconds": 2.2,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-flute-call.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-flute-call.m4a",
    "credit": {
     "author": "Devalay (synthesised)",
     "license": "CC0",
@@ -2917,5 +3077,196 @@
    }
   }
  ],
- "meditation": []
+ "meditation": [
+  {
+   "id": "river-flute",
+   "deity": "general",
+   "title": {
+    "en": "River Flute",
+    "te": "నది ఒడ్డున మురళి",
+    "hi": "नदी किनारे बाँसुरी"
+   },
+   "premium": 1,
+   "seconds": 120.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/md-river-flute.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "loudness-normalised"
+   }
+  },
+  {
+   "id": "himalaya-om",
+   "deity": "general",
+   "title": {
+    "en": "Himalayan Wind and Om",
+    "te": "హిమాలయ గాలి, ఓం",
+    "hi": "हिमालय की हवा और ॐ"
+   },
+   "premium": 2,
+   "seconds": 120.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/md-himalaya-om.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "loudness-normalised"
+   }
+  },
+  {
+   "id": "singing-bowls",
+   "deity": "general",
+   "title": {
+    "en": "Singing Bowls",
+    "te": "సింగింగ్ బౌల్స్",
+    "hi": "सिंगिंग बाउल"
+   },
+   "premium": 3,
+   "seconds": 120.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/md-singing-bowls.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "loudness-normalised"
+   }
+  },
+  {
+   "id": "ocean-om",
+   "deity": "general",
+   "title": {
+    "en": "Ocean Om",
+    "te": "సముద్ర ఓంకారం",
+    "hi": "सागर ॐ"
+   },
+   "premium": 4,
+   "seconds": 120.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/md-ocean-om.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "loudness-normalised"
+   }
+  },
+  {
+   "id": "veena-alap",
+   "deity": "general",
+   "title": {
+    "en": "Veena Alap",
+    "te": "వీణ ఆలాపన",
+    "hi": "वीणा आलाप"
+   },
+   "premium": 5,
+   "seconds": 120.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/md-veena-alap.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "loudness-normalised"
+   }
+  },
+  {
+   "id": "om-deep",
+   "deity": "general",
+   "title": {
+    "en": "Deep Om",
+    "te": "లోతైన ఓంకారం",
+    "hi": "गहरा ॐ"
+   },
+   "premium": null,
+   "seconds": 120.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/md-om-deep.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "loudness-normalised"
+   }
+  },
+  {
+   "id": "tanpura-sa",
+   "deity": "general",
+   "title": {
+    "en": "Tanpura",
+    "te": "తంబూరా",
+    "hi": "तानपुरा"
+   },
+   "premium": null,
+   "seconds": 120.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/md-tanpura-sa.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "loudness-normalised"
+   }
+  },
+  {
+   "id": "rain-temple-bells",
+   "deity": "general",
+   "title": {
+    "en": "Rain and Temple Bells",
+    "te": "వానలో ఆలయ గంటలు",
+    "hi": "बारिश और मंदिर घंटियाँ"
+   },
+   "premium": null,
+   "seconds": 120.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/md-rain-temple-bells.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "loudness-normalised"
+   }
+  },
+  {
+   "id": "night-diya",
+   "deity": "general",
+   "title": {
+    "en": "Night Crickets",
+    "te": "రాత్రి కీచురాళ్ళు",
+    "hi": "रात के झींगुर"
+   },
+   "premium": null,
+   "seconds": 120.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/md-night-diya.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "loudness-normalised"
+   }
+  },
+  {
+   "id": "dawn-birds",
+   "deity": "general",
+   "title": {
+    "en": "Dawn Birds",
+    "te": "ఉదయపు పక్షులు",
+    "hi": "भोर के पक्षी"
+   },
+   "premium": null,
+   "seconds": 120.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/md-dawn-birds.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "loudness-normalised"
+   }
+  }
+ ]
 }
