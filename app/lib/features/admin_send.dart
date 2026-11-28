@@ -3,6 +3,7 @@ import 'package:cloud_functions/cloud_functions.dart';
 import 'package:flutter/material.dart';
 
 import '../core/admin_stats.dart';
+import '../core/age.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
 
@@ -29,8 +30,12 @@ const _audiences = [
   ('state', 'One state'),
   ('version', 'One app version'),
   ('inactive', 'Not seen for some days'),
+  ('age', 'One age group (About you)'),
+  ('gender', 'One gender (About you)'),
   ('user', 'One install'),
 ];
+
+const _genders = [('f', 'Female'), ('m', 'Male'), ('o', 'Other')];
 
 /// Who a campaign went to, in words.
 String audienceLabel(Map a) => switch ('${a['type']}') {
@@ -39,6 +44,8 @@ String audienceLabel(Map a) => switch ('${a['type']}') {
   'state' => 'State ${a['value']}',
   'version' => 'Version ${a['value']}',
   'inactive' => 'Not seen ${a['value']}+ days',
+  'age' => 'Age ${a['value']}',
+  'gender' => 'Gender ${_genders.where((g) => g.$1 == a['value']).map((g) => g.$2).firstOrNull ?? a['value']}',
   'user' => 'Install ${'${a['value']}'.length > 6 ? '${a['value']}'.substring(0, 6) : a['value']}',
   _ => '${a['type']}',
 };
@@ -145,7 +152,7 @@ class _SendTabState extends State<SendTab> with AutomaticKeepAliveClientMixin {
   String? get _problem {
     if (_texts(_title).isEmpty) return 'Write a title in at least one language.';
     if (_texts(_body).isEmpty) return 'Write a message in at least one language.';
-    if (['state', 'version', 'user', 'lang'].contains(_audience) && _audienceValue.isEmpty) {
+    if (['state', 'version', 'user', 'lang', 'age', 'gender'].contains(_audience) && _audienceValue.isEmpty) {
       return 'Pick who gets it.';
     }
     return null;
@@ -256,6 +263,8 @@ class _SendTabState extends State<SendTab> with AutomaticKeepAliveClientMixin {
               'lang' => 'te',
               'state' => states.firstOrNull ?? '',
               'version' => versions.firstOrNull ?? '',
+              'age' => '25-34',
+              'gender' => 'f',
               'user' => widget.initialUser ?? _thisPhone ?? '',
               _ => '',
             };
@@ -278,6 +287,18 @@ class _SendTabState extends State<SendTab> with AutomaticKeepAliveClientMixin {
               for (final v in _audience == 'state' ? states : versions) DropdownMenuItem(value: v, child: Text(v)),
             ],
             onChanged: (v) => setState(() => _value.text = v ?? ''),
+          ),
+          'age' => DropdownButtonFormField<String>(
+            initialValue: ageGroups.contains(_value.text) ? _value.text : '25-34',
+            decoration: const InputDecoration(labelText: 'Age group'),
+            items: [for (final g in ageGroups) DropdownMenuItem(value: g, child: Text(g))],
+            onChanged: (v) => setState(() => _value.text = v ?? '25-34'),
+          ),
+          'gender' => DropdownButtonFormField<String>(
+            initialValue: _genders.any((g) => g.$1 == _value.text) ? _value.text : 'f',
+            decoration: const InputDecoration(labelText: 'Gender'),
+            items: [for (final (v, l) in _genders) DropdownMenuItem(value: v, child: Text(l))],
+            onChanged: (v) => setState(() => _value.text = v ?? 'f'),
           ),
           'inactive' => Row(
             children: [

@@ -15,8 +15,10 @@ import '../core/storage.dart';
 import '../core/telugu.dart';
 import '../core/theme.dart';
 import '../core/usage.dart';
+import '../core/about_you.dart';
 import '../widgets/city_picker.dart';
 import '../widgets/mandala.dart';
+import 'profile.dart';
 
 const _deities = [
   ('venkateswara', 'Venkateswara', 'वेंकटेश्वर', '🙏'),
@@ -47,8 +49,13 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
   /// The morning Panchang notification starts on; the permission is asked when onboarding ends.
   bool _morningPanchang = true;
 
+  /// "About you", saved when onboarding ends if anything was filled in.
+  AboutYou _profile = AboutYou.empty;
+
+  static const _last = 4;
+
   void _next() {
-    if (_index == 3) {
+    if (_index == _last) {
       _finish();
     } else {
       _page.nextPage(duration: const Duration(milliseconds: 420), curve: Curves.easeOutCubic);
@@ -56,14 +63,18 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
   }
 
   Future<void> _finish() async {
-    // Only someone who reached the last page saw the switch; the rest get the Home card instead.
-    if (_index == 3 && _morningPanchang) {
+    // Only someone who reached the city page saw the switch; the rest get the Home card instead.
+    if (_index >= 3 && _morningPanchang) {
       if (await Notifications.requestPermission()) {
         await ref.read(prefsProvider.notifier).set('panchang_daily', true);
         logNotificationSettings(ref.read(prefsProvider), kind: 'panchang', on: true, source: 'onboarding');
       } else {
         Usage.record('notification_permission_denied', item: 'onboarding');
       }
+    }
+    if (!_profile.isEmpty) {
+      await ref.read(aboutYouProvider.notifier).save(_profile);
+      Usage.record('profile_saved', item: 'onboarding');
     }
     await ref.read(prefsProvider.notifier).completeOnboarding();
     // The shell lays out the morning messages as it opens.
@@ -102,6 +113,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                         morningPanchang: _morningPanchang,
                         onMorningPanchang: (v) => setState(() => _morningPanchang = v),
                       ),
+                      _AboutYouPage(lang: lang, value: _profile, onChanged: (p) => setState(() => _profile = p)),
                     ],
                   ),
                 ),
@@ -109,7 +121,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                   padding: const EdgeInsets.fromLTRB(24, 0, 24, 24),
                   child: Row(
                     children: [
-                      for (var i = 0; i < 4; i++)
+                      for (var i = 0; i <= _last; i++)
                         AnimatedContainer(
                           duration: const Duration(milliseconds: 300),
                           margin: const EdgeInsets.only(right: 6),
@@ -134,7 +146,7 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
                         style: FilledButton.styleFrom(backgroundColor: Palette.gold, foregroundColor: Palette.maroon),
                         onPressed: _next,
                         child: Text(
-                          _index == 3
+                          _index == _last
                               ? (t3(lang, 'Begin 🙏', 'आरंभ करें 🙏', 'ప్రారంభించండి 🙏'))
                               : (t3(lang, 'Next', 'आगे', 'తర్వాత')),
                         ),
@@ -376,6 +388,36 @@ class _CityRashiPage extends ConsumerWidget {
       ],
     );
   }
+}
+
+/// Optional name and birth details; the rest of "About you" (gotra, stars, backup) is in Settings.
+class _AboutYouPage extends StatelessWidget {
+  const _AboutYouPage({required this.lang, required this.value, required this.onChanged});
+  final String lang;
+  final AboutYou value;
+  final ValueChanged<AboutYou> onChanged;
+  @override
+  Widget build(BuildContext context) => _Page(
+    title: t3(lang, 'About you', 'आपके बारे में', 'మీ గురించి'),
+    subtitle: t3(
+      lang,
+      'Optional. With your birth details you get your own Tarabalam, Chandrabalam and Jatakam. Kept on your phone; skip if you like.',
+      'वैकल्पिक। जन्म विवरण से आपको अपना तारा बल, चंद्र बल और जन्म कुंडली मिलती है। यह आपके फ़ोन पर रहता है; चाहें तो छोड़ दें।',
+      'ఐచ్ఛికం. మీ పుట్టిన వివరాలతో మీ సొంత తారాబలం, చంద్రబలం, జాతకం వస్తాయి. మీ ఫోన్‌లోనే ఉంటుంది; కావాలంటే దాటవేయండి.',
+    ),
+    children: [
+      Theme(
+        data: buildTheme(Brightness.light),
+        child: Card(
+          margin: EdgeInsets.zero,
+          child: Padding(
+            padding: const EdgeInsets.all(14),
+            child: ProfileForm(value: value, onChanged: onChanged, showGotra: false),
+          ),
+        ),
+      ),
+    ],
+  );
 }
 
 class _Page extends StatelessWidget {

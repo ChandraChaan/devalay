@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
+import 'about_you.dart';
 import 'events.dart';
 import 'home_widget_sync.dart';
 import 'i18n.dart';
+import 'jatakam.dart';
 import 'location.dart';
 import 'models.dart';
 import 'muhurta.dart';
@@ -45,7 +47,8 @@ Future<void> refreshPanchangNotifications(WidgetRef ref) async {
     return;
   }
   final lang = prefs.language;
-  final city = ref.read(cityProvider).label(lang);
+  final place = ref.read(cityProvider);
+  final city = place.label(lang);
   final today = DateUtils.dateOnly(DateTime.now());
   final last = today.add(const Duration(days: Notifications.panchangDays - 1));
 
@@ -77,7 +80,10 @@ Future<void> refreshPanchangNotifications(WidgetRef ref) async {
         festivals[day] ?? const [],
         events[day] ?? const [],
         birthStar: prefs.birthStar,
+        rashi: rashiIndex(prefs.rashi),
+        name: ref.read(aboutYouProvider).firstName,
         city: city,
+        at: (place.lat, place.lon),
       ),
     );
   }
@@ -92,13 +98,18 @@ Future<void> refreshPanchangNotifications(WidgetRef ref) async {
   List<Festival> festivals,
   List<UserEvent> events, {
   int? birthStar,
+  int? rashi,
+  String name = '',
   String? city,
+  (double, double)? at,
 }) {
   final weekday = fmtDate(lang, 'EEEE', day);
   final date = fmtDate(lang, 'd MMM', day);
   final major = festivals.where((f) => f.major).toList();
   final title = major.isNotEmpty
       ? '🪔 ${major.map((f) => f.label(lang)).join(' · ')} · $weekday'
+      : name.isNotEmpty
+      ? '🌅 ${t3(lang, 'Good morning, {0}', 'सुप्रभात, {0}', 'శుభోదయం, {0}').replaceAll('{0}', name)} · $weekday, $date'
       : '🌅 ${t3(lang, "Today's Panchang", 'आज का पंचांग', 'నేటి పంచాంగం')} · $weekday, $date';
 
   final month = shownMonthOf(monthSystemFor(lang), s);
@@ -119,8 +130,12 @@ Future<void> refreshPanchangNotifications(WidgetRef ref) async {
   if (shubhYoga(day, nakshatra) case final y?) lines.add('✨ ${shubhYogaLabel(lang, y)}');
   if (birthStar != null && starIndex >= 0) {
     final t = tarabalam(birthStar, starIndex);
+    final moon = rashi == null || at == null ? null : moonRashiAt('${s['sunrise']}', at.$1, at.$2);
+    final c = moon == null ? null : chandrabalam(rashi!, moon);
+    lines.add('🙏 ${personalVerdict(lang, t.quality, c?.quality)}');
     lines.add(
-      '🌟 ${t3(lang, 'Your Tarabalam', 'आपका तारा बल', 'మీ తారాబలం')}: ${taraLabel(lang, t.key)} (${qualityLabel(lang, t.quality)})',
+      '🌟 ${t3(lang, 'Your Tarabalam', 'आपका तारा बल', 'మీ తారాబలం')}: ${taraLabel(lang, t.key)} (${qualityLabel(lang, t.quality)})'
+      '${c == null ? '' : ' · ${t3(lang, 'Chandrabalam', 'चंद्र बल', 'చంద్రబలం')}: ${ordinal(lang, c.house)} (${qualityLabel(lang, c.quality)})'}',
     );
   }
   for (final f in festivals.where((f) => !f.major)) {
@@ -130,6 +145,23 @@ Future<void> refreshPanchangNotifications(WidgetRef ref) async {
     lines.add('${e.emoji} ${e.title}');
   }
   return (day: day, title: title, body: lines.where((l) => l.isNotEmpty).join('\n'));
+}
+
+/// The Moon's sidereal sign (0 Mesha to 11) at an ISO time such as the day's sunrise, or null if unreadable.
+int? moonRashiAt(String iso, double lat, double lon) {
+  final t = DateTime.tryParse(iso);
+  if (t == null) return null;
+  try {
+    return Jatakam.compute(t.toUtc(), lat, lon).moonRashi;
+  } catch (_) {
+    return null;
+  }
+}
+
+int? rashiIndex(String? slug) {
+  if (slug == null) return null;
+  final i = rashiNames.indexWhere((r) => r.toLowerCase() == slug);
+  return i < 0 ? null : i;
 }
 
 Future<void> refreshEventReminders(WidgetRef ref) async {

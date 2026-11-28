@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../core/about_you.dart';
 import '../core/glossary.dart';
 import '../core/i18n.dart';
 import '../core/muhurta.dart';
@@ -99,17 +100,7 @@ class PersonalBalam extends ConsumerWidget {
 
     Color tone(Quality q) => qualityColor(q, dark: dark, neutral: scheme.outline);
     final good = tara.quality != Quality.bad && (chandra == null || chandra.quality == Quality.good);
-    final bad = tara.quality == Quality.bad && (chandra == null || chandra.quality == Quality.bad);
-    final verdict = good
-        ? t3(lang, 'A good day for you', 'आपके लिए शुभ दिन', 'మీకు మంచి రోజు')
-        : bad
-        ? t3(lang, 'Better to postpone big beginnings', 'बड़े आरंभ टालना बेहतर', 'పెద్ద ప్రారంభాలు వాయిదా వేయడం మంచిది')
-        : t3(
-            lang,
-            'A mixed day: plan big things with care',
-            'मिला-जुला दिन: बड़े काम सोचकर करें',
-            'మిశ్రమ రోజు: పెద్ద పనులు జాగ్రత్తగా',
-          );
+    final verdict = personalVerdict(lang, tara.quality, chandra?.quality);
 
     Widget row(String term, String label, String value, Quality q, List<(String, Quality)> changes) => Padding(
       padding: const EdgeInsets.symmetric(vertical: 4),
@@ -303,6 +294,7 @@ class _BirthStarSheetState extends ConsumerState<_BirthStarSheet> {
                     final n = ref.read(prefsProvider.notifier);
                     await n.set('birth_star', _star);
                     if (_rashi != null) await n.setRashi(rashiNames[_rashi!].toLowerCase());
+                    await ref.read(aboutYouProvider.notifier).starsChanged(nakshatra: _star, rashi: _rashi);
                     if (context.mounted) Navigator.pop(context);
                   },
             icon: const Icon(Icons.check_rounded),

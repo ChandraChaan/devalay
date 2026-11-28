@@ -5,12 +5,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../app.dart';
+import '../core/about_you.dart';
 import '../core/i18n.dart';
 import '../core/listening.dart';
 import '../core/names.dart';
 import '../core/location.dart';
 import '../core/models.dart';
 import '../core/muhurta.dart' show lunarMonthNames;
+import '../core/profile_sync.dart' show birthdayWish;
 import '../core/providers.dart';
 import '../core/regional.dart';
 import '../core/sharing.dart';
@@ -24,6 +26,7 @@ import '../widgets/morning_panchang_card.dart';
 import '../widgets/share_app_card.dart';
 import '../widgets/track_strip.dart';
 import 'calendar.dart' show shareDay;
+import 'personal_day.dart';
 import 'temples.dart';
 import 'thought.dart';
 import 'wishes.dart';
@@ -70,6 +73,7 @@ class _HomeBody extends ConsumerWidget {
           child: _Hero(deity: deity, panchang: data['panchang'] as Map),
         ),
         SliverToBoxAdapter(child: _QuickActions()),
+        const SliverToBoxAdapter(child: _ForYou()),
         const SliverToBoxAdapter(child: MorningPanchangCard()),
         SliverToBoxAdapter(
           child: TodaysSongs(serverDeity: deity, from: 'home_today'),
@@ -172,6 +176,42 @@ String greetingKey() {
   return 'good_night';
 }
 
+/// Personal cards from "About you": the birthday wish on the day, and today's Tarabalam and Chandrabalam
+/// once the birth star is known.
+class _ForYou extends ConsumerWidget {
+  const _ForYou();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final me = ref.watch(aboutYouProvider);
+    final lang = ref.watch(prefsProvider.select((p) => p.language));
+    final star = ref.watch(prefsProvider.select((p) => p.birthStar));
+    final today = DateUtils.dateOnly(DateTime.now());
+    final day = star == null ? null : ref.watch(panchangProvider(today)).value;
+    final birthday = me.isBirthday(today);
+    if (!birthday && day == null) return const SizedBox.shrink();
+    final (title, body) = birthdayWish(lang, me.firstName);
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Column(
+        children: [
+          if (birthday)
+            Card(
+              margin: const EdgeInsets.only(top: 12),
+              child: ListTile(
+                contentPadding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+                leading: const Text('🎂', style: TextStyle(fontSize: 30)),
+                title: Text(title.replaceFirst('🎂 ', ''), style: const TextStyle(fontWeight: FontWeight.w700)),
+                subtitle: Text(body),
+              ),
+            ),
+          if (day != null) PersonalBalam(data: day),
+        ],
+      ),
+    );
+  }
+}
+
 class _Hero extends ConsumerWidget {
   const _Hero({required this.deity, required this.panchang});
   final Deity? deity;
@@ -180,6 +220,7 @@ class _Hero extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final top = MediaQuery.paddingOf(context).top;
+    final name = ref.watch(aboutYouProvider.select((p) => p.firstName));
     final tithi = panchang['tithi'] as Map;
     final lang = ref.watch(prefsProvider).language;
     final amanta = panchang['lunar_month'] as Map;
@@ -206,7 +247,9 @@ class _Hero extends ConsumerWidget {
                 children: [
                   Expanded(
                     child: Text(
-                      '${tr(ref, greetingKey())} 🙏',
+                      name.isEmpty ? '${tr(ref, greetingKey())} 🙏' : '${tr(ref, greetingKey())}, $name 🙏',
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                       style: const TextStyle(color: Colors.white, fontSize: 26, fontWeight: FontWeight.w700),
                     ),
                   ),

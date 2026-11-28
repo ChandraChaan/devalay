@@ -18,8 +18,20 @@ Future<void> showCityPicker(BuildContext context, WidgetRef ref) => showModalBot
   builder: (_) => const _CitySheet(),
 );
 
+/// Picks a place of birth from the same city list ("About you"); the Panchang city is not changed.
+Future<City?> pickBirthPlace(BuildContext context, {String? selectedId}) => showModalBottomSheet<City>(
+  context: context,
+  showDragHandle: true,
+  isScrollControlled: true,
+  builder: (_) => _CitySheet(birthPlace: true, selectedId: selectedId),
+);
+
 class _CitySheet extends ConsumerStatefulWidget {
-  const _CitySheet();
+  const _CitySheet({this.birthPlace = false, this.selectedId});
+
+  /// Picking a place of birth: the sheet returns the city instead of setting the Panchang city.
+  final bool birthPlace;
+  final String? selectedId;
   @override
   ConsumerState<_CitySheet> createState() => _CitySheetState();
 }
@@ -38,12 +50,19 @@ class _CitySheetState extends ConsumerState<_CitySheet> {
         icon: const Icon(Icons.my_location_rounded),
         title: Text(t3(lang, 'Use my location?', 'मेरी लोकेशन इस्तेमाल करें?', 'నా లొకేషన్ వాడాలా?')),
         content: Text(
-          t3(
-            lang,
-            'Devalay checks your approximate location once, now, to pick the nearest city for sunrise, tithi and Rahu Kalam times. It is not saved or sent anywhere, and the app never tracks you in the background.',
-            'देवालय अभी एक बार आपकी अनुमानित लोकेशन देखकर सूर्योदय, तिथि और राहु काल के लिए सबसे नज़दीकी शहर चुनता है। लोकेशन न सहेजी जाती है, न कहीं भेजी जाती है, और ऐप पीछे से आपको ट्रैक नहीं करता।',
-            'సూర్యోదయం, తిథి, రాహుకాలం సమయాల కోసం దగ్గరి నగరాన్ని ఎంచుకోవడానికి దేవాలయం ఇప్పుడు ఒక్కసారి మీ సుమారు లొకేషన్ చూస్తుంది. అది ఎక్కడా దాచబడదు, పంపబడదు; యాప్ వెనుక నుంచి మిమ్మల్ని ట్రాక్ చేయదు.',
-          ),
+          widget.birthPlace
+              ? t3(
+                  lang,
+                  'Devalay checks your approximate location once, now, to pick the nearest city. It is not saved or sent anywhere, and the app never tracks you in the background.',
+                  'देवालय अभी एक बार आपकी अनुमानित लोकेशन देखकर सबसे नज़दीकी शहर चुनता है। लोकेशन न सहेजी जाती है, न कहीं भेजी जाती है, और ऐप पीछे से आपको ट्रैक नहीं करता।',
+                  'దేవాలయం ఇప్పుడు ఒక్కసారి మీ సుమారు లొకేషన్ చూసి దగ్గరి నగరాన్ని ఎంచుకుంటుంది. అది ఎక్కడా దాచబడదు, పంపబడదు; యాప్ వెనుక నుంచి మిమ్మల్ని ట్రాక్ చేయదు.',
+                )
+              : t3(
+                  lang,
+                  'Devalay checks your approximate location once, now, to pick the nearest city for sunrise, tithi and Rahu Kalam times. It is not saved or sent anywhere, and the app never tracks you in the background.',
+                  'देवालय अभी एक बार आपकी अनुमानित लोकेशन देखकर सूर्योदय, तिथि और राहु काल के लिए सबसे नज़दीकी शहर चुनता है। लोकेशन न सहेजी जाती है, न कहीं भेजी जाती है, और ऐप पीछे से आपको ट्रैक नहीं करता।',
+                  'సూర్యోదయం, తిథి, రాహుకాలం సమయాల కోసం దగ్గరి నగరాన్ని ఎంచుకోవడానికి దేవాలయం ఇప్పుడు ఒక్కసారి మీ సుమారు లొకేషన్ చూస్తుంది. అది ఎక్కడా దాచబడదు, పంపబడదు; యాప్ వెనుక నుంచి మిమ్మల్ని ట్రాక్ చేయదు.',
+                ),
         ),
         actions: [
           TextButton(
@@ -66,7 +85,7 @@ class _CitySheetState extends ConsumerState<_CitySheet> {
       if (!mounted) return;
       if (here == null) throw PlatformException(code: 'UNAVAILABLE');
       final (city, km) = nearestCity(here.lat, here.lon);
-      await ref.read(prefsProvider.notifier).setCity(city.id);
+      if (!widget.birthPlace) await ref.read(prefsProvider.notifier).setCity(city.id);
       message = t3(
         lang,
         'Nearest city: ${city.label(lang)} (${km.round()} km)',
@@ -74,7 +93,7 @@ class _CitySheetState extends ConsumerState<_CitySheet> {
         'దగ్గరి నగరం: ${city.label(lang)} (${km.round()} కి.మీ.)',
       );
       if (!mounted) return;
-      Navigator.pop(context);
+      Navigator.pop(context, widget.birthPlace ? city : null);
     } on PlatformException catch (e) {
       message = switch (e.code) {
         'DENIED' => t3(
@@ -107,6 +126,7 @@ class _CitySheetState extends ConsumerState<_CitySheet> {
     final prefs = ref.watch(prefsProvider);
     final lang = prefs.language;
     final q = _q.trim().toLowerCase();
+    final selected = widget.birthPlace ? widget.selectedId : prefs.cityId;
     final shown = cities
         .where(
           (c) =>
@@ -130,16 +150,25 @@ class _CitySheetState extends ConsumerState<_CitySheet> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  t3(lang, 'Panchang city', 'पंचांग शहर', 'పంచాంగం నగరం'),
+                  widget.birthPlace
+                      ? t3(lang, 'Place of birth', 'जन्म स्थान', 'పుట్టిన స్థలం')
+                      : t3(lang, 'Panchang city', 'पंचांग शहर', 'పంచాంగం నగరం'),
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w700),
                 ),
                 Text(
-                  t3(
-                    lang,
-                    'Sunrise, tithi end times and Rahu Kalam are worked out for this city. Pick the nearest one.',
-                    'सूर्योदय, तिथि का समय और राहु काल इसी शहर के लिए हैं। सबसे नज़दीकी शहर चुनें।',
-                    'సూర్యోదయం, తిథి సమయాలు, రాహుకాలం ఈ నగరం ప్రకారం. దగ్గరలోని నగరం ఎంచుకోండి.',
-                  ),
+                  widget.birthPlace
+                      ? t3(
+                          lang,
+                          'Pick the city you were born in, or the nearest one. Its position and time zone are used for your chart.',
+                          'जिस शहर में आपका जन्म हुआ, या सबसे नज़दीकी शहर चुनें। आपकी कुंडली के लिए उसकी स्थिति और समय क्षेत्र लिया जाता है।',
+                          'మీరు పుట్టిన నగరం, లేదా దగ్గరి నగరం ఎంచుకోండి. మీ జాతకం కోసం దాని స్థానం, సమయ మండలం వాడతాం.',
+                        )
+                      : t3(
+                          lang,
+                          'Sunrise, tithi end times and Rahu Kalam are worked out for this city. Pick the nearest one.',
+                          'सूर्योदय, तिथि का समय और राहु काल इसी शहर के लिए हैं। सबसे नज़दीकी शहर चुनें।',
+                          'సూర్యోదయం, తిథి సమయాలు, రాహుకాలం ఈ నగరం ప్రకారం. దగ్గరలోని నగరం ఎంచుకోండి.',
+                        ),
                   style: Theme.of(context).textTheme.bodySmall,
                 ),
                 const SizedBox(height: 12),
@@ -180,16 +209,20 @@ class _CitySheetState extends ConsumerState<_CitySheet> {
                 for (final c in shown)
                   ListTile(
                     leading: Icon(
-                      prefs.cityId == c.id ? Icons.place_rounded : Icons.location_city_rounded,
-                      color: prefs.cityId == c.id ? Theme.of(context).colorScheme.primary : null,
+                      selected == c.id ? Icons.place_rounded : Icons.location_city_rounded,
+                      color: selected == c.id ? Theme.of(context).colorScheme.primary : null,
                     ),
                     title: Text(
                       c.label(lang),
-                      style: TextStyle(fontWeight: prefs.cityId == c.id ? FontWeight.w700 : FontWeight.w500),
+                      style: TextStyle(fontWeight: selected == c.id ? FontWeight.w700 : FontWeight.w500),
                     ),
                     subtitle: Text(c.state.isEmpty ? c.tz : stateName(lang, c.state)),
-                    trailing: prefs.cityId == c.id ? const Icon(Icons.check_rounded) : null,
+                    trailing: selected == c.id ? const Icon(Icons.check_rounded) : null,
                     onTap: () {
+                      if (widget.birthPlace) {
+                        Navigator.pop(context, c);
+                        return;
+                      }
                       ref.read(prefsProvider.notifier).setCity(c.id);
                       Navigator.pop(context);
                     },

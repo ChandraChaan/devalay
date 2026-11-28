@@ -1,6 +1,70 @@
 /// Malayalam translations of Devalay's English UI strings and Panchang names, keyed by the English text.
 /// Source list: tool/l10n/strings.json. Keys must match the English exactly; {0}, {1} are placeholders.
 const stringsMl = <String, String>{
+  // About you, Google backup and birthday (1.5.11).
+  'Good morning, {0}': 'സുപ്രഭാതം, {0}',
+  'Happy birthday!': 'ജന്മദിനാശംസകൾ!',
+  'Happy birthday, {0}!': '{0}, ജന്മദിനാശംസകൾ!',
+  'May the year ahead bring you good health, peace and joy. Begin the day with a prayer.':
+      'വരുന്ന വർഷം നിങ്ങൾക്ക് നല്ല ആരോഗ്യവും സമാധാനവും സന്തോഷവും നൽകട്ടെ. ഒരു പ്രാർത്ഥനയോടെ ദിവസം തുടങ്ങൂ.',
+  'About you': 'നിങ്ങളെക്കുറിച്ച്',
+  'Optional. With your birth details you get your own Tarabalam, Chandrabalam and Jatakam. Kept on your phone; skip if you like.':
+      'ഓപ്ഷണൽ. ജനന വിവരങ്ങൾ നൽകിയാൽ നിങ്ങളുടേതായ താരാബലവും ചന്ദ്രബലവും ജാതകവും ലഭിക്കും. ഇത് നിങ്ങളുടെ ഫോണിൽ തന്നെ സൂക്ഷിക്കുന്നു; വേണമെങ്കിൽ ഒഴിവാക്കാം.',
+  'Add your date and place of birth to work these out, or set them from your horoscope.':
+      'ഇവ കണക്കാക്കാൻ ജനനത്തീയതിയും ജനനസ്ഥലവും ചേർക്കൂ, അല്ലെങ്കിൽ നിങ്ങളുടെ ജാതകത്തിൽ നിന്ന് തിരഞ്ഞെടുക്കൂ.',
+  'Back up with Google': 'Google വഴി ബാക്കപ്പ് ചെയ്യൂ',
+  'Could not delete the account. Check your connection and try again.':
+      'അക്കൗണ്ട് ഇല്ലാതാക്കാനായില്ല. കണക്ഷൻ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കൂ.',
+  'Could not sign in. Check your connection and try again.':
+      'സൈൻ ഇൻ ചെയ്യാനായില്ല. കണക്ഷൻ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കൂ.',
+  'Date of birth': 'ജനനത്തീയതി',
+  'Delete your account?': 'നിങ്ങളുടെ അക്കൗണ്ട് ഇല്ലാതാക്കണോ?',
+  'Done': 'പൂർത്തിയായി',
+  'Everything here is optional. With your birth details Devalay shows your own Tarabalam and Chandrabalam each day, opens your Jatakam ready and wishes you on your birthday.':
+      'ഇവിടെ എല്ലാം ഓപ്ഷണലാണ്. ജനന വിവരങ്ങൾ നൽകിയാൽ ദേവാലയ് ദിവസവും നിങ്ങളുടേതായ താരാബലവും ചന്ദ്രബലവും കാണിക്കും, നിങ്ങളുടെ ജാതകം തയ്യാറായി തുറക്കും, ജന്മദിനത്തിൽ ആശംസകൾ നേരുകയും ചെയ്യും.',
+  'Female': 'സ്ത്രീ',
+  'From your horoscope (jatakam), if you know them.': 'നിങ്ങളുടെ ജാതകത്തിൽ നിന്ന്, അറിയാമെങ്കിൽ.',
+  'Google sign-in did not work. Try again.': 'Google സൈൻ ഇൻ നടന്നില്ല. വീണ്ടും ശ്രമിക്കൂ.',
+  'Gotra (optional)': 'ഗോത്രം (ഓപ്ഷണൽ)',
+  'I know mine: set them': 'എനിക്കറിയാം: ഞാൻ തിരഞ്ഞെടുക്കാം',
+  'Kept on this phone. While "Share usage statistics" is on (Settings → Privacy), your name, gender, date, time and city of birth, gotra and stars are also shared with the Devalay developer to improve the app; never for advertising.':
+      'ഇത് ഈ ഫോണിൽ തന്നെ സൂക്ഷിക്കുന്നു. "ഉപയോഗ സ്ഥിതിവിവരങ്ങൾ പങ്കിടുക" ഓണായിരിക്കുന്നിടത്തോളം (ക്രമീകരണങ്ങൾ → സ്വകാര്യത), ആപ്പ് മെച്ചപ്പെടുത്താൻ നിങ്ങളുടെ പേര്, ലിംഗം, ജനനത്തീയതി, ജനന സമയം, ജനിച്ച നഗരം, ഗോത്രം, നക്ഷത്രങ്ങൾ എന്നിവ ദേവാലയിന്റെ ഡെവലപ്പറുമായും പങ്കിടും; പരസ്യത്തിനായി ഒരിക്കലുമില്ല.',
+  'Male': 'പുരുഷൻ',
+  'Needed for your lagna': 'ലഗ്നത്തിന് ആവശ്യം',
+  'Optional. Sign in to keep your details when you reinstall or change phones.':
+      'ഓപ്ഷണൽ. ആപ്പ് വീണ്ടും ഇൻസ്റ്റാൾ ചെയ്താലും ഫോൺ മാറ്റിയാലും നിങ്ങളുടെ വിവരങ്ങൾ നിലനിൽക്കാൻ സൈൻ ഇൻ ചെയ്യൂ.',
+  'Remove my details': 'എന്റെ വിവരങ്ങൾ നീക്കം ചെയ്യൂ',
+  'Remove your details?': 'നിങ്ങളുടെ വിവരങ്ങൾ നീക്കം ചെയ്യണോ?',
+  'Set by you.': 'നിങ്ങൾ തിരഞ്ഞെടുത്തത്.',
+  'Sign in again with Google to delete your account.': 'അക്കൗണ്ട് ഇല്ലാതാക്കാൻ Google വഴി വീണ്ടും സൈൻ ഇൻ ചെയ്യൂ.',
+  'Signed in with Google · your details are backed up':
+      'Google വഴി സൈൻ ഇൻ ചെയ്തു · നിങ്ങളുടെ വിവരങ്ങൾ ബാക്കപ്പ് ചെയ്തിട്ടുണ്ട്',
+  'Signed in. Your details are backed up.': 'സൈൻ ഇൻ ചെയ്തു. നിങ്ങളുടെ വിവരങ്ങൾ ബാക്കപ്പ് ചെയ്തു.',
+  'Signed in. Your details were restored from your backup.':
+      'സൈൻ ഇൻ ചെയ്തു. നിങ്ങളുടെ വിവരങ്ങൾ ബാക്കപ്പിൽ നിന്ന് വീണ്ടെടുത്തു.',
+  'This deletes your Devalay account, your backup, your usage statistics and your chats with the developer. It cannot be undone. Your details stay on this phone until you remove them.':
+      'ഇത് നിങ്ങളുടെ ദേവാലയ് അക്കൗണ്ട്, ബാക്കപ്പ്, ഉപയോഗ സ്ഥിതിവിവരങ്ങൾ, ഡെവലപ്പറുമായുള്ള ചാറ്റുകൾ എന്നിവ ഇല്ലാതാക്കും. ഇത് പഴയപടിയാക്കാനാവില്ല. നിങ്ങൾ നീക്കം ചെയ്യുന്നതുവരെ നിങ്ങളുടെ വിവരങ്ങൾ ഈ ഫോണിൽ തന്നെ ഉണ്ടാകും.',
+  'Time of birth': 'ജനന സമയം',
+  'Work out from birth details': 'ജനന വിവരങ്ങളിൽ നിന്ന് കണക്കാക്കൂ',
+  'Worked out from your birth details (Lahiri ayanamsa).':
+      'നിങ്ങളുടെ ജനന വിവരങ്ങളിൽ നിന്ന് കണക്കാക്കിയത് (ലാഹിരി അയനാംശം).',
+  'Worked out from your date and place of birth. Add the time of birth for the lagna.':
+      'ജനനത്തീയതിയിൽ നിന്നും ജനനസ്ഥലത്തു നിന്നും കണക്കാക്കിയത്. ലഗ്നത്തിനായി ജനന സമയം ചേർക്കൂ.',
+  'Your account was deleted.': 'നിങ്ങളുടെ അക്കൗണ്ട് ഇല്ലാതാക്കി.',
+  'Your name, birth details and stars are removed from this phone, from your Google backup and from the usage statistics.':
+      'നിങ്ങളുടെ പേര്, ജനന വിവരങ്ങൾ, നക്ഷത്രങ്ങൾ എന്നിവ ഈ ഫോണിൽ നിന്നും നിങ്ങളുടെ Google ബാക്കപ്പിൽ നിന്നും ഉപയോഗ സ്ഥിതിവിവരങ്ങളിൽ നിന്നും നീക്കം ചെയ്യും.',
+  'Your stars': 'നിങ്ങളുടെ നക്ഷത്രങ്ങൾ',
+  'Add your name and birth details for a personal Panchang':
+      'വ്യക്തിഗത പഞ്ചാംഗത്തിനായി നിങ്ങളുടെ പേരും ജനന വിവരങ്ങളും ചേർക്കൂ',
+  'This removes the usage statistics this phone has sent, with the copy of "About you" in them, and turns sharing off. Your details, saved days, favourites and settings stay on this phone.':
+      'ഈ ഫോൺ അയച്ച ഉപയോഗ സ്ഥിതിവിവരങ്ങൾ, അവയിലുള്ള "നിങ്ങളെക്കുറിച്ച്" പകർപ്പ് ഉൾപ്പെടെ, ഇത് നീക്കം ചെയ്യുകയും പങ്കിടൽ ഓഫാക്കുകയും ചെയ്യും. നിങ്ങളുടെ വിവരങ്ങൾ, സേവ് ചെയ്ത ദിവസങ്ങൾ, പ്രിയപ്പെട്ടവ, ക്രമീകരണങ്ങൾ എന്നിവ ഈ ഫോണിൽ തന്നെ ഉണ്ടാകും.',
+  'Which screens and features you use, your language and state, and "About you" if you filled it in, so we can improve Devalay. Never what you type elsewhere.':
+      'നിങ്ങൾ ഏതൊക്കെ സ്ക്രീനുകളും ഫീച്ചറുകളും ഉപയോഗിക്കുന്നു, നിങ്ങളുടെ ഭാഷയും സംസ്ഥാനവും, പൂരിപ്പിച്ചിട്ടുണ്ടെങ്കിൽ "നിങ്ങളെക്കുറിച്ച്" എന്നിവ, ദേവാലയ് മെച്ചപ്പെടുത്താൻ വേണ്ടി. മറ്റിടങ്ങളിൽ നിങ്ങൾ ടൈപ്പ് ചെയ്യുന്നത് ഒരിക്കലുമില്ല.',
+  'backed up': 'ബാക്കപ്പ് ചെയ്തു',
+  'Devalay checks your approximate location once, now, to pick the nearest city. It is not saved or sent anywhere, and the app never tracks you in the background.':
+      'അടുത്തുള്ള നഗരം തിരഞ്ഞെടുക്കാൻ ദേവാലയ് ഇപ്പോൾ ഒരിക്കൽ മാത്രം നിങ്ങളുടെ ഏകദേശ ലൊക്കേഷൻ നോക്കും. അത് എവിടെയും സേവ് ചെയ്യുകയോ അയയ്ക്കുകയോ ചെയ്യുന്നില്ല, ആപ്പ് പശ്ചാത്തലത്തിൽ നിങ്ങളെ ഒരിക്കലും ട്രാക്ക് ചെയ്യുന്നില്ല.',
+  'Pick the city you were born in, or the nearest one. Its position and time zone are used for your chart.':
+      'നിങ്ങൾ ജനിച്ച നഗരം, അല്ലെങ്കിൽ ഏറ്റവും അടുത്തുള്ള നഗരം തിരഞ്ഞെടുക്കൂ. നിങ്ങളുടെ ജാതകത്തിനായി അതിന്റെ സ്ഥാനവും സമയ മേഖലയും ഉപയോഗിക്കുന്നു.',
   // Morning Panchang card, onboarding switch and widget (1.5.6).
   "Today's Panchang, every morning": 'എല്ലാ ദിവസവും രാവിലെ ഇന്നത്തെ പഞ്ചാംഗം',
   'Tithi, nakshatra, Rahu Kalam and sunrise at {0}, as a notification and on your home screen.':

@@ -1,5 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import 'age.dart';
+import 'muhurta.dart' show nakshatraNames, rashiNames;
+
 /// The numbers on the owner's admin screen, worked out from the usage log (Firestore `installs`
 /// summaries and `events` batches, see usage.dart). Pure functions over plain rows, so they are
 /// tested without Firebase (test/admin_stats_test.dart).
@@ -33,6 +36,7 @@ class InstallRow {
     this.notificationsAllowed,
     this.widgets,
     this.hasToken = false,
+    this.profile = const InstallProfile(),
   });
 
   factory InstallRow.fromMap(String uid, Map<String, dynamic> m) => InstallRow(
@@ -53,6 +57,7 @@ class InstallRow {
     notificationsAllowed: m['na'] as bool?,
     widgets: (m['nw'] as num?)?.toInt(),
     hasToken: m['t'] is String && (m['t'] as String).isNotEmpty,
+    profile: InstallProfile.fromMap(m['profile']),
   );
 
   final String uid;
@@ -64,6 +69,9 @@ class InstallRow {
   final int? widgets;
   final bool hasToken;
 
+  /// "About you" (1.5.11+), present only for users who filled it in and share usage statistics.
+  final InstallProfile profile;
+
   /// Before 1.5.7 the city was not reported as chosen, and the state came from the default city
   /// (New Delhi → DL) too, so older installs count as having chosen only if they recorded a city_set.
   bool get chose => cityChosen ?? (features['city_set'] ?? 0) > 0;
@@ -71,6 +79,71 @@ class InstallRow {
   String get brand => device.isEmpty ? '' : device.split(' ').first;
   String get android => androidName(sdk);
   String get ram => ramClass(ramMb);
+}
+
+/// The copy of "About you" in installs/{uid}.profile (AboutYou.toInstall): short keys, all optional.
+class InstallProfile {
+  const InstallProfile({
+    this.name = '',
+    this.gender = '',
+    this.dob,
+    this.birthMinutes,
+    this.storedAgeGroup = '',
+    this.rashi,
+    this.nakshatra,
+    this.lagna,
+    this.birthPlace = '',
+    this.gotra = '',
+  });
+
+  factory InstallProfile.fromMap(Object? raw) {
+    if (raw is! Map) return const InstallProfile();
+    int? idx(Object? v, int max) => v is int && v >= 0 && v <= max ? v : null;
+    String str(Object? v) => v is String ? v.trim() : '';
+    return InstallProfile(
+      name: str(raw['n']),
+      gender: const {'m', 'f', 'o'}.contains(raw['g']) ? raw['g'] as String : '',
+      dob: raw['dob'] is String ? DateTime.tryParse(raw['dob'] as String) : null,
+      birthMinutes: raw['tob'] is int && (raw['tob'] as int) >= 0 && (raw['tob'] as int) < 1440
+          ? raw['tob'] as int
+          : null,
+      storedAgeGroup: ageGroups.contains(raw['ag']) ? raw['ag'] as String : '',
+      rashi: idx(raw['r'], 11),
+      nakshatra: idx(raw['s'], 26),
+      lagna: idx(raw['l'], 11),
+      birthPlace: str(raw['bp']),
+      gotra: str(raw['go']),
+    );
+  }
+
+  final String name, gender, storedAgeGroup, birthPlace, gotra;
+  final DateTime? dob;
+
+  /// Time of birth, minutes after midnight (local to the place of birth).
+  final int? birthMinutes;
+  final int? rashi, nakshatra, lagna;
+
+  /// "10:30" (24-hour), or '' when not given.
+  String get birthTime => birthMinutes == null
+      ? ''
+      : '${(birthMinutes! ~/ 60).toString().padLeft(2, '0')}:${(birthMinutes! % 60).toString().padLeft(2, '0')}';
+
+  bool get isEmpty =>
+      name.isEmpty && gender.isEmpty && dob == null && rashi == null && nakshatra == null && birthPlace.isEmpty;
+
+  /// From the date of birth when it is there (it stays right as years pass), else what the phone sent.
+  String ageGroupOn(DateTime today) => (dob == null ? null : ageGroupFor(dob!, today)) ?? storedAgeGroup;
+
+  String get genderLabel => switch (gender) {
+    'm' => 'Male',
+    'f' => 'Female',
+    'o' => 'Other',
+    _ => '',
+  };
+
+  String get rashiLabel => rashi == null ? '' : rashiNames[rashi!];
+  String get nakshatraLabel => nakshatra == null ? '' : nakshatraNames[nakshatra!];
+  String get lagnaLabel => lagna == null ? '' : rashiNames[lagna!];
 }
 
 /// One recorded action ("screen" with the route as item, or a named action).
@@ -299,18 +372,40 @@ List<MapEntry<String, int>> splitBy(Iterable<InstallRow> all, String Function(In
 
 /// The Users tab's filters.
 class UserFilter {
-  const UserFilter({this.lang, this.state, this.inactiveDays, this.morningOn, this.reachable = false, this.query = ''});
+  const UserFilter({
+    this.lang,
+    this.state,
+    this.inactiveDays,
+    this.morningOn,
+    this.reachable = false,
+    this.query = '',
+    this.ageGroup,
+    this.gender,
+    this.rashi,
+  });
   final String? lang, state;
+
+  /// "About you" filters: an age group ('25-34'), a gender label ('Female') and a rashi ('Mesha').
+  final String? ageGroup, gender, rashi;
   final int? inactiveDays;
   final bool? morningOn;
   final bool reachable;
   final String query;
 
   bool get any =>
-      lang != null || state != null || inactiveDays != null || morningOn != null || reachable || query.isNotEmpty;
+      lang != null ||
+      state != null ||
+      inactiveDays != null ||
+      morningOn != null ||
+      reachable ||
+      query.isNotEmpty ||
+      ageGroup != null ||
+      gender != null ||
+      rashi != null;
 
   List<InstallRow> apply(List<InstallRow> all, {DateTime? now}) {
-    final cutoff = (now ?? DateTime.now()).subtract(Duration(days: inactiveDays ?? 0));
+    final today = now ?? DateTime.now();
+    final cutoff = today.subtract(Duration(days: inactiveDays ?? 0));
     final q = query.trim().toLowerCase();
     return all.where((i) {
       if (lang != null && i.lang != lang) return false;
@@ -318,7 +413,15 @@ class UserFilter {
       if (inactiveDays != null && (i.lastSeen == null || i.lastSeen!.isAfter(cutoff))) return false;
       if (morningOn != null && (i.morning == 'on') != morningOn) return false;
       if (reachable && !i.hasToken) return false;
-      if (q.isNotEmpty && !i.uid.toLowerCase().startsWith(q) && !i.device.toLowerCase().contains(q)) return false;
+      if (ageGroup != null && i.profile.ageGroupOn(today) != ageGroup) return false;
+      if (gender != null && i.profile.genderLabel != gender) return false;
+      if (rashi != null && i.profile.rashiLabel != rashi) return false;
+      if (q.isNotEmpty &&
+          !i.uid.toLowerCase().startsWith(q) &&
+          !i.device.toLowerCase().contains(q) &&
+          !i.profile.name.toLowerCase().contains(q)) {
+        return false;
+      }
       return true;
     }).toList();
   }

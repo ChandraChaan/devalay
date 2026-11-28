@@ -38,6 +38,7 @@ import 'features/panchang.dart';
 import 'features/player.dart';
 import 'features/pooja.dart';
 import 'features/premium.dart';
+import 'features/profile.dart';
 import 'features/support.dart';
 import 'features/support_chat.dart';
 import 'features/jatakam.dart';
@@ -174,6 +175,7 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(path: '/favorites', builder: (_, _) => const FavoritesScreen()),
       GoRoute(path: '/downloads', builder: (_, _) => const DownloadsScreen()),
       GoRoute(path: '/settings', builder: (_, _) => const SettingsScreen()),
+      GoRoute(path: '/profile', builder: (_, _) => const ProfileScreen()),
       GoRoute(path: '/backup', builder: (_, _) => const BackupScreen()),
       GoRoute(path: '/login', builder: (_, _) => const LoginScreen()),
       GoRoute(

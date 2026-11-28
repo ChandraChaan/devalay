@@ -414,6 +414,28 @@ List<DaySpan> moonSignSpans(Map data) {
   return (house: house, quality: const {1, 3, 6, 7, 10, 11}.contains(house) ? Quality.good : Quality.bad);
 }
 
+/// The day in one line from Tarabalam and (when the moon sign is known) Chandrabalam: good when the tara
+/// is not bad and the Moon's house is good; better to postpone big beginnings when both are bad.
+String personalVerdict(String lang, Quality tara, Quality? chandra) {
+  final good = tara != Quality.bad && (chandra == null || chandra == Quality.good);
+  final bad = tara == Quality.bad && (chandra == null || chandra == Quality.bad);
+  if (good) return t3(lang, 'A good day for you', 'आपके लिए शुभ दिन', 'మీకు మంచి రోజు');
+  if (bad) {
+    return t3(
+      lang,
+      'Better to postpone big beginnings',
+      'बड़े आरंभ टालना बेहतर',
+      'పెద్ద ప్రారంభాలు వాయిదా వేయడం మంచిది',
+    );
+  }
+  return t3(
+    lang,
+    'A mixed day: plan big things with care',
+    'मिला-जुला दिन: बड़े काम सोचकर करें',
+    'మిశ్రమ రోజు: పెద్ద పనులు జాగ్రత్తగా',
+  );
+}
+
 /// "1st", "2nd", "3rd" in English; "3वाँ" / "3వ" otherwise.
 String ordinal(String lang, int n) => switch (lang) {
   'hi' || 'mr' => '$nवाँ',

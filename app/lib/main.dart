@@ -12,6 +12,7 @@ import 'core/config.dart';
 import 'core/firebase.dart';
 import 'core/names.dart';
 import 'core/notifications.dart';
+import 'core/profile_sync.dart';
 import 'core/storage.dart';
 import 'core/usage.dart';
 
@@ -39,5 +40,6 @@ Future<void> main() async {
     unawaited(Notifications.init().catchError((Object e) => debugPrint('Notifications not ready: $e')));
     unawaited(FirebaseServices.subscribe(Prefs.load(Boxes.prefs).language, force: false));
     unawaited(pruneHttpCache());
+    ProfileSync.start();
   });
 }
