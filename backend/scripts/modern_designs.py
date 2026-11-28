@@ -328,7 +328,7 @@ def diya_bokeh() -> str:
 
 
 def jai_shri_ram() -> str:
-    return f"""
+    return """
 <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FF6F00"/>
  <stop offset=".45" stop-color="#E65100"/><stop offset="1" stop-color="#4E1400"/></linearGradient>
 <rect width="720" height="1600" fill="url(#bg)"/>

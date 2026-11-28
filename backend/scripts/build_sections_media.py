@@ -69,7 +69,7 @@ def run(*cmd: str) -> str:
 def get_json(url: str) -> dict:
     for attempt in range(4):
         try:
-            with urllib.request.urlopen(urllib.request.Request(url, headers=HEADERS), timeout=60) as r:
+            with urllib.request.urlopen(urllib.request.Request(url, headers=HEADERS), timeout=60) as r:  # noqa: S310
                 return json.load(r)
         except Exception:  # noqa: BLE001 - Commons rate limits now and then; back off and retry
             if attempt == 3:
@@ -84,7 +84,7 @@ def download(url: str, dest: Path) -> None:
     dest.parent.mkdir(parents=True, exist_ok=True)
     for attempt in range(4):
         try:
-            with urllib.request.urlopen(urllib.request.Request(url, headers=HEADERS), timeout=180) as r:
+            with urllib.request.urlopen(urllib.request.Request(url, headers=HEADERS), timeout=180) as r:  # noqa: S310
                 dest.write_bytes(r.read())
             return
         except Exception:  # noqa: BLE001
@@ -143,7 +143,7 @@ def fetch(work: Path) -> None:
 
 
 def slug_for(title: str) -> str:
-    return hashlib.sha1(title.encode()).hexdigest()[:12]
+    return hashlib.sha1(title.encode(), usedforsecurity=False).hexdigest()[:12]
 
 
     for step in sys.argv[2:]:

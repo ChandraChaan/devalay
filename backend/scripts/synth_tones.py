@@ -855,7 +855,7 @@ def tanpura_cycle(loop: Loop, bus: str, sa: float, rng, cycle: float, start: flo
         rendered[k] = [signal.sosfilt(body, y) for y in rendered[k]]
     total = count if count is not None else int(round(loop.n / SR / cycle))
     for c in range(total):
-        for i, (f, p) in enumerate(strings):
+        for i, (_f, p) in enumerate(strings):
             jitter = rng.uniform(-0.03, 0.03)
             y = rendered[i][rng.integers(variants)]
             loop.add(bus, y, start + c * cycle + i * cycle / 4 + jitter, gain * rng.uniform(0.85, 1.0), p)
@@ -937,8 +937,10 @@ def drone_pad(n: int, freqs, rng, period_s: float, swell_hz: float = 0.02, harmo
 
 
 def http_get(url: str) -> bytes:
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=60) as r:
+    if not url.startswith("https://"):
+        raise ValueError(f"not an https URL: {url}")
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})  # noqa: S310 - https checked above
+    with urllib.request.urlopen(req, timeout=60) as r:  # noqa: S310
         return r.read()
 
 
@@ -1189,7 +1191,7 @@ def tone_veena_dhun(rng, ctx):
               "G/.5 P/.5 N/.5 P/.5 G/1k R/.5 G/.5", "R/.5 S/.5 .N/.5 S/1.5 .P/.5 .N/.5"]
     ev = melody_events(lines, sa, spb)
     body = np.vstack([peq(240, 4, 1.0), peq(1100, 3, 1.5), peq(3200, -2, 1.0), butter("lowpass", 7500)])
-    for i, (t0, dur, hz, flags, tok) in enumerate(ev):
+    for t0, dur, hz, flags, tok in ev:
         ring = max(dur + 0.9, 1.6)
         n = int(ring * SR)
         bend = None
@@ -1454,7 +1456,7 @@ def tone_om_namah_shivaya_beat(rng, ctx):
     # downbeat phase: the beat-in-4 with the strongest average onsets
     phase = int(np.argmax([strength[p::4].mean() for p in range(4)]))
     beats = beats[phase:]
-    first = beats[0]
+    beats[0]
     # extend the grid past the chant with the median local period, to 48 beats (12 bars)
     per = float(np.median(np.diff(beats)))
     grid = list(beats[:48])
@@ -1741,7 +1743,7 @@ def med_veena_alap(rng, ctx):
     ]
     body = np.vstack([peq(240, 4, 1.0), peq(1100, 3, 1.5), butter("lowpass", 6500)])
     t = 2.0
-    for rep in range(2):
+    for _rep in range(2):
         for ph in phrases:
             for off, sw, meends in ph:
                 ring = 4.0
@@ -1875,7 +1877,7 @@ def med_dawn_birds(rng, ctx):
     loop = Loop(MED_S)
     kinds = [("koel", 0.25, 14, 26), ("warbler", 0.12, 4, 9), ("bulbul", 0.15, 6, 12), ("dove", 0.2, 18, 30)]
     for kind, g, lo, hi in kinds:
-        for who in range(2):  # two individuals of each, different distance and side
+        for _who in range(2):  # two individuals of each, different distance and side
             dist = rng.uniform(0.4, 1.0)
             pan = rng.uniform(-0.8, 0.8)
             for tt in even_times(rng, MED_S, lo, hi, start=rng.uniform(0, lo)):
