@@ -7,6 +7,7 @@ import 'package:in_app_purchase/in_app_purchase.dart';
 import 'package:in_app_purchase_android/in_app_purchase_android.dart';
 
 import 'auth.dart';
+import 'offers.dart';
 import 'storage.dart';
 import 'usage.dart';
 
@@ -256,7 +257,8 @@ class BillingController extends Notifier<BillingState> {
     try {
       final list = await _store.queryProducts(Products.all);
       if (!ref.mounted) return;
-      state = state.copyWith(products: {for (final p in list) p.id: p});
+      // Play lists a subscription once per base plan and offer; keep the best one the user can get.
+      state = state.copyWith(products: bestOffers(list));
     } catch (e) {
       debugPrint('products not loaded: $e');
     }

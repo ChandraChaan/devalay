@@ -193,6 +193,166 @@ put on commercial recordings, so we use none of them.
 | Surya Narayan | Public domain | Ravi Varma Press | [Commons](https://commons.wikimedia.org/wiki/File:Surya_Narayana.jpg) |
 | Surya in his chariot | CC BY 4.0 | Unknown | [Commons](https://commons.wikimedia.org/wiki/File:Surya_the_sun_deity_driving_in_his_chariot._Gouache_drawing._Wellcome_V0045217.jpg) |
 
+<!-- sections:start -->
+
+## Ringtones, wallpapers, WhatsApp status and meditation (`media-sections-v1`)
+
+Built by `backend/scripts/build_sections_media.py` (with `modern_designs.py` and `synth_tones.py`); the files are assets of the `media-sections-v1` GitHub release and the catalogue is `app/assets/data/sections.json`. Wallpapers are cropped and composed for phone screens; tones are trimmed, loudness-normalised and faded; status videos combine the art and audio credited below. Devalay's own designs, tones and soundscapes are CC0.
+
+### Wallpapers
+
+| Item | Author | Licence | Source |
+|---|---|---|---|
+| Glowing Om (Premium) | Devalay | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Peacock Feather and Flute (Premium) | Devalay | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Trishul and the Moon (Premium) | Devalay | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Govinda Namam (Premium) | Devalay | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Little Krishna's Butter Pot | Devalay | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Lotus Mandala | Devalay | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Sri Yantra | Devalay | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Diya Glow | Devalay | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Jai Shri Ram | Devalay | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Radhe Radhe | Devalay | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Toran and Kalash | Devalay | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Hanuman's Gada | Devalay | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Sudarshana Chakra | Devalay | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Sri Rama, Nashik (Premium) | Rangnath Wakchaure | Public domain | [source](https://commons.wikimedia.org/wiki/File:Lord_Rama_Statue_Nashik.jpg) |
+| Ganesh Chaturthi | Ashish Suryavanshi858 | CC0 | [source](https://commons.wikimedia.org/wiki/File:Ganesh_chaturthi_puja_01.jpg) |
+| Ganapati Pandal | AjayDas | CC BY-SA 4.0 | [source](https://commons.wikimedia.org/wiki/File:The_idol_of_Lord_Ganesha_at_pandals_in_the_Paltan_Bazar_area_of_Dibrugarh_during_the_Ganesh_Chaturthi_celebrations_in_2024_16.jpg) |
+| Maa Durga, Kumartuli | Soumava2002 | CC0 | [source](https://commons.wikimedia.org/wiki/File:Maa_Durga_Idol_at_Kumartuli.jpg) |
+| Durga Puja | M_Sarkar | CC BY-SA 4.0 | [source](https://commons.wikimedia.org/wiki/File:Idol_of_Goddess_Durga_(Ceremonial_Worship)_14.jpg) |
+| Diya Flame | G22001 | CC0 | [source](https://commons.wikimedia.org/wiki/File:Diwali._diye.jpg) |
+| Shubh Diya | Atulbibave | CC BY-SA 4.0 | [source](https://commons.wikimedia.org/wiki/File:Panati_or_Diya_on_Diwali_festival.jpg) |
+| Diwali Lamps | Pinakpani | CC BY-SA 4.0 | [source](https://commons.wikimedia.org/wiki/File:Diwali_lamps_in_India_06.jpg) |
+| Jewelled Diya | Slyronit | CC BY-SA 4.0 | [source](https://commons.wikimedia.org/wiki/File:Diwali_Diya_4.jpg) |
+| Laddu Gopal | The open draft | CC BY-SA 4.0 | [source](https://commons.wikimedia.org/wiki/File:Decorated_idol_of_Lord_Krishna_(Laddu_Gopal)_in_home_shrine,_India.jpg) |
+| Radha Krishna Shringar | Narsinghdhamghagwal | CC BY 4.0 | [source](https://commons.wikimedia.org/wiki/File:Radha_Krishna_Idols_at_Shri_Narsingh_Dham_Ghagwal.jpg) |
+| Radha Krishna Mandir | AjayDas | CC BY-SA 4.0 | [source](https://commons.wikimedia.org/wiki/File:Idol_of_Radha_Krishna_inside_the_main_sanctum_of_Radha_Krishna_temple,_Dibrugarh_02.jpg) |
+| Shiva by the Sea | Amitbalani | CC0 | [source](https://commons.wikimedia.org/wiki/File:Shiva_Statue_at_Aazhimala_Shiva_Temple.jpg) |
+| Hanuman, Podalakuru | Mounikao2o | CC0 | [source](https://commons.wikimedia.org/wiki/File:Hanuman_Statue_in_Podalakuru.jpg) |
+| Green Hanuman | Sam Hidayat | CC BY-SA 4.0 | [source](https://commons.wikimedia.org/wiki/File:The_green_Hanuman_statue_in_Batu_Caves_(1).jpg) |
+| Hanuman, Jakhu | TheSlumPanda | CC BY-SA 4.0 | [source](https://commons.wikimedia.org/wiki/File:Hanuman_Statue_at_Jakhu,_Shimla.jpg) |
+| Shree Lakshmi | Nishu0246 | CC BY-SA 4.0 | [source](https://commons.wikimedia.org/wiki/File:Shree_Lakshmi_Maa.jpg) |
+| Lakshmi Puja | Marajozkee | CC BY 4.0 | [source](https://commons.wikimedia.org/wiki/File:Lakshmi_Puja_Odisha_India_MB02.jpg) |
+| Saraswati Puja | Tinku Chakraborty | CC BY-SA 4.0 | [source](https://commons.wikimedia.org/wiki/File:A_Saraswati_idol_being_worshipped_by_the_Hindus_during_the_religious_festival_of_Saraswati_Puja.jpg) |
+| Golden Murugan | Shesmax | CC BY-SA 4.0 | [source](https://commons.wikimedia.org/wiki/File:Batu_Caves,_Lord_Murugan_Statue._2019-12-01_10-49-22.jpg) |
+| Maha Lakshmi | Raja Ravi Varma | Public domain | [source](https://commons.wikimedia.org/wiki/File:Lakshmi,_by_Raja_Ravi_Varma,_1930s.jpg) |
+| Sri Venkateswara | Bhavna1359 | CC0 | [source](https://commons.wikimedia.org/wiki/File:Tirupati_Balaji_from_delhi_2023.jpg) |
+| Shiva Parvati on Kailasa | Unknown | CC BY 4.0 | [source](https://commons.wikimedia.org/wiki/File:Shiva,_Parvati_and_Ganesha_enthroned_on_Mount_Kailas_with_Na_Wellcome_V0045136.jpg) |
+| Sri Rama Pattabhishekam | Raja Ravi Varma | Public domain | [source](https://commons.wikimedia.org/wiki/File:Ramapanchayan,_Raja_Ravi_Varma_(Lithograph).jpg) |
+| Saraswati Devi | Raja Ravi Varma | Public domain | [source](https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma,_Goddess_Saraswati.jpg) |
+| Sri Ganesha | Unknown | CC BY 4.0 | [source](https://commons.wikimedia.org/wiki/File:Ganesha._Chromolithograph._Wellcome_V0044933.jpg) |
+| Siddhi Buddhi Ganapati | Unknown | CC BY 4.0 | [source](https://commons.wikimedia.org/wiki/File:Ganesha_and_his_two_wives,_Siddhi_and_Buddhi,_surrounded_by_Wellcome_V0045084.jpg) |
+| Ganapati, Kalighat painting | anonymous | CC0 | [source](https://commons.wikimedia.org/wiki/File:India,_Calcutta,_Kalighat_painting,_19th_century_-_Ganesha_-_2003.98_-_Cleveland_Museum_of_Art.tif) |
+| Shiva Parivar | Unknown | CC BY 4.0 | [source](https://commons.wikimedia.org/wiki/File:Shiva_enthroned_with_his_family,_Parvati_and_Ganesha,_attend_Wellcome_V0045047.jpg) |
+| Shiva on Nandi | Unknown | CC BY 4.0 | [source](https://commons.wikimedia.org/wiki/File:Shiva_mounted_on_Nandi_surrounded_by_attendants_helping_Parv_Wellcome_V0045049.jpg) |
+| Gangadhara | Unknown | CC BY 4.0 | [source](https://commons.wikimedia.org/wiki/File:Gang%C4%81_and_the_river_Ganges_falling_from_heaven,_while_S_Wellcome_V0045134.jpg) |
+| Mrityunjaya | Raja Ravi Varma | Public domain | [source](https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma,_Markandeya_(cropped).jpg) |
+| Annapurna Devi | Unknown | CC BY 4.0 | [source](https://commons.wikimedia.org/wiki/File:Shiva_begging_from_Annapurna._Chromolithograph._Wellcome_V0045017.jpg) |
+| Hari Hara | anonymous | CC0 | [source](https://commons.wikimedia.org/wiki/File:India,_Calcutta,_Kalighat_painting,_19th_century_-_Hari-Hara_-_2003.99_-_Cleveland_Museum_of_Art.tif) |
+| Swarna Lakshmi | Raja Ravi Varma | Public domain | [source](https://commons.wikimedia.org/wiki/File:Lakshmi_Embellished,_by_Ravi_Varma_Press,_edit.jpg) |
+| Gaja Lakshmi | Unknown | CC BY 4.0 | [source](https://commons.wikimedia.org/wiki/File:Lakshmi_being_annointed_by_elephants._Chromolithograph._Wellcome_V0044934.jpg) |
+| Lakshmi on the lotus | Unknown | CC BY 4.0 | [source](https://commons.wikimedia.org/wiki/File:Lakshmi_on_her_lotus_in_the_water_with_elephant._Chromolitho_Wellcome_V0045127.jpg) |
+| Lakshmi and Saraswati | Raja Ravi Varma | Public domain | [source](https://commons.wikimedia.org/wiki/File:Lakshmi_Saraswati_Sanyog,_by_Raja_Ravi_Varma.jpg) |
+| Veenapani Saraswati | Raja Ravi Varma | CC BY 4.0 | [source](https://commons.wikimedia.org/wiki/File:Sarasvati_with_her_sitar_and_peacock._Chromolithograph_by_R._Wellcome_V0045121.jpg) |
+| Ananta Padmanabha | Unknown | CC BY 4.0 | [source](https://commons.wikimedia.org/wiki/File:Vishnu_flanked_by_two_wives_resting_on_Shesa,_the_serpent_on_Wellcome_V0045133.jpg) |
+| Ksheerasagara Vishnu | Unknown | CC BY 4.0 | [source](https://commons.wikimedia.org/wiki/File:Vishnu_resting_on_the_ocean_accompanied_by_Lakshmi,_Tumbara,_Wellcome_V0045080.jpg) |
+| Lakshmi Narayana | Unknown | CC BY 4.0 | [source](https://commons.wikimedia.org/wiki/File:Vishnu_and_Lakshmi_attended_by_Garuda_and_two_attendants._Ch_Wellcome_V0045051.jpg) |
+| Venkateswara, Tanjore painting | Iramuthusamy | CC BY-SA 3.0 | [source](https://commons.wikimedia.org/wiki/File:Tanjore_Paintings_Venkateshwara.jpg) |
+| Sita Rama and Hanuman | Unknown | CC BY 4.0 | [source](https://commons.wikimedia.org/wiki/File:Rama_and_Sita_enthroned_attended_by_Hanuman,_Bharata_and_Lak_Wellcome_V0045046.jpg) |
+| Rama breaks the bow | Raja Ravi Varma | Public domain | [source](https://commons.wikimedia.org/wiki/File:Ravi_Varma-Rama-breaking-bow.jpg) |
+| Sanjeevani Hanuman | Unknown | Public domain | [source](https://commons.wikimedia.org/wiki/File:Hanuman_fetches_the_herb-bearing_mountain,_in_a_print_from_the_Ravi_Varma_Press,_1910%27s.jpg) |
+| Yashoda's Krishna | Unknown | CC BY 4.0 | [source](https://commons.wikimedia.org/wiki/File:Krishna_as_an_infant_sitting_on_Yasoda%27s_lap_with_a_female_a_Wellcome_V0045099.jpg) |
+| Govardhana Giridhari | anonymous | CC0 | [source](https://commons.wikimedia.org/wiki/File:India,_Pahari_Hills,_Kangra_School,_18th_century_-_Krishna_Lifting_Mt._Govardhana_-_2001.45_-_Cleveland_Museum_of_Art.tif) |
+| Gita Upadesham | Unknown authorUnknown author | Public domain | [source](https://commons.wikimedia.org/wiki/File:Sri_Krishna_preaching_Gita_Upadesh_to_Arjun_-_Unknown,_Kashmir_School_-_Google_Cultural_Institute.jpg) |
+| Radha in the moonlight | RAJA RAVI VARMA (1848 - 1906) | Public domain | [source](https://commons.wikimedia.org/wiki/File:Radha_in_the_Moonlight.jpg) |
+| Radha Krishna | Unknown | CC BY 4.0 | [source](https://commons.wikimedia.org/wiki/File:Krishna_embracing_Radha._Chromolithograph_by_R._Varma._Wellcome_V0045101.jpg) |
+| Simhavahini Durga | Unknown | CC BY 4.0 | [source](https://commons.wikimedia.org/wiki/File:A_goddess_probably_Parvati_as_Durga_riding_on_a_lion_present_Wellcome_V0045026.jpg) |
+| Mahishasura Mardini | Unknown | CC BY 4.0 | [source](https://commons.wikimedia.org/wiki/File:Durga_slaying_the_Buffalo_Demon._Chromolithograph._Wellcome_V0045082.jpg) |
+| Maa Kali | Raja Ravi Varma | Public domain | [source](https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma_-_Kali.jpg) |
+| Surya Narayana | Unknown | CC BY 4.0 | [source](https://commons.wikimedia.org/wiki/File:Surya_the_sun_deity_driving_in_his_chariot._Gouache_drawing._Wellcome_V0045217.jpg) |
+| Sri Dattatreya | Raja Ravi Varma | Public domain | [source](https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma_-_Dattatreya.jpg) |
+
+### Ringtones
+
+| Item | Author | Licence | Source |
+|---|---|---|---|
+| Lo-fi Krishna Flute (Premium) | Devalay (synthesised) | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Mandolin Rama (Premium) | U. Srinivas (mandolin) · Saregama | CC BY 3.0 | [source](https://commons.wikimedia.org/wiki/File:Tatvameruga_-_U.Srinivas_(Raga_Garudahwani)_Tyagaraja_Carnatic_classical_music.ogg) |
+| Shankh Drop (Premium) | Devalay (synthesised) | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Brahma Kadigina Padamu (Premium) | M.S. Subbulakshmi · Saregama | CC BY 3.0 | [source](https://commons.wikimedia.org/wiki/File:Brahma_Kadigina_Paadamu_By_MS_Subbulakshmi_with_Lyrics_-_Annamacharya_Keerthis.webm) |
+| Temple Bells Pop (Premium) | Devalay (synthesised) | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Veena Dhun | Devalay (synthesised) | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Om Namah Shivaya Beat | Devalay, with the chant by Sachin Patel 78 | CC BY-SA 4.0 | [source](https://commons.wikimedia.org/wiki/File:Om_Namah_Shivaya_Performance_at_Khajuraho_-_2026.ogg) |
+| Gayatri Lo-fi | Devalay, with the chant by Wilfredor | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Adharam Madhuram | M.S. Subbulakshmi · Saregama | CC BY 3.0 | [source](https://commons.wikimedia.org/wiki/File:Popular_Shri_Krishna_Bhajan_-_M.S._Subbulakshmi_-_Bhaja_Govindam_-_Sikshashtakam_-_Carnatic_Music.webm) |
+| Shriman Narayana | M.S. Subbulakshmi · Saregama | CC BY 3.0 | [source](https://commons.wikimedia.org/wiki/File:Shriman_Narayana_with_Lyrics_by_MS_Subbalakshmi_-_Annamacharya_Keerthis.webm) |
+| Bhaja Govindam | M.S. Subbulakshmi · Saregama | CC BY 3.0 | [source](https://commons.wikimedia.org/wiki/File:Popular_Shri_Krishna_Bhajan_-_M.S._Subbulakshmi_-_Bhaja_Govindam_-_Sikshashtakam_-_Carnatic_Music.webm) |
+| Temple Bells | Devalay (synthesised) | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Shankh Naad | Devalay (synthesised) | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Gayatri Mantra | Wilfredor | CC0 | [source](https://commons.wikimedia.org/wiki/File%3AGayatri_mantra.ogg) |
+| Om Namah Shivaya | Sachin Patel 78 | CC BY-SA 4.0 | [source](https://commons.wikimedia.org/wiki/File%3AOm_Namah_Shivaya_Performance_at_Khajuraho_-_2026.ogg) |
+| Jo Achyutananda | M.S. Subbulakshmi · Saregama | CC BY 3.0 | [source](https://commons.wikimedia.org/wiki/File:Jo_Achyutananda_With_Lyrics_By_M_S_Subbulakshmi_-_Sri_Annamacharya_Samkirtanas.webm) |
+| Venkatesa Stotram | P.B. Sreenivas · Saregama | CC BY 3.0 | [source](https://commons.wikimedia.org/wiki/File:Best_of_P.B._Sreenivas_Devotional_Hits_-_Sri_Krishna_Ashtaga_-_Sri_Hanuman_Chalisa_-_Carnatic_Music.webm) |
+| Srinivasa Thiruvenkata | M.S. Subbulakshmi · Saregama | CC BY 3.0 | [source](https://commons.wikimedia.org/wiki/File:Srinivasa_Thiruvenkata_Carnatic_Song_with_Lyrics_M_S_Subbulakshmi_Carnatic_Vocal.webm) |
+| Hanuman Chalisa | P.B. Sreenivas · Saregama | CC BY 3.0 | [source](https://commons.wikimedia.org/wiki/File:Best_of_P.B._Sreenivas_Devotional_Hits_-_Sri_Krishna_Ashtaga_-_Sri_Hanuman_Chalisa_-_Carnatic_Music.webm) |
+| Mahalakshmi Ashtakam | P.B. Sreenivas · Saregama | CC BY 3.0 | [source](https://commons.wikimedia.org/wiki/File:Best_of_P.B._Sreenivas_Devotional_Hits_-_Sri_Krishna_Ashtaga_-_Sri_Hanuman_Chalisa_-_Carnatic_Music.webm) |
+| Shiva Panchakshara | M.S. Subbulakshmi · Saregama | CC BY 3.0 | [source](https://commons.wikimedia.org/wiki/File:Most_Powerful_Shivan_Song_-_M.S._Subbulakshmi_-_Siva_Panchakshara_Stotram_-_Carnatic_Classical_Music.webm) |
+| Ganesha Pancharatnam | M.S. Subbulakshmi · Saregama | CC BY 3.0 | [source](https://commons.wikimedia.org/wiki/File:Ganesh_Chaturthi_Special_Bhajan%2C_M.S._Subbulakshmi%2C_Ganesha_Pancharatnam%2C_Carnatic_Classical_Music.webm) |
+| Nagumomu | M.S. Subbulakshmi · Saregama | CC BY 3.0 | [source](https://commons.wikimedia.org/wiki/File:Nagumomu_-_Lyrical_Video_-_Samarpanam_-_M.S._Subbulakshmi%2C_Radha_Vishwanathan_-_Tamil_Carnatic_Music.webm) |
+| Paluke Bangaramayena | Dr. M. Balamuralikrishna · Saregama | CC BY 3.0 | [source](https://commons.wikimedia.org/wiki/File:Popular_Shri_Ram_Bhajans_-_Dr._M._Balamuralikrishna_-_Sri_Bhadrachala_Ramadasu_-_Carnatic_Music.webm) |
+| Dolayam | M.S. Subbulakshmi, Radha Vishwanathan · Saregama | CC BY 3.0 | [source](https://commons.wikimedia.org/wiki/File:Sri_Annamacharya_Samkirtanas_-_M.S._Subbulakshmi_-_Radha_Vishwanathan_-_Carnatic_Classical_Music.webm) |
+| Kashi Suprabhatam | M.S. Subbulakshmi · Saregama | CC BY 3.0 | [source](https://commons.wikimedia.org/wiki/File:Most_Powerful_Shivan_Song_-_M.S._Subbulakshmi_-_Siva_Panchakshara_Stotram_-_Carnatic_Classical_Music.webm) |
+| Mahamrityunjaya | Rameshvar | FAL | [source](https://commons.wikimedia.org/wiki/File%3AMrityunjaya.ogg) |
+| Ganpati Vandana | Shri hari om sharan ji | CC0 | [source](https://commons.wikimedia.org/wiki/File%3AAarti_Puja%2C_Ganpati_Vandana.ogg) |
+| Aarti Chant | Aarti Shri Radha Govind Dev Ji, Jaipur | CC0 | [source](https://commons.wikimedia.org/wiki/File%3ASanskrit_chanting_for_Aarti_Puja_Prayer_-_Female_Voice.ogg) |
+| Krishna Bansuri | Devalay (synthesised) | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Om Shanti | Devalay (synthesised) | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Puja Ghanti | Devalay (synthesised) | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Bell Ting | Devalay (synthesised) | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Flute Call | Devalay (synthesised) | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+
+### Meditation
+
+| Item | Author | Licence | Source |
+|---|---|---|---|
+| River Flute (Premium) | Devalay (synthesised) | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Himalayan Wind and Om (Premium) | Devalay (synthesised) | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Singing Bowls (Premium) | Devalay (synthesised) | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Ocean Om (Premium) | Devalay (synthesised) | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Veena Alap (Premium) | Devalay (synthesised) | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Deep Om | Devalay (synthesised) | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Tanpura | Devalay (synthesised) | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Rain and Temple Bells | Devalay (synthesised) | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Night Crickets | Devalay (synthesised) | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+| Dawn Birds | Devalay (synthesised) | CC0 | [source](https://github.com/ChandraChaan/devalay) |
+
+### WhatsApp status videos
+
+| Video | Art | Audio |
+|---|---|---|
+| Vaikuntha Ekadashi (Premium) | Unknown, CC BY 4.0 ([source](https://commons.wikimedia.org/wiki/File:Vishnu_flanked_by_two_wives_resting_on_Shesa,_the_serpent_on_Wellcome_V0045133.jpg)) | M.S. Subbulakshmi · Saregama, CC BY 3.0 ([source](https://commons.wikimedia.org/wiki/File:Annamacharya%27s_Greatest_Hits_Collection_-_M.S._Subblakshmi_-_Namo_Narayanaya_-_Carnatic_Music.webm)) |
+| Friday: Maha Lakshmi (Premium) | Raja Ravi Varma, Public domain ([source](https://commons.wikimedia.org/wiki/File:Lakshmi,_by_Raja_Ravi_Varma,_1930s.jpg)) | P.B. Sreenivas · Saregama, CC BY 3.0 ([source](https://commons.wikimedia.org/wiki/File:Best_of_P.B._Sreenivas_Devotional_Hits_-_Sri_Krishna_Ashtaga_-_Sri_Hanuman_Chalisa_-_Carnatic_Music.webm)) |
+| Monday: Shiva (Premium) | Unknown, CC BY 4.0 ([source](https://commons.wikimedia.org/wiki/File:Shiva,_Parvati_and_Ganesha_enthroned_on_Mount_Kailas_with_Na_Wellcome_V0045136.jpg)) | M.S. Subbulakshmi · Saregama, CC BY 3.0 ([source](https://commons.wikimedia.org/wiki/File:Most_Powerful_Shivan_Song_-_M.S._Subbulakshmi_-_Siva_Panchakshara_Stotram_-_Carnatic_Classical_Music.webm)) |
+| Sri Rama Jayam (Premium) | Raja Ravi Varma, Public domain ([source](https://commons.wikimedia.org/wiki/File:Ramapanchayan,_Raja_Ravi_Varma_(Lithograph).jpg)) | U. Srinivas (mandolin) · Saregama, CC BY 3.0 ([source](https://commons.wikimedia.org/wiki/File:Tatvameruga_-_U.Srinivas_(Raga_Garudahwani)_Tyagaraja_Carnatic_classical_music.ogg)) |
+| Makara Sankranti (Premium) | Unknown, CC BY 4.0 ([source](https://commons.wikimedia.org/wiki/File:Surya_the_sun_deity_driving_in_his_chariot._Gouache_drawing._Wellcome_V0045217.jpg)) | Wilfredor, CC0 ([source](https://commons.wikimedia.org/wiki/File%3AGayatri_mantra.ogg)) |
+| Good morning | Raja Ravi Varma, Public domain ([source](https://commons.wikimedia.org/wiki/File:Lakshmi_Saraswati_Sanyog,_by_Raja_Ravi_Varma.jpg)) | M.S. Subbulakshmi · Saregama, CC BY 3.0 ([source](https://commons.wikimedia.org/wiki/File:Most_Powerful_Shivan_Song_-_M.S._Subbulakshmi_-_Siva_Panchakshara_Stotram_-_Carnatic_Classical_Music.webm)) |
+| Good night | RAJA RAVI VARMA (1848 - 1906), Public domain ([source](https://commons.wikimedia.org/wiki/File:Radha_in_the_Moonlight.jpg)) | Devalay (synthesised), CC0 ([source](https://github.com/ChandraChaan/devalay)) |
+| Sunday: Surya | Unknown, CC BY 4.0 ([source](https://commons.wikimedia.org/wiki/File:Surya_the_sun_deity_driving_in_his_chariot._Gouache_drawing._Wellcome_V0045217.jpg)) | Devalay (synthesised), CC0 ([source](https://github.com/ChandraChaan/devalay)) |
+| Tuesday: Hanuman | Unknown, Public domain ([source](https://commons.wikimedia.org/wiki/File:Hanuman_fetches_the_herb-bearing_mountain,_in_a_print_from_the_Ravi_Varma_Press,_1910%27s.jpg)) | P.B. Sreenivas · Saregama, CC BY 3.0 ([source](https://commons.wikimedia.org/wiki/File:Best_of_P.B._Sreenivas_Devotional_Hits_-_Sri_Krishna_Ashtaga_-_Sri_Hanuman_Chalisa_-_Carnatic_Music.webm)) |
+| Wednesday: Ganesha | Unknown, CC BY 4.0 ([source](https://commons.wikimedia.org/wiki/File:Ganesha._Chromolithograph._Wellcome_V0044933.jpg)) | M.S. Subbulakshmi · Saregama, CC BY 3.0 ([source](https://commons.wikimedia.org/wiki/File:Ganesh_Chaturthi_Special_Bhajan%2C_M.S._Subbulakshmi%2C_Ganesha_Pancharatnam%2C_Carnatic_Classical_Music.webm)) |
+| Thursday: Guru | Raja Ravi Varma, Public domain ([source](https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma_-_Dattatreya.jpg)) | Swami Atmananda, CC0 ([source](https://commons.wikimedia.org/wiki/File%3ASanskrit_Chanting_Guru_Stotram.ogg)) |
+| Saturday: Venkateswara | Bhavna1359, CC0 ([source](https://commons.wikimedia.org/wiki/File:Tirupati_Balaji_from_delhi_2023.jpg)) | P.B. Sreenivas · Saregama, CC BY 3.0 ([source](https://commons.wikimedia.org/wiki/File:Best_of_P.B._Sreenivas_Devotional_Hits_-_Sri_Krishna_Ashtaga_-_Sri_Hanuman_Chalisa_-_Carnatic_Music.webm)) |
+| Karthika Deepam | Unknown, CC BY 4.0 ([source](https://commons.wikimedia.org/wiki/File:Gang%C4%81_and_the_river_Ganges_falling_from_heaven,_while_S_Wellcome_V0045134.jpg)) | Sachin Patel 78, CC BY-SA 4.0 ([source](https://commons.wikimedia.org/wiki/File%3AOm_Namah_Shivaya_Performance_at_Khajuraho_-_2026.ogg)) |
+| Gita Jayanti | Unknown authorUnknown author, Public domain ([source](https://commons.wikimedia.org/wiki/File:Sri_Krishna_preaching_Gita_Upadesh_to_Arjun_-_Unknown,_Kashmir_School_-_Google_Cultural_Institute.jpg)) | M.S. Subbulakshmi · Saregama, CC BY 3.0 ([source](https://commons.wikimedia.org/wiki/File:Popular_Shri_Krishna_Bhajan_-_M.S._Subbulakshmi_-_Bhaja_Govindam_-_Sikshashtakam_-_Carnatic_Music.webm)) |
+| Hare Krishna | Unknown, CC BY 4.0 ([source](https://commons.wikimedia.org/wiki/File:Krishna_embracing_Radha._Chromolithograph_by_R._Varma._Wellcome_V0045101.jpg)) | M.S. Subbulakshmi · Saregama, CC BY 3.0 ([source](https://commons.wikimedia.org/wiki/File:Popular_Shri_Krishna_Bhajan_-_M.S._Subbulakshmi_-_Bhaja_Govindam_-_Sikshashtakam_-_Carnatic_Music.webm)) |
+| सुप्रभात | Unknown, CC BY 4.0 ([source](https://commons.wikimedia.org/wiki/File:Lakshmi_on_her_lotus_in_the_water_with_elephant._Chromolitho_Wellcome_V0045127.jpg)) | Aarti Shri Radha Govind Dev Ji, Jaipur, CC0 ([source](https://commons.wikimedia.org/wiki/File%3ASanskrit_chanting_for_Aarti_Puja_Prayer_-_Female_Voice.ogg)) |
+| हर हर महादेव | Unknown, CC BY 4.0 ([source](https://commons.wikimedia.org/wiki/File:Shiva_enthroned_with_his_family,_Parvati_and_Ganesha,_attend_Wellcome_V0045047.jpg)) | Sachin Patel 78, CC BY-SA 4.0 ([source](https://commons.wikimedia.org/wiki/File%3AOm_Namah_Shivaya_Performance_at_Khajuraho_-_2026.ogg)) |
+| जय हनुमान | Unknown, CC BY 4.0 ([source](https://commons.wikimedia.org/wiki/File:Rama_and_Sita_enthroned_attended_by_Hanuman,_Bharata_and_Lak_Wellcome_V0045046.jpg)) | P.B. Sreenivas · Saregama, CC BY 3.0 ([source](https://commons.wikimedia.org/wiki/File:Best_of_P.B._Sreenivas_Devotional_Hits_-_Sri_Krishna_Ashtaga_-_Sri_Hanuman_Chalisa_-_Carnatic_Music.webm)) |
+| शुभ शुक्रवार | Raja Ravi Varma, Public domain ([source](https://commons.wikimedia.org/wiki/File:Lakshmi_Embellished,_by_Ravi_Varma_Press,_edit.jpg)) | Shri hari om sharan ji, CC0 ([source](https://commons.wikimedia.org/wiki/File%3AAarti_Puja%2C_Lakshmi_Laxmi.ogg)) |
+
+<!-- sections:end -->
+
 ## Films
 
 | Title | Licence | Source |
@@ -204,7 +364,7 @@ put on commercial recordings, so we use none of them.
 
 ## Fonts and data
 
-- Mukta (Ek Type), Tiro Devanagari Sanskrit and Tiro Telugu (Tiro Typeworks), and Noto Sans Telugu (Google): SIL Open Font License 1.1 (`app/assets/fonts/OFL-*.txt`).
+- Mukta (Ek Type), Tiro Devanagari Sanskrit and Tiro Telugu (Tiro Typeworks), Noto Sans Telugu (Google), and Ramabhadra and Suranna (Silicon Andhra): SIL Open Font License 1.1 (`app/assets/fonts/OFL-*.txt`).
 - NASA JPL DE421 planetary ephemeris: public domain (US Government work). Skyfield: MIT.
 
 ## Trademarks

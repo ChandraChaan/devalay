@@ -31,6 +31,13 @@ class CreditsScreen extends StatelessWidget {
       [
         'Deity paintings and prints by Raja Ravi Varma (1848-1906) and the Ravi Varma Press, and other public-domain works, '
             'from Wikimedia Commons. Each wallpaper shows its own credit and links to its source.',
+        'Classic-art wallpapers also use chromolithographs from the Wellcome Collection (CC BY 4.0) and Kalighat and '
+            'Pahari paintings from the Cleveland Museum of Art (CC0), cropped and composed for phone screens.',
+        'Photo wallpapers are photographs from Wikimedia Commons under CC0, CC BY or CC BY-SA, cropped for phones; '
+            'each shows its photographer and licence and links to its source.',
+        'Modern wallpapers (Glowing Om, Peacock Feather, Trishul, Govinda Namam and the rest) and the status designs '
+            'are original artwork made for Devalay, released under CC0.',
+        'Status videos combine those works with recordings credited on each video.',
       ],
     ),
     (
@@ -39,6 +46,10 @@ class CreditsScreen extends StatelessWidget {
         'Recordings from Wikimedia Commons under CC0, CC BY-SA 3.0/4.0 or the Free Art License, credited on each track.',
         'Temple bells, shankh, Om drone, tanpura, bansuri and ringtones are original sounds synthesised for Devalay, '
             'released under CC0.',
+        'Ringtones are trimmed, loudness-normalised cuts of the recordings above, credited on each tone. The lo-fi and '
+            'beat tones and all meditation soundscapes are original synthesis (CC0); the Gayatri and Om Namah Shivaya '
+            'remixes keep their chants\' licences (CC0 and CC BY-SA 4.0).',
+        'Movie bhakti songs are not hosted by Devalay: they play from the music labels\' official YouTube uploads.',
       ],
     ),
     (
@@ -52,7 +63,13 @@ class CreditsScreen extends StatelessWidget {
       'Astronomy',
       ['Panchang and festival dates computed with Skyfield (MIT) and NASA JPL DE421 ephemeris (public domain).'],
     ),
-    ('Fonts', ['Mukta (Ek Type) and Tiro Devanagari Sanskrit (Tiro Typeworks), SIL Open Font License 1.1.']),
+    (
+      'Fonts',
+      [
+        'Mukta (Ek Type), Tiro Devanagari Sanskrit (Tiro Typeworks), Ramabhadra and Suranna (Silicon Andhra), '
+            'SIL Open Font License 1.1.',
+      ],
+    ),
   ];
 
   @override

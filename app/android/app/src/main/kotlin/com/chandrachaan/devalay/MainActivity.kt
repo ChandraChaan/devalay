@@ -12,6 +12,7 @@ import android.os.CancellationSignal
 import android.os.Handler
 import android.os.Looper
 import android.content.ContentValues
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.graphics.Color
@@ -27,6 +28,7 @@ import androidx.core.view.WindowCompat
 import com.ryanheise.audioservice.AudioServiceActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
+import androidx.core.content.FileProvider
 import java.io.File
 import java.util.concurrent.Executors
 import java.util.concurrent.atomic.AtomicBoolean
@@ -113,6 +115,10 @@ class MainActivity : AudioServiceActivity() {
                         call.argument<String>("type") ?: "ringtone")
                     null
                 }
+                "shareToWhatsApp" -> result.success(
+                    shareToWhatsApp(call.argument<String>("path")!!, call.argument<String>("mime") ?: "image/*",
+                        call.argument<String>("text"))
+                )
                 "approxLocation" -> approxLocation(result)
                 "deviceInfo" -> result.success(deviceInfo())
                 else -> result.notImplemented()
@@ -251,6 +257,27 @@ class MainActivity : AudioServiceActivity() {
         source.copyTo(dest, overwrite = true)
         sendBroadcast(Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(dest)))
         return dest.absolutePath
+    }
+
+    // One-tap "Share to WhatsApp": opens WhatsApp (or WhatsApp Business) with the file, where "My status" is the
+    // first choice. False when neither is installed, so the app falls back to the system share sheet.
+    private fun shareToWhatsApp(path: String, mime: String, text: String?): Boolean {
+        val uri = FileProvider.getUriForFile(this, "$packageName.devalay.files", File(path))
+        for (pkg in listOf("com.whatsapp", "com.whatsapp.w4b")) {
+            val intent = Intent(Intent.ACTION_SEND).apply {
+                type = mime
+                setPackage(pkg)
+                putExtra(Intent.EXTRA_STREAM, uri)
+                if (!text.isNullOrBlank()) putExtra(Intent.EXTRA_TEXT, text)
+                addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+            }
+            try {
+                startActivity(intent)
+                return true
+            } catch (_: ActivityNotFoundException) {
+            }
+        }
+        return false
     }
 
     private fun setRingtone(path: String, title: String, type: String) {

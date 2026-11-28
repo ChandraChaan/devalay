@@ -37,6 +37,7 @@ const _strings = <String, Map<String, String>>{
   'see_all': {'en': 'See all', 'hi': 'सभी देखें', 'te': 'అన్నీ చూడండి'},
   'rashifal': {'en': 'Rashifal', 'hi': 'राशिफल', 'te': 'రాశిఫలాలు'},
   'japa': {'en': 'Japa Mala', 'hi': 'जाप माला', 'te': 'జపమాల'},
+  'whatsapp_status': {'en': 'WhatsApp Status', 'hi': 'व्हाट्सऐप स्टेटस', 'te': 'వాట్సాప్ స్టేటస్'},
   'ai_status': {'en': 'AI Status', 'hi': 'AI स्टेटस', 'te': 'భక్తి స్టేటస్'},
   'ringtones': {'en': 'Ringtones', 'hi': 'रिंगटोन', 'te': 'రింగ్‌టోన్లు'},
   'calendar': {'en': 'Calendar', 'hi': 'कैलेंडर', 'te': 'క్యాలెండర్'},

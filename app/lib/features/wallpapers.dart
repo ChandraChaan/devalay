@@ -2,9 +2,7 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:share_plus/share_plus.dart';
 
@@ -13,121 +11,10 @@ import '../core/favorites.dart';
 import '../core/i18n.dart';
 import '../core/models.dart';
 import '../core/native.dart';
-import '../core/providers.dart';
-import '../core/storage.dart';
 import '../core/theme.dart';
 import '../core/sharing.dart';
 import '../widgets/common.dart';
 import 'status_maker.dart';
-
-class WallpapersScreen extends ConsumerStatefulWidget {
-  const WallpapersScreen({super.key});
-  @override
-  ConsumerState<WallpapersScreen> createState() => _WallpapersScreenState();
-}
-
-class _WallpapersScreenState extends ConsumerState<WallpapersScreen> {
-  String? _deity;
-
-  @override
-  Widget build(BuildContext context) {
-    final walls = ref.watch(wallpapersProvider(_deity));
-    final deities = (ref.watch(deitiesProvider).value ?? const <Deity>[]).where((d) => d.slug != 'general').toList();
-    final lang = ref.watch(prefsProvider).language;
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(tr(ref, 'wallpapers')),
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(52),
-          child: SizedBox(
-            height: 52,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 8),
-                  child: ChoiceChip(
-                    label: Text(tr(ref, 'all')),
-                    selected: _deity == null,
-                    onSelected: (_) => setState(() => _deity = null),
-                  ),
-                ),
-                for (final d in deities)
-                  Padding(
-                    padding: const EdgeInsets.only(right: 8),
-                    child: ChoiceChip(
-                      label: Text(d.label(lang)),
-                      selected: _deity == d.slug,
-                      onSelected: (_) => setState(() => _deity = d.slug),
-                    ),
-                  ),
-              ],
-            ),
-          ),
-        ),
-      ),
-      body: walls.when(
-        loading: () => GridView.count(
-          crossAxisCount: 2,
-          padding: const EdgeInsets.all(12).withSystemInsets(context),
-          mainAxisSpacing: 12,
-          crossAxisSpacing: 12,
-          childAspectRatio: 0.62,
-          children: List.generate(6, (_) => const SkeletonBox()),
-        ),
-        error: (e, _) => ErrorRetry(error: e, onRetry: () => ref.invalidate(wallpapersProvider(_deity))),
-        data: (list) => GridView.builder(
-          padding: const EdgeInsets.all(12).withSystemInsets(context),
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            mainAxisSpacing: 12,
-            crossAxisSpacing: 12,
-            childAspectRatio: 0.62,
-          ),
-          itemCount: list.length,
-          itemBuilder: (_, i) {
-            final w = list[i];
-            return GestureDetector(
-              onTap: () => context.push('/wallpaper', extra: w),
-              child: Hero(
-                tag: 'wall-${w.id}',
-                child: Stack(
-                  fit: StackFit.expand,
-                  children: [
-                    NetImage(w.thumbUrl, radius: 18, color: Palette.hex(w.color)),
-                    Positioned(
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      child: Container(
-                        padding: const EdgeInsets.fromLTRB(10, 24, 10, 10),
-                        decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.vertical(bottom: Radius.circular(18)),
-                          gradient: LinearGradient(
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                            colors: [Colors.transparent, Colors.black87],
-                          ),
-                        ),
-                        child: Text(
-                          w.title,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ).animate().fadeIn(delay: (40 * (i % 8)).ms).scale(begin: const Offset(0.95, 0.95));
-          },
-        ),
-      ),
-    );
-  }
-}
 
 class WallpaperDetailScreen extends ConsumerStatefulWidget {
   const WallpaperDetailScreen({super.key, required this.wallpaper});

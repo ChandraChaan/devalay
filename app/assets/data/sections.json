@@ -1,0 +1,3272 @@
+{
+ "schema": 1,
+ "version": 4,
+ "wallpapers": [
+  {
+   "id": "om-glow",
+   "deity": "general",
+   "title": {
+    "en": "Glowing Om",
+    "te": "వెలుగుల ఓంకారం",
+    "hi": "दिव्य ॐ"
+   },
+   "premium": 1,
+   "tags": [
+    "morning",
+    "monday"
+   ],
+   "style": "modern",
+   "color": "#170D1E",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-om-glow-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-om-glow-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-om-glow-qhd.jpg",
+   "credit": {
+    "author": "Devalay",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": ""
+   }
+  },
+  {
+   "id": "peacock-flute",
+   "deity": "krishna",
+   "title": {
+    "en": "Peacock Feather and Flute",
+    "te": "నెమలి పింఛం, మురళి",
+    "hi": "मोरपंख और बाँसुरी"
+   },
+   "premium": 2,
+   "tags": [
+    "krishnashtami",
+    "wednesday"
+   ],
+   "style": "modern",
+   "color": "#0B1F22",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-peacock-flute-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-peacock-flute-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-peacock-flute-qhd.jpg",
+   "credit": {
+    "author": "Devalay",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": ""
+   }
+  },
+  {
+   "id": "trishul-moon",
+   "deity": "shiva",
+   "title": {
+    "en": "Trishul and the Moon",
+    "te": "త్రిశూలం, చంద్రుడు",
+    "hi": "त्रिशूल और चंद्रमा"
+   },
+   "premium": 4,
+   "tags": [
+    "monday",
+    "maha-shivaratri",
+    "karthika"
+   ],
+   "style": "modern",
+   "color": "#110D20",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-trishul-moon-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-trishul-moon-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-trishul-moon-qhd.jpg",
+   "credit": {
+    "author": "Devalay",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": ""
+   }
+  },
+  {
+   "id": "tirumala-namam",
+   "deity": "venkateswara",
+   "title": {
+    "en": "Govinda Namam",
+    "te": "గోవింద నామం",
+    "hi": "गोविंद नामम्"
+   },
+   "premium": 5,
+   "tags": [
+    "saturday",
+    "vaikuntha-ekadashi"
+   ],
+   "style": "modern",
+   "color": "#201A33",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-tirumala-namam-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-tirumala-namam-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-tirumala-namam-qhd.jpg",
+   "credit": {
+    "author": "Devalay",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": ""
+   }
+  },
+  {
+   "id": "butter-pot",
+   "deity": "krishna",
+   "title": {
+    "en": "Little Krishna's Butter Pot",
+    "te": "చిన్ని కృష్ణుని వెన్న కుండ",
+    "hi": "माखन मटकी"
+   },
+   "premium": null,
+   "tags": [
+    "krishnashtami"
+   ],
+   "style": "modern",
+   "color": "#7C817F",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-butter-pot-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-butter-pot-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-butter-pot-qhd.jpg",
+   "credit": {
+    "author": "Devalay",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": ""
+   }
+  },
+  {
+   "id": "lotus-mandala",
+   "deity": "lakshmi",
+   "title": {
+    "en": "Lotus Mandala",
+    "te": "పద్మ మండలం",
+    "hi": "कमल मंडल"
+   },
+   "premium": null,
+   "tags": [
+    "friday",
+    "diwali"
+   ],
+   "style": "modern",
+   "color": "#380F1C",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-lotus-mandala-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-lotus-mandala-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-lotus-mandala-qhd.jpg",
+   "credit": {
+    "author": "Devalay",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": ""
+   }
+  },
+  {
+   "id": "sri-yantra",
+   "deity": "lakshmi",
+   "title": {
+    "en": "Sri Yantra",
+    "te": "శ్రీ చక్రం",
+    "hi": "श्री यंत्र"
+   },
+   "premium": null,
+   "tags": [
+    "friday"
+   ],
+   "style": "modern",
+   "color": "#1C1203",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-sri-yantra-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-sri-yantra-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-sri-yantra-qhd.jpg",
+   "credit": {
+    "author": "Devalay",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": ""
+   }
+  },
+  {
+   "id": "diya-bokeh",
+   "deity": "general",
+   "title": {
+    "en": "Diya Glow",
+    "te": "దీప కాంతి",
+    "hi": "दीप ज्योति"
+   },
+   "premium": null,
+   "tags": [
+    "karthika",
+    "diwali",
+    "night"
+   ],
+   "style": "modern",
+   "color": "#1F0E03",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-diya-bokeh-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-diya-bokeh-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-diya-bokeh-qhd.jpg",
+   "credit": {
+    "author": "Devalay",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": ""
+   }
+  },
+  {
+   "id": "jai-shri-ram",
+   "deity": "rama",
+   "title": {
+    "en": "Jai Shri Ram",
+    "te": "జై శ్రీరామ్",
+    "hi": "जय श्री राम"
+   },
+   "premium": null,
+   "tags": [
+    "rama-navami",
+    "tuesday"
+   ],
+   "style": "modern",
+   "color": "#753912",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-jai-shri-ram-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-jai-shri-ram-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-jai-shri-ram-qhd.jpg",
+   "credit": {
+    "author": "Devalay",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": ""
+   }
+  },
+  {
+   "id": "radhe-radhe",
+   "deity": "radha-krishna",
+   "title": {
+    "en": "Radhe Radhe",
+    "te": "రాధే రాధే",
+    "hi": "राधे राधे"
+   },
+   "premium": null,
+   "tags": [
+    "krishnashtami"
+   ],
+   "style": "modern",
+   "color": "#90838F",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-radhe-radhe-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-radhe-radhe-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-radhe-radhe-qhd.jpg",
+   "credit": {
+    "author": "Devalay",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": ""
+   }
+  },
+  {
+   "id": "toran-kalash",
+   "deity": "ganesha",
+   "title": {
+    "en": "Toran and Kalash",
+    "te": "తోరణం, కలశం",
+    "hi": "तोरण और कलश"
+   },
+   "premium": null,
+   "tags": [
+    "vinayaka-chavithi",
+    "sankranti",
+    "diwali"
+   ],
+   "style": "modern",
+   "color": "#8E7744",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-toran-kalash-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-toran-kalash-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-toran-kalash-qhd.jpg",
+   "credit": {
+    "author": "Devalay",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": ""
+   }
+  },
+  {
+   "id": "hanuman-gada",
+   "deity": "hanuman",
+   "title": {
+    "en": "Hanuman's Gada",
+    "te": "హనుమంతుని గద",
+    "hi": "हनुमान की गदा"
+   },
+   "premium": null,
+   "tags": [
+    "tuesday",
+    "saturday",
+    "hanuman-jayanti"
+   ],
+   "style": "modern",
+   "color": "#6D2911",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-hanuman-gada-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-hanuman-gada-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-hanuman-gada-qhd.jpg",
+   "credit": {
+    "author": "Devalay",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": ""
+   }
+  },
+  {
+   "id": "shankh-chakra",
+   "deity": "vishnu",
+   "title": {
+    "en": "Sudarshana Chakra",
+    "te": "సుదర్శన చక్రం",
+    "hi": "सुदर्शन चक्र"
+   },
+   "premium": null,
+   "tags": [
+    "thursday",
+    "ekadashi"
+   ],
+   "style": "modern",
+   "color": "#28292F",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-shankh-chakra-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-shankh-chakra-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-shankh-chakra-qhd.jpg",
+   "credit": {
+    "author": "Devalay",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": ""
+   }
+  },
+  {
+   "id": "rama-nashik",
+   "deity": "rama",
+   "title": {
+    "en": "Sri Rama, Nashik",
+    "te": "శ్రీరాముడు, నాసిక్",
+    "hi": "श्री राम, नासिक"
+   },
+   "premium": 3,
+   "tags": [
+    "rama-navami",
+    "vivah-panchami"
+   ],
+   "style": "photo",
+   "color": "#46383E",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-rama-nashik-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-rama-nashik-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-rama-nashik-qhd.jpg",
+   "credit": {
+    "author": "Rangnath Wakchaure",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Lord_Rama_Statue_Nashik.jpg",
+    "changes": "cropped for phone screens"
+   }
+  },
+  {
+   "id": "ganesha-puja",
+   "deity": "ganesha",
+   "title": {
+    "en": "Ganesh Chaturthi",
+    "te": "వినాయక చవితి",
+    "hi": "गणेश चतुर्थी"
+   },
+   "premium": null,
+   "tags": [
+    "vinayaka-chavithi",
+    "wednesday"
+   ],
+   "style": "photo",
+   "color": "#42210F",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-ganesha-puja-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-ganesha-puja-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-ganesha-puja-qhd.jpg",
+   "credit": {
+    "author": "Ashish Suryavanshi858",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Ganesh_chaturthi_puja_01.jpg",
+    "changes": "cropped for phone screens"
+   }
+  },
+  {
+   "id": "ganesha-pandal",
+   "deity": "ganesha",
+   "title": {
+    "en": "Ganapati Pandal",
+    "te": "గణపతి మండపం",
+    "hi": "गणपति पंडाल"
+   },
+   "premium": null,
+   "tags": [
+    "vinayaka-chavithi"
+   ],
+   "style": "photo",
+   "color": "#50252C",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-ganesha-pandal-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-ganesha-pandal-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-ganesha-pandal-qhd.jpg",
+   "credit": {
+    "author": "AjayDas",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:The_idol_of_Lord_Ganesha_at_pandals_in_the_Paltan_Bazar_area_of_Dibrugarh_during_the_Ganesh_Chaturthi_celebrations_in_2024_16.jpg",
+    "changes": "cropped for phone screens"
+   }
+  },
+  {
+   "id": "durga-kumartuli",
+   "deity": "durga",
+   "title": {
+    "en": "Maa Durga, Kumartuli",
+    "te": "దుర్గమ్మ, కుమార్తులి",
+    "hi": "माँ दुर्गा, कुमारटुली"
+   },
+   "premium": null,
+   "tags": [
+    "navaratri",
+    "friday"
+   ],
+   "style": "photo",
+   "color": "#221A14",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-durga-kumartuli-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-durga-kumartuli-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-durga-kumartuli-qhd.jpg",
+   "credit": {
+    "author": "Soumava2002",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Maa_Durga_Idol_at_Kumartuli.jpg",
+    "changes": "cropped for phone screens"
+   }
+  },
+  {
+   "id": "durga-pandal",
+   "deity": "durga",
+   "title": {
+    "en": "Durga Puja",
+    "te": "దుర్గా పూజ",
+    "hi": "दुर्गा पूजा"
+   },
+   "premium": null,
+   "tags": [
+    "navaratri"
+   ],
+   "style": "photo",
+   "color": "#362E36",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-durga-pandal-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-durga-pandal-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-durga-pandal-qhd.jpg",
+   "credit": {
+    "author": "M_Sarkar",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Idol_of_Goddess_Durga_(Ceremonial_Worship)_14.jpg",
+    "changes": "cropped for phone screens"
+   }
+  },
+  {
+   "id": "diya-flame",
+   "deity": "general",
+   "title": {
+    "en": "Diya Flame",
+    "te": "దీప జ్వాల",
+    "hi": "दीपक की लौ"
+   },
+   "premium": null,
+   "tags": [
+    "karthika",
+    "diwali",
+    "night"
+   ],
+   "style": "photo",
+   "color": "#0D0906",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-diya-flame-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-diya-flame-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-diya-flame-qhd.jpg",
+   "credit": {
+    "author": "G22001",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Diwali._diye.jpg",
+    "changes": "cropped for phone screens"
+   }
+  },
+  {
+   "id": "diya-swastik",
+   "deity": "general",
+   "title": {
+    "en": "Shubh Diya",
+    "te": "శుభ దీపం",
+    "hi": "शुभ दीप"
+   },
+   "premium": null,
+   "tags": [
+    "diwali",
+    "karthika"
+   ],
+   "style": "photo",
+   "color": "#1E160D",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-diya-swastik-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-diya-swastik-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-diya-swastik-qhd.jpg",
+   "credit": {
+    "author": "Atulbibave",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Panati_or_Diya_on_Diwali_festival.jpg",
+    "changes": "cropped for phone screens"
+   }
+  },
+  {
+   "id": "diwali-lamps",
+   "deity": "lakshmi",
+   "title": {
+    "en": "Diwali Lamps",
+    "te": "దీపావళి దీపాలు",
+    "hi": "दिवाली दीप"
+   },
+   "premium": null,
+   "tags": [
+    "diwali"
+   ],
+   "style": "photo",
+   "color": "#894918",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-diwali-lamps-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-diwali-lamps-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-diwali-lamps-qhd.jpg",
+   "credit": {
+    "author": "Pinakpani",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Diwali_lamps_in_India_06.jpg",
+    "changes": "cropped for phone screens"
+   }
+  },
+  {
+   "id": "diya-jewel",
+   "deity": "lakshmi",
+   "title": {
+    "en": "Jewelled Diya",
+    "te": "రత్న దీపం",
+    "hi": "रत्न दीप"
+   },
+   "premium": null,
+   "tags": [
+    "diwali",
+    "friday"
+   ],
+   "style": "photo",
+   "color": "#331D0E",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-diya-jewel-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-diya-jewel-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-diya-jewel-qhd.jpg",
+   "credit": {
+    "author": "Slyronit",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Diwali_Diya_4.jpg",
+    "changes": "cropped for phone screens"
+   }
+  },
+  {
+   "id": "laddu-gopal",
+   "deity": "krishna",
+   "title": {
+    "en": "Laddu Gopal",
+    "te": "లడ్డు గోపాల్",
+    "hi": "लड्डू गोपाल"
+   },
+   "premium": null,
+   "tags": [
+    "krishnashtami"
+   ],
+   "style": "photo",
+   "color": "#422F31",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-laddu-gopal-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-laddu-gopal-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-laddu-gopal-qhd.jpg",
+   "credit": {
+    "author": "The open draft",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Decorated_idol_of_Lord_Krishna_(Laddu_Gopal)_in_home_shrine,_India.jpg",
+    "changes": "cropped for phone screens"
+   }
+  },
+  {
+   "id": "radha-krishna-peacock",
+   "deity": "radha-krishna",
+   "title": {
+    "en": "Radha Krishna Shringar",
+    "te": "రాధాకృష్ణ అలంకారం",
+    "hi": "राधा कृष्ण श्रृंगार"
+   },
+   "premium": null,
+   "tags": [
+    "krishnashtami"
+   ],
+   "style": "photo",
+   "color": "#373026",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-radha-krishna-peacock-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-radha-krishna-peacock-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-radha-krishna-peacock-qhd.jpg",
+   "credit": {
+    "author": "Narsinghdhamghagwal",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Radha_Krishna_Idols_at_Shri_Narsingh_Dham_Ghagwal.jpg",
+    "changes": "cropped for phone screens"
+   }
+  },
+  {
+   "id": "radha-krishna-mandir",
+   "deity": "radha-krishna",
+   "title": {
+    "en": "Radha Krishna Mandir",
+    "te": "రాధాకృష్ణ మందిరం",
+    "hi": "राधा कृष्ण मंदिर"
+   },
+   "premium": null,
+   "tags": [],
+   "style": "photo",
+   "color": "#4C4538",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-radha-krishna-mandir-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-radha-krishna-mandir-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-radha-krishna-mandir-qhd.jpg",
+   "credit": {
+    "author": "AjayDas",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Idol_of_Radha_Krishna_inside_the_main_sanctum_of_Radha_Krishna_temple,_Dibrugarh_02.jpg",
+    "changes": "cropped for phone screens"
+   }
+  },
+  {
+   "id": "shiva-sea",
+   "deity": "shiva",
+   "title": {
+    "en": "Shiva by the Sea",
+    "te": "సముద్రతీర శివుడు",
+    "hi": "सागर तट पर शिव"
+   },
+   "premium": null,
+   "tags": [
+    "monday",
+    "maha-shivaratri"
+   ],
+   "style": "photo",
+   "color": "#4B4E4F",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-shiva-sea-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-shiva-sea-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-shiva-sea-qhd.jpg",
+   "credit": {
+    "author": "Amitbalani",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Shiva_Statue_at_Aazhimala_Shiva_Temple.jpg",
+    "changes": "cropped for phone screens"
+   }
+  },
+  {
+   "id": "hanuman-podalakuru",
+   "deity": "hanuman",
+   "title": {
+    "en": "Hanuman, Podalakuru",
+    "te": "హనుమాన్, పొదలకూరు",
+    "hi": "हनुमान, पोडलकुरु"
+   },
+   "premium": null,
+   "tags": [
+    "tuesday"
+   ],
+   "style": "photo",
+   "color": "#4E4B47",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-hanuman-podalakuru-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-hanuman-podalakuru-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-hanuman-podalakuru-qhd.jpg",
+   "credit": {
+    "author": "Mounikao2o",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Hanuman_Statue_in_Podalakuru.jpg",
+    "changes": "cropped for phone screens"
+   }
+  },
+  {
+   "id": "hanuman-batu",
+   "deity": "hanuman",
+   "title": {
+    "en": "Green Hanuman",
+    "te": "పచ్చని హనుమాన్",
+    "hi": "हरे हनुमान"
+   },
+   "premium": null,
+   "tags": [
+    "hanuman-jayanti"
+   ],
+   "style": "photo",
+   "color": "#515A5E",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-hanuman-batu-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-hanuman-batu-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-hanuman-batu-qhd.jpg",
+   "credit": {
+    "author": "Sam Hidayat",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:The_green_Hanuman_statue_in_Batu_Caves_(1).jpg",
+    "changes": "cropped for phone screens"
+   }
+  },
+  {
+   "id": "hanuman-jakhu",
+   "deity": "hanuman",
+   "title": {
+    "en": "Hanuman, Jakhu",
+    "te": "హనుమాన్, జాఖూ",
+    "hi": "हनुमान, जाखू"
+   },
+   "premium": null,
+   "tags": [
+    "tuesday",
+    "saturday"
+   ],
+   "style": "photo",
+   "color": "#553F3D",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-hanuman-jakhu-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-hanuman-jakhu-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-hanuman-jakhu-qhd.jpg",
+   "credit": {
+    "author": "TheSlumPanda",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hanuman_Statue_at_Jakhu,_Shimla.jpg",
+    "changes": "cropped for phone screens"
+   }
+  },
+  {
+   "id": "lakshmi-marble",
+   "deity": "lakshmi",
+   "title": {
+    "en": "Shree Lakshmi",
+    "te": "శ్రీ లక్ష్మి",
+    "hi": "श्री लक्ष्मी"
+   },
+   "premium": null,
+   "tags": [
+    "friday"
+   ],
+   "style": "photo",
+   "color": "#4B3B30",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-lakshmi-marble-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-lakshmi-marble-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-lakshmi-marble-qhd.jpg",
+   "credit": {
+    "author": "Nishu0246",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Shree_Lakshmi_Maa.jpg",
+    "changes": "cropped for phone screens"
+   }
+  },
+  {
+   "id": "lakshmi-puja",
+   "deity": "lakshmi",
+   "title": {
+    "en": "Lakshmi Puja",
+    "te": "లక్ష్మీ పూజ",
+    "hi": "लक्ष्मी पूजा"
+   },
+   "premium": null,
+   "tags": [
+    "diwali",
+    "friday"
+   ],
+   "style": "photo",
+   "color": "#4E3D35",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-lakshmi-puja-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-lakshmi-puja-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-lakshmi-puja-qhd.jpg",
+   "credit": {
+    "author": "Marajozkee",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lakshmi_Puja_Odisha_India_MB02.jpg",
+    "changes": "cropped for phone screens"
+   }
+  },
+  {
+   "id": "saraswati-idol",
+   "deity": "saraswati",
+   "title": {
+    "en": "Saraswati Puja",
+    "te": "సరస్వతీ పూజ",
+    "hi": "सरस्वती पूजा"
+   },
+   "premium": null,
+   "tags": [
+    "vasant-panchami"
+   ],
+   "style": "photo",
+   "color": "#4C312F",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-saraswati-idol-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-saraswati-idol-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-saraswati-idol-qhd.jpg",
+   "credit": {
+    "author": "Tinku Chakraborty",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:A_Saraswati_idol_being_worshipped_by_the_Hindus_during_the_religious_festival_of_Saraswati_Puja.jpg",
+    "changes": "cropped for phone screens"
+   }
+  },
+  {
+   "id": "murugan-gold",
+   "deity": "kartikeya",
+   "title": {
+    "en": "Golden Murugan",
+    "te": "సువర్ణ సుబ్రహ్మణ్యుడు",
+    "hi": "स्वर्ण मुरुगन"
+   },
+   "premium": null,
+   "tags": [
+    "subrahmanya-shashti",
+    "tuesday"
+   ],
+   "style": "photo",
+   "color": "#3B3221",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-murugan-gold-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-murugan-gold-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-murugan-gold-qhd.jpg",
+   "credit": {
+    "author": "Shesmax",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Batu_Caves,_Lord_Murugan_Statue._2019-12-01_10-49-22.jpg",
+    "changes": "cropped for phone screens"
+   }
+  },
+  {
+   "id": "lakshmi-1930",
+   "deity": "lakshmi",
+   "title": {
+    "en": "Maha Lakshmi",
+    "te": "మహాలక్ష్మి",
+    "hi": "महालक्ष्मी"
+   },
+   "premium": null,
+   "tags": [
+    "diwali",
+    "varalakshmi-vratam",
+    "friday"
+   ],
+   "style": "classic",
+   "color": "#323013",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-lakshmi-1930-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-lakshmi-1930-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-lakshmi-1930-qhd.jpg",
+   "credit": {
+    "author": "Raja Ravi Varma",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Lakshmi,_by_Raja_Ravi_Varma,_1930s.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "venkateswara-tirumala",
+   "deity": "venkateswara",
+   "title": {
+    "en": "Sri Venkateswara",
+    "te": "శ్రీ వేంకటేశ్వర స్వామి",
+    "hi": "श्री वेंकटेश्वर"
+   },
+   "premium": null,
+   "tags": [
+    "vaikuntha-ekadashi",
+    "saturday"
+   ],
+   "style": "classic",
+   "color": "#3C3731",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-venkateswara-tirumala-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-venkateswara-tirumala-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-venkateswara-tirumala-qhd.jpg",
+   "credit": {
+    "author": "Bhavna1359",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Tirupati_Balaji_from_delhi_2023.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "shiva-kailasa",
+   "deity": "shiva",
+   "title": {
+    "en": "Shiva Parvati on Kailasa",
+    "te": "కైలాసంలో శివపార్వతులు",
+    "hi": "कैलाश पर शिव-पार्वती"
+   },
+   "premium": null,
+   "tags": [
+    "maha-shivaratri",
+    "karthika",
+    "monday"
+   ],
+   "style": "classic",
+   "color": "#423728",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-shiva-kailasa-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-shiva-kailasa-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-shiva-kailasa-qhd.jpg",
+   "credit": {
+    "author": "Unknown",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Shiva,_Parvati_and_Ganesha_enthroned_on_Mount_Kailas_with_Na_Wellcome_V0045136.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "ram-pattabhishekam",
+   "deity": "rama",
+   "title": {
+    "en": "Sri Rama Pattabhishekam",
+    "te": "శ్రీరామ పట్టాభిషేకం",
+    "hi": "राम दरबार"
+   },
+   "premium": null,
+   "tags": [
+    "rama-navami",
+    "vivah-panchami"
+   ],
+   "style": "classic",
+   "color": "#463C30",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-ram-pattabhishekam-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-ram-pattabhishekam-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-ram-pattabhishekam-qhd.jpg",
+   "credit": {
+    "author": "Raja Ravi Varma",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Ramapanchayan,_Raja_Ravi_Varma_(Lithograph).jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "saraswati-veena",
+   "deity": "saraswati",
+   "title": {
+    "en": "Saraswati Devi",
+    "te": "సరస్వతీ దేవి",
+    "hi": "माँ सरस्वती"
+   },
+   "premium": null,
+   "tags": [
+    "vasant-panchami",
+    "thursday"
+   ],
+   "style": "classic",
+   "color": "#413529",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-saraswati-veena-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-saraswati-veena-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-saraswati-veena-qhd.jpg",
+   "credit": {
+    "author": "Raja Ravi Varma",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma,_Goddess_Saraswati.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "ganesha-ravi",
+   "deity": "ganesha",
+   "title": {
+    "en": "Sri Ganesha",
+    "te": "శ్రీ గణేశుడు",
+    "hi": "श्री गणेश"
+   },
+   "premium": null,
+   "tags": [
+    "vinayaka-chavithi",
+    "wednesday"
+   ],
+   "style": "classic",
+   "color": "#3A2319",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-ganesha-ravi-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-ganesha-ravi-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-ganesha-ravi-qhd.jpg",
+   "credit": {
+    "author": "Unknown",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ganesha._Chromolithograph._Wellcome_V0044933.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "ganesha-siddhi-buddhi",
+   "deity": "ganesha",
+   "title": {
+    "en": "Siddhi Buddhi Ganapati",
+    "te": "సిద్ధి బుద్ధి సమేత గణపతి",
+    "hi": "सिद्धि-बुद्धि गणेश"
+   },
+   "premium": null,
+   "tags": [
+    "vinayaka-chavithi"
+   ],
+   "style": "classic",
+   "color": "#372E21",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-ganesha-siddhi-buddhi-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-ganesha-siddhi-buddhi-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-ganesha-siddhi-buddhi-qhd.jpg",
+   "credit": {
+    "author": "Unknown",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ganesha_and_his_two_wives,_Siddhi_and_Buddhi,_surrounded_by_Wellcome_V0045084.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "ganesha-kalighat",
+   "deity": "ganesha",
+   "title": {
+    "en": "Ganapati, Kalighat painting",
+    "te": "గణపతి (కాళీఘాట్ చిత్రం)",
+    "hi": "गणपति (कालीघाट)"
+   },
+   "premium": null,
+   "tags": [
+    "vinayaka-chavithi"
+   ],
+   "style": "classic",
+   "color": "#4D422E",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-ganesha-kalighat-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-ganesha-kalighat-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-ganesha-kalighat-qhd.jpg",
+   "credit": {
+    "author": "anonymous",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:India,_Calcutta,_Kalighat_painting,_19th_century_-_Ganesha_-_2003.98_-_Cleveland_Museum_of_Art.tif",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "shiva-family",
+   "deity": "shiva",
+   "title": {
+    "en": "Shiva Parivar",
+    "te": "శివ కుటుంబం",
+    "hi": "शिव परिवार"
+   },
+   "premium": null,
+   "tags": [
+    "karthika",
+    "monday"
+   ],
+   "style": "classic",
+   "color": "#483D32",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-shiva-family-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-shiva-family-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-shiva-family-qhd.jpg",
+   "credit": {
+    "author": "Unknown",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Shiva_enthroned_with_his_family,_Parvati_and_Ganesha,_attend_Wellcome_V0045047.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "shiva-nandi",
+   "deity": "shiva",
+   "title": {
+    "en": "Shiva on Nandi",
+    "te": "నందివాహనుడు శివుడు",
+    "hi": "नंदी पर शिव"
+   },
+   "premium": null,
+   "tags": [
+    "maha-shivaratri"
+   ],
+   "style": "classic",
+   "color": "#29280F",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-shiva-nandi-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-shiva-nandi-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-shiva-nandi-qhd.jpg",
+   "credit": {
+    "author": "Unknown",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Shiva_mounted_on_Nandi_surrounded_by_attendants_helping_Parv_Wellcome_V0045049.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "shiva-gangadhara",
+   "deity": "shiva",
+   "title": {
+    "en": "Gangadhara",
+    "te": "గంగాధరుడు",
+    "hi": "गंगाधर"
+   },
+   "premium": null,
+   "tags": [
+    "karthika"
+   ],
+   "style": "classic",
+   "color": "#343628",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-shiva-gangadhara-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-shiva-gangadhara-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-shiva-gangadhara-qhd.jpg",
+   "credit": {
+    "author": "Unknown",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Gang%C4%81_and_the_river_Ganges_falling_from_heaven,_while_S_Wellcome_V0045134.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "shiva-markandeya",
+   "deity": "shiva",
+   "title": {
+    "en": "Mrityunjaya",
+    "te": "మృత్యుంజయుడు",
+    "hi": "मृत्युंजय"
+   },
+   "premium": null,
+   "tags": [
+    "maha-shivaratri"
+   ],
+   "style": "classic",
+   "color": "#4B4138",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-shiva-markandeya-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-shiva-markandeya-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-shiva-markandeya-qhd.jpg",
+   "credit": {
+    "author": "Raja Ravi Varma",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma,_Markandeya_(cropped).jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "annapurna",
+   "deity": "shiva",
+   "title": {
+    "en": "Annapurna Devi",
+    "te": "అన్నపూర్ణా దేవి",
+    "hi": "माँ अन्नपूर्णा"
+   },
+   "premium": null,
+   "tags": [],
+   "style": "classic",
+   "color": "#2D1C14",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-annapurna-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-annapurna-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-annapurna-qhd.jpg",
+   "credit": {
+    "author": "Unknown",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Shiva_begging_from_Annapurna._Chromolithograph._Wellcome_V0045017.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "harihara",
+   "deity": "vishnu",
+   "title": {
+    "en": "Hari Hara",
+    "te": "హరిహరులు",
+    "hi": "हरिहर"
+   },
+   "premium": null,
+   "tags": [
+    "karthika"
+   ],
+   "style": "classic",
+   "color": "#4C412F",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-harihara-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-harihara-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-harihara-qhd.jpg",
+   "credit": {
+    "author": "anonymous",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:India,_Calcutta,_Kalighat_painting,_19th_century_-_Hari-Hara_-_2003.99_-_Cleveland_Museum_of_Art.tif",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "lakshmi-gold",
+   "deity": "lakshmi",
+   "title": {
+    "en": "Swarna Lakshmi",
+    "te": "స్వర్ణ లక్ష్మి",
+    "hi": "स्वर्ण लक्ष्मी"
+   },
+   "premium": null,
+   "tags": [
+    "diwali",
+    "friday"
+   ],
+   "style": "classic",
+   "color": "#372D1F",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-lakshmi-gold-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-lakshmi-gold-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-lakshmi-gold-qhd.jpg",
+   "credit": {
+    "author": "Raja Ravi Varma",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Lakshmi_Embellished,_by_Ravi_Varma_Press,_edit.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "gajalakshmi",
+   "deity": "lakshmi",
+   "title": {
+    "en": "Gaja Lakshmi",
+    "te": "గజలక్ష్మి",
+    "hi": "गजलक्ष्मी"
+   },
+   "premium": null,
+   "tags": [
+    "diwali",
+    "varalakshmi-vratam"
+   ],
+   "style": "classic",
+   "color": "#382418",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-gajalakshmi-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-gajalakshmi-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-gajalakshmi-qhd.jpg",
+   "credit": {
+    "author": "Unknown",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lakshmi_being_annointed_by_elephants._Chromolithograph._Wellcome_V0044934.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "lakshmi-lotus",
+   "deity": "lakshmi",
+   "title": {
+    "en": "Lakshmi on the lotus",
+    "te": "పద్మాసన లక్ష్మి",
+    "hi": "कमलासना लक्ष्मी"
+   },
+   "premium": null,
+   "tags": [
+    "friday"
+   ],
+   "style": "classic",
+   "color": "#362B20",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-lakshmi-lotus-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-lakshmi-lotus-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-lakshmi-lotus-qhd.jpg",
+   "credit": {
+    "author": "Unknown",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lakshmi_on_her_lotus_in_the_water_with_elephant._Chromolitho_Wellcome_V0045127.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "lakshmi-saraswati",
+   "deity": "saraswati",
+   "title": {
+    "en": "Lakshmi and Saraswati",
+    "te": "లక్ష్మీ సరస్వతులు",
+    "hi": "लक्ष्मी-सरस्वती"
+   },
+   "premium": null,
+   "tags": [
+    "diwali"
+   ],
+   "style": "classic",
+   "color": "#464027",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-lakshmi-saraswati-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-lakshmi-saraswati-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-lakshmi-saraswati-qhd.jpg",
+   "credit": {
+    "author": "Raja Ravi Varma",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Lakshmi_Saraswati_Sanyog,_by_Raja_Ravi_Varma.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "saraswati-peacock",
+   "deity": "saraswati",
+   "title": {
+    "en": "Veenapani Saraswati",
+    "te": "వీణాపాణి సరస్వతి",
+    "hi": "वीणापाणि सरस्वती"
+   },
+   "premium": null,
+   "tags": [
+    "vasant-panchami"
+   ],
+   "style": "classic",
+   "color": "#453F2E",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-saraswati-peacock-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-saraswati-peacock-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-saraswati-peacock-qhd.jpg",
+   "credit": {
+    "author": "Raja Ravi Varma",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sarasvati_with_her_sitar_and_peacock._Chromolithograph_by_R._Wellcome_V0045121.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "vishnu-ananta",
+   "deity": "vishnu",
+   "title": {
+    "en": "Ananta Padmanabha",
+    "te": "అనంత పద్మనాభుడు",
+    "hi": "शेषशायी विष्णु"
+   },
+   "premium": null,
+   "tags": [
+    "vaikuntha-ekadashi",
+    "ekadashi"
+   ],
+   "style": "classic",
+   "color": "#443323",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-vishnu-ananta-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-vishnu-ananta-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-vishnu-ananta-qhd.jpg",
+   "credit": {
+    "author": "Unknown",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Vishnu_flanked_by_two_wives_resting_on_Shesa,_the_serpent_on_Wellcome_V0045133.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "vishnu-ksheerasagara",
+   "deity": "vishnu",
+   "title": {
+    "en": "Ksheerasagara Vishnu",
+    "te": "క్షీరసాగర శయనుడు",
+    "hi": "क्षीरसागर विष्णु"
+   },
+   "premium": null,
+   "tags": [
+    "ekadashi"
+   ],
+   "style": "classic",
+   "color": "#2C1F0A",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-vishnu-ksheerasagara-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-vishnu-ksheerasagara-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-vishnu-ksheerasagara-qhd.jpg",
+   "credit": {
+    "author": "Unknown",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Vishnu_resting_on_the_ocean_accompanied_by_Lakshmi,_Tumbara,_Wellcome_V0045080.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "lakshmi-narayana",
+   "deity": "vishnu",
+   "title": {
+    "en": "Lakshmi Narayana",
+    "te": "లక్ష్మీనారాయణులు",
+    "hi": "लक्ष्मीनारायण"
+   },
+   "premium": null,
+   "tags": [
+    "vaikuntha-ekadashi",
+    "thursday"
+   ],
+   "style": "classic",
+   "color": "#463B30",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-lakshmi-narayana-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-lakshmi-narayana-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-lakshmi-narayana-qhd.jpg",
+   "credit": {
+    "author": "Unknown",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Vishnu_and_Lakshmi_attended_by_Garuda_and_two_attendants._Ch_Wellcome_V0045051.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "venkateswara-tanjore",
+   "deity": "venkateswara",
+   "title": {
+    "en": "Venkateswara, Tanjore painting",
+    "te": "వేంకటేశ్వరుడు (తంజావూరు చిత్రం)",
+    "hi": "वेंकटेश्वर (तंजौर)"
+   },
+   "premium": null,
+   "tags": [
+    "vaikuntha-ekadashi"
+   ],
+   "style": "classic",
+   "color": "#3E3B39",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-venkateswara-tanjore-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-venkateswara-tanjore-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-venkateswara-tanjore-qhd.jpg",
+   "credit": {
+    "author": "Iramuthusamy",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tanjore_Paintings_Venkateshwara.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "sita-rama-hanuman",
+   "deity": "rama",
+   "title": {
+    "en": "Sita Rama and Hanuman",
+    "te": "సీతారాములు, హనుమ",
+    "hi": "सीता-राम और हनुमान"
+   },
+   "premium": null,
+   "tags": [
+    "rama-navami"
+   ],
+   "style": "classic",
+   "color": "#2D2319",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-sita-rama-hanuman-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-sita-rama-hanuman-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-sita-rama-hanuman-qhd.jpg",
+   "credit": {
+    "author": "Unknown",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Rama_and_Sita_enthroned_attended_by_Hanuman,_Bharata_and_Lak_Wellcome_V0045046.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "rama-shiva-dhanus",
+   "deity": "rama",
+   "title": {
+    "en": "Rama breaks the bow",
+    "te": "శివధనుర్భంగం",
+    "hi": "धनुष भंग"
+   },
+   "premium": null,
+   "tags": [
+    "vivah-panchami"
+   ],
+   "style": "classic",
+   "color": "#403526",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-rama-shiva-dhanus-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-rama-shiva-dhanus-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-rama-shiva-dhanus-qhd.jpg",
+   "credit": {
+    "author": "Raja Ravi Varma",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Ravi_Varma-Rama-breaking-bow.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "hanuman-sanjeevani",
+   "deity": "hanuman",
+   "title": {
+    "en": "Sanjeevani Hanuman",
+    "te": "సంజీవని హనుమాన్",
+    "hi": "संजीवनी हनुमान"
+   },
+   "premium": null,
+   "tags": [
+    "hanuman-jayanti",
+    "tuesday"
+   ],
+   "style": "classic",
+   "color": "#2E331F",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-hanuman-sanjeevani-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-hanuman-sanjeevani-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-hanuman-sanjeevani-qhd.jpg",
+   "credit": {
+    "author": "Unknown",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Hanuman_fetches_the_herb-bearing_mountain,_in_a_print_from_the_Ravi_Varma_Press,_1910%27s.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "krishna-yashoda",
+   "deity": "krishna",
+   "title": {
+    "en": "Yashoda's Krishna",
+    "te": "యశోదా కృష్ణుడు",
+    "hi": "यशोदा के कृष्ण"
+   },
+   "premium": null,
+   "tags": [
+    "krishnashtami"
+   ],
+   "style": "classic",
+   "color": "#281C0C",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-krishna-yashoda-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-krishna-yashoda-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-krishna-yashoda-qhd.jpg",
+   "credit": {
+    "author": "Unknown",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Krishna_as_an_infant_sitting_on_Yasoda%27s_lap_with_a_female_a_Wellcome_V0045099.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "krishna-govardhana",
+   "deity": "krishna",
+   "title": {
+    "en": "Govardhana Giridhari",
+    "te": "గోవర్ధన గిరిధారి",
+    "hi": "गोवर्धनधारी"
+   },
+   "premium": null,
+   "tags": [
+    "diwali"
+   ],
+   "style": "classic",
+   "color": "#413A31",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-krishna-govardhana-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-krishna-govardhana-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-krishna-govardhana-qhd.jpg",
+   "credit": {
+    "author": "anonymous",
+    "license": "CC0",
+    "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:India,_Pahari_Hills,_Kangra_School,_18th_century_-_Krishna_Lifting_Mt._Govardhana_-_2001.45_-_Cleveland_Museum_of_Art.tif",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "gita-upadesham",
+   "deity": "krishna",
+   "title": {
+    "en": "Gita Upadesham",
+    "te": "గీతోపదేశం",
+    "hi": "गीता उपदेश"
+   },
+   "premium": null,
+   "tags": [
+    "gita-jayanti"
+   ],
+   "style": "classic",
+   "color": "#3F2820",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-gita-upadesham-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-gita-upadesham-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-gita-upadesham-qhd.jpg",
+   "credit": {
+    "author": "Unknown authorUnknown author",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Sri_Krishna_preaching_Gita_Upadesh_to_Arjun_-_Unknown,_Kashmir_School_-_Google_Cultural_Institute.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "radha-moonlight",
+   "deity": "radha-krishna",
+   "title": {
+    "en": "Radha in the moonlight",
+    "te": "వెన్నెలలో రాధ",
+    "hi": "चाँदनी में राधा"
+   },
+   "premium": null,
+   "tags": [],
+   "style": "classic",
+   "color": "#1D1713",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-radha-moonlight-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-radha-moonlight-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-radha-moonlight-qhd.jpg",
+   "credit": {
+    "author": "RAJA RAVI VARMA (1848 - 1906)",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Radha_in_the_Moonlight.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "radha-krishna",
+   "deity": "radha-krishna",
+   "title": {
+    "en": "Radha Krishna",
+    "te": "రాధాకృష్ణులు",
+    "hi": "राधा कृष्ण"
+   },
+   "premium": null,
+   "tags": [
+    "krishnashtami"
+   ],
+   "style": "classic",
+   "color": "#2E2B26",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-radha-krishna-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-radha-krishna-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-radha-krishna-qhd.jpg",
+   "credit": {
+    "author": "Unknown",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Krishna_embracing_Radha._Chromolithograph_by_R._Varma._Wellcome_V0045101.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "durga-simhavahini",
+   "deity": "durga",
+   "title": {
+    "en": "Simhavahini Durga",
+    "te": "సింహవాహిని దుర్గ",
+    "hi": "सिंहवाहिनी दुर्गा"
+   },
+   "premium": null,
+   "tags": [
+    "navaratri",
+    "friday"
+   ],
+   "style": "classic",
+   "color": "#271F18",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-durga-simhavahini-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-durga-simhavahini-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-durga-simhavahini-qhd.jpg",
+   "credit": {
+    "author": "Unknown",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:A_goddess_probably_Parvati_as_Durga_riding_on_a_lion_present_Wellcome_V0045026.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "durga-mahishasura",
+   "deity": "durga",
+   "title": {
+    "en": "Mahishasura Mardini",
+    "te": "మహిషాసుర మర్దిని",
+    "hi": "महिषासुरमर्दिनी"
+   },
+   "premium": null,
+   "tags": [
+    "navaratri"
+   ],
+   "style": "classic",
+   "color": "#372413",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-durga-mahishasura-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-durga-mahishasura-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-durga-mahishasura-qhd.jpg",
+   "credit": {
+    "author": "Unknown",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Durga_slaying_the_Buffalo_Demon._Chromolithograph._Wellcome_V0045082.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "kali-ravi",
+   "deity": "kali",
+   "title": {
+    "en": "Maa Kali",
+    "te": "కాళీ మాత",
+    "hi": "माँ काली"
+   },
+   "premium": null,
+   "tags": [
+    "navaratri"
+   ],
+   "style": "classic",
+   "color": "#3F3728",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-kali-ravi-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-kali-ravi-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-kali-ravi-qhd.jpg",
+   "credit": {
+    "author": "Raja Ravi Varma",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma_-_Kali.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "surya-ratha",
+   "deity": "surya",
+   "title": {
+    "en": "Surya Narayana",
+    "te": "సూర్య నారాయణుడు",
+    "hi": "सूर्य नारायण"
+   },
+   "premium": null,
+   "tags": [
+    "sankranti",
+    "ratha-saptami",
+    "sunday"
+   ],
+   "style": "classic",
+   "color": "#231A15",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-surya-ratha-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-surya-ratha-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-surya-ratha-qhd.jpg",
+   "credit": {
+    "author": "Unknown",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Surya_the_sun_deity_driving_in_his_chariot._Gouache_drawing._Wellcome_V0045217.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  },
+  {
+   "id": "dattatreya",
+   "deity": "dattatreya",
+   "title": {
+    "en": "Sri Dattatreya",
+    "te": "శ్రీ దత్తాత్రేయుడు",
+    "hi": "श्री दत्तात्रेय"
+   },
+   "premium": null,
+   "tags": [
+    "datta-jayanti",
+    "thursday"
+   ],
+   "style": "classic",
+   "color": "#363729",
+   "thumb": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-dattatreya-thumb.jpg",
+   "fhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-dattatreya-fhd.jpg",
+   "qhd": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/wp-dattatreya-qhd.jpg",
+   "credit": {
+    "author": "Raja Ravi Varma",
+    "license": "Public domain",
+    "license_url": "",
+    "source": "https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma_-_Dattatreya.jpg",
+    "changes": "cropped and composed for phone screens"
+   }
+  }
+ ],
+ "ringtones": [
+  {
+   "id": "lofi-krishna-flute",
+   "deity": "krishna",
+   "title": {
+    "en": "Lo-fi Krishna Flute",
+    "te": "లో-ఫై కృష్ణ మురళి",
+    "hi": "लो-फ़ाई कृष्ण बाँसुरी"
+   },
+   "premium": 1,
+   "seconds": 25.6,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-lofi-krishna-flute.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-lofi-krishna-flute.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "mandolin-rama",
+   "deity": "rama",
+   "title": {
+    "en": "Mandolin Rama",
+    "te": "మాండొలిన్ రామ",
+    "hi": "मैंडोलिन राम"
+   },
+   "premium": 2,
+   "seconds": 29.2,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-mandolin-rama.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-mandolin-rama.m4a",
+   "credit": {
+    "author": "U. Srinivas (mandolin) · Saregama",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Tatvameruga_-_U.Srinivas_(Raga_Garudahwani)_Tyagaraja_Carnatic_classical_music.ogg",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "shankh-drop",
+   "deity": "vishnu",
+   "title": {
+    "en": "Shankh Drop",
+    "te": "శంఖ డ్రాప్",
+    "hi": "शंख ड्रॉप"
+   },
+   "premium": 3,
+   "seconds": 24.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-shankh-drop.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-shankh-drop.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "brahma-kadigina",
+   "deity": "venkateswara",
+   "title": {
+    "en": "Brahma Kadigina Padamu",
+    "te": "బ్రహ్మ కడిగిన పాదము",
+    "hi": "ब्रह्म कडिगिन पादमु"
+   },
+   "premium": 4,
+   "seconds": 29.3,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-brahma-kadigina.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-brahma-kadigina.m4a",
+   "credit": {
+    "author": "M.S. Subbulakshmi · Saregama",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Brahma_Kadigina_Paadamu_By_MS_Subbulakshmi_with_Lyrics_-_Annamacharya_Keerthis.webm",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "temple-bells-pop",
+   "deity": "general",
+   "title": {
+    "en": "Temple Bells Pop",
+    "te": "ఆలయ గంటల పాప్",
+    "hi": "मंदिर घंटी पॉप"
+   },
+   "premium": 5,
+   "seconds": 26.7,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-temple-bells-pop.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-temple-bells-pop.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "veena-dhun",
+   "deity": "saraswati",
+   "title": {
+    "en": "Veena Dhun",
+    "te": "వీణ ధున్",
+    "hi": "वीणा धुन"
+   },
+   "premium": null,
+   "seconds": 27.7,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-veena-dhun.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-veena-dhun.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "om-namah-shivaya-beat",
+   "deity": "shiva",
+   "title": {
+    "en": "Om Namah Shivaya Beat",
+    "te": "ఓం నమః శివాయ బీట్",
+    "hi": "ॐ नमः शिवाय बीट"
+   },
+   "premium": null,
+   "seconds": 24.3,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-om-namah-shivaya-beat.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-om-namah-shivaya-beat.m4a",
+   "credit": {
+    "author": "Devalay, with the chant by Sachin Patel 78",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Om_Namah_Shivaya_Performance_at_Khajuraho_-_2026.ogg",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "gayatri-lofi",
+   "deity": "surya",
+   "title": {
+    "en": "Gayatri Lo-fi",
+    "te": "గాయత్రీ లో-ఫై",
+    "hi": "गायत्री लो-फ़ाई"
+   },
+   "premium": null,
+   "seconds": 26.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-gayatri-lofi.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-gayatri-lofi.m4a",
+   "credit": {
+    "author": "Devalay, with the chant by Wilfredor",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "madhurashtakam",
+   "deity": "krishna",
+   "title": {
+    "en": "Adharam Madhuram",
+    "te": "అధరం మధురం",
+    "hi": "अधरं मधुरं"
+   },
+   "premium": null,
+   "seconds": 28.6,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-madhurashtakam.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-madhurashtakam.m4a",
+   "credit": {
+    "author": "M.S. Subbulakshmi · Saregama",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Popular_Shri_Krishna_Bhajan_-_M.S._Subbulakshmi_-_Bhaja_Govindam_-_Sikshashtakam_-_Carnatic_Music.webm",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "shriman-narayana",
+   "deity": "vishnu",
+   "title": {
+    "en": "Shriman Narayana",
+    "te": "శ్రీమన్నారాయణ",
+    "hi": "श्रीमन्नारायण"
+   },
+   "premium": null,
+   "seconds": 28.9,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-shriman-narayana.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-shriman-narayana.m4a",
+   "credit": {
+    "author": "M.S. Subbulakshmi · Saregama",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Shriman_Narayana_with_Lyrics_by_MS_Subbalakshmi_-_Annamacharya_Keerthis.webm",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "bhaja-govindam",
+   "deity": "krishna",
+   "title": {
+    "en": "Bhaja Govindam",
+    "te": "భజ గోవిందం",
+    "hi": "भज गोविन्दम्"
+   },
+   "premium": null,
+   "seconds": 27.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-bhaja-govindam.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-bhaja-govindam.m4a",
+   "credit": {
+    "author": "M.S. Subbulakshmi · Saregama",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Popular_Shri_Krishna_Bhajan_-_M.S._Subbulakshmi_-_Bhaja_Govindam_-_Sikshashtakam_-_Carnatic_Music.webm",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "temple-bells",
+   "deity": "general",
+   "title": {
+    "en": "Temple Bells",
+    "te": "ఆలయ గంటలు",
+    "hi": "मंदिर घंटियाँ"
+   },
+   "premium": null,
+   "seconds": 23.7,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-temple-bells.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-temple-bells.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "shankh-naad",
+   "deity": "vishnu",
+   "title": {
+    "en": "Shankh Naad",
+    "te": "శంఖనాదం",
+    "hi": "शंख नाद"
+   },
+   "premium": null,
+   "seconds": 19.7,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-shankh-naad.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-shankh-naad.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "gayatri-mantra",
+   "deity": "surya",
+   "title": {
+    "en": "Gayatri Mantra",
+    "te": "గాయత్రీ మంత్రం",
+    "hi": "गायत्री मंत्र"
+   },
+   "premium": null,
+   "seconds": 20.5,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-gayatri-mantra.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-gayatri-mantra.m4a",
+   "credit": {
+    "author": "Wilfredor",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File%3AGayatri_mantra.ogg",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "om-namah-shivaya",
+   "deity": "shiva",
+   "title": {
+    "en": "Om Namah Shivaya",
+    "te": "ఓం నమః శివాయ",
+    "hi": "ॐ नमः शिवाय"
+   },
+   "premium": null,
+   "seconds": 23.6,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-om-namah-shivaya.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-om-namah-shivaya.m4a",
+   "credit": {
+    "author": "Sachin Patel 78",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source": "https://commons.wikimedia.org/wiki/File%3AOm_Namah_Shivaya_Performance_at_Khajuraho_-_2026.ogg",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "jo-achyutananda",
+   "deity": "venkateswara",
+   "title": {
+    "en": "Jo Achyutananda",
+    "te": "జో అచ్యుతానంద",
+    "hi": "जो अच्युतानंद"
+   },
+   "premium": null,
+   "seconds": 28.8,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-jo-achyutananda.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-jo-achyutananda.m4a",
+   "credit": {
+    "author": "M.S. Subbulakshmi · Saregama",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Jo_Achyutananda_With_Lyrics_By_M_S_Subbulakshmi_-_Sri_Annamacharya_Samkirtanas.webm",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "venkatesa-stotram",
+   "deity": "venkateswara",
+   "title": {
+    "en": "Venkatesa Stotram",
+    "te": "వేంకటేశ స్తోత్రం",
+    "hi": "वेंकटेश स्तोत्र"
+   },
+   "premium": null,
+   "seconds": 29.9,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-venkatesa-stotram.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-venkatesa-stotram.m4a",
+   "credit": {
+    "author": "P.B. Sreenivas · Saregama",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Best_of_P.B._Sreenivas_Devotional_Hits_-_Sri_Krishna_Ashtaga_-_Sri_Hanuman_Chalisa_-_Carnatic_Music.webm",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "srinivasa",
+   "deity": "venkateswara",
+   "title": {
+    "en": "Srinivasa Thiruvenkata",
+    "te": "శ్రీనివాస తిరువేంకట",
+    "hi": "श्रीनिवास"
+   },
+   "premium": null,
+   "seconds": 29.1,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-srinivasa.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-srinivasa.m4a",
+   "credit": {
+    "author": "M.S. Subbulakshmi · Saregama",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Srinivasa_Thiruvenkata_Carnatic_Song_with_Lyrics_M_S_Subbulakshmi_Carnatic_Vocal.webm",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "hanuman-chalisa",
+   "deity": "hanuman",
+   "title": {
+    "en": "Hanuman Chalisa",
+    "te": "హనుమాన్ చాలీసా",
+    "hi": "हनुमान चालीसा"
+   },
+   "premium": null,
+   "seconds": 29.5,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-hanuman-chalisa.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-hanuman-chalisa.m4a",
+   "credit": {
+    "author": "P.B. Sreenivas · Saregama",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Best_of_P.B._Sreenivas_Devotional_Hits_-_Sri_Krishna_Ashtaga_-_Sri_Hanuman_Chalisa_-_Carnatic_Music.webm",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "mahalakshmi-ashtakam",
+   "deity": "lakshmi",
+   "title": {
+    "en": "Mahalakshmi Ashtakam",
+    "te": "మహాలక్ష్మీ అష్టకం",
+    "hi": "महालक्ष्मी अष्टकम्"
+   },
+   "premium": null,
+   "seconds": 28.7,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-mahalakshmi-ashtakam.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-mahalakshmi-ashtakam.m4a",
+   "credit": {
+    "author": "P.B. Sreenivas · Saregama",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Best_of_P.B._Sreenivas_Devotional_Hits_-_Sri_Krishna_Ashtaga_-_Sri_Hanuman_Chalisa_-_Carnatic_Music.webm",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "shiva-panchakshara",
+   "deity": "shiva",
+   "title": {
+    "en": "Shiva Panchakshara",
+    "te": "శివ పంచాక్షరి",
+    "hi": "शिव पंचाक्षर"
+   },
+   "premium": null,
+   "seconds": 29.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-shiva-panchakshara.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-shiva-panchakshara.m4a",
+   "credit": {
+    "author": "M.S. Subbulakshmi · Saregama",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Most_Powerful_Shivan_Song_-_M.S._Subbulakshmi_-_Siva_Panchakshara_Stotram_-_Carnatic_Classical_Music.webm",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "ganesha-pancharatnam",
+   "deity": "ganesha",
+   "title": {
+    "en": "Ganesha Pancharatnam",
+    "te": "గణేశ పంచరత్నం",
+    "hi": "गणेश पंचरत्न"
+   },
+   "premium": null,
+   "seconds": 28.4,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-ganesha-pancharatnam.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-ganesha-pancharatnam.m4a",
+   "credit": {
+    "author": "M.S. Subbulakshmi · Saregama",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Ganesh_Chaturthi_Special_Bhajan%2C_M.S._Subbulakshmi%2C_Ganesha_Pancharatnam%2C_Carnatic_Classical_Music.webm",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "nagumomu",
+   "deity": "rama",
+   "title": {
+    "en": "Nagumomu",
+    "te": "నగుమోము",
+    "hi": "नगुमोमु"
+   },
+   "premium": null,
+   "seconds": 24.9,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-nagumomu.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-nagumomu.m4a",
+   "credit": {
+    "author": "M.S. Subbulakshmi · Saregama",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Nagumomu_-_Lyrical_Video_-_Samarpanam_-_M.S._Subbulakshmi%2C_Radha_Vishwanathan_-_Tamil_Carnatic_Music.webm",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "paluke-bangaramayena",
+   "deity": "rama",
+   "title": {
+    "en": "Paluke Bangaramayena",
+    "te": "పలుకే బంగారమాయెనా",
+    "hi": "पलुके बंगारमायेना"
+   },
+   "premium": null,
+   "seconds": 29.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-paluke-bangaramayena.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-paluke-bangaramayena.m4a",
+   "credit": {
+    "author": "Dr. M. Balamuralikrishna · Saregama",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Popular_Shri_Ram_Bhajans_-_Dr._M._Balamuralikrishna_-_Sri_Bhadrachala_Ramadasu_-_Carnatic_Music.webm",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "dolayam",
+   "deity": "venkateswara",
+   "title": {
+    "en": "Dolayam",
+    "te": "డోలాయాం",
+    "hi": "डोलायाम्"
+   },
+   "premium": null,
+   "seconds": 28.3,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-dolayam.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-dolayam.m4a",
+   "credit": {
+    "author": "M.S. Subbulakshmi, Radha Vishwanathan · Saregama",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Sri_Annamacharya_Samkirtanas_-_M.S._Subbulakshmi_-_Radha_Vishwanathan_-_Carnatic_Classical_Music.webm",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "kashi-suprabhatam",
+   "deity": "shiva",
+   "title": {
+    "en": "Kashi Suprabhatam",
+    "te": "కాశీ సుప్రభాతం",
+    "hi": "काशी सुप्रभातम्"
+   },
+   "premium": null,
+   "seconds": 29.3,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-kashi-suprabhatam.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-kashi-suprabhatam.m4a",
+   "credit": {
+    "author": "M.S. Subbulakshmi · Saregama",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Most_Powerful_Shivan_Song_-_M.S._Subbulakshmi_-_Siva_Panchakshara_Stotram_-_Carnatic_Classical_Music.webm",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "mahamrityunjaya",
+   "deity": "shiva",
+   "title": {
+    "en": "Mahamrityunjaya",
+    "te": "మహామృత్యుంజయ",
+    "hi": "महामृत्युंजय"
+   },
+   "premium": null,
+   "seconds": 17.6,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-mahamrityunjaya.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-mahamrityunjaya.m4a",
+   "credit": {
+    "author": "Rameshvar",
+    "license": "FAL",
+    "license_url": "https://artlibre.org/licence/lal/en/",
+    "source": "https://commons.wikimedia.org/wiki/File%3AMrityunjaya.ogg",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "ganpati-vandana",
+   "deity": "ganesha",
+   "title": {
+    "en": "Ganpati Vandana",
+    "te": "గణపతి వందనం",
+    "hi": "गणपति वंदना"
+   },
+   "premium": null,
+   "seconds": 27.6,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-ganpati-vandana.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-ganpati-vandana.m4a",
+   "credit": {
+    "author": "Shri hari om sharan ji",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File%3AAarti_Puja%2C_Ganpati_Vandana.ogg",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "aarti-chant",
+   "deity": "general",
+   "title": {
+    "en": "Aarti Chant",
+    "te": "హారతి మంత్రం",
+    "hi": "आरती मंत्र"
+   },
+   "premium": null,
+   "seconds": 22.8,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-aarti-chant.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-aarti-chant.m4a",
+   "credit": {
+    "author": "Aarti Shri Radha Govind Dev Ji, Jaipur",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File%3ASanskrit_chanting_for_Aarti_Puja_Prayer_-_Female_Voice.ogg",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "krishna-bansuri",
+   "deity": "krishna",
+   "title": {
+    "en": "Krishna Bansuri",
+    "te": "కృష్ణ మురళి",
+    "hi": "कृष्ण बाँसुरी"
+   },
+   "premium": null,
+   "seconds": 13.3,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-krishna-bansuri.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-krishna-bansuri.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "om-shanti",
+   "deity": "shiva",
+   "title": {
+    "en": "Om Shanti",
+    "te": "ఓం శాంతి",
+    "hi": "ॐ शांति"
+   },
+   "premium": null,
+   "seconds": 23.7,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-om-shanti.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-om-shanti.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "puja-ghanti",
+   "deity": "general",
+   "title": {
+    "en": "Puja Ghanti",
+    "te": "పూజ గంట",
+    "hi": "पूजा घंटी"
+   },
+   "premium": null,
+   "seconds": 1.6,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-puja-ghanti.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-puja-ghanti.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "bell-ting",
+   "deity": "general",
+   "title": {
+    "en": "Bell Ting",
+    "te": "గంట టింగ్",
+    "hi": "घंटी टिंग"
+   },
+   "premium": null,
+   "seconds": 2.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-bell-ting.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-bell-ting.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  },
+  {
+   "id": "flute-call",
+   "deity": "krishna",
+   "title": {
+    "en": "Flute Call",
+    "te": "మురళి పిలుపు",
+    "hi": "बाँसुरी पुकार"
+   },
+   "premium": null,
+   "seconds": 2.2,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/rt-flute-call.m4a",
+   "notification": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/nt-flute-call.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "trimmed, loudness-normalised and faded"
+   }
+  }
+ ],
+ "status_videos": [
+  {
+   "id": "vaikuntha-ekadashi",
+   "lang": "te",
+   "deity": "vishnu",
+   "title": {
+    "en": "Vaikuntha Ekadashi",
+    "te": "వైకుంఠ ఏకాదశి",
+    "hi": "वैकुंठ एकादशी"
+   },
+   "premium": 1,
+   "tags": [
+    "vaikuntha-ekadashi",
+    "ekadashi"
+   ],
+   "seconds": 15,
+   "text": "వైకుంఠ ఏకాదశి శుభాకాంక్షలు",
+   "video": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-vaikuntha-ekadashi.mp4",
+   "poster": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-vaikuntha-ekadashi-poster.jpg",
+   "credit": {
+    "art": {
+     "author": "Unknown",
+     "license": "CC BY 4.0",
+     "license_url": "https://creativecommons.org/licenses/by/4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Vishnu_flanked_by_two_wives_resting_on_Shesa,_the_serpent_on_Wellcome_V0045133.jpg"
+    },
+    "audio": {
+     "author": "M.S. Subbulakshmi · Saregama",
+     "license": "CC BY 3.0",
+     "license_url": "https://creativecommons.org/licenses/by/3.0/",
+     "source": "https://commons.wikimedia.org/wiki/File:Annamacharya%27s_Greatest_Hits_Collection_-_M.S._Subblakshmi_-_Namo_Narayanaya_-_Carnatic_Music.webm"
+    }
+   }
+  },
+  {
+   "id": "friday-lakshmi",
+   "lang": "te",
+   "deity": "lakshmi",
+   "title": {
+    "en": "Friday: Maha Lakshmi",
+    "te": "శుక్రవారం: మహాలక్ష్మి",
+    "hi": "शुक्रवार: महालक्ष्मी"
+   },
+   "premium": 2,
+   "tags": [
+    "friday",
+    "diwali",
+    "varalakshmi-vratam"
+   ],
+   "seconds": 15,
+   "text": "శుభ శుక్రవారం",
+   "video": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-friday-lakshmi.mp4",
+   "poster": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-friday-lakshmi-poster.jpg",
+   "credit": {
+    "art": {
+     "author": "Raja Ravi Varma",
+     "license": "Public domain",
+     "license_url": "",
+     "source": "https://commons.wikimedia.org/wiki/File:Lakshmi,_by_Raja_Ravi_Varma,_1930s.jpg"
+    },
+    "audio": {
+     "author": "P.B. Sreenivas · Saregama",
+     "license": "CC BY 3.0",
+     "license_url": "https://creativecommons.org/licenses/by/3.0/",
+     "source": "https://commons.wikimedia.org/wiki/File:Best_of_P.B._Sreenivas_Devotional_Hits_-_Sri_Krishna_Ashtaga_-_Sri_Hanuman_Chalisa_-_Carnatic_Music.webm"
+    }
+   }
+  },
+  {
+   "id": "monday-shiva",
+   "lang": "te",
+   "deity": "shiva",
+   "title": {
+    "en": "Monday: Shiva",
+    "te": "సోమవారం: శివుడు",
+    "hi": "सोमवार: शिव"
+   },
+   "premium": 3,
+   "tags": [
+    "monday",
+    "karthika",
+    "maha-shivaratri"
+   ],
+   "seconds": 15,
+   "text": "శుభ సోమవారం ఓం నమః శివాయ",
+   "video": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-monday-shiva.mp4",
+   "poster": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-monday-shiva-poster.jpg",
+   "credit": {
+    "art": {
+     "author": "Unknown",
+     "license": "CC BY 4.0",
+     "license_url": "https://creativecommons.org/licenses/by/4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Shiva,_Parvati_and_Ganesha_enthroned_on_Mount_Kailas_with_Na_Wellcome_V0045136.jpg"
+    },
+    "audio": {
+     "author": "M.S. Subbulakshmi · Saregama",
+     "license": "CC BY 3.0",
+     "license_url": "https://creativecommons.org/licenses/by/3.0/",
+     "source": "https://commons.wikimedia.org/wiki/File:Most_Powerful_Shivan_Song_-_M.S._Subbulakshmi_-_Siva_Panchakshara_Stotram_-_Carnatic_Classical_Music.webm"
+    }
+   }
+  },
+  {
+   "id": "sri-rama",
+   "lang": "te",
+   "deity": "rama",
+   "title": {
+    "en": "Sri Rama Jayam",
+    "te": "శ్రీరామ జయం",
+    "hi": "श्री राम जयम्"
+   },
+   "premium": 4,
+   "tags": [
+    "rama-navami",
+    "vivah-panchami"
+   ],
+   "seconds": 15,
+   "text": "శ్రీరామ జయం",
+   "video": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-sri-rama.mp4",
+   "poster": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-sri-rama-poster.jpg",
+   "credit": {
+    "art": {
+     "author": "Raja Ravi Varma",
+     "license": "Public domain",
+     "license_url": "",
+     "source": "https://commons.wikimedia.org/wiki/File:Ramapanchayan,_Raja_Ravi_Varma_(Lithograph).jpg"
+    },
+    "audio": {
+     "author": "U. Srinivas (mandolin) · Saregama",
+     "license": "CC BY 3.0",
+     "license_url": "https://creativecommons.org/licenses/by/3.0/",
+     "source": "https://commons.wikimedia.org/wiki/File:Tatvameruga_-_U.Srinivas_(Raga_Garudahwani)_Tyagaraja_Carnatic_classical_music.ogg"
+    }
+   }
+  },
+  {
+   "id": "sankranti",
+   "lang": "te",
+   "deity": "surya",
+   "title": {
+    "en": "Makara Sankranti",
+    "te": "మకర సంక్రాంతి",
+    "hi": "मकर संक्रांति"
+   },
+   "premium": 5,
+   "tags": [
+    "sankranti",
+    "bhogi",
+    "kanuma",
+    "sunday"
+   ],
+   "seconds": 15,
+   "text": "మకర సంక్రాంతి శుభాకాంక్షలు",
+   "video": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-sankranti.mp4",
+   "poster": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-sankranti-poster.jpg",
+   "credit": {
+    "art": {
+     "author": "Unknown",
+     "license": "CC BY 4.0",
+     "license_url": "https://creativecommons.org/licenses/by/4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Surya_the_sun_deity_driving_in_his_chariot._Gouache_drawing._Wellcome_V0045217.jpg"
+    },
+    "audio": {
+     "author": "Wilfredor",
+     "license": "CC0",
+     "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+     "source": "https://commons.wikimedia.org/wiki/File%3AGayatri_mantra.ogg"
+    }
+   }
+  },
+  {
+   "id": "good-morning",
+   "lang": "te",
+   "deity": "saraswati",
+   "title": {
+    "en": "Good morning",
+    "te": "శుభోదయం",
+    "hi": "सुप्रभात"
+   },
+   "premium": null,
+   "tags": [
+    "morning"
+   ],
+   "seconds": 15,
+   "text": "శుభోదయం",
+   "video": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-good-morning.mp4",
+   "poster": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-good-morning-poster.jpg",
+   "credit": {
+    "art": {
+     "author": "Raja Ravi Varma",
+     "license": "Public domain",
+     "license_url": "",
+     "source": "https://commons.wikimedia.org/wiki/File:Lakshmi_Saraswati_Sanyog,_by_Raja_Ravi_Varma.jpg"
+    },
+    "audio": {
+     "author": "M.S. Subbulakshmi · Saregama",
+     "license": "CC BY 3.0",
+     "license_url": "https://creativecommons.org/licenses/by/3.0/",
+     "source": "https://commons.wikimedia.org/wiki/File:Most_Powerful_Shivan_Song_-_M.S._Subbulakshmi_-_Siva_Panchakshara_Stotram_-_Carnatic_Classical_Music.webm"
+    }
+   }
+  },
+  {
+   "id": "good-night",
+   "lang": "te",
+   "deity": "radha-krishna",
+   "title": {
+    "en": "Good night",
+    "te": "శుభ రాత్రి",
+    "hi": "शुभ रात्रि"
+   },
+   "premium": null,
+   "tags": [
+    "night"
+   ],
+   "seconds": 15,
+   "text": "శుభ రాత్రి",
+   "video": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-good-night.mp4",
+   "poster": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-good-night-poster.jpg",
+   "credit": {
+    "art": {
+     "author": "RAJA RAVI VARMA (1848 - 1906)",
+     "license": "Public domain",
+     "license_url": "",
+     "source": "https://commons.wikimedia.org/wiki/File:Radha_in_the_Moonlight.jpg"
+    },
+    "audio": {
+     "author": "Devalay (synthesised)",
+     "license": "CC0",
+     "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+     "source": "https://github.com/ChandraChaan/devalay"
+    }
+   }
+  },
+  {
+   "id": "sunday-surya",
+   "lang": "te",
+   "deity": "surya",
+   "title": {
+    "en": "Sunday: Surya",
+    "te": "ఆదివారం: సూర్యుడు",
+    "hi": "रविवार: सूर्य"
+   },
+   "premium": null,
+   "tags": [
+    "sunday",
+    "ratha-saptami"
+   ],
+   "seconds": 15,
+   "text": "శుభ ఆదివారం",
+   "video": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-sunday-surya.mp4",
+   "poster": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-sunday-surya-poster.jpg",
+   "credit": {
+    "art": {
+     "author": "Unknown",
+     "license": "CC BY 4.0",
+     "license_url": "https://creativecommons.org/licenses/by/4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Surya_the_sun_deity_driving_in_his_chariot._Gouache_drawing._Wellcome_V0045217.jpg"
+    },
+    "audio": {
+     "author": "Devalay (synthesised)",
+     "license": "CC0",
+     "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+     "source": "https://github.com/ChandraChaan/devalay"
+    }
+   }
+  },
+  {
+   "id": "tuesday-hanuman",
+   "lang": "te",
+   "deity": "hanuman",
+   "title": {
+    "en": "Tuesday: Hanuman",
+    "te": "మంగళవారం: హనుమాన్",
+    "hi": "मंगलवार: हनुमान"
+   },
+   "premium": null,
+   "tags": [
+    "tuesday",
+    "hanuman-jayanti"
+   ],
+   "seconds": 15,
+   "text": "శుభ మంగళవారం జై హనుమాన్",
+   "video": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-tuesday-hanuman.mp4",
+   "poster": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-tuesday-hanuman-poster.jpg",
+   "credit": {
+    "art": {
+     "author": "Unknown",
+     "license": "Public domain",
+     "license_url": "",
+     "source": "https://commons.wikimedia.org/wiki/File:Hanuman_fetches_the_herb-bearing_mountain,_in_a_print_from_the_Ravi_Varma_Press,_1910%27s.jpg"
+    },
+    "audio": {
+     "author": "P.B. Sreenivas · Saregama",
+     "license": "CC BY 3.0",
+     "license_url": "https://creativecommons.org/licenses/by/3.0/",
+     "source": "https://commons.wikimedia.org/wiki/File:Best_of_P.B._Sreenivas_Devotional_Hits_-_Sri_Krishna_Ashtaga_-_Sri_Hanuman_Chalisa_-_Carnatic_Music.webm"
+    }
+   }
+  },
+  {
+   "id": "wednesday-ganesha",
+   "lang": "te",
+   "deity": "ganesha",
+   "title": {
+    "en": "Wednesday: Ganesha",
+    "te": "బుధవారం: గణపతి",
+    "hi": "बुधवार: गणेश"
+   },
+   "premium": null,
+   "tags": [
+    "wednesday",
+    "vinayaka-chavithi"
+   ],
+   "seconds": 15,
+   "text": "శుభ బుధవారం",
+   "video": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-wednesday-ganesha.mp4",
+   "poster": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-wednesday-ganesha-poster.jpg",
+   "credit": {
+    "art": {
+     "author": "Unknown",
+     "license": "CC BY 4.0",
+     "license_url": "https://creativecommons.org/licenses/by/4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Ganesha._Chromolithograph._Wellcome_V0044933.jpg"
+    },
+    "audio": {
+     "author": "M.S. Subbulakshmi · Saregama",
+     "license": "CC BY 3.0",
+     "license_url": "https://creativecommons.org/licenses/by/3.0/",
+     "source": "https://commons.wikimedia.org/wiki/File:Ganesh_Chaturthi_Special_Bhajan%2C_M.S._Subbulakshmi%2C_Ganesha_Pancharatnam%2C_Carnatic_Classical_Music.webm"
+    }
+   }
+  },
+  {
+   "id": "thursday-guru",
+   "lang": "te",
+   "deity": "dattatreya",
+   "title": {
+    "en": "Thursday: Guru",
+    "te": "గురువారం: గురువు",
+    "hi": "गुरुवार: गुरु"
+   },
+   "premium": null,
+   "tags": [
+    "thursday",
+    "datta-jayanti",
+    "guru-purnima"
+   ],
+   "seconds": 15,
+   "text": "శుభ గురువారం",
+   "video": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-thursday-guru.mp4",
+   "poster": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-thursday-guru-poster.jpg",
+   "credit": {
+    "art": {
+     "author": "Raja Ravi Varma",
+     "license": "Public domain",
+     "license_url": "",
+     "source": "https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma_-_Dattatreya.jpg"
+    },
+    "audio": {
+     "author": "Swami Atmananda",
+     "license": "CC0",
+     "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+     "source": "https://commons.wikimedia.org/wiki/File%3ASanskrit_Chanting_Guru_Stotram.ogg"
+    }
+   }
+  },
+  {
+   "id": "saturday-venkateswara",
+   "lang": "te",
+   "deity": "venkateswara",
+   "title": {
+    "en": "Saturday: Venkateswara",
+    "te": "శనివారం: వేంకటేశ్వరుడు",
+    "hi": "शनिवार: वेंकटेश्वर"
+   },
+   "premium": null,
+   "tags": [
+    "saturday"
+   ],
+   "seconds": 15,
+   "text": "శుభ శనివారం ఓం నమో వేంకటేశాయ",
+   "video": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-saturday-venkateswara.mp4",
+   "poster": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-saturday-venkateswara-poster.jpg",
+   "credit": {
+    "art": {
+     "author": "Bhavna1359",
+     "license": "CC0",
+     "license_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+     "source": "https://commons.wikimedia.org/wiki/File:Tirupati_Balaji_from_delhi_2023.jpg"
+    },
+    "audio": {
+     "author": "P.B. Sreenivas · Saregama",
+     "license": "CC BY 3.0",
+     "license_url": "https://creativecommons.org/licenses/by/3.0/",
+     "source": "https://commons.wikimedia.org/wiki/File:Best_of_P.B._Sreenivas_Devotional_Hits_-_Sri_Krishna_Ashtaga_-_Sri_Hanuman_Chalisa_-_Carnatic_Music.webm"
+    }
+   }
+  },
+  {
+   "id": "karthika-deepam",
+   "lang": "te",
+   "deity": "shiva",
+   "title": {
+    "en": "Karthika Deepam",
+    "te": "కార్తీక దీపం",
+    "hi": "कार्तिक दीपम्"
+   },
+   "premium": null,
+   "tags": [
+    "karthika",
+    "karthika-pournami",
+    "diwali"
+   ],
+   "seconds": 15,
+   "text": "కార్తీక దీపం",
+   "video": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-karthika-deepam.mp4",
+   "poster": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-karthika-deepam-poster.jpg",
+   "credit": {
+    "art": {
+     "author": "Unknown",
+     "license": "CC BY 4.0",
+     "license_url": "https://creativecommons.org/licenses/by/4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Gang%C4%81_and_the_river_Ganges_falling_from_heaven,_while_S_Wellcome_V0045134.jpg"
+    },
+    "audio": {
+     "author": "Sachin Patel 78",
+     "license": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+     "source": "https://commons.wikimedia.org/wiki/File%3AOm_Namah_Shivaya_Performance_at_Khajuraho_-_2026.ogg"
+    }
+   }
+  },
+  {
+   "id": "gita-jayanti",
+   "lang": "te",
+   "deity": "krishna",
+   "title": {
+    "en": "Gita Jayanti",
+    "te": "గీతా జయంతి",
+    "hi": "गीता जयंती"
+   },
+   "premium": null,
+   "tags": [
+    "gita-jayanti"
+   ],
+   "seconds": 15,
+   "text": "గీతా జయంతి శుభాకాంక్షలు",
+   "video": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-gita-jayanti.mp4",
+   "poster": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-gita-jayanti-poster.jpg",
+   "credit": {
+    "art": {
+     "author": "Unknown authorUnknown author",
+     "license": "Public domain",
+     "license_url": "",
+     "source": "https://commons.wikimedia.org/wiki/File:Sri_Krishna_preaching_Gita_Upadesh_to_Arjun_-_Unknown,_Kashmir_School_-_Google_Cultural_Institute.jpg"
+    },
+    "audio": {
+     "author": "M.S. Subbulakshmi · Saregama",
+     "license": "CC BY 3.0",
+     "license_url": "https://creativecommons.org/licenses/by/3.0/",
+     "source": "https://commons.wikimedia.org/wiki/File:Popular_Shri_Krishna_Bhajan_-_M.S._Subbulakshmi_-_Bhaja_Govindam_-_Sikshashtakam_-_Carnatic_Music.webm"
+    }
+   }
+  },
+  {
+   "id": "hare-krishna",
+   "lang": "te",
+   "deity": "radha-krishna",
+   "title": {
+    "en": "Hare Krishna",
+    "te": "హరే కృష్ణ",
+    "hi": "हरे कृष्ण"
+   },
+   "premium": null,
+   "tags": [
+    "krishnashtami",
+    "wednesday"
+   ],
+   "seconds": 15,
+   "text": "హరే కృష్ణ",
+   "video": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-hare-krishna.mp4",
+   "poster": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-hare-krishna-poster.jpg",
+   "credit": {
+    "art": {
+     "author": "Unknown",
+     "license": "CC BY 4.0",
+     "license_url": "https://creativecommons.org/licenses/by/4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Krishna_embracing_Radha._Chromolithograph_by_R._Varma._Wellcome_V0045101.jpg"
+    },
+    "audio": {
+     "author": "M.S. Subbulakshmi · Saregama",
+     "license": "CC BY 3.0",
+     "license_url": "https://creativecommons.org/licenses/by/3.0/",
+     "source": "https://commons.wikimedia.org/wiki/File:Popular_Shri_Krishna_Bhajan_-_M.S._Subbulakshmi_-_Bhaja_Govindam_-_Sikshashtakam_-_Carnatic_Music.webm"
+    }
+   }
+  },
+  {
+   "id": "hi-good-morning",
+   "lang": "hi",
+   "deity": "lakshmi",
+   "title": {
+    "en": "सुप्रभात",
+    "te": "సుప్రభాత్ (హిందీ)",
+    "hi": "सुप्रभात"
+   },
+   "premium": null,
+   "tags": [
+    "morning"
+   ],
+   "seconds": 15,
+   "text": "सुप्रभात",
+   "video": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-hi-good-morning.mp4",
+   "poster": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-hi-good-morning-poster.jpg",
+   "credit": {
+    "art": {
+     "author": "Unknown",
+     "license": "CC BY 4.0",
+     "license_url": "https://creativecommons.org/licenses/by/4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Lakshmi_on_her_lotus_in_the_water_with_elephant._Chromolitho_Wellcome_V0045127.jpg"
+    },
+    "audio": {
+     "author": "Aarti Shri Radha Govind Dev Ji, Jaipur",
+     "license": "CC0",
+     "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+     "source": "https://commons.wikimedia.org/wiki/File%3ASanskrit_chanting_for_Aarti_Puja_Prayer_-_Female_Voice.ogg"
+    }
+   }
+  },
+  {
+   "id": "hi-har-har-mahadev",
+   "lang": "hi",
+   "deity": "shiva",
+   "title": {
+    "en": "हर हर महादेव",
+    "te": "హర హర మహాదేవ (హిందీ)",
+    "hi": "हर हर महादेव"
+   },
+   "premium": null,
+   "tags": [
+    "monday",
+    "maha-shivaratri"
+   ],
+   "seconds": 15,
+   "text": "हर हर महादेव",
+   "video": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-hi-har-har-mahadev.mp4",
+   "poster": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-hi-har-har-mahadev-poster.jpg",
+   "credit": {
+    "art": {
+     "author": "Unknown",
+     "license": "CC BY 4.0",
+     "license_url": "https://creativecommons.org/licenses/by/4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Shiva_enthroned_with_his_family,_Parvati_and_Ganesha,_attend_Wellcome_V0045047.jpg"
+    },
+    "audio": {
+     "author": "Sachin Patel 78",
+     "license": "CC BY-SA 4.0",
+     "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+     "source": "https://commons.wikimedia.org/wiki/File%3AOm_Namah_Shivaya_Performance_at_Khajuraho_-_2026.ogg"
+    }
+   }
+  },
+  {
+   "id": "hi-jai-hanuman",
+   "lang": "hi",
+   "deity": "rama",
+   "title": {
+    "en": "जय हनुमान",
+    "te": "జై హనుమాన్ (హిందీ)",
+    "hi": "जय हनुमान"
+   },
+   "premium": null,
+   "tags": [
+    "tuesday",
+    "hanuman-jayanti"
+   ],
+   "seconds": 15,
+   "text": "जय श्री राम जय हनुमान",
+   "video": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-hi-jai-hanuman.mp4",
+   "poster": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-hi-jai-hanuman-poster.jpg",
+   "credit": {
+    "art": {
+     "author": "Unknown",
+     "license": "CC BY 4.0",
+     "license_url": "https://creativecommons.org/licenses/by/4.0",
+     "source": "https://commons.wikimedia.org/wiki/File:Rama_and_Sita_enthroned_attended_by_Hanuman,_Bharata_and_Lak_Wellcome_V0045046.jpg"
+    },
+    "audio": {
+     "author": "P.B. Sreenivas · Saregama",
+     "license": "CC BY 3.0",
+     "license_url": "https://creativecommons.org/licenses/by/3.0/",
+     "source": "https://commons.wikimedia.org/wiki/File:Best_of_P.B._Sreenivas_Devotional_Hits_-_Sri_Krishna_Ashtaga_-_Sri_Hanuman_Chalisa_-_Carnatic_Music.webm"
+    }
+   }
+  },
+  {
+   "id": "hi-shukravar",
+   "lang": "hi",
+   "deity": "lakshmi",
+   "title": {
+    "en": "शुभ शुक्रवार",
+    "te": "శుభ శుక్రవారం (హిందీ)",
+    "hi": "शुभ शुक्रवार"
+   },
+   "premium": null,
+   "tags": [
+    "friday",
+    "diwali"
+   ],
+   "seconds": 15,
+   "text": "शुभ शुक्रवार",
+   "video": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-hi-shukravar.mp4",
+   "poster": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/st-hi-shukravar-poster.jpg",
+   "credit": {
+    "art": {
+     "author": "Raja Ravi Varma",
+     "license": "Public domain",
+     "license_url": "",
+     "source": "https://commons.wikimedia.org/wiki/File:Lakshmi_Embellished,_by_Ravi_Varma_Press,_edit.jpg"
+    },
+    "audio": {
+     "author": "Shri hari om sharan ji",
+     "license": "CC0",
+     "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+     "source": "https://commons.wikimedia.org/wiki/File%3AAarti_Puja%2C_Lakshmi_Laxmi.ogg"
+    }
+   }
+  }
+ ],
+ "meditation": [
+  {
+   "id": "river-flute",
+   "deity": "general",
+   "title": {
+    "en": "River Flute",
+    "te": "నది ఒడ్డున మురళి",
+    "hi": "नदी किनारे बाँसुरी"
+   },
+   "premium": 1,
+   "seconds": 120.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/md-river-flute.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "loudness-normalised"
+   }
+  },
+  {
+   "id": "himalaya-om",
+   "deity": "general",
+   "title": {
+    "en": "Himalayan Wind and Om",
+    "te": "హిమాలయ గాలి, ఓం",
+    "hi": "हिमालय की हवा और ॐ"
+   },
+   "premium": 2,
+   "seconds": 120.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/md-himalaya-om.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "loudness-normalised"
+   }
+  },
+  {
+   "id": "singing-bowls",
+   "deity": "general",
+   "title": {
+    "en": "Singing Bowls",
+    "te": "సింగింగ్ బౌల్స్",
+    "hi": "सिंगिंग बाउल"
+   },
+   "premium": 3,
+   "seconds": 120.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/md-singing-bowls.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "loudness-normalised"
+   }
+  },
+  {
+   "id": "ocean-om",
+   "deity": "general",
+   "title": {
+    "en": "Ocean Om",
+    "te": "సముద్ర ఓంకారం",
+    "hi": "सागर ॐ"
+   },
+   "premium": 4,
+   "seconds": 120.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/md-ocean-om.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "loudness-normalised"
+   }
+  },
+  {
+   "id": "veena-alap",
+   "deity": "general",
+   "title": {
+    "en": "Veena Alap",
+    "te": "వీణ ఆలాపన",
+    "hi": "वीणा आलाप"
+   },
+   "premium": 5,
+   "seconds": 120.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/md-veena-alap.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "loudness-normalised"
+   }
+  },
+  {
+   "id": "om-deep",
+   "deity": "general",
+   "title": {
+    "en": "Deep Om",
+    "te": "లోతైన ఓంకారం",
+    "hi": "गहरा ॐ"
+   },
+   "premium": null,
+   "seconds": 120.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/md-om-deep.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "loudness-normalised"
+   }
+  },
+  {
+   "id": "tanpura-sa",
+   "deity": "general",
+   "title": {
+    "en": "Tanpura",
+    "te": "తంబూరా",
+    "hi": "तानपुरा"
+   },
+   "premium": null,
+   "seconds": 120.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/md-tanpura-sa.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "loudness-normalised"
+   }
+  },
+  {
+   "id": "rain-temple-bells",
+   "deity": "general",
+   "title": {
+    "en": "Rain and Temple Bells",
+    "te": "వానలో ఆలయ గంటలు",
+    "hi": "बारिश और मंदिर घंटियाँ"
+   },
+   "premium": null,
+   "seconds": 120.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/md-rain-temple-bells.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "loudness-normalised"
+   }
+  },
+  {
+   "id": "night-diya",
+   "deity": "general",
+   "title": {
+    "en": "Night Crickets",
+    "te": "రాత్రి కీచురాళ్ళు",
+    "hi": "रात के झींगुर"
+   },
+   "premium": null,
+   "seconds": 120.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/md-night-diya.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "loudness-normalised"
+   }
+  },
+  {
+   "id": "dawn-birds",
+   "deity": "general",
+   "title": {
+    "en": "Dawn Birds",
+    "te": "ఉదయపు పక్షులు",
+    "hi": "भोर के पक्षी"
+   },
+   "premium": null,
+   "seconds": 120.0,
+   "audio": "https://github.com/ChandraChaan/devalay/releases/download/media-sections-v1/md-dawn-birds.m4a",
+   "credit": {
+    "author": "Devalay (synthesised)",
+    "license": "CC0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://github.com/ChandraChaan/devalay",
+    "changes": "loudness-normalised"
+   }
+  }
+ ]
+}

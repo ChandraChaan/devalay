@@ -340,6 +340,7 @@ class _QuickActions extends ConsumerWidget {
       ('🔔', 'ringtones', '/ringtones', false),
       ('📿', 'chant', '/chant', false),
       ('✨', 'ai_status', '/status', false),
+      ('📲', 'whatsapp_status', '/whatsapp-status', false),
       ('💌', 'wishes', '/wishes', false),
       ('🖼️', 'wallpapers', '/wallpapers', false),
       ('🗓️', 'panchang', '/panchang', false),

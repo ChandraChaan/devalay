@@ -5,10 +5,13 @@ import 'package:in_app_purchase/in_app_purchase.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../core/billing.dart';
+import '../core/offers.dart';
+import '../core/sections.dart';
 import '../core/i18n.dart';
 import '../core/theme.dart';
 import '../core/usage.dart';
 import '../widgets/common.dart';
+import '../widgets/status_templates.dart';
 import 'support.dart';
 import 'support_chat.dart';
 
@@ -44,6 +47,33 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
     final premium = ref.watch(premiumProvider);
     final theme = Theme.of(context);
     final perks = [
+      (
+        '👑',
+        t3(
+          lang,
+          'The Premium collection: the 5 finest wallpapers, ringtones, WhatsApp status videos, status designs and meditation sounds',
+          'प्रीमियम संग्रह: 5 सबसे सुंदर वॉलपेपर, रिंगटोन, व्हाट्सऐप स्टेटस वीडियो, स्टेटस डिज़ाइन और ध्यान ध्वनियाँ',
+          'ప్రీమియం కలెక్షన్: అత్యుత్తమ 5 వాల్‌పేపర్లు, రింగ్‌టోన్లు, వాట్సాప్ స్టేటస్ వీడియోలు, స్టేటస్ డిజైన్లు, ధ్యాన శబ్దాలు',
+        ),
+      ),
+      (
+        '🖼️',
+        t3(
+          lang,
+          'QHD+ (1440×3200) downloads of every wallpaper, no watermark',
+          'हर वॉलपेपर QHD+ (1440×3200) में, बिना वॉटरमार्क',
+          'ప్రతి వాల్‌పేపర్ QHD+ (1440×3200)లో, వాటర్‌మార్క్ లేకుండా',
+        ),
+      ),
+      (
+        '✨',
+        t3(
+          lang,
+          'AI Status: Swarna gold, Gopuram, Pattu silk, Padma and Royal art designs, and a personal blessing from your birth star',
+          'AI स्टेटस: स्वर्ण, गोपुरम, रेशमी, पद्म और राजसी डिज़ाइन, और आपके जन्म नक्षत्र से व्यक्तिगत आशीर्वाद',
+          'భక్తి స్టేటస్: స్వర్ణ, గోపురం, పట్టు, పద్మం, రాజస డిజైన్లు, మీ జన్మ నక్షత్రం ఆధారంగా వ్యక్తిగత ఆశీర్వాదం',
+        ),
+      ),
       ('🚫', t3(lang, 'No ads, now or ever', 'कभी कोई विज्ञापन नहीं', 'ఎప్పుడూ ప్రకటనలు ఉండవు')),
       (
         '🛕',
@@ -126,6 +156,7 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
               ],
             ),
           ),
+          if (!premium) _UnlockContext(source: widget.source),
           const SizedBox(height: 12),
           for (final (emoji, text) in perks)
             ListTile(
@@ -149,7 +180,7 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
           else if (!s.ready)
             const Center(child: CircularProgressIndicator())
           else ...[
-            for (final p in plans) _PlanCard(product: p, busy: s.busy),
+            for (final p in plans) _PlanCard(product: p, busy: s.busy, monthly: s.products[Products.premiumMonthly]),
             if (plans.isEmpty)
               Padding(
                 padding: const EdgeInsets.all(8),
@@ -179,9 +210,12 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
           Text(
             t3(
               lang,
-              'Billed by Google Play and renews automatically. Cancel anytime in Play Store > Payments & subscriptions.',
-              'भुगतान Google Play से होता है और अपने-आप नवीनीकृत होता है। Play Store > Payments & subscriptions में कभी भी रद्द करें।',
-              'చెల్లింపు Google Play ద్వారా, ఆటోమేటిక్‌గా రెన్యూ అవుతుంది. Play Store > Payments & subscriptionsలో ఎప్పుడైనా రద్దు చేయవచ్చు.',
+              'Billed by Google Play and renews automatically. Cancel anytime in Play Store > Payments & subscriptions. '
+                  'With a free trial, cancel before it ends and you pay nothing; otherwise the plan starts when the trial ends.',
+              'भुगतान Google Play से होता है और अपने-आप नवीनीकृत होता है। Play Store > Payments & subscriptions में कभी भी रद्द करें। '
+                  'मुफ़्त ट्रायल खत्म होने से पहले रद्द करें तो कोई भुगतान नहीं; नहीं तो ट्रायल के बाद प्लान शुरू होता है।',
+              'చెల్లింపు Google Play ద్వారా, ఆటోమేటిక్‌గా రెన్యూ అవుతుంది. Play Store > Payments & subscriptionsలో ఎప్పుడైనా రద్దు చేయవచ్చు. '
+                  'ఉచిత ట్రయల్ ముగిసేలోపు రద్దు చేస్తే ఏమీ చెల్లించనవసరం లేదు; లేకపోతే ట్రయల్ తర్వాత ప్లాన్ మొదలవుతుంది.',
             ),
             textAlign: TextAlign.center,
             style: theme.textTheme.bodySmall,
@@ -206,45 +240,227 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
 }
 
 class _PlanCard extends ConsumerWidget {
-  const _PlanCard({required this.product, required this.busy});
+  const _PlanCard({required this.product, required this.busy, this.monthly});
   final ProductDetails product;
   final bool busy;
+
+  /// The monthly plan, to show what the yearly one saves.
+  final ProductDetails? monthly;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final lang = uiLang(ref);
+    final theme = Theme.of(context);
     final yearly = product.id == Products.premiumYearly;
-    final perMonth = yearly && product.rawPrice > 0
-        ? '${product.currencySymbol}${(product.rawPrice / 12).ceil()}'
-        : null;
+    final o = describeOffer(product);
+    final m = monthly == null ? null : describeOffer(monthly!);
+    final symbol = product.currencySymbol;
+    // The struck-through price is a real one: the renewal price after an intro offer, or a year of monthly.
+    final yearOfMonthly = yearly && m != null && m.baseRaw > 0 ? m.baseRaw * 12 : null;
+    final original = o.hasIntro
+        ? o.basePrice
+        : (yearOfMonthly != null && yearOfMonthly > o.baseRaw ? '$symbol${yearOfMonthly.round()}' : null);
+    final percent = o.hasIntro
+        ? o.introPercentOff
+        : (yearOfMonthly != null && yearOfMonthly > o.baseRaw ? ((1 - o.baseRaw / yearOfMonthly) * 100).round() : null);
+    final perMonth = yearly && o.payNowRaw > 0 ? '$symbol${(o.payNowRaw / 12).ceil()}' : null;
+    final period = yearly ? t3(lang, 'year', 'साल', 'సంవత్సరం') : t3(lang, 'month', 'महीना', 'నెల');
+    final first = yearly
+        ? t3(lang, 'first year', 'पहला साल', 'మొదటి సంవత్సరం')
+        : t3(lang, 'first month', 'पहला महीना', 'మొదటి నెల');
     return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
+      padding: const EdgeInsets.only(bottom: 12),
       child: Card(
-        shape: yearly
-            ? RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-                side: const BorderSide(color: Palette.marigold, width: 2),
-              )
-            : null,
-        child: ListTile(
-          contentPadding: const EdgeInsets.all(14),
-          title: Text(
-            yearly ? t3(lang, 'Yearly', 'सालाना', 'సంవత్సరానికి') : t3(lang, 'Monthly', 'मासिक', 'నెలకు'),
-            style: const TextStyle(fontWeight: FontWeight.w700),
-          ),
-          subtitle: perMonth == null
-              ? null
-              : Text(
-                  t3(
-                    lang,
-                    'Best value: about $perMonth a month',
-                    'सबसे किफ़ायती: लगभग $perMonth महीना',
-                    'అత్యంత లాభం: నెలకు సుమారు $perMonth',
-                  ),
+        clipBehavior: Clip.antiAlias,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(18),
+          side: BorderSide(color: yearly ? Palette.marigold : theme.dividerColor, width: yearly ? 2 : 1),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            if (yearly || o.hasTrial)
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(colors: [Color(0xFFFFB300), Color(0xFFE65100)]),
                 ),
-          trailing: FilledButton(
-            onPressed: busy ? null : () => ref.read(billingProvider.notifier).buy(product, source: 'premium'),
-            child: Text(product.price),
+                child: Row(
+                  children: [
+                    if (yearly)
+                      Text(
+                        t3(lang, 'MOST POPULAR', 'सबसे लोकप्रिय', 'ఎక్కువ మంది ఎంచుకునేది'),
+                        style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w800, fontSize: 12),
+                      ),
+                    const Spacer(),
+                    if (percent != null && percent > 0)
+                      Text(
+                        t3(lang, '$percent% OFF', '$percent% छूट', '$percent% తగ్గింపు'),
+                        style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w800, fontSize: 12),
+                      ),
+                  ],
+                ),
+              ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 12, 12, 14),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          yearly ? t3(lang, 'Yearly', 'सालाना', 'సంవత్సరానికి') : t3(lang, 'Monthly', 'मासिक', 'నెలకు'),
+                          style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 17),
+                        ),
+                        if (o.hasTrial)
+                          Padding(
+                            padding: const EdgeInsets.only(top: 4),
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                              decoration: BoxDecoration(
+                                color: const Color(0xFF2E7D32),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Text(
+                                t3(
+                                  lang,
+                                  '${o.trialDays} days free',
+                                  '${o.trialDays} दिन मुफ़्त',
+                                  '${o.trialDays} రోజులు ఉచితం',
+                                ),
+                                style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: 12),
+                              ),
+                            ),
+                          ),
+                        const SizedBox(height: 6),
+                        Wrap(
+                          crossAxisAlignment: WrapCrossAlignment.end,
+                          spacing: 8,
+                          children: [
+                            Text(o.payNow, style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 22)),
+                            if (original != null)
+                              Text(
+                                original,
+                                style: theme.textTheme.bodyMedium?.copyWith(
+                                  decoration: TextDecoration.lineThrough,
+                                  color: theme.hintColor,
+                                ),
+                              ),
+                            Text('/ ${o.hasIntro ? first : period}', style: theme.textTheme.bodySmall),
+                          ],
+                        ),
+                        if (o.hasIntro)
+                          Text(
+                            t3(
+                              lang,
+                              'then ${o.basePrice} / $period',
+                              'फिर ${o.basePrice} / $period',
+                              'తర్వాత ${o.basePrice} / $period',
+                            ),
+                            style: theme.textTheme.bodySmall,
+                          ),
+                        if (perMonth != null)
+                          Text(
+                            t3(lang, 'Just $perMonth a month', 'बस $perMonth महीना', 'నెలకు కేవలం $perMonth'),
+                            style: theme.textTheme.bodySmall?.copyWith(
+                              color: Palette.marigold,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
+                  FilledButton(
+                    onPressed: busy ? null : () => ref.read(billingProvider.notifier).buy(product, source: 'premium'),
+                    child: Text(
+                      o.hasTrial
+                          ? t3(lang, 'Start free trial', 'मुफ़्त ट्रायल', 'ఉచిత ట్రయల్')
+                          : t3(lang, 'Subscribe', 'सदस्य बनें', 'సభ్యత్వం'),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// When Premium was opened from a locked item, that item at the top: "Unlock Maha Lakshmi".
+class _UnlockContext extends ConsumerWidget {
+  const _UnlockContext({required this.source});
+  final String source;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final parsed = parsePremiumSource(source);
+    if (parsed == null) return const SizedBox.shrink();
+    final (section, id) = parsed;
+    final lang = uiLang(ref);
+    String? title;
+    String? image;
+    if (section == 'status_template') {
+      title = id == 'personal'
+          ? t3(lang, 'Personal blessing', 'व्यक्तिगत आशीर्वाद', 'వ్యక్తిగత ఆశీర్వాదం')
+          : StatusTemplate.values.where((t) => t.name == id).firstOrNull?.label(lang);
+    } else {
+      final item = ref.watch(sectionsProvider).value?.find(section, id);
+      title = item?.title.of(lang);
+      image = switch (item) {
+        HdWallpaper w => w.thumb,
+        StatusVideo v => v.poster,
+        _ => null,
+      };
+    }
+    if (title == null) return const SizedBox.shrink();
+    final kind = switch (section) {
+      'wallpaper' => t3(lang, 'Premium wallpaper', 'प्रीमियम वॉलपेपर', 'ప్రీమియం వాల్‌పేపర్'),
+      'ringtone' => t3(lang, 'Premium ringtone', 'प्रीमियम रिंगटोन', 'ప్రీమియం రింగ్‌టోన్'),
+      'status_video' => t3(lang, 'Premium status video', 'प्रीमियम स्टेटस वीडियो', 'ప్రీమియం స్టేటస్ వీడియో'),
+      'meditation' => t3(lang, 'Premium meditation sound', 'प्रीमियम ध्यान ध्वनि', 'ప్రీమియం ధ్యాన శబ్దం'),
+      _ => t3(lang, 'Premium status design', 'प्रीमियम स्टेटस डिज़ाइन', 'ప్రీమియం స్టేటస్ డిజైన్'),
+    };
+    return Padding(
+      padding: const EdgeInsets.only(top: 12),
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+          side: const BorderSide(color: Palette.marigold, width: 1.5),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: Row(
+            children: [
+              if (image != null)
+                SizedBox(width: 54, height: 96, child: NetImage(image, radius: 10))
+              else
+                Icon(section == 'ringtone' ? Icons.music_note_rounded : Icons.auto_awesome_rounded, size: 40),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(kind, style: Theme.of(context).textTheme.labelMedium),
+                    Text(
+                      t3(lang, 'Unlock $title', '$title अनलॉक करें', '$title అన్‌లాక్ చేయండి'),
+                      style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 17),
+                    ),
+                    Text(
+                      t3(
+                        lang,
+                        'and the whole Premium collection, with QHD+ downloads and no watermark.',
+                        'और पूरा प्रीमियम संग्रह, QHD+ डाउनलोड के साथ, बिना वॉटरमार्क।',
+                        'దానితో పాటు పూర్తి ప్రీమియం కలెక్షన్, QHD+ డౌన్‌లోడ్‌లు, వాటర్‌మార్క్ లేకుండా.',
+                      ),
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
       ),

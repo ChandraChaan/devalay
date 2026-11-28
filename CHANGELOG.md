@@ -3,6 +3,63 @@
 Each milestone is a git tag and a [GitHub release](https://github.com/ChandraChaan/devalay/releases). Releases from
 v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the section below that matches the tag.
 
+## v1.5.12 — 2026-11-28
+
+Ringtones, Wallpapers, WhatsApp Status, AI Status and Meditation rebuilt as the app's showcase, with a Premium
+collection in each; lyrics in the player and movie bhakti songs.
+
+- **Wallpapers (69, all at least QHD+ 1440×3200 at source):** three collections. *Modern*: 13 original designs made
+  for Devalay (Glowing Om, Peacock Feather and Flute, Trishul and Moon, Govinda Namam, Little Krishna's Butter Pot,
+  Sri Yantra, Lotus Mandala, Diya Glow, Jai Shri Ram, Radhe Radhe, Toran and Kalash, Hanuman's Gada, Sudarshana
+  Chakra; CC0). *Photos*: 20 recent photographs (Sri Rama in Nashik, the golden Murugan at Batu Caves, Laddu Gopal,
+  Kumartuli Durga, Ganesh pandals, Diwali diyas and more; CC0/CC BY/CC BY-SA). *Classic art*: 36 paintings and
+  chromolithographs (Ravi Varma, the Wellcome Collection, the Cleveland Museum), only sources of at least ~2,000 px,
+  cropped clear of paper margins and printed captions, and composed for 20:9 phones (full-width art over a soft
+  blurred extension, clock area kept calm). Filters for Today, Modern, Photos, Classic art, favourites, downloads and
+  each deity; FHD+ downloads free, QHD+ with Premium. Set as home/lock screen, save, or send to WhatsApp in one tap.
+- **Ringtones (34):** cuts of the CC BY Saregama recordings (M.S. Subbulakshmi, U. Srinivas' mandolin, P.B. Sreenivas,
+  Balamuralikrishna) and CC0/CC BY-SA chants, plus new trending-style tones (lo-fi flute, veena dhun, temple-bell pop,
+  shankh drop, Gayatri lo-fi and an Om Namah Shivaya beat) and two notification sounds synthesised for Devalay. Every tone is trimmed on a
+  breath, loudness-normalised (−13 LUFS, peaks ≤ −1 dBTP) and faded, and has a 3.5-second notification cut. Previews
+  play on their own player (they don't interrupt the bhakti queue) and from storage once downloaded.
+- **WhatsApp Status (new section):** 19 status videos, 9:16 1080×1920, 15 s, slow zoom on the art with typeset
+  Telugu or Hindi verses (HarfBuzz shaping) and licensed audio; Today row by weekday and festival; one tap opens
+  WhatsApp with the video (native `ACTION_SEND` through a FileProvider, falling back to the share sheet). An Images
+  tab draws today's statuses on the phone in the reader's language.
+- **AI Status:** composed on the phone from a curated library of 24 verses (Telugu script, Devanagari and IAST, with
+  meanings in all three) and today's Panchang: greeting for today's festival or weekday, the deity's verse and
+  meaning, tithi and nakshatra, and the user's name. Occasions (Today, Good morning, Good night, Birthday,
+  Anniversary, with "for whom"), 16 designs (5 Premium: Swarna gold, Gopuram, Pattu silk, Padma, Royal art; free
+  include Neon, Aurora, Glass and Photo), Telugu display fonts Ramabhadra and Suranna (OFL), export 1080×1920 and
+  one tap to WhatsApp. Premium adds a personal blessing from the user's birth star (Tarabalam). No hosted model: no
+  key, no cost, works offline.
+- **Meditation (new):** 10 seamless soundscapes synthesised for Devalay (Deep Om, Tanpura, Rain and Temple Bells,
+  River Flute, Himalayan Wind, Singing Bowls, Ocean Om, Veena Alap, Night Crickets, Dawn Birds), a session timer
+  (5–30 min), breathing guides (Calm 4·4·6, Box, Sleep 4·7·8) with a breathing circle, and temple bells to open and
+  close.
+- **Premium:** in every section the five best items are Premium (lock badge; a watermarked preview you can still
+  see and hear; "Unlock with Premium" opens Premium with that item shown at the top). Everything else stays free.
+  `premium_lock_tap` (with `section:id`) is logged, followed by `premium_view` from that item, so the funnel shows in
+  admin. Premium perks list the collections, QHD+ downloads and the AI Status extras.
+- **Premium plans: free trial and discounts.** The Premium screen reads every base plan and offer Play lists and
+  keeps the best one the user can get (a free trial, then an intro discount, then the base plan), so a trial or
+  launch offer set up in Play Console shows by itself: "7 days free", the offer price with the real renewal price
+  struck through and the % off, "then ₹X / year", and a "Start free trial" button that buys that offer (its offer
+  token). Without an offer, the yearly card is anchored against twelve months of the monthly plan (a real price).
+  The terms say plainly that cancelling before the trial ends costs nothing (core/offers.dart).
+- **Player:** lyrics inside the player that follow the song (current line lit, in the reader's script), playback
+  speed (0.75×–1.5×), and lyrics for Madhurashtakam, Shiva Panchakshara Stotram, Mahalakshmi Ashtakam, Brahma
+  Kadigina Padamu and Hanuman Chalisa recordings (traditional texts, public domain).
+- **Movie bhakti songs (new):** Annamayya, Sri Ramadasu, Om Namo Venkatesaya, Shirdi Sai, Sri Rama Rajyam,
+  Pandurangadu and Sri Manjunatha, played from the labels' official YouTube uploads (Aditya Music, Mango Music,
+  T-Series, Rajshri, Saregama) in YouTube's embedded player; a New songs tab from official devotional channels. The
+  list can be changed from `/config` (`movie_albums`). Devalay hosts no film audio.
+- **Offline:** the catalogue is bundled (`app/assets/data/sections.json`, version 2+) and refreshed from the static
+  API (`/sections`) when newer; downloaded wallpapers, tones, videos and soundscapes are kept in app storage.
+- **Pipeline:** `backend/scripts/build_sections_media.py` (fetch, compose, master, render, catalogue),
+  `modern_designs.py` and `synth_tones.py`; media are assets of the `media-sections-v1` release. Credits in-app and
+  in CONTENT_LICENSES.md.
+
 ## v1.5.11 — 2026-11-28
 
 About you with a personal Panchang, optional Google backup, and edge-to-edge fixes from Play Console.

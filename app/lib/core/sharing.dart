@@ -5,10 +5,13 @@
 /// shared>) shows up in Play Console's acquisition reports, which show which shares bring installs.
 library;
 
+import 'dart:io';
+
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'app_care.dart';
+import 'native.dart';
 import 'i18n.dart';
 import 'storage.dart';
 import 'usage.dart';
@@ -77,3 +80,25 @@ bool get showShareAppCard {
 }
 
 void closeShareAppCard() => Boxes.stats.put('share_card_closed', true);
+
+/// One tap to WhatsApp: hands [file] straight to WhatsApp, where "My status" is the first choice, and
+/// falls back to the system share sheet when WhatsApp is not installed. [what] names the item in the
+/// usage log ('status_video:monday-shiva', 'wallpaper:lakshmi-1930').
+Future<void> shareFileToWhatsApp(File file, {required String mime, String? text, required String what}) async {
+  Usage.record('share_whatsapp', item: what);
+  var opened = false;
+  if (Platform.isAndroid) {
+    try {
+      opened = await NativeBridge.shareToWhatsApp(file.path, mime: mime, text: text);
+    } catch (_) {}
+  }
+  if (opened) {
+    markShared(what);
+  } else {
+    await shareContent(
+      text ?? '',
+      files: [XFile(file.path, mimeType: mime)],
+      what: what,
+    );
+  }
+}

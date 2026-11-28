@@ -81,6 +81,12 @@ class FavoritesScreen extends ConsumerWidget {
         } catch (_) {
           if (context.mounted) toast(context, tr(ref, 'error'));
         }
+      case 'hd_wallpaper':
+        context.push('/wallpapers?id=${Uri.encodeComponent(f.id)}');
+      case 'ringtone':
+        context.push('/ringtones');
+      case 'status_video':
+        context.push('/whatsapp-status?id=${Uri.encodeComponent(f.id)}');
       case 'wallpaper':
         final data = await ref.read(apiProvider).get('/wallpapers', query: {'page_size': 100}) as Map;
         final w = (data['items'] as List).map((e) => Wallpaper(e as Map)).where((w) => '${w.id}' == f.id).firstOrNull;
