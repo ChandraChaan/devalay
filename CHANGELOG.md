@@ -3,7 +3,9 @@
 Each milestone is a git tag and a [GitHub release](https://github.com/ChandraChaan/devalay/releases). Releases from
 v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the section below that matches the tag.
 
-## Unreleased
+## v1.5.11 — 2026-11-28
+
+About you with a personal Panchang, optional Google backup, and edge-to-edge fixes from Play Console.
 
 - **About you** (Settings, and an optional last page in setup): name, gender, date, time and city of birth and
   gotra. The phone works out the rashi, nakshatra with pada, and lagna (core/jatakam.dart; without a birth time only
@@ -26,7 +28,7 @@ v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the 
   personalisation consent withheld in Analytics, and Meta auto-logged events turned off. The privacy policy has new About you,
   Google sign-in and account deletion sections. docs/PLAY_STORE.md lists the Data safety changes.
 - **Deploy order:** firestore.rules (new `profile` field and `profiles/{uid}`) and the sendPush function before this
-  build goes out.
+  build goes out (both deployed 2026-11-28).
 - **Edge-to-edge (Play Console recommendations on 1.5.10).** Play listed one source of deprecated
   `Window.setStatusBarColor`/`setNavigationBarColor` calls: androidx.core's `WindowCompat.enableEdgeToEdge`, which
   makes them on every Android version. MainActivity now does the same steps itself, and every API that Android 15
