@@ -80,14 +80,33 @@ Astrology & horoscope, Music & audio.
   | App interactions (App activity): installs, app opens, screen views | Yes | Yes (Meta, Google) | Collected and shared: Analytics, Advertising or marketing (Firebase Analytics, Meta app events) | No |
   | Approximate location (Location): the Indian state of the city picked for Panchang (1.5.3) | Yes | No | Analytics | Yes (Settings → Privacy) |
   | Other user-generated content (App activity): feedback notes from "Send feedback" (1.5.3) | Yes | No | App functionality, Analytics | Yes |
+  | Name (Personal info): "About you" (1.5.11) | Yes | No | App functionality, Personalisation, Analytics | Yes |
+  | Email address (Personal info): optional Google sign-in for the backup (1.5.11) | Yes | No | App functionality, Account management | Yes |
+  | User IDs (Personal info): the Google/Firebase account ID after sign-in (1.5.11) | Yes | No | App functionality, Account management | Yes |
+  | Other info (Personal info): date and time of birth, gender, gotra, rashi/nakshatra/lagna in "About you" (1.5.11) | Yes | No | App functionality, Personalisation, Analytics | Yes |
+  | Approximate location (Location): city of birth in "About you" (1.5.11), in addition to the Panchang state | Yes | No | App functionality, Personalisation, Analytics | Yes |
+
+  "About you" (1.5.11) is optional and kept on the phone. Only while "Share usage statistics" is on does a copy go to
+  Firestore `installs/{uid}.profile` (name, gender, date and time of birth and age group, city of birth, gotra,
+  rashi, nakshatra, lagna; no coordinates), and only when the user signs in with Google is the full
+  profile backed up in `profiles/{uid}` (owner-only). Nothing from it goes to Analytics, Meta or ads; for under-18s the
+  app also withholds ad-personalisation consent from Analytics and turns Meta's auto-logged events off. Gender: Play
+  lists it under Personal info → "Other info" (there is no separate gender type); mention it in that row.
+
+  **Account creation and deletion (1.5.11).** Google sign-in creates an account, so in Data safety answer "Yes, users
+  can create an account" with **Google sign-in** (OAuth), and give the account deletion link
+  `https://chandrachaan.github.io/devalay/privacy.html#delete-account`. In-app deletion is Settings → About you →
+  Delete account (deletes the account, the backup, usage statistics and support chat). The page also offers deletion by
+  email for people who no longer have the app.
 
   From 1.5.3 the app also keeps its own usage statistics in Firestore and the Realtime Database (anonymous Firebase
   ID, screens and features used, live online status), covered by the "App interactions" and "Device or other IDs"
   rows above (purpose: Analytics). Users can turn them off and delete them in Settings → Privacy, so answer **Yes**
   to "Can users request that data be deleted?".
 
-  Data is encrypted in transit. No account is created; usage data is deleted from Settings → Privacy → Delete my
-  usage data. No precise location, contacts, photos or personal info are collected.
+  Data is encrypted in transit. Before 1.5.11 no account was created; from 1.5.11 an account exists only if the user
+  signs in with Google (see above). Usage data is deleted from Settings → Privacy → Delete my usage data.
+  No precise location, contacts or photos are collected; personal info only through "About you" and Google sign-in.
   Festival wishes let the user add their own photo to a card. The photo is chosen in the Android photo picker, copied
   into the app's private storage and drawn on the card on the phone; it is never uploaded, so under Play's definition
   it is not "collected". Only the finished card leaves the phone, when the user shares it to an app they choose.

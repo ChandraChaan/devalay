@@ -5,6 +5,28 @@ v1.0.0 on carry a signed APK, built by `.github/workflows/release.yml` from the 
 
 ## Unreleased
 
+- **About you** (Settings, and an optional last page in setup): name, gender, date, time and city of birth and
+  gotra. The phone works out the rashi, nakshatra with pada, and lagna (core/jatakam.dart; without a birth time only
+  what stays the same all day, and no lagna), or the user sets them from their horoscope. They feed the app's existing
+  rashi and birth star, so Tarabalam, Chandrabalam and Rashifal follow them. Personal touches:
+  - Home greets the user by name, shows today's Tarabalam/Chandrabalam card, and shows a birthday card on the day.
+  - The morning Panchang says "Good morning, <name>" and adds a one-line verdict for the day. Chandrabalam now uses
+    the Moon's sign at sunrise, worked out on the phone.
+  - A birthday notification at 7 AM.
+  - Jatakam opens filled in with the user's own chart.
+- **Optional Google sign-in** backs About you up (`profiles/{uid}`, owner-only) and restores it after a reinstall or
+  on a new phone. It links the install's anonymous account, so the uid and usage statistics stay the same. Settings →
+  About you also has Sign out and **Delete account** (account, backup, statistics and support chat). Usage reporting now
+  stops only for admins, not for every Google account.
+- **Owner's statistics:** while sharing is on, `installs/{uid}.profile` carries a copy (with the birth time, without
+  coordinates), shown on each user's admin page. The admin screen adds About you splits (age group, gender, rashi), Users filters and search by name,
+  the profile on each user's page, and Send audiences by age group and gender (functions/lib.js). "Delete my usage
+  data" removes the copy too.
+- **Privacy:** About you is never sent to Analytics, Meta or ads. Under-18s (by the date of birth given) also get ad
+  personalisation consent withheld in Analytics, and Meta auto-logged events turned off. The privacy policy has new About you,
+  Google sign-in and account deletion sections. docs/PLAY_STORE.md lists the Data safety changes.
+- **Deploy order:** firestore.rules (new `profile` field and `profiles/{uid}`) and the sendPush function before this
+  build goes out.
 - **Edge-to-edge (Play Console recommendations on 1.5.10).** Play listed one source of deprecated
   `Window.setStatusBarColor`/`setNavigationBarColor` calls: androidx.core's `WindowCompat.enableEdgeToEdge`, which
   makes them on every Android version. MainActivity now does the same steps itself, and every API that Android 15

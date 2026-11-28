@@ -151,6 +151,7 @@ class Notifications {
   static const prayerKind = 'prayer';
   static const eventKind = 'event';
   static const quotaKind = 'quota';
+  static const birthdayKind = 'birthday';
 
   static final _taps = StreamController<String>.broadcast();
 
@@ -174,6 +175,7 @@ class Notifications {
     prayerKind => '/listen',
     eventKind => '/calendar',
     quotaKind => '/temples',
+    birthdayKind => '/home',
     _ => null,
   };
 
@@ -372,6 +374,27 @@ class Notifications {
     }
     await ledger.save(keep: wanted);
   }
+
+  /// The user's own birthday wish at 7 AM on [on] ("About you"), or none when [on] is null. One alarm,
+  /// replaced whenever the profile changes or the app starts.
+  static Future<void> scheduleBirthday(DateTime? on, {String title = '', String body = ''}) async {
+    await init();
+    await _plugin.cancel(id: _birthdayId);
+    if (on == null) return;
+    final when = _next(7, 0, on);
+    if (!when.isAfter(tz.TZDateTime.now(tz.local))) return;
+    await _plugin.zonedSchedule(
+      id: _birthdayId,
+      scheduledDate: when,
+      notificationDetails: _expanded(_events, body),
+      androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+      title: title,
+      body: body,
+      payload: birthdayKind,
+    );
+  }
+
+  static const _birthdayId = 430000;
 
   static Future<void> cancelPanchang() async {
     await init();

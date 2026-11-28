@@ -4,6 +4,7 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../core/account.dart';
 import '../core/api.dart';
 import '../core/auth.dart';
 import '../core/billing.dart';
@@ -23,6 +24,9 @@ import '../widgets/language_picker.dart';
 import '../widgets/common.dart';
 import 'calendar_settings.dart';
 import '../core/usage.dart';
+import '../core/about_you.dart';
+import '../core/muhurta.dart' show nakshatraLabel;
+import '../core/names.dart' show fmtDate;
 import '../core/firebase.dart';
 
 int _versionTaps = 0;
@@ -98,6 +102,7 @@ class SettingsScreen extends ConsumerWidget {
                 onTap: () => context.push('/login'),
               ),
           ],
+          _ProfileTile(lang: lang),
           ListTile(
             leading: const Icon(Icons.workspace_premium_rounded),
             title: Text(tr(ref, 'premium')),
@@ -296,9 +301,9 @@ class SettingsScreen extends ConsumerWidget {
                 subtitle: Text(
                   l3(
                     ref,
-                    'Which screens and features you use, your language and state, so we can improve Devalay. No name, no typed text.',
-                    'आप कौन-सी स्क्रीन और सुविधाएँ इस्तेमाल करते हैं, आपकी भाषा और राज्य, ताकि हम देवालय बेहतर बना सकें। नाम या लिखा हुआ टेक्स्ट नहीं।',
-                    'మీరు ఏ స్క్రీన్లు, ఫీచర్లు వాడుతున్నారు, మీ భాష, రాష్ట్రం, దేవాలయాన్ని మెరుగుపరచడానికి. పేరు గానీ, మీరు రాసిన టెక్స్ట్ గానీ కాదు.',
+                    'Which screens and features you use, your language and state, and "About you" if you filled it in, so we can improve Devalay. Never what you type elsewhere.',
+                    'आप कौन-सी स्क्रीन और सुविधाएँ इस्तेमाल करते हैं, आपकी भाषा और राज्य, और "आपके बारे में" अगर आपने भरा है, ताकि हम देवालय बेहतर बना सकें। कहीं और लिखा टेक्स्ट कभी नहीं।',
+                    'మీరు ఏ స్క్రీన్లు, ఫీచర్లు వాడుతున్నారు, మీ భాష, రాష్ట్రం, మీరు నింపితే "మీ గురించి", దేవాలయాన్ని మెరుగుపరచడానికి. ఇతర చోట్ల మీరు రాసిన టెక్స్ట్ ఎప్పుడూ కాదు.',
                   ),
                 ),
                 value: sharing,
@@ -380,9 +385,9 @@ class SettingsScreen extends ConsumerWidget {
         content: Text(
           t3(
             lang,
-            'This removes the usage statistics this phone has sent and turns sharing off. Your saved days, favourites and settings stay.',
-            'इस फ़ोन से भेजे गए उपयोग के आँकड़े हट जाएँगे और साझा करना बंद हो जाएगा। आपके सहेजे दिन, पसंदीदा और सेटिंग्स बने रहेंगे।',
-            'ఈ ఫోన్ పంపిన వినియోగ గణాంకాలు తొలగిపోతాయి, పంచుకోవడం ఆగిపోతుంది. మీరు దాచిన రోజులు, ఇష్టమైనవి, సెట్టింగ్స్ అలాగే ఉంటాయి.',
+            'This removes the usage statistics this phone has sent, with the copy of "About you" in them, and turns sharing off. Your details, saved days, favourites and settings stay on this phone.',
+            'इस फ़ोन से भेजे गए उपयोग के आँकड़े, उनमें "आपके बारे में" की प्रति सहित, हट जाएँगे और साझा करना बंद हो जाएगा। आपका विवरण, सहेजे दिन, पसंदीदा और सेटिंग्स इस फ़ोन पर बने रहेंगे।',
+            'ఈ ఫోన్ పంపిన వినియోగ గణాంకాలు, వాటిలోని "మీ గురించి" ప్రతితో సహా, తొలగిపోతాయి, పంచుకోవడం ఆగిపోతుంది. మీ వివరాలు, దాచిన రోజులు, ఇష్టమైనవి, సెట్టింగ్స్ ఈ ఫోన్‌లో అలాగే ఉంటాయి.',
           ),
         ),
         actions: [
@@ -461,6 +466,48 @@ class SettingsScreen extends ConsumerWidget {
     } on ApiException catch (e) {
       if (context.mounted) toast(context, e.message);
     }
+  }
+}
+
+/// "About you": the user's name (or an invitation to add birth details), opening the profile screen.
+class _ProfileTile extends ConsumerWidget {
+  const _ProfileTile({required this.lang});
+  final String lang;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final p = ref.watch(aboutYouProvider);
+    final signedIn = ref.watch(accountProvider).value != null;
+    final details = [
+      if (p.birthDate != null) fmtDate(lang, 'd MMM yyyy', p.birthDate!),
+      if (p.nakshatra != null) nakshatraLabel(lang, p.nakshatra!),
+      if (signedIn) t3(lang, 'backed up', 'बैकअप है', 'బ్యాకప్ అయింది'),
+    ].join(' · ');
+    return ListTile(
+      leading: CircleAvatar(
+        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+        child: Text(
+          p.firstName.isEmpty ? '🙏' : p.firstName.characters.first.toUpperCase(),
+          style: TextStyle(color: Theme.of(context).colorScheme.onPrimaryContainer, fontWeight: FontWeight.w700),
+        ),
+      ),
+      title: Text(
+        p.name.isEmpty ? t3(lang, 'About you', 'आपके बारे में', 'మీ గురించి') : p.name,
+        style: const TextStyle(fontWeight: FontWeight.w700),
+      ),
+      subtitle: Text(
+        details.isEmpty
+            ? t3(
+                lang,
+                'Add your name and birth details for a personal Panchang',
+                'निजी पंचांग के लिए अपना नाम और जन्म विवरण जोड़ें',
+                'మీ కోసం పంచాంగం: మీ పేరు, పుట్టిన వివరాలు జోడించండి',
+              )
+            : details,
+      ),
+      trailing: const Icon(Icons.chevron_right_rounded),
+      onTap: () => context.push('/profile'),
+    );
   }
 }
 

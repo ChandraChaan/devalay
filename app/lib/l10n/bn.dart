@@ -1,6 +1,66 @@
 /// Bengali translations of Devalay's English UI strings and Panchang names, keyed by the English text.
 /// Source list: tool/l10n/strings.json. Keys must match the English exactly; {0}, {1} are placeholders.
 const stringsBn = <String, String>{
+  // About you, Google backup and birthday (1.5.11).
+  'Good morning, {0}': 'সুপ্রভাত, {0}',
+  'Happy birthday!': 'শুভ জন্মদিন!',
+  'Happy birthday, {0}!': 'শুভ জন্মদিন, {0}!',
+  'May the year ahead bring you good health, peace and joy. Begin the day with a prayer.':
+      'আগামী বছর আপনার জীবনে সুস্বাস্থ্য, শান্তি ও আনন্দ নিয়ে আসুক। প্রার্থনা দিয়ে দিনটি শুরু করুন।',
+  'About you': 'আপনার সম্পর্কে',
+  'Optional. With your birth details you get your own Tarabalam, Chandrabalam and Jatakam. Kept on your phone; skip if you like.':
+      'ঐচ্ছিক। জন্মের বিবরণ দিলে আপনি নিজের তারাবল, চন্দ্রবল ও কোষ্ঠী পাবেন। এটি আপনার ফোনেই থাকে; চাইলে এড়িয়ে যান।',
+  'Add your date and place of birth to work these out, or set them from your horoscope.':
+      'এগুলি গণনা করতে জন্মতারিখ ও জন্মস্থান যোগ করুন, অথবা আপনার কোষ্ঠী থেকে বেছে নিন।',
+  'Back up with Google': 'Google দিয়ে ব্যাকআপ নিন',
+  'Could not delete the account. Check your connection and try again.':
+      'অ্যাকাউন্ট মোছা যায়নি। সংযোগ দেখে আবার চেষ্টা করুন।',
+  'Could not sign in. Check your connection and try again.': 'সাইন ইন করা যায়নি। সংযোগ দেখে আবার চেষ্টা করুন।',
+  'Date of birth': 'জন্মতারিখ',
+  'Delete your account?': 'আপনার অ্যাকাউন্ট মুছে ফেলবেন?',
+  'Done': 'হয়ে গেছে',
+  'Everything here is optional. With your birth details Devalay shows your own Tarabalam and Chandrabalam each day, opens your Jatakam ready and wishes you on your birthday.':
+      'এখানে সবকিছুই ঐচ্ছিক। জন্মের বিবরণ দিলে দেবালয় প্রতিদিন আপনার নিজের তারাবল ও চন্দ্রবল দেখায়, আপনার কোষ্ঠী তৈরি অবস্থায় খোলে এবং জন্মদিনে আপনাকে শুভেচ্ছা জানায়।',
+  'Female': 'মহিলা',
+  'From your horoscope (jatakam), if you know them.': 'আপনার কোষ্ঠী (জাতক) থেকে, যদি জানা থাকে।',
+  'Google sign-in did not work. Try again.': 'Google সাইন-ইন হয়নি। আবার চেষ্টা করুন।',
+  'Gotra (optional)': 'গোত্র (ঐচ্ছিক)',
+  'I know mine: set them': 'আমি জানি: নিজে বেছে নেব',
+  'Kept on this phone. While "Share usage statistics" is on (Settings → Privacy), your name, gender, date, time and city of birth, gotra and stars are also shared with the Devalay developer to improve the app; never for advertising.':
+      'এটি এই ফোনেই থাকে। যতক্ষণ "ব্যবহারের পরিসংখ্যান শেয়ার করুন" চালু থাকে (সেটিংস → গোপনীয়তা), ততক্ষণ অ্যাপটি উন্নত করার জন্য আপনার নাম, লিঙ্গ, জন্মের তারিখ, সময় ও শহর, গোত্র এবং নক্ষত্র দেবালয়ের ডেভেলপারের সঙ্গেও শেয়ার হয়; বিজ্ঞাপনের জন্য কখনও নয়।',
+  'Male': 'পুরুষ',
+  'Needed for your lagna': 'আপনার জন্মলগ্নের জন্য দরকার',
+  'Optional. Sign in to keep your details when you reinstall or change phones.':
+      'ঐচ্ছিক। অ্যাপ আবার ইনস্টল করলে বা ফোন বদলালেও আপনার বিবরণ রাখতে সাইন ইন করুন।',
+  'Remove my details': 'আমার বিবরণ মুছুন',
+  'Remove your details?': 'আপনার বিবরণ মুছে ফেলবেন?',
+  'Set by you.': 'আপনি বেছে নিয়েছেন।',
+  'Sign in again with Google to delete your account.': 'অ্যাকাউন্ট মুছতে Google দিয়ে আবার সাইন ইন করুন।',
+  'Signed in with Google · your details are backed up': 'Google দিয়ে সাইন ইন করা · আপনার বিবরণের ব্যাকআপ আছে',
+  'Signed in. Your details are backed up.': 'সাইন ইন হয়েছে। আপনার বিবরণের ব্যাকআপ রাখা হয়েছে।',
+  'Signed in. Your details were restored from your backup.':
+      'সাইন ইন হয়েছে। ব্যাকআপ থেকে আপনার বিবরণ ফিরিয়ে আনা হয়েছে।',
+  'This deletes your Devalay account, your backup, your usage statistics and your chats with the developer. It cannot be undone. Your details stay on this phone until you remove them.':
+      'এতে আপনার দেবালয় অ্যাকাউন্ট, ব্যাকআপ, ব্যবহারের পরিসংখ্যান এবং ডেভেলপারের সঙ্গে আপনার চ্যাট মুছে যাবে। এটি আর ফেরানো যাবে না। আপনি নিজে না মোছা পর্যন্ত আপনার বিবরণ এই ফোনে থাকবে।',
+  'Time of birth': 'জন্মের সময়',
+  'Work out from birth details': 'জন্মের বিবরণ থেকে গণনা করুন',
+  'Worked out from your birth details (Lahiri ayanamsa).': 'আপনার জন্মের বিবরণ থেকে গণনা করা (লাহিড়ী অয়নাংশ)।',
+  'Worked out from your date and place of birth. Add the time of birth for the lagna.':
+      'জন্মতারিখ ও জন্মস্থান থেকে গণনা করা। জন্মলগ্নের জন্য জন্মের সময় যোগ করুন।',
+  'Your account was deleted.': 'আপনার অ্যাকাউন্ট মুছে ফেলা হয়েছে।',
+  'Your name, birth details and stars are removed from this phone, from your Google backup and from the usage statistics.':
+      'আপনার নাম, জন্মের বিবরণ ও নক্ষত্র এই ফোন থেকে, আপনার Google ব্যাকআপ থেকে এবং ব্যবহারের পরিসংখ্যান থেকে মুছে ফেলা হবে।',
+  'Your stars': 'আপনার নক্ষত্র',
+  'Add your name and birth details for a personal Panchang': 'নিজস্ব পঞ্জিকার জন্য আপনার নাম ও জন্মের বিবরণ যোগ করুন',
+  'This removes the usage statistics this phone has sent, with the copy of "About you" in them, and turns sharing off. Your details, saved days, favourites and settings stay on this phone.':
+      'এই ফোন থেকে পাঠানো ব্যবহারের পরিসংখ্যান, তার মধ্যে থাকা "আপনার সম্পর্কে"-র কপি সহ, মুছে যাবে এবং শেয়ার করা বন্ধ হবে। আপনার বিবরণ, সেভ করা দিন, প্রিয় তালিকা ও সেটিংস এই ফোনেই থাকবে।',
+  'Which screens and features you use, your language and state, and "About you" if you filled it in, so we can improve Devalay. Never what you type elsewhere.':
+      'আপনি কোন স্ক্রিন ও ফিচার ব্যবহার করেন, আপনার ভাষা ও রাজ্য, এবং পূরণ করে থাকলে "আপনার সম্পর্কে", যাতে আমরা দেবালয়কে আরও ভালো করতে পারি। অন্য কোথাও আপনি যা লেখেন, তা কখনও নয়।',
+  'backed up': 'ব্যাকআপ আছে',
+  'Devalay checks your approximate location once, now, to pick the nearest city. It is not saved or sent anywhere, and the app never tracks you in the background.':
+      'কাছের শহর বেছে নিতে দেবালয় এখন একবার আপনার আনুমানিক লোকেশন দেখে। এটি কোথাও সেভ বা পাঠানো হয় না, আর অ্যাপ কখনও পেছনে থেকে আপনাকে ট্র্যাক করে না।',
+  'Pick the city you were born in, or the nearest one. Its position and time zone are used for your chart.':
+      'যে শহরে আপনার জন্ম, অথবা তার সবচেয়ে কাছের শহর বেছে নিন। আপনার কোষ্ঠীর জন্য সেই শহরের অবস্থান ও টাইম জোন ব্যবহার করা হয়।',
   // Morning Panchang card, onboarding switch and widget (1.5.6).
   "Today's Panchang, every morning": 'প্রতিদিন সকালে আজকের পঞ্জিকা',
   'Tithi, nakshatra, Rahu Kalam and sunrise at {0}, as a notification and on your home screen.':

@@ -10,9 +10,14 @@ Modelled on chandrachaan.com's visitor console (live presence + activity) and Va
 | Realtime Database `status/{uid}` | `s` active/offline, `t` server time, `scr` current screen (route pattern), `lang`, `v`, `st` (state) | Every screen change while open; `onDisconnect` marks offline. The app drops the connection when it goes to the background (Spark plan: 100 simultaneous connections). |
 | Firestore `installs/{uid}` | `firstSeen` (once), `lastSeen`, `lang`, `v`, `build`, `state` (only for a city the user chose), `src` (installer), `sessions`, `f.{feature}` counters; 1.5.7+: `dev` phone model, `os` Android API level, `ram` MB, `cc` city chosen, `t` FCM token, `np` morning Panchang on/off/blocked, `na` notifications allowed, `nw` home-screen widgets | Batched with the events |
 | Firestore `events/{auto}` | `uid`, `at`, `sid` (session), `items[]` of `{k, n?, t}`: `screen`, `app_open`, `audio_play`, `gita_listen`, `panchang_listen`, `japa_round`, `share`, `share_app`, `city_set`, `language_set`, `feedback_sent` | At most once a minute; 10 s after the app opens; on leaving the app |
+| Firestore `installs/{uid}.profile` (1.5.11+) | "About you", only if the user filled it in: `n` name, `g` m/f/o, `dob` yyyy-mm-dd, `tob` time of birth (minutes after midnight), `ag` age group, `r` rashi 0–11, `s` nakshatra 0–26, `l` lagna 0–11, `bp` city of birth, `go` gotra. No coordinates (the city stands for the place) | With the other install fields; removed when the user removes the profile |
+| Firestore `profiles/{uid}` (1.5.11+) | The full "About you" backup of a user who signed in with Google (`p` map, `updated`). Owner-only: the admin screen cannot read it | When the profile changes while signed in |
 | Firestore `feedback/{auto}` | `uid`, `at`, `kind` (idea/problem/praise), `text` ≤ 2000, `lang`, `v`, `done` | When the user sends feedback |
 
-`uid` is a Firebase anonymous account per install. Nothing typed is recorded except feedback text. Code:
+`uid` is a Firebase anonymous account per install. From 1.5.11 a user may link it to Google (About you → Back up
+with Google, `app/lib/core/account.dart`); the uid stays the same, so their statistics carry on. On another phone the
+Google account switches that phone to the same uid (the old anonymous id is simply left behind). Usage stops only for
+admins (claim or `admins/{uid}`), not for every Google account. Nothing typed is recorded except feedback text. Code:
 `app/lib/core/usage.dart`, `app/lib/features/feedback.dart`. Custom actions also go to Firebase Analytics as events.
 
 Settings → Privacy → **Share usage statistics** (default on) stops all of it, Firebase Analytics included.
@@ -28,15 +33,16 @@ Settings → tap the version line 7 times → `/admin` (`app/lib/features/admin.
   back next day (D1) and on day 7 (D7), opened-once share, installs reachable by a push; new · active for the last
   14 days; a cohort table (install day × D1..D7); the 30-day funnel install → setup → city → morning Panchang →
   back next day; daily-habit shares; screens and actions of the week (people · times); language, chosen state,
-  version, phone brand, Android, memory and installer splits. Reads up to 5000 install docs and 15 days of event
+  version, phone brand, Android, memory and installer splits; About you (1.5.11): how many filled it in, and age
+  group, gender and rashi splits. Reads up to 5000 install docs and 15 days of event
   batches per open (refresh button / pull to refresh).
-- **Users:** search by install id or phone model; filter by language, state, away 3+ days, morning Panchang on,
-  reachable by push. Tap for live status, phone, reminders, feature counts, the action timeline and
+- **Users:** search by name, install id or phone model; filter by language, state, away 3+ days, morning Panchang
+  on, reachable by push, and (1.5.11) age group, gender and rashi from About you. A user's page shows their About you. Tap for live status, phone, reminders, feature counts, the action timeline and
   **Send a notification to this install**.
 - **Send:** title and message in Telugu, English and Hindi (other languages get the English, else the first
   written); what a tap opens (today's Panchang, calendar, Listen, Mandir, wishes, muhurtham, or any devalay:// /
   https:// link); optional picture; audience: everyone, one language, one state, one app version, not seen for N
-  days, one install ("This phone" = the admin's own install); reach check; preview; history with sent, failed and
+  days, one age group or one gender (About you, 1.5.11), one install ("This phone" = the admin's own install); reach check; preview; history with sent, failed and
   opens (open rate = opens ÷ reach).
 - **Feedback:** new / replied / fixed, with a note per item.
 

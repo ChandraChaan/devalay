@@ -24,7 +24,7 @@ service cloud.firestore {
     function installShape() {
       let d = request.resource.data;
       return d.keys().hasOnly(['firstSeen', 'lastSeen', 'lang', 'v', 'build', 'state', 'src', 'sessions', 'f',
-          'dev', 'os', 'ram', 'cc', 't', 'np', 'na', 'nw'])
+          'dev', 'os', 'ram', 'cc', 't', 'np', 'na', 'nw', 'profile'])
         && d.lastSeen == request.time
         && (!('lang' in d) || shortString(d.lang, 8))
         && (!('v' in d) || shortString(d.v, 16))
@@ -42,7 +42,55 @@ service cloud.firestore {
         && (!('t' in d) || shortString(d.t, 400))
         && (!('np' in d) || d.np in ['on', 'off', 'blocked'])
         && (!('na' in d) || d.na is bool)
-        && (!('nw' in d) || d.nw is int);
+        && (!('nw' in d) || d.nw is int)
+        // 1.5.11+: "About you", only while the user shares usage statistics (the city, never coordinates).
+        && (!('profile' in d) || installProfile(d.profile));
+    }
+
+    function smallIndex(m, key, max) {
+      return !(key in m) || (m[key] is int && m[key] >= 0 && m[key] <= max);
+    }
+
+    function installProfile(p) {
+      return p is map
+        && p.keys().hasOnly(['n', 'g', 'dob', 'tob', 'ag', 'r', 's', 'l', 'bp', 'go'])
+        && (!('n' in p) || shortString(p.n, 40))
+        && (!('g' in p) || p.g in ['m', 'f', 'o'])
+        && (!('dob' in p) || (p.dob is string && p.dob.matches('[0-9]{4}-[0-9]{2}-[0-9]{2}')))
+        && (!('tob' in p) || (p.tob is int && p.tob >= 0 && p.tob < 1440))
+        && (!('ag' in p) || p.ag in ['under18', '18-24', '25-34', '35-44', '45-54', '55-64', '65+'])
+        && smallIndex(p, 'r', 11)
+        && smallIndex(p, 's', 26)
+        && smallIndex(p, 'l', 11)
+        && (!('bp' in p) || shortString(p.bp, 60))
+        && (!('go' in p) || shortString(p.go, 40));
+    }
+
+    // The Google backup of "About you" (core/account.dart): the whole profile, readable and writable by
+    // its owner only. Not even the admin screen reads it.
+    function backupShape() {
+      let d = request.resource.data;
+      let p = d.p;
+      return d.keys().hasOnly(['p', 'updated'])
+        && d.updated == request.time
+        && p is map
+        && p.keys().hasOnly(['name', 'gender', 'dob', 'tob', 'placeId', 'place', 'lat', 'lon', 'tz', 'gotra',
+            'rashi', 'nakshatra', 'pada', 'lagna', 'byHand'])
+        && (!('name' in p) || shortString(p.name, 60))
+        && (!('gender' in p) || p.gender in ['male', 'female', 'other'])
+        && (!('dob' in p) || (p.dob is string && p.dob.matches('[0-9]{4}-[0-9]{2}-[0-9]{2}')))
+        && (!('tob' in p) || (p.tob is int && p.tob >= 0 && p.tob < 1440))
+        && (!('placeId' in p) || shortString(p.placeId, 60))
+        && (!('place' in p) || shortString(p.place, 80))
+        && (!('lat' in p) || p.lat is number)
+        && (!('lon' in p) || p.lon is number)
+        && (!('tz' in p) || shortString(p.tz, 60))
+        && (!('gotra' in p) || shortString(p.gotra, 40))
+        && smallIndex(p, 'rashi', 11)
+        && smallIndex(p, 'nakshatra', 26)
+        && (!('pada' in p) || (p.pada is int && p.pada >= 1 && p.pada <= 4))
+        && smallIndex(p, 'lagna', 11)
+        && (!('byHand' in p) || p.byHand is bool);
     }
 
     // The member's own summary of their chat thread: either a message they just sent, or marking
@@ -70,6 +118,11 @@ service cloud.firestore {
             : request.resource.data.firstSeen == resource.data.firstSeen
         );
       allow delete: if isAdmin() || (signedIn() && request.auth.uid == uid);
+    }
+
+    match /profiles/{uid} {
+      allow read, delete: if signedIn() && request.auth.uid == uid;
+      allow create, update: if signedIn() && request.auth.uid == uid && backupShape();
     }
 
     // A batch of actions (at most one write a minute per install).

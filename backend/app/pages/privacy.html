@@ -62,8 +62,9 @@
     which screen is showing; which screens and features are used and how often (for example Panchang, Gita audio,
     a finished japa round, a share); the app language, app version, where the app was installed from, and the
     Indian state of the city you picked for Panchang. Actions are fixed names, sometimes with a short id such as a
-    Gita chapter number or a song id; nothing you type is included, and no precise location, contacts, birth details
-    or device identifiers beyond the anonymous ID. Only the Devalay owner can read this, to decide what to improve.
+    Gita chapter number or a song id; nothing you type is included, and no precise location, contacts or device
+    identifiers beyond the anonymous ID. If you filled in <b>About you</b> (below), a copy of it is included too.
+    Only the Devalay owner can read this, to decide what to improve.
     The data is stored by Google in Mumbai (Firestore) and Singapore (Realtime Database).
     <br>Turn it off any time in <b>Settings → Privacy → Share usage statistics</b> (this also stops Firebase
     Analytics). <b>Settings → Privacy → Delete my usage data</b> deletes everything this phone sent and turns sharing
@@ -76,6 +77,39 @@
 
 <p>You can turn notifications off in Android settings at any time.</p>
 
+
+<h2 id="about-you">About you (optional)</h2>
+<p>In <b>Settings → About you</b> (also offered at the end of setup) you can add your name, gender, date, time and
+place of birth (a city you pick from a list) and your gotra. The phone works out your rashi, nakshatra and lagna
+from them, or you can set them yourself. They are used on the phone to show your own Tarabalam and Chandrabalam,
+greet you by name, open your Jatakam and wish you on your birthday. Everything is optional and you can remove it
+in the same screen.</p>
+<ul>
+  <li><b>On your phone:</b> all of it is stored on the phone.</li>
+  <li><b>In the usage statistics:</b> only while <b>Share usage statistics</b> is on, a copy goes with this
+    install's anonymous usage summary: your name, gender, date and time of birth and age group, city of birth, gotra,
+    rashi, nakshatra and lagna. The city's coordinates are not sent. The Devalay owner uses it to understand
+    who uses the app (for example how many people of each age group) and may send a notification to an age group or
+    gender. <b>Delete my usage data</b> removes it with the rest of the statistics.</li>
+  <li><b>Never for advertising:</b> none of it is sent to Google Analytics, Meta or any ad network. For anyone under
+    18 (by the date of birth given) the app also tells Google Analytics not to use their data for ad personalisation
+    and turns Meta's automatic app events off.</li>
+</ul>
+
+<h2 id="google-sign-in">Google sign-in (optional)</h2>
+<p>You can sign in with Google in <b>About you</b> so your details are backed up and come back after a reinstall or
+on a new phone. Signing in gives Devalay your Google account's name, email address and a Google account ID (through
+Firebase Authentication). The backup of About you (including the time and place of birth) is stored in Firestore
+under your account, and only you can read it; not even the Devalay owner. Your usage statistics, if you share them,
+continue under the same account ID. Signing out keeps your details on the phone.</p>
+
+<h2 id="delete-account">Deleting your account</h2>
+<p>In the app: <b>Settings → About you → Delete account</b>. This permanently deletes your Devalay account, the
+backup of About you, your usage statistics and any chat with the developer, at once. If you no longer have the app,
+email <a href="mailto:{{ settings.contact_email }}">{{ settings.contact_email }}</a> from the Google account you
+signed in with and ask for your Devalay account to be deleted; we delete it and everything stored under it within
+30 days and confirm by email. Nothing is kept afterwards, except what Google itself keeps for Firebase as described
+in its terms.</p>
 
 <h2>Install measurement for our ads (Meta)</h2>
 
@@ -107,7 +141,8 @@ of you. When AI is not enabled, everything is generated on our server without th
 <p>Favourites, downloads, settings, japa counts and Mandir preferences are stored locally. Downloads stay in the app's
 private storage and are removed if you uninstall the app.</p>
 <ul>
-  <li>Your birth star and rashi, the days in My events, birth details you enter for a Jatakam and your pooja samagri
+  <li>Your birth star and rashi, About you (unless shared or backed up as described above), the days in My events,
+    birth details you enter for a Jatakam and your pooja samagri
     checklists stay on your phone. Marriage matching and the Jatakam are worked out on the phone.</li>
   <li><strong>Contacts (optional):</strong> "Import birthdays from contacts" asks for Android's Contacts permission
     when you tap it, then reads only names with a birthday or anniversary, on the phone. Only the dates you choose are
@@ -117,7 +152,9 @@ private storage and are removed if you uninstall the app.</p>
 </ul>
 
 <h2>Retention and deletion</h2>
-<p>Account data is kept until you delete your account (Profile → Delete account), which permanently removes it.
+<p>A Google sign-in account and the backup of About you are kept until you delete the account (Settings → About you
+→ Delete account, or by email as above), which permanently removes them. Accounts on Devalay's own server, where
+offered, are kept until you delete them in the app (Profile → Delete account).
 Usage statistics are kept until you delete them in Settings → Privacy, or until we no longer need them.
 Operational logs are kept for at most 30 days.</p>
 
@@ -125,7 +162,8 @@ Operational logs are kept for at most 30 days.</p>
 <p>All traffic uses HTTPS. Passwords are hashed with Argon2. Sessions use short-lived tokens with rotation.</p>
 
 <h2>Children</h2>
-<p>Devalay is suitable for all ages and does not knowingly collect personal data from children.</p>
+<p>Devalay is suitable for all ages. It does not ask for anyone's age; About you is optional. If a user under 18
+adds a date of birth, their details are never used for advertising, as described above.</p>
 
 <h2>Contact</h2>
 <p>Questions or requests: <a href="mailto:{{ settings.contact_email }}">{{ settings.contact_email }}</a></p>

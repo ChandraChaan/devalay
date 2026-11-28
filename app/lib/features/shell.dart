@@ -120,7 +120,7 @@ class _AppShellState extends ConsumerState<AppShell> {
     logNotificationOpen(kind, coldStart: coldStart);
     final path = Notifications.routeFor(kind);
     if (path == null) return;
-    path == '/listen' ? context.go(path) : _show(path);
+    path == '/listen' || path == '/home' ? context.go(path) : _show(path);
   }
 
   @override

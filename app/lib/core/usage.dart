@@ -110,26 +110,44 @@ class Usage {
       },
       onDetach: () => unawaited(_goAway()),
     );
-    // An admin signing in with Google replaces the anonymous user; stop reporting until they sign
-    // out again, so the owner's own use never mixes with the users'.
-    _authSub = FirebaseAuth.instance.authStateChanges().listen((user) {
+    // Users who sign in with Google (core/account.dart) keep reporting under their account id. The owner
+    // signing in to the admin screen stops reporting until they sign out again, so the owner's own use
+    // never mixes with the users'.
+    _authSub = FirebaseAuth.instance.authStateChanges().listen((user) async {
       if (user == null) {
         _uid = null;
         if (sharing) unawaited(_signIn());
-      } else if (user.isAnonymous) {
-        final changed = _uid != user.uid;
-        _uid = user.uid;
-        if (changed && sharing) {
-          _newSession = true;
-          record('app_open');
-          unawaited(_goActive());
-        }
-      } else {
+        return;
+      }
+      if (!user.isAnonymous && await _isAdmin(user)) {
+        if (FirebaseAuth.instance.currentUser?.uid != user.uid) return;
         _uid = null;
         unawaited(_disconnect());
+        return;
+      }
+      final changed = _uid != user.uid;
+      _uid = user.uid;
+      if (changed && sharing) {
+        _newSession = true;
+        record('app_open');
+        unawaited(_goActive());
       }
       // The listener's first event (null on a fresh install) starts the anonymous sign-in.
     });
+  }
+
+  /// The owner's account: the custom claim, or an admins/{uid} record (readable by that account only).
+  static Future<bool> _isAdmin(User user) async {
+    try {
+      final token = await user.getIdTokenResult();
+      if (token.claims?['admin'] == true) return true;
+      final doc = await FirebaseFirestore.instance.collection('admins').doc(user.uid).get();
+      return doc.exists;
+    } catch (e) {
+      // Offline: do not count possibly-owner use; the next start decides again.
+      debugPrint('Usage: admin check failed: $e');
+      return true;
+    }
   }
 
   static Future<void> _pushToken() async {
@@ -344,13 +362,14 @@ class Usage {
     }
   }
 
-  /// Turns sharing off, then removes this install's presence, summary and actions and forgets
-  /// the anonymous id so nothing new links to what was deleted.
-  static Future<void> deleteMyData() async {
+  /// Turns sharing off, then removes this install's presence, summary (with the "About you" copy) and
+  /// actions. An anonymous id is deleted too, so nothing new links to what was deleted; a Google account
+  /// (core/account.dart) is kept unless the user deletes it from Settings.
+  static Future<void> deleteMyData({bool deleteAccount = true}) async {
     await _setPref(false);
     unawaited(FirebaseAnalytics.instance.setAnalyticsCollectionEnabled(false).catchError((Object _) {}));
     final user = FirebaseAuth.instance.currentUser;
-    if (user == null || !user.isAnonymous) return;
+    if (user == null || (!user.isAnonymous && await _isAdmin(user))) return;
     _pending.clear();
     _counts.clear();
     _timer?.cancel();
@@ -374,6 +393,8 @@ class Usage {
       await batch.commit();
     }
     await db.collection('installs').doc(uid).delete();
+    _traits.remove('profile');
+    if (!deleteAccount || !user.isAnonymous) return;
     try {
       await user.delete();
     } catch (_) {

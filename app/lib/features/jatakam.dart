@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../core/about_you.dart';
 import '../core/gochara.dart';
 import '../core/i18n.dart';
 import '../core/jatakam.dart';
@@ -37,6 +38,20 @@ class _JatakamScreenState extends ConsumerState<JatakamScreen> {
   bool _south = true;
 
   bool get _other => _cityId == '_other';
+
+  /// "About you" fills the form, and shows the user's own chart straight away when the birth time is known.
+  @override
+  void initState() {
+    super.initState();
+    final me = ref.read(aboutYouProvider);
+    if (me.birthDate == null) return;
+    _name.text = me.name;
+    _date = me.birthDate;
+    final m = me.birthMinutes;
+    if (m != null) _time = TimeOfDay(hour: m ~/ 60, minute: m % 60);
+    if (me.placeId != null && cities.any((c) => c.id == me.placeId)) _cityId = me.placeId!;
+    if (m != null && me.hasPlace) _result = me.birth;
+  }
 
   @override
   void dispose() {

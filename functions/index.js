@@ -24,7 +24,7 @@ async function isAdmin(auth) {
 
 /** Every install summary with the fields an audience needs (a few hundred today; select() keeps it light). */
 async function installs() {
-  const snap = await db.collection('installs').select('t', 'lang', 'state', 'v', 'lastSeen').get();
+  const snap = await db.collection('installs').select('t', 'lang', 'state', 'v', 'lastSeen', 'profile.ag', 'profile.dob', 'profile.g').get();
   return snap.docs.map((d) => ({ id: d.id, data: d.data() }));
 }
 

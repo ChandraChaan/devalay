@@ -72,3 +72,31 @@ test('messages carry the campaign, link and the announcements channel', () => {
   assert.deepStrictEqual(m.data, { c: 'CAMP1', link: 'devalay://panchang' });
   assert.strictEqual(m.android.notification.channelId, 'announcements');
 });
+
+test('age group and gender audiences use "About you" and refuse unknown values', () => {
+  const bad = (d) => assert.throws(() => lib.parseRequest(d), (e) => e.code === 'invalid-argument');
+  bad({ ...ok, audience: { type: 'age', value: '30-40' } });
+  bad({ ...ok, audience: { type: 'gender', value: 'male' } });
+  assert.deepStrictEqual(lib.parseRequest({ ...ok, audience: { type: 'age', value: '25-34' } }).audience, { type: 'age', value: '25-34' });
+
+  const now = new Date('2026-11-28T10:00:00Z');
+  const installs = [
+    { id: 'a', data: { t: 'tok-a', profile: { dob: '1995-06-01', ag: '25-34', g: 'f' } } },
+    // Sent as 18-24 a year ago; the date of birth says 25-34 now.
+    { id: 'b', data: { t: 'tok-b', profile: { dob: '2001-11-01', ag: '18-24', g: 'm' } } },
+    { id: 'c', data: { t: 'tok-c', profile: { ag: '45-54', g: 'o' } } },
+    { id: 'd', data: { t: 'tok-d' } },
+    { id: 'e', data: { profile: { dob: '1995-06-01', g: 'f' } } }, // no token
+    { id: 'f', data: { t: 'tok-f', profile: { dob: '2010-12-01', g: 'm' } } },
+  ];
+  const ids = (a) => lib.pickInstalls(installs, a, now).map((i) => i.id);
+  assert.deepStrictEqual(ids({ type: 'age', value: '25-34' }), ['a', 'b']);
+  assert.deepStrictEqual(ids({ type: 'age', value: '45-54' }), ['c']);
+  assert.deepStrictEqual(ids({ type: 'age', value: 'under18' }), ['f']);
+  assert.deepStrictEqual(ids({ type: 'gender', value: 'f' }), ['a']);
+  assert.deepStrictEqual(ids({ type: 'gender', value: 'm' }), ['b', 'f']);
+  // A birthday tomorrow (India time) has not happened yet.
+  assert.strictEqual(lib.ageGroupOf({ dob: '2008-11-29' }, now), 'under18');
+  assert.strictEqual(lib.ageGroupOf({ dob: '2008-11-28' }, now), '18-24');
+  assert.strictEqual(lib.ageGroupOf(null, now), '');
+});

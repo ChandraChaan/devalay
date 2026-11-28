@@ -1,6 +1,70 @@
 /// Tamil translations of Devalay's English UI strings and Panchang names, keyed by the English text.
 /// Source list: tool/l10n/strings.json. Keys must match the English exactly; {0}, {1} are placeholders.
 const stringsTa = <String, String>{
+  // About you, Google backup and birthday (1.5.11).
+  'Good morning, {0}': 'காலை வணக்கம், {0}',
+  'Happy birthday!': 'இனிய பிறந்தநாள் வாழ்த்துகள்!',
+  'Happy birthday, {0}!': '{0}, இனிய பிறந்தநாள் வாழ்த்துகள்!',
+  'May the year ahead bring you good health, peace and joy. Begin the day with a prayer.':
+      'வரும் ஆண்டு உங்களுக்கு நல்ல ஆரோக்கியம், அமைதி, மகிழ்ச்சி தரட்டும். இந்த நாளை ஒரு பிரார்த்தனையுடன் தொடங்குங்கள்.',
+  'About you': 'உங்களைப் பற்றி',
+  'Optional. With your birth details you get your own Tarabalam, Chandrabalam and Jatakam. Kept on your phone; skip if you like.':
+      'விருப்பத்தேர்வு. உங்கள் பிறப்பு விவரங்கள் இருந்தால் உங்களுக்கென்றே தாரா பலம், சந்திர பலம், ஜாதகம் கிடைக்கும். இவை உங்கள் போனிலேயே இருக்கும்; வேண்டாமென்றால் தவிர்க்கலாம்.',
+  'Add your date and place of birth to work these out, or set them from your horoscope.':
+      'இவற்றைக் கணக்கிட பிறந்த தேதியையும் இடத்தையும் சேர்க்கவும், அல்லது உங்கள் ஜாதகத்திலிருந்து தேர்ந்தெடுக்கவும்.',
+  'Back up with Google': 'Google மூலம் காப்புப் பிரதி எடு',
+  'Could not delete the account. Check your connection and try again.':
+      'கணக்கை நீக்க முடியவில்லை. இணைப்பைச் சரிபார்த்து மீண்டும் முயலுங்கள்.',
+  'Could not sign in. Check your connection and try again.':
+      'உள்நுழைய முடியவில்லை. இணைப்பைச் சரிபார்த்து மீண்டும் முயலுங்கள்.',
+  'Date of birth': 'பிறந்த தேதி',
+  'Delete your account?': 'உங்கள் கணக்கை நீக்கவா?',
+  'Done': 'முடிந்தது',
+  'Everything here is optional. With your birth details Devalay shows your own Tarabalam and Chandrabalam each day, opens your Jatakam ready and wishes you on your birthday.':
+      'இங்கே எல்லாமே விருப்பத்தேர்வுதான். உங்கள் பிறப்பு விவரங்கள் இருந்தால், Devalay ஒவ்வொரு நாளும் உங்களுக்கென்றே தாரா பலம், சந்திர பலம் காட்டும், உங்கள் ஜாதகத்தைத் தயாராகத் திறக்கும், உங்கள் பிறந்தநாளில் உங்களை வாழ்த்தும்.',
+  'Female': 'பெண்',
+  'From your horoscope (jatakam), if you know them.': 'உங்கள் ஜாதகத்திலிருந்து, உங்களுக்குத் தெரிந்தால்.',
+  'Google sign-in did not work. Try again.': 'Google உள்நுழைவு நடக்கவில்லை. மீண்டும் முயலுங்கள்.',
+  'Gotra (optional)': 'கோத்திரம் (விருப்பத்தேர்வு)',
+  'I know mine: set them': 'எனக்குத் தெரியும்: நானே தேர்ந்தெடுக்கிறேன்',
+  'Kept on this phone. While "Share usage statistics" is on (Settings → Privacy), your name, gender, date, time and city of birth, gotra and stars are also shared with the Devalay developer to improve the app; never for advertising.':
+      'இது இந்த போனிலேயே இருக்கும். "பயன்பாட்டுப் புள்ளிவிவரங்களைப் பகிர்" இயக்கத்தில் இருக்கும்வரை (அமைப்புகள் → தனியுரிமை), ஆப்பை மேம்படுத்த உங்கள் பெயர், பாலினம், பிறந்த தேதி, நேரம், நகரம், கோத்திரம், நட்சத்திரங்கள் Devalay டெவலப்பருடனும் பகிரப்படும்; விளம்பரத்துக்காக ஒருபோதும் இல்லை.',
+  'Male': 'ஆண்',
+  'Needed for your lagna': 'லக்னத்துக்குத் தேவை',
+  'Optional. Sign in to keep your details when you reinstall or change phones.':
+      'விருப்பத்தேர்வு. ஆப்பை மீண்டும் நிறுவினாலும் போனை மாற்றினாலும் உங்கள் விவரங்கள் இருக்க உள்நுழையுங்கள்.',
+  'Remove my details': 'என் விவரங்களை நீக்கு',
+  'Remove your details?': 'உங்கள் விவரங்களை நீக்கவா?',
+  'Set by you.': 'நீங்கள் தேர்ந்தெடுத்தவை.',
+  'Sign in again with Google to delete your account.': 'கணக்கை நீக்க Google மூலம் மீண்டும் உள்நுழையுங்கள்.',
+  'Signed in with Google · your details are backed up':
+      'Google மூலம் உள்நுழைந்துள்ளீர்கள் · உங்கள் விவரங்களுக்குக் காப்புப் பிரதி உள்ளது',
+  'Signed in. Your details are backed up.': 'உள்நுழைந்தீர்கள். உங்கள் விவரங்களுக்குக் காப்புப் பிரதி எடுக்கப்பட்டது.',
+  'Signed in. Your details were restored from your backup.':
+      'உள்நுழைந்தீர்கள். உங்கள் விவரங்கள் காப்புப் பிரதியிலிருந்து மீட்கப்பட்டன.',
+  'This deletes your Devalay account, your backup, your usage statistics and your chats with the developer. It cannot be undone. Your details stay on this phone until you remove them.':
+      'இது உங்கள் Devalay கணக்கு, காப்புப் பிரதி, பயன்பாட்டுப் புள்ளிவிவரங்கள், டெவலப்பருடனான அரட்டைகள் ஆகியவற்றை நீக்கும். இதைத் திரும்பப் பெற முடியாது. நீங்கள் நீக்கும்வரை உங்கள் விவரங்கள் இந்த போனில் இருக்கும்.',
+  'Time of birth': 'பிறந்த நேரம்',
+  'Work out from birth details': 'பிறப்பு விவரங்களிலிருந்து கணக்கிடு',
+  'Worked out from your birth details (Lahiri ayanamsa).':
+      'உங்கள் பிறப்பு விவரங்களிலிருந்து கணக்கிடப்பட்டது (லாஹிரி அயனாம்சம்).',
+  'Worked out from your date and place of birth. Add the time of birth for the lagna.':
+      'பிறந்த தேதி, இடத்திலிருந்து கணக்கிடப்பட்டது. லக்னத்துக்குப் பிறந்த நேரத்தைச் சேர்க்கவும்.',
+  'Your account was deleted.': 'உங்கள் கணக்கு நீக்கப்பட்டது.',
+  'Your name, birth details and stars are removed from this phone, from your Google backup and from the usage statistics.':
+      'உங்கள் பெயர், பிறப்பு விவரங்கள், நட்சத்திரங்கள் இந்த போனிலிருந்தும், உங்கள் Google காப்புப் பிரதியிலிருந்தும், பயன்பாட்டுப் புள்ளிவிவரங்களிலிருந்தும் நீக்கப்படும்.',
+  'Your stars': 'உங்கள் நட்சத்திரங்கள்',
+  'Add your name and birth details for a personal Panchang':
+      'உங்களுக்கான பஞ்சாங்கத்துக்கு உங்கள் பெயரையும் பிறப்பு விவரங்களையும் சேர்க்கவும்',
+  'This removes the usage statistics this phone has sent, with the copy of "About you" in them, and turns sharing off. Your details, saved days, favourites and settings stay on this phone.':
+      'இந்த போன் அனுப்பிய பயன்பாட்டுப் புள்ளிவிவரங்கள், அவற்றில் உள்ள "உங்களைப் பற்றி" நகலுடன், நீக்கப்படும்; பகிர்வும் நிறுத்தப்படும். உங்கள் விவரங்கள், சேமித்த நாட்கள், பிடித்தவை, அமைப்புகள் இந்த போனிலேயே இருக்கும்.',
+  'Which screens and features you use, your language and state, and "About you" if you filled it in, so we can improve Devalay. Never what you type elsewhere.':
+      'நீங்கள் எந்தத் திரைகளையும் அம்சங்களையும் பயன்படுத்துகிறீர்கள், உங்கள் மொழி, மாநிலம், நீங்கள் நிரப்பியிருந்தால் "உங்களைப் பற்றி" ஆகியவை, Devalay-ஐ மேம்படுத்துவதற்காக. வேறு இடங்களில் நீங்கள் தட்டச்சு செய்வது ஒருபோதும் இல்லை.',
+  'backed up': 'காப்புப் பிரதி உள்ளது',
+  'Devalay checks your approximate location once, now, to pick the nearest city. It is not saved or sent anywhere, and the app never tracks you in the background.':
+      'அருகிலுள்ள நகரத்தைத் தேர்ந்தெடுக்க, Devalay இப்போது ஒருமுறை மட்டும் உங்கள் தோராயமான இருப்பிடத்தைப் பார்க்கும். அது எங்கும் சேமிக்கப்படுவதோ அனுப்பப்படுவதோ இல்லை; ஆப் உங்களைப் பின்னணியில் ஒருபோதும் கண்காணிப்பதில்லை.',
+  'Pick the city you were born in, or the nearest one. Its position and time zone are used for your chart.':
+      'நீங்கள் பிறந்த நகரத்தை, அல்லது அதற்கு அருகிலுள்ள நகரத்தைத் தேர்ந்தெடுங்கள். உங்கள் ஜாதகத்துக்கு அதன் இருப்பிடமும் நேர மண்டலமும் பயன்படுத்தப்படும்.',
   // Morning Panchang card, onboarding switch and widget (1.5.6).
   "Today's Panchang, every morning": 'ஒவ்வொரு காலையும் இன்றைய பஞ்சாங்கம்',
   'Tithi, nakshatra, Rahu Kalam and sunrise at {0}, as a notification and on your home screen.':

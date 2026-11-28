@@ -8,17 +8,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+import '../core/account.dart';
 import '../core/admin_stats.dart';
+import '../core/age.dart';
 import '../core/dev_emulators.dart';
 import '../core/firebase.dart';
+import '../core/muhurta.dart' show rashiNames;
 import '../core/theme.dart';
 import '../core/usage.dart';
 import 'admin_chat.dart';
 import 'admin_send.dart';
-
-/// Web OAuth client of the devalay-chandra project: Google returns an ID token for it, which
-/// Firebase exchanges for a session. A public identifier, not a secret.
-const _webClientId = '729650365531-ch7t62hmm7ahqcla2jfvh5dam18v8msq.apps.googleusercontent.com';
 
 /// Owner console: who is using Devalay right now, what they use most, and their feedback.
 ///
@@ -64,7 +63,6 @@ class _SignIn extends StatefulWidget {
 class _SignInState extends State<_SignIn> {
   bool _busy = false;
   String? _error;
-  static Future<void>? _init;
   final _email = TextEditingController();
   final _password = TextEditingController();
 
@@ -94,7 +92,7 @@ class _SignInState extends State<_SignIn> {
     });
     try {
       final g = GoogleSignIn.instance;
-      await (_init ??= g.initialize(serverClientId: _webClientId));
+      await Account.initGoogle();
       final account = await g.authenticate();
       final token = account.authentication.idToken;
       if (token == null) throw StateError('Google returned no ID token');
@@ -623,6 +621,7 @@ class _OverviewTab extends ConsumerWidget {
             _Split('Android', splitBy(installs.where((i) => i.sdk > 0), (i) => i.android)),
             _Split('Memory', splitBy(installs.where((i) => i.ramMb > 0), (i) => i.ram)),
             _Split('Installed from', splitBy(installs, (i) => i.source)),
+            ..._profileSplits(installs),
             Padding(
               padding: const EdgeInsets.all(8),
               child: Text(
@@ -769,6 +768,7 @@ class _UsersTabState extends ConsumerState<_UsersTab> with AutomaticKeepAliveCli
           final shown = f.apply(all);
           final langs = splitBy(all, (i) => i.lang).map((e) => e.key).where((k) => k != '—').toList();
           final states = splitBy(all.where((i) => i.chose), (i) => i.state).map((e) => e.key).where((k) => k != '—');
+          final now = DateTime.now();
           UserFilter copy({
             Object? lang = _keep,
             Object? state = _keep,
@@ -776,7 +776,13 @@ class _UsersTabState extends ConsumerState<_UsersTab> with AutomaticKeepAliveCli
             Object? morningOn = _keep,
             bool? reachable,
             String? query,
+            Object? ageGroup = _keep,
+            Object? gender = _keep,
+            Object? rashi = _keep,
           }) => UserFilter(
+            ageGroup: ageGroup == _keep ? f.ageGroup : ageGroup as String?,
+            gender: gender == _keep ? f.gender : gender as String?,
+            rashi: rashi == _keep ? f.rashi : rashi as String?,
             lang: lang == _keep ? f.lang : lang as String?,
             state: state == _keep ? f.state : state as String?,
             inactiveDays: inactiveDays == _keep ? f.inactiveDays : inactiveDays as int?,
@@ -796,7 +802,7 @@ class _UsersTabState extends ConsumerState<_UsersTab> with AutomaticKeepAliveCli
                       TextField(
                         decoration: const InputDecoration(
                           prefixIcon: Icon(Icons.search_rounded),
-                          hintText: 'Install id or phone model',
+                          hintText: 'Name, install id or phone model',
                         ),
                         onChanged: (q) => _set(copy(query: q)),
                       ),
@@ -822,6 +828,13 @@ class _UsersTabState extends ConsumerState<_UsersTab> with AutomaticKeepAliveCli
                             selected: f.reachable,
                             onSelected: (on) => _set(copy(reachable: on)),
                           ),
+                          _PickChip('Age', f.ageGroup, ageGroups, (v) => _set(copy(ageGroup: v))),
+                          _PickChip('Gender', f.gender, const [
+                            'Male',
+                            'Female',
+                            'Other',
+                          ], (v) => _set(copy(gender: v))),
+                          _PickChip('Rashi', f.rashi, rashiNames, (v) => _set(copy(rashi: v))),
                         ],
                       ),
                       const SizedBox(height: 8),
@@ -834,7 +847,8 @@ class _UsersTabState extends ConsumerState<_UsersTab> with AutomaticKeepAliveCli
               final top = _topFeatures(u).take(3).map((e) => e.key).join(', ');
               return ListTile(
                 title: Text(
-                  'User ${short(u.uid)} · ${[u.lang, if (u.chose) u.state, u.device].where((s) => s.isNotEmpty).join(' · ')}',
+                  '${u.profile.name.isEmpty ? 'User ${short(u.uid)}' : u.profile.name} · '
+                  '${[u.lang, if (u.chose) u.state, u.profile.ageGroupOn(now), u.device].where((s) => s.isNotEmpty).join(' · ')}',
                 ),
                 subtitle: Text(
                   '${ago(u.lastSeen)} · ${u.sessions} sessions · v${u.version}'
@@ -854,6 +868,81 @@ class _UsersTabState extends ConsumerState<_UsersTab> with AutomaticKeepAliveCli
 }
 
 const _keep = Object();
+
+/// Age group, gender and rashi of the users who filled in "About you" and share usage statistics.
+List<Widget> _profileSplits(List<InstallRow> installs) {
+  final now = DateTime.now();
+  final withProfile = installs.where((i) => !i.profile.isEmpty).toList();
+  if (withProfile.isEmpty) return const [];
+  return [
+    const _Section('About you'),
+    Wrap(
+      children: [
+        _Stat('Filled in', '${withProfile.length}', hint: 'of ${installs.length} installs'),
+        _Stat('Gave birth time', '${withProfile.where((i) => i.profile.lagna != null).length}', hint: 'lagna known'),
+      ],
+    ),
+    _Split(
+      'Age group',
+      splitBy(withProfile.where((i) => i.profile.ageGroupOn(now).isNotEmpty), (i) => i.profile.ageGroupOn(now)),
+    ),
+    _Split('Gender', splitBy(withProfile.where((i) => i.profile.gender.isNotEmpty), (i) => i.profile.genderLabel)),
+    _Split('Rashi', splitBy(withProfile.where((i) => i.profile.rashi != null), (i) => i.profile.rashiLabel)),
+  ];
+}
+
+class _ProfileCard extends StatelessWidget {
+  const _ProfileCard(this.p);
+  final InstallProfile p;
+
+  @override
+  Widget build(BuildContext context) {
+    final dob = p.dob;
+    final rows = <(String, String)>[
+      ('Name', p.name),
+      ('Gender', p.genderLabel),
+      (
+        'Born',
+        dob == null
+            ? ''
+            : [
+                '${dob.day}/${dob.month}/${dob.year}',
+                if (p.birthTime.isNotEmpty) p.birthTime,
+                p.ageGroupOn(DateTime.now()),
+              ].where((s) => s.isNotEmpty).join(' · '),
+      ),
+      ('Place of birth', p.birthPlace),
+      ('Rashi', p.rashiLabel),
+      ('Nakshatra', p.nakshatraLabel),
+      ('Lagna', p.lagnaLabel),
+      ('Gotra', p.gotra),
+    ].where((r) => r.$2.isNotEmpty);
+    return Card(
+      margin: const EdgeInsets.symmetric(vertical: 8),
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text('About you', style: TextStyle(fontWeight: FontWeight.w700)),
+            const SizedBox(height: 6),
+            for (final (k, v) in rows)
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 2),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(width: 120, child: Text(k, style: Theme.of(context).textTheme.bodySmall)),
+                    Expanded(child: Text(v)),
+                  ],
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
 
 class _PickChip extends StatelessWidget {
   const _PickChip(this.label, this.value, this.options, this.onPick);
@@ -1077,6 +1166,7 @@ class _UserScreen extends ConsumerWidget {
                       if (u.notificationsAllowed == false) 'notifications blocked',
                     ].join(' · '),
                   ),
+                  if (!u.profile.isEmpty) _ProfileCard(u.profile),
                   if (u.hasToken)
                     Padding(
                       padding: const EdgeInsets.only(top: 8),
