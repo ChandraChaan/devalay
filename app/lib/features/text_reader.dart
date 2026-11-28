@@ -12,6 +12,7 @@ import '../core/providers.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
 import '../core/sharing.dart';
+import '../widgets/translatable.dart';
 import '../widgets/common.dart';
 
 class TextListScreen extends ConsumerWidget {
@@ -96,6 +97,7 @@ class _TextReaderScreenState extends ConsumerState<TextReaderScreen> {
             SliverAppBar.large(
               title: Text(t.titleHi.isNotEmpty ? t.titleHi : t.title),
               actions: [
+                const TranslateAction(),
                 FavoriteButton(
                   item: FavoriteItem(type: 'text', id: t.slug, title: t.title, subtitle: t.titleHi),
                 ),
@@ -140,7 +142,7 @@ class _TextReaderScreenState extends ConsumerState<TextReaderScreen> {
                     const SizedBox(height: 24),
                     Text(l3(ref, 'Meaning', 'भावार्थ', 'భావం'), style: Theme.of(context).textTheme.titleMedium),
                     const SizedBox(height: 8),
-                    Text(t.meaning, style: TextStyle(fontSize: 16 * prefs.textScale, height: 1.6)),
+                    TranslatedText(t.meaning, style: TextStyle(fontSize: 16 * prefs.textScale, height: 1.6)),
                   ],
                   if (t.benefits.isNotEmpty) ...[
                     const SizedBox(height: 16),

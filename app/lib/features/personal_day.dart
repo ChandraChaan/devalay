@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../core/about_you.dart';
 import '../core/glossary.dart';
@@ -12,7 +13,10 @@ import 'muhurta_view.dart';
 
 /// "Is today good for me?": Tarabalam from the birth star and Chandrabalam from the moon sign.
 class PersonalBalam extends ConsumerWidget {
-  const PersonalBalam({super.key, required this.data, this.now});
+  const PersonalBalam({super.key, required this.data, this.now, this.showMore = true});
+
+  /// Shows "Your full day" (off inside that screen itself).
+  final bool showMore;
 
   /// The day's panchang (nakshatra list and the Moon's signs).
   final Map data;
@@ -209,6 +213,22 @@ class PersonalBalam extends ConsumerWidget {
                       )
                       .animate(onPlay: good ? (c) => c.repeat() : null)
                       .shimmer(duration: 2600.ms, delay: 800.ms, color: good ? Colors.white38 : Colors.transparent),
+                  if (showMore)
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: TextButton.icon(
+                        onPressed: () => context.push('/for-you'),
+                        icon: const Icon(Icons.auto_awesome_rounded, size: 18),
+                        label: Text(
+                          t3(
+                            lang,
+                            'Your full day: times, rashi, mantra',
+                            'आपका पूरा दिन: समय, राशि, मंत्र',
+                            'మీ పూర్తి రోజు: సమయాలు, రాశి, మంత్రం',
+                          ),
+                        ),
+                      ),
+                    ),
                 ],
               ),
             ),

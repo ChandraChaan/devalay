@@ -8,7 +8,9 @@ import 'package:path_provider/path_provider.dart';
 
 import 'api.dart';
 import 'i18n.dart';
+import 'billing.dart';
 import 'json_asset.dart';
+import 'sections.dart';
 import 'models.dart';
 import 'providers.dart';
 import 'storage.dart';
@@ -263,13 +265,40 @@ final wishCalendarProvider = Provider<List<Festival>>((ref) {
 
 /// Public-domain paintings of [deity] (empty for all of them). A deity without paintings, or no
 /// connection, gives an empty list and the card draws the deity's syllable instead.
+/// Backgrounds for a wish card: the HD wallpapers of the deity first (recent photos and modern designs,
+/// then paintings; Premium ones only for Premium members), then the older catalogue.
 final wishPaintingsProvider = FutureProvider.family<List<Wallpaper>, String>((ref, deity) async {
+  final premium = ref.watch(premiumProvider);
+  final hd =
+      (ref.watch(sectionsProvider).value?.wallpapers ?? const <HdWallpaper>[])
+          .where((w) => (deity.isEmpty || w.deity == deity) && (premium || !w.isPremium))
+          .toList()
+        ..sort((a, b) => _styleOrder(a.style).compareTo(_styleOrder(b.style)));
+  final asWallpapers = [
+    for (final (i, w) in hd.indexed)
+      Wallpaper({
+        'id': 900000 + i,
+        'title': w.title.en,
+        'image_url': w.fhd,
+        'thumb_url': w.thumb,
+        'dominant_color': w.color,
+        'attribution': w.credit.line,
+        'license': w.credit.license,
+        'source_url': w.credit.source,
+      }),
+  ];
   try {
-    return await ref.watch(wallpapersProvider(deity.isEmpty ? null : deity).future);
+    return [...asWallpapers, ...await ref.watch(wallpapersProvider(deity.isEmpty ? null : deity).future)];
   } catch (_) {
-    return const [];
+    return asWallpapers;
   }
 });
+
+int _styleOrder(String style) => switch (style) {
+  'photo' => 0,
+  'modern' => 1,
+  _ => 2,
+};
 
 /// How the photo sits inside its frame: zoom, and which part of it shows.
 @immutable

@@ -11,6 +11,7 @@ import '../core/providers.dart';
 import '../core/storage.dart';
 import '../core/theme.dart';
 import '../core/sharing.dart';
+import '../widgets/translatable.dart';
 import '../widgets/common.dart';
 import '../widgets/mandala.dart';
 
@@ -232,6 +233,7 @@ class _GitaChapterScreenState extends ConsumerState<GitaChapterScreen> {
       appBar: AppBar(
         title: Text('${l3(ref, 'Chapter', 'अध्याय', 'అధ్యాయం')} ${widget.chapter}'),
         actions: [
+          const TranslateAction(),
           IconButton(
             tooltip: t3(appLang, 'Transliteration', 'लिप्यंतरण', 'లిప్యంతరీకరణ'),
             onPressed: () => ref.read(prefsProvider.notifier).set('show_translit', !prefs.showTransliteration),
@@ -566,7 +568,7 @@ class _VersePage extends ConsumerWidget {
             color: sayingMeaning ? scheme.primary.withValues(alpha: 0.08) : Colors.transparent,
             border: Border(left: BorderSide(color: sayingMeaning ? scheme.primary : Colors.transparent, width: 3)),
           ),
-          child: Text(verse.translation, style: TextStyle(fontSize: 18 * prefs.textScale, height: 1.6)),
+          child: TranslatedText(verse.translation, style: TextStyle(fontSize: 18 * prefs.textScale, height: 1.6)),
         ),
         const SizedBox(height: 8),
         Text('— ${verse.translator}', style: Theme.of(context).textTheme.bodySmall),

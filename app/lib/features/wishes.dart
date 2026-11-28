@@ -432,13 +432,8 @@ class _WishEditorScreenState extends ConsumerState<WishEditorScreen> {
     setState(() => _busy = true);
     try {
       final file = await _render();
-      if (file != null) {
-        await shareContent(
-          shareFooter('wish'),
-          files: [XFile(file.path, mimeType: 'image/png')],
-          what: 'wish',
-        );
-      }
+      // One tap to WhatsApp ("My status" is the first choice there), else the share sheet.
+      if (file != null) await shareFileToWhatsApp(file, mime: 'image/png', text: shareFooter('wish'), what: 'wish');
     } catch (e) {
       if (mounted) toast(context, t3(appLang, 'Could not share: $e', 'शेयर नहीं हो सका: $e', 'షేర్ కాలేదు: $e'));
     } finally {
@@ -565,11 +560,15 @@ class _WishEditorScreenState extends ConsumerState<WishEditorScreen> {
                     Expanded(
                       flex: 2,
                       child: FilledButton.icon(
+                        style: FilledButton.styleFrom(
+                          backgroundColor: const Color(0xFF25D366),
+                          foregroundColor: Colors.white,
+                        ),
                         onPressed: _busy ? null : _share,
                         icon: _busy
                             ? const SizedBox(width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2))
-                            : const Icon(Icons.share_rounded),
-                        label: Text(t3(ui, 'Share to status', 'स्टेटस पर शेयर', 'స్టేటస్‌కు షేర్')),
+                            : const Icon(Icons.send_rounded),
+                        label: Text(t3(ui, 'WhatsApp status', 'व्हाट्सऐप स्टेटस', 'వాట్సాప్ స్టేటస్')),
                       ),
                     ),
                   ],
